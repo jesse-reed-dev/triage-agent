@@ -1,0 +1,15 @@
+# Secrets
+.env
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Data files (will have real issue data later)
+data.json
