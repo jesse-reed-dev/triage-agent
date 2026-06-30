@@ -11,5 +11,5 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# Data files (will have real issue data later)
-data.json
+# Data files
+data/

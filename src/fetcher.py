@@ -8,8 +8,7 @@ load_dotenv()  # reads .env file and loads variables into os.environ
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 GITHUB_API_VERSION = "2022-11-28"
-REPO = "facebook/react-native"  # swap this to any "owner/repo" you want
-MAX_ISSUES = 20           # cap so you're not flooding output on first run
+
 
 # ─── GitHub API client ────────────────────────────────────────────────────────
 
@@ -31,7 +30,7 @@ def fetch_issues(repo: str, max_issues: int = 20) -> list[dict]:
     """
     Fetches open issues from a GitHub repo.
     Returns a list of issue dicts.
-    
+
     Note: GitHub's /issues endpoint returns both issues AND pull requests.
     We filter out PRs below by checking for the 'pull_request' key.
     """
@@ -78,19 +77,3 @@ def print_issues(issues: list[dict], repo: str) -> None:
         print(f"  Labels : {', '.join(labels) if labels else 'none'}")
         print(f"  URL    : {url}")
         print()
-
-
-# ─── Entry point ──────────────────────────────────────────────────────────────
-
-def main():
-    if not GITHUB_TOKEN:
-        raise ValueError("GITHUB_TOKEN not found. Check your .env file.")
-
-    print(f"Fetching issues from {REPO}...")
-    issues = fetch_issues(REPO, MAX_ISSUES)
-    print_issues(issues, REPO)
-    print(f"Done. {len(issues)} issues fetched.")
-
-
-if __name__ == "__main__":
-    main()
