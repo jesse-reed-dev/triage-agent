@@ -1,14 +1,14 @@
 # Triage Agent
 
 Scans ~20 active open source repos daily, runs new issues through Claude to categorize
-difficulty and contributor-friendliness, and delivers a digest so I can claim good first
-issues before everyone else.
+difficulty and contributor-friendliness, and delivers a digest of contributor-friendly
+issues worth picking up.
 
 Built in Python. Powered by Claude.
 
 ## Status
 
-🚧 In progress — Day 1 of 8
+🚧 In progress — Day 2 of 8
 
 ## Planned features
 
@@ -18,7 +18,7 @@ Built in Python. Powered by Claude.
 - Daily HTML email digest grouped by repo, easy issues first
 - GitHub Pages dashboard filterable by repo and difficulty
 
-## Setup (Day 1)
+## Setup (Day 2)
 
 1. Clone the repo
 2. Create a `.env` file with your GitHub token:
@@ -33,7 +33,7 @@ Built in Python. Powered by Claude.
 4. Run the fetcher:
 
 ```bash
-   python src/fetcher.py
+   python src/main.py
 ```
 
 ## Architecture
