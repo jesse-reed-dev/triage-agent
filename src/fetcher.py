@@ -8,6 +8,7 @@ load_dotenv()  # reads .env file and loads variables into os.environ
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 GITHUB_API_VERSION = "2022-11-28"
+REQUEST_TIMEOUT_SECONDS = 30
 
 
 # ─── GitHub API client ────────────────────────────────────────────────────────
@@ -26,10 +27,10 @@ def make_headers() -> dict[str, str]:
     }
 
 
-def fetch_issues(repo: str, max_issues: int = 20) -> list[dict]:
+def fetch_issues(repo: str, max_issues: int = 20) -> list[dict] | None:
     """
     Fetches open issues from a GitHub repo.
-    Returns a list of issue dicts.
+    Returns a list of issue dicts, or None if the repo timed out.
 
     Note: GitHub's /issues endpoint returns both issues AND pull requests.
     We filter out PRs below by checking for the 'pull_request' key.
@@ -42,7 +43,11 @@ def fetch_issues(repo: str, max_issues: int = 20) -> list[dict]:
         "direction": "desc",  # newest first
     }
 
-    response = requests.get(url, headers=make_headers(), params=params)
+    try:
+        response = requests.get(url, headers=make_headers(), params=params, timeout=REQUEST_TIMEOUT_SECONDS)
+    except requests.exceptions.Timeout:
+        print(f"  Timed out fetching {repo} — skipping.")
+        return None
 
     # Raise an exception if the request failed (401 = bad token, 404 = wrong repo)
     response.raise_for_status()
