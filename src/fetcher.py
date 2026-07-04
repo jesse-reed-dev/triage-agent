@@ -45,12 +45,16 @@ def fetch_issues(repo: str, max_issues: int = 20) -> list[dict] | None:
 
     try:
         response = requests.get(url, headers=make_headers(), params=params, timeout=REQUEST_TIMEOUT_SECONDS)
+        # Raise an exception if the request failed (401 = bad token, 403/429 = rate limited, 404 = wrong repo)
+        response.raise_for_status()
     except requests.exceptions.Timeout:
         print(f"  Timed out fetching {repo} — skipping.")
         return None
-
-    # Raise an exception if the request failed (401 = bad token, 404 = wrong repo)
-    response.raise_for_status()
+    except requests.exceptions.RequestException as e:
+        # One bad repo (rate limit, outage, typo) shouldn't kill the whole run —
+        # skip it like a timeout and let the remaining repos report.
+        print(f"  Failed to fetch {repo} ({e}) — skipping.")
+        return None
 
     all_items = response.json()
 

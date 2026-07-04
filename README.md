@@ -8,7 +8,7 @@ Built in Python. Powered by Claude.
 
 ## Status
 
-🚧 In progress — Day 3 of 8
+🚧 In progress — Day 4 of 8
 
 ## Planned features
 
@@ -39,6 +39,20 @@ Built in Python. Powered by Claude.
 ```bash
    python src/main.py
 ```
+
+## Claude Code skill (Day 4)
+
+The repo ships a project skill at `.claude/skills/triage/SKILL.md`. Open Claude Code
+in this repo and run:
+
+```
+/triage
+```
+
+Claude runs the pipeline and presents the results as a ranked digest — good-first-issue
+easy picks at the top, uncategorized issues at the bottom. The skill also encodes the
+operational knowledge (dedup semantics, run cadence, failure modes) so Claude handles
+edge cases without being re-told each session.
 
 ## Architecture
 
