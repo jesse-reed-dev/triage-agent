@@ -8,7 +8,7 @@ Built in Python. Powered by Claude.
 
 ## Status
 
-🚧 In progress — Day 4 of 8
+🚧 In progress — Day 5 of 8
 
 ## Planned features
 
@@ -16,7 +16,8 @@ Built in Python. Powered by Claude.
 - Categorize each issue via Claude (claude-haiku-4-5): category (bug/feature/docs/test/refactor),
   difficulty (easy/medium/hard), good-first-issue fit, a one-line summary, and reasoning
 - Filter for `good first issue`, `help wanted`, and `documentation` labels
-- Daily HTML email digest grouped by repo, easy issues first
+- Daily HTML email digest via Gmail SMTP, ranked easiest-first (best picks →
+  easy → medium → hard), with a markdown copy saved to `data/`
 - GitHub Pages dashboard filterable by repo and difficulty
 
 ## Setup (Day 3)
@@ -39,6 +40,26 @@ Built in Python. Powered by Claude.
 ```bash
    python src/main.py
 ```
+
+## Email digest (Day 5)
+
+Each run delivers the digest by email when Gmail credentials are present in `.env`:
+
+```
+GMAIL_ADDRESS=you@gmail.com
+GMAIL_APP_PASSWORD=your_app_password
+DIGEST_TO=optional_recipient@example.com   # defaults to GMAIL_ADDRESS
+```
+
+`GMAIL_APP_PASSWORD` is a Gmail [app password](https://myaccount.google.com/apppasswords)
+(requires 2FA), not the account password. Sending uses Python's stdlib `smtplib` —
+no email-service account or extra dependency. Without these variables the run still
+works: the digest is written to `data/digest-YYYY-MM-DD.md` either way.
+
+Deduplication is **delivery-gated**: issues are marked seen only after the digest is
+successfully delivered (email-send success, or the report write when email isn't
+configured). A run that crashes or fails to send consumes nothing — the same issues
+are picked up again next run.
 
 ## Claude Code skill (Day 4)
 
