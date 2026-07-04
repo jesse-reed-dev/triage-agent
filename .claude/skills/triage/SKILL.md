@@ -5,9 +5,9 @@ description: Run the GitHub issue triage pipeline — fetch new issues from the 
 
 # Triage run
 
-Run the pipeline, then turn its terminal output into a ranked digest of issues worth
-picking up. Do not re-implement any pipeline logic yourself — fetching, dedup, and
-categorization all live in `src/`; your job is to run it and present the results well.
+Run the pipeline, then present the digest it produces. Do not re-implement any
+pipeline logic yourself — fetching, dedup, categorization, ranking, and delivery
+all live in `src/`; your job is to run it and surface the results.
 
 ## Steps
 
@@ -23,46 +23,57 @@ categorization all live in `src/`; your job is to run it and present the results
 
    - A run with many new issues can take several minutes: each new issue is one
      `claude -p` call with a 60-second timeout. Run it in the **foreground** with
-     the maximum Bash timeout (600000 ms). Do **not** run it in the background:
-     if the session ends before the run finishes, the process dies — and since
-     issues are marked seen the moment they're fetched, the day's issues get
-     consumed without ever producing a digest.
-   - If the run does get cut off by the timeout, present whatever partial results
-     it printed — do not re-run (the remaining issues are already marked seen).
+     the maximum Bash timeout (600000 ms).
+   - If the run gets cut off before it finishes, it is **safe to re-run**: issues
+     are only marked seen after the digest is successfully delivered, so an
+     interrupted run consumes nothing and the next run picks the same issues up
+     again.
    - `GITHUB_TOKEN not found` means `.env` is missing or incomplete — ask the user to
      add `GITHUB_TOKEN=...` to `.env` at the repo root. Don't guess or set one yourself.
    - Per-issue lines like `Claude CLI error ...` or `Categorization timed out ...` are
-     non-fatal; those issues show up as "Uncategorized" and the run is still valid.
+     non-fatal; those issues show up in the digest's "Uncategorized" section and the
+     run is still valid.
 
-2. Present the results as a digest, best picks first:
-   - **Rank order:** `good_first_issue` + `easy` first, then remaining `easy`, then
-     `medium`, then `hard`. Within a tier, put `docs`/`test` issues above `bug`/`feature`.
-   - **Each entry:** repo, issue number linked to its URL, `category | difficulty`,
-     the one-line summary, and the "why easy/hard" line.
-   - **Uncategorized issues** go at the bottom as a plain title + link list.
+2. Present the results. The pipeline writes a ranked markdown digest to
+   `data/digest-YYYY-MM-DD.md` (best picks first, uncategorized issues at the
+   bottom) and, when email is configured, also emails it. Read that file and
+   relay it — summarize the top picks, don't re-rank or reformat.
    - If the output says `No new issues since last run`, report that and stop —
-     do **not** re-run to try to force results (see dedup note below).
+     that is correct behavior, not a bug (see dedup note below).
+   - If the output says `Digest NOT delivered` (email send failed), tell the user:
+     the digest file was still written, nothing was marked seen, and the same
+     issues will be retried next run. Surface the SMTP error from the output.
 
 ## Run cadence
 
 This is designed as a **daily digest** — one run per day, eventually via a scheduled
 Routine. Extra runs are safe (nothing breaks, nothing is double-reported), but every
-run consumes the "new issues" pool: results are always _issues created since the last
-run, whenever that was_. So warn the user before running if it looks like a scheduled
-daily run is about to happen soon — an extra run now would leave that digest nearly
-empty. An immediate re-run always reports "no new issues"; that is correct behavior,
-not a bug.
+*delivered* run consumes the "new issues" pool: results are always _issues created
+since the last delivered run, whenever that was_. So warn the user before running if
+it looks like a scheduled daily run is about to happen soon — an extra run now would
+leave that digest nearly empty. An immediate re-run always reports "no new issues";
+that is correct behavior, not a bug.
 
 ## Things to know
 
-- **Dedup is by design.** Every fetched issue is marked seen in `data/seen_issues.db`
-  the moment it's fetched — even if its categorization fails — so an immediate re-run
-  always reports no new issues. To re-triage one issue, delete its row first:
+- **Dedup is delivery-gated.** An issue is marked seen in `data/seen_issues.db`
+  only after the digest containing it is successfully **delivered** — email-send
+  success when email is configured, otherwise the report file write. A run that
+  crashes, times out, or fails to send marks nothing, so those issues are
+  retried automatically next run. Uncategorized issues in a delivered digest
+  are marked seen too (their title + link were delivered). To re-triage one
+  issue, delete its row first:
 
   ```bash
   sqlite3 data/seen_issues.db "DELETE FROM seen_issues WHERE repo='owner/name' AND issue_number=123"
   ```
 
+- **Email is optional.** With `GMAIL_ADDRESS` and `GMAIL_APP_PASSWORD` in `.env`
+  the digest is emailed via Gmail SMTP (`DIGEST_TO` overrides the recipient,
+  defaulting to the sender). Without them the run still works — the report file
+  counts as delivery. Never print or echo the app password.
 - The repo watchlist lives in `src/repos.py` — edit that list if the user asks to
   add or remove a repo.
 - The categorization prompt, model, and output validation live in `src/categorize.py`.
+- Digest ranking and rendering (markdown + email HTML) live in `src/digest.py`;
+  SMTP sending lives in `src/emailer.py`.
