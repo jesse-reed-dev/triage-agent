@@ -114,5 +114,8 @@ def test_html_escapes_untrusted_title_in_uncategorized():
 
 
 def test_html_links_each_issue():
+    # Check the href and the link text, not the exact markup — the anchor
+    # also carries inline styles (email clients strip <style> blocks).
     html_out = render_html([make_issue(9)], RUN_DATE)
-    assert '<a href="https://github.com/owner/repo/issues/9">#9</a>' in html_out
+    assert 'href="https://github.com/owner/repo/issues/9"' in html_out
+    assert ">#9</a>" in html_out
