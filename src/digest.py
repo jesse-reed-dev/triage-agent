@@ -100,54 +100,141 @@ def render_markdown(issues: list[dict], run_date: date) -> str:
     return "\n".join(lines)
 
 
+# Email palette — light theme only: Gmail applies its own dark-mode recoloring
+# to emails, so designing a second theme would just get overridden.
+_INK = "#0b0b0b"
+_INK_2 = "#52514e"
+_MUTED = "#898781"
+_GRID = "#e1e0d9"
+_ACCENT = "#2a78d6"
+_GOOD = "#0ca30c"
+# Difficulty is ordinal, so it gets one hue light->dark, not traffic-light colors.
+_DIFF_COLOR = {"easy": "#86b6ef", "medium": "#2a78d6", "hard": "#104281"}
+
+_MONO = "ui-monospace,'SF Mono',Consolas,monospace"
+_SANS = "-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"
+
+_TIER_LABELS = ["Best picks — easy + good first issue", "Easy", "Medium", "Hard"]
+
+
+def _swatch(color: str) -> str:
+    return (
+        f'<span style="display:inline-block;width:9px;height:9px;border-radius:2px;'
+        f'background:{color}"></span>'
+    )
+
+
 def render_html(issues: list[dict], run_date: date) -> str:
     """
-    HTML email body. Everything from GitHub (titles, summaries) is escaped —
-    it's untrusted content and this ends up rendered in a mail client.
-    Styles are inline because email clients strip <style> blocks.
+    HTML email body, styled to match the dashboard: KPI tiles, a static
+    difficulty strip, and hairline-separated ledger rows. Email clients strip
+    <style> blocks, CSS variables, and all JS, so everything is inline styles
+    and tables — the interactive filters don't translate; tier grouping
+    stands in for them. Everything from GitHub (titles, summaries) is
+    escaped — it's untrusted content rendered in a mail client.
     """
     tiers, uncategorized = split_and_rank(issues)
+    diff_counts = {
+        d: sum(1 for i in issues if i.get("triage") and i["triage"]["difficulty"] == d)
+        for d in ("easy", "medium", "hard")
+    }
+
+    def kpi(label: str, value: int, note: str) -> str:
+        return (
+            f'<td style="border:1px solid {_GRID};border-radius:4px;padding:10px 14px">'
+            f'<div style="font-family:{_MONO};font-size:10px;letter-spacing:1px;'
+            f'text-transform:uppercase;color:{_MUTED}">{label}</div>'
+            f'<div style="font-family:{_SANS};font-size:26px;font-weight:700;color:{_INK}">{value}</div>'
+            f'<div style="font-family:{_SANS};font-size:11px;color:{_INK_2}">{note}</div></td>'
+        )
 
     def entry(issue: dict) -> str:
         t = issue["triage"]
+        gfi = (
+            f'<span style="font-family:{_MONO};font-size:11px;color:{_GOOD};'
+            f'font-weight:700">&nbsp;&nbsp;&#9733; good first issue</span>'
+            if t["good_first_issue"] else ""
+        )
         return (
-            '<li style="margin-bottom:12px;line-height:1.5">'
-            f'<strong>{html.escape(issue["repo"])}</strong> '
-            f'<a href="{html.escape(issue["html_url"], quote=True)}">#{issue["number"]}</a> '
-            f'<code style="background:#f0f0f0;padding:1px 5px;border-radius:3px">'
-            f'{html.escape(t["category"])} | {html.escape(t["difficulty"])}</code><br>'
-            f'{html.escape(t["one_line_summary"])}<br>'
-            f'<em style="color:#666">{html.escape(t["why_easy"])}</em>'
-            "</li>"
+            f'<div style="border-top:1px solid {_GRID};padding:12px 0">'
+            f'<div style="font-family:{_MONO};font-size:12px;color:{_INK_2}">'
+            f'{html.escape(issue["repo"])}&nbsp;&nbsp;'
+            f'<a href="{html.escape(issue["html_url"], quote=True)}" '
+            f'style="color:{_ACCENT};font-weight:700;text-decoration:none">#{issue["number"]}</a>'
+            f'&nbsp;&nbsp;{_swatch(_DIFF_COLOR[t["difficulty"]])} {html.escape(t["difficulty"])}'
+            f'&nbsp;&nbsp;{html.escape(t["category"])}{gfi}</div>'
+            f'<div style="font-family:{_SANS};font-size:14px;color:{_INK};'
+            f'margin-top:4px;line-height:1.5">{html.escape(t["one_line_summary"])}</div>'
+            f'<div style="font-family:{_SANS};font-size:12px;color:{_MUTED};'
+            f'margin-top:2px;line-height:1.5">{html.escape(t["why_easy"])}</div></div>'
         )
 
     parts = [
-        '<div style="font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;'
-        'max-width:680px;margin:0 auto;color:#1a1a1a">',
-        f"<h1 style='font-size:20px'>Triage digest — {run_date}</h1>",
-        f"<p><strong>{len(issues)} new issue(s)</strong> found, {len(tiers[0])} best pick(s).</p>",
+        f'<div style="max-width:680px;margin:0 auto;font-family:{_SANS};color:{_INK}">',
+        # Header
+        f'<div style="padding:8px 0 4px;font-size:22px;font-weight:750;color:{_INK}">Triage</div>',
+        f'<div style="font-family:{_MONO};font-size:11px;letter-spacing:1px;'
+        f'text-transform:uppercase;color:{_MUTED};padding-bottom:16px">'
+        f'Daily issue digest &middot; {run_date}</div>',
+        # KPI tiles
+        '<table role="presentation" width="100%" cellspacing="6" cellpadding="0"><tr>'
+        + kpi("New issues", len(issues), "since last delivered run")
+        + kpi("Best picks", len(tiers[0]), "easy + good first issue")
+        + kpi("Easy overall", diff_counts["easy"], "across all repos")
+        + "</tr></table>",
     ]
 
-    for heading, tier in zip(_TIERS, tiers):
+    # Difficulty strip: static version of the dashboard's clickable bar.
+    if any(diff_counts.values()):
+        total = sum(diff_counts.values())
+        cells = "".join(
+            f'<td width="{round(diff_counts[d] / total * 100)}%" '
+            f'style="background:{_DIFF_COLOR[d]};height:10px;font-size:0;line-height:0">&nbsp;</td>'
+            for d in ("easy", "medium", "hard") if diff_counts[d]
+        )
+        legend = "&nbsp;&nbsp;&nbsp;".join(
+            f'{_swatch(_DIFF_COLOR[d])} {diff_counts[d]} {d}'
+            for d in ("easy", "medium", "hard")
+        )
+        parts.append(
+            '<table role="presentation" width="100%" cellspacing="2" cellpadding="0" '
+            f'style="margin-top:14px"><tr>{cells}</tr></table>'
+            f'<div style="font-family:{_MONO};font-size:11px;color:{_INK_2};'
+            f'margin:8px 0 4px">{legend}</div>'
+        )
+
+    for label, tier in zip(_TIER_LABELS, tiers):
         if not tier:
             continue
-        parts.append(f"<h2 style='font-size:16px;margin-top:24px'>{heading}</h2>")
-        parts.append("<ul style='padding-left:20px'>")
+        parts.append(
+            f'<div style="font-family:{_MONO};font-size:11px;letter-spacing:1px;'
+            f'text-transform:uppercase;color:{_MUTED};margin:22px 0 6px">{label}</div>'
+        )
         parts.extend(entry(issue) for issue in tier)
-        parts.append("</ul>")
 
     if uncategorized:
-        parts.append("<h2 style='font-size:16px;margin-top:24px'>Uncategorized (Claude call failed)</h2>")
-        parts.append("<ul style='padding-left:20px'>")
+        parts.append(
+            f'<div style="font-family:{_MONO};font-size:11px;letter-spacing:1px;'
+            f'text-transform:uppercase;color:{_MUTED};margin:22px 0 6px">'
+            "Uncategorized (Claude call failed)</div>"
+        )
         for issue in uncategorized:
             parts.append(
-                '<li style="margin-bottom:6px">'
-                f'<strong>{html.escape(issue["repo"])}</strong> '
-                f'<a href="{html.escape(issue["html_url"], quote=True)}">#{issue["number"]}</a> — '
-                f'{html.escape(issue["title"])}</li>'
+                f'<div style="border-top:1px solid {_GRID};padding:10px 0;'
+                f'font-family:{_MONO};font-size:12px;color:{_INK_2}">'
+                f'{html.escape(issue["repo"])}&nbsp;&nbsp;'
+                f'<a href="{html.escape(issue["html_url"], quote=True)}" '
+                f'style="color:{_ACCENT};font-weight:700;text-decoration:none">#{issue["number"]}</a>'
+                f'&nbsp;&nbsp;<span style="font-family:{_SANS};color:{_INK}">'
+                f'{html.escape(issue["title"])}</span></div>'
             )
-        parts.append("</ul>")
 
+    parts.append(
+        f'<div style="border-top:1px solid {_GRID};margin-top:20px;padding-top:10px;'
+        f'font-family:{_MONO};font-size:11px;color:{_MUTED}">'
+        "Triage Agent &middot; issues are ranked easiest first; "
+        "difficulty runs light &rarr; dark</div>"
+    )
     parts.append("</div>")
     return "\n".join(parts)
 
