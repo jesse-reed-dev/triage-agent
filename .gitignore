@@ -11,8 +11,5 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# Data files — daily digests stay local, but data.json (dashboard data) and
-# seen_issues.db (dedup state) are committed back by the daily-triage workflow:
-# git is the persistence layer between scheduled runs.
-data/digest-*.md
-data/*.corrupt
+# Data files
+data/

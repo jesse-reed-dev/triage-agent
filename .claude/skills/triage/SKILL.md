@@ -46,20 +46,17 @@ all live in `src/`; your job is to run it and surface the results.
 
 ## Run cadence
 
-This is designed as a **daily digest** — one run per day via the scheduled
-`daily-triage` GitHub Actions workflow (12:00 UTC), which runs the pipeline on a
-GitHub runner and commits the updated `data/data.json` and `data/seen_issues.db`
-back to `main`. Extra runs are safe (nothing breaks, nothing is double-reported),
-but every *delivered* run consumes the "new issues" pool: results are always
-_issues created since the last delivered run, whenever that was_. So warn the user
-before running locally — an extra run now would leave the next morning's scheduled
-digest nearly empty. An immediate re-run always reports "no new issues"; that is
+This is designed as a **daily digest** — one run per day via a systemd user
+timer (`triage-agent.timer`, 5 AM machine-local time, `Persistent=true` so a
+run missed while the machine slept fires on wake). Unit files live in
+`deploy/systemd/`; check status with `systemctl --user list-timers
+triage-agent.timer`; output appends to `data/triage.log`. Extra runs are safe
+(nothing breaks, nothing is double-reported), but every *delivered* run
+consumes the "new issues" pool: results are always _issues created since the
+last delivered run, whenever that was_. So warn the user before running
+manually — an extra run now would leave the next morning's scheduled digest
+nearly empty. An immediate re-run always reports "no new issues"; that is
 correct behavior, not a bug.
-
-**Local runs and the scheduled workflow share state through git.** The dedup DB
-is tracked in the repo, so before a local run, pull first (a stale DB re-delivers
-issues the workflow already sent); after a delivered local run, the DB change
-must be committed and pushed or the next scheduled run re-delivers those issues.
 
 ## Things to know
 

@@ -1,0 +1,22 @@
+# Runs one triage pipeline pass. Triggered by triage-agent.timer — not meant
+# to be enabled on its own.
+#
+# Install (paths assume the repo at ~/projects/triage-agent):
+#   cp deploy/systemd/triage-agent.* ~/.config/systemd/user/
+#   systemctl --user daemon-reload
+#   systemctl --user enable --now triage-agent.timer
+
+[Unit]
+Description=GitHub issue triage digest
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/jesse/projects/triage-agent
+# Services get a bare PATH; the pipeline shells out to `claude` in ~/.local/bin.
+Environment=PATH=/home/jesse/.local/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=/home/jesse/projects/triage-agent/.venv/bin/python -u src/main.py
+# Default oneshot timeout is 90s — a fresh-DB run of Claude calls needs far
+# more. 4h is a ceiling for a hung run, not an expectation.
+TimeoutStartSec=4h
+StandardOutput=append:/home/jesse/projects/triage-agent/data/triage.log
+StandardError=append:/home/jesse/projects/triage-agent/data/triage.log
