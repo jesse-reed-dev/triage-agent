@@ -1,0 +1,13 @@
+# Schedules the daily triage run: 5 AM machine-local time. Persistent=true
+# means a run missed while the machine slept fires as soon as it wakes —
+# no forced wake-ups, no monitors lighting up at night.
+
+[Unit]
+Description=Daily triage digest at 5 AM (catches up after sleep)
+
+[Timer]
+OnCalendar=*-*-* 05:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

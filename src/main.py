@@ -5,7 +5,7 @@ from fetcher import fetch_issues, GITHUB_TOKEN
 from repos import REPOS
 from db import init_db, has_seen, mark_seen
 from categorize import categorize_issue
-from digest import build_subject, render_markdown, render_html, write_digest_file
+from digest import append_data_json, build_subject, render_markdown, render_html, write_digest_file
 from emailer import email_configured, send_digest, DIGEST_TO
 
 MAX_ISSUES_PER_REPO = 20
@@ -91,6 +91,12 @@ def main():
     else:
         print("Email not configured (GMAIL_ADDRESS / GMAIL_APP_PASSWORD in .env) — "
               "the report write above counts as delivery.")
+
+    # Delivered — record the run for the dashboard, then mark seen. Order
+    # matters: if the data.json write dies, nothing is marked and the next
+    # run retries; replace-by-key in append_data_json keeps that dedup-safe.
+    data_path = append_data_json(new_issues, run_date)
+    print(f"Dashboard data updated: {data_path}")
 
     mark_delivered(new_issues)
     print(f"{len(new_issues)} issue(s) marked seen.")
