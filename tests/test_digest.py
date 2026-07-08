@@ -1,8 +1,18 @@
 """Tests for digest ranking and rendering."""
 
+import json
 from datetime import date
 
-from digest import build_subject, render_html, render_markdown, split_and_rank
+import pytest
+
+import digest
+from digest import (
+    append_data_json,
+    build_subject,
+    render_html,
+    render_markdown,
+    split_and_rank,
+)
 
 RUN_DATE = date(2026, 7, 4)
 
@@ -119,3 +129,65 @@ def test_html_links_each_issue():
     html_out = render_html([make_issue(9)], RUN_DATE)
     assert 'href="https://github.com/owner/repo/issues/9"' in html_out
     assert ">#9</a>" in html_out
+
+
+# ─── append_data_json ─────────────────────────────────────────────────────────
+
+@pytest.fixture
+def data_json(tmp_path, monkeypatch):
+    """Point the module at a throwaway data.json and return its path."""
+    path = tmp_path / "data.json"
+    monkeypatch.setattr(digest, "DATA_DIR", str(tmp_path))
+    monkeypatch.setattr(digest, "DATA_JSON_PATH", str(path))
+    return path
+
+
+def read_records(path):
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)["issues"]
+
+
+def test_append_creates_file_with_dashboard_fields(data_json):
+    append_data_json([make_issue(1, category="docs")], RUN_DATE)
+
+    records = read_records(data_json)
+    assert len(records) == 1
+    record = records[0]
+    assert record["repo"] == "owner/repo"
+    assert record["number"] == 1
+    assert record["url"] == "https://github.com/owner/repo/issues/1"
+    assert record["digest_date"] == "2026-07-04"
+    assert record["triage"]["category"] == "docs"
+
+
+def test_append_accumulates_across_runs(data_json):
+    append_data_json([make_issue(1)], RUN_DATE)
+    append_data_json([make_issue(2)], date(2026, 7, 5))
+
+    records = read_records(data_json)
+    assert [r["number"] for r in records] == [1, 2]
+    assert [r["digest_date"] for r in records] == ["2026-07-04", "2026-07-05"]
+
+
+def test_reappending_same_issue_replaces_not_duplicates(data_json):
+    append_data_json([make_issue(1, difficulty="hard")], RUN_DATE)
+    append_data_json([make_issue(1, difficulty="easy")], date(2026, 7, 5))
+
+    records = read_records(data_json)
+    assert len(records) == 1
+    assert records[0]["triage"]["difficulty"] == "easy"
+
+
+def test_uncategorized_issue_stored_with_null_triage(data_json):
+    append_data_json([make_uncategorized(3)], RUN_DATE)
+    assert read_records(data_json)[0]["triage"] is None
+
+
+def test_corrupt_data_json_is_sidelined_not_crashed(data_json):
+    data_json.write_text("{ not json")
+
+    append_data_json([make_issue(1)], RUN_DATE)
+
+    assert [r["number"] for r in read_records(data_json)] == [1]
+    backup = data_json.with_suffix(".json.corrupt")
+    assert backup.read_text() == "{ not json"

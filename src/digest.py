@@ -9,12 +9,14 @@ Issues whose categorization failed go at the bottom as plain title + link.
 """
 
 import html
+import json
 import os
 from datetime import date
 
 # ─── Config ───────────────────────────────────────────────────────────────────
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
+DATA_JSON_PATH = os.path.join(DATA_DIR, "data.json")
 
 _CATEGORY_ORDER = {"docs": 0, "test": 1, "refactor": 2, "bug": 3, "feature": 4}
 
@@ -252,3 +254,55 @@ def write_digest_file(markdown: str, run_date: date) -> str:
     with open(path, "w", encoding="utf-8") as f:
         f.write(markdown)
     return path
+
+
+def _load_data_json() -> list[dict]:
+    """
+    Reads the existing dashboard records, tolerating a missing or corrupt file.
+    A corrupt file is sidelined to data.json.corrupt rather than overwritten,
+    so history can be recovered by hand, and the run continues fresh instead
+    of crashing between email delivery and mark_seen.
+    """
+    if not os.path.exists(DATA_JSON_PATH):
+        return []
+
+    try:
+        with open(DATA_JSON_PATH, encoding="utf-8") as f:
+            return json.load(f)["issues"]
+    except (json.JSONDecodeError, KeyError, TypeError):
+        backup = DATA_JSON_PATH + ".corrupt"
+        os.replace(DATA_JSON_PATH, backup)
+        print(f"  data.json was unreadable — moved to {backup}, starting fresh.")
+        return []
+
+
+def append_data_json(issues: list[dict], run_date: date) -> str:
+    """
+    Appends this run's issues to data/data.json — the cumulative,
+    machine-readable record the dashboard reads. Each record keeps just the
+    fields the dashboard filters and displays; "triage" is null for issues
+    whose categorization failed.
+
+    Records are keyed by (repo, number): a re-triaged issue (its row deleted
+    from the dedup DB by hand) replaces its old record instead of duplicating it.
+    """
+    records = _load_data_json()
+
+    new_keys = {(i["repo"], i["number"]) for i in issues}
+    records = [r for r in records if (r["repo"], r["number"]) not in new_keys]
+
+    for issue in issues:
+        records.append({
+            "repo": issue["repo"],
+            "number": issue["number"],
+            "title": issue["title"],
+            "url": issue["html_url"],
+            "created_at": issue.get("created_at"),
+            "digest_date": str(run_date),
+            "triage": issue.get("triage"),
+        })
+
+    os.makedirs(DATA_DIR, exist_ok=True)
+    with open(DATA_JSON_PATH, "w", encoding="utf-8") as f:
+        json.dump({"updated": str(run_date), "issues": records}, f, indent=2)
+    return DATA_JSON_PATH
