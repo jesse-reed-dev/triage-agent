@@ -68,8 +68,9 @@ unrated rather than trusted). The prompt lives in
 - **Local-first, git-published.** The pipeline runs on your machine (systemd
   timer with `Persistent=true` — a run missed while asleep fires on wake).
   The only thing that leaves is `data.json`, committed to an orphan `data`
-  branch by git plumbing; pushing it is a deliberate human action. `main`
-  never sees a bot commit.
+  branch by git plumbing and pushed with a write-scoped deploy key — the
+  narrowest credential that can update the dashboard. `main` never sees a
+  bot commit.
 - **SQLite for state, JSON for the product.** One machine owns the dedup file,
   which is SQLite's home game; the dashboard reads a plain JSON record that
   doubles as the pipeline's history.
@@ -112,9 +113,20 @@ Edit [src/repos.py](src/repos.py) to change the watchlist. Forking this repo?
 Your clone starts with a fresh slate automatically — the dedup DB and data.json
 are local files, never committed to `main`.
 
-To publish your own dashboard: push the `data` branch (created automatically
-after the first delivered run), then enable GitHub Pages on `main` `/docs` and
-update the two URLs at the top of `docs/index.html`.
+To publish your own dashboard: enable GitHub Pages on `main` `/docs`, update
+the two URLs at the top of `docs/index.html`, and give the pipeline push
+access to the `data` branch with a repo-scoped deploy key:
+
+```bash
+ssh-keygen -t ed25519 -f ~/.ssh/triage_agent_deploy -N "" -C "triage-agent-data-publish"
+printf '\nHost triage-agent-push\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/triage_agent_deploy\n  IdentitiesOnly yes\n' >> ~/.ssh/config
+ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts
+git remote add data-publish triage-agent-push:YOUR_USER/YOUR_FORK.git
+```
+
+Add `~/.ssh/triage_agent_deploy.pub` under repo **Settings → Deploy keys**
+with **write access**. Without the remote, runs still commit locally and you
+push the `data` branch by hand.
 
 ## The Claude Code skill
 
