@@ -5,7 +5,7 @@ Matched to TS/JS/React/React Native/Node/Python/C++ stack.
 
 REPOS = [
     # Frontend / JS / TS
-    "facebook/react-native",
+    "react/react-native",
     "expo/expo",
     "microsoft/vscode",
     "vercel/next.js",

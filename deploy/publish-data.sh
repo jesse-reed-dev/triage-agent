@@ -9,11 +9,24 @@
 # creates objects and moves the `data` branch pointer. The first run creates
 # the branch as an orphan automatically (a commit with no parent).
 #
-# Deliberately does NOT push. Pushing (and all remote auth) stays a human
-# action
+# Pushes via the `data-publish` remote — an SSH host alias backed by a
+# write-scoped deploy key (see README), so the live dashboard updates
+# without any human action. No remote configured = commit-only, push
+# manually. A failed push is a warning, not a failure: the commit is safe
+# locally and the next run's push carries it.
 
 set -euo pipefail
 cd "$(dirname "$0")/.."
+
+push_data_branch() {
+    if ! git remote get-url data-publish >/dev/null 2>&1; then
+        echo "publish-data: no data-publish remote — push the data branch manually to update the dashboard."
+    elif git push -q data-publish data:data; then
+        echo "publish-data: pushed — the live dashboard is current."
+    else
+        echo "publish-data: WARNING — push failed; will retry on the next run. Dashboard stays at its last pushed state."
+    fi
+}
 
 if [ ! -f data/data.json ]; then
     echo "publish-data: no data/data.json yet — nothing to publish."
@@ -29,9 +42,11 @@ tree=$(printf '100644 blob %s\tdata.json' "$blob" | git mktree)
 # Find the current tip of the data branch, if the branch exists yet.
 parent=$(git rev-parse -q --verify refs/heads/data || true)
 
-# No new issues means an identical tree — skip the empty commit.
+# No new issues means an identical tree — skip the empty commit, but still
+# push in case an earlier commit never made it out.
 if [ -n "$parent" ] && [ "$(git rev-parse "$parent^{tree}")" = "$tree" ]; then
-    echo "publish-data: data.json unchanged — nothing to publish."
+    echo "publish-data: data.json unchanged — no new commit."
+    push_data_branch
     exit 0
 fi
 
@@ -39,5 +54,5 @@ fi
 # then move the branch pointer to it.
 commit=$(git commit-tree "$tree" ${parent:+-p "$parent"} -m "Publish triage data $(date +%F)")
 git update-ref refs/heads/data "$commit"
-
-echo "publish-data: data branch is now $commit — push it via GitKraken to update the dashboard."
+echo "publish-data: data branch is now $commit"
+push_data_branch
