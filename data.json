@@ -1,0 +1,2150 @@
+{
+  "updated": "2026-07-09",
+  "issues": [
+    {
+      "repo": "facebook/react-native",
+      "number": 57470,
+      "title": "[Android] Long-pressing a TextInput that is unfocused (or focused with the keyboard dismissed) starts text selection but never shows the soft keyboard",
+      "url": "https://github.com/react/react-native/issues/57470",
+      "created_at": "2026-07-07T18:35:52Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Long-pressing an Android TextInput without a visible keyboard starts text selection but fails to show the soft keyboard",
+        "why_easy": "The issue is well-documented with a clear repro and IME traces showing exactly what's missing (no showSoftInput call), but the fix requires native Android code changes and device testing expertise"
+      }
+    },
+    {
+      "repo": "facebook/react-native",
+      "number": 57458,
+      "title": "`TextInput` emits `onChange` event with invalid `selection` on Android browser autofill",
+      "url": "https://github.com/react/react-native/issues/57458",
+      "created_at": "2026-07-07T11:57:08Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "TextInput onChange event reports incorrect selection position when filled via autofill on Android",
+        "why_easy": "Well-isolated and reproducible with a provided test case, but requires native Android knowledge to fix the autofill event handling in the TextInput implementation"
+      }
+    },
+    {
+      "repo": "facebook/react-native",
+      "number": 57454,
+      "title": "[iOS] Prebuilt React-Core Release artifacts are built with NSAssertions enabled \u2014 RCTAssert failures become fatal NSRangeException crashes in production",
+      "url": "https://github.com/react/react-native/issues/57454",
+      "created_at": "2026-07-07T09:08:50Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Prebuilt React Native Core Release artifacts are compiled with NSAssertions enabled, causing production crashes when assert conditions fail",
+        "why_easy": "The root cause (missing NS_BLOCK_ASSERTIONS in Release build configuration) is clearly identified and likely requires minimal change, but the fix requires navigating the iOS build infrastructure and CI/CD artifact publishing pipeline"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47620,
+      "title": "[expo-router][iOS]: Using Apple Zoom transition with nested Native tabs and Stack causes issues in the Stack.Toolbar API",
+      "url": "https://github.com/expo/expo/issues/47620",
+      "created_at": "2026-07-08T15:43:55Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Toolbar button icons fail to display when using Apple zoom transition with nested Tabs and Stack navigation",
+        "why_easy": "Clear reproducible example and screenshots provided, but the bug likely stems from iOS view layering during zoom animations, requiring native platform expertise"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47610,
+      "title": "Android NativeTabs: tab bar attaches/populates after screen content is presented on SDK 57",
+      "url": "https://github.com/expo/expo/issues/47610",
+      "created_at": "2026-07-08T08:21:07Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Android NativeTabs renders empty during screen transition and populates afterward, causing content to shift on SDK 57.",
+        "why_easy": "Clear reproduction steps, working baseline in SDK 54, and well-documented MRE; however, fixing requires deep knowledge of expo-router's NativeTabs initialization and the changes between SDK versions."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47609,
+      "title": "[docs] MenuView documentation unclear on possible requirement for a Pressable child",
+      "url": "https://github.com/expo/expo/issues/47609",
+      "created_at": "2026-07-08T01:24:09Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Clarify whether Pressable wrapper is required in MenuView examples, or remove it if unnecessary",
+        "why_easy": "Documentation task with clear scope and investigation already done by the contributor; fix is either to remove unnecessary Pressable from examples or add an explanatory note"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47605,
+      "title": "patch-project doesn't revert CNG patch when run with --no-clean",
+      "url": "https://github.com/expo/expo/issues/47605",
+      "created_at": "2026-07-07T20:33:19Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The expo prebuild --no-clean command fails to revert previously applied CNG patches before attempting to reapply them, causing patch conflicts.",
+        "why_easy": "The issue is well-reproduced with a minimal example showing the exact failure mode, but fixing it requires understanding the patch-project state management logic and how it handles the --no-clean flag, plus ensuring the fix doesn't break the normal clean-build path."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325000,
+      "title": "Dropping a URL into the editor from Firefox requires holding shift",
+      "url": "https://github.com/microsoft/vscode/issues/325000",
+      "created_at": "2026-07-08T17:04:14Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Dragging a URL from Firefox into the editor on Windows incorrectly requires holding shift to paste",
+        "why_easy": "Clear reproduction steps, but requires understanding drag-drop event handling and platform-specific differences between Firefox and other browsers"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 324996,
+      "title": "`list.find` doesn't match by file's directory path in reference view",
+      "url": "https://github.com/microsoft/vscode/issues/324996",
+      "created_at": "2026-07-08T16:56:58Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The list.find feature in the reference view only searches filenames and visible text, not file directory paths, limiting its usefulness when multiple files share the same name",
+        "why_easy": "Requires understanding how the reference view renders items and how list search interacts with it in VS Code's large codebase, plus knowledge of what text should be searchable\u2014not typical for new contributors"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 324995,
+      "title": "Using Rubber Duck agent switches model in model picker",
+      "url": "https://github.com/microsoft/vscode/issues/324995",
+      "created_at": "2026-07-08T16:54:27Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Rubber duck agent incorrectly switches the model picker to show model B instead of the original model A after running a review",
+        "why_easy": "The reproduction steps are clear and the bug is localized to model state management, but pinpointing why the rubber duck agent overrides the model selection requires understanding multiple interacting systems in a large codebase"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 324994,
+      "title": "Corner radius of `editor.widget.suggestWidget` and `suggest.details` are different",
+      "url": "https://github.com/microsoft/vscode/issues/324994",
+      "created_at": "2026-07-08T16:53:29Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix mismatched border-radius and box-shadow styling between editor suggestion widget and details panel",
+        "why_easy": "The issue pinpoints the exact CSS files and line numbers needing changes, and the fix involves only adjusting CSS properties (border-radius and box-shadow values) to match between two related widgets."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 324993,
+      "title": "MCP tools and vscode.lm.registerTool tools silently dropped in Agent mode on Remote SSH host (regression of #317992, still broken in 1.128)",
+      "url": "https://github.com/microsoft/vscode/issues/324993",
+      "created_at": "2026-07-08T16:53:02Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "MCP server tools and extension-registered tools don't appear in Copilot Agent sessions when running on Remote SSH, despite being correctly discovered and registered",
+        "why_easy": "Hard to pick up because it's a regression involving complex tool injection across VS Code's remote extension host boundary, requiring deep architectural understanding and likely involving debugging why the previous fix (#317992) was incomplete"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 324992,
+      "title": "MCP tool names collide when multiple servers report the same serverInfo.name, producing unstable _2/_3 prefixes",
+      "url": "https://github.com/microsoft/vscode/issues/324992",
+      "created_at": "2026-07-08T16:52:17Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "MCP tool name prefixes should be derived from the stable mcp.json server key rather than backend-reported serverInfo.name to prevent unstable numeric suffix collisions",
+        "why_easy": "The root cause is clearly identified and the fix is conceptually straightforward, but it requires understanding VS Code's MCP architecture and ensuring changes to the naming scheme don't break existing tool routing or configuration handling."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 324989,
+      "title": "Feature Request: Add an interactive Inline Command History Search/Filter UI for Integrated Terminal",
+      "url": "https://github.com/microsoft/vscode/issues/324989",
+      "created_at": "2026-07-08T16:49:06Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add an interactive dropdown UI to search and filter terminal command history with fuzzy matching across different shells",
+        "why_easy": "Requires deep knowledge of VS Code's terminal architecture and handling shell-specific history systems (bash, zsh, PowerShell) which vary significantly across platforms, making it challenging for contributors new to the codebase"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 324985,
+      "title": "UI performance degrades after opening Hover, Command Palette, or main menu",
+      "url": "https://github.com/microsoft/vscode/issues/324985",
+      "created_at": "2026-07-08T16:28:19Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code UI performance degrades after opening Hover, Command Palette, or main menu",
+        "why_easy": "Reproducing requires a large workspace and low-performance machine; the root cause requires performance profiling and deep understanding of VS Code's UI rendering pipeline."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 324984,
+      "title": "Feature Request: Chat conversation outline & turn navigation (like Ophel Atlas)",
+      "url": "https://github.com/microsoft/vscode/issues/324984",
+      "created_at": "2026-07-08T16:26:07Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add conversation outline, turn navigation, and configurable auto-scroll to Copilot Chat for navigating long sessions",
+        "why_easy": "Well-documented with clear MVP and inspiration provided, but requires integrating with VS Code's chat architecture, settings system, and potentially new UI components\u2014not suitable for first-time contributors unfamiliar with the codebase"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 324979,
+      "title": "Agent believes tools are disabled after usage budget runs out, and doesn't recover when budget is restored",
+      "url": "https://github.com/microsoft/vscode/issues/324979",
+      "created_at": "2026-07-08T16:17:44Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Agent incorrectly believes tools are disabled after usage budget exhaustion and fails to recover tool availability when budget is restored",
+        "why_easy": "The issue has clear reproduction steps and expected behavior, but fixing it requires understanding how the agent manages tool availability state during and after quota errors, which likely involves error handling and state recovery logic."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 95588,
+      "title": "Streamed Suspense boundaries never reveal in documents that load hidden (background tab, occluded window, iOS standalone PWA) \u2014 vendored react-dom gates the first $RB reveal batch on requestAnimationFrame",
+      "url": "https://github.com/vercel/next.js/issues/95588",
+      "created_at": "2026-07-07T23:13:23Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Streamed Suspense boundaries never reveal in documents loaded while hidden because reveal batches are gated on requestAnimationFrame, which doesn't fire in hidden tabs, occluded windows, or iOS PWAs",
+        "why_easy": "Hard: requires deep React streaming internals expertise and cross-platform testing; modifying vendored react-dom scheduling logic affects core behavior. Root cause and likely fix (setTimeout fallback when hidden) are clearly documented."
+      }
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 48791,
+      "title": "[tailwind] why color wont change ?",
+      "url": "https://github.com/mui/material-ui/issues/48791",
+      "created_at": "2026-07-08T11:15:15Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "User unable to apply Tailwind CSS classes to Material-UI Paper component",
+        "why_easy": "Appears to be a documentation or configuration clarification issue rather than a code bug, but the issue lacks details on setup, versions, and expected behavior, making it non-actionable in its current form"
+      }
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 48784,
+      "title": "Unable to access web documentation from egypt",
+      "url": "https://github.com/mui/material-ui/issues/48784",
+      "created_at": "2026-07-06T10:43:36Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Web documentation is inaccessible from Egypt, resulting in connection timeouts",
+        "why_easy": "Hard to pick up because it requires reproducing a geographically-specific infrastructure or CDN issue that most contributors cannot reproduce locally, and likely requires DevOps or hosting provider access to investigate"
+      }
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 48760,
+      "title": "Modernize Default MUI Shadows / Add Theme Shadow Options",
+      "url": "https://github.com/mui/material-ui/issues/48760",
+      "created_at": "2026-07-03T04:25:39Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add modern shadow presets or update default shadows in MUI's theme system to match contemporary design aesthetics",
+        "why_easy": "Hard for newcomers because it's awaiting maintainer input on the approach, requires understanding MUI's theme architecture, and involves design decisions around backward compatibility and the API shape for shadow presets."
+      }
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 48746,
+      "title": "[RFC] enhanceDensity \u2014 opt-in component density",
+      "url": "https://github.com/mui/material-ui/issues/48746",
+      "created_at": "2026-06-30T14:02:50Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Implement an enhanceDensity function that provides a holistic, opt-in mechanism to adjust spacing, sizing, and typography across Material UI components off a shared scale",
+        "why_easy": "This is hard to pick up because it's an RFC still in discussion, requires architectural design decisions spanning 13+ components, demands deep Material UI internals knowledge, and involves careful non-breaking changes needing core team coordination"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 22895,
+      "title": "Deduplicated empty CSS-module chunks referenced under multiple asset names -> 404 (regression: 8.0.16 OK, 8.1.0+ broken)",
+      "url": "https://github.com/vitejs/vite/issues/22895",
+      "created_at": "2026-07-08T16:23:19Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Empty CSS modules are deduplicated to a single file but referenced under multiple asset names, causing 404s and breaking dynamic imports (regression in 8.1.0+)",
+        "why_easy": "Hard because it requires a complex multi-chunk graph to reproduce, involves intricate deduplication and asset-naming logic spanning multiple systems, and demands understanding what regressed between 8.0.16 and 8.1.0 in git history."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 22892,
+      "title": "bug: Windows paths containing `~` trigger false \"outside of Vite serving allow list\" errors",
+      "url": "https://github.com/vitejs/vite/issues/22892",
+      "created_at": "2026-07-08T09:28:57Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Windows paths containing `~` are incorrectly rejected by Vite's file serving allow list, causing 403 errors",
+        "why_easy": "Bug is clearly reproducible with minimal steps and well-scoped to path handling logic, but requires investigation into Vite's path normalization and Windows-specific knowledge to locate and verify the fix"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 22881,
+      "title": "`resolve.tsconfigPaths` does not work with `import.meta.glob`",
+      "url": "https://github.com/vitejs/vite/issues/22881",
+      "created_at": "2026-07-07T00:50:29Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "import.meta.glob() does not respect aliases defined in resolve.tsconfigPaths",
+        "why_easy": "Well-reproduced with a clear workaround (resolve.alias works), but fixing it requires understanding why glob expansion doesn't apply tsconfig path resolution and coordinating changes across Vite's alias and glob handling systems."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 22864,
+      "title": "`experimental.bundledDev` fails to resolve virtual modules (breaks UnoCSS and Vue DevTools)",
+      "url": "https://github.com/vitejs/vite/issues/22864",
+      "created_at": "2026-07-06T02:28:52Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Virtual modules from plugins fail to resolve when `experimental.bundledDev` is enabled, affecting UnoCSS and Vue DevTools",
+        "why_easy": "Hard because it requires deep understanding of Vite's plugin system, virtual module resolution, and the new bundledDev implementation; multiple ecosystem plugins breaking simultaneously suggests a systemic architectural issue rather than a simple code path bug"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 22863,
+      "title": "Asset transform is missing on URL imports with bundledDev",
+      "url": "https://github.com/vitejs/vite/issues/22863",
+      "created_at": "2026-07-06T01:54:18Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "CSS files imported with ?url under bundledDev mode don't transform internal asset URLs, breaking relative references",
+        "why_easy": "Clear reproduction and incomplete hotfix PR provided, but requires understanding Vite's asset transform pipeline and why it's skipped in bundledDev; the reference fix lacks HMR support, suggesting non-trivial integration work"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 22856,
+      "title": "Manifest contains stale CSS files after Rolldown Deduplication",
+      "url": "https://github.com/vitejs/vite/issues/22856",
+      "created_at": "2026-07-03T17:10:42Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Manifest files contain stale CSS filenames after Rolldown deduplicates files with identical content hashes",
+        "why_easy": "The root cause is clearly documented with a minimal reproduction case, but the fix requires understanding Vite's interaction with Rolldown's deduplication logic and how post-emission manifest generation tracks file references"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35411,
+      "title": "Don't auto-open the browser when `storybook dev` runs under an AI agent (and flip the default in SB11)",
+      "url": "https://github.com/storybookjs/storybook/issues/35411",
+      "created_at": "2026-07-08T09:40:04Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Suppress auto-open of browser when `storybook dev` runs under AI agents by wiring the existing agent detector into the dev-server open gate.",
+        "why_easy": "The agent detector already exists and the integration is straightforward (check detectAgent() at the open gate), but requires understanding dev-server architecture and the truncated issue body obscures full implementation details, making it medium difficulty for new contributors."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35405,
+      "title": "[Bug]: Handle code fences properly in JSDoc",
+      "url": "https://github.com/storybookjs/storybook/issues/35405",
+      "created_at": "2026-07-08T01:47:54Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix Storybook's JSDoc @example parser to properly handle language-tagged code fences like ```tsx instead of only rendering plain ``` fences",
+        "why_easy": "The issue is well-defined with clear reproduction criteria, but requires understanding the autodocs JSDoc parser implementation and likely involves regex or parsing logic updates in a specialized addon"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35403,
+      "title": "experimentalDocgenServer: editing component props doesn't refresh Controls when the component is imported via a barrel/re-export (index.ts)",
+      "url": "https://github.com/storybookjs/storybook/issues/35403",
+      "created_at": "2026-07-07T19:39:15Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The docgen server's file-watch/invalidation logic doesn't trace component edits back to stories when the component is imported via a barrel re-export, causing stale prop documentation.",
+        "why_easy": "The issue has clear reproduction steps and identified root cause (barrel import dependency tracking), but requires understanding Storybook's docgen server and Vite module resolution to implement the fix."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35395,
+      "title": "Angular 22: Ensure new v22 language concepts are covered by internal stories",
+      "url": "https://github.com/storybookjs/storybook/issues/35395",
+      "created_at": "2026-07-07T13:00:35Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "test",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add Storybook stories for new Angular v22 language features in both angular and angular-vite framework packages",
+        "why_easy": "Requires research into Angular v22 language concepts and familiarity with both Storybook and the monorepo's story patterns, plus undefined scope of which features need coverage"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35385,
+      "title": "[Flaky agent] /setup skill injects unrelated config & unused deps into Vitest setup",
+      "url": "https://github.com/storybookjs/storybook/issues/35385",
+      "created_at": "2026-07-07T09:57:38Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix the /setup skill to avoid injecting unrelated Vitest configuration and unused dependencies",
+        "why_easy": "The flaky, AI-generated nature of the issue and lack of clear reproduction steps make debugging difficult\u2014requires understanding the skill's internal logic, prompt handling, and output validation to prevent hallucinated config"
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 20038,
+      "title": "Add support for polyfill configuration in Vite plugin",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/20038",
+      "created_at": "2026-05-11T07:54:07Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add a polyfills configuration option to the Vite plugin to allow disabling or selectively configuring polyfills",
+        "why_easy": "Requires understanding how polyfills are currently generated in the Vite plugin and modifying the configuration schema accordingly, which demands codebase familiarity beyond a typical first issue."
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 19903,
+      "title": "@tailwindcss/vite forces full reload for Angular component stylesheet edits that are later handled by CSS HMR",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/19903",
+      "created_at": "2026-04-05T00:26:07Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "@tailwindcss/vite incorrectly triggers full-page reload for stylesheet edits that should use CSS HMR instead",
+        "why_easy": "Well-investigated with exact location identified in the plugin's hotUpdate hook and a proposed fix available, but requires deep Vite plugin architecture knowledge and complex Analog.js/Angular setup to reproduce and test"
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 19830,
+      "title": "v4.2 Neutral color in color palettes should use none for Hue in OKLCH to prevent Abney Effect and hue-shifting in color-mix()",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/19830",
+      "created_at": "2026-03-20T17:20:54Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Change Tailwind's neutral color palettes to use `none` for OKLCH hue to prevent unwanted hue-shifting in color-mix() operations",
+        "why_easy": "The issue clearly explains the problem and solution with a reproduction case; the fix appears to be updating neutral color palette definitions from hue 0 to `none` in a configuration file"
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 19818,
+      "title": "@tailwindcss/vite Tailwind CSS HMR not working with Vite 7 + SolidStart v2",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/19818",
+      "created_at": "2026-03-17T20:48:12Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Tailwind CSS HMR doesn't apply style changes in Vite 7 with SolidStart v2, requiring full page refresh",
+        "why_easy": "Clear regression (works in Vite 6, broken in Vite 7) with a reproduction repo narrows scope, but requires understanding HMR mechanics in the tailwindcss/vite plugin and debugging Vite's breaking changes"
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 19768,
+      "title": "Japanese/Chinese fonts are not used in Japanese/Chinese pages in Chinese/Japanese Windows by default",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/19768",
+      "created_at": "2026-03-07T11:41:08Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Default font stack using `system-ui` causes incorrect CJK font rendering on Windows when OS locale doesn't match page language",
+        "why_easy": "Fix is a simple configuration change to the default font stack, but requires expertise in font rendering semantics and thorough cross-platform testing to ensure no regressions"
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 19767,
+      "title": "Greek letter \"\u03a9\" is displayed as Cyrillic letter \"\u0438\" when bolded in Japanese Windows",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/19767",
+      "created_at": "2026-03-07T11:41:05Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Greek letter \u03a9 displays as Cyrillic \u0438 when bolded on Japanese Windows due to Yu Gothic UI bug triggered by system-ui in default font stack",
+        "why_easy": "The fix is straightforward (remove system-ui from defaults), but it's a core framework change affecting all users globally that requires cross-platform testing and maintainer discussion about backward compatibility tradeoffs."
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 19751,
+      "title": "tailwindcss-windows-x64.exe exits early in Windows ARM64",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/19751",
+      "created_at": "2026-03-03T15:58:36Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Provide native Windows ARM64 build of Tailwind CSS CLI",
+        "why_easy": "Requires understanding Rust build configuration, CI/CD infrastructure, and release processes\u2014not suitable for first-time contributors."
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 19722,
+      "title": "[v4] Custom named --spacing-* values shadow leading-none staticValues (e.g. --spacing-none: 0 causes line-height: 0)",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/19722",
+      "created_at": "2026-02-25T06:28:11Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Custom `--spacing-none` values shadow the static `leading-none` value, causing `leading-none` to output `line-height: 0` instead of `line-height: 1`",
+        "why_easy": "Root cause is clearly identified and reproduction is minimal, but the fix requires understanding Tailwind v4's theme resolution order and ensuring the change doesn't break numeric fallbacks like `leading-6`"
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 19566,
+      "title": "Angular 21 cannot automatically recover using @apply with Tailwind CSS 4",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/19566",
+      "created_at": "2026-01-16T09:24:27Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Tailwind CSS 4 cannot recover from invalid @apply directive in Angular 21 without application restart",
+        "why_easy": "Issue has clear reproduction steps, but fixing requires understanding Tailwind's error state management and how it interacts with Angular's build cache during hot reload"
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 19555,
+      "title": "Upgrade tool (3 -> 4) migrates `maxWidth` configuration to `container` vars",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/19555",
+      "created_at": "2026-01-12T13:54:27Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The v3 to v4 upgrade tool incorrectly migrates custom maxWidth config values to --container CSS variables, breaking utilities like columns-3",
+        "why_easy": "Well-documented with clear reproduction commits showing before/after behavior, but requires understanding the migration tool internals and how Tailwind v4's CSS variables work"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68627,
+      "title": "Grammar fixes in the Build a Recipe Page lab",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68627",
+      "created_at": "2026-07-08T15:01:24Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix two grammar issues in the Build a Recipe Page lab by splitting a run-on sentence and adding a missing article",
+        "why_easy": "The issue provides exact before/after text for both changes, requiring only find-and-replace in curriculum files"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68621,
+      "title": "workshop flappy penguin step 59 test update",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68621",
+      "created_at": "2026-07-08T11:37:26Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update the test for flappy penguin step 59 to accept CSS selectors with multiple classes in any order",
+        "why_easy": "The issue clearly identifies the specific test and problem; the fix likely requires updating a single selector matcher to accept both `.left.eye` and `.eye.left` orderings."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68617,
+      "title": "Mixed tab/space indentation in Greeting Card workshop seed",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68617",
+      "created_at": "2026-07-08T06:56:32Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix mixed tab/space indentation in Greeting Card workshop closing div tags across all 25 steps",
+        "why_easy": "The fix is a straightforward find-and-replace of tab characters with spaces in a localized, well-documented curriculum section with clear acceptance criteria."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68614,
+      "title": "100K graduates for site adverts",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68614",
+      "created_at": "2026-07-08T00:21:59Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update the graduate count displayed in site advertisements from 40K to 100K",
+        "why_easy": "Straightforward text replacement with clear reproduction steps and a screenshot showing exactly where the outdated number appears"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68600,
+      "title": "Writing errors in the \"what is UTF-8 character encoding\" lecture",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68600",
+      "created_at": "2026-07-06T20:30:12Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix two writing errors in the UTF-8 character encoding lecture by replacing a spaced hyphen with a comma and removing redundant 'of' from a question.",
+        "why_easy": "Both fixes are simple text replacements with clear before-and-after examples provided; no code changes needed."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68598,
+      "title": "Writing and formatting errors in the \"role of the link element\" lecture",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68598",
+      "created_at": "2026-07-06T20:30:05Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix writing and formatting errors in the HTML link element lecture (font name typo, grammar, formatting, and missing article).",
+        "why_easy": "The issues are straightforward text corrections with specific before/after states provided, requiring only find-and-replace style edits."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68596,
+      "title": "Text formatting and wording errors across five steps of the Cat Photo App workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68596",
+      "created_at": "2026-07-06T20:26:58Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix five text formatting and wording errors across the Cat Photo App workshop steps.",
+        "why_easy": "Each fix is a simple text replacement with clear before-and-after specifications\u2014no code logic or system understanding required."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68593,
+      "title": "[bug] double exam attempt error throws",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68593",
+      "created_at": "2026-07-06T20:13:38Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Exam attempt handler throws error when update targets a record that doesn't exist during double-attempt scenario",
+        "why_easy": "Specific file and line number with clear error condition; likely a straightforward fix to handle the missing record (e.g., use upsert or check existence first)"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68567,
+      "title": "Failed to set up chrome-headless-shell during `pnpm install` in WSL",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68567",
+      "created_at": "2026-07-05T18:32:24Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Puppeteer fails to download chrome-headless-shell during pnpm install on WSL Ubuntu",
+        "why_easy": "Requires WSL-specific debugging and understanding of Puppeteer's postinstall process; root cause could be missing system dependencies, architecture mismatches, or configuration issues, making diagnosis non-obvious for new contributors without WSL access"
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17274,
+      "title": "[discussion]: support SSE comment fields in SseStream",
+      "url": "https://github.com/nestjs/nest/issues/17274",
+      "created_at": "2026-07-08T11:11:44Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Add support for SSE comment fields in MessageEvent and SseStream serialization",
+        "why_easy": "The implementation is straightforward (adding comment field serialization with colon prefix), the author has a working patch ready, and the change is additive with no breaking changes to existing functionality."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29702,
+      "title": "stark serralheria ",
+      "url": "https://github.com/prisma/prisma/issues/29702",
+      "created_at": "2026-07-08T16:43:09Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Spam: marketing content for a Brazilian gate automation business",
+        "why_easy": "Not a legitimate issue\u2014this is off-topic spam advertising an unrelated business and should be closed/removed"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29699,
+      "title": "dc bbb ",
+      "url": "https://github.com/prisma/prisma/issues/29699",
+      "created_at": "2026-07-08T13:41:03Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Unclear issue with placeholder title and no description",
+        "why_easy": "Issue provides no description of what needs to be fixed; contributor would need to request clarification before any work could begin"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29698,
+      "title": "dc bbb ",
+      "url": "https://github.com/prisma/prisma/issues/29698",
+      "created_at": "2026-07-08T13:41:03Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Issue with no description and unclear title \u2014 appears incomplete or malformed",
+        "why_easy": "Impossible to pick up \u2014 lacks any description or requirements, making it unclear what problem needs to be addressed"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29696,
+      "title": "Invalid Date passed to $queryRaw/$executeRaw is silently serialized as the string \"null\" instead of throwing",
+      "url": "https://github.com/prisma/prisma/issues/29696",
+      "created_at": "2026-07-07T23:56:56Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add validation to raw parameter serialization to throw an error for invalid Dates instead of silently converting them to the string \"null\".",
+        "why_easy": "The root cause files are explicitly identified, the fix uses an existing isValidDate helper, and it's a simple validation check in one utility function."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29694,
+      "title": "Bytes fields deserialize to a Uint8Array backed by Node's shared Buffer pool (wrong .buffer, cross-value exposure)",
+      "url": "https://github.com/prisma/prisma/issues/29694",
+      "created_at": "2026-07-06T01:24:58Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Bytes fields deserialize to views into a shared buffer pool instead of owned copies, exposing data between values.",
+        "why_easy": "Issue provides exact file locations with line numbers and working code examples; the fix is a simple function call replacement in two places."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29682,
+      "title": "prisma db pull on previewFeatures isn't generating stable schema",
+      "url": "https://github.com/prisma/prisma/issues/29682",
+      "created_at": "2026-07-02T08:41:23Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix non-deterministic ordering of previewFeatures array in schema generated by prisma db pull",
+        "why_easy": "The fix likely involves sorting the previewFeatures array before writing the schema file; the problem is well-localized and requires no domain expertise beyond finding where features are serialized."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29680,
+      "title": "Prisma Migration Reset for Simple Schema Changes",
+      "url": "https://github.com/prisma/prisma/issues/29680",
+      "created_at": "2026-07-01T15:48:37Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "docs",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Document best practices for managing schema evolution workflows when development databases contain valuable test data",
+        "why_easy": "Requires understanding Prisma's migration reset triggers and researching real-world team practices, with no clearly defined solution to implement"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29679,
+      "title": "Support node:sqlite as SQLite connector",
+      "url": "https://github.com/prisma/prisma/issues/29679",
+      "created_at": "2026-07-01T12:29:22Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add support for Node.js native `node:sqlite` module as an alternative SQLite connector to reduce supply chain risk from `better-sqlite3` post-install scripts",
+        "why_easy": "Hard to pick up because it requires deep understanding of Prisma's SQLite adapter architecture and refactoring the abstraction layer to support multiple drivers, though Drizzle's prior implementation provides some reference value."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29676,
+      "title": "PANIC: timer has gone away",
+      "url": "https://github.com/prisma/prisma/issues/29676",
+      "created_at": "2026-06-29T22:50:53Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "A 'timer has gone away' panic occurs during Prisma development tools or migrations",
+        "why_easy": "Issue is nearly empty\u2014no reproduction steps, logs, environment details, or schema provided; the cryptic error message suggests a deep runtime issue requiring significant investigation to even trigger"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 47747,
+      "title": "Edge functions rejecting legacy HS256 JWTs since today",
+      "url": "https://github.com/supabase/supabase/issues/47747",
+      "created_at": "2026-07-08T16:45:48Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Edge Functions are rejecting valid legacy HS256 JWTs since today while Postgres works fine, indicating a platform-side regression.",
+        "why_easy": "Clear regression starting today with multiple reports suggests a recent code or configuration change, but requires Supabase infrastructure access to review deployment logs and identify what broke legacy JWT validation."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 47739,
+      "title": "Edge Functions show \"ACTIVE\" but return 404 NOT_FOUND_FUNCTION_BLOB on all requests (49 functions simultaneously after GitHub auto-deploy)",
+      "url": "https://github.com/supabase/supabase/issues/47739",
+      "created_at": "2026-07-08T13:53:33Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Edge Functions metadata marked ACTIVE but underlying blob missing after auto-deploy, causing 404 errors until manual redeploy",
+        "why_easy": "Hard to diagnose because it cannot be reliably reproduced on demand, involves race conditions across multiple storage/metadata systems, and likely requires deep knowledge of the deploy pipeline's consistency guarantees and blob persistence logic."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 50927,
+      "title": "Version 3.5.16 shown as latest in GitHub Releases",
+      "url": "https://github.com/spring-projects/spring-boot/issues/50927",
+      "created_at": "2026-07-08T14:07:51Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix release workflow to mark releases as latest based on semantic version instead of release date",
+        "why_easy": "The root cause is identified with specific file references, and the solution is clearly suggested with links to GitHub REST API documentation."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 50926,
+      "title": "Add configurable timeout support to JmsHealthIndicator",
+      "url": "https://github.com/spring-projects/spring-boot/issues/50926",
+      "created_at": "2026-07-07T14:48:32Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Make the JmsHealthIndicator's 5-second timeout configurable via application properties",
+        "why_easy": "Follows established Spring Boot configuration patterns, but requires understanding property binding and HealthIndicator framework architecture"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 50925,
+      "title": "Nested JAR loader race condition with concurrent jar file access",
+      "url": "https://github.com/spring-projects/spring-boot/issues/50925",
+      "created_at": "2026-07-07T06:40:19Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Spring Boot's new JAR loader has a race condition causing NoClassDefFoundError when MongoDB driver and Elastic APM agent access classes concurrently at startup",
+        "why_easy": "Race conditions are notoriously difficult to debug\u2014this reproduces only ~1 in 25 startups and requires deep expertise in Java classloading, concurrency, and Spring Boot's nested JAR loader internals."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 50924,
+      "title": "New ConfigurationBeanNameGenerator causes unexpected behavior with Spring Boot",
+      "url": "https://github.com/spring-projects/spring-boot/issues/50924",
+      "created_at": "2026-07-06T15:00:19Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "ConfigurationBeanNameGenerator specified in @SpringBootApplication is not automatically propagated to SpringApplication, requiring duplicate configuration",
+        "why_easy": "Requires deep understanding of Spring Boot's initialization pipeline and Spring 7's new ConfigurationBeanNameGenerator feature; the fix is likely localized but discovering the integration points requires significant framework internals knowledge"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 50907,
+      "title": "Homebrew formula clashes with formula produce by Boot 4.1",
+      "url": "https://github.com/spring-projects/spring-boot/issues/50907",
+      "created_at": "2026-07-02T21:00:27Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Split the Homebrew formula into separate versions for 3.x and 4.x lines to prevent unintended major version switching.",
+        "why_easy": "The fix is well-specified and conceptually straightforward, but requires understanding Homebrew formula structure and potentially modifying the bot logic that generates these formulas."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 50905,
+      "title": "Revert 9369986 once we've upgraded to Gradle 9.7",
+      "url": "https://github.com/spring-projects/spring-boot/issues/50905",
+      "created_at": "2026-07-02T06:44:03Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Revert commit 9369986 (a Gradle bug workaround) once Spring Boot upgrades to Gradle 9.7.",
+        "why_easy": "The revert itself is trivial, but the issue is marked team-only and blocked on Gradle 9.7's release, making it unsuitable for external contributors to pick up independently."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 50903,
+      "title": "Get MockRestServiceServer by ImportHttpServices group in tests",
+      "url": "https://github.com/spring-projects/spring-boot/issues/50903",
+      "created_at": "2026-07-01T08:44:37Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add a RestClientHttpServiceGroupConfigurer to provide MockRestServiceServer access for HttpServiceGroups configured via @ImportHttpServices",
+        "why_easy": "The issue provides reference implementations from both Spring Boot and Spring Framework to guide the work, but requires understanding how RestClient, @ImportHttpServices, MockServerRestClientCustomizer, and HttpServiceGroup interact together\u2014too much domain knowledge for a first-timer."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 50900,
+      "title": "Align the default for server.tomcat.use-relative-redirects with Tomcat's default",
+      "url": "https://github.com/spring-projects/spring-boot/issues/50900",
+      "created_at": "2026-07-01T02:41:00Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Change the default of server.tomcat.use-relative-redirects from false to true to align with Tomcat's default and Servlet API 6.1 spec compliance.",
+        "why_easy": "It's a straightforward default value change in a configuration property with clear upstream justification, likely affecting only the property definition and its associated tests."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 50898,
+      "title": "Improve startup performance of DevTools by starting fileSystemWatcher async",
+      "url": "https://github.com/spring-projects/spring-boot/issues/50898",
+      "created_at": "2026-06-30T12:09:40Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Start the file system watcher asynchronously during DevTools initialization to improve startup performance",
+        "why_easy": "The issue clearly identifies the performance bottleneck and suggests a concrete pattern (async initialization like spring.jpa.bootstrap), but requires understanding Spring Boot's async initialization mechanisms and careful testing to ensure async startup doesn't break file watching behavior."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 50893,
+      "title": "Dedicated Spring Boot Claude Skills",
+      "url": "https://github.com/spring-projects/spring-boot/issues/50893",
+      "created_at": "2026-06-30T06:56:58Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Request for official Spring Boot Skills to enable Claude to automate Spring Boot development tasks like scaffolding, CRUD generation, and configuration",
+        "why_easy": "This is a product inquiry requiring architectural decisions and coordination between Spring and Anthropic teams, not a concrete engineering task with clear scope for a new contributor."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 50887,
+      "title": "Hibernate Maven Plugin version mismatch in Spring Boot 4.1.0 BOM breaks GraalVM Native Image builds when using JPA and Liquibase",
+      "url": "https://github.com/spring-projects/spring-boot/issues/50887",
+      "created_at": "2026-06-29T15:30:36Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Spring Boot 4.1.0 BOM pins incompatible versions of hibernate-maven-plugin (7.0.0.Beta1) and hibernate-core (7.4.1.Final), breaking GraalVM native image builds",
+        "why_easy": "The fix is likely a straightforward BOM version bump, but reproducing and validating the fix requires complex setup (GraalVM, Docker, Testcontainers) and understanding Hibernate version compatibility constraints across multiple systems"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 50884,
+      "title": "Auto-configured RedisMessageListenerContainer does not use virtual threads when spring.threads.virtual.enabled is true",
+      "url": "https://github.com/spring-projects/spring-boot/issues/50884",
+      "created_at": "2026-06-29T08:56:55Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "RedisMessageListenerContainer should respect spring.threads.virtual.enabled to use virtual threads when that feature is enabled",
+        "why_easy": "No issue description is provided, forcing the contributor to research Spring's virtual thread architecture and RedisMessageListenerContainer configuration before locating where the fix belongs"
+      }
+    },
+    {
+      "repo": "pallets/flask",
+      "number": 6071,
+      "title": "Tests fail with pytest 9.1: _pytest.monkeypatch.notset removed",
+      "url": "https://github.com/pallets/flask/issues/6071",
+      "created_at": "2026-07-02T07:37:53Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix pytest 9.1 compatibility by updating imports from removed _pytest.monkeypatch.notset to _pytest.compat.NOTSET",
+        "why_easy": "The issue clearly identifies the problem and solution with exact file locations and reproduction steps; requires only updating two imports from the removed private API to the new location."
+      }
+    },
+    {
+      "repo": "pallets/flask",
+      "number": 6065,
+      "title": "Add a query() route shortcut and MethodView support for HTTP QUERY (RFC 10008)",
+      "url": "https://github.com/pallets/flask/issues/6065",
+      "created_at": "2026-06-23T22:10:11Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add query() route shortcut and MethodView support for the RFC 10008 HTTP QUERY method",
+        "why_easy": "Infrastructure already supports QUERY requests; changes are small additions mirroring existing get/post/put/delete/patch patterns with no complex logic needed."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66211,
+      "title": "DOC: Should `pandas.api.types.is_array_like` be documented?",
+      "url": "https://github.com/pandas-dev/pandas/issues/66211",
+      "created_at": "2026-07-08T13:42:09Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add documentation for `pandas.api.types.is_array_like()` which is part of the public API but missing from the reference guide.",
+        "why_easy": "The function already exists in the public API module; the task is likely just adding it to the appropriate .rst documentation file or API reference, a straightforward documentation process."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66207,
+      "title": "PERF: Pure Python loops when calculating validity masks and offset arrays in Interchange Protocol",
+      "url": "https://github.com/pandas-dev/pandas/issues/66207",
+      "created_at": "2026-07-08T04:43:51Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Optimize validity mask and offset buffer construction in the DataFrame Interchange Protocol by replacing Python loops with vectorized NumPy operations",
+        "why_easy": "Clear optimization targets and specific solutions proposed with benchmarks, but requires understanding the Interchange Protocol and careful handling of edge cases like missing values and UTF-8 encoding"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66205,
+      "title": "PERF: High overhead in stack frame warning inspections (find_stack_level)",
+      "url": "https://github.com/pandas-dev/pandas/issues/66205",
+      "created_at": "2026-07-08T04:27:22Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Optimize find_stack_level() by caching pkg_dir and test_dir paths and using frame.f_code.co_filename instead of inspect.getfile()",
+        "why_easy": "The issue provides exact optimization guidance, a localized change to a single function, existing benchmarks to validate against, and only requires replacing one function call and adding module-level caching."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66203,
+      "title": "PERF: High overhead in DataFrame.apply(raw=True) due to np.apply_along_axis",
+      "url": "https://github.com/pandas-dev/pandas/issues/66203",
+      "created_at": "2026-07-07T19:19:26Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Optimize DataFrame.apply(raw=True) by replacing np.apply_along_axis with a fast-path list comprehension to achieve 1.4x-2.2x speedup on 2D arrays.",
+        "why_easy": "The optimization target and technique are clearly documented with specific performance metrics, but requires deep codebase knowledge to implement correctly and validate across edge cases without introducing regressions."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66197,
+      "title": "PERF: String column serialization in Interchange protocol is slow",
+      "url": "https://github.com/pandas-dev/pandas/issues/66197",
+      "created_at": "2026-07-07T17:10:02Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Optimize string column serialization in the DataFrame Interchange Protocol using vectorized NumPy operations instead of element-wise Python encoding",
+        "why_easy": "Simple one-line replacement with provided benchmarks and clear problem statement, but requires understanding the interchange protocol internals and careful testing for null-handling and encoding edge cases"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66195,
+      "title": "BUG: CustomBusinessMonthBegin and CustomBusinessMonthEnd type signatures are missing the calendar and weekmask keyword arguments",
+      "url": "https://github.com/pandas-dev/pandas/issues/66195",
+      "created_at": "2026-07-07T15:18:49Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add missing calendar and weekmask keyword arguments to the type signatures of CustomBusinessMonthBegin and CustomBusinessMonthEnd",
+        "why_easy": "Clear scope with a working reference implementation (CustomBusinessDay); requires updating type stub files with parameters already proven correct in a similar class"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66192,
+      "title": "BUG: Incorrect formatting of empty `frozenset` in object Series",
+      "url": "https://github.com/pandas-dev/pandas/issues/66192",
+      "created_at": "2026-07-07T11:20:42Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Empty frozensets display as `frozenset({})` instead of `frozenset()` in Series output",
+        "why_easy": "Narrow, reproducible issue\u2014likely a simple fix in the object formatter to handle empty frozensets specially"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 31913,
+      "title": "Tracking Issue: Adoption of CPython limited API",
+      "url": "https://github.com/numpy/numpy/issues/31913",
+      "created_at": "2026-07-08T10:35:51Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Adopt CPython's limited API in NumPy by refactoring internal structures and restricting C-API usage to stable functions.",
+        "why_easy": "This is a large, multi-faceted tracking issue requiring deep expertise in both CPython internals and NumPy's C codebase; it coordinates a long-term effort rather than offering a concrete, self-contained task."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 31909,
+      "title": "BUG: DataSource methods do not consistently accept pathlib.Path inputs",
+      "url": "https://github.com/numpy/numpy/issues/31909",
+      "created_at": "2026-07-08T05:35:32Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": true,
+        "one_line_summary": "Add pathlib.Path support to numpy.lib._datasource methods by normalizing inputs with os.fspath()",
+        "why_easy": "A reference implementation exists in #31906 and the fix is straightforward, but it must be applied consistently across multiple methods with comprehensive test coverage"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 31868,
+      "title": "BUG: `numpy.ma.MaskedArray` arithmetic with Python scalars differs from `ndarray`",
+      "url": "https://github.com/numpy/numpy/issues/31868",
+      "created_at": "2026-07-05T12:35:25Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "MaskedArray arithmetic with Python scalars promotes dtype to int64 instead of preserving the input dtype like ndarray does",
+        "why_easy": "Reproducible with clear examples, but requires understanding NumPy's type promotion rules and locating where MaskedArray's arithmetic operators differ from ndarray"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 31866,
+      "title": "ENH: Reduce `__array_function__` dispatch overhead",
+      "url": "https://github.com/numpy/numpy/issues/31866",
+      "created_at": "2026-07-04T20:42:32Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Reduce __array_function__ dispatch overhead for exact ndarrays and basic types",
+        "why_easy": "Hard to pick up: requires deep knowledge of NumPy's C internals, __array_function__ dispatch, and NEP 18, though reference implementations and benchmarks are provided"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34437,
+      "title": "The PyPI wheel doesn't bundle the right `libgomp` on Linux",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34437",
+      "created_at": "2026-07-06T12:31:09Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix PyPI wheel to bundle GCC 14 libgomp instead of old GCC 8.5 version by setting LD_LIBRARY_PATH during auditwheel repair",
+        "why_easy": "The fix is a straightforward environment variable addition to the CI workflow with clear reproduction steps, but requires understanding Linux build infrastructure, manylinux standards, and wheel building to properly test and verify."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34436,
+      "title": "Birch: subcluster radius is numerically unstable far from the origin \u2014 clustering is not translation-invariant",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34436",
+      "created_at": "2026-07-06T10:12:27Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix translation-variance bug in Birch clustering caused by numerically unstable subcluster radius calculation using catastrophic cancellation in floating-point arithmetic",
+        "why_easy": "Solution is well-documented (BETULA paper, reference implementation #34433) but requires understanding numerical stability and CF-tree merge algorithms; Python-only change to one calculation in _birch.py"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34431,
+      "title": "Separate control over response surfaces and class boundaries in `DecisionBoundaryDisplay`",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34431",
+      "created_at": "2026-07-03T15:43:11Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add separate control over response surface and class boundary styling in DecisionBoundaryDisplay.from_estimator() via show_class_boundaries, response_kwargs, and boundary_kwargs parameters.",
+        "why_easy": "Primarily parameter refactoring and routing work, but requires understanding the current implementation's handling of kwargs and resolving design edge cases (e.g., when plot_method='contour' and response_method='predict', show_class_boundaries could have no valid False state)."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45071,
+      "title": "Required PAT scope to reclaim Mannequins listed is incorrect",
+      "url": "https://github.com/github/docs/issues/45071",
+      "created_at": "2026-07-07T07:35:29Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update documentation to correct PAT scopes required for reclaiming mannequins in ADO migrations",
+        "why_easy": "Simple documentation correction: the scope requirement needs to be updated from 'admin:org' only to 'repo, admin:org, workflow' in a single location, with clear evidence provided by the reporter's testing."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45070,
+      "title": "IMPROVE EXISTING ONE",
+      "url": "https://github.com/github/docs/issues/45070",
+      "created_at": "2026-07-07T06:43:30Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "docs",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "A vague request to improve an article with no clear guidance or valid documentation links provided.",
+        "why_easy": "The issue lacks sufficient detail, contains non-docs links instead of actual docs.github.com URLs, and provides no actionable guidance for what should be improved."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45057,
+      "title": "Follow-up: Rejected CVE-2026-4821 referenced on March/April 2026 Enterprise Server Release notes",
+      "url": "https://github.com/github/docs/issues/45057",
+      "created_at": "2026-07-06T08:21:36Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "docs",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Remove or update rejected CVE-2026-4821 from Enterprise Server release notes across multiple versions",
+        "why_easy": "The issue clearly identifies affected pages but requires investigation into whether the CVE should be removed entirely or replaced with a correct CVE ID, plus coordination across multiple versioned documentation pages, making it unsuitable for external contributors without internal GitHub context"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45040,
+      "title": "read icloud information",
+      "url": "https://github.com/github/docs/issues/45040",
+      "created_at": "2026-07-04T01:25:02Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "docs",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Request to update GitHub Docs with iCloud-related information, provided only as file attachments without clear context",
+        "why_easy": "Issue lacks clarity\u2014references only cryptic file attachments instead of linking to specific documentation articles or explaining what changes are needed, requiring author clarification before any work can begin"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45026,
+      "title": "I cannot seem to follow instruction for GitHub Models",
+      "url": "https://github.com/github/docs/issues/45026",
+      "created_at": "2026-07-02T16:36:42Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Documentation for enabling GitHub Models in enterprise is outdated or missing prerequisites explaining why the Models tab may not be visible",
+        "why_easy": "Scope is limited to documentation updates with no code changes needed, but reproducing the issue requires GitHub Enterprise access that contributors typically lack"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45011,
+      "title": "Incorrect MCP servers settings location in configure-mcp-servers.md",
+      "url": "https://github.com/github/docs/issues/45011",
+      "created_at": "2026-07-01T08:56:44Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update configure-mcp-servers.md to reflect actual UI location: MCP settings are under Settings > Copilot > Cloud Agent, not a separate MCP servers sidebar item",
+        "why_easy": "The correct location is already confirmed and documented in the issue; the fix requires only straightforward navigation path updates in the markdown file"
+      }
+    },
+    {
+      "repo": "EbookFoundation/free-programming-books",
+      "number": 13336,
+      "title": "Missing book file",
+      "url": "https://github.com/EbookFoundation/free-programming-books/issues/13336",
+      "created_at": "2026-07-02T14:11:40Z",
+      "digest_date": "2026-07-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "A book link in the Python section of free-programming-books-hy.md is broken and redirects to the main page instead of the PDF",
+        "why_easy": "Requires only finding a valid alternative link or removing the entry\u2014no code changes needed, just markdown editing"
+      }
+    },
+    {
+      "repo": "facebook/react-native",
+      "number": 57502,
+      "title": "Pressability silently drops presses when measure() disagrees with the native hit test (Fabric, natively repositioned views)",
+      "url": "https://github.com/react/react-native/issues/57502",
+      "created_at": "2026-07-09T19:10:36Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Pressability silently drops presses when native view repositioning makes measure() return stale coordinates",
+        "why_easy": "A production-tested patch is provided with identified root cause, but requires understanding Fabric architecture and cross-device testing to verify no press-handling regressions."
+      }
+    },
+    {
+      "repo": "facebook/react-native",
+      "number": 57501,
+      "title": "[iOS][New Arch] Text without numberOfLines clips the last word when the final line is a single short \"orphan\" token (NSLineBreakByClipping)",
+      "url": "https://github.com/react/react-native/issues/57501",
+      "created_at": "2026-07-09T18:58:31Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Text component without numberOfLines clips the final orphan word instead of wrapping it due to NSLineBreakByClipping mode on iOS",
+        "why_easy": "The fix is a single-line change in a clearly identified location with step-by-step reproduction and clear expected behavior"
+      }
+    },
+    {
+      "repo": "facebook/react-native",
+      "number": 57499,
+      "title": "iOS: NSRangeException crash drawing truncated <Text> when the ellipsis boundary splits a composed character cluster (processTruncatedAttributedText)",
+      "url": "https://github.com/react/react-native/issues/57499",
+      "created_at": "2026-07-09T17:04:17Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix NSRangeException crash when Text truncation ellipsis boundary falls inside a composed character cluster",
+        "why_easy": "Requires deep iOS TextKit expertise and careful handling of attribute mutation timing within layout enumeration; testing edge cases with composed characters is tricky"
+      }
+    },
+    {
+      "repo": "facebook/react-native",
+      "number": 57496,
+      "title": "iOS precompiled binaries in React Native 0.84.1 ignore custom Metro ports",
+      "url": "https://github.com/react/react-native/issues/57496",
+      "created_at": "2026-07-09T12:48:47Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "React Native 0.84.1 iOS precompiled binaries ignore custom Metro bundler ports",
+        "why_easy": "Clear regression with reproduction steps and a reproducer repo, but requires understanding iOS native code and React Native's precompiled binary system to diagnose why port configuration isn't being passed through."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47662,
+      "title": "resolver.useWatchman: true can never re-enable Watchman on SDK 56 \u2014 rewritten to null by metro-config, then coerced to false by the CLI",
+      "url": "https://github.com/expo/expo/issues/47662",
+      "created_at": "2026-07-09T19:37:49Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Setting `resolver.useWatchman = true` in metro.config.js doesn't enable Watchman because the value is rewritten to `null` then coerced to `false` in the config pipeline.",
+        "why_easy": "Root cause is clearly identified with specific file locations and line numbers with a suggested fix approach, but understanding the config pipeline semantics across three packages and verifying no unintended side effects adds complexity."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47661,
+      "title": "Android dev build crashes at startup after SDK 56 dependency upgrade because @expo/dom-webview@55.0.6 remains installed",
+      "url": "https://github.com/expo/expo/issues/47661",
+      "created_at": "2026-07-09T19:13:03Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Android dev build crashes on SDK 56 upgrade because @expo/dom-webview remains at version 55.0.6 in lockfile instead of upgrading to 56.0.6",
+        "why_easy": "Issue is exceptionally well-documented with clear root cause and error message, but fixing requires understanding Expo's module registration system and pnpm monorepo dependency resolution to add build-time validation"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47653,
+      "title": "[iOS]: Result of ASWebAuthenticationSession.start is ignored (it can return false!)",
+      "url": "https://github.com/expo/expo/issues/47653",
+      "created_at": "2026-07-09T14:30:00Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Handle the false return value from ASWebAuthenticationSession.start to prevent promises from hanging indefinitely",
+        "why_easy": "The fix is simple\u2014check if start() returns false and settle the promise\u2014but requires Swift/iOS expertise and a design decision about whether to reject or resolve with a new result type"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47643,
+      "title": "[expo-cli] Filter noisy iOS Simulator system logs (VideoToolbox/MediaToolbox/VisionKit/TranslationUI/CoreGraphics) from Metro output",
+      "url": "https://github.com/expo/expo/issues/47643",
+      "created_at": "2026-07-09T11:42:21Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Filter noisy iOS Simulator logs from Apple media/vision frameworks (VideoToolbox, MediaToolbox, VisionKit, etc.) out of Metro console output.",
+        "why_easy": "The fix follows an established pattern of similar filters already in simctlLogging.ts; just add new filter functions matching the existing subsystem-matching logic for the identified frameworks."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325192,
+      "title": "\u00c9chec de la connexion : Error: No auth flow succeeded.",
+      "url": "https://github.com/microsoft/vscode/issues/325192",
+      "created_at": "2026-07-09T21:02:02Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "GitHub authentication fails with 'No auth flow succeeded' error after browser redirect in VS Code",
+        "why_easy": "Requires understanding VS Code's authentication flow architecture and lacks reproduction steps or debugging details needed to identify the root cause"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325186,
+      "title": "Sending a chat when not signed in has an unhelpful error message",
+      "url": "https://github.com/microsoft/vscode/issues/325186",
+      "created_at": "2026-07-09T20:41:44Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Restore helpful sign-in prompt when attempting to send chat without authentication instead of generic 'Language Models Unavailable' error",
+        "why_easy": "A targeted UX fix but requires understanding VS Code's chat and auth integration to locate where the error flow changed."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325185,
+      "title": "Cache break warning shows when not signed in",
+      "url": "https://github.com/microsoft/vscode/issues/325185",
+      "created_at": "2026-07-09T20:38:22Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": true,
+        "one_line_summary": "A cache break warning incorrectly appears in the chat models dropdown when the user is not signed into GitHub Copilot.",
+        "why_easy": "The repro steps are clear and the fix likely requires adding an authentication state check before displaying the warning, but requires finding the warning code in VS Code's chat UI implementation first."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325182,
+      "title": "[Bug]: ESM ASAR loader strict path check fails when launching via NTFS Junction (Scoop compatibility)",
+      "url": "https://github.com/microsoft/vscode/issues/325182",
+      "created_at": "2026-07-09T20:06:12Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "ESM module loader fails when VS Code is launched via NTFS Junction due to strict path comparison in bootstrap-esm.ts",
+        "why_easy": "Root cause is well-identified and scoped to one file, but requires understanding Node.js ESM loader hooks and implementing proper path normalization to handle junction points"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325179,
+      "title": "Modernize: Update first load app skeleton to reflect new layout",
+      "url": "https://github.com/microsoft/vscode/issues/325179",
+      "created_at": "2026-07-09T19:31:19Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update the initial VS Code window loading skeleton to reflect the new design with rounded panels and gaps",
+        "why_easy": "Straightforward styling updates with clear visual requirements, but requires locating the skeleton code in the large VSCode codebase"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325178,
+      "title": "Can't access \"close\" button on last document tab",
+      "url": "https://github.com/microsoft/vscode/issues/325178",
+      "created_at": "2026-07-09T19:21:09Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix the close button being hidden behind the 'More actions' button on the last tab when tabs span multiple rows",
+        "why_easy": "The bug is clearly defined and reproducible with a screenshot, but locating the tab layout code in VS Code's large codebase and understanding multi-row tab positioning logic would require significant exploration"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325177,
+      "title": "Agent Mode md file is not visible similar to Ask and Plan modes",
+      "url": "https://github.com/microsoft/vscode/issues/325177",
+      "created_at": "2026-07-09T19:19:43Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Agent Mode in GitHub Copilot Chat is missing the file icon for navigation that Ask and Plan modes display",
+        "why_easy": "Clear reproduction steps, well-defined scope, and an existing working pattern for Ask/Plan modes to reference make this likely a small code change or configuration addition"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325176,
+      "title": "cannot report a bug for an extension",
+      "url": "https://github.com/microsoft/vscode/issues/325176",
+      "created_at": "2026-07-09T19:18:09Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Bug report dialog fails to list extensions when the extension system encounters load errors",
+        "why_easy": "Hard to pick up because it requires understanding both how VS Code's extension loading system works and how the bug report dialog queries extensions, plus debugging why failed extensions prevent the dialog from showing them"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325174,
+      "title": "Agents window says no model available when a workspace is not selected",
+      "url": "https://github.com/microsoft/vscode/issues/325174",
+      "created_at": "2026-07-09T19:10:50Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Agents window incorrectly shows no model available when a workspace is not selected",
+        "why_easy": "Clear repro steps and likely a straightforward conditional logic fix filtering models based on workspace state"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325172,
+      "title": "Changes panel does not update after history rewrites",
+      "url": "https://github.com/microsoft/vscode/issues/325172",
+      "created_at": "2026-07-09T18:33:28Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "The Agents window Changes panel fails to update after git history rewrites like rebase or reset, showing phantom diffs that no longer match reality",
+        "why_easy": "Hard: requires understanding VS Code's Agents architecture, detecting git history rewrites, and coordinating re-anchoring logic; involves git event monitoring and multiple implementation approaches"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325171,
+      "title": "Separator position regression in bottom panel",
+      "url": "https://github.com/microsoft/vscode/issues/325171",
+      "created_at": "2026-07-09T18:24:25Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "View separator in the bottom panel is rendering at the top instead of between views",
+        "why_easy": "The bug is specific and reproducible with a clear visual symptom, but finding the separator rendering code in VS Code's large panel system requires codebase familiarity, making navigation for a new contributor challenging"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 95648,
+      "title": "App Router: root route's server-side usePathname() is \"/index\" on Vercel, causing hydration mismatch (#418)",
+      "url": "https://github.com/vercel/next.js/issues/95648",
+      "created_at": "2026-07-09T19:08:49Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Root route's server-side usePathname() returns '/index' on Vercel instead of '/', causing hydration mismatches and missing server-rendered content.",
+        "why_easy": "Issue is well-documented with a minimal reproducible repository and clear Flight payload evidence showing the root cause, but fixing it requires deep knowledge of Next.js's routing serialization logic and why Vercel deployments differ from local behavior."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 95637,
+      "title": "NextRouter was not mounted when using the documented custom-server API in production, triggered by any useRouter() call inside _app",
+      "url": "https://github.com/vercel/next.js/issues/95637",
+      "created_at": "2026-07-09T10:53:17Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "RouterContext is not initialized when using the documented custom-server API in production with useRouter() calls in _app.",
+        "why_easy": "Well-isolated reproduction with clear controls, but diagnosing the RouterContext initialization gap requires deep Next.js architecture knowledge."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 95635,
+      "title": "Duplicate identifier 'PagesPageConfig' when Building a Page Router NextJS Application without an pages/api route",
+      "url": "https://github.com/vercel/next.js/issues/95635",
+      "created_at": "2026-07-09T09:15:48Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Duplicate 'PagesPageConfig' TypeScript type is generated when building a Next.js Page Router app without a pages/api folder",
+        "why_easy": "Issue has clear repro steps and pinpoints the exact error location, but fixing it requires understanding Next.js's TypeScript type generation, Turbopack caching, and the .next folder lifecycle"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35430,
+      "title": "[Bug]: Angular-vite typescript check failed with strange AngularMeta error",
+      "url": "https://github.com/storybookjs/storybook/issues/35430",
+      "created_at": "2026-07-09T21:14:07Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix TypeScript compilation error in Angular-vite type definitions where AngularMeta interface constraints conflict with ComponentAnnotations generic parameters",
+        "why_easy": "This requires deep understanding of TypeScript generics and Storybook's type system; the error chain involves multiple layers of type incompatibility that would be challenging to diagnose and resolve without expertise in the codebase."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35427,
+      "title": "[Bug]: playwright install consistently fails on pnpm projects (pnpm approve-builds not queried in time)",
+      "url": "https://github.com/storybookjs/storybook/issues/35427",
+      "created_at": "2026-07-09T13:50:10Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "playwright install fails on pnpm projects because interactive build-script approval prompts are hidden behind the non-interactive spinner during postinstall",
+        "why_easy": "Hard to pick up \u2014 requires understanding pnpm 10+ build-script approval mechanics, handling subprocess stdio piping and interactive prompts in non-interactive contexts, and likely cross-cutting changes across multiple files (postinstall, AddonVitestService, PNPMProxy)"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35426,
+      "title": "[Bug]: Swallowed error while installing `@storybook/addon-a11y` during `storybook init` (appears to have no consequences)",
+      "url": "https://github.com/storybookjs/storybook/issues/35426",
+      "created_at": "2026-07-09T13:49:37Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Error message is swallowed during @storybook/addon-a11y installation in storybook init, though the addon works afterward",
+        "why_easy": "Well-documented with clear reproduction steps and related issues for context, but requires debugging error-handling in the init process and investigating peer-dependency resolution\u2014a complex area with non-obvious root cause"
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 20320,
+      "title": "@tailwindcss/vite forces full page reload when editing a scanned .tsx that isn't a loaded module (Vite 8)",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/20320",
+      "created_at": "2026-07-09T18:16:56Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix @tailwindcss/vite forcing full page reload when editing scanned but not-yet-loaded .tsx files in Vite 8",
+        "why_easy": "The root cause is well-documented with a reproduction repo and a verified fix (regex early-return check), but implementing it requires understanding Vite's module graph and HMR mechanics to confidently test edge cases"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68657,
+      "title": "Colorful Boxes workshop step 3 has a spelling error in the description",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68657",
+      "created_at": "2026-07-09T17:04:58Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix a spelling error in the Colorful Boxes workshop step 3 description, changing 'bellow' to 'below'.",
+        "why_easy": "The fix is a simple one-word spelling correction in an identified location, with clear before/after text, requiring no code logic changes and just a text edit in the curriculum."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68656,
+      "title": "Grammar and accuracy fixes in Basic HTML catalog intros",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68656",
+      "created_at": "2026-07-09T17:03:07Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix three grammar and accuracy issues in Basic HTML catalog lesson introductions.",
+        "why_easy": "The fixes are well-defined text corrections in three specific lesson introductions with no logic changes, just grammar and content accuracy updates marked as a first timers only issue."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68653,
+      "title": "Fail authentication when duplicate email records are detected during sign-in",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68653",
+      "created_at": "2026-07-09T15:49:29Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Reject authentication when duplicate email records are detected instead of arbitrarily choosing the first user",
+        "why_easy": "The fix is a straightforward guard clause to check for multiple records and fail authentication, but requires locating the sign-in code path in a large codebase."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68642,
+      "title": "Step 1 hint assertion does not verify head is nested inside html in the Bookstore Page workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68642",
+      "created_at": "2026-07-09T08:43:43Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix a Step 1 hint assertion in the Bookstore Page workshop to properly verify that the `head` element is nested inside the `html` element.",
+        "why_easy": "The issue clearly identifies the problematic regex assertion, provides a concrete failing example, and requires only updating a single test pattern to match what the hint text describes."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68638,
+      "title": "Two punctuation errors in the HTML boilerplate lecture",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68638",
+      "created_at": "2026-07-09T07:53:38Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix two punctuation errors in HTML boilerplate lecture: remove comma before 'and' in compound predicate and replace first colon with comma in list",
+        "why_easy": "The exact changes are clearly specified with before/after text provided, making it straightforward to locate and fix in the curriculum content"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68637,
+      "title": "Fix punctuation in the IDs and Classes and HTML Entities lectures",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68637",
+      "created_at": "2026-07-09T07:52:21Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix punctuation errors in two HTML fundamentals lectures: remove incorrect commas separating subjects from verbs and add hyphens to 'less-than' compound adjective",
+        "why_easy": "The issue provides exact before-and-after text for all three changes needed in documentation files, requiring only straightforward text replacements with no coding knowledge required"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68636,
+      "title": "Fix title casing, feedback, and wording in \"What are Div Elements\" lecture",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68636",
+      "created_at": "2026-07-09T07:49:27Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix title casing, wording, and inconsistent feedback in the 'What are Div Elements' lecture challenge",
+        "why_easy": "The issue explicitly specifies all four text changes with before/after examples, requiring only direct string replacements in markdown and JSON files with no code logic involved"
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17289,
+      "title": "Modular monoliths in NestJS",
+      "url": "https://github.com/nestjs/nest/issues/17289",
+      "created_at": "2026-07-09T13:47:42Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "docs",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add official documentation and recipe for implementing a modular monolith architecture with event-driven communication, transactional outbox, and dead letter queue patterns",
+        "why_easy": "Hard: requires deep architectural expertise in domain-driven design, event sourcing, and reliable event delivery patterns to create meaningful documentation that bridges NestJS's existing microservices and CQRS capabilities"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29709,
+      "title": "migrate dev ignores schema query parameter in shadowDatabaseUrl for multi-schema/multi-tenant Postgres setups (regression in v6+)",
+      "url": "https://github.com/prisma/prisma/issues/29709",
+      "created_at": "2026-07-09T19:24:59Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Prisma migrate dev ignores the schema query parameter in shadowDatabaseUrl for multi-schema PostgreSQL setups in v6+",
+        "why_easy": "Clear regression with reproducible steps, but fixing requires understanding Prisma's URL parsing and migration logic to locate where the schema parameter is lost between versions"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29706,
+      "title": "bug(migrate): `prisma migrate diff --help` displays outdated `--to-schema` option and examples",
+      "url": "https://github.com/prisma/prisma/issues/29706",
+      "created_at": "2026-07-09T03:32:22Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update `prisma migrate diff --help` to use correct `--to-schema-datamodel` and `--from-schema-datamodel` options instead of outdated aliases",
+        "why_easy": "The fix is isolated to help text strings with clear before/after examples already identified in the issue, requiring only finding and updating CLI help definitions without changing core logic."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29705,
+      "title": "Jessica Lynn Rhodes",
+      "url": "https://github.com/prisma/prisma/issues/29705",
+      "created_at": "2026-07-08T22:50:09Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Not a valid issue: post contains only contact information with no technical content or request",
+        "why_easy": "This is spam or off-topic content, not a legitimate GitHub issue; there is no actual work to be done"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29704,
+      "title": "AWAWMAN",
+      "url": "https://github.com/prisma/prisma/issues/29704",
+      "created_at": "2026-07-08T22:26:31Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Issue with no description provided and nonsensical title",
+        "why_easy": "Impossible to work on without a proper description explaining what needs to be fixed"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 47795,
+      "title": "URLane/MyGoBox's Project:  \"invalid login credentials\"",
+      "url": "https://github.com/supabase/supabase/issues/47795",
+      "created_at": "2026-07-09T20:15:34Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "User reports signInWithPassword fails with 'invalid login credentials' for existing users while signUp succeeds for new users.",
+        "why_easy": "Hard to pick up due to vague description, missing reproduction steps, lack of error details, and unclear whether the issue is a Supabase bug or a user account/configuration problem."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 50929,
+      "title": "Spring boot app stops responding after 60+ secs of inactivity when Jetty and Virtual Threads are used.",
+      "url": "https://github.com/spring-projects/spring-boot/issues/50929",
+      "created_at": "2026-07-09T20:38:08Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Spring Boot app stops responding after 60+ seconds inactivity with Jetty, Virtual Threads, and separate Actuator port",
+        "why_easy": "Issue includes a tested fix localized to one method; contributor just needs to apply the proposed QueuedThreadPool wrapper change and verify against provided test repo, though it requires understanding Jetty's threading model"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 50928,
+      "title": "Make WebClient.Builder Bean Optional for Cloud Foundry Module",
+      "url": "https://github.com/spring-projects/spring-boot/issues/50928",
+      "created_at": "2026-07-09T17:39:26Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "feature",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Make WebClient.Builder bean optional in CloudFoundryReactiveActuatorAutoConfiguration by falling back to a new instance if not provided, matching the servlet version pattern.",
+        "why_easy": "The solution pattern already exists in CloudFoundryActuatorAutoConfiguration with RestClient.Builder, so this is a direct adaptation of proven code to the reactive class."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 31930,
+      "title": "SubTracker: Move static variables into a struct and access them via PyModule_GetState.",
+      "url": "https://github.com/numpy/numpy/issues/31930",
+      "created_at": "2026-07-09T09:55:14Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Refactor SubTracker to move static variables into a struct and access them via PyModule_GetState for better module state management",
+        "why_easy": "Requires advanced Python C API knowledge and systematic refactoring across multiple static variable locations; minimal issue description provides no implementation guidance, relying on a linked Long Term Effort Tracker for context"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 31926,
+      "title": "BUG: Signed integer overflow in datetime.c - comprehensive fix needed for all arithmetic operations",
+      "url": "https://github.com/numpy/numpy/issues/31926",
+      "created_at": "2026-07-09T05:02:45Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix unchecked signed integer overflow throughout numpy's datetime conversion code in datetime.c, following the pattern from PR #31688",
+        "why_easy": "While a reference fix exists in PR #31688, this requires systematically auditing an entire C file for the overflow pattern, understanding datetime internals, and coordinating multiple fixes with comprehensive testing near INT64_MIN/MAX boundaries."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34454,
+      "title": "[DOC] Improve docstring for `orthogonal_mp`",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34454",
+      "created_at": "2026-07-09T18:43:10Z",
+      "digest_date": "2026-07-09",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix inconsistent notation and LaTeX formatting in the orthogonal_mp docstring to match the User Guide",
+        "why_easy": "The issue provides concrete solution options with example code, requires only docstring changes without touching algorithm logic or tests, and the problem location is clearly identified."
+      }
+    }
+  ]
+}
