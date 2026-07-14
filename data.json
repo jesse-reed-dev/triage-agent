@@ -2,7 +2,7 @@
   "updated": "2026-07-14",
   "issues": [
     {
-      "repo": "facebook/react-native",
+      "repo": "react/react-native",
       "number": 57470,
       "title": "[Android] Long-pressing a TextInput that is unfocused (or focused with the keyboard dismissed) starts text selection but never shows the soft keyboard",
       "url": "https://github.com/react/react-native/issues/57470",
@@ -17,7 +17,7 @@
       }
     },
     {
-      "repo": "facebook/react-native",
+      "repo": "react/react-native",
       "number": 57458,
       "title": "`TextInput` emits `onChange` event with invalid `selection` on Android browser autofill",
       "url": "https://github.com/react/react-native/issues/57458",
@@ -32,7 +32,7 @@
       }
     },
     {
-      "repo": "facebook/react-native",
+      "repo": "react/react-native",
       "number": 57454,
       "title": "[iOS] Prebuilt React-Core Release artifacts are built with NSAssertions enabled \u2014 RCTAssert failures become fatal NSRangeException crashes in production",
       "url": "https://github.com/react/react-native/issues/57454",
@@ -1487,7 +1487,7 @@
       }
     },
     {
-      "repo": "facebook/react-native",
+      "repo": "react/react-native",
       "number": 57502,
       "title": "Pressability silently drops presses when measure() disagrees with the native hit test (Fabric, natively repositioned views)",
       "url": "https://github.com/react/react-native/issues/57502",
@@ -1502,7 +1502,7 @@
       }
     },
     {
-      "repo": "facebook/react-native",
+      "repo": "react/react-native",
       "number": 57501,
       "title": "[iOS][New Arch] Text without numberOfLines clips the last word when the final line is a single short \"orphan\" token (NSLineBreakByClipping)",
       "url": "https://github.com/react/react-native/issues/57501",
@@ -1517,7 +1517,7 @@
       }
     },
     {
-      "repo": "facebook/react-native",
+      "repo": "react/react-native",
       "number": 57499,
       "title": "iOS: NSRangeException crash drawing truncated <Text> when the ellipsis boundary splits a composed character cluster (processTruncatedAttributedText)",
       "url": "https://github.com/react/react-native/issues/57499",
@@ -1532,7 +1532,7 @@
       }
     },
     {
-      "repo": "facebook/react-native",
+      "repo": "react/react-native",
       "number": 57496,
       "title": "iOS precompiled binaries in React Native 0.84.1 ignore custom Metro ports",
       "url": "https://github.com/react/react-native/issues/57496",
@@ -2147,7 +2147,7 @@
       }
     },
     {
-      "repo": "facebook/react-native",
+      "repo": "react/react-native",
       "number": 57525,
       "title": "[Xcode 26.4] GenerateStateCpp emits symbol-less objects for stateless component libraries",
       "url": "https://github.com/react/react-native/issues/57525",
@@ -2162,7 +2162,7 @@
       }
     },
     {
-      "repo": "facebook/react-native",
+      "repo": "react/react-native",
       "number": 57524,
       "title": "[Xcode 26.4] React Native 0.86.0 Release build emits public-header and deprecation warnings",
       "url": "https://github.com/react/react-native/issues/57524",
@@ -2177,7 +2177,7 @@
       }
     },
     {
-      "repo": "facebook/react-native",
+      "repo": "react/react-native",
       "number": 57522,
       "title": "[iOS][Fabric] ScrollView.scrollToEnd ignores adjustedContentInset",
       "url": "https://github.com/react/react-native/issues/57522",
@@ -2192,7 +2192,7 @@
       }
     },
     {
-      "repo": "facebook/react-native",
+      "repo": "react/react-native",
       "number": 57520,
       "title": "[iOS][Fabric] ScrollView content permanently invisible: inner RCTEnhancedScrollView left at CGRectZero when the autoresizing delta is missed",
       "url": "https://github.com/react/react-native/issues/57520",
@@ -2207,7 +2207,7 @@
       }
     },
     {
-      "repo": "facebook/react-native",
+      "repo": "react/react-native",
       "number": 57515,
       "title": "[iOS][Fabric] A recycled Fabric iOS view can lose the Selected accessibility trait after reuse",
       "url": "https://github.com/react/react-native/issues/57515",
@@ -2222,7 +2222,7 @@
       }
     },
     {
-      "repo": "facebook/react-native",
+      "repo": "react/react-native",
       "number": 57512,
       "title": "[iOS][Fabric] Runtime Dynamic Type change leaves stale text layout: lines overflow and clip, onTextLayout reports stale widths (0.86)",
       "url": "https://github.com/react/react-native/issues/57512",
@@ -2237,7 +2237,7 @@
       }
     },
     {
-      "repo": "facebook/react-native",
+      "repo": "react/react-native",
       "number": 57511,
       "title": "[iOS][Fabric][Bridgeless] 0.86 Release-only boot hang: first commit of a react-navigation Tabs tree never mounts - all threads idle in mach_msg, JS event loop alive, no JS error",
       "url": "https://github.com/react/react-native/issues/57511",
@@ -2252,7 +2252,7 @@
       }
     },
     {
-      "repo": "facebook/react-native",
+      "repo": "react/react-native",
       "number": 57506,
       "title": "Android: Scroll View Stretch Effect Inconsistency",
       "url": "https://github.com/react/react-native/issues/57506",
