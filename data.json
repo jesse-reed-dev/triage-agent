@@ -3225,6 +3225,471 @@
         "one_line_summary": "Redesign the website UI to be more modern, intuitive, visually appealing, and accessible",
         "why_easy": "The proposal is vague and large in scope, lacking specific deliverables or acceptance criteria; a full UI redesign requires extensive maintainer coordination and community consensus before work can begin"
       }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47767,
+      "title": "[expo-media-library] createAssetAsync fails for files larger than ~2.147 GB on Android: \"Unable to copy file into external storage\" (single unlooped FileChannel.transferTo)",
+      "url": "https://github.com/expo/expo/issues/47767",
+      "created_at": "2026-07-14T09:40:53Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Fix FileChannel.transferTo crash for files larger than 2.147GB on Android by looping the transfer call instead of assuming a single call handles the entire file",
+        "why_easy": "Root cause is clearly identified with exact code location, the fix is a straightforward loop pattern over an existing call, and a complete reproduction repository is provided; the barrier is testing environment (Android setup, large file generation) rather than code complexity"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47765,
+      "title": "[expo-UI][SDK 57][iOS] Calendar date picker layout shifts on first interaction",
+      "url": "https://github.com/expo/expo/issues/47765",
+      "created_at": "2026-07-14T09:35:26Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Calendar date picker in bottom sheet experiences layout shift and spacing issues on first interaction due to UICalendarView height constraints",
+        "why_easy": "Has minimal reproduction provided but requires native iOS layout expertise and understanding of how Expo's calendar component handles UICalendarView constraints"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47762,
+      "title": "Expo SDK 57 Android intermittent large-response parsing failure through RTK Query fetchBaseQuery",
+      "url": "https://github.com/expo/expo/issues/47762",
+      "created_at": "2026-07-14T08:27:36Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Android app intermittently fails to parse large JSON responses in RTK Query fetchBaseQuery after upgrading to Expo SDK 57",
+        "why_easy": "Non-deterministic, timing-dependent failure across multiple layers (Expo SDK, fetch, RTK Query) requires deep investigation and instrumentation skills to reproduce and isolate the root cause"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325778,
+      "title": "AI-Chat not using selected model",
+      "url": "https://github.com/microsoft/vscode/issues/325778",
+      "created_at": "2026-07-14T11:54:56Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "AI chat uses a different model than what the user selected and configured, causing unexpected costs and security concerns",
+        "why_easy": "This is hard because it requires understanding VS Code's AI chat integration architecture across model selection, endpoint configuration, and usage tracking to identify where the selected model gets overridden"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325776,
+      "title": "Tencent Hy3 (free): internal reasoning tokens leak into visible chat response",
+      "url": "https://github.com/microsoft/vscode/issues/325776",
+      "created_at": "2026-07-14T11:40:27Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Internal reasoning tokens from Tencent Hy3 model are leaking into the visible chat response",
+        "why_easy": "The bug is consistently reproducible and easily testable (tokens visibly interleaved in output), but fixing it requires understanding the streaming response pipeline, determining whether the issue is in VS Code, Copilot Chat extension, or OpenRouter integration, and implementing proper token filtering/separation logic"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325775,
+      "title": "Feedback on the Latest VS Code Update",
+      "url": "https://github.com/microsoft/vscode/issues/325775",
+      "created_at": "2026-07-14T11:35:08Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Request for option to restore or revert recent changes to Git integration, Global Search, and other features reported to reduce workflow efficiency",
+        "why_easy": "Hard to pick up - extremely vague with no reproduction steps, spans multiple disparate features (Git, GitLens, Agile, Global Search), and provides no concrete examples of what changed or how workflows were affected, requiring extensive investigation before work could begin"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325773,
+      "title": "--",
+      "url": "https://github.com/microsoft/vscode/issues/325773",
+      "created_at": "2026-07-14T11:27:30Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Label encoding operation returns NaN instead of expected results in Jupyter data viewer",
+        "why_easy": "Issue is incomplete with missing title, reproduction steps, expected vs actual behavior, and no sample dataset despite template explicitly requesting one; requires significant clarification before work can begin"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325771,
+      "title": "Devcontainer hangs on starting docker desktop",
+      "url": "https://github.com/microsoft/vscode/issues/325771",
+      "created_at": "2026-07-14T11:05:07Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code devcontainer hangs indefinitely when Docker Desktop starts but the extension fails to detect it is ready, requiring VS Code restart to proceed",
+        "why_easy": "Clear repro steps and isolated scope, but timing-based state-detection bugs on Windows+Docker are hard to debug without reliable reproduction and require deep knowledge of the devcontainer extension's health-check logic."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325770,
+      "title": "GitHub Copilot Chat reports \"Language model unavailable\".",
+      "url": "https://github.com/microsoft/vscode/issues/325770",
+      "created_at": "2026-07-14T11:04:55Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "GitHub Copilot Chat reports \"Language model unavailable\" when running in VS Code Remote - WSL due to Node.js network connection timeouts.",
+        "why_easy": "The reporter has already identified the root cause (Node.js network family autoselection fails in WSL), but the fix requires deep knowledge of VS Code Remote architecture, Node.js networking, and unclear ownership of the solution across multiple components."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325767,
+      "title": "Webview service-worker cache is not invalidated when an extension updates in place: webview permanently blank, survives reboot",
+      "url": "https://github.com/microsoft/vscode/issues/325767",
+      "created_at": "2026-07-14T10:28:43Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Service-worker cache for webviews is not invalidated when an extension updates in place, causing assets to fail loading from deleted directories",
+        "why_easy": "This is hard because it requires deep knowledge of VS Code's extension lifecycle, webview service-worker caching, and their interaction; the non-deterministic reproduction makes testing fixes difficult"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325764,
+      "title": "Improve visibility of blocking input prompts requiring user interaction",
+      "url": "https://github.com/microsoft/vscode/issues/325764",
+      "created_at": "2026-07-14T10:12:28Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Make blocking input prompts more visually noticeable so users don't miss them and think the app is frozen.",
+        "why_easy": "The problem is well-articulated with multiple suggested solutions, but requires understanding VS Code's large codebase and coordinating changes across prompt, notification, and accessibility systems."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325763,
+      "title": "Copilot completion feedback",
+      "url": "https://github.com/microsoft/vscode/issues/325763",
+      "created_at": "2026-07-14T10:08:33Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Incomplete issue requesting Copilot completion feedback, lacking problem description or reproduction steps",
+        "why_easy": "Hard to pick up because the issue body is empty\u2014no description of what the problem is, how to reproduce it, or what the expected behavior should be; marked info-needed and requires clarification before work can begin."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325761,
+      "title": "Status/activity bars: align remote item width",
+      "url": "https://github.com/microsoft/vscode/issues/325761",
+      "created_at": "2026-07-14T09:57:18Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Make the remote status-bar item width respond to the activity bar width to maintain visual alignment at their intersection",
+        "why_easy": "Requires finding the remote status-bar item in VS Code's large codebase and understanding its interaction with activity-bar sizing, though the fix itself is likely straightforward once located"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325760,
+      "title": "Tabs: reduce active-tab background contrast",
+      "url": "https://github.com/microsoft/vscode/issues/325760",
+      "created_at": "2026-07-14T09:57:11Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Reduce the background contrast of the active editor tab to decrease its visual prominence while maintaining clear distinction from inactive tabs.",
+        "why_easy": "This is a straightforward color value adjustment in VS Code's theme system with clear acceptance criteria, though first-time contributors will need to locate the active-tab color definitions in a large codebase."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325759,
+      "title": "Workbench layout: offer compact density",
+      "url": "https://github.com/microsoft/vscode/issues/325759",
+      "created_at": "2026-07-14T09:57:05Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add a compact density mode to the workbench that reduces spacing between UI elements for users on small screens",
+        "why_easy": "Hard because it requires systemic changes across multiple layout components (activity bar, tabs, panel borders) with maintainability concerns, demanding deep architectural understanding of VSCode's layout system"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 22930,
+      "title": "@vitejs/plugin-legacy \u6784\u5efapolyfills\uff0c\u538b\u7f29\u672a\u4f20\u9012target\u53c2\u6570",
+      "url": "https://github.com/vitejs/vite/issues/22930",
+      "created_at": "2026-07-14T09:28:00Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "plugin-legacy doesn't pass minification target to oxc when building polyfills, causing unsupported syntax in older browsers",
+        "why_easy": "Focused bug with clear root cause\u2014locate oxc minification call in buildPolyfillChunk and pass the modernTargets parameter\u2014but requires familiarity with minifier configuration and plugin-legacy architecture"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 22929,
+      "title": "resolve.tsconfigPaths fails to resolve aliases when the nearest ancestor tsconfig.json excludes the source file",
+      "url": "https://github.com/vitejs/vite/issues/22929",
+      "created_at": "2026-07-14T08:39:27Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "resolve.tsconfigPaths should fall back to other valid tsconfig files when the nearest ancestor excludes the source file",
+        "why_easy": "Clear reproduction simplifies diagnosis, but requires modifying Vite's core tsconfig resolution logic to check exclude directives and implement fallback behavior"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 22928,
+      "title": "Allow framework authors to suppress SSR module evaluation logging (ssrLoadModule / ModuleRunner.import)",
+      "url": "https://github.com/vitejs/vite/issues/22928",
+      "created_at": "2026-07-14T07:16:11Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add a logErrors option to ssrLoadModule and ModuleRunner.import to let frameworks suppress Vite's default SSR error logging",
+        "why_easy": "Well-scoped feature with a clear, backwards-compatible API design, but requires understanding where SSR errors are logged throughout Vite's codebase and careful testing to avoid regressions"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35484,
+      "title": "Add continuous memory footprint benchmarks for Storybook dev and build",
+      "url": "https://github.com/storybookjs/storybook/issues/35484",
+      "created_at": "2026-07-14T07:26:13Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Implement continuous memory benchmarking across Storybook dev and build lifecycle phases to detect performance regressions",
+        "why_easy": "Hard: requires designing a comprehensive benchmarking system capturing multiple memory metrics (peak vs settled, heap vs RSS), integrating with CI and BigQuery, establishing baselines, and handling complex memory behavior patterns; large scope with truncated implementation details."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68823,
+      "title": "Missing space after comma",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68823",
+      "created_at": "2026-07-14T09:48:47Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add a missing space after a comma in an English curriculum markdown file",
+        "why_easy": "The issue provides the exact file, line number, and a diff showing a single-character addition with no other changes required."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68818,
+      "title": "Replace regex-based test cases in Fortune Teller Lab",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68818",
+      "created_at": "2026-07-14T07:07:48Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Replace regex-based test cases in the Fortune Teller Lab course with an improved approach",
+        "why_easy": "Bounded to a specific lab with likely clear patterns documented in the umbrella ticket, but requires Discord coordination, claiming work with Naomi, and understanding the sprint's testing strategy before starting"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68817,
+      "title": "Replace regex-based test cases in Mathbot Workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68817",
+      "created_at": "2026-07-14T07:07:44Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Replace regex-based test cases in Mathbot Workshop courses as part of Naomi's sprint refactoring initiative",
+        "why_easy": "The issue lacks sufficient detail and requires referencing an umbrella ticket and coordinating via Discord, making it harder for new contributors to get started."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68816,
+      "title": "Replace regex-based test cases in Logic Checker App Workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68816",
+      "created_at": "2026-07-14T07:07:40Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Replace regex-based test cases in the Logic Checker App Workshop as part of Naomi's sprint initiatives",
+        "why_easy": "The issue lacks concrete implementation details and requires context from an external umbrella ticket (#68417), making it hard to understand scope and acceptance criteria without additional research"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68815,
+      "title": "Replace regex-based test cases in Debug Increment And Decrement Operator Errors Lab",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68815",
+      "created_at": "2026-07-14T07:07:36Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "test",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Replace regex-based test cases in the Debug Increment And Decrement Operator Errors Lab with better testing patterns",
+        "why_easy": "The issue lacks specifics about which tests need changing; crucial context is in the umbrella ticket #68417, requiring external research and Discord coordination to understand the full scope"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68814,
+      "title": "Replace regex-based test cases in String Transformer Workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68814",
+      "created_at": "2026-07-14T07:07:32Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": true,
+        "one_line_summary": "Replace regex-based test cases with improved alternatives in the String Transformer Workshop course",
+        "why_easy": "Part of an organized sprint with coordinator support, but the issue lacks specific requirements\u2014actual work details are in the umbrella ticket #68417 and Discord coordination, so a new contributor would need to engage with those channels first"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68813,
+      "title": "Replace regex-based test cases in String Formatter Workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68813",
+      "created_at": "2026-07-14T07:07:28Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": true,
+        "one_line_summary": "Replace regex-based test cases in the String Formatter Workshop with alternative implementations",
+        "why_easy": "Focused on a single course within a structured sprint, but the minimal issue body lacks detail on current state and target implementation, requiring external context from #68417 or Discord clarification"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68812,
+      "title": "Replace regex-based test cases in String Inspector Workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68812",
+      "created_at": "2026-07-14T07:07:24Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Replace regex-based test cases in the String Inspector Workshop with an updated testing approach per the umbrella sprint ticket.",
+        "why_easy": "The issue lacks sufficient context in the body itself \u2014 scope and implementation details are deferred to an umbrella ticket, and coordination with Naomi is required before starting work, making it hard for someone to pick up independently."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68811,
+      "title": "Replace regex-based test cases in Teacher Chatbot Workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68811",
+      "created_at": "2026-07-14T07:07:20Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Replace regex-based test cases in the Teacher Chatbot Workshop with a non-regex approach",
+        "why_easy": "The issue is vague and references an external umbrella ticket for context, requiring additional research before understanding what needs to be done"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 47917,
+      "title": "ALL INSERT RLS policies fail regardless of policy condition, role scoping, or grants",
+      "url": "https://github.com/supabase/supabase/issues/47917",
+      "created_at": "2026-07-14T11:27:10Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "INSERT operations fail with RLS policy violations even when policies are trivially permissive and correctly targeted to the executing role",
+        "why_easy": "Clear, minimal reproduction steps aid diagnosis, but requires deep PostgreSQL RLS expertise and understanding of Supabase's PostgREST/Supavisor infrastructure to isolate whether the bug is in policy evaluation, role propagation, or configuration"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66329,
+      "title": "pandas.pydata.org serves no /.well-known/security.txt (RFC 9116)",
+      "url": "https://github.com/pandas-dev/pandas/issues/66329",
+      "created_at": "2026-07-14T11:29:49Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "feature",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add RFC 9116 compliant security.txt file to pandas.pydata.org for vulnerability disclosure guidance",
+        "why_easy": "Scope is limited to creating a single static file with standard-defined content; no code changes or complex logic required."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 31990,
+      "title": "BUG: `np.all` does not strictly obey the array-api standard.",
+      "url": "https://github.com/numpy/numpy/issues/31990",
+      "created_at": "2026-07-14T07:10:33Z",
+      "digest_date": "2026-07-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "np.all() should return a 0-dimensional array instead of a scalar when reducing an entire array to comply with the array-api standard",
+        "why_easy": "Technically straightforward but a breaking API change to a core function in a widely-used library that requires maintainer coordination and careful migration planning"
+      }
     }
   ]
 }
