@@ -5,14 +5,8 @@
 # verbatim when the repo is cloned to ~/projects/triage-agent. Cloned it
 # somewhere else? Adjust that prefix below (3 places), nothing more.
 #
-# Install:
-#   cp deploy/systemd/triage-agent.* ~/.config/systemd/user/
-#   systemctl --user daemon-reload
-#   systemctl --user enable --now triage-agent.timer
-# Then seed the stamp so Persistent=true doesn't fire an immediate catch-up
-# run the moment the timer is first enabled:
-#   mkdir -p ~/.local/share/systemd/timers
-#   touch ~/.local/share/systemd/timers/stamp-triage-agent.timer
+# Install: run deploy/install.sh (copies units, reloads, seeds the
+# Persistent stamp so first enable doesn't fire immediately, enables timer).
 
 [Unit]
 Description=GitHub issue triage digest

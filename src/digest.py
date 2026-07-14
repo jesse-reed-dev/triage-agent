@@ -11,12 +11,17 @@ Issues whose categorization failed go at the bottom as plain title + link.
 import html
 import json
 import os
-from datetime import date
+import re
+from datetime import date, timedelta
 
 # ─── Config ───────────────────────────────────────────────────────────────────
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 DATA_JSON_PATH = os.path.join(DATA_DIR, "data.json")
+
+# Digest .md files older than this get deleted on each run. They're a
+# per-day convenience artifact — data.json keeps the full history.
+DIGEST_KEEP_DAYS = 90
 
 _CATEGORY_ORDER = {"docs": 0, "test": 1, "refactor": 2, "bug": 3, "feature": 4}
 
@@ -253,7 +258,27 @@ def write_digest_file(markdown: str, run_date: date) -> str:
     path = os.path.join(DATA_DIR, f"digest-{run_date}.md")
     with open(path, "w", encoding="utf-8") as f:
         f.write(markdown)
+    _prune_old_digests(run_date)
     return path
+
+
+def _prune_old_digests(run_date: date) -> None:
+    """
+    Deletes digest files older than DIGEST_KEEP_DAYS, judged by the date in
+    the filename (deterministic — filesystem mtimes lie after backups or
+    machine sleep). Only digest-YYYY-MM-DD.md files are touched.
+    """
+    cutoff = run_date - timedelta(days=DIGEST_KEEP_DAYS)
+    for name in os.listdir(DATA_DIR):
+        match = re.fullmatch(r"digest-(\d{4}-\d{2}-\d{2})\.md", name)
+        if not match:
+            continue
+        try:
+            file_date = date.fromisoformat(match.group(1))
+        except ValueError:
+            continue  # digest-2026-99-99.md isn't ours to delete
+        if file_date < cutoff:
+            os.remove(os.path.join(DATA_DIR, name))
 
 
 def _load_data_json() -> list[dict]:
