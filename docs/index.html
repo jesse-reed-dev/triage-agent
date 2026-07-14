@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Triage — open-source issue dashboard</title>
+<style>
+  /* Dark sibling of src/digest.py's light email palette: same warm-neutral
+     family and blue hue, re-anchored for a dark surface (designed, not
+     inverted — CVD separation validated against this surface). Difficulty is
+     ordinal: one hue, lightest = easiest, and never color alone — always a
+     text label beside the swatch. */
+  :root {
+    color-scheme: dark;
+    --ink: #ecebe6;
+    --ink-2: #b8b6ae;
+    --muted: #a19f97;
+    --grid: #34332f;
+    --accent: #6aa3e8;
+    --good: #4cc44c;
+    --easy: #9cc3f5;
+    --medium: #5b93de;
+    --hard: #2e64ab;
+    --surface: #161614;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+    --sans: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--surface);
+    color: var(--ink);
+    font-family: var(--sans);
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 28px 20px 60px;
+  }
+  a { color: var(--accent); text-decoration: none; font-weight: 700; }
+  a:hover { text-decoration: underline; }
+
+  .label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  header h1 { font-size: 24px; font-weight: 750; }
+  header .label { margin: 4px 0 20px; }
+
+  /* KPI tiles */
+  .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .tile { border: 1px solid var(--grid); border-radius: 4px; padding: 10px 14px; }
+  .tile .value { font-size: 26px; font-weight: 700; }
+  .tile .note { font-size: 11px; color: var(--ink-2); }
+  @media (max-width: 640px) { .tiles { grid-template-columns: repeat(2, 1fr); } }
+
+  /* Difficulty strip: adjacent fills separated by 2px of surface */
+  .strip { display: flex; gap: 2px; margin-top: 14px; height: 12px; }
+  .strip button {
+    border: none; padding: 0; cursor: pointer; min-width: 4px;
+    transition: opacity 0.15s;
+  }
+  .strip button.dimmed { opacity: 0.25; }
+  /* Legend entries are chips styled like the other filter toggles, so they
+     read as controls rather than a passive legend. */
+  .strip-legend { display: flex; gap: 8px; margin: 10px 0 4px; }
+  .strip-legend button {
+    background: var(--surface); cursor: pointer;
+    border: 1px solid var(--grid); border-radius: 4px; padding: 5px 10px;
+    font-family: var(--mono); font-size: 11px; color: var(--ink-2);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .strip-legend button.on { border-color: var(--accent); color: var(--accent); font-weight: 700; }
+  .strip-legend button.dimmed { opacity: 0.35; }
+  .swatch { display: inline-block; width: 9px; height: 9px; border-radius: 2px; }
+
+  /* Filter row */
+  .filters {
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    margin: 18px 0 6px; padding: 10px 0; border-top: 1px solid var(--grid);
+  }
+  .filters input[type="search"], .filters select {
+    font-family: var(--sans); font-size: 13px; color: var(--ink);
+    background: var(--surface); border: 1px solid var(--grid);
+    border-radius: 4px; padding: 6px 8px;
+  }
+  .filters input[type="search"] { flex: 1 1 180px; }
+  .filters .toggle {
+    font-family: var(--mono); font-size: 11px; cursor: pointer;
+    border: 1px solid var(--grid); border-radius: 4px; padding: 6px 10px;
+    background: var(--surface); color: var(--ink-2);
+  }
+  .filters .toggle.on { border-color: var(--accent); color: var(--accent); font-weight: 700; }
+  .filters .clear { font-family: var(--mono); font-size: 11px; background: none; border: none; color: var(--muted); cursor: pointer; }
+  .filters .clear:hover { color: var(--ink); }
+
+  /* Issue ledger */
+  .issue { border-top: 1px solid var(--grid); padding: 12px 0; }
+  .issue.claimed { opacity: 0.45; }
+  .issue .meta {
+    font-family: var(--mono); font-size: 12px; color: var(--ink-2);
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+  }
+  .issue .meta .date { margin-left: auto; color: var(--muted); }
+  .issue .meta .gfi { color: var(--good); font-weight: 700; }
+  .issue .summary { font-size: 14px; margin-top: 4px; line-height: 1.5; }
+  .issue .why { font-size: 12px; color: var(--muted); margin-top: 2px; line-height: 1.5; }
+  .claim { display: flex; align-items: center; gap: 4px; font-family: var(--mono); font-size: 10px; color: var(--muted); cursor: pointer; }
+
+  details { margin-top: 26px; }
+  details summary { cursor: pointer; }
+  details .issue .meta { color: var(--ink-2); }
+
+  .empty, .error { font-family: var(--mono); font-size: 12px; color: var(--muted); padding: 30px 0; text-align: center; }
+  .error { color: #e06c6c; }
+  footer {
+    border-top: 1px solid var(--grid); margin-top: 30px; padding-top: 10px;
+    font-family: var(--mono); font-size: 11px; color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Triage</h1>
+  <div class="label" id="subline">Loading…</div>
+</header>
+
+<section class="tiles" id="tiles" hidden></section>
+<section id="strip-wrap" hidden>
+  <div class="strip" id="strip" role="group" aria-label="Filter by difficulty"></div>
+  <div class="strip-legend" id="strip-legend"></div>
+</section>
+
+<section class="filters" id="filters" hidden>
+  <input type="search" id="q" placeholder="Search titles & summaries…" aria-label="Search">
+  <select id="repo" aria-label="Repository"></select>
+  <select id="category" aria-label="Category"></select>
+  <select id="range" aria-label="Date range">
+    <option value="all">All time</option>
+    <option value="7">Last 7 days</option>
+    <option value="30">Last 30 days</option>
+  </select>
+  <button class="toggle" id="gfi">★ good first issue</button>
+  <button class="toggle" id="hide-claimed">hide claimed</button>
+  <button class="clear" id="clear">clear filters</button>
+</section>
+
+<main id="list"></main>
+<details id="unrated-wrap" hidden>
+  <summary class="label" id="unrated-summary"></summary>
+  <div id="unrated"></div>
+</details>
+
+<footer>Generated daily by the <a href="https://github.com/jesse-reed-dev/triage-agent">triage-agent</a> pipeline
+— issues are rated by Claude for category, difficulty, and good-first-issue fit.</footer>
+
+<script>
+"use strict";
+/* Data comes from the `data` branch (published by deploy/publish-data.sh).
+   Locally (python3 -m http.server from the repo root) it reads the live
+   file instead. All issue text is untrusted (GitHub content + model output):
+   everything is rendered via textContent, never innerHTML. */
+const REMOTE_URL = "https://raw.githubusercontent.com/jesse-reed-dev/triage-agent/refs/heads/data/data.json";
+const IS_LOCAL = ["localhost", "127.0.0.1", ""].includes(location.hostname);
+const DATA_URL = IS_LOCAL ? "../data/data.json" : REMOTE_URL;
+
+const DIFFS = ["easy", "medium", "hard"];
+const CAT_ORDER = { docs: 0, test: 1, refactor: 2, bug: 3, feature: 4 };
+const TIER = (t) => t.difficulty === "easy" ? (t.good_first_issue ? 0 : 1)
+                  : t.difficulty === "medium" ? 2 : 3;
+
+const $ = (id) => document.getElementById(id);
+const el = (tag, cls, text) => {
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (text !== undefined) n.textContent = text;
+  return n;
+};
+
+const claimed = new Set(JSON.parse(localStorage.getItem("triage-claimed") || "[]"));
+const saveClaimed = () => localStorage.setItem("triage-claimed", JSON.stringify([...claimed]));
+const keyOf = (i) => `${i.repo}#${i.number}`;
+
+const state = { q: "", repo: "all", category: "all", range: "all",
+                gfi: false, hideClaimed: false, diffs: new Set() };
+let rated = [], unrated = [];
+
+function matches(issue, ignoreDiff = false) {
+  const t = issue.triage;
+  if (state.repo !== "all" && issue.repo !== state.repo) return false;
+  if (state.range !== "all") {
+    const cutoff = Date.now() - Number(state.range) * 864e5;
+    if (new Date(issue.digest_date).getTime() < cutoff) return false;
+  }
+  if (state.q) {
+    const hay = (issue.title + " " + (t ? t.one_line_summary : "")).toLowerCase();
+    if (!hay.includes(state.q)) return false;
+  }
+  if (state.hideClaimed && claimed.has(keyOf(issue))) return false;
+  if (t) {
+    if (state.category !== "all" && t.category !== state.category) return false;
+    if (state.gfi && !t.good_first_issue) return false;
+    if (!ignoreDiff && state.diffs.size && !state.diffs.has(t.difficulty)) return false;
+  } else if (state.category !== "all" || state.gfi) {
+    return false;
+  }
+  return true;
+}
+
+function render() {
+  const shown = rated.filter((i) => matches(i));
+  const shownUnrated = unrated.filter((i) => matches(i));
+
+  // KPI tiles reflect the current filtered view.
+  const tiles = $("tiles");
+  tiles.replaceChildren();
+  const gfiCount = shown.filter((i) => i.triage.good_first_issue && i.triage.difficulty === "easy").length;
+  const easy = shown.filter((i) => i.triage.difficulty === "easy").length;
+  const repos = new Set(shown.map((i) => i.repo)).size;
+  for (const [label, value, note] of [
+    ["Issues", shown.length, "matching filters"],
+    ["Best picks", gfiCount, "easy + good first issue"],
+    ["Easy", easy, "across shown repos"],
+    ["Repos", repos, "with matching issues"],
+  ]) {
+    const tile = el("div", "tile");
+    tile.append(el("div", "label", label), el("div", "value", String(value)), el("div", "note", note));
+    tiles.append(tile);
+  }
+
+  // Difficulty strip counts ignore the difficulty filter itself,
+  // so it keeps showing the full distribution you're choosing from.
+  const forStrip = rated.filter((i) => matches(i, true));
+  const counts = Object.fromEntries(DIFFS.map((d) => [d, 0]));
+  forStrip.forEach((i) => counts[i.triage.difficulty]++);
+  const total = forStrip.length || 1;
+  const strip = $("strip"), legend = $("strip-legend");
+  strip.replaceChildren(); legend.replaceChildren();
+  for (const d of DIFFS) {
+    const active = !state.diffs.size || state.diffs.has(d);
+    if (counts[d]) {
+      const seg = el("button", active ? "" : "dimmed");
+      seg.style.background = `var(--${d})`;
+      seg.style.flexGrow = counts[d] / total;
+      seg.title = `${counts[d]} ${d} — click to filter`;
+      seg.setAttribute("aria-label", `${counts[d]} ${d} issues`);
+      seg.onclick = () => toggleDiff(d);
+      strip.append(seg);
+    }
+    const item = el("button", state.diffs.has(d) ? "on" : state.diffs.size ? "dimmed" : "");
+    const sw = el("span", "swatch");
+    sw.style.background = `var(--${d})`;
+    item.append(sw, document.createTextNode(` ${counts[d]} ${d}`));
+    item.onclick = () => toggleDiff(d);
+    legend.append(item);
+  }
+
+  // Ledger: newest digest first, best tier first within a day.
+  const list = $("list");
+  list.replaceChildren();
+  shown.sort((a, b) =>
+    b.digest_date.localeCompare(a.digest_date) ||
+    TIER(a.triage) - TIER(b.triage) ||
+    CAT_ORDER[a.triage.category] - CAT_ORDER[b.triage.category]);
+  for (const issue of shown) list.append(issueRow(issue));
+  if (!shown.length) list.append(el("div", "empty", "No issues match the current filters."));
+
+  // Unrated section
+  $("unrated-wrap").hidden = !shownUnrated.length;
+  $("unrated-summary").textContent = `Unrated — categorization failed (${shownUnrated.length})`;
+  const un = $("unrated");
+  un.replaceChildren();
+  for (const issue of shownUnrated) {
+    const row = el("div", "issue");
+    const meta = el("div", "meta");
+    meta.append(el("span", "", issue.repo), link(issue), el("span", "", issue.title), dateSpan(issue));
+    row.append(meta);
+    un.append(row);
+  }
+}
+
+function link(issue) {
+  const a = el("a", "", `#${issue.number}`);
+  a.href = issue.url;
+  a.target = "_blank";
+  a.rel = "noopener";
+  return a;
+}
+const dateSpan = (issue) => el("span", "date", issue.digest_date);
+
+function issueRow(issue) {
+  const t = issue.triage;
+  const row = el("div", claimed.has(keyOf(issue)) ? "issue claimed" : "issue");
+  const meta = el("div", "meta");
+  const sw = el("span", "swatch");
+  sw.style.background = `var(--${t.difficulty})`;
+  const diff = el("span");
+  diff.append(sw, document.createTextNode(` ${t.difficulty}`));
+  meta.append(el("span", "", issue.repo), link(issue), diff, el("span", "", t.category));
+  if (t.good_first_issue) meta.append(el("span", "gfi", "★ good first issue"));
+  meta.append(dateSpan(issue));
+
+  const claim = el("label", "claim");
+  const box = el("input");
+  box.type = "checkbox";
+  box.checked = claimed.has(keyOf(issue));
+  box.onchange = () => {
+    box.checked ? claimed.add(keyOf(issue)) : claimed.delete(keyOf(issue));
+    saveClaimed();
+    render();
+  };
+  claim.append(box, document.createTextNode("claim"));
+  meta.append(claim);
+
+  row.append(meta, el("div", "summary", issue.title));
+  if (t.one_line_summary) row.append(el("div", "summary", t.one_line_summary));
+  if (t.why_easy) row.append(el("div", "why", t.why_easy));
+  return row;
+}
+
+function toggleDiff(d) {
+  state.diffs.has(d) ? state.diffs.delete(d) : state.diffs.add(d);
+  if (state.diffs.size === DIFFS.length) state.diffs.clear();
+  render();
+}
+
+function bindFilters(issues) {
+  const fillSelect = (id, values, all) => {
+    const sel = $(id);
+    sel.append(el("option", "", all));
+    sel.options[0].value = "all";
+    for (const v of values) {
+      const o = el("option", "", v);
+      o.value = v;
+      sel.append(o);
+    }
+  };
+  fillSelect("repo", [...new Set(issues.map((i) => i.repo))].sort(), "All repos");
+  fillSelect("category", Object.keys(CAT_ORDER), "All categories");
+
+  $("q").oninput = (e) => { state.q = e.target.value.trim().toLowerCase(); render(); };
+  $("repo").onchange = (e) => { state.repo = e.target.value; render(); };
+  $("category").onchange = (e) => { state.category = e.target.value; render(); };
+  $("range").onchange = (e) => { state.range = e.target.value; render(); };
+  $("gfi").onclick = () => { state.gfi = !state.gfi; $("gfi").classList.toggle("on", state.gfi); render(); };
+  $("hide-claimed").onclick = () => {
+    state.hideClaimed = !state.hideClaimed;
+    $("hide-claimed").classList.toggle("on", state.hideClaimed);
+    render();
+  };
+  $("clear").onclick = () => {
+    Object.assign(state, { q: "", repo: "all", category: "all", range: "all", gfi: false, hideClaimed: false });
+    state.diffs.clear();
+    $("q").value = ""; $("repo").value = "all"; $("category").value = "all"; $("range").value = "all";
+    $("gfi").classList.remove("on"); $("hide-claimed").classList.remove("on");
+    render();
+  };
+}
+
+async function main() {
+  let data;
+  try {
+    const res = await fetch(DATA_URL, { cache: "no-cache" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    data = await res.json();
+  } catch (err) {
+    $("subline").textContent = "Could not load data";
+    document.body.append(el("div", "error",
+      IS_LOCAL
+        ? `Couldn't read ../data/data.json (${err.message}). Serve from the repo root: python3 -m http.server, then open /docs/.`
+        : `Couldn't fetch the data branch (${err.message}). It may not be pushed yet.`));
+    return;
+  }
+
+  rated = data.issues.filter((i) => i.triage);
+  unrated = data.issues.filter((i) => !i.triage);
+  $("subline").textContent =
+    `Open-source issue digest · updated ${data.updated} · ${data.issues.length} issues`;
+  ["tiles", "strip-wrap", "filters"].forEach((id) => { $(id).hidden = false; });
+  bindFilters(rated);
+  render();
+}
+main();
+</script>
+</body>
+</html>

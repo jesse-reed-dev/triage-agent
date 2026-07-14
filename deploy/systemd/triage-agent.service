@@ -5,14 +5,8 @@
 # verbatim when the repo is cloned to ~/projects/triage-agent. Cloned it
 # somewhere else? Adjust that prefix below (3 places), nothing more.
 #
-# Install:
-#   cp deploy/systemd/triage-agent.* ~/.config/systemd/user/
-#   systemctl --user daemon-reload
-#   systemctl --user enable --now triage-agent.timer
-# Then seed the stamp so Persistent=true doesn't fire an immediate catch-up
-# run the moment the timer is first enabled:
-#   mkdir -p ~/.local/share/systemd/timers
-#   touch ~/.local/share/systemd/timers/stamp-triage-agent.timer
+# Install: run deploy/install.sh (copies units, reloads, seeds the
+# Persistent stamp so first enable doesn't fire immediately, enables timer).
 
 [Unit]
 Description=GitHub issue triage digest
@@ -23,6 +17,10 @@ WorkingDirectory=%h/projects/triage-agent
 # Services get a bare PATH; the pipeline shells out to `claude` in ~/.local/bin.
 Environment=PATH=%h/.local/bin:/usr/local/bin:/usr/bin:/bin
 ExecStart=%h/projects/triage-agent/.venv/bin/python -u src/main.py
+# Oneshot ExecStart lines run in order, each only if the previous succeeded —
+# a failed delivery (exit 1) means no publish. The script commits data.json
+# to the local `data` branch; pushing it stays a human action.
+ExecStart=%h/projects/triage-agent/deploy/publish-data.sh
 # Default oneshot timeout is 90s — a fresh-DB run of Claude calls needs far
 # more. 4h is a ceiling for a hung run, not an expectation.
 TimeoutStartSec=4h

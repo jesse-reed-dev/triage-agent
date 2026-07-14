@@ -191,3 +191,21 @@ def test_corrupt_data_json_is_sidelined_not_crashed(data_json):
     assert [r["number"] for r in read_records(data_json)] == [1]
     backup = data_json.with_suffix(".json.corrupt")
     assert backup.read_text() == "{ not json"
+
+
+# ─── digest file pruning ──────────────────────────────────────────────────────
+
+def test_write_digest_prunes_files_older_than_keep_window(tmp_path, monkeypatch):
+    monkeypatch.setattr(digest, "DATA_DIR", str(tmp_path))
+    old = tmp_path / "digest-2026-01-01.md"       # far past the 90-day window
+    recent = tmp_path / "digest-2026-07-01.md"    # within the window
+    unrelated = tmp_path / "digest-notes.md"      # not a dated digest file
+    for f in (old, recent, unrelated):
+        f.write_text("x")
+
+    digest.write_digest_file("# digest", RUN_DATE)
+
+    assert not old.exists()
+    assert recent.exists()
+    assert unrelated.exists()
+    assert (tmp_path / f"digest-{RUN_DATE}.md").exists()
