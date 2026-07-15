@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-14",
+  "updated": "2026-07-15",
   "issues": [
     {
       "repo": "react/react-native",
@@ -3689,6 +3689,471 @@
         "good_first_issue": false,
         "one_line_summary": "np.all() should return a 0-dimensional array instead of a scalar when reducing an entire array to comply with the array-api standard",
         "why_easy": "Technically straightforward but a breaking API change to a core function in a widely-used library that requires maintainer coordination and careful migration planning"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47808,
+      "title": "Link.Preview: tap-through commit pushes a duplicate screen when the destination route is inside a nested route group. Going back lands on the leftover copy",
+      "url": "https://github.com/expo/expo/issues/47808",
+      "created_at": "2026-07-15T10:53:41Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Link.Preview tap-through commits a duplicate screen when the destination route is inside a nested route group",
+        "why_easy": "Despite a clear MRE and reproduction steps, fixing requires deep understanding of Expo Router's preload adoption logic and iOS development setup; the issue involves complex routing state management with nested route groups and requires debugging the preview commit path"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47787,
+      "title": "SIGABRT: convertSharedObject null-derefs the registry lookup for a long-lived native SharedObject (Android)",
+      "url": "https://github.com/expo/expo/issues/47787",
+      "created_at": "2026-07-14T20:46:57Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add null check in convertSharedObject to prevent SIGABRT crash when SharedObject registry lookup returns null",
+        "why_easy": "Root cause is clearly identified with minimal reproducible example and exact line number, but requires JNI/Android expertise and native compilation setup to develop and test"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47778,
+      "title": "[expo-ui][SDK 57][Android] BottomSheet retains stale content height after keyboard dismissal",
+      "url": "https://github.com/expo/expo/issues/47778",
+      "created_at": "2026-07-14T14:54:06Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "BottomSheet on Android incorrectly retains content height after keyboard dismissal, causing layout to shift on repeated keyboard cycles",
+        "why_easy": "Well-documented with clear reproduction steps and a minimal example repo, but requires Android-specific keyboard event debugging and layout timing understanding to diagnose the root cause"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47773,
+      "title": "[expo-ui][SDK 57][Android] Date picker has unstyled / unstyleable elements",
+      "url": "https://github.com/expo/expo/issues/47773",
+      "created_at": "2026-07-14T13:46:03Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "DateTimePicker's year selector chevron and dialog buttons aren't styleable via documented color properties on Android",
+        "why_easy": "Has a clear reproduction repo and documented expected behavior, but fixing requires Jetpack Compose/Material3 knowledge and investigation into why the Material3 API isn't applying colors as documented"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325941,
+      "title": "Modern UI: Activity bar bottom/top icons are bold and blur",
+      "url": "https://github.com/microsoft/vscode/issues/325941",
+      "created_at": "2026-07-15T11:53:36Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Activity bar icons at the bottom/top of the sidebar render with unwanted bold and blur effects",
+        "why_easy": "The issue is well-scoped to a specific UI component and likely involves a CSS/font-rendering fix, but VS Code's large codebase and minimal reproduction details make it moderately challenging to locate the root cause"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325939,
+      "title": "winpty has been removed",
+      "url": "https://github.com/microsoft/vscode/issues/325939",
+      "created_at": "2026-07-15T11:47:04Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Terminal fails to open in VS Code on Windows after winpty was removed and replaced with conpty",
+        "why_easy": "The issue lacks error logs, clear repro steps, and debugging info; the user's outdated Windows version (RTM from 2015) complicates diagnosis; requires deep knowledge of VS Code's terminal infrastructure and the winpty\u2192conpty migration to assess whether this is a regression, unsupported platform, or configuration issue"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325938,
+      "title": "Linux: Window WM_CLASS is \"code\" while code.desktop StartupWMClass is \"Code\", causing taskbar icon mismatch on Cinnamon",
+      "url": "https://github.com/microsoft/vscode/issues/325938",
+      "created_at": "2026-07-15T11:38:52Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix WM_CLASS case mismatch on Linux (code vs Code) to allow proper window-launcher association in desktop environments",
+        "why_easy": "The issue is clearly documented with a specific case mismatch between the window's WM_CLASS and the .desktop file's StartupWMClass; the fix likely involves changing one string value to match, requiring only locating where WM_CLASS is set in the Linux-specific code."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325936,
+      "title": "Missing AI models",
+      "url": "https://github.com/microsoft/vscode/issues/325936",
+      "created_at": "2026-07-15T11:22:00Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "AI models section in Copilot is not appearing in VS Code despite troubleshooting attempts",
+        "why_easy": "Root cause is unclear and could span extension initialization, feature flags, authentication, or environment-specific issues; requires investigation across multiple systems to narrow down"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325935,
+      "title": "Disable .copilot folder creation",
+      "url": "https://github.com/microsoft/vscode/issues/325935",
+      "created_at": "2026-07-15T11:17:21Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Copilot CLI creates ~/.copilot folder even when all Copilot features are disabled via settings",
+        "why_easy": "Requires tracing VS Code's initialization logic to find where the Copilot CLI starts and understanding the policy for when it should be disabled; not immediately obvious where the fix belongs."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325930,
+      "title": "Copilot completion feedback",
+      "url": "https://github.com/microsoft/vscode/issues/325930",
+      "created_at": "2026-07-15T10:40:40Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Copilot code completion suggestion for AL language appears incorrect but lacks reproduction steps and context.",
+        "why_easy": "Insufficient detail to investigate\u2014missing expected behavior, reproduction steps, and context for the suggested completion, making it unclear what the actual issue is or which component is responsible."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325926,
+      "title": "https://github.com/microsoft/vscode/issues/291708 is not resolved on vscode.dev",
+      "url": "https://github.com/microsoft/vscode/issues/325926",
+      "created_at": "2026-07-15T10:04:24Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Radio button options in Copilot Chat's askQuestions tool don't respond to touch input on vscode.dev",
+        "why_easy": "Isolated input handling issue, but requires understanding touch event APIs, extension architecture, and potentially cross-platform debugging"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325924,
+      "title": "Fixtures do not render file icons with resource labels",
+      "url": "https://github.com/microsoft/vscode/issues/325924",
+      "created_at": "2026-07-15T09:44:18Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "File icons are not rendering in test fixtures that use resource labels",
+        "why_easy": "The issue is vague about which fixtures are affected and lacks reproduction steps; fixing it requires understanding VSCode's fixture and icon rendering architecture"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325923,
+      "title": "Modern UI: intermittent double border appears then disappears",
+      "url": "https://github.com/microsoft/vscode/issues/325923",
+      "created_at": "2026-07-15T09:41:54Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Identify and fix an intermittent double border that appears and disappears during Modern UI relayouts.",
+        "why_easy": "Hard because the issue is intermittent with no known repro steps, requiring investigation into VS Code's layout system to identify the trigger before fixing can begin."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325922,
+      "title": "Editor tabs: white separator appears on hover in light themes (tabSizing: shrink)",
+      "url": "https://github.com/microsoft/vscode/issues/325922",
+      "created_at": "2026-07-15T09:41:48Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": true,
+        "one_line_summary": "Fix white separator that appears on tab hover in light themes with tabSizing: shrink",
+        "why_easy": "Clear reproduction steps and narrow visual scope, but requires locating tab styling code in VS Code's large codebase and verifying the CSS fix across themes"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325921,
+      "title": "Status bar: no longer switches color while debugging in Modern UI",
+      "url": "https://github.com/microsoft/vscode/issues/325921",
+      "created_at": "2026-07-15T09:41:42Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Status bar should reflect debugging color state when Modern UI is enabled, matching classic UI behavior.",
+        "why_easy": "The functionality already exists in classic UI, but Modern UI's status bar isn't applying the debug state color\u2014the fix likely requires understanding how the two UI implementations differ and bridging that gap, which needs architectural knowledge of VS Code's workbench systems."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 325920,
+      "title": "Modern UI: revisit pill styling \u2014 rectangular pills with spacing preferred",
+      "url": "https://github.com/microsoft/vscode/issues/325920",
+      "created_at": "2026-07-15T09:41:17Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Update pill styling in Modern UI to use rectangular pills with spacing as preferred in design feedback",
+        "why_easy": "CSS changes are straightforward, but requires accessing external Slack screenshot and identifying which VS Code surface needs modification before implementation"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 95809,
+      "title": "next/font/google: allow axes with discrete weight for variable fonts",
+      "url": "https://github.com/vercel/next.js/issues/95809",
+      "created_at": "2026-07-15T09:36:35Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Allow combining discrete weight with axes for variable fonts in next/font/google",
+        "why_easy": "Clear error message and public reproduction repository provided, but requires understanding variable font concepts and may involve adjusting validation logic in multiple places"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 95801,
+      "title": "`next build` (16.2.x, Turbopack) crashes with a silent SIGSEGV/SIGABRT when typescript@7 is installed and `typescript.ignoreBuildErrors: true` is set in CI \u2014 please backport the graceful error from canary",
+      "url": "https://github.com/vercel/next.js/issues/95801",
+      "created_at": "2026-07-15T00:14:32Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Backport TypeScript 7 graceful error handling to Next.js 16.2.x stable to prevent silent SIGSEGV crash with `typescript.ignoreBuildErrors: true`",
+        "why_easy": "The fix already exists in canary (PR #95572) providing a clear template, but backporting requires understanding the codebase's TypeScript detection logic and testing in CI environment"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 22937,
+      "title": "Allow env file from workspace root",
+      "url": "https://github.com/vitejs/vite/issues/22937",
+      "created_at": "2026-07-14T22:48:43Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Allow envDir configuration to load .env files from parent directories in monorepo setups",
+        "why_easy": "Requires understanding Vite's path resolution logic for envDir, careful handling of directory traversal and validation, and thorough testing of monorepo edge cases; the 'needs reproduction' label suggests the exact expected behavior isn't fully characterized yet"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 22934,
+      "title": "`server.close()` hangs forever when a dependency is discovered mid-optimize (optimizer never settles its `processing` promise)",
+      "url": "https://github.com/vitejs/vite/issues/22934",
+      "created_at": "2026-07-14T16:28:16Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Vite dev server close() hangs forever when dependencies are discovered mid-optimize due to unresolved depOptimizationProcessing promises",
+        "why_easy": "Root cause is clearly diagnosed and a minimal fix is proposed (two resolve() calls in close()), but requires understanding the optimizer's async promise patterns and careful verification that the fix handles all cases correctly"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 22933,
+      "title": "Vite 8 production build miscompiles conditional var control flow in legacy plugin wrapper",
+      "url": "https://github.com/vitejs/vite/issues/22933",
+      "created_at": "2026-07-14T15:38:44Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Vite 8 production build incorrectly removes conditional control flow and ternary operators when compiling code with var declarations inside conditional branches",
+        "why_easy": "Requires deep knowledge of Vite's transform pipeline and JavaScript var semantics; debugging requires tracing through the compiler to identify which AST transformation is incorrectly simplifying the conditionals"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68846,
+      "title": "Flaky test in `finish-exam-modal.test.tsx`",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68846",
+      "created_at": "2026-07-15T11:42:40Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix a flaky test in finish-exam-modal by replacing a synchronous query with an async wait for element removal.",
+        "why_easy": "The issue provides the exact file, line number, problem diagnosis, and the precise one-line fix to apply \u2014 just change queryByRole to await waitForElementToBeRemoved with queryByRole inside."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68844,
+      "title": "Title case error in \"Why is it Important to Have Good Structural Hierarchy?\" lecture",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68844",
+      "created_at": "2026-07-15T10:40:16Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Capitalize 'is' and 'it' in the lecture title in two files to fix title case inconsistency",
+        "why_easy": "Straightforward text replacement in two identified locations (challenge frontmatter and JSON structure) with no logic changes or complex file navigation needed"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68843,
+      "title": "Python string lectures never introduce the standalone string repetition operator",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68843",
+      "created_at": "2026-07-15T10:28:26Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add the standalone string repetition operator to the string operators lecture alongside concatenation",
+        "why_easy": "The fix requires adding simple example code to an existing lecture that already covers related string operators, with no complex implementation or dependencies involved."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68835,
+      "title": "Bug: exam-environment API requests hang indefinitely on schema-validation errors",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68835",
+      "created_at": "2026-07-15T04:42:58Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix validation error handler in exam-environment routes to return 400 status instead of hanging, and add test coverage",
+        "why_easy": "The issue provides exact file location, line numbers, reproduction steps, and complete suggested fix code; the change is a localized conditional check with clear testing path provided"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29724,
+      "title": "Generated client JSDoc examples embed process.env.DATABASE_URL, tripping security scanners",
+      "url": "https://github.com/prisma/prisma/issues/29724",
+      "created_at": "2026-07-15T11:39:45Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Replace hardcoded process.env.DATABASE_URL in generated JSDoc examples with a placeholder environment variable to avoid triggering false positives in security scanners",
+        "why_easy": "The fix is a straightforward string replacement in the JSDoc generator, though requires locating the code generation logic in Prisma's codebase and handling any snapshot tests."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66333,
+      "title": "DOC: Clarify PeriodIndex.from_fields scalar input requirements",
+      "url": "https://github.com/pandas-dev/pandas/issues/66333",
+      "created_at": "2026-07-14T15:40:24Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Clarify PeriodIndex.from_fields docstring to specify that at least one field must be array-like and resolve which array-like types are supported",
+        "why_easy": "The issue is scoped to documentation updates with clear guidance from PR #66334; no code changes needed, just clarifying existing behavior and addressing an open question about input type support"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34481,
+      "title": "\u26a0\ufe0f CI failed on Unit tests Linux x86-64 ubuntu_atlas (last failure: Jul 15, 2026) \u26a0\ufe0f",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34481",
+      "created_at": "2026-07-15T03:47:13Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix failing test for DecisionTreeRegressor with categorical data and absolute error impurity",
+        "why_easy": "The issue is marked as not yet ready for PRs and lacks root cause diagnosis; contributor would need to understand Decision Tree internals, the ubuntu_atlas build environment, and debug why this specific parameter combination fails."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34479,
+      "title": "Ecosystem: BGPT for literature evidence when documenting ML methods",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34479",
+      "created_at": "2026-07-14T22:45:06Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "docs",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Propose BGPT as an external tool resource for ML researchers to lookup methods/results/limitations during documentation writing",
+        "why_easy": "Hard because the issue is explicitly not ready for a PR, unclear what action scikit-learn should take, and the author suggests it's likely off-topic for the repository"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34477,
+      "title": "Infinite Recursion when using a mock as param for a Mock Classifier",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34477",
+      "created_at": "2026-07-14T14:36:14Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Cloning a classifier with a MagicMock parameter causes infinite recursion and memory leak in scikit-learn 1.9+",
+        "why_easy": "Clear minimal reproduction and known regression from 1.8\u21921.9, but fixing requires understanding clone's internals and how MagicMock's infinite attribute chaining interacts with recursive cloning logic"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45167,
+      "title": "MGM GRAND DURAN PATTERSON SR PAYS 18 BILLION US DOLLARS",
+      "url": "https://github.com/github/docs/issues/45167",
+      "created_at": "2026-07-15T09:53:31Z",
+      "digest_date": "2026-07-15",
+      "triage": {
+        "category": "docs",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Spam issue with nonsensical title unrelated to GitHub documentation",
+        "why_easy": "Not a real issue\u2014the title is gibberish with no connection to any actual documentation work."
       }
     }
   ]
