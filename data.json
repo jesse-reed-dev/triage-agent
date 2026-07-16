@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15",
+  "updated": "2026-07-16",
   "issues": [
     {
       "repo": "react/react-native",
@@ -4154,6 +4154,816 @@
         "good_first_issue": false,
         "one_line_summary": "Spam issue with nonsensical title unrelated to GitHub documentation",
         "why_easy": "Not a real issue\u2014the title is gibberish with no connection to any actual documentation work."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57570,
+      "title": "Regression in requestIdleCallback makes timeout option a no-op",
+      "url": "https://github.com/react/react-native/issues/57570",
+      "created_at": "2026-07-15T17:03:35Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix timeout parameter in requestIdleCallback that stopped being forwarded to runtimeScheduler after PR #51251",
+        "why_easy": "Issue clearly identifies the root cause and exact code location; fix already exists in provided PR #57571 to reference\u2014but requires C++ knowledge and understanding of react-native's native scheduling architecture"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47846,
+      "title": "[expo-network][Android] `isInternetReachable` stays `false` forever after app freeze in background \u2014 stale out-of-order `onLost` emitted with no correction",
+      "url": "https://github.com/expo/expo/issues/47846",
+      "created_at": "2026-07-16T09:23:51Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "On Android, app freeze during network transition causes isInternetReachable to remain permanently false due to out-of-order ConnectivityManager callbacks",
+        "why_easy": "Hard \u2014 requires deep Android knowledge of ConnectivityManager behavior, understanding why the prior fix (PR #44656) can't simply be reverted, implementing event deduplication/ordering logic, and physical device testing to verify the fix"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47833,
+      "title": "[expo-task-manager] Android: TaskService leaks a TaskExecutionCallback (retaining the whole JobService) per executed background task \u2014 severe with background location",
+      "url": "https://github.com/expo/expo/issues/47833",
+      "created_at": "2026-07-15T21:05:33Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Fix memory leak in TaskService by removing TaskExecutionCallback from static map after task completion instead of just retrieving it",
+        "why_easy": "The fix is a one-liner (replace `get()` with `remove()` at a specific line), the root cause is clearly diagnosed with file paths provided, and the reporter has verified the solution works in production"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47832,
+      "title": "[expo-image][Android] Brownfield/host apps with their own AppGlideModule can't build \u2014 duplicate GeneratedAppGlideModuleImpl at dex merge; excludeAppGlideModule ineffective",
+      "url": "https://github.com/expo/expo/issues/47832",
+      "created_at": "2026-07-15T19:31:46Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "The excludeAppGlideModule flag fails to prevent duplicate GeneratedAppGlideModuleImpl classes in brownfield Android apps with their own Glide module, causing dex merge failures.",
+        "why_easy": "This is hard because it requires deep knowledge of KSP processor behavior, AGP source-set filtering, and the Android build toolchain \u2014 KSP silently ignores AGP filters, making the root cause subtle and the fix non-obvious."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47831,
+      "title": "[expo-router] Form sheet with a nested Stack renders the navigation theme background instead of the native sheet material on iOS 26",
+      "url": "https://github.com/expo/expo/issues/47831",
+      "created_at": "2026-07-15T19:30:29Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Form sheets with nested Stack incorrectly render the navigation theme background instead of native iOS material due to a regression in nativeContainerStyle handling.",
+        "why_easy": "Excellent documentation with clear root cause and code locations makes it approachable, but balancing two competing fixes (swipe-back flash prevention vs. native material visibility) and iOS platform-specific logic add complexity."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47819,
+      "title": "[CLI][SDK57][iOS][expo-modules-jsi] Failed to Build ExpoModulesJSI xcframework - \"weak must be a mutable variable, because it may change at runtime\"",
+      "url": "https://github.com/expo/expo/issues/47819",
+      "created_at": "2026-07-15T15:01:21Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Build failure in expo-modules-jsi due to weak references declared as immutable constants instead of mutable variables",
+        "why_easy": "Compiler error is explicit\u2014change 'weak let' to 'weak var' in two Swift files; fix is a one-word change per file"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47814,
+      "title": "[expo-dev-launcher] Dev server error responses are masked as \"Failed to connect\" in the launcher UI",
+      "url": "https://github.com/expo/expo/issues/47814",
+      "created_at": "2026-07-15T12:49:18Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Dev server error responses (e.g., HTTP 500 with explanatory error body) are masked as generic 'Failed to connect' messages instead of surfacing the actual server error details",
+        "why_easy": "The root cause is clearly identified in specific files (iOS manifest parser and Android manifest parser) with well-documented reproduction steps, and a fix is already proposed in PR #47797; however, it requires native iOS (Objective-C) and Android (Kotlin) mobile development skills and testing across platforms"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47812,
+      "title": "[cli] `expo start` ignores the documented default for `--private-key-path` (signed dev manifests fail with 500)",
+      "url": "https://github.com/expo/expo/issues/47812",
+      "created_at": "2026-07-15T12:36:44Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "expo start ignores the documented default for --private-key-path, causing code-signing-enabled development manifests to fail with a 500 error",
+        "why_easy": "Root cause is pinpointed to a specific function (getProjectCodeSigningCertificateAsync in codesigning.ts), the fix is a simple default-path resolution instead of throwing, and a reference PR already exists showing the solution"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326146,
+      "title": "Preserve option to keep current UI: The so-called Modern UI is disgusting and objectively inferior",
+      "url": "https://github.com/microsoft/vscode/issues/326146",
+      "created_at": "2026-07-16T11:46:18Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add an option to switch back to the previous UI instead of the new Modern UI",
+        "why_easy": "Requires understanding VSCode's UI architecture and settings system; complexity depends on whether old UI code still exists or needs restoration"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326140,
+      "title": "Package.json dependency metadata lookup; slow with PNPM",
+      "url": "https://github.com/microsoft/vscode/issues/326140",
+      "created_at": "2026-07-16T11:09:35Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Dependency metadata lookup hovers are slow with PNPM due to inefficient traversal of nested node_modules structures",
+        "why_easy": "Issue has clear reproduction steps and an identified root cause (PNPM nested structure), but fixing requires profiling VS Code internals and optimizing file system operations across multiple package managers"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326139,
+      "title": "[1.129.0] CodeWindow: renderer process gone (reason: crashed, code: 133)",
+      "url": "https://github.com/microsoft/vscode/issues/326139",
+      "created_at": "2026-07-16T10:56:10Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code renderer process crashes (exit code 133) when run in CI with xvfb-run and test-cli",
+        "why_easy": "Requires native crash debugging, minidump analysis expertise, and deep knowledge of Electron/renderer process internals in headless environments\u2014not beginner-friendly"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326138,
+      "title": "\"Run C/C++ File\" fails in PowerShell if path has spaces (missing & call operator)",
+      "url": "https://github.com/microsoft/vscode/issues/326138",
+      "created_at": "2026-07-16T10:56:02Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "The \"Run C/C++ File\" button fails to execute compiled binaries in PowerShell when the workspace path contains spaces due to missing the PowerShell call operator `&`.",
+        "why_easy": "The root cause is clearly identified (missing `&` operator), reproduction steps are explicit, and the debug mode implementation already demonstrates the correct pattern to follow."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326136,
+      "title": "Latest version crashes a lot even on Find & Replace (Ubuntu 24)",
+      "url": "https://github.com/microsoft/vscode/issues/326136",
+      "created_at": "2026-07-16T10:44:16Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code 1.129 crashes frequently during Find & Replace operations on Ubuntu 24",
+        "why_easy": "Issue lacks reproduction steps, crash logs, and diagnostic details; would require establishing a reliable reproducer before investigation could begin"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326133,
+      "title": "The window terminated unexpectedly (reason: clear-exit, code: 0)",
+      "url": "https://github.com/microsoft/vscode/issues/326133",
+      "created_at": "2026-07-16T10:26:29Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code crashes on startup when the system lacks required graphics libraries (GLX/EGL) or has outdated VAAPI",
+        "why_easy": "Requires deep expertise in GPU initialization, ANGLE/Chromium graphics stack, and environment-specific debugging; hard to reproduce without matching system configuration"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326132,
+      "title": "\u6269\u5c55\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25: Vue (Official)",
+      "url": "https://github.com/microsoft/vscode/issues/326132",
+      "created_at": "2026-07-16T09:36:10Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Extension signature verification fails for Vue Official extension, but logs and reproduction steps are missing.",
+        "why_easy": "Hard because the issue is incomplete (promised logs are absent), vague about what verification failed and why, uses a non-standard VS Code variant (CodeBuddy CN), and lacks error messages or steps to reproduce\u2014understanding extension signature verification requires deep system knowledge."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326131,
+      "title": "1 uncaught errors",
+      "url": "https://github.com/microsoft/vscode/issues/326131",
+      "created_at": "2026-07-16T09:31:26Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code 1.128.1 reports an uncaught error during activation, but no error message or reproduction steps are provided",
+        "why_easy": "This is difficult because the issue lacks a stack trace, clear error message, reproduction steps, and the body is truncated; it requires investigation to identify which extension or component is affected before any fix is possible."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326129,
+      "title": "Editor/chat sash & panel alignment bugs in Modern UI layout",
+      "url": "https://github.com/microsoft/vscode/issues/326129",
+      "created_at": "2026-07-16T09:05:37Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix editor/chat panel alignment and sash positioning/affordance visibility issues in the Modern UI floating-panel layout",
+        "why_easy": "Issues are well-defined with clear acceptance criteria and localized to the sash/panel system, but require navigating VSCode's layout architecture and debugging multiple intertwined visual bugs across different panel states"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326128,
+      "title": "Agents window: consolidate redundant progress spinners",
+      "url": "https://github.com/microsoft/vscode/issues/326128",
+      "created_at": "2026-07-16T09:05:25Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Consolidate redundant progress spinners in the Agents window by replacing inline subagent spinners with shimmer and suppressing chat spinners when unnecessary.",
+        "why_easy": "The task is well-scoped with clear acceptance criteria and identified spinner locations, but requires understanding VS Code's Agents window architecture and coordinating changes across multiple UI surfaces."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326127,
+      "title": "Copilot completion feedback",
+      "url": "https://github.com/microsoft/vscode/issues/326127",
+      "created_at": "2026-07-16T08:56:16Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "User reports that GitHub Copilot extension provides too many suggestions and prevents independent work.",
+        "why_easy": "This issue is incomplete and actionable: the \"Describe the issue\" section is empty, there are no reproduction steps, and it's unclear whether this is a bug, feature request, or support question needing clarification."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326126,
+      "title": "Some color theme settings and color customizations are ignored in modern UI mode",
+      "url": "https://github.com/microsoft/vscode/issues/326126",
+      "created_at": "2026-07-16T08:53:45Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Color customizations for activity bar, status bar, and title bar are ignored in modern UI mode due to !important CSS overrides",
+        "why_easy": "The root cause is clearly identified as specific CSS rules with !important declarations, but fixing requires understanding how VS Code's theming system interacts with modern UI mode's floating-panels CSS and ensuring user customizations take precedence without breaking the intended blending behavior for default themes."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326125,
+      "title": "Copilot harness not available on github codespace",
+      "url": "https://github.com/microsoft/vscode/issues/326125",
+      "created_at": "2026-07-16T08:51:17Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Copilot harness is not available as an option when running VS Code in a GitHub Codespace",
+        "why_easy": "Requires understanding VS Code's Codespace integration and Copilot feature detection with minimal issue description and no clear reproduction steps."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326124,
+      "title": "Codex extension crashes VS Code on startup after update to 1.129.0 (Ubuntu 20.04)",
+      "url": "https://github.com/microsoft/vscode/issues/326124",
+      "created_at": "2026-07-16T08:40:26Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Codex extension crashes VS Code on startup after updating to version 1.129.0",
+        "why_easy": "Hard because this is a third-party extension compatibility issue that should be reported to the extension publisher, making it out-of-scope for VS Code core contributors to fix."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326123,
+      "title": "Feature Request: Add option to collapse/expand queued messages in Copilot Chat",
+      "url": "https://github.com/microsoft/vscode/issues/326123",
+      "created_at": "2026-07-16T08:25:05Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add collapse/expand toggle for pending messages in Copilot Chat to improve queue visibility and message reordering",
+        "why_easy": "Requires understanding VS Code extension architecture and Copilot Chat UI patterns, plus implementing state management for collapse/expand behavior across multiple messages"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 95850,
+      "title": "Docs:",
+      "url": "https://github.com/vercel/next.js/issues/95850",
+      "created_at": "2026-07-16T09:58:31Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "docs",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Documentation issue with no details\u2014body contains only placeholder text 'Sandbox'",
+        "why_easy": "Impossible to pick up: the issue lacks any concrete description of what needs to be documented or fixed, containing only placeholder responses where actual details should be"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 95848,
+      "title": "Blank page when pressing Back between a reload and hydration with cacheComponents (regression in 16.3.0-canary.87)",
+      "url": "https://github.com/vercel/next.js/issues/95848",
+      "created_at": "2026-07-16T09:22:34Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Pressing Back between a reload and hydration with cacheComponents enabled causes a blank page instead of rendering the traversed-to page (regression in canary.87)",
+        "why_easy": "Regression traceable to specific PR #95682 with deterministic test reproduction, but fix requires deep understanding of traversal replay logic, cacheComponents/Suspense interaction, and Navigation API state management during hydration"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 95836,
+      "title": "generateMetadata from not-found.tsx is correct during SSR but replaced after hydration on initial page load",
+      "url": "https://github.com/vercel/next.js/issues/95836",
+      "created_at": "2026-07-15T23:06:47Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Metadata from not-found.tsx is correctly serialized to initial HTML but gets replaced by root layout metadata after client hydration",
+        "why_easy": "Hard because it requires deep understanding of Next.js Flight protocol serialization, metadata resolution, and how notFound() affects the component tree during SSR/hydration reconciliation."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 95834,
+      "title": "Turbopack ignores custom Emotion cache during SSR when using @mui/material-nextjs (Pages Router)",
+      "url": "https://github.com/vercel/next.js/issues/95834",
+      "created_at": "2026-07-15T21:15:46Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Turbopack ignores custom Emotion cache during SSR when using @mui/material-nextjs, causing RTL styles to be missing on initial page load.",
+        "why_easy": "Hard to fix because it requires deep understanding of Turbopack's SSR implementation and how it differs from Webpack's context/cache handling; the issue involves subtle interactions between Turbopack, Emotion, and MUI that are rarely touched by contributors new to the codebase."
+      }
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 48821,
+      "title": "Decouple @mui/icons-material workspace from @mui/material",
+      "url": "https://github.com/mui/material-ui/issues/48821",
+      "created_at": "2026-07-16T11:27:45Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Extract SvgIcon and createSvgIcon to a separate package to enable independent release cycles for @mui/icons-material",
+        "why_easy": "Requires deep monorepo knowledge and maintainer coordination; architectural work beyond new contributor scope"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 22957,
+      "title": "CSS Modules: string `generateScopedName` pattern produces different class names for the same file when imported with a query (e.g. `?inline`)",
+      "url": "https://github.com/vitejs/vite/issues/22957",
+      "created_at": "2026-07-16T11:02:47Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "String CSS Modules patterns generate different class names for the same file when imported with query parameters like ?inline",
+        "why_easy": "The fix is concrete and well-guided with a reproduction case, but requires understanding postcss-modules, generic-names, and Vite's CSS plugin system to implement and test properly"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 22946,
+      "title": "chunkImportMap css import uses contenthash",
+      "url": "https://github.com/vitejs/vite/issues/22946",
+      "created_at": "2026-07-15T19:09:55Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "CSS imports in chunk import maps should use stable chunk IDs instead of content hashes to prevent cache mismatches when CSS changes",
+        "why_easy": "The problem is well-documented with a clear reproduction, but the fix requires understanding Vite's chunk import map generation system and locating where CSS references are built differently from JS references"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 22943,
+      "title": "Upgrade to v8 breaks ?inline",
+      "url": "https://github.com/vitejs/vite/issues/22943",
+      "created_at": "2026-07-15T13:46:32Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "The ?inline query parameter for importing assets fails in Vite v8 with a file-not-found error from Rolldown",
+        "why_easy": "Hard because the user couldn't create a minimal reproduction and the issue spans multiple systems: Vite's query parameter handling, the new Rolldown bundler integration in v8, and the plugin pipeline. Debugging will require tracing through how query parameters are processed before reaching Rolldown's file resolution."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35508,
+      "title": "@storybook/addon-vitest: Dev UI coverage crashes on large runs \u2014 cleanOnRerun races with .tmp writes in Storybook cache",
+      "url": "https://github.com/storybookjs/storybook/issues/35508",
+      "created_at": "2026-07-16T03:27:52Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix race condition where cleanOnRerun deletes coverage .tmp directory while Vitest is still writing files, crashing on large test suites",
+        "why_easy": "Code fix is trivial (disable cleanOnRerun, move coverage directory) but reproducing the race condition requires a large test suite (~900 tests) and Vitest coverage expertise"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35503,
+      "title": "[Bug]: Illegal invocation on HTMLElement.focus in setupGlobalFocusEvents on first Docs-page load",
+      "url": "https://github.com/storybookjs/storybook/issues/35503",
+      "created_at": "2026-07-15T20:08:51Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix uncaught TypeError on first Docs page load when HTMLElement.focus is invoked across iframe realm boundaries",
+        "why_easy": "Race condition across iframe realms is timing-sensitive and hard to reproduce reliably, requiring deep understanding of Storybook's preview runtime and DOM boundary semantics"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35502,
+      "title": "Storybook 10.5 focus instrumentation breaks Zag focus-visible in browser tests",
+      "url": "https://github.com/storybookjs/storybook/issues/35502",
+      "created_at": "2026-07-15T16:46:31Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Storybook 10.5's focus instrumentation breaks Zag's focus-visible by converting HTMLElement.prototype.focus to an unsafe accessor that throws on prototype reads",
+        "why_easy": "Root cause is clearly identified with a working mitigation and minimal reproduction provided, but fixing it requires understanding Storybook's focus instrumentation system and ensuring the fix doesn't break the 10.5 focus features it was meant to add"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68872,
+      "title": "Fix incorrect wording in Working with Specialized Semantic Elements lecture",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68872",
+      "created_at": "2026-07-16T09:04:21Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix two wording errors in responsive web design curriculum lectures: 'chemical equations' \u2192 'chemical formulas' and 'navigational aides' \u2192 'navigational aids'",
+        "why_easy": "Both fixes are straightforward text replacements in lecture content with corrections already clearly specified; no code changes or logic required."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68870,
+      "title": "Punctuation and title mismatch errors in the quotes and abbreviations lectures",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68870",
+      "created_at": "2026-07-16T07:59:47Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix three punctuation and metadata errors in quotes and abbreviations course lectures",
+        "why_easy": "All three issues are straightforward text and JSON corrections with exact current and expected text provided; no code logic or system knowledge required."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68869,
+      "title": "Redundant and imprecise wording in the \"How Do You Display Times and Dates in HTML?\" lecture",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68869",
+      "created_at": "2026-07-16T07:58:15Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix redundant wording and grammatical issues in the HTML time and date lecture",
+        "why_easy": "Three specific text corrections are clearly identified with exact expected changes \u2014 no code required, just straightforward curriculum content editing"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68867,
+      "title": "Curriculum Typo: ReferenceError in Javascript String Indexing Quiz Question",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68867",
+      "created_at": "2026-07-16T07:28:02Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix invalid JavaScript syntax in quiz question options for string indexing lesson",
+        "why_easy": "The fix is straightforward (correct the variable declaration syntax), well-documented in the issue with two proposed solutions, and requires only updating quiz question options in the curriculum without complex logic"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68865,
+      "title": "No audio component in Giving Advice and Suggestions quiz",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68865",
+      "created_at": "2026-07-16T04:42:19Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Remove the transcript availability note from the Giving Advice and Suggestions quiz page since no audio component is present.",
+        "why_easy": "Explicitly marked first-timers-only; the fix involves either removing the transcript note or ensuring an audio component exists, and the issue clearly describes the expected behavior."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68861,
+      "title": "Inconsistent indentation in the Build a List of Major Web Browsers workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68861",
+      "created_at": "2026-07-15T19:31:32Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix inconsistent indentation in the Build a List of Major Web Browsers workshop to use 2-space indentation consistently across all steps",
+        "why_easy": "Mechanical indentation fix with clear before/after standards, no logic changes or test impacts needed"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68858,
+      "title": "Fix text errors in Understanding Nuanced Semantic Elements emphasis and strong lectures",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68858",
+      "created_at": "2026-07-15T17:50:25Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix three text errors in semantic HTML element lectures: correct terminology, add missing apostrophe, and fix punctuation",
+        "why_easy": "Three straightforward text replacements with exact locations and expected changes specified; no code logic or complex testing involved"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 47985,
+      "title": "Business practices",
+      "url": "https://github.com/supabase/supabase/issues/47985",
+      "created_at": "2026-07-15T22:19:22Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "User requests ability to pause projects and start free projects on paid plans",
+        "why_easy": "Vague scope without technical specification, likely requires backend/billing system changes, and lacks reproduction steps or clarity on expected behavior"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 47982,
+      "title": "Subject: Connectivity Issues with *.supabase.co domains from Yemen (ISP: Yemen Net)",
+      "url": "https://github.com/supabase/supabase/issues/47982",
+      "created_at": "2026-07-15T21:03:55Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "docs",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "User reports WebSocket and DNS timeouts connecting to their Supabase project from Yemen, identified as ISP-level blocking of *.supabase.co domains.",
+        "why_easy": "This is an ISP-level infrastructure issue outside Supabase's codebase\u2014no code change can fix Yemen Net's blocking, making it unsuitable for typical contributor work."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 50954,
+      "title": "Closed ApplicationContexts are retained after eviction from the test context cache, causing OutOfMemoryError in large @SpringBootTest suites",
+      "url": "https://github.com/spring-projects/spring-boot/issues/50954",
+      "created_at": "2026-07-15T13:50:24Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Closed ApplicationContexts are not garbage-collected after ContextCache eviction, causing OutOfMemoryError in large test suites",
+        "why_easy": "Requires expertise in GC analysis and Spring's test lifecycle to confirm the suspected root cause (SpringApplicationShutdownHook) and implement a safe fix without breaking existing cleanup behavior"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 50953,
+      "title": "Kotlin Serialization does not back off when JSON-B is the only JSON converter",
+      "url": "https://github.com/spring-projects/spring-boot/issues/50953",
+      "created_at": "2026-07-15T12:26:55Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix Kotlin Serialization HTTP message converter to defer to JSON-B when it's the only JSON converter available",
+        "why_easy": "The regression is clearly scoped to one customizer class with an identified root cause commit, but requires understanding Spring Boot's auto-configuration architecture and how to detect when JSON-B is actually configured versus just present on the classpath."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66349,
+      "title": "DOC: Series.eq() fill_value docs outdated for string dtype",
+      "url": "https://github.com/pandas-dev/pandas/issues/66349",
+      "created_at": "2026-07-16T11:16:19Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update Series.eq() documentation to indicate fill_value parameter accepts string values in addition to float",
+        "why_easy": "Single-line docstring update with no code changes needed; functionality already works correctly as demonstrated in the issue"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66348,
+      "title": "BUG: ASCII mode is broken for `str.match`",
+      "url": "https://github.com/pandas-dev/pandas/issues/66348",
+      "created_at": "2026-07-16T07:05:44Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The `str.match()` method fails when using the `re.ASCII` flag because pandas forces Unicode support which conflicts with ASCII mode.",
+        "why_easy": "The issue is focused on one method with a clear root cause identified, but the incomplete issue description (missing traceback, version info, unclear example syntax) requires investigation to properly reproduce and understand the fix scope."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66346,
+      "title": "DEPR: `groupby.nth.__getitem__`",
+      "url": "https://github.com/pandas-dev/pandas/issues/66346",
+      "created_at": "2026-07-15T20:43:58Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Deprecate the `__getitem__` syntax for `groupby.nth()` in favor of the method call syntax",
+        "why_easy": "The scope is clear and self-contained, the code location is provided in the issue, and the task follows a standard deprecation pattern that contributors can reference from existing examples in the pandas codebase."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66341,
+      "title": "BUG: str.split returns string formatted list in version 3.0.x",
+      "url": "https://github.com/pandas-dev/pandas/issues/66341",
+      "created_at": "2026-07-15T12:47:05Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": true,
+        "one_line_summary": "str.split() returns string representation of list instead of actual list for categorical Series in pandas 3.0.x",
+        "why_easy": "Narrow scope isolated to categorical + str.split interaction with clear regression from 2.3.1, though fixing requires understanding pandas type handling"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32014,
+      "title": "DOC: document that `set_printoptions` are not global anymore since 2.1",
+      "url": "https://github.com/numpy/numpy/issues/32014",
+      "created_at": "2026-07-16T10:01:57Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Document that `set_printoptions` changed from global to thread-local ContextVar behavior in numpy 2.1",
+        "why_easy": "The behavior change already exists in the code; the task is to document it in the appropriate docs without implementing new functionality."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32013,
+      "title": "BUG: `np.fromiter` creates corrupted arrays when re-using StringDType instance",
+      "url": "https://github.com/numpy/numpy/issues/32013",
+      "created_at": "2026-07-16T09:38:25Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "np.fromiter creates corrupted arrays and segfaults when a StringDType instance is reused across multiple calls",
+        "why_easy": "The reproducer is simple but segfaults and state corruption issues require deep NumPy internals knowledge and advanced debugging skills."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34483,
+      "title": "PCA does not follow same namespace checking logic as others",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34483",
+      "created_at": "2026-07-15T13:24:40Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "PCA methods should use check_same_namespace() utility for consistent error messages when array namespaces differ, matching other estimators like Ridge",
+        "why_easy": "The fix pattern is clearly documented in Ridge.predict() with the exact error message and utility function, but requires identifying all affected PCA methods, understanding Array API concepts, and thorough testing with dpnp and other implementations"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45182,
+      "title": "Enterprise Cloud: Usage reports endpoints specify a permission which does not exist",
+      "url": "https://github.com/github/docs/issues/45182",
+      "created_at": "2026-07-16T05:38:12Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update Enterprise Cloud usage reports endpoint documentation to reflect the actual permission requirements for fine-grained tokens",
+        "why_easy": "The problem is clearly identified; fix is updating docs once correct permission is confirmed"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45175,
+      "title": "Update _Disabling GitHub Code Quality_ page to match actual experience",
+      "url": "https://github.com/github/docs/issues/45175",
+      "created_at": "2026-07-15T19:46:03Z",
+      "digest_date": "2026-07-16",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update Code Quality settings documentation to add organization-level disabling instructions and clarify the toggle behavior",
+        "why_easy": "The scope is clear and self-contained; contributors can verify the current UX in their own GitHub account and make straightforward documentation updates without any code changes."
       }
     }
   ]
