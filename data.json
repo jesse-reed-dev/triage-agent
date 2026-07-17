@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-16",
+  "updated": "2026-07-17",
   "issues": [
     {
       "repo": "react/react-native",
@@ -4964,6 +4964,651 @@
         "good_first_issue": true,
         "one_line_summary": "Update Code Quality settings documentation to add organization-level disabling instructions and clarify the toggle behavior",
         "why_easy": "The scope is clear and self-contained; contributors can verify the current UX in their own GitHub account and make straightforward documentation updates without any code changes."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47883,
+      "title": "[ui][ios] MenuView trigger (`matchContents`) keeps stale size when its RN children change \u2014 clips content in FlashList-recycled cells",
+      "url": "https://github.com/expo/expo/issues/47883",
+      "created_at": "2026-07-17T10:28:22Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "MenuView trigger keeps stale size when content changes, clipping text in recycled list cells",
+        "why_easy": "Hard: requires deep knowledge of SwiftUI/React Native host integration, KVO observation, and the Yoga layout system; needs native iOS/Swift development and device testing."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47872,
+      "title": "[erxpo-widgets] Live Activity Deeplinking does not work from dynamic island",
+      "url": "https://github.com/expo/expo/issues/47872",
+      "created_at": "2026-07-16T21:27:59Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Live Activity deeplinks don't work when triggered from the Dynamic Island, only from the main activity content area.",
+        "why_easy": "Hard: requires iOS-native knowledge of Live Activities and Dynamic Island APIs; fix likely needs native code changes in the widget system."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47868,
+      "title": "[expo-router] Vendored TabRouter.getStateForAction crashes on a stale:false state missing history/preloadedRouteKeys (\"Cannot read properties of undefined (reading 'filter')\")",
+      "url": "https://github.com/expo/expo/issues/47868",
+      "created_at": "2026-07-16T17:10:26Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "TabRouter.getStateForAction crashes when receiving a stale:false navigation state missing history/preloadedRouteKeys fields",
+        "why_easy": "The fix pattern (optional-chaining guards) already exists elsewhere in the same file, reproduction is minimal and deterministic, and root causes are clearly identified with a working test repo provided."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326331,
+      "title": "feature: webview without service workers",
+      "url": "https://github.com/microsoft/vscode/issues/326331",
+      "created_at": "2026-07-17T11:50:15Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Replace VS Code's two-iframe + service-worker webview architecture with a single iframe to improve load performance and reduce errors",
+        "why_easy": "This requires deep architectural knowledge of VS Code's webview system; the issue body is incomplete (TODO list), involves core infrastructure affecting all extensions, and needs understanding of why the current design exists before refactoring it"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326330,
+      "title": "Automations: support workspace-less automations",
+      "url": "https://github.com/microsoft/vscode/issues/326330",
+      "created_at": "2026-07-17T11:47:53Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Allow automations to run without requiring a workspace to be open",
+        "why_easy": "Hard because it requires architectural changes to decouple automations from workspace lifecycle, and the brief description suggests non-obvious design work is needed upfront"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326328,
+      "title": "revert modern ui update",
+      "url": "https://github.com/microsoft/vscode/issues/326328",
+      "created_at": "2026-07-17T11:39:30Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Revert recent UI modernization updates that added rounded corners and spacing to restore the previous interface",
+        "why_easy": "This requires consensus on a subjective design decision rather than solving a technical bug, and even with approval would demand identifying and reverting numerous UI changes across VS Code's large codebase with no clear scope."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326327,
+      "title": "KeyBoard command are not working on detached windows",
+      "url": "https://github.com/microsoft/vscode/issues/326327",
+      "created_at": "2026-07-17T11:33:24Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Keyboard commands are non-functional in windows created by detaching tabs, though scrolling still works",
+        "why_easy": "Requires deep understanding of VSCode's internal window management and keyboard event routing architecture"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326324,
+      "title": "SSH askpass shows yes/no host-fingerprint prompt instead of PIN input for FIDO2/security-key authentication",
+      "url": "https://github.com/microsoft/vscode/issues/326324",
+      "created_at": "2026-07-17T11:05:45Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "SSH askpass UI shows yes/no host-fingerprint prompt instead of PIN input box for FIDO2 security key authentication",
+        "why_easy": "Root cause clearly identified: the prompt-matching regex is too narrow; fix is a simple condition/regex change with existing passphrase-handling code to reference."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326322,
+      "title": "Agent Host: Return an error for unsupported requests before initialize",
+      "url": "https://github.com/microsoft/vscode/issues/326322",
+      "created_at": "2026-07-17T10:56:30Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Return JSON-RPC error responses for unsupported requests before Agent Host Protocol initialization completes",
+        "why_easy": "Clear reproduction case, well-defined expected behavior, and straightforward fix (add error response for pre-initialize dispatch); main work is locating the agent host request handler in VS Code's codebase"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326321,
+      "title": "Renderer crashes with SIGBUS (code 135) shortly after workspace startup \u2014 memcpy reads past EOF of a /dev/shm shared-memory region (regression in 1.129.0)",
+      "url": "https://github.com/microsoft/vscode/issues/326321",
+      "created_at": "2026-07-17T10:41:51Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Renderer crashes with SIGBUS in 1.129.0 due to shared-memory region size mismatch between Chromium IPC producer and consumer (regression from 1.128.1)",
+        "why_easy": "Intermittent crash requires deep expertise in Chromium shared memory (mojo BigBuffer), IPC mechanisms, core dump debugging, and platform-specific Linux shared memory behavior; thorough analysis provided by reporter but reproduction and fix demand extensive system-level knowledge unsuitable for first-time contributors."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326320,
+      "title": "Renaming Copilot Chat Sessions Doesn't Stick",
+      "url": "https://github.com/microsoft/vscode/issues/326320",
+      "created_at": "2026-07-17T10:41:01Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Renaming a Copilot Chat Session fails to persist the change in the session list, session header, or across VS Code restarts.",
+        "why_easy": "The bug is clearly reproducible with specific steps and isolated to one feature, but requires understanding VS Code's extension architecture and tracing where session names are stored, loaded, and displayed across multiple UI locations."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326318,
+      "title": "Allow Go Back/Go Forward to skip closed editors",
+      "url": "https://github.com/microsoft/vscode/issues/326318",
+      "created_at": "2026-07-17T10:19:29Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add an option to skip closed editors when navigating with Go Back/Go Forward",
+        "why_easy": "Well-scoped feature but requires understanding VS Code's large codebase and how the editor lifecycle and navigation history systems interact"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326317,
+      "title": "Accounts submenus broken (at least on Windows)",
+      "url": "https://github.com/microsoft/vscode/issues/326317",
+      "created_at": "2026-07-17T10:13:41Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Accounts submenu expansion sometimes fails or displays incorrectly on Windows",
+        "why_easy": "The issue lacks reproduction steps, specific menu context, and details about expected behavior, requiring investigation before a fix can be attempted."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326316,
+      "title": "VS Code enters infinite crash/relaunch loop when opening a second window on Linux Mint Cinnamon with NVIDIA GPU",
+      "url": "https://github.com/microsoft/vscode/issues/326316",
+      "created_at": "2026-07-17T10:07:46Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code enters infinite crash/relaunch loop when opening a second window on Linux Mint Cinnamon with NVIDIA GPU",
+        "why_easy": "Environment-specific GPU/rendering bug requiring either hardware access to a Linux Mint + NVIDIA system or deep Chromium/Electron multi-window graphics stack knowledge; no clear entry point for investigation without reproducing the exact setup."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326314,
+      "title": "Ctrl+C/V/X don't work in integrated browser panel (browserView) under non-Latin keyboard layouts (e.g. Cyrillic)",
+      "url": "https://github.com/microsoft/vscode/issues/326314",
+      "created_at": "2026-07-17T09:45:10Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Copy/paste shortcuts (Ctrl+C/V/X) fail in integrated browser panel when using non-Latin keyboard layouts because the code checks produced character instead of physical key code",
+        "why_easy": "The issue pinpoints the exact file and function, provides working fix code with a clear explanation of the change, and includes local verification\u2014contributor just needs to apply the patch and test for regressions"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326313,
+      "title": "Vim extension breaks with version 1.129.0-1784074987",
+      "url": "https://github.com/microsoft/vscode/issues/326313",
+      "created_at": "2026-07-17T09:29:53Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code crashes and Vim shortcuts stop working after upgrade to 1.129.0",
+        "why_easy": "Issue description contradicts itself (says upgraded to 1.129.0 but lists 1.128.0), user's troubleshooting shows Vim extension likely isn't the cause, and no crash logs or detailed reproduction steps provided"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326312,
+      "title": "Copy text is not working in the electron instance",
+      "url": "https://github.com/microsoft/vscode/issues/326312",
+      "created_at": "2026-07-17T09:09:39Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Copy and paste functionality is not working in VS Code 1.129.0 on macOS",
+        "why_easy": "No reproduction steps provided; the process arguments suggest a special test environment rather than typical usage, making it difficult to verify and reproduce the issue without additional context or investigation into Electron clipboard handling."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 95894,
+      "title": "OpenTelemetry HttpInstrumentation set up via instrumentation.ts never instruments incoming requests \u2014 http is loaded before register() and no later require passes the hook",
+      "url": "https://github.com/vercel/next.js/issues/95894",
+      "created_at": "2026-07-17T10:46:46Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "OpenTelemetry HttpInstrumentation fails to patch http in standalone mode because http is imported before instrumentation.ts's register() completes",
+        "why_easy": "Root cause is precisely identified with specific file paths and module loading flow, but fixing it requires careful refactoring of Next.js server startup to delay http imports until after instrumentation registration\u2014affecting critical initialization logic"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 95881,
+      "title": "next/swc drops the leading whitespace of a JSX text node that contains an HTML entity",
+      "url": "https://github.com/vercel/next.js/issues/95881",
+      "created_at": "2026-07-16T22:12:10Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Next.js SWC JSX transform incorrectly drops leading whitespace from text nodes containing HTML entities",
+        "why_easy": "Issue is well-isolated with clear reproduction and working reference implementations (Babel, @swc/core), but requires understanding of Next.js's SWC integration and entity parsing in the JSX transform layer"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 95873,
+      "title": "CSP response header + loading.js (Suspense) breaks hydration - client components inert on direct load",
+      "url": "https://github.com/vercel/next.js/issues/95873",
+      "created_at": "2026-07-16T17:12:05Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "CSP response header prevents React hydration on direct page load for dynamic routes with loading.js (Suspense), despite successful SSR and resource loading",
+        "why_easy": "Reproducible minimal repo and clear bisection provided, but requires understanding subtle interactions between CSP headers, Suspense streaming, and React hydration initialization"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 95867,
+      "title": "cacheComponents: runtime ISR revalidation fails with a message-less StaticGenBailoutError \u2014 the real reason only reaches console.error, so error trackers get an empty, unactionable event",
+      "url": "https://github.com/vercel/next.js/issues/95867",
+      "created_at": "2026-07-16T15:21:21Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": true,
+        "one_line_summary": "StaticGenBailoutError thrown during ISR revalidation lacks a message, making production errors undiagnosable in error trackers",
+        "why_easy": "The fix location and solution are explicitly identified (add message to StaticGenBailoutError), but requires understanding Next.js prerendering internals to find all throw sites and test properly"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35518,
+      "title": "[Bug]: vue-component-meta docgen dropped in production build for <script setup lang=\"ts\"> (works in dev)",
+      "url": "https://github.com/storybookjs/storybook/issues/35518",
+      "created_at": "2026-07-16T17:00:10Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "vue-component-meta docgen metadata is lost in production builds for `<script setup lang=\"ts\">` components because the append guard requires `_sfc_main` to be a local binding rather than an import.",
+        "why_easy": "The issue provides excellent root cause analysis with a concrete suggested fix, but requires understanding Vite's Vue plugin behavior and Storybook's docgen pipeline, plus testing in both dev and build modes."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35513,
+      "title": "Index: Remove synthetic `component` wrappers for unattached docs",
+      "url": "https://github.com/storybookjs/storybook/issues/35513",
+      "created_at": "2026-07-16T13:25:51Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Remove synthetic component wrappers for unattached MDX docs by moving hoisting logic from Tree.tsx into the index transformation layer.",
+        "why_easy": "The problem is clearly documented with specific code locations and a TODO in the codebase; working hoisting logic already exists in Tree.tsx to port over. However, the fix requires understanding how the story index propagates to Search, Tree, and external addon consumers, plus careful testing for a breaking change affecting the public API."
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 20346,
+      "title": "@tailwindcss/vite does not hot-reload new candidates from explicit @source files behind workspace symlinks since v4.3.1",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/20346",
+      "created_at": "2026-07-17T07:54:28Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Hot-reload fails for CSS candidates in files accessed through pnpm workspace symlinks after v4.3.1",
+        "why_easy": "Clear reproduction repo and root cause hypothesis (symlink canonicalization change in #20203), but fixing requires understanding file watcher and scanner symlink path resolution coordination."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68909,
+      "title": "Typo in Page of Playing Cards lab instructions",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68909",
+      "created_at": "2026-07-17T10:43:01Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix grammatical typo in Page of Playing Cards lab where 'its'' should be 'its' in steps 22 and 23",
+        "why_easy": "A simple text correction with clearly specified locations and solution, requiring no code changes."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68902,
+      "title": "docs(curriculum): fix SQL injection syntax example string in Bash/SQL review",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68902",
+      "created_at": "2026-07-17T06:59:56Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update SQL injection example in Bash/SQL Review curriculum to use standard single-quote escaping syntax",
+        "why_easy": "Straightforward string replacement in a single markdown file with the exact change clearly specified in the issue"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68895,
+      "title": "Test checks for text change not related to step",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68895",
+      "created_at": "2026-07-16T23:52:14Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix test assertion that incorrectly fails when the first h3 text is modified, despite the step only requiring a paragraph element to be added",
+        "why_easy": "The issue provides concrete before/after code examples and clearly identifies the problematic test behavior, making it straightforward to locate and fix the failing assertion in the step's test file."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68893,
+      "title": "Fix misspelled ordinal and solution formatting in Quincy's Job Tips workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68893",
+      "created_at": "2026-07-16T19:42:23Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix misspelled ordinal 'forth' to 'fourth' in Step 12 hint text and variable name, and remove blank lines separating sections in Step 13's solution block",
+        "why_easy": "The fix requires only straightforward string replacements and removing formatting whitespace; the issue provides explicit instructions on exactly what to change and where, making it accessible to first-time contributors."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29728,
+      "title": "@prisma/adapter-mariadb serializes Date parameters to UTC ISO string when using MySQL",
+      "url": "https://github.com/prisma/prisma/issues/29728",
+      "created_at": "2026-07-17T05:17:05Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "@prisma/adapter-mariadb serializes DateTime values to UTC ISO strings instead of preserving the database timezone, causing incorrect data storage in MySQL",
+        "why_easy": "Requires deep understanding of Prisma's serialization layer and adapter architecture to fix timezone handling across multiple abstraction layers"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48035,
+      "title": "Multiple Supabase Projects Become Unhealthy (Database, PostgREST, Auth, Storage) \u2013 Region ap-southeast-1",
+      "url": "https://github.com/supabase/supabase/issues/48035",
+      "created_at": "2026-07-17T10:56:07Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Multiple Supabase projects in ap-southeast-1 region report unhealthy database, PostgREST, Auth, and Storage services after deleting tables in one project",
+        "why_easy": "Hard because it involves investigating infrastructure issues across multiple dependent services with unclear root cause, requiring deep knowledge of Supabase's compute infrastructure and internal diagnostics"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48026,
+      "title": "Unable to access any .supabase.co domains from Yemen",
+      "url": "https://github.com/supabase/supabase/issues/48026",
+      "created_at": "2026-07-17T06:46:27Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Users in Yemen cannot access *.supabase.co domains without a VPN due to apparent ISP-level blocking or network restrictions.",
+        "why_easy": "Likely requires deep network diagnostics, ISP coordination, and potentially geopolitical/compliance review\u2014outside typical engineering scope and may not be fixable by Supabase alone."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48015,
+      "title": "Studio: clearing a storage policy's WITH CHECK or USING expression is silently not saved",
+      "url": "https://github.com/supabase/supabase/issues/48015",
+      "created_at": "2026-07-16T19:46:42Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Storage policy editor silently fails to remove cleared SQL expressions because undefined payload values are dropped during JSON serialization",
+        "why_easy": "The root cause is clearly identified with exact file and function names; the fix likely involves a one-line change to how cleared fields are serialized"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 50967,
+      "title": "AOT-generated bean definitions reference `runtime`-scoped classes from `spring-boot-starter-opentelemetry`",
+      "url": "https://github.com/spring-projects/spring-boot/issues/50967",
+      "created_at": "2026-07-16T20:22:36Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Change opentelemetry-exporter-otlp and micrometer-tracing-bridge-otel from runtime to compile scope in spring-boot-starter-opentelemetry to fix IDE errors in AOT-generated sources.",
+        "why_easy": "Fix requires changing two dependency scopes in one build.gradle file (lines 29-33), with exact location and dependencies clearly identified; no code changes or complex logic needed."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66356,
+      "title": "BUG: Segfaults from various python api call return values not being checked during encode by ujson",
+      "url": "https://github.com/pandas-dev/pandas/issues/66356",
+      "created_at": "2026-07-17T11:03:57Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add proper error checking for Python API calls in ujson's objToJSON function to prevent segfaults from unchecked return values",
+        "why_easy": "The issue provides reproducible examples, a comprehensive checklist, and test cases, but requires C extension programming and multiple similar error-checking fixes across the ujson codebase"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32028,
+      "title": "BUG: Transient CI failure in Eigenvalue thread safety test",
+      "url": "https://github.com/numpy/numpy/issues/32028",
+      "created_at": "2026-07-17T08:48:02Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix a transient CI failure in the multithreading eigenvalue test that may indicate thread safety issues with LAPACK on Android.",
+        "why_easy": "Transient thread-safety failures are notoriously difficult to reproduce and debug; the race condition only manifested once, and the triggering PR only touched iOS build configuration rather than the failing code itself."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32017,
+      "title": "BUG: segfault in AVX512 float32 exp/log kernels (`simd_exp_FLOAT`/`simd_log_FLOAT`) in ASan build",
+      "url": "https://github.com/numpy/numpy/issues/32017",
+      "created_at": "2026-07-16T13:20:17Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "AVX512 float32 exp/log kernels segfault under AddressSanitizer due to masked-load issues with non-multiple-of-16 array tails",
+        "why_easy": "Requires AVX512 hardware access, SIMD expertise to understand masked-load fault suppression semantics, and careful low-level debugging of ASan instrumentation interactions\u2014multiple plausible root causes and non-trivial reproduction environment."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34500,
+      "title": "Pandas output path fails to reject infinite values during transform",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34500",
+      "created_at": "2026-07-17T10:28:49Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "The pandas-output path in SelectKBest.transform incorrectly skips validation of infinite values, allowing them to pass through when they should be rejected.",
+        "why_easy": "The root cause is clearly identified (cast_to_ndarray=False skipping force_all_finite validation in check_array), a minimal reproduction case is provided, and the fix likely requires a targeted change to ensure validation happens in the pandas-output path."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34497,
+      "title": "GradientBoostingClassifier/Regressor._resize_state raises TypeError instead of ValueError on smaller n_estimators",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34497",
+      "created_at": "2026-07-17T06:49:51Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix TypeError in GradientBoostingClassifier._resize_state() that should raise ValueError when shrinking n_estimators",
+        "why_easy": "Single-line fix (replace self.estimators_[0] with self.estimators_.shape[0]) with clear reproduction steps and working draft PR available"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34489,
+      "title": "Licencing issues when contributors had sold their copyright to paid platforms",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34489",
+      "created_at": "2026-07-16T15:53:03Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "docs",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Establish licensing policy and contributor guidelines to address copyright issues when contributors use paid platforms that claim code ownership",
+        "why_easy": "This is a legal/policy issue requiring lawyer consultation and organizational decision-making, not a coding task\u2014unsuitable for casual contributors"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45188,
+      "title": "per_page has no documented max, and oversized values are clamped silently",
+      "url": "https://github.com/github/docs/issues/45188",
+      "created_at": "2026-07-17T07:14:50Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Document the maximum value for the per_page pagination parameter and clarify that oversized values are silently clamped rather than rejected with an error.",
+        "why_easy": "The issue identifies exactly what's missing (max value and clamping behavior), provides a reproducible test case to verify the behavior, and requires only updating documentation in a specific section with no code changes needed."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45184,
+      "title": "404 instead of 405 for unsupported HTTP methods isn't documented",
+      "url": "https://github.com/github/docs/issues/45184",
+      "created_at": "2026-07-16T12:58:00Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add documentation explaining that unsupported HTTP methods return 404 instead of 405 in the REST API troubleshooting guide",
+        "why_easy": "Documentation-only fix with clear scope: add a line to an existing troubleshooting article explaining undocumented API behavior, with reproduction steps already provided in the issue."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45183,
+      "title": "OpenAI GPT models on models-and-pricing are missing cache write cost",
+      "url": "https://github.com/github/docs/issues/45183",
+      "created_at": "2026-07-16T12:04:07Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add missing cache write cost information to OpenAI GPT models in Copilot billing documentation",
+        "why_easy": "The issue provides specific model names and pricing guidance; contributor just needs to locate the pricing table and add the missing cache cost column with the provided information."
+      }
+    },
+    {
+      "repo": "EbookFoundation/free-programming-books",
+      "number": 13364,
+      "title": "Kidnapper 309 Washington st locked up",
+      "url": "https://github.com/EbookFoundation/free-programming-books/issues/13364",
+      "created_at": "2026-07-16T20:34:42Z",
+      "digest_date": "2026-07-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Spam or off-topic post with no relation to free programming books and no description",
+        "why_easy": "Not a legitimate issue\u2014should be closed as spam; no actual work required"
       }
     }
   ]
