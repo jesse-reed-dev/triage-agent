@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-17",
+  "updated": "2026-07-18",
   "issues": [
     {
       "repo": "react/react-native",
@@ -5609,6 +5609,471 @@
         "good_first_issue": false,
         "one_line_summary": "Spam or off-topic post with no relation to free programming books and no description",
         "why_easy": "Not a legitimate issue\u2014should be closed as spam; no actual work required"
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57595,
+      "title": "iOS 27 beta / RN 0.86: performance.timeOrigin + performance.now() drifts from Date.now() by accumulated sleep time",
+      "url": "https://github.com/react/react-native/issues/57595",
+      "created_at": "2026-07-17T16:13:09Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix performance.timeOrigin + performance.now() drifting behind Date.now() by accumulated device sleep time on iOS RN 0.86.",
+        "why_easy": "Hard: root cause is unclear (could be RN code, libc++, or toolchain), requires deep iOS timing/clock expertise, and the author couldn't identify the source change between 0.83.4 (working) and 0.86.0 (broken) despite examining suspect code."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57592,
+      "title": "[iOS][Bridgeless] Scheduled work (setTimeout, requestAnimationFrame, native\u2192JS callback delivery) intermittently stalls for seconds while app is idle; a touch un-sticks it",
+      "url": "https://github.com/react/react-native/issues/57592",
+      "created_at": "2026-07-17T12:40:43Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix intermittent stalling of scheduled work (setTimeout, requestAnimationFrame, async callbacks) on iOS in bridgeless mode until user touches the screen.",
+        "why_easy": "This is hard: it lacks a minimal reproducer, requires deep knowledge of React Native's bridgeless event-loop and iOS internals, and the intermittent nature necessitates native instrumentation\u2014currently blocked on author feedback and reproduction steps."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47920,
+      "title": "[SDK 55][Android] expo-updates can permanently deadlock startup before React starts (PersistentFileLogSerialDispatchQueue self-deadlock) \u2014 backport request",
+      "url": "https://github.com/expo/expo/issues/47920",
+      "created_at": "2026-07-17T21:35:36Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Backport the PersistentFileLogSerialDispatchQueue fix from SDK 56 to SDK 55 to prevent startup deadlocks on downloaded updates",
+        "why_easy": "Medium because the fix is already implemented in PR #45058 with proof of correctness, but backporting requires carefully applying changes to sdk-55 and testing against a deterministic reproduction case"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326440,
+      "title": "AHP initialize failed: rpc error -32005: Client offered protocol versions [0.4.0], none of which are compatible with this server's version 0.6.0 (server accepts ^0.6.0)",
+      "url": "https://github.com/microsoft/vscode/issues/326440",
+      "created_at": "2026-07-18T11:04:18Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The `code agent ps` command fails because the client offers protocol version 0.4.0 while the server requires 0.6.0",
+        "why_easy": "The error message explicitly identifies the version mismatch, but finding and updating the hardcoded protocol version in VSCode's agent client code requires navigating a large codebase and understanding the agent communication architecture."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326439,
+      "title": "Very high memory usage without extensions and no project open.",
+      "url": "https://github.com/microsoft/vscode/issues/326439",
+      "created_at": "2026-07-18T10:59:27Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code consumes 9.7GB memory with no extensions loaded and no project open",
+        "why_easy": "Memory profiling requires specialized debugging expertise and deep knowledge of VS Code's architecture; reproduction is clear but root cause analysis is complex"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326436,
+      "title": "\"Reopen Editor With\" does not show additional panes on hover for diff editors",
+      "url": "https://github.com/microsoft/vscode/issues/326436",
+      "created_at": "2026-07-18T10:11:01Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The 'Reopen Editor With' hover tooltip doesn't show additional-pane editor options for diff editors",
+        "why_easy": "The regression range narrows investigation to specific commits, but requires understanding VS Code's editor context handling and why diff editors filter menu options differently"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326435,
+      "title": "Renderer crashes with SIGBUS (code 135) at extension-host restart \u2014 memcpy past end of shared-memory mapping, identical fingerprint across dumps (regression in 1.129.0)",
+      "url": "https://github.com/microsoft/vscode/issues/326435",
+      "created_at": "2026-07-18T09:42:51Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix renderer crash (SIGBUS code 135) on extension-host restart in 1.129.0, caused by memcpy reading past end of shared-memory buffer",
+        "why_easy": "Minidump forensics clearly pinpoint the crash location with byte-identical reproduction, but the crash requires specific workspace/extension configuration to trigger and demands deep expertise in VS Code's IPC and shared-memory architecture to diagnose and fix"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326434,
+      "title": "Add a supported non interactive CLI for provisioning BYOK model secrets into VS Code SecretStorage",
+      "url": "https://github.com/microsoft/vscode/issues/326434",
+      "created_at": "2026-07-18T09:34:50Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add a non-interactive CLI interface to securely provision BYOK language model secrets into VS Code's SecretStorage backend for enterprise deployment",
+        "why_easy": "This is hard to pick up because it requires deep knowledge of VS Code's SecretStorage architecture across Windows/macOS/Linux, secure stdin handling, CLI argument parsing integration, and security expertise to avoid logging secrets."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326433,
+      "title": "Add an option to display Copilot-edited files in either List View or Tree View",
+      "url": "https://github.com/microsoft/vscode/issues/326433",
+      "created_at": "2026-07-18T06:49:45Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add a Tree View option to display Copilot-edited files grouped by folder structure, alongside the existing flat List View.",
+        "why_easy": "VS Code already has established tree view patterns and components that can be reused, but integrating this into the Copilot extension requires understanding the current architecture and ensuring proper state management and styling."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326426,
+      "title": "Help >> About does not link to changelog",
+      "url": "https://github.com/microsoft/vscode/issues/326426",
+      "created_at": "2026-07-18T04:43:06Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "feature",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add changelog links to Help >> About menu and Check For Updates dialog",
+        "why_easy": "The change is localized UI work of adding links to existing menus and dialogs"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326423,
+      "title": "`workspaceContains` glob activation events are silently defeated by default `files.exclude` (`**/.git`, `**/.svn`, `**/.hg`), so extensions cannot activate on descendant SCM metadata",
+      "url": "https://github.com/microsoft/vscode/issues/326423",
+      "created_at": "2026-07-18T03:45:31Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "workspaceContains glob activation events are silently defeated by default files.exclude entries like **/.git",
+        "why_easy": "Clear problem definition with minimal repro and source location identified, but requires deep knowledge of VS Code's extension activation and file search systems."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326422,
+      "title": "Cut off codeblocks in agents window",
+      "url": "https://github.com/microsoft/vscode/issues/326422",
+      "created_at": "2026-07-18T02:37:36Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Codeblocks are being cut off or truncated in the VS Code agents window panel",
+        "why_easy": "Issue has only an image with no description; reproducing and scoping the root cause requires familiarity with the agents window architecture and VS Code's layout system"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326421,
+      "title": "Provide manual model selection for AI-generated git change suggestions",
+      "url": "https://github.com/microsoft/vscode/issues/326421",
+      "created_at": "2026-07-18T02:29:27Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Allow users to manually select which AI model to use for Git change suggestions instead of auto-selecting the previous Copilot model",
+        "why_easy": "Well-scoped feature requiring a settings option and model-selection logic change, but demands familiarity with VS Code's Git extension and Copilot integration architecture"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326416,
+      "title": "Agent host: unwanted implicit repo attachments",
+      "url": "https://github.com/microsoft/vscode/issues/326416",
+      "created_at": "2026-07-18T00:23:26Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code agent host is implicitly attaching repositories when they shouldn't be",
+        "why_easy": "The issue body only contains an external Slack link and screenshot with no description; without access to the Slack discussion or ability to see the image, an external contributor cannot understand the problem, reproduction steps, or expected behavior"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 95919,
+      "title": "experimental.webVitalsAttribution has no effect on useReportWebVitals",
+      "url": "https://github.com/vercel/next.js/issues/95919",
+      "created_at": "2026-07-18T10:55:22Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "experimental.webVitalsAttribution configuration is ignored by useReportWebVitals hook despite being recognized in next.config.ts",
+        "why_easy": "The issue has a clear reproduction case and identifies exactly what broke (PR #64199), but fixing it requires rewiring attribution data through useReportWebVitals and understanding Next.js performance metrics internals"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 95900,
+      "title": "Minifier silently drops text when constant-folding `tpl` + `tpl` concatenation \u2014 broken on all stable releases, fixed in 16.3.0-canary.59 (backport request)",
+      "url": "https://github.com/vercel/next.js/issues/95900",
+      "created_at": "2026-07-17T15:45:49Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Minifier silently drops text when constant-folding template literal concatenations with interpolations; fix exists in canary and needs backporting to stable branches",
+        "why_easy": "The upstream fix already exists in SWC 70, but backporting requires understanding Next.js dependency management and stable branch procedures, typically requiring maintainer coordination"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 22975,
+      "title": "docs: inline code appears visually smaller than body text",
+      "url": "https://github.com/vitejs/vite/issues/22975",
+      "created_at": "2026-07-18T08:58:07Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix inline code appearance in documentation by using font-size-adjust to balance x-height with body text",
+        "why_easy": "This is a narrowly scoped CSS styling fix with a clear proposed approach; likely requires finding and modifying one or two CSS rules and verifying the visual change"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 22971,
+      "title": "Query parameters are stripped from index.html bundle assets",
+      "url": "https://github.com/vitejs/vite/issues/22971",
+      "created_at": "2026-07-17T21:16:17Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Query parameters in index.html asset references (e.g., /assets/img/foo.png?w=128) are stripped from the bundle, making them inaccessible to transformIndexHtml plugins.",
+        "why_easy": "The issue lacks a reproduction case and requires familiarity with Vite's asset pipeline and bundle structure to locate where params are being stripped."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 22968,
+      "title": "`buildStart` runs twice when the client module graph is accessed in bundled dev",
+      "url": "https://github.com/vitejs/vite/issues/22968",
+      "created_at": "2026-07-17T18:36:21Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The buildStart plugin hook is called twice for the same build when bundled dev is enabled, causing loss or reset of plugin build-scoped state.",
+        "why_easy": "The root cause is clearly identified (plugin container unaware that Rolldown already ran buildStart) and a minimal reproduction is provided, but fixing it requires understanding Vite's plugin lifecycle state management and Rolldown integration in the bundled dev feature."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35526,
+      "title": "[Tracking]: Official, version-safe Storybook Skills",
+      "url": "https://github.com/storybookjs/storybook/issues/35526",
+      "created_at": "2026-07-17T13:18:46Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Consolidate Storybook's agent/skills capabilities into a version-safe monorepo system with open services as the primary abstraction.",
+        "why_easy": "This is a tracking epic with assigned owners for each milestone, not a discrete task; it requires deep architectural knowledge of Storybook's MCP and services systems, involves coordinating multiple teams, and the truncated body obscures the full scope."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68924,
+      "title": "Mandatory tags for Curriculum help category on FCC forum",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68924",
+      "created_at": "2026-07-18T10:11:04Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Make tags mandatory for Curriculum help forum posts to improve search discoverability and help moderators filter by expertise",
+        "why_easy": "Requires adding validation to the forum post creation flow and understanding the existing tag system, but the core feature (required field) is straightforward once you locate the relevant form and backend code"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68922,
+      "title": "Inconsistent syntax highlighting for id inside an f-string expression",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68922",
+      "created_at": "2026-07-18T07:26:55Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix inconsistent syntax highlighting for variable names inside f-string expressions",
+        "why_easy": "The issue is clearly scoped to a single lesson, reproducible with exact steps, and labeled first-timers-only\u2014it likely requires a minor syntax highlighting configuration adjustment."
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17334,
+      "title": "MiddlewareBuilder skips overlapping routes because it reuses stateful global-flag regexes",
+      "url": "https://github.com/nestjs/nest/issues/17334",
+      "created_at": "2026-07-18T09:21:59Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix `removeOverlappedRoutes` to properly deduplicate all overlapping routes by avoiding global regex state issues",
+        "why_easy": "The root cause is clearly identified with a minimal reproduction case, the affected function is isolated, and the fix likely requires either resetting regex lastIndex or removing the g flag\u2014a straightforward change."
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17330,
+      "title": "ServerRedis passes swapped 'pub'/'sub' client type to event listeners registered before listen()",
+      "url": "https://github.com/nestjs/nest/issues/17330",
+      "created_at": "2026-07-17T17:21:23Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix swapped 'pub'/'sub' client type labels in ServerRedis.listen() path to match on() method",
+        "why_easy": "Isolated one-line fix reversing index-to-type mapping logic with no complex logic or edge cases; issue clearly identifies the exact problem and location."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48055,
+      "title": "Unable to run any queries in the SQL Editor",
+      "url": "https://github.com/supabase/supabase/issues/48055",
+      "created_at": "2026-07-18T06:04:59Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "User unable to execute SQL queries in the SQL Editor due to connection timeout and suspected connection pooler unresponsiveness",
+        "why_easy": "Hard to pick up because it lacks reproducible steps, appears to be a customer support/infrastructure issue rather than a code bug, and external contributors cannot test fixes against Supabase's production infrastructure"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48052,
+      "title": "`IQueryModifier.toSql` signature is narrower than the class impl in pg-meta",
+      "url": "https://github.com/supabase/supabase/issues/48052",
+      "created_at": "2026-07-17T20:57:22Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Widen the `IQueryModifier.toSql` interface signature to accept an optional options parameter matching the class implementation",
+        "why_easy": "The fix is a straightforward interface signature update with the exact solution provided in the issue description, requiring only a single-line change"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32033,
+      "title": "DOC: numpy.ma.vander docstring documents unsupported `increasing` parameter",
+      "url": "https://github.com/numpy/numpy/issues/32033",
+      "created_at": "2026-07-17T15:54:09Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix the mismatch between numpy.ma.vander's documentation (which describes an unsupported `increasing` parameter) and its actual implementation.",
+        "why_easy": "Either option is a straightforward change \u2014 adding a parameter and forwarding it to numpy.vander, or writing a wrapper-specific docstring \u2014 with minimal complexity and clear implementation paths."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32031,
+      "title": "ENH: Improve the ergonomics of StringDType <-> fixed-width string casting",
+      "url": "https://github.com/numpy/numpy/issues/32031",
+      "created_at": "2026-07-17T15:01:48Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Enable automatic size inference when casting StringDType to fixed-width strings, and adjust cast safety rules to match safe/same-kind semantics.",
+        "why_easy": "The issue is exceptionally well-documented with clear examples and identifies the exact function (`find_descriptor_from_array`) needing modification, but implementation requires deep expertise in NumPy's type casting system, StringDType internals, and cast safety semantics, plus testing across multiple entry points (astype, np.array, PyArray_CastToType, nditer)."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34507,
+      "title": "Add example for a productive review to the developer guide (documentation task)",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34507",
+      "created_at": "2026-07-18T09:09:42Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "docs",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add a link to an example of a productive code review process to the developer guide's New Contributor section",
+        "why_easy": "The actual edit is trivial, but the issue is explicitly blocked for non-event-participants, requires in-person discussion with maintainers, involves discovering and validating good historical review examples, and mandates approval before submission\u2014making it unsuitable for self-directed first contributions."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34504,
+      "title": "Document shape of the stratify param in `train_test_split`",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34504",
+      "created_at": "2026-07-18T07:48:39Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add documentation describing the shape of the stratify parameter in train_test_split",
+        "why_easy": "Minimal, well-scoped documentation task with clear examples to reference; no code logic required, just copying the format used elsewhere in the codebase"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34502,
+      "title": "Consider switching to pyrefly for typechecking",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34502",
+      "created_at": "2026-07-17T19:34:27Z",
+      "digest_date": "2026-07-18",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Propose switching from mypy to Pyrefly for type checking, offering ~29x speedup with migration steps and error resolution strategy",
+        "why_easy": "Proposer provided clear step-by-step instructions and error analysis, but requires project knowledge to decide which of 79 new errors to suppress vs. fix, and issue is explicitly flagged as not-yet-ready-for-PR (needs maintainer buy-in first)"
       }
     }
   ]
