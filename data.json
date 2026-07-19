@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-18",
+  "updated": "2026-07-19",
   "issues": [
     {
       "repo": "react/react-native",
@@ -6074,6 +6074,441 @@
         "good_first_issue": false,
         "one_line_summary": "Propose switching from mypy to Pyrefly for type checking, offering ~29x speedup with migration steps and error resolution strategy",
         "why_easy": "Proposer provided clear step-by-step instructions and error analysis, but requires project knowledge to decide which of 79 new errors to suppress vs. fix, and issue is explicitly flagged as not-yet-ready-for-PR (needs maintainer buy-in first)"
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57598,
+      "title": "iOS prebuilt core: replace-rncore-version.js assumes Debug when .last_build_configuration is missing, wedging Debug builds against a Release-flavored core",
+      "url": "https://github.com/react/react-native/issues/57598",
+      "created_at": "2026-07-19T03:17:52Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix iOS prebuilt core build phase to prevent Debug builds from linking against Release-flavored frameworks when the marker file is missing",
+        "why_easy": "Well-diagnosed with clear reproduction steps and identified root causes (missing marker write and non-atomic extraction), but requires iOS build expertise and careful testing to verify Release builds aren't affected"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47938,
+      "title": "expo-router + expo-updates dev server memory leak OOM crash",
+      "url": "https://github.com/expo/expo/issues/47938",
+      "created_at": "2026-07-19T09:46:47Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Dev server crashes with OOM when using expo-router + expo-updates because UpdatesEmitter listeners accumulate on each HTTP request",
+        "why_easy": "The root cause is pinpointed to UpdatesEmitter.ts and well-reproduced with detailed logging, but fixing requires understanding server-side rendering patterns and ensuring listeners don't re-initialize per request without breaking other scenarios"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47934,
+      "title": "[iOS][@expo/ui] Native-stack `replace` while a SwiftUI `BottomSheet` is presented: uncoordinated presentation teardown corrupts the incoming screen's native geometry (invisible to the Fabric shadow tree)",
+      "url": "https://github.com/expo/expo/issues/47934",
+      "created_at": "2026-07-18T23:03:13Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Native-stack `replace` navigation doesn't coordinate SwiftUI BottomSheet dismissal, causing uncoordinated teardown and corrupting the incoming screen's native geometry while the shadow tree reports correct dimensions.",
+        "why_easy": "Very difficult \u2014 requires deep expertise in iOS UIKit/SwiftUI lifecycle coordination, React Native Fabric architecture, and react-native-screens internals; debugging the shadow tree/native layer mismatch requires native iOS experience."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326511,
+      "title": "Python syntax highlighting is unbearably slow",
+      "url": "https://github.com/microsoft/vscode/issues/326511",
+      "created_at": "2026-07-19T06:12:43Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Python syntax highlighting is extremely slow in VS Code Insiders, re-processing on every keystroke and blocking user interactions",
+        "why_easy": "Hard\u2014performance regressions require profiling, binary searching commits to find the regression, and deep knowledge of VS Code's language server and Python extension architecture; 62 extensions and recent Insiders build add complexity despite clear Insiders vs. stable differentiation"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326510,
+      "title": "Allow access to Codex & Claude via BYOK",
+      "url": "https://github.com/microsoft/vscode/issues/326510",
+      "created_at": "2026-07-19T05:58:49Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Allow using Claude and Codex agents in VS Code Chat without GitHub Copilot Pro by providing your own API keys",
+        "why_easy": "Hard to pick up: requires deep changes to agent authentication, licensing gates, and integration of multiple external model providers; touches core chat infrastructure with unclear scope boundaries."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326509,
+      "title": "Can't switch profiles or prefered extension accounts",
+      "url": "https://github.com/microsoft/vscode/issues/326509",
+      "created_at": "2026-07-19T05:33:12Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Users cannot switch Copilot profiles or change the preferred GitHub account after their personal credits are exhausted, even after purchasing additional credits.",
+        "why_easy": "Reproducing requires exhausting credits in a specific state, and the fix likely involves understanding how the Copilot extension's authentication layer incorrectly couples credit availability with account-switching permissions."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326506,
+      "title": "Add \"Scroll By Page\" choice for terminal pane",
+      "url": "https://github.com/microsoft/vscode/issues/326506",
+      "created_at": "2026-07-19T04:47:36Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add a 'Scroll By Page' setting for the terminal pane, mirroring existing settings in the editor and list components",
+        "why_easy": "Clear feature request with working precedents to follow, but requires navigating VS Code's large codebase to locate terminal scroll logic and integrate with the settings system"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326503,
+      "title": "[gh-aw] Protected Files: fix: guard unlockFromCodingAgent against uninitialized input part (fixes #314442)",
+      "url": "https://github.com/microsoft/vscode/issues/326503",
+      "created_at": "2026-07-19T02:57:42Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add input validation to the unlockFromCodingAgent function to guard against uninitialized input.",
+        "why_easy": "The fix itself is conceptually simple (a null/undefined guard), but it touches protected infrastructure files and requires deep familiarity with VSCode's agentic workflows architecture and build system, making it risky for new contributors."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326501,
+      "title": "Copilot Cannot Accurately Count Line Numbers",
+      "url": "https://github.com/microsoft/vscode/issues/326501",
+      "created_at": "2026-07-19T02:50:12Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Copilot's Claude model inaccurately tracks and edits code at specific line numbers, with text-snippet workarounds as the only reliable solution",
+        "why_easy": "This is hard: the root cause is the language model's core limitation with line number tracking, requiring deep understanding of Copilot integration and likely complex VS Code-side workarounds or model coordination"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326500,
+      "title": "Webview resource loading collapses in secondary windows under high request concurrency: loadResource reads stall, SW FetchEvents fail with \"insufficient resources\", then ERR_FAILED for all resources",
+      "url": "https://github.com/microsoft/vscode/issues/326500",
+      "created_at": "2026-07-19T02:43:59Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Webview resource loading fails deterministically in secondary windows when hundreds of resources are requested concurrently due to unbounded read streams exceeding Chromium's service worker FetchEvent limit.",
+        "why_easy": "Hard: requires deep knowledge of VS Code's webview/IPC infrastructure, service worker mechanics, and fixing a concurrency bottleneck that only manifests in secondary windows\u2014too complex and architectural for a first-timer, especially reproducing the race condition reliably."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326499,
+      "title": "[gh-aw] Protected Files: fix: guard unlockFromCodingAgent against uninitialized input part (fixes #314442)",
+      "url": "https://github.com/microsoft/vscode/issues/326499",
+      "created_at": "2026-07-19T01:55:55Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add a guard in unlockFromCodingAgent to safely handle uninitialized input and prevent crashes",
+        "why_easy": "Hard: modifies protected files requiring special permissions, touches specialized agentic-workflow internals, and requires understanding the existing codebase context and referenced issue #314442"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326495,
+      "title": "Regression: Panel tabs use wrong capitalization",
+      "url": "https://github.com/microsoft/vscode/issues/326495",
+      "created_at": "2026-07-19T00:42:02Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix CSS text-transform rule that incorrectly capitalizes panel tab titles in French localization",
+        "why_easy": "The problematic CSS rule is explicitly identified in fontRamp.css line 119; the fix likely requires only removing or adjusting a text-transform property with no logic changes needed."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326494,
+      "title": "Archived Agent Host sessions should be read-only in editor chat",
+      "url": "https://github.com/microsoft/vscode/issues/326494",
+      "created_at": "2026-07-19T00:28:37Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Make archived Agent Host sessions read-only in editor chat by hiding the composer and blocking mutating actions, matching existing Agents window behavior.",
+        "why_easy": "Hard: Requires understanding VS Code's complex chat and agent architecture across multiple UI surfaces; PR #326455 is a reference but adapting it demands deep codebase knowledge."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326492,
+      "title": "[gh-aw] Protected Files: fix: guard unlockFromCodingAgent against uninitialized input part (fixes #314442)",
+      "url": "https://github.com/microsoft/vscode/issues/326492",
+      "created_at": "2026-07-19T00:15:10Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Guard the unlockFromCodingAgent function against uninitialized input parts to fix issue #314442",
+        "why_easy": "Multiple protected files are modified (package.json, CODEOWNERS, agent skills, ESLint plugins), which require special permissions and have already blocked the PR; the agentic-workflows functionality adds deep complexity unsuitable for new contributors"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326491,
+      "title": "Audit obsolete temporary code",
+      "url": "https://github.com/microsoft/vscode/issues/326491",
+      "created_at": "2026-07-18T23:58:41Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Execute removals of documented obsolete code and temporary features that have satisfied their removal conditions.",
+        "why_easy": "Each removal is pre-audited with specific file locations and clear removal signals, but the number of items across a complex codebase requires careful verification to avoid breaking changes."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326490,
+      "title": "[gh-aw] Protected Files: fix: guard unlockFromCodingAgent against uninitialized input part (fixes #314442)",
+      "url": "https://github.com/microsoft/vscode/issues/326490",
+      "created_at": "2026-07-18T23:39:41Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add defensive guard in unlockFromCodingAgent to handle uninitialized input safely",
+        "why_easy": "The core fix (adding a guard check) is straightforward defensive programming, but the protected files warning and 40+ modified files trigger special approval requirements, plus the issue already has an open PR, making this unsuitable for external contributors."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326489,
+      "title": "GitHub Copilot context window size difference of over 300K when switching models.",
+      "url": "https://github.com/microsoft/vscode/issues/326489",
+      "created_at": "2026-07-18T23:29:28Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Context window usage drops from ~500K to ~140K when switching from Claude Opus 4.8 to GPT-5.6 Luna despite both claiming 1M context windows.",
+        "why_easy": "Hard to pick up because the root cause is ambiguous\u2014could be legitimate tokenization differences between model families, a context calculation bug, or a display issue\u2014requiring deep familiarity with the Copilot extension's context management and model API specs."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326488,
+      "title": "[gh-aw] Protected Files: fix: guard unlockFromCodingAgent against uninitialized input part (fixes #314442)",
+      "url": "https://github.com/microsoft/vscode/issues/326488",
+      "created_at": "2026-07-18T23:15:15Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Guard unlockFromCodingAgent against uninitialized input to fix crash or incorrect behavior in agent workflows",
+        "why_easy": "This modifies protected files (package.json, configs, agent skills definitions) and involves complex agentic-workflows logic; the blocked PR and truncated body indicate missing context and risky changes unsuitable for newcomers."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 22982,
+      "title": "Vite 8's dev SSR transform fails with `Failed to convert rust String into napi string`",
+      "url": "https://github.com/vitejs/vite/issues/22982",
+      "created_at": "2026-07-19T06:02:16Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Vite 8's SSR transform fails on large generated modules (>~12MB) due to napi string size limits in rolldown's Rust bindings",
+        "why_easy": "Hard: requires Rust and napi expertise to fix in the native binding layer; the issue likely belongs in rolldown (a separate project), not Vite itself, and involves low-level memory/serialization constraints that are not straightforward to debug or resolve in JavaScript."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 22980,
+      "title": "Add a \"copy error\" button to the dev server error overlay",
+      "url": "https://github.com/vitejs/vite/issues/22980",
+      "created_at": "2026-07-19T04:33:26Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "feature",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add a 'Copy Error' button to the dev server error overlay to quickly copy full error details to the clipboard",
+        "why_easy": "The overlay already renders all needed data and the contributor has a working implementation; the task is primarily gathering text from existing DOM elements and using navigator.clipboard.writeText()"
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 20348,
+      "title": "Tailwind 4.3.3 changes the default sans font in a patch release",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/20348",
+      "created_at": "2026-07-18T12:31:32Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Resolve breaking font-family change in patch 4.3.3 that violates semantic versioning expectations",
+        "why_easy": "The problematic change is well-scoped to Preflight defaults, but resolving it requires balancing the CJK fix intent against backward compatibility and semver semantics"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48071,
+      "title": "MarketingForm: grouped checkbox validation does not match the documented contract in the schema",
+      "url": "https://github.com/supabase/supabase/issues/48071",
+      "created_at": "2026-07-19T05:48:39Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix checkbox group validation to match documented contract when groups mix required and optional flags",
+        "why_easy": "Issue clearly describes the exact bugs, suggests the fix approach, and it's localized to one file with no impact on live forms; contributor mainly needs to adjust group collection logic and remove the group exemption from individual required validation"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48059,
+      "title": "emailRedirectTo is ignored during signUp() confirmation email, but works correctly for resetPasswordForEmail()",
+      "url": "https://github.com/supabase/supabase/issues/48059",
+      "created_at": "2026-07-18T19:40:05Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix signup confirmation emails to respect the emailRedirectTo parameter\u2014currently truncating the path to just the domain while resetPasswordForEmail works correctly.",
+        "why_easy": "Well-isolated bug with clear reproduction steps and a working reference implementation (resetPasswordForEmail), but requires navigating Supabase's email generation pipeline and comparing two auth flows to find the root cause."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66376,
+      "title": "BUG: `read_{csv,excel}(<...>, header=[0,1], index_col=[0,1])` take different `.columns.names`",
+      "url": "https://github.com/pandas-dev/pandas/issues/66376",
+      "created_at": "2026-07-19T11:20:45Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "read_csv() and read_excel() assign different .columns.names when reading MultiIndex headers with MultiIndex index columns.",
+        "why_easy": "Bug is well-defined and reproducible, but requires understanding two separate I/O code paths and MultiIndex naming logic\u2014complex enough that it's better suited for contributors familiar with pandas internals."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66374,
+      "title": "BUG: `MultiIndex.__repr__`: inconsistent output",
+      "url": "https://github.com/pandas-dev/pandas/issues/66374",
+      "created_at": "2026-07-19T10:28:33Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "MultiIndex.__repr__ outputs inconsistent formatting with empty trailing lines",
+        "why_easy": "Issue is clearly reproducible and well-defined, but repr formatting code typically has complex edge cases and requires careful testing across different scenarios to avoid regressions"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66373,
+      "title": "BUG: `read_excel` (with tupled `header`): incorrect `.columns`",
+      "url": "https://github.com/pandas-dev/pandas/issues/66373",
+      "created_at": "2026-07-19T10:24:47Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": true,
+        "one_line_summary": "`read_excel` with multi-level headers produces incorrect column names, duplicating the first level instead of using correct values.",
+        "why_easy": "Clear reproduction with CSV as working reference implementation, but requires navigating Excel-specific parsing logic within pandas I/O internals."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66372,
+      "title": "BUG: `read_excel`: `ValueError: Length of new names must be 1, got 2`",
+      "url": "https://github.com/pandas-dev/pandas/issues/66372",
+      "created_at": "2026-07-19T10:02:31Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "read_excel fails with multi-level headers when trying to set MultiIndex column names",
+        "why_easy": "Clear reproducible example and error traceback, but requires understanding pandas' MultiIndex/IO architecture and why header_names assignment differs between single and multi-level column indexes"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66368,
+      "title": "BUG: `str.split()`/`rsplit()` with no separator on `ArrowDtype` keeps empty whitespace tokens",
+      "url": "https://github.com/pandas-dev/pandas/issues/66368",
+      "created_at": "2026-07-19T07:50:44Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix str.split()/rsplit() with ArrowDtype to filter empty tokens like Python's str.split()",
+        "why_easy": "Problem is well-isolated with clear reproduction and expected behavior, but requires understanding Arrow string integration and pandas' string accessor implementation to implement the fix."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34511,
+      "title": "Inconsistent `_check_initialized` method: only present on gradient boosting estimators",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34511",
+      "created_at": "2026-07-18T13:34:25Z",
+      "digest_date": "2026-07-19",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Remove or generalize the redundant `_check_initialized` method that currently only wraps `check_is_fitted` on two gradient boosting estimators.",
+        "why_easy": "The scope is tightly constrained (only two classes affected), the fix is mechanical (search usages and either remove the method or add it via BaseEnsemble), and the issue is well-documented with clear reproduction steps and historical context."
       }
     }
   ]
