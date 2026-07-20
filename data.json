@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-19",
+  "updated": "2026-07-20",
   "issues": [
     {
       "repo": "react/react-native",
@@ -6509,6 +6509,621 @@
         "good_first_issue": true,
         "one_line_summary": "Remove or generalize the redundant `_check_initialized` method that currently only wraps `check_is_fitted` on two gradient boosting estimators.",
         "why_easy": "The scope is tightly constrained (only two classes affected), the fix is mechanical (search usages and either remove the method or add it via BaseEnsemble), and the issue is well-documented with clear reproduction steps and historical context."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47968,
+      "title": "[expo-router] Fatal crash: preloaded route removed by Stack.Protected \u2014 vendored StackRouter doesn't filter preloadedRoutes on route names change",
+      "url": "https://github.com/expo/expo/issues/47968",
+      "created_at": "2026-07-20T11:18:27Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix fatal crash when preloaded routes are removed by Stack.Protected guards by filtering preloadedRoutes in StackRouter.getStateForRouteNamesChange",
+        "why_easy": "Well-documented root cause with exact code pointers and upstream fix pattern, but requires understanding expo-router's preload system and applying the same filtering across multiple routers with thorough testing"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47960,
+      "title": "expo export corrupts SSR renderer when sourceMappingURL appears inside a string literal",
+      "url": "https://github.com/expo/expo/issues/47960",
+      "created_at": "2026-07-20T10:16:26Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix regex that incorrectly rewrites sourceMappingURL directives inside string literals during SSR export",
+        "why_easy": "Root cause and fix are clearly identified with exact file location, problematic regex, suggested replacement, and reproduction case provided; single-file change with straightforward regex correction"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47957,
+      "title": "type of expression is ambiguous without a type annotation",
+      "url": "https://github.com/expo/expo/issues/47957",
+      "created_at": "2026-07-20T09:08:18Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix Swift type ambiguity error in dateFromMilliseconds by using explicit literal constants instead of variable reference",
+        "why_easy": "The error is clearly identified with a working fix already provided by the reporter; the change is a simple one-line substitution in a single function with no complex logic required."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47946,
+      "title": "[expo-file-system][iOS] File.preview() rejects when reopened during Quick Look dismissal",
+      "url": "https://github.com/expo/expo/issues/47946",
+      "created_at": "2026-07-19T17:41:19Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "File.preview() rejects calls during Quick Look dismissal animation instead of deferring until dismissal completes",
+        "why_easy": "Well-scoped with clear reproduction steps, but requires iOS QLPreviewController lifecycle knowledge and careful async state coordination to implement safely"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 47943,
+      "title": "[@expo/fingerprint] Bare native dir sources hashed for CNG projects, ignoring useCNGForPlatforms \u2014 fingerprint diverges pre/post-prebuild",
+      "url": "https://github.com/expo/expo/issues/47943",
+      "created_at": "2026-07-19T16:41:48Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix fingerprint inconsistency for CNG projects by excluding generated native directories when useCNGForPlatforms is set",
+        "why_easy": "The root cause is clearly identified with the exact code location and required fix\u2014add a single condition check to two functions in Bare.ts to consult useCNGForPlatforms before including bareNativeDir sources."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326610,
+      "title": "Locked mode shows cursor in editor",
+      "url": "https://github.com/microsoft/vscode/issues/326610",
+      "created_at": "2026-07-20T11:54:25Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Locked mode fails to prevent cursor placement and movement in the agents window editor, while working correctly in the normal preview",
+        "why_easy": "Clearly reproducible behavior discrepancy between two editor contexts, but requires understanding VSCode's locked mode implementation and the agents window architecture to identify why the constraint isn't being enforced"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326608,
+      "title": "Wondering whether it is useful to show the new line",
+      "url": "https://github.com/microsoft/vscode/issues/326608",
+      "created_at": "2026-07-20T11:45:51Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Questioning whether VS Code should visually show newlines as arrows, comparing behavior to Obsidian",
+        "why_easy": "The issue lacks clear scope and actionable requirements; it's a design discussion that requires understanding the referenced issue #326540 and would need maintainer input to clarify whether this is a bug, enhancement, or just feedback."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326607,
+      "title": "Table border not aligned with the text",
+      "url": "https://github.com/microsoft/vscode/issues/326607",
+      "created_at": "2026-07-20T11:39:36Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Table borders overlap with text content when the editor is resized to narrow widths",
+        "why_easy": "Clear reproduction steps and video provided, but fixing requires understanding VS Code's markdown rendering pipeline and CSS layout calculations"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326606,
+      "title": "Bullet point in editing mode shows additional circle",
+      "url": "https://github.com/microsoft/vscode/issues/326606",
+      "created_at": "2026-07-20T11:36:37Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Checkbox list items display an unexpected dot decoration when the cursor is positioned on a bullet point in editing mode",
+        "why_easy": "Clear reproduction steps and visual evidence make debugging straightforward, but requires navigating VS Code's large codebase to locate the markdown rendering logic responsible for the decoration"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326605,
+      "title": "Undo puts cursor in wrong position",
+      "url": "https://github.com/microsoft/vscode/issues/326605",
+      "created_at": "2026-07-20T11:33:30Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Undo restores deleted character but leaves cursor in wrong position instead of returning to pre-deletion position",
+        "why_easy": "Bug is clearly reproducible with exact steps and well-scoped, but requires navigating VS Code's large codebase to locate undo/cursor state management logic and understanding how cursor position should be preserved across undo operations."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326604,
+      "title": "Unexpected space in rendered markdown",
+      "url": "https://github.com/microsoft/vscode/issues/326604",
+      "created_at": "2026-07-20T11:31:22Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Unexpected space renders in markdown when using reference-style links",
+        "why_easy": "The repro steps are clear and the scope is small, but the exact location of the spacing artifact isn't explicitly identified in the issue, and debugging where the extra space originates in the markdown rendering pipeline would require familiarity with VS Code's internals."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326603,
+      "title": "Copilot Agent Mode can stream stale previous-task response under a new user turn after cancel/resend",
+      "url": "https://github.com/microsoft/vscode/issues/326603",
+      "created_at": "2026-07-20T11:25:16Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Copilot Agent Mode streams stale response from previous task when new turn is sent after cancel/resend",
+        "why_easy": "This is a complex race condition involving async streaming, turn cancellation, and runner context synchronization that requires deep knowledge of the Copilot Agent Mode architecture and careful state management across multiple components."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326602,
+      "title": "Clicking migrate on Ollama deprectaed setting leads to an error",
+      "url": "https://github.com/microsoft/vscode/issues/326602",
+      "created_at": "2026-07-20T11:17:40Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Clicking the migrate button on the deprecated Ollama setting throws an error instead of completing the migration",
+        "why_easy": "The issue provides only a screenshot and vague error description without reproduction steps or error details, requiring investigation of VS Code's settings deprecation system and likely the Ollama extension integration"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326599,
+      "title": "Agents mode: sessions get \"stuck\" and session history renders blank when switching between sessions",
+      "url": "https://github.com/microsoft/vscode/issues/326599",
+      "created_at": "2026-07-20T11:00:58Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Session history renders blank when switching between Agents mode sessions, and sessions intermittently get stuck without recovery mechanism",
+        "why_easy": "Hard to pick up: the 'stuck sessions' problem is intermittent with unclear root cause, reproduction requires running sessions 'for a while', and both issues require deep understanding of VS Code's Copilot Chat extension component lifecycle and session state management."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326598,
+      "title": "Crashing on Multiple Window Open",
+      "url": "https://github.com/microsoft/vscode/issues/326598",
+      "created_at": "2026-07-20T10:53:35Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code crashes when opening a second window on Linux after a recent update",
+        "why_easy": "Clear reproducer and recent regression make git bisect feasible, but the lack of stack trace and multi-window architecture complexity require debugging skills and codebase familiarity."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326597,
+      "title": "Extension-contributed language model providers lose historical thinking needed for vLLM preserve_thinking",
+      "url": "https://github.com/microsoft/vscode/issues/326597",
+      "created_at": "2026-07-20T10:51:55Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Preserve LanguageModelThinkingPart in historical chat turns so providers with preserve_thinking mode receive prior reasoning.",
+        "why_easy": "The root cause is pinpointed to a single function (createTurnFromVSCodeChatHistoryTurns) missing ChatResponseThinkingProgressPart handling, but the fix requires understanding VS Code's message reconstruction pipeline and testing with actual vLLM-compatible models."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326595,
+      "title": "Assisted approval - git commands not automatically approved",
+      "url": "https://github.com/microsoft/vscode/issues/326595",
+      "created_at": "2026-07-20T10:38:33Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Git commands are not being automatically approved when the assisted approval feature is enabled.",
+        "why_easy": "The issue is sparse and references another issue (#326555) for context, requiring investigation of both issues plus understanding how VS Code's git integration interacts with its approval system."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326593,
+      "title": "git submenus not opening in new release",
+      "url": "https://github.com/microsoft/vscode/issues/326593",
+      "created_at": "2026-07-20T10:28:21Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Git sidebar submenus fail to open in version 1.130.0-insider",
+        "why_easy": "Clear reproduction steps narrow the scope, but fixing requires understanding VS Code's Git sidebar architecture and identifying what broke submenu event handling in recent commits"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326592,
+      "title": "Allow Codex in Agent Host to run through OpenAI subscription instead of Copilot quota",
+      "url": "https://github.com/microsoft/vscode/issues/326592",
+      "created_at": "2026-07-20T10:21:30Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Allow VS Code's Agent Host to use OpenAI subscription for Codex instead of consuming Copilot quota",
+        "why_easy": "References prior similar work in PR #323037 as a template, but the sparse issue description and reliance on external issues to understand scope make it harder to pick up; requires understanding auth/quota routing logic."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326591,
+      "title": "Feature Request: Support external browser password autofill in built-in browser / webview",
+      "url": "https://github.com/microsoft/vscode/issues/326591",
+      "created_at": "2026-07-20T10:14:56Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Support autofill of credentials saved in external password managers (Windows Credential Manager, Edge) in VS Code's built-in browser/webview",
+        "why_easy": "Electron's webview runs in an isolated security context without direct access to the host system's password manager or browser profiles, requiring significant architectural changes or custom integration with OS credential stores."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326590,
+      "title": "Ctrl+Backslash in Quick Open file menu should trigger Open to the Side",
+      "url": "https://github.com/microsoft/vscode/issues/326590",
+      "created_at": "2026-07-20T10:09:54Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "feature",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add Ctrl+Backslash as a keyboard shortcut to trigger Open to the Side in Quick Open, matching the existing Alt+Enter behavior",
+        "why_easy": "The feature already exists; this is simply mapping an additional keybinding to an existing action, likely a declarative change in VS Code's keybindings configuration without new logic needed."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 326585,
+      "title": "Terminal renders badly in light mode with gpu acceleration",
+      "url": "https://github.com/microsoft/vscode/issues/326585",
+      "created_at": "2026-07-20T09:54:28Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Terminal text renders thin and jagged in light mode when GPU acceleration is enabled",
+        "why_easy": "GPU rendering bugs require specialized graphics knowledge and are sensitive to platform-specific issues (Wayland); best for contributors experienced with shader code and font rendering"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68945,
+      "title": "Step 12 removes the console.log() statement, but the description doesn't actually mention doing this.",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68945",
+      "created_at": "2026-07-20T09:25:58Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update Step 12 curriculum description to include instruction for removing console.log() and adjust editable region markers accordingly.",
+        "why_easy": "The issue provides exact file location, suggested text, and specific changes needed; it's a straightforward curriculum content update requiring no code logic."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68943,
+      "title": "Queens title mismatch",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68943",
+      "created_at": "2026-07-20T00:00:22Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Align the N-Queens lab title between breadcrumb and instructions",
+        "why_easy": "Simple text mismatch requiring finding and updating one or two title strings to be consistent; no logic changes or complex refactoring needed."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29739,
+      "title": "`@prisma/cli app deploy` fails in packaging step \u2014 ENOENT on `@prisma/adapter-pg` dangling symlink (pnpm monorepo + Next.js)",
+      "url": "https://github.com/prisma/prisma/issues/29739",
+      "created_at": "2026-07-20T10:26:39Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix ENOENT path error in @prisma/cli app deploy's symlink materialization for pnpm monorepos",
+        "why_easy": "Error location and hypothesis are explicit, but reproducing requires pnpm monorepo setup, understanding package manager symlink mechanics, and ability to test the deploy flow."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48081,
+      "title": "Management API upgrade returns 201 but creates no observable upgrade status",
+      "url": "https://github.com/supabase/supabase/issues/48081",
+      "created_at": "2026-07-19T17:12:28Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Management API accepts Postgres upgrade request (HTTP 201) but fails to create observable upgrade status, leaving no way to track or safely retry the operation.",
+        "why_easy": "This is hard: it involves reproducing a race condition in async orchestration without production access, requires understanding multiple interdependent systems (API, job scheduler, status tracking), and the root cause isn't obvious from the report\u2014the fix location and approach are unclear."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51031,
+      "title": "Update properties for forwarded headers to adapt to Reactor Netty changes",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51031",
+      "created_at": "2026-07-20T11:45:40Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Adapt Spring Boot's forwarded headers configuration properties to align with planned Reactor Netty changes across supported servers.",
+        "why_easy": "Scope is unclear without researching external issue #51030 and Reactor Netty's planned changes; implementation likely straightforward once requirements are known."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51030,
+      "title": "Update properties for forwarded headers to adapt to Spring Framework changes",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51030",
+      "created_at": "2026-07-20T09:47:10Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Update forwarded headers property options to align with Spring Framework changes and add documentation guidance.",
+        "why_easy": "Changes are configuration-focused and well-scoped, but require understanding external Spring Framework decisions and coordinating updates across multiple server implementations."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66391,
+      "title": "ENH: UnicodeDecodeError from read_csv could suggest common alternative encodings",
+      "url": "https://github.com/pandas-dev/pandas/issues/66391",
+      "created_at": "2026-07-20T11:35:47Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "feature",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add helpful hints to read_csv's UnicodeDecodeError message suggesting common alternative encodings like latin-1 and cp1252 when the default UTF-8 encoding fails",
+        "why_easy": "Clear, localized error-message enhancement with a concrete pseudo-code proposal; main challenge is locating the error-handling code in pandas' CSV reader, but the implementation itself is straightforward and low-risk"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66390,
+      "title": "BUG: ArrowDtype timestamp comparison with datetime.date scalar loses null propagation",
+      "url": "https://github.com/pandas-dev/pandas/issues/66390",
+      "created_at": "2026-07-20T11:33:27Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix ArrowDtype timestamp comparisons with datetime.date scalars to properly propagate nulls and return correct equality results",
+        "why_easy": "Well-defined with reproducible examples and a working pyarrow reference implementation, but requires understanding ArrowDtype comparison machinery and cross-type delegation logic"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66389,
+      "title": "ENH: `tz_convert` to work with naive timestamps with argument to specify naive tz",
+      "url": "https://github.com/pandas-dev/pandas/issues/66389",
+      "created_at": "2026-07-20T11:15:22Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add a `naive_tz` parameter to `tz_convert` to automatically localize naive timestamps instead of raising an error",
+        "why_easy": "The logic is straightforward (check if naive, then localize; otherwise convert), but implementation requires coordinating changes across multiple datetime objects (Timestamp, Series, DatetimeIndex) with comprehensive tests and documentation in a mature library with strict review standards."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66382,
+      "title": "BUG: read_csv(dtype=\"category\") ignores dtype_backend for the c and python engines",
+      "url": "https://github.com/pandas-dev/pandas/issues/66382",
+      "created_at": "2026-07-19T22:29:59Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Make read_csv respect dtype_backend when inferring categorical column dtypes for c and python engines.",
+        "why_easy": "The issue is well-identified with a clear reproducible example and suggested solution path, but the fix requires threading dtype_backend through multiple parser call sites across three different engines and understanding how dtype_backend, Categorical._from_inferred_categories, and the CSV parsers interact."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66379,
+      "title": "DOC: Minor typo in DataFrame.ewm",
+      "url": "https://github.com/pandas-dev/pandas/issues/66379",
+      "created_at": "2026-07-19T15:50:58Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix missing backslash in DataFrame.ewm halflife parameter documentation causing rendering warnings",
+        "why_easy": "Isolated to a single docstring location with the 3.0 version available as a correctly-formatted reference"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66378,
+      "title": "DOC: `read_{csv,excel}` skip rows (columns) above (before) header (index columns)",
+      "url": "https://github.com/pandas-dev/pandas/issues/66378",
+      "created_at": "2026-07-19T13:03:43Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Document that read_csv() and read_excel() skip rows above min(header) and columns before min(index_col).",
+        "why_easy": "The behavior is already implemented and working; the reporter has reproduced it clearly with test files\u2014this is purely documentation work requiring no code changes, just updating docstrings or adding examples."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66377,
+      "title": "DOC: `read_excel`: `.index.names` vs `.columns.names`",
+      "url": "https://github.com/pandas-dev/pandas/issues/66377",
+      "created_at": "2026-07-19T12:38:33Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "docs",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Clarify and fix inconsistent handling of multi-level index/column name intersection in read_csv vs read_excel (case 4 shows different column names between CSV and Excel)",
+        "why_easy": "Requires deep investigation into pandas IO internals to understand why CSV and Excel diverge on naming the intersection cells, and whether this is intentional design or a bug\u2014not a straightforward documentation or code fix."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32044,
+      "title": "f2py: replace eval() in .f2py_f2cmap parsing with a restricted parser",
+      "url": "https://github.com/numpy/numpy/issues/32044",
+      "created_at": "2026-07-20T09:22:52Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Replace unsafe eval() in f2py's f2cmap file parser with a restricted AST evaluator accepting only dict literals and calls.",
+        "why_easy": "Well-scoped single-function change with clear requirements and provided test fixtures, but requires AST knowledge and careful implementation of security-sensitive code."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34521,
+      "title": "Doc CI failure due to seaborn bug",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34521",
+      "created_at": "2026-07-20T01:01:51Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Doc CI fails due to deprecated matplotlib `vert` parameter in seaborn boxplot call",
+        "why_easy": "The failure is precisely traced to a single line with a known upstream fix already merged in seaborn; the solution is likely a dependency version bump or simple parameter replacement, but the issue is explicitly marked not ready for PRs pending maintainer decision on how to handle it."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45217,
+      "title": "Suggestion: Improve 'Navigating code on GitHub' article",
+      "url": "https://github.com/github/docs/issues/45217",
+      "created_at": "2026-07-20T11:50:48Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update the 'Navigating code on GitHub' documentation article with current UI screenshots, feature examples (blame, commit history, references), keyboard shortcuts, and clearer guidance for exploring large repositories.",
+        "why_easy": "Clear, well-scoped requirements with visual examples provided; purely documentation work (markdown and screenshots) with no code complexity, though contributor should be comfortable taking screenshots and editing markdown files in the GitHub docs repo."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45216,
+      "title": "Suggestion: Improve 'Navigating code on GitHub' article",
+      "url": "https://github.com/github/docs/issues/45216",
+      "created_at": "2026-07-20T10:59:34Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "docs",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Improve the 'Navigating code on GitHub' article with unspecified enhancements",
+        "why_easy": "No body description provided, so contributors must infer what improvements are needed or ask for clarification before starting work"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45215,
+      "title": "Improve humanity score",
+      "url": "https://github.com/github/docs/issues/45215",
+      "created_at": "2026-07-20T08:25:56Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "docs",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "User reports their 'humanity score' is low on docs.github.com but provides no details about what this refers to or how to improve it",
+        "why_easy": "The issue is too vague to actionable \u2014 'humanity score' is not explained, no affected article is identified, and no specific improvement is requested, so a contributor would need to investigate and request clarification before beginning any work"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45210,
+      "title": "Sidebar collapse icon is flipped with expand icon",
+      "url": "https://github.com/github/docs/issues/45210",
+      "created_at": "2026-07-19T17:53:54Z",
+      "digest_date": "2026-07-20",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Collapse and expand icons in the sidebar are swapped and should be corrected to match github.com's implementation",
+        "why_easy": "The fix is localized to the sidebar icon component with a clear problem statement and a visual reference implementation on github.com to compare against."
       }
     }
   ]
