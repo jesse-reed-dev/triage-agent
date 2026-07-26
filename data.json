@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25",
+  "updated": "2026-07-26",
   "issues": [
     {
       "repo": "react/react-native",
@@ -8264,6 +8264,246 @@
         "good_first_issue": true,
         "one_line_summary": "Add Forma\u00e7\u00e3o Java Completa course entry to Portuguese free courses list",
         "why_easy": "Contributor verified criteria and provided the exact markdown entry; the task is just adding one line to an existing file with no code changes."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48138,
+      "title": "[expo-audio][Android] Playback does not pause on headphone unplug / Bluetooth disconnect (ACTION_AUDIO_BECOMING_NOISY unhandled) \u2014 regression from expo-av",
+      "url": "https://github.com/expo/expo/issues/48138",
+      "created_at": "2026-07-26T10:56:12Z",
+      "digest_date": "2026-07-26",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Enable expo-audio to pause playback on Android when headphones are unplugged or Bluetooth device disconnects",
+        "why_easy": "The fix is a single-line addition (.setHandleAudioBecomingNoisy(true)) to enable media3's built-in handling, with clear root cause documentation and a reference implementation already present in the legacy expo-av code."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327513,
+      "title": "Copilot completion feedback",
+      "url": "https://github.com/microsoft/vscode/issues/327513",
+      "created_at": "2026-07-26T11:03:56Z",
+      "digest_date": "2026-07-26",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Unclear feedback about a Copilot code completion suggestion with no described problem",
+        "why_easy": "The issue lacks any description of what the actual problem is; the 'info-needed' label indicates the reporter abandoned it before explaining what feedback they intended to give"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327512,
+      "title": "VS Code Extension Host Keeps Crashing and Extension Bisect Cannot Identify Any Extension",
+      "url": "https://github.com/microsoft/vscode/issues/327512",
+      "created_at": "2026-07-26T10:52:47Z",
+      "digest_date": "2026-07-26",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code Extension Host crashes on startup despite Extension Bisect finding no problematic extension",
+        "why_easy": "This is a difficult issue: it requires environment-specific reproduction, involves deep knowledge of VS Code's extension loading and crash-handling mechanisms, and the built-in diagnostic tool (Extension Bisect) already failed to identify the root cause, suggesting a complex platform-level interaction rather than a simple extension conflict."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327510,
+      "title": "Chat took too long to get ready",
+      "url": "https://github.com/microsoft/vscode/issues/327510",
+      "created_at": "2026-07-26T10:15:36Z",
+      "digest_date": "2026-07-26",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Chat extension initialization is delayed, with logs showing auth token acquisition failures and prolonged waits before chat becomes available.",
+        "why_easy": "Hard to pick up: requires understanding async initialization flow across multiple extensions (Git, Auth, Chat), determining whether delay stems from timeout values, retry backoff logic, or sequential blocking operations, and likely involves profiling to isolate the culprit."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327509,
+      "title": "Chat took too long to get ready",
+      "url": "https://github.com/microsoft/vscode/issues/327509",
+      "created_at": "2026-07-26T10:15:34Z",
+      "digest_date": "2026-07-26",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Chat extension initialization hangs waiting for Copilot token when user is not authenticated to GitHub.",
+        "why_easy": "Logs clearly show auth failure and the blocking point (waiting for token), but fixing requires understanding the extension lifecycle, timeout logic, and potentially the async auth flow in the Copilot Chat extension codebase."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327508,
+      "title": "Chat took too long to get ready",
+      "url": "https://github.com/microsoft/vscode/issues/327508",
+      "created_at": "2026-07-26T10:15:29Z",
+      "digest_date": "2026-07-26",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "GitHub Copilot Chat extension takes excessive time to initialize when authentication fails",
+        "why_easy": "Hard to pick up: requires understanding VS Code extension initialization architecture, token acquisition flow, and timeout behavior; investigation demands familiarity with the auth and Chat initialization systems"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327507,
+      "title": "System-wide slowdown when detects a large number of file changes (>50 files)",
+      "url": "https://github.com/microsoft/vscode/issues/327507",
+      "created_at": "2026-07-26T10:14:53Z",
+      "digest_date": "2026-07-26",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code causes system-wide performance degradation when detecting 50+ file changes, with severe lag persisting until restart despite underutilized system resources.",
+        "why_easy": "System-wide performance degradation with low resource utilization suggests potential blocking or deadlock in file watching or event handling, requiring deep expertise in VS Code internals, file system APIs, and performance profiling to debug and fix without introducing regressions."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327506,
+      "title": "[semantic] Add a `parameter` semantic token modifier",
+      "url": "https://github.com/microsoft/vscode/issues/327506",
+      "created_at": "2026-07-26T08:50:32Z",
+      "digest_date": "2026-07-26",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add a `parameter` semantic token modifier to allow themes to style function-valued parameters distinctly from regular functions",
+        "why_easy": "This requires deep architectural knowledge of VS Code's semantic tokenization system, changes to the token schema, language server integration, and theme matching logic \u2014 beyond typical first-issue scope."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327504,
+      "title": "Save and Save As in Tab",
+      "url": "https://github.com/microsoft/vscode/issues/327504",
+      "created_at": "2026-07-26T07:33:33Z",
+      "digest_date": "2026-07-26",
+      "triage": {
+        "category": "feature",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add 'Save' and 'Save As' options to the context menu when right-clicking on file tabs",
+        "why_easy": "The underlying save commands already exist; this just connects them to the tab context menu UI using VS Code's established menu patterns."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327502,
+      "title": "settings json file in modal overlay does not show change marker (black dot)",
+      "url": "https://github.com/microsoft/vscode/issues/327502",
+      "created_at": "2026-07-26T07:01:13Z",
+      "digest_date": "2026-07-26",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Change marker (black dot) doesn't appear on modified settings JSON file when using modal editor overlay",
+        "why_easy": "Clear reproduction steps and isolated bug, but requires navigating VS Code's tab rendering and modal overlay systems to identify where change detection isn't propagating to the indicator"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327501,
+      "title": "Copilot completion feedback",
+      "url": "https://github.com/microsoft/vscode/issues/327501",
+      "created_at": "2026-07-26T06:41:13Z",
+      "digest_date": "2026-07-26",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add an option to request user confirmation before Copilot shows suggestions while typing",
+        "why_easy": "The issue is extremely vague with unclear requirements, poor grammar, and no reproduction steps or desired behavior specified\u2014a contributor would need significant clarification before knowing what to implement, and working with Copilot's suggestion system requires deep system knowledge."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23065,
+      "title": "agent-friendly dev/preview server mode",
+      "url": "https://github.com/vitejs/vite/issues/23065",
+      "created_at": "2026-07-26T08:25:18Z",
+      "digest_date": "2026-07-26",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Make Vite's dev and preview servers agent-friendly by having them return immediately once ready and persist state across multiple starts.",
+        "why_easy": "Hard to pick up: requires significant architectural changes to core dev server logic, design decisions on implementation approach (multiple alternatives proposed but no consensus), and deep familiarity with Vite internals."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48336,
+      "title": "[bug] pg-meta: Cartesian product in FK relationship introspection produces incorrect cross-column pairings for composite keys",
+      "url": "https://github.com/supabase/supabase/issues/48336",
+      "created_at": "2026-07-26T10:15:56Z",
+      "digest_date": "2026-07-26",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": true,
+        "one_line_summary": "Fix composite foreign key introspection to preserve positional column mappings instead of generating Cartesian products",
+        "why_easy": "The root cause is clearly identified and scoped to a specific SQL query, but fixing it requires understanding PostgreSQL constraint internals and ordinal position matching in SQL"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48334,
+      "title": "Branching: create_branch fails MIGRATIONS_FAILED when project history starts with a repair-marked (squashed) baseline",
+      "url": "https://github.com/supabase/supabase/issues/48334",
+      "created_at": "2026-07-26T05:39:19Z",
+      "digest_date": "2026-07-26",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Branch provisioning records a squashed baseline as applied but never executes its DDL, causing dependent migrations to fail on the empty branch database.",
+        "why_easy": "The root cause is well-isolated (baseline SQL not executed during branch creation from empty DB), but reproducing and fixing requires deep Supabase internals knowledge of migration orchestration and a realistic multi-migration test setup."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66474,
+      "title": "ENH: Add flag to indicate there is a named index",
+      "url": "https://github.com/pandas-dev/pandas/issues/66474",
+      "created_at": "2026-07-26T11:31:43Z",
+      "digest_date": "2026-07-26",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add a flag to preserve named indices when writing to and reading from Excel files",
+        "why_easy": "The issue lacks specificity about which index scenarios fail and where the flag should be added (read, write, or both), requiring design clarification and investigation of pandas' Excel I/O internals before a contributor can begin implementation."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32109,
+      "title": "TYP: Type mismatch of `np.indices` converted to list, real type is `list[list[int]]`, reported type is `list[int]`",
+      "url": "https://github.com/numpy/numpy/issues/32109",
+      "created_at": "2026-07-26T10:40:36Z",
+      "digest_date": "2026-07-26",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix type hints for `np.ndarray.tolist()` and array-to-list conversions to correctly reflect nested list structure based on array dimensionality",
+        "why_easy": "Hard: requires deep understanding of NumPy's type system and how to type methods whose return types depend on array shape/rank; beyond typical first-issue scope for unfamiliar contributors"
       }
     }
   ]
