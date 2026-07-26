@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-20",
+  "updated": "2026-07-25",
   "issues": [
     {
       "repo": "react/react-native",
@@ -7124,6 +7124,1146 @@
         "good_first_issue": true,
         "one_line_summary": "Collapse and expand icons in the sidebar are swapped and should be corrected to match github.com's implementation",
         "why_easy": "The fix is localized to the sidebar icon component with a clear problem statement and a visual reference implementation on github.com to compare against."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57694,
+      "title": "0.86.1 npm publishing failed",
+      "url": "https://github.com/react/react-native/issues/57694",
+      "created_at": "2026-07-25T20:57:08Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "npm publishing workflow for v0.86.1 failed in GitHub Actions",
+        "why_easy": "The issue provides only a CI run link with no error logs, stack trace, or reproduction steps; labels indicate it needs author feedback and a repro case before work can begin, leaving unclear what the actual problem is."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57693,
+      "title": "[Android] Missing native component crashes Fabric instead of rendering UnimplementedNativeView",
+      "url": "https://github.com/react/react-native/issues/57693",
+      "created_at": "2026-07-25T20:29:14Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Android crashes with IllegalViewOperationException when mounting a Fabric component whose native ViewManager is missing; should render UnimplementedNativeView placeholder instead, matching iOS behavior",
+        "why_easy": "Root cause is well-identified with specific code locations, a working reproducer exists, and the iOS solution provides a clear reference implementation\u2014but fixing it requires rebuilding React Native with native C++/Kotlin changes and deep Fabric architecture knowledge, making it unsuitable for first-time contributors."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57688,
+      "title": "[iOS][Fabric] numberOfLines={1} with CJK text collapses to first character + ellipsis when tail truncation is required (0.86.0)",
+      "url": "https://github.com/react/react-native/issues/57688",
+      "created_at": "2026-07-24T23:12:33Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Text with CJK characters ending in full-width brackets collapses to single character + ellipsis when numberOfLines={1} requires tail truncation on iOS Fabric",
+        "why_easy": "Well-reproduced with minimal test cases, but requires iOS/Objective-C expertise and deep knowledge of text layout/truncation logic in React Native core; debugging platform-specific rendering bugs in a large codebase is difficult"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48131,
+      "title": "[expose-ui][jetpack-compose] RNHostView drops onPress events when used within a LazyRow",
+      "url": "https://github.com/expo/expo/issues/48131",
+      "created_at": "2026-07-26T04:56:30Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "RNHostView drops onPress events when nested inside a LazyRow on physical Android devices",
+        "why_easy": "Clear minimal reproducible example with well-documented steps, but cross-framework touch event handling and device-only reproduction add significant complexity."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48124,
+      "title": "[expo/fetch][iOS] response.text() and arrayBuffer() never settle when a request fails after the response is delivered",
+      "url": "https://github.com/expo/expo/issues/48124",
+      "created_at": "2026-07-25T15:13:19Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "response.text() and arrayBuffer() hang indefinitely when a request fails after the response is delivered on iOS",
+        "why_easy": "Root cause is clearly identified with exact file locations (ExpoFetchModule.swift, NativeResponse.swift) and the fix is likely straightforward, but requires iOS/Swift expertise, dev environment setup, and careful testing of async state transitions"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48122,
+      "title": "[expo-background-task] Hardcoded network connectivity requirement prevents offline tasks from running",
+      "url": "https://github.com/expo/expo/issues/48122",
+      "created_at": "2026-07-25T10:26:01Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Make the network connectivity requirement for background tasks configurable per task instead of hardcoded, with an option to disable it for offline-capable tasks.",
+        "why_easy": "The issue is exceptionally well-documented with exact code locations and a clear proposal, but implementation requires changes across JavaScript and native layers (Kotlin/Swift) with platform-specific API knowledge and multi-device testing."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327498,
+      "title": "Standard startup fails to load Git and prevents login; using `--disable-extensions` or `--user-data-dir` restores functionality.",
+      "url": "https://github.com/microsoft/vscode/issues/327498",
+      "created_at": "2026-07-26T04:12:36Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code 1.130.0 fails to load Git and prevents login on standard startup, but works when disabling extensions or using a new user-data directory.",
+        "why_easy": "The workaround pattern (--disable-extensions or --user-data-dir) strongly narrows the investigation scope, but the issue lacks error logs, reproduction steps, and diagnostic detail, requiring significant investigation to identify the root cause."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327496,
+      "title": "intaller issue",
+      "url": "https://github.com/microsoft/vscode/issues/327496",
+      "created_at": "2026-07-26T03:40:27Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "VS Code 1.130.0 User Installer incorrectly rejects Windows 11 with a version compatibility error despite the portable version working on the same system.",
+        "why_easy": "The issue is tightly scoped to installer bootstrapper logic with clear reproduction steps and a working alternative (portable) to compare against; likely a simple Windows version check bug in the installer's manifesto or build configuration."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327492,
+      "title": "runTests tool description confuses agents",
+      "url": "https://github.com/microsoft/vscode/issues/327492",
+      "created_at": "2026-07-25T22:29:50Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Generalize the runTests tool description to cover all test types instead of specifically mentioning 'unit tests'",
+        "why_easy": "The fix is a straightforward text update to a single description string in testingChatAgentTool.ts with no logic changes required."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327488,
+      "title": "Unable to load model",
+      "url": "https://github.com/microsoft/vscode/issues/327488",
+      "created_at": "2026-07-25T21:02:58Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Extension fails to load a model with minimal debugging information provided",
+        "why_easy": "Hard \u2014 the issue lacks reproduction steps, error messages, and details about which model is failing; the 'info-needed' label indicates it's awaiting author clarification before work can begin"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327487,
+      "title": "Forked Copilot Sessions Merged Again",
+      "url": "https://github.com/microsoft/vscode/issues/327487",
+      "created_at": "2026-07-25T20:51:12Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Forked Copilot sessions are unexpectedly re-merging when they should remain separate",
+        "why_easy": "The issue lacks reproduction steps and requires deep understanding of VS Code's Copilot session state management to identify what's causing diverged sessions to converge again."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327484,
+      "title": "Creating a profile from the built-in Python template fails silently",
+      "url": "https://github.com/microsoft/vscode/issues/327484",
+      "created_at": "2026-07-25T19:44:40Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Profile creation from Python template fails silently when extension installation fails, discarding the entire profile including successfully-applied settings",
+        "why_easy": "Root cause is clearly identified with working example code in the same file, but requires VS Code dev environment setup and testing the extension system end-to-end"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327479,
+      "title": "Unresponsive for 30\u201390s intermittently",
+      "url": "https://github.com/microsoft/vscode/issues/327479",
+      "created_at": "2026-07-25T18:43:49Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code becomes intermittently unresponsive for 30\u201390 seconds due to the extension-registry lock being held during DefaultAccount re-initialization",
+        "why_easy": "Intermittent reproduction makes it hard to diagnose; involves complex async/concurrency patterns across extension registry, account initialization, and file watchers, requiring deep VS Code architecture expertise to fix safely without regressions."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327477,
+      "title": "Agent mode needs BYOK/provider parity with Chat mode.",
+      "url": "https://github.com/microsoft/vscode/issues/327477",
+      "created_at": "2026-07-25T17:38:41Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Support bring-your-own-key and custom model providers in Agent mode with per-task routing and cost controls to improve adoption for cost-sensitive workflows.",
+        "why_easy": "Hard because it requires understanding VS Code's Chat mode provider architecture, designing architectural parity in Agent mode, and implementing new model routing and budget-control systems that don't currently exist there."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327474,
+      "title": "New chat page with and without workspace",
+      "url": "https://github.com/microsoft/vscode/issues/327474",
+      "created_at": "2026-07-25T16:58:35Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add workspace selection option on the new chat page to allow starting chat sessions with or without a workspace",
+        "why_easy": "The feature is well-scoped and the desired behavior is clear, but implementation requires understanding VS Code's chat session lifecycle and workspace integration, making it moderately challenging for newcomers unfamiliar with the chat architecture."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327473,
+      "title": "Why does the built-in AI agent tool, edit_notebook_file, often fail to edit, meaning it executes but doesn't make any changes? However, it never has any problems when editing a brand new notebook.",
+      "url": "https://github.com/microsoft/vscode/issues/327473",
+      "created_at": "2026-07-25T16:51:06Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "AI agent's edit_notebook_file tool fails to apply edits to existing notebooks despite successfully executing",
+        "why_easy": "The specific pattern (works on new notebooks, fails on existing ones) narrows debugging scope, but requires deep VS Code notebook architecture knowledge and lacks detailed reproduction steps."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327472,
+      "title": "\"Environment changes relaunch\" doesn't work",
+      "url": "https://github.com/microsoft/vscode/issues/327472",
+      "created_at": "2026-07-25T16:02:53Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code's automatic environment-change relaunch feature doesn't work after installing the Claude Code extension",
+        "why_easy": "Root cause is unclear (VS Code internals vs extension conflict), lacks isolated reproduction steps, requires deep knowledge of environment detection and restart logic, and is Windows-specific without clear setup instructions"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 96216,
+      "title": "Turbopack dev server hangs all requests forever with sustained native CPU spin after its stdout pipe reader exits (`next dev | head -N`)",
+      "url": "https://github.com/vercel/next.js/issues/96216",
+      "created_at": "2026-07-25T13:07:56Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Dev server hangs indefinitely and spins CPU when stdout pipe closes early after buffer fills (e.g., via `| head`)",
+        "why_easy": "Hard to pick up \u2014 requires debugging native Rust code in Turbopack; root cause is non-obvious (stdout pipe write stall in native layer, not JS), reproduction is environment-specific, and fix is unclear (buffering, error handling, or async cleanup)."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 96209,
+      "title": "Dev Overlay: console.error object arguments always render as empty {}",
+      "url": "https://github.com/vercel/next.js/issues/96209",
+      "created_at": "2026-07-25T08:28:54Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": true,
+        "one_line_summary": "Fix Dev Overlay to properly display object properties in console.error calls instead of always rendering as empty {}.",
+        "why_easy": "Well-defined reproduction case with provided test repo and isolated UI bug, though requires finding the dev overlay's object serialization code in the Next.js codebase."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 96206,
+      "title": "Docs: Bug template links to no longer existing template for examples",
+      "url": "https://github.com/vercel/next.js/issues/96206",
+      "created_at": "2026-07-25T08:16:35Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Remove the outdated link to a deleted example bug report template from the bug report issue template.",
+        "why_easy": "Fix is a straightforward edit to remove or update the broken link in the template file\u2014no code changes or complex logic needed."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 96202,
+      "title": "App Router: chunk <script> tags get no fetchpriority and Chrome's LowPriorityAsyncScriptExecution delays their evaluation \u2014 hydration render storm (~30k commits) on cross-site assetPrefix CDNs",
+      "url": "https://github.com/vercel/next.js/issues/96202",
+      "created_at": "2026-07-25T07:17:15Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add fetchpriority attributes to chunk script tags to prevent Chrome's LowPriorityAsyncScriptExecution from causing hydration delays on cross-site CDNs",
+        "why_easy": "Reproducing and validating the fix requires deep understanding of Chrome's script execution priorities, React's hydration internals, and production-scale performance profiling."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 96194,
+      "title": "Bun runtime on Vercel: rewritten routes intermittently render the root page (HTTP 200)",
+      "url": "https://github.com/vercel/next.js/issues/96194",
+      "created_at": "2026-07-25T00:49:48Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Bun runtime on Vercel intermittently returns root page content for rewritten default-locale routes that should render child pages",
+        "why_easy": "This is an intermittent production bug specific to Vercel's Bun infrastructure that doesn't reproduce locally, requires multiple deployments to test, leaves no logs for silent 200 failures, and likely needs deep knowledge of Next.js routing internals and Bun's module resolution system."
+      }
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 48850,
+      "title": "Please fix the casing for FormatTextdirectionLToRIcon and FormatTextdirectionRToLIcon icons",
+      "url": "https://github.com/mui/material-ui/issues/48850",
+      "created_at": "2026-07-25T08:07:58Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Rename FormatTextdirectionLToRIcon and FormatTextdirectionRToLIcon to FormatTextDirectionLtrIcon and FormatTextDirectionRtlIcon to match PascalCase conventions",
+        "why_easy": "The technical change is a straightforward rename, but it's an API-breaking change that requires handling Material-UI's deprecation strategy and release process\u2014work better suited for an experienced contributor or maintainer."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23062,
+      "title": "`isFileLoadingAllowed` rejects any Windows path containing `~`, reported as \"Does the file exist?\"",
+      "url": "https://github.com/vitejs/vite/issues/23062",
+      "created_at": "2026-07-25T10:39:52Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "isFileLoadingAllowed incorrectly rejects any Windows path containing a tilde, breaking legitimate filenames and reporting the error as a missing file instead of an access denial",
+        "why_easy": "Requires understanding Windows 8.3 short name aliasing semantics and implementing proper path canonicalization rather than character-based rejection; well-analyzed but needs specialized filesystem knowledge."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23052,
+      "title": "CSS @import resolution ignores user resolveId plugins, leaving resolve.alias.customResolver (now deprecated) as the only way to customize CSS import resolution",
+      "url": "https://github.com/vitejs/vite/issues/23052",
+      "created_at": "2026-07-24T12:27:26Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "CSS @import resolution should consult user resolveId plugins to provide a migration path from the deprecated resolve.alias.customResolver",
+        "why_easy": "Hard \u2014 requires integrating user plugins into Vite's CSS import pipeline across multiple loaders (PostCSS/Lightning CSS) and making architectural decisions about CSS-specific resolution hooks"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23045,
+      "title": "Optimized deps wrongly rewrite non-relative urls",
+      "url": "https://github.com/vitejs/vite/issues/23045",
+      "created_at": "2026-07-24T09:37:19Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Worker URLs from dependencies are missing the `/node_modules` path segment in serve mode while working correctly in build mode",
+        "why_easy": "Clear reproduction case and specific problem statement, but requires understanding Vite's dependency optimization and URL rewriting internals across serve/build modes"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35592,
+      "title": "[Bug]: A type-only export in an SFC drops the whole file's vue-component-meta docgen",
+      "url": "https://github.com/storybookjs/storybook/issues/35592",
+      "created_at": "2026-07-25T13:53:49Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Type-only exports (export type/interface) in Vue SFCs cause the entire file's documentation to silently disappear because one non-component export throws and the error handling discards all docgen for the file",
+        "why_easy": "The root cause is clearly identified in code/frameworks/vue3-vite/src/plugins/vue-component-meta.ts (the try-catch wrapping the entire map), the fix is moving error handling to per-export rather than file-wide, and a reproduction repo with labeled test fixtures (CleanButton, TypeExportButton, ConstExportButton) is provided to verify the change works."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35582,
+      "title": "[Bug]: Release publish retries fail after partial success despite --tolerate-republish",
+      "url": "https://github.com/storybookjs/storybook/issues/35582",
+      "created_at": "2026-07-24T11:34:00Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Release publish retries fail after partial success even though --tolerate-republish is passed, preventing finalization steps from running.",
+        "why_easy": "Understanding the root cause requires deep knowledge of Yarn workspace semantics, npm publish flags, and the retry mechanism; the fix likely spans retry logic, publish command structure, and workflow gates, making it unsuitable for newcomers to the release process."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35578,
+      "title": "[Bug]: @storybook/addon-vitest fails with Angular workspace library \u2014 cannot serve node_modules when vitest.config.ts is inside library project",
+      "url": "https://github.com/storybookjs/storybook/issues/35578",
+      "created_at": "2026-07-24T10:59:37Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "@storybook/addon-vitest cannot resolve node_modules when vitest.config.ts is placed inside an Angular workspace library project",
+        "why_easy": "Requires coordinating path resolution across Angular workspace roots, Vite dev server scoping, and Vitest configuration in a monorepo\u2014fixing one workaround breaks the other, suggesting the fix involves subtle interactions between multiple systems."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35576,
+      "title": "[Bug]: next/link mock ignores trailingSlash: true when rendering href",
+      "url": "https://github.com/storybookjs/storybook/issues/35576",
+      "created_at": "2026-07-24T10:21:33Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "The next/link mock should normalize href strings according to the trailingSlash: true configuration setting from next.config.ts",
+        "why_easy": "The problem is isolated and clearly reproduced; the fix is straightforward\u2014read process.env.__NEXT_TRAILING_SLASH in the mock and conditionally append a trailing slash to href strings when enabled."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69040,
+      "title": "contributions.md updated",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69040",
+      "created_at": "2026-07-26T05:03:25Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "docs",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Update the contributions.md file with unspecified changes",
+        "why_easy": "No description provided; contributor would need to ask for clarification on what exactly needs updating"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69026,
+      "title": "Fix(api): incorrect fallback values in normalizeDate and getPoints",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69026",
+      "created_at": "2026-07-24T16:40:23Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix incorrect fallback values in normalizeDate and getPoints utility functions.",
+        "why_easy": "Both bugs are localized to two specific files with clear root causes and simple fixes (add empty-string validation for normalizeDate and change nullish coalescing fallback from 1 to 0 in getPoints)."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69022,
+      "title": "Fix curly apostrophe and grammar errors in the What Are Margins and Padding lecture",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69022",
+      "created_at": "2026-07-24T14:32:58Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix grammar, punctuation, and doubled-word errors in the CSS margins and padding lecture",
+        "why_easy": "Three straightforward text corrections in curriculum content that require no code changes, system knowledge, or build steps"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69020,
+      "title": "Fix typo and inconsistent feedback in the What Are Some Default Browser Styles Applied to HTML lecture",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69020",
+      "created_at": "2026-07-24T14:32:55Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix typos and inconsistent punctuation in the Default Browser Styles curriculum lecture",
+        "why_easy": "Three straightforward text replacements in curriculum content with clearly specified before/after states requiring no code understanding."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69019,
+      "title": "Fix inconsistent and grammatically incorrect quiz feedback in Working with Forms lecture",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69019",
+      "created_at": "2026-07-24T14:27:57Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix inconsistent code formatting of `reset` and grammar error in quiz feedback for two lectures.",
+        "why_easy": "The issue provides exact locations and specific text needing changes; fixes are simple text replacements requiring no architectural understanding."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69017,
+      "title": "Missing word in the var explanation in the Introduction to JavaScript let and const lecture",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69017",
+      "created_at": "2026-07-24T09:16:10Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add missing word 'keyword' to the var explanation in the Introduction to JavaScript lecture",
+        "why_easy": "Requires only adding a single word to one sentence in the curriculum documentation; no code logic or complex changes needed."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69016,
+      "title": "Inconsistent casing of undefined and null data types in the Introduction to JavaScript data types lecture",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69016",
+      "created_at": "2026-07-24T09:16:07Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix inconsistent capitalization of undefined and null data types in JavaScript lecture answers",
+        "why_easy": "Simple text replacement in a lesson file\u2014find two answer options and change capitalized strings to lowercase to match JavaScript conventions and other questions."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69014,
+      "title": "Inaccurate catalog intro copy for the Introduction to Python block",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69014",
+      "created_at": "2026-07-24T09:09:39Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update the Introduction to Python catalog intro text to remove inaccurate reference to development environment setup",
+        "why_easy": "The desired text is explicitly provided in the issue, requires a single-line copy change at a clearly identified location, and poses minimal risk"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68957,
+      "title": "Monaco editor accessibility breaks with NVDA in later HTML lessons and becomes unusable starting with the first CSS lesson",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68957",
+      "created_at": "2026-07-21T06:24:49Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Monaco editor accessibility with NVDA degrades through HTML lessons and becomes unusable starting with CSS lessons",
+        "why_easy": "Hard to pick up because it requires Windows 11 + NVDA setup for testing, screen reader debugging expertise, and the progressive failure pattern across lessons suggests a complex root cause in editor state or lesson configuration"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 68948,
+      "title": "Tests on the last Front-End Dev certification project take three minutes to execute",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/68948",
+      "created_at": "2026-07-20T13:25:51Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "The Digital Pet Game tests take 3 minutes because a useEffect is missing its cleanup function for setInterval, causing infinite loop detection warnings",
+        "why_easy": "The infinite loop warnings pinpoint the exact issue (uncleared setInterval in useEffect), and the fix is adding a standard cleanup function\u2014a well-documented React hooks pattern that junior developers frequently encounter"
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17352,
+      "title": "SSE + interceptors: producer Observable is subscribed then unsubscribed in the same tick when client disconnects during async handler setup",
+      "url": "https://github.com/nestjs/nest/issues/17352",
+      "created_at": "2026-07-21T21:06:25Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "SSE handlers returning Promise<Observable> are subscribed and immediately unsubscribed in the same tick when client disconnects during async setup, causing producer side effects to abort before emitting",
+        "why_easy": "The issue is well-defined with a clear reproduction case and exact code path identified (InterceptorsConsumer.transformDeferred), but fixing it requires deep understanding of NestJS's Observable subscription lifecycle and deciding between reverting to pre-11.1.25 behavior or restructuring subscription lifecycle management"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29789,
+      "title": "upsert with an empty `update` compiles to a non-atomic read-then-write instead of ON CONFLICT",
+      "url": "https://github.com/prisma/prisma/issues/29789",
+      "created_at": "2026-07-25T04:38:09Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix upsert() with empty update object to generate atomic INSERT...ON CONFLICT DO NOTHING instead of non-atomic read-then-write",
+        "why_easy": "Well-diagnosed with clear SQL diffs and reproducible race condition, but requires navigating Prisma's query compiler and modifying SQL generation logic for a critical operation"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29786,
+      "title": "Pool health checks (test_on_check_out) exist in quaint but cannot be enabled from a connection string \u2014 leaving long-running deployments exposed to intermittent P1001",
+      "url": "https://github.com/prisma/prisma/issues/29786",
+      "created_at": "2026-07-24T23:27:30Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "feature",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Add test_on_check_out and health_check_interval parameters to connection strings to enable pool health checks",
+        "why_easy": "The health check infrastructure already exists in quaint; this is pure parameter plumbing following the established pattern of max_connection_lifetime and max_idle_connection_lifetime"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29780,
+      "title": "prisma bundles vulnerable find-my-way@9.6.0 via @prisma/dev (GHSA-c96f-x56v-gq3h)",
+      "url": "https://github.com/prisma/prisma/issues/29780",
+      "created_at": "2026-07-24T11:31:34Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update find-my-way from vulnerable 9.6.0 to 9.7.0+ to resolve DoS vulnerability GHSA-c96f-x56v-gq3h",
+        "why_easy": "Straightforward dependency version bump with clear reproduction steps; main effort is locating @prisma/dev's package.json in the monorepo and running tests to verify the fix."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29774,
+      "title": "Possible memory leak in query compiler",
+      "url": "https://github.com/prisma/prisma/issues/29774",
+      "created_at": "2026-07-23T21:59:15Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Investigate and fix memory leak in query compiler that retains compiled queries indefinitely, causing heap growth from 100MB to 550MB over an hour",
+        "why_easy": "No minimal reproduction provided, leak is in compiled code requiring deep profiling expertise, and specific problematic queries remain unidentified"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29772,
+      "title": "@prisma/migrate 7.9.0 requires unpublished @prisma/internals completion module",
+      "url": "https://github.com/prisma/prisma/issues/29772",
+      "created_at": "2026-07-23T17:13:14Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "@prisma/migrate 7.9.0 fails on import because its bundle references an unpublished source path in @prisma/internals",
+        "why_easy": "The problem is well-reproduced and narrowly scoped (one incorrect require path), but fixing it requires deep knowledge of Prisma's monorepo build system, bundler configuration, and the recent tab-completion changes that introduced the breakage."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48333,
+      "title": "Sign in using GitHub (OAuth) not working - directed to a 2FA page when 2FA was never set up?",
+      "url": "https://github.com/supabase/supabase/issues/48333",
+      "created_at": "2026-07-26T00:52:16Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Users signing in via GitHub OAuth are unexpectedly prompted for 2FA they never set up on Supabase, locking them out of their accounts.",
+        "why_easy": "This is a complex backend regression with an unclear root cause (database state, OAuth flow, or 2FA logic) that requires deep knowledge of Supabase's auth systems and likely infrastructure-level investigation rather than a straightforward code fix."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48324,
+      "title": "web: Encountered two children with the same key, `row-level-security`.",
+      "url": "https://github.com/supabase/supabase/issues/48324",
+      "created_at": "2026-07-25T03:24:38Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Remove duplicate 'row-level-security' key in postgres-developers.tsx and rename to its intended value",
+        "why_easy": "Issue clearly identifies the file location and duplicate key, requiring only a simple string rename with no logic changes or testing needed"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51123,
+      "title": "Upgrade to Spring Framework 7.1.0-M1",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51123",
+      "created_at": "2026-07-24T14:05:50Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade Spring Boot's Spring Framework dependency to version 7.1.0-M1",
+        "why_easy": "The version bump itself is straightforward, but upgrading a core dependency with no description means unknown breaking changes and deep Spring Boot architecture knowledge required to validate the upgrade across the entire codebase."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51082,
+      "title": "org.springframework.boot.testsupport.container.ArtemisContainer cannot be configured",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51082",
+      "created_at": "2026-07-21T06:17:07Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Make ArtemisContainer's builder methods return the subclass type instead of the parent class so chaining works correctly",
+        "why_easy": "The fix is mechanical and well-scoped: override the parent class's builder methods to return ArtemisContainer instead of the parent type, following a standard Java builder pattern with clear guidance from the issue example."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51069,
+      "title": "Upgrade to RabbitMQ Client 5.34.0",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51069",
+      "created_at": "2026-07-20T12:23:09Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade the RabbitMQ Java client dependency to version 5.34.0",
+        "why_easy": "This issue is labeled team-only and blocked, making it unavailable to external contributors; the underlying upgrade work would be medium difficulty depending on breaking changes between versions."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51054,
+      "title": "Upgrade to Kafka 4.3.1",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51054",
+      "created_at": "2026-07-20T12:22:05Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade the Kafka dependency to version 4.3.1 across the Spring Boot project",
+        "why_easy": "Explicitly marked team-only and blocked; lacks detail on what compatibility work is required, and Kafka upgrades often involve breaking API changes that demand deep project knowledge"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66470,
+      "title": "API: read_sas should decode text by default instead of returning bytes",
+      "url": "https://github.com/pandas-dev/pandas/issues/66470",
+      "created_at": "2026-07-25T21:08:01Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Change read_sas default encoding from None (bytes) to 'infer' for automatic text decoding using file headers",
+        "why_easy": "Well-defined scope with clear specs, but requires understanding SAS file formats, pandas deprecation patterns, and maintainer coordination for public API changes"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66451,
+      "title": "DOC: `io.excel._util.pop_header_name`: only the _last_ column is taken",
+      "url": "https://github.com/pandas-dev/pandas/issues/66451",
+      "created_at": "2026-07-24T10:37:23Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "docs",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Document the behavior of pop_header_name when multiple columns are specified as index columns.",
+        "why_easy": "The issue is ambiguous about whether this is purely documentation or an underlying bug, and it requires understanding the Excel I/O subsystem and referenced issues to determine the correct fix."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32107,
+      "title": "BUG: Segfault on nightly wheel for Python 3.15.0b4",
+      "url": "https://github.com/numpy/numpy/issues/32107",
+      "created_at": "2026-07-26T00:10:42Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Segmentation fault when importing numpy.random with Python 3.15.0b4 nightly wheel due to null pointer dereference in Cython module initialization",
+        "why_easy": "Hard to pick up: requires debugging C/Cython null pointer dereferences in compiled extension modules; not reproducible on main branch suggests nightly-specific or build-system issues that are difficult to isolate without the exact environment"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32101,
+      "title": "DEV: move `hypothesis` from required to optional test dependency, it requires a Rust compiler now",
+      "url": "https://github.com/numpy/numpy/issues/32101",
+      "created_at": "2026-07-25T05:25:54Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Move the hypothesis testing library from a required dependency to an optional test dependency to avoid requiring a Rust compiler for basic testing workflows.",
+        "why_easy": "The solution is already scoped \u2014 moving a dependency to an optional test group and updating test configuration \u2014 with analysis showing no coverage will be lost."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32100,
+      "title": "BUG: np.positive ufunc and unary + operator fail on boolean arrays, while binary arithmetic works",
+      "url": "https://github.com/numpy/numpy/issues/32100",
+      "created_at": "2026-07-25T02:29:37Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add support for boolean arrays to np.positive ufunc and unary + operator by adding the missing boolean loop",
+        "why_easy": "The error message pinpoints exactly what's missing (a loop for BoolDType), and binary operators already handle boolean-to-int casting, so the fix is likely a straightforward addition to the ufunc loop definitions."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32076,
+      "title": "BUG: NEP 50 promotion for python scalars is not followed for <ufunc>.outer and <ufunc>.at",
+      "url": "https://github.com/numpy/numpy/issues/32076",
+      "created_at": "2026-07-23T16:40:22Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Make .outer and .at methods of ufuncs follow NEP-50 type promotion rules for Python scalars, matching behavior of regular ufunc calls",
+        "why_easy": "The bug is well-defined and reproducible with clear scope, but fixing it requires finding where NEP-50 type promotion logic lives in NumPy's ufunc internals and replicating it in two additional code paths, likely involving C/Cython code."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32071,
+      "title": "BUG: numpy int64/float64 comparisons are inexact",
+      "url": "https://github.com/numpy/numpy/issues/32071",
+      "created_at": "2026-07-23T10:57:30Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix numpy int64/float64 comparison breaking Python's hash/equality invariant where equal values have different hashes",
+        "why_easy": "This is difficult because it requires deep understanding of numpy scalar comparison and hashing internals, and the fix must carefully balance backward compatibility with Python's hash/equality contract."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32069,
+      "title": "ENH: implement a mask aware `np.unwrap` for masked arrays in the `np.ma` module",
+      "url": "https://github.com/numpy/numpy/issues/32069",
+      "created_at": "2026-07-23T00:05:42Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Implement a mask-aware version of np.unwrap for masked arrays that correctly handles phase unwrapping across masked gaps.",
+        "why_easy": "The problem is clearly identified and scoped to one function, but it requires understanding both the unwrap algorithm and masked array semantics, plus careful algorithmic work to handle masked gaps without silently missing phase wraps."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32063,
+      "title": "BUG: `SeedSequence.spawn` and `np.random.set_bit_generator` are not thread-safe",
+      "url": "https://github.com/numpy/numpy/issues/32063",
+      "created_at": "2026-07-22T16:33:37Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Thread-safety bugs in SeedSequence.spawn and set_bit_generator can cause duplicate spawn keys and memory corruption in concurrent code",
+        "why_easy": "This requires deep expertise in NumPy's Cython internals, GIL behavior, and thread-safety synchronization; both problems have non-obvious solutions involving architectural changes with high regression risk"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34569,
+      "title": "\u26a0\ufe0f CI failed on Wheel builder (last failure: Jul 26, 2026) \u26a0\ufe0f",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34569",
+      "created_at": "2026-07-26T05:27:23Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "test",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Wheel builder CI job is failing and needs investigation.",
+        "why_easy": "The issue provides only a link to the failing Actions run with no error details or diagnosis; resolving this requires deep knowledge of GitHub Actions, Python wheel building, and debugging CI infrastructure\u2014not beginner-friendly work. The warning 'not yet ready for a PR' confirms it's still in investigation phase."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34568,
+      "title": "\u26a0\ufe0f CI failed on Unit tests Windows x64 pymin_conda_forge_openblas (last failure: Jul 26, 2026) \u26a0\ufe0f",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34568",
+      "created_at": "2026-07-26T04:02:51Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Test suite failure on Windows x64 for decision tree impurity calculation with categorical data",
+        "why_easy": "Truncated error output and Windows-specific environment prevent diagnosis without CI log access or Windows machine; requires investigation before a fix can be attempted"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34567,
+      "title": "\u26a0\ufe0f CI failed on Unit tests macOS pylatest_conda_forge_arm (last failure: Jul 26, 2026) \u26a0\ufe0f",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34567",
+      "created_at": "2026-07-26T03:56:58Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "test",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "A DecisionTreeRegressor test fails in CI on macOS ARM with latest Python, requires investigation before fix",
+        "why_easy": "Hard to pick up: marked 'not yet ready for a PR' and needs triage; requires reproducing in a specific environment (macOS ARM) to diagnose the root cause, which most contributors won't have access to."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34566,
+      "title": "\u26a0\ufe0f CI failed on Unit tests Linux x86-64 pymin_conda_forge_openblas_min_dependencies (last failure: Jul 25, 2026) \u26a0\ufe0f",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34566",
+      "created_at": "2026-07-25T03:55:28Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "test",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Unit test test_split_impurity fails in CI when running with minimum package dependencies on Linux x86-64.",
+        "why_easy": "The issue is explicitly marked as not ready for a PR and requires initial investigation to determine the root cause; diagnosing test failures on minimum-dependency configurations typically involves understanding environment-specific compatibility issues."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34563,
+      "title": "asv benchmarks are broken with latest asv_runner",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34563",
+      "created_at": "2026-07-24T19:20:47Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "ASV benchmarks fail with latest asv_runner due to incorrect parameter detection in setup() methods",
+        "why_easy": "A working workaround is documented with clear code changes (modify function signature); the fix is a simple one-line parameter adjustment, though determining upstream vs. downstream fix requires some investigation"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34550,
+      "title": "\u26a0\ufe0f CI failed on Unit tests Linux x86-64 pymin_conda_forge_openblas_ubuntu_2204 (last failure: Jul 23, 2026) \u26a0\ufe0f",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34550",
+      "created_at": "2026-07-23T03:51:03Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "CI test failure in DecisionTreeRegressor's split_impurity test needs investigation and fix",
+        "why_easy": "Issue is explicitly not-yet-ready for PR; lacks error details and requires investigation before a fix can be attempted"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34549,
+      "title": "OneHotEncoder: inverse_transform decodes unknown categories as the dropped category (not None) when drop + handle_unknown='ignore'",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34549",
+      "created_at": "2026-07-22T18:18:12Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "OneHotEncoder.inverse_transform decodes unknown categories as the dropped category instead of None when both drop and handle_unknown='ignore' are set",
+        "why_easy": "Hard because it requires maintainer consensus on fix approach first; the encoding collision offers three conflicting solutions (docs-only, warn, or disallow), and choosing between them is not a self-contained task."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34538,
+      "title": "PowerTransformer raises raw TypeError on Pandas nullable integer (Int64) and float (Float64) dtypes containing pd.NA",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34538",
+      "created_at": "2026-07-21T15:21:06Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "PowerTransformer should coerce Pandas nullable integer/float dtypes with missing values to standard NumPy arrays instead of crashing with TypeError",
+        "why_easy": "Root cause is clear (X <= 0 comparison with pd.NA triggers ambiguous boolean error), but requires understanding scikit-learn's _validate_data patterns and ensuring dtype conversion before numerical checks; issue is marked 'not yet ready for PR' and needs triage first."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34537,
+      "title": "RFC Remove possibly unused extra_requires i.e. `pip install scikit-learn[your_thing_goes_here]`",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34537",
+      "created_at": "2026-07-21T14:45:49Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Remove unused extra_requires dependency groups from pyproject.toml and related dependency checking code",
+        "why_easy": "The mechanical changes (removing TOML config, deleting tests, cleaning up tags) are straightforward, but this is RFC-status work requiring careful verification that nothing uses these extras, understanding the dependency system's full implications, and likely needing maintainer consensus\u2014making it a coordination problem, not a code problem."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45275,
+      "title": "Browser search string highlighting makes some text unreadable",
+      "url": "https://github.com/github/docs/issues/45275",
+      "created_at": "2026-07-24T17:37:13Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Adjust browser search highlighting CSS to ensure sufficient contrast for readability across Chrome, Edge, and Firefox",
+        "why_easy": "Clear reproduction steps and well-scoped CSS color/contrast adjustment with no complex logic or architectural changes required"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45265,
+      "title": "Rulesets docs don't disclose that bypass_actors is not honored by auto-merge completion",
+      "url": "https://github.com/github/docs/issues/45265",
+      "created_at": "2026-07-23T22:06:57Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add documentation clarifying that bypass_actors is not honored by auto-merge completion, only by direct merge API calls",
+        "why_easy": "The issue is thoroughly researched with clear evidence and reproduction steps; the fix requires straightforward documentation additions to already-identified pages with no code changes needed"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45261,
+      "title": "config instructions for commit signing with ssh keys",
+      "url": "https://github.com/github/docs/issues/45261",
+      "created_at": "2026-07-23T16:28:37Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update SSH commit signing configuration documentation to use public key contents instead of file path",
+        "why_easy": "The issue reporter has identified and provided the exact fix (using key contents via cat instead of path, plus ssh-add step), so the contributor primarily needs to verify and update the docs with tested configuration."
+      }
+    },
+    {
+      "repo": "EbookFoundation/free-programming-books",
+      "number": 13379,
+      "title": "We need to ensure each title length (characters) between 35 and",
+      "url": "https://github.com/EbookFoundation/free-programming-books/issues/13379",
+      "created_at": "2026-07-24T11:43:22Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add validation to enforce book title length between 35 characters and an unspecified upper bound",
+        "why_easy": "The issue is incomplete (title cuts off mid-sentence, upper bound missing) and its body contains unrelated content about academic database searches, making the actual requirement unclear and requiring maintainer clarification before work can begin"
+      }
+    },
+    {
+      "repo": "EbookFoundation/free-programming-books",
+      "number": 13368,
+      "title": "Add link: How to improve time management for a data-heavy Statistics project due next week? I'm a sophomore majoring in Actuarial Science, taking 18 units this semester?",
+      "url": "https://github.com/EbookFoundation/free-programming-books/issues/13368",
+      "created_at": "2026-07-21T11:46:16Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "feature",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Attempt to add a link to EduPath Hub student tools service (spam, unrelated to programming books)",
+        "why_easy": "This is clearly off-topic spam with no relevance to free programming books; the issue should be closed immediately as spam."
+      }
+    },
+    {
+      "repo": "EbookFoundation/free-programming-books",
+      "number": 13367,
+      "title": "Add free course: Forma\u00e7\u00e3o Java Completa (pt_BR)",
+      "url": "https://github.com/EbookFoundation/free-programming-books/issues/13367",
+      "created_at": "2026-07-20T14:27:57Z",
+      "digest_date": "2026-07-25",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add Forma\u00e7\u00e3o Java Completa course entry to Portuguese free courses list",
+        "why_easy": "Contributor verified criteria and provided the exact markdown entry; the task is just adding one line to an existing file with no code changes."
       }
     }
   ]
