@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26",
+  "updated": "2026-07-27",
   "issues": [
     {
       "repo": "react/react-native",
@@ -8504,6 +8504,756 @@
         "good_first_issue": false,
         "one_line_summary": "Fix type hints for `np.ndarray.tolist()` and array-to-list conversions to correctly reflect nested list structure based on array dimensionality",
         "why_easy": "Hard: requires deep understanding of NumPy's type system and how to type methods whose return types depend on array shape/rank; beyond typical first-issue scope for unfamiliar contributors"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48149,
+      "title": "[expo-media-library] Android: new class-based API ignores MediaStore ORIENTATION \u2014 portrait photos report transposed width/height (legacy API compensates)",
+      "url": "https://github.com/expo/expo/issues/48149",
+      "created_at": "2026-07-26T23:47:14Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "New media-library API fails to apply EXIF orientation compensation, causing portrait photos to report transposed dimensions on Android",
+        "why_easy": "The issue clearly identifies the root cause with exact file paths and line numbers, and the working legacy code (maybeRotateAssetSize) already demonstrates the solution to port into the new AssetMapper."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48148,
+      "title": "[expo-updates][Android] Google Play's automatic app-string translation rewrites expo_runtime_version, silently breaking all OTA updates for that locale",
+      "url": "https://github.com/expo/expo/issues/48148",
+      "created_at": "2026-07-26T20:48:32Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add translatable=false to expo_runtime_version string resource to prevent Google Play's automatic translation from breaking OTA updates",
+        "why_easy": "The fix is a single parameter addition to an existing buildResourceItem call in the Android config plugin; investigation and root cause are already fully identified by the issue reporter."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48143,
+      "title": "[expo-calendar] No apparent way to use `addEventWithForm()` with only write-only permissions",
+      "url": "https://github.com/expo/expo/issues/48143",
+      "created_at": "2026-07-26T17:22:39Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The `addEventWithForm()` method's documentation claims write-only permission support, but obtaining the required `ExpoCalendar` object demands full calendar access instead.",
+        "why_easy": "The issue is clearly described with a reproducible example, but fixing it requires understanding the native iOS permission model and the expo-calendar native code implementation."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327621,
+      "title": "NES polish: menu covers the suggestion, generic provider name, dead model picker, and other small issues",
+      "url": "https://github.com/microsoft/vscode/issues/327621",
+      "created_at": "2026-07-27T11:00:29Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix eight polish issues in Next Edit Suggestions across UI, settings, and performance.",
+        "why_easy": "Most issues are straightforward fixes (settings tags/descriptions, dead code removal, duplicates) but scattered across different areas of the codebase; menu positioning and performance optimization (layout thrashing) require deeper UI knowledge and careful handling to avoid regressions."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327620,
+      "title": "NES: speculative-request trajectory cancellation is disabled, but `handleIgnored` still relies on it for the superseded case",
+      "url": "https://github.com/microsoft/vscode/issues/327620",
+      "created_at": "2026-07-27T11:00:09Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Speculative-request trajectory cancellation is disabled via commented-out code while still required, preventing in-flight requests from being cancelled when users diverge from predicted edits.",
+        "why_easy": "Issue is well-documented with proven fix (uncomment works, all tests pass), but requires investigating the original false-positive concern before safely re-enabling."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327619,
+      "title": "`editor.inlineSuggest.edits.enabled` gates NES but is not registered in the configuration schema",
+      "url": "https://github.com/microsoft/vscode/issues/327619",
+      "created_at": "2026-07-27T10:59:48Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Register the missing `editor.inlineSuggest.edits.enabled` configuration option in the schema to make it discoverable and remove unknown-setting warnings",
+        "why_easy": "The option already works in code; registering it in the schema is a straightforward copy-paste from the five existing sibling `edits.*` options that are already registered."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327618,
+      "title": "NES: `triggerAnimation()` returns a never-settling promise under reduced motion, hanging the onboarding loop",
+      "url": "https://github.com/microsoft/vscode/issues/327618",
+      "created_at": "2026-07-27T10:59:32Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix `triggerAnimation()` to return an already-resolved promise when reduced motion is enabled, preventing onboarding from hanging indefinitely.",
+        "why_easy": "The issue is well-diagnosed with root cause and exact file locations identified; the fix is straightforward\u2014replace the unresolved animation promise with `Promise.resolve()` in two locations."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327617,
+      "title": "NES: gutter indicator menu lacks ARIA menu semantics and arrow-key navigation",
+      "url": "https://github.com/microsoft/vscode/issues/327617",
+      "created_at": "2026-07-27T10:59:19Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add ARIA menu semantics and arrow-key navigation to the NES gutter indicator menu",
+        "why_easy": "Specific file location and clear requirements make it approachable, but implementing keyboard event navigation and ARIA accessibility patterns requires careful implementation and testing."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327616,
+      "title": "NES: gutter indicator is focusable but has no role, no accessible name, and cannot be operated by keyboard",
+      "url": "https://github.com/microsoft/vscode/issues/327616",
+      "created_at": "2026-07-27T10:59:05Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": true,
+        "one_line_summary": "Add keyboard and screen reader support to the NES gutter indicator by adding role/aria-label, handling Enter/Space keys, and providing keyboard access to the menu.",
+        "why_easy": "Localized to one file with clear reproduction steps and expected behavior; adding role/aria-label and key handlers are straightforward, but integrating the menu with keyboard navigation requires understanding the existing hover system."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327615,
+      "title": "NES: screen reader announcement for next edit suggestions is empty (or a bare \", Inspect this in the accessible view\")",
+      "url": "https://github.com/microsoft/vscode/issues/327615",
+      "created_at": "2026-07-27T10:58:47Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Screen reader announcements for Next Edit Suggestions should describe the suggestion and available actions instead of showing only a bare hint.",
+        "why_easy": "The root cause is clearly identified with exact file location and code path, but requires understanding NES state object structure, setting up Copilot extension for testing, and following VS Code's accessibility patterns."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327613,
+      "title": "Automations: leader election provides no cross-window safety and costs liveness \u2014 replace with transactional run claims",
+      "url": "https://github.com/microsoft/vscode/issues/327613",
+      "created_at": "2026-07-27T10:51:09Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Replace broken in-memory leader election with transactional compare-and-swap to guarantee exactly-once automation scheduling across windows",
+        "why_easy": "Hard: requires refactoring across multiple dependent systems, understanding distributed coordination semantics, rewriting tests built on unrealistic fixtures, and eliminating the current mechanism while preserving its load-bearing contract for three other features."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327611,
+      "title": "Duplicate entries for cloud sessions",
+      "url": "https://github.com/microsoft/vscode/issues/327611",
+      "created_at": "2026-07-27T10:36:14Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix duplicate cloud sessions appearing in the agents window and causing duplicate entries in the workspace picker",
+        "why_easy": "The bug is clearly reproducible and UI-visible, but investigation is hindered by lack of reproduction steps and requires understanding VS Code's cloud session and state management systems"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327610,
+      "title": "Middle-clicking on this tab should close it",
+      "url": "https://github.com/microsoft/vscode/issues/327610",
+      "created_at": "2026-07-27T10:34:24Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "feature",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add middle-click support to close multi-chat tabs (matching standard tabbed interface behavior)",
+        "why_easy": "Small, well-defined feature following a familiar pattern; likely involves adding a middle-click event handler that delegates to existing tab-close logic."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327608,
+      "title": "Cloud Session: There is no way to mark cloud session PR as ready to review",
+      "url": "https://github.com/microsoft/vscode/issues/327608",
+      "created_at": "2026-07-27T10:28:10Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add a button in the agents window to mark cloud session PRs as ready for review",
+        "why_easy": "Feature already exists for AH sessions and has clear precedent, but requires understanding VS Code's cloud session architecture and agents window UI to port the pattern"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327607,
+      "title": "Agent Host: Copilot steering messages drop their attachments, so the agent never sees them",
+      "url": "https://github.com/microsoft/vscode/issues/327607",
+      "created_at": "2026-07-27T09:54:19Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Pass attachments from steering messages to the Copilot SDK so they aren't silently dropped when sent while the agent is busy",
+        "why_easy": "The fix is ~5 lines in one method, mirrors an existing pattern in the same file, other providers show the correct implementation, and test is straightforward."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327606,
+      "title": "Agents - multi-chat tab container does not have a scrollbar",
+      "url": "https://github.com/microsoft/vscode/issues/327606",
+      "created_at": "2026-07-27T09:29:02Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Multi-chat tab container needs a horizontal scrollbar when tabs overflow the viewport",
+        "why_easy": "Issue is well-defined with visual reproduction; likely a straightforward CSS overflow property fix to a single component without architectural complexity"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327605,
+      "title": "No \"Show Less\" with the first prompt.",
+      "url": "https://github.com/microsoft/vscode/issues/327605",
+      "created_at": "2026-07-27T09:19:12Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add 'Show Less' button to first prompt in AI chat to match behavior of subsequent prompts",
+        "why_easy": "The feature already works on subsequent prompts, so a contributor just needs to find the conditional rendering logic and extend it to the first message\u2014likely a small, localized change with a working reference implementation in the same codebase."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327604,
+      "title": "Agents - subagent UX read-only indicator",
+      "url": "https://github.com/microsoft/vscode/issues/327604",
+      "created_at": "2026-07-27T09:14:46Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Remove or polish the read-only indicator in subagent tabs which duplicates the existing lock icon",
+        "why_easy": "The fix is either removing UI code or adjusting styling in a single component with no complex logic involved"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327603,
+      "title": "Agents - subagent UX uses spinning progress",
+      "url": "https://github.com/microsoft/vscode/issues/327603",
+      "created_at": "2026-07-27T09:11:33Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Replace spinning progress indicator with a better visual pattern for subagent operations",
+        "why_easy": "The issue is narrowly scoped to a UI component, but the description is extremely sparse (just an image reference), requires investigation of a linked issue (#327565) for context, and newcomers would struggle navigating VS Code's large codebase and its newer agent architecture."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 327602,
+      "title": "Agents - subagent UX shifts when input is needed",
+      "url": "https://github.com/microsoft/vscode/issues/327602",
+      "created_at": "2026-07-27T09:10:20Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code's agent/subagent UI layout unexpectedly shifts when user input is required",
+        "why_easy": "The issue lacks written reproduction steps or context\u2014documented only by video\u2014making it hard to verify the problem or understand scope before diving into VS Code's agent architecture; root cause (CSS vs state management) is unclear."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 96259,
+      "title": "Dev server 500s on every request: concurrent getStaticPaths corrupts prerender-manifest.json",
+      "url": "https://github.com/vercel/next.js/issues/96259",
+      "created_at": "2026-07-27T07:46:46Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix race condition in concurrent getStaticPaths handling that corrupts prerender-manifest.json and crashes the dev server",
+        "why_easy": "The root cause is clearly identified (unsynchronized read-modify-write) and the fix is conceptually straightforward (atomic or locked writes), but implementing safely in the Next.js dev server requires understanding the build lifecycle and careful testing to avoid regressions."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 96254,
+      "title": "[Bug] Turbopack dev: static class field arrow functions lose this binding \u2014 var _this = void 0",
+      "url": "https://github.com/vercel/next.js/issues/96254",
+      "created_at": "2026-07-27T03:42:41Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Turbopack dev mode incorrectly transpiles static class field arrow functions that reference `this`, leaving `_this` undefined instead of binding it in an IIFE",
+        "why_easy": "Hard to pick up because it requires deep knowledge of SWC transpiler internals and AST transformation code; though the bug is reproducible with clear expected vs. actual behavior, fixing it requires modifying compiler infrastructure rather than application code."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 96241,
+      "title": "networkHostname should be in allowedDevOrigins by default",
+      "url": "https://github.com/vercel/next.js/issues/96241",
+      "created_at": "2026-07-26T12:50:42Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Include networkHostname in default allowedDevOrigins so the network URL printed by next dev works without additional configuration",
+        "why_easy": "The fix is straightforward\u2014add the networkHostname to the default config\u2014the problem is clearly reproducible, and the change is localized to one place in the codebase"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23067,
+      "title": "Support `?inline` on an HTML `<script src>` to emit the bundled entry inline",
+      "url": "https://github.com/vitejs/vite/issues/23067",
+      "created_at": "2026-07-26T20:33:25Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Support `?inline` query parameter on HTML `<script src>` tags to emit bundled entry code inline into the document",
+        "why_easy": "The issue identifies existing precedent (`?inline` for CSS) and acknowledges the HTML plugin already has the necessary pieces, but implementation requires understanding chunk generation, module dependencies, and build output across multiple systems, with unresolved design questions about handling entry imports."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35610,
+      "title": "Agent-eval: consume workspace builds of all Storybook packages instead of published npm alphas",
+      "url": "https://github.com/storybookjs/storybook/issues/35610",
+      "created_at": "2026-07-27T11:25:25Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add a workspace mode to the eval sandbox that uses local builds of all Storybook packages instead of published npm versions for testing cross-package PR changes.",
+        "why_easy": "The build and publish infrastructure already exists for reuse, but implementing this requires deep understanding of Storybook's monorepo architecture and eval sandbox setup."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35607,
+      "title": "CI: Patch release workflow fails to label PRs with `patch:done` (permission regression on `latest-release`)",
+      "url": "https://github.com/storybookjs/storybook/issues/35607",
+      "created_at": "2026-07-27T10:29:39Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Backport workflow permission fix to restore PR labeling in patch release workflow",
+        "why_easy": "The root cause is clearly documented, the fix already exists on `next` branch (PRs #35524\u2013#35525), and the solution is a straightforward backport of permission changes and error-handling improvements to `latest-release`."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69076,
+      "title": "Cafe Menu workshop hints have assertion and setup problems",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69076",
+      "created_at": "2026-07-27T09:35:28Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix misleading hints, redundant code, and missing safety checks in Cafe Menu workshop test files",
+        "why_easy": "Issue precisely identifies each problem with code quotes and step numbers; fixes are straightforward edits (remove string interpolation, extract duplicated setup, add missing flags, fix assertions)"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69075,
+      "title": "Cafe Menu workshop hints test source text instead of the rendered DOM",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69075",
+      "created_at": "2026-07-27T09:35:23Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Replace regex-based source code checks with DOM queries in the Cafe Menu workshop test hints",
+        "why_easy": "The issue provides complete before/after examples for each of the 7 problem cases and the fixes are all mechanical refactoring\u2014no complex logic or new features needed, just replacing regex assertions with equivalent DOM queries."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69074,
+      "title": "Replace regex-based test cases in Envelope Budget App Workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69074",
+      "created_at": "2026-07-27T09:20:47Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Replace regex-based test assertions in the Envelope Budget App Workshop with a more maintainable approach",
+        "why_easy": "Difficult to pick up\u2014the issue lacks specific details and requires reading the umbrella ticket #68417 plus Discord coordination with Naomi before understanding what actually needs to change"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69073,
+      "title": "Text in multiple languages",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69073",
+      "created_at": "2026-07-27T08:54:50Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Spanish translation contains untranslated English text in an arrow functions lecture",
+        "why_easy": "The issue provides the exact English text to find and a complete Spanish translation to replace it with; this is a straightforward translation file edit."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69072,
+      "title": "Cafe Menu workshop hints that pass regardless of the learner's code",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69072",
+      "created_at": "2026-07-27T08:05:42Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix three hints in the Cafe Menu workshop that pass without properly asserting on learner code.",
+        "why_easy": "The issue precisely identifies the three broken hints with line numbers and exact code; fixes are minimal: add missing assertions and correct one property name."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69068,
+      "title": "Solution mismatch and text issues in Build a Hotel Feedback Form Steps 31 to 33",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69068",
+      "created_at": "2026-07-27T07:22:27Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix text inconsistencies and restore missing size attributes in Hotel Feedback Form Steps 31-33 solution and descriptions.",
+        "why_easy": "The issue provides explicit before/after examples for each text fix and clearly identifies the missing HTML attributes, requiring only straightforward edits to curriculum content files with no code logic involved."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69067,
+      "title": "Hint and description wording issues in Build a Hotel Feedback Form Step 29",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69067",
+      "created_at": "2026-07-27T07:22:25Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix wording inconsistencies and incorrect attribute descriptions in Step 29 of the Hotel Feedback Form workshop",
+        "why_easy": "All four issues involve straightforward text corrections with clear examples provided; no code changes or complex logic required, making this ideal for first-time contributors."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69066,
+      "title": "Instruction and hint wording issues in Build a Hotel Feedback Form Steps 23 to 26",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69066",
+      "created_at": "2026-07-27T07:22:21Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix wording and formatting inconsistencies in Hotel Feedback Form workshop steps 23-26 instructions and hints",
+        "why_easy": "The issue clearly identifies all five text corrections needed with before/after examples, making it straightforward to locate and fix the curriculum content."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69065,
+      "title": "Incomplete instructions and formatting issues in Build a Hotel Feedback Form Steps 19 to 22",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69065",
+      "created_at": "2026-07-27T07:22:20Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix formatting issues and missing instructions in the Hotel Feedback Form workshop steps 19-22",
+        "why_easy": "The issue provides exact before-and-after corrections for all seven problems, requires only text edits to instructional content with no code changes, and the scope is clearly bounded to four specific steps"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69064,
+      "title": "Hint wording issues in Build a Hotel Feedback Form Steps 15 to 18",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69064",
+      "created_at": "2026-07-27T07:22:07Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix wording inconsistencies and inaccuracies in hints for hotel feedback form workshop steps 15-18.",
+        "why_easy": "Six specific text replacements are explicitly provided with exact locations; no code changes or technical logic required, just curriculum text edits."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69063,
+      "title": "Hint wording and description issues in Build a Hotel Feedback Form Steps 10 to 14",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69063",
+      "created_at": "2026-07-27T07:22:05Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix wording inconsistencies, hint clarity, and formatting issues in Hotel Feedback Form workshop steps 10-14",
+        "why_easy": "All fixes are straightforward text edits with exact corrections specified; no code logic or system understanding required, and the issue is labeled first timers only by maintainers."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69062,
+      "title": "Grammar and formatting issues in Build a Hotel Feedback Form Steps 2 to 7 and the block intro",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69062",
+      "created_at": "2026-07-27T07:22:03Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix grammar, formatting, and indentation issues in the Hotel Feedback Form workshop steps and intro",
+        "why_easy": "All six fixes are explicit text corrections with exact before/after examples provided, requiring only file edits with no logic changes or system knowledge"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69059,
+      "title": "Test code issues in the Build a Hotel Feedback Form workshop hints",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69059",
+      "created_at": "2026-07-27T06:52:47Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix six categories of test assertion bugs in the hotel feedback form workshop hints that produce incorrect pass/fail behavior",
+        "why_easy": "All problems are specifically identified with step IDs and locations, and each fix is straightforward: removing redundant checks, adding null guards, renaming variables, or adjusting assertions."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69058,
+      "title": "Wording and formatting issues in the type() and isinstance() lesson",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69058",
+      "created_at": "2026-07-27T06:45:41Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix grammar, wording, and formatting issues in the type() and isinstance() lesson",
+        "why_easy": "All five issues are straightforward text edits with clear expected corrections provided; no code logic or testing required."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69057,
+      "title": "Invalid C# example and inaccurate set output in the common data types lesson",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69057",
+      "created_at": "2026-07-27T06:45:32Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix invalid C# code, inaccurate set output, and grammar issues in common data types Python lesson",
+        "why_easy": "The issue provides exact line numbers and expected corrections for each problem; changes are straightforward text replacements and formatting adjustments requiring no codebase knowledge."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69056,
+      "title": "Multiple grammar, terminology, and formatting issues in the declaring variables lesson",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69056",
+      "created_at": "2026-07-27T06:45:23Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix seven grammar, terminology, and formatting issues in the Python variables lesson.",
+        "why_easy": "The issue provides the exact location of each problem and the expected fix, requiring only straightforward text edits with no need to understand underlying concepts."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69055,
+      "title": "Fix punctuation, immutability example, and intro copy in the Introduction to Strings lecture block",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69055",
+      "created_at": "2026-07-27T06:42:37Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix five punctuation, grammar, and pedagogical issues in the Introduction to Strings lecture block",
+        "why_easy": "All five corrections are straightforward text replacements with exact before-and-after text provided in the issue; no code logic or testing required."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29791,
+      "title": "Prisma schema validation panic for PostgreSQL ops unsupported function calls in Prisma 6.19.3 and 7.9.0",
+      "url": "https://github.com/prisma/prisma/issues/29791",
+      "created_at": "2026-07-26T14:54:30Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Schema validation panics when PostgreSQL indexes use unsupported function calls in ops arguments instead of returning a structured error",
+        "why_easy": "Deterministic reproduction without database connection and well-scoped to schema validation, but requires navigating Prisma's codebase to locate the panic in the parsing pipeline and understanding PostgreSQL ops validation"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48343,
+      "title": "Fresh preview branch: migration recorded as applied in schema_migrations, but an ADD COLUMN ... REFERENCES auth.users(id) never actually creates the column",
+      "url": "https://github.com/supabase/supabase/issues/48343",
+      "created_at": "2026-07-27T05:11:53Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Preview branch migrations are recorded as applied in schema_migrations but not actually executed, causing schema to diverge from the migration ledger",
+        "why_easy": "Hard: requires deep understanding of Supabase's preview branching and migration replay infrastructure; the state inconsistency between ledger and actual schema suggests a complex infrastructure issue that would be difficult for an external contributor to reproduce and debug without internal access"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48340,
+      "title": "Turnstile Secret update",
+      "url": "https://github.com/supabase/supabase/issues/48340",
+      "created_at": "2026-07-26T23:27:47Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Editing a Turnstile secret on Attach protection incorrectly reverts to the most recent key instead of saving changes.",
+        "why_easy": "The issue lacks clear reproduction steps, error logs, and debugging context, requiring investigation into Supabase's Turnstile integration and state management to identify whether the bug is frontend or backend."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66475,
+      "title": "BUG: read_sas segfaults on a SAS7BDAT file with an out-of-range row_length in the header",
+      "url": "https://github.com/pandas-dev/pandas/issues/66475",
+      "created_at": "2026-07-26T15:06:25Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix segmentation fault in read_sas caused by signed integer overflow in row_length bounds checking",
+        "why_easy": "The root cause is clearly identified with a minimal reproducer and fix well-specified, but requires Cython expertise, involves memory-critical code, and has testing complexity due to slow recompilation cycles."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32111,
+      "title": "BUG: numpy.einsum_path returns sub-optimal path (by orders of magnitude) even with optimize='optimal'",
+      "url": "https://github.com/numpy/numpy/issues/32111",
+      "created_at": "2026-07-26T21:34:00Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "numpy.einsum_path with optimize='optimal' returns sub-optimal contraction paths with 10^5x worse performance than opt_einsum",
+        "why_easy": "Hard: fixing tensor contraction path optimization requires deep algorithmic expertise and understanding of numpy's complex path-selection logic, which has failed across multiple versions"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34580,
+      "title": "RFC Should we require contributors to communicate in their own words (as opposed to posting AI output)?",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34580",
+      "created_at": "2026-07-27T10:06:31Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "docs",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Propose adopting a contributor policy requiring human-written communication instead of AI-generated content in issues and PRs",
+        "why_easy": "This is a governance RFC requiring community consensus-building rather than a self-contained technical task, making it unsuitable for new contributors to lead independently"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34578,
+      "title": "test_split_impurity or the code it tests seem to be unstable",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34578",
+      "created_at": "2026-07-27T09:17:45Z",
+      "digest_date": "2026-07-27",
+      "triage": {
+        "category": "test",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix intermittent test failures in test_split_impurity for specific random seeds with DecisionTreeRegressor, absolute_error, and categorical features.",
+        "why_easy": "Hard to pick up: flaky tests require debugging both test and underlying code logic simultaneously, the issue explicitly states it's not ready for contribution (needs investigation first), and the affected tree-splitting code is complex with multiple recent changes."
       }
     }
   ]
