@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27",
+  "updated": "2026-07-31",
   "issues": [
     {
       "repo": "react/react-native",
@@ -9254,6 +9254,1221 @@
         "good_first_issue": false,
         "one_line_summary": "Fix intermittent test failures in test_split_impurity for specific random seeds with DecisionTreeRegressor, absolute_error, and categorical features.",
         "why_easy": "Hard to pick up: flaky tests require debugging both test and underlying code logic simultaneously, the issue explicitly states it's not ready for contribution (needs investigation first), and the affected tree-splitting code is complex with multiple recent changes."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57780,
+      "title": "[Android] Removing borderWidth from a rounded overflow:hidden View stops all its children from being drawn (NaN reaches the padding-box clip)",
+      "url": "https://github.com/react/react-native/issues/57780",
+      "created_at": "2026-07-31T18:32:06Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix NaN propagation in border insets calculation that causes children to stop rendering when borderWidth prop is removed from views with borderRadius and overflow:hidden",
+        "why_easy": "Root cause is clearly identified with specific file locations and fix points (BorderInsets.resolve needs NaN guards), but requires Android environment setup, Kotlin knowledge, and careful testing of critical rendering code to avoid regressions"
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57778,
+      "title": "Nested horizontal FlatList reports items as viewable while its parent row is outside the screen",
+      "url": "https://github.com/react/react-native/issues/57778",
+      "created_at": "2026-07-31T11:57:44Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Nested horizontal FlatList reports items as viewable even when parent row is scrolled off-screen",
+        "why_easy": "Hard because it requires modifying React Native's core viewability calculation to account for parent scroll container clipping, involving coordinate transforms and complex edge cases around nested scrolling."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57774,
+      "title": "[iOS] 0.86: <React/\u2026> only resolves through a non-modular path, breaking pods built as framework modules",
+      "url": "https://github.com/react/react-native/issues/57774",
+      "created_at": "2026-07-31T06:36:25Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Prebuilt React-Core in 0.86 breaks framework-based pods importing React headers",
+        "why_easy": "Requires deep iOS build system knowledge (modulemaps, xcframework paths, CocoaPods); reporter's multiple failed attempts indicate complexity at the intersection of framework compilation and header resolution"
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57755,
+      "title": "[iOS][Fabric] automaticallyAdjustKeyboardInsets state survives ScrollView recycling; recycled views apply keyboard insets they never opted into",
+      "url": "https://github.com/react/react-native/issues/57755",
+      "created_at": "2026-07-29T15:46:42Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Reset automaticallyAdjustKeyboardInsets and keyboard observer state in ScrollView's prepareForRecycle to prevent state leakage to newly mounted views",
+        "why_easy": "Well-diagnosed with exact code locations and clear fix location, but requires iOS/Objective-C++ expertise and careful observer lifecycle handling to avoid introducing new state management bugs during view recycling"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48386,
+      "title": "Expo ui usage show as unresolved path",
+      "url": "https://github.com/expo/expo/issues/48386",
+      "created_at": "2026-07-31T22:00:02Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "@expo/ui/jetpack-compose imports show as unresolved path in IDEs despite valid imports and working code",
+        "why_easy": "The reproduction steps are clear, but fixing requires investigating the package exports configuration, TypeScript setup, and monorepo structure without direction on where the fix lives"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48373,
+      "title": "[docs] Conflicting Android SDK versions between text and screenshot",
+      "url": "https://github.com/expo/expo/issues/48373",
+      "created_at": "2026-07-31T16:27:07Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Android SDK version documentation shows conflicting values between text (API 36) and screenshot (API 35) \u2014 needs clarification and correction",
+        "why_easy": "The discrepancy is clearly identified, and the fix is straightforward once maintainers confirm the correct SDK version: either update the screenshot or text to match."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48370,
+      "title": "[expo-modules-core][Android] ExpoComposeView misses layout after reattachment or configuration changes",
+      "url": "https://github.com/expo/expo/issues/48370",
+      "created_at": "2026-07-31T14:06:10Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix missing layout pass for ExpoComposeView content after reattachment or configuration changes, causing Compose popups to render invisibly",
+        "why_easy": "Hard: requires deep knowledge of Android lifecycle, Compose framework, and React Native's Yoga layout engine to safely fix complex interactions between multiple systems; despite detailed investigation and candidate fix proposal, implementation demands expertise with lifecycle management and careful testing across multiple scenarios"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328520,
+      "title": "\"Preview\" link looks odd in turn changes summary",
+      "url": "https://github.com/microsoft/vscode/issues/328520",
+      "created_at": "2026-07-31T22:37:23Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Icon is incorrectly displayed as text in turn changes summary",
+        "why_easy": "The visual bug is clearly scoped to a single UI element with a screenshot showing exactly what's wrong, making it likely a straightforward icon or styling fix once located"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328518,
+      "title": "Test: Browser Commenting",
+      "url": "https://github.com/microsoft/vscode/issues/328518",
+      "created_at": "2026-07-31T22:32:56Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "test",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Execute and verify a manual test plan for the integrated browser's new commenting feature across multiple scenarios and platforms.",
+        "why_easy": "The test steps are clearly documented and straightforward to follow, but it requires testing across multiple operating systems (three unchecked checkboxes), verifying Chat synchronization, and systematically working through keyboard interactions and edge cases."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328517,
+      "title": "All prompts starting with / are highlighted",
+      "url": "https://github.com/microsoft/vscode/issues/328517",
+      "created_at": "2026-07-31T22:21:07Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "All prompts starting with / are being highlighted",
+        "why_easy": "Issue lacks context and description beyond an image; requires understanding where prompt highlighting is implemented and what the intended behavior should be"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328507,
+      "title": "Chat scroll indicator doesn't go to short last message",
+      "url": "https://github.com/microsoft/vscode/issues/328507",
+      "created_at": "2026-07-31T21:41:42Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Chat scroll cannot reach the bottom when the last message is short due to lack of padding underneath it",
+        "why_easy": "The issue is well-scoped to a single UI component with a clear fix (add padding to final message); no complex business logic required, just CSS or component-level adjustment."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328501,
+      "title": "Show promo banner for 0% promos",
+      "url": "https://github.com/microsoft/vscode/issues/328501",
+      "created_at": "2026-07-31T21:12:03Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "feature",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Support showing the chat input banner for 0% discount promotions in addition to discounted promos",
+        "why_easy": "The change is straightforward once the promo logic is located, but finding it in VS Code's large codebase requires some investigation"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328493,
+      "title": "GH MCP APP UI overflows in narrow chat view",
+      "url": "https://github.com/microsoft/vscode/issues/328493",
+      "created_at": "2026-07-31T20:35:26Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "GitHub MCP app UI overflows when displayed in narrow chat view",
+        "why_easy": "Visual layout bugs are typically isolated to a single component and fixed with CSS width constraints or responsive adjustments; the issue is clearly reproducible and testable without architectural complexity"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328491,
+      "title": "Flaky Smoke Test: Chat Sandbox (darwin) > allows writing to the sandbox TMPDIR",
+      "url": "https://github.com/microsoft/vscode/issues/328491",
+      "created_at": "2026-07-31T20:26:46Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "test",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix intermittent smoke test failure where chat sandbox allows writing to TMPDIR on macOS",
+        "why_easy": "Flaky tests are notoriously hard to debug; this one only reproduces 1/20 times on macOS, requires understanding sandbox isolation mechanics and filesystem permissions, and most contributors likely lack Mac access to investigate."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328489,
+      "title": "Contrast for In-Chat notification is not accessible and hard to read",
+      "url": "https://github.com/microsoft/vscode/issues/328489",
+      "created_at": "2026-07-31T20:17:31Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Improve contrast of in-chat notifications to meet accessibility standards",
+        "why_easy": "The fix likely involves CSS color adjustments for a single UI component to meet WCAG contrast ratios, a localized styling change."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328488,
+      "title": "Modern UI - Horizontal tab scrollbar overlaps with tabs",
+      "url": "https://github.com/microsoft/vscode/issues/328488",
+      "created_at": "2026-07-31T20:12:27Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Horizontal tab scrollbar overlaps with tabs instead of being positioned below them",
+        "why_easy": "The desired fix is clear from the provided screenshot and likely involves CSS positioning adjustments, but locating the tab scrollbar styling code in VS Code's large codebase requires exploration and setup."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328487,
+      "title": "Improve pre-tool agent hooks to provide more MCP-specific information",
+      "url": "https://github.com/microsoft/vscode/issues/328487",
+      "created_at": "2026-07-31T20:10:04Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Enhance the PreToolUse hook to provide MCP server configuration details (name, URL, command) alongside the tool name",
+        "why_easy": "The server information likely already exists in MCP configuration; the work is primarily plumbing it into the hook interface, but requires understanding VS Code's agent architecture and MCP integration."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 96443,
+      "title": "Content-Security-Policy nonce is not applied to streamed Suspense boundary scripts in Pages Router SSR",
+      "url": "https://github.com/vercel/next.js/issues/96443",
+      "created_at": "2026-07-31T20:39:09Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "CSP nonce attributes are missing from React Suspense boundary streaming scripts in Pages Router SSR",
+        "why_easy": "The issue is well-defined with a reproduction repo, but requires deep familiarity with Next.js streaming and SSR internals to locate where streamed scripts are rendered and thread the nonce through the pipeline."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 96429,
+      "title": "CSS module styles lost after client navigation when page CSS gains `data-n-p` after ISR revalidation",
+      "url": "https://github.com/vercel/next.js/issues/96429",
+      "created_at": "2026-07-31T16:16:12Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "CSS module stylesheets are dropped during client-side navigation to dynamically imported components after ISR revalidation regenerates the home page",
+        "why_easy": "Despite an excellent reproduction case and regression window (15.3.9 \u2192 15.5.18), this is hard: production-only, spans CSS bundling, ISR revalidation, dynamic imports, and client-side routing working together, requiring deep Next.js internals knowledge to fix."
+      }
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 48885,
+      "title": "[RFC] Add composable start and end adornments to Autocomplete",
+      "url": "https://github.com/mui/material-ui/issues/48885",
+      "created_at": "2026-07-31T07:33:52Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add composable `startAdornment` and `endAdornment` props to Autocomplete to allow custom adornments alongside built-in UI without conflicts",
+        "why_easy": "The RFC is detailed with a clear implementation blueprint, but requires understanding Autocomplete's render flow and ensuring composition happens after `limitTags` processing, plus integration with theming and comprehensive tests."
+      }
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 48882,
+      "title": "aria-hidden incorrectly set with Dialog container changes",
+      "url": "https://github.com/mui/material-ui/issues/48882",
+      "created_at": "2026-07-29T16:42:41Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "ModalManager should re-evaluate and remove aria-hidden attributes when a Dialog's container ref changes between renders",
+        "why_easy": "The issue has clear reproduction steps and identified root cause, but the fix requires understanding ModalManager's state tracking internals and careful refactoring to handle container ref transitions and edge cases like stacked dialogs."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23122,
+      "title": "docs: copy buttons on vite.dev have no accessible name (WCAG 4.1.2, axe button-name, critical)",
+      "url": "https://github.com/vitejs/vite/issues/23122",
+      "created_at": "2026-07-31T15:22:39Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Copy buttons on vite.dev lack accessible names, violating WCAG 4.1.2 accessibility standards",
+        "why_easy": "The fix is a single line (add aria-label), but requires coordinating with an external third-party theme package that has no public repository, placing the solution outside the Vite codebase itself"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23121,
+      "title": "npm update fails under Node 22 when Vite 8 optional devtools peer graph is resolved with Vitest present",
+      "url": "https://github.com/vitejs/vite/issues/23121",
+      "created_at": "2026-07-31T14:22:39Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "npm update fails under Node 22 when resolving Vite 8's optional devtools peer dependency graph alongside Vitest",
+        "why_easy": "This is hard because the crash occurs in npm's Arborist resolver (not Vite code), requires deep npm internals knowledge to debug, lacks a public reproduction repository, and may require npm-side fixes or coordination with npm maintainers."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23119,
+      "title": "build.chunkImportMap on an environment is ignored by vite:build-import-analysis under builder.sharedPlugins",
+      "url": "https://github.com/vitejs/vite/issues/23119",
+      "created_at": "2026-07-31T11:19:54Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "build.chunkImportMap configuration is ignored per-environment when using builder.sharedPlugins, and crashes when moved to root with server opted out",
+        "why_easy": "Hard to pick up: requires deep understanding of Vite's multi-environment plugin system, modifying several core plugins consistently, and handling the interaction between root and environment-specific configs\u2014high-risk build pipeline code."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23108,
+      "title": "`?url` imports percent-encode IPv6 brackets from `server.origin`",
+      "url": "https://github.com/vitejs/vite/issues/23108",
+      "created_at": "2026-07-30T16:29:21Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Vite percent-encodes IPv6 brackets in `server.origin` when generating `?url` import URLs, producing invalid URLs that Firefox rejects",
+        "why_easy": "The issue is isolated to `?url` import handling, has minimal reproductions, and the fix is straightforward (preserve IPv6 bracket literals), but requires locating the encoding site in Vite's asset pipeline"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23096,
+      "title": "CSS @import of a bare package specifier resolves in client builds but fails in SSR builds",
+      "url": "https://github.com/vitejs/vite/issues/23096",
+      "created_at": "2026-07-28T14:07:58Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "CSS @import of bare package specifiers (e.g., `@import \"tailwindcss\"`) resolves correctly in client builds but fails in SSR builds due to a resolver returning a truthy unresolved value instead of properly handling the condition-based export resolution.",
+        "why_easy": "The issue is extremely well-documented with exact code locations, clear reproduction steps, and analysis of the root cause, but requires deep knowledge of Vite's resolver architecture and why SSR environments behave differently from client builds during package export resolution."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35695,
+      "title": "M4 de-hooping: ToolsetOutcome construct, portable toolsets-docs types, same-entry error identity",
+      "url": "https://github.com/storybookjs/storybook/issues/35695",
+      "created_at": "2026-07-31T16:40:37Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Refactor M4 addon architecture to eliminate type-resolution hacks and string-based error matching by introducing ToolsetOutcome, portable type entries, and same-entry error exports",
+        "why_easy": "Requires deep mastery of Storybook's M4 addon internals, build configuration, TypeScript type system, and coordination with dependent PRs to safely migrate business logic from adapters into core definitions."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35688,
+      "title": "Skills M4 follow-up: fix the review/QA findings on the toolset swap before merging #35677",
+      "url": "https://github.com/storybookjs/storybook/issues/35688",
+      "created_at": "2026-07-31T12:01:46Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix verified regressions from the M4 toolset swap affecting addon initialization, error handling, test result mapping, and published artifacts.",
+        "why_easy": "Hard: requires deep knowledge of MCP/addon systems and fixing multiple distinct behavioral/artifact regressions identified through six-layer review; truncated body indicates additional complexity."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35680,
+      "title": "[Bug]: react-component-meta renders indexed-access types as `unknown[number]` with no control",
+      "url": "https://github.com/storybookjs/storybook/issues/35680",
+      "created_at": "2026-07-30T22:01:00Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Indexed-access types like `(typeof CONST)[number]` render as `unknown[number]` instead of resolving to their literal union in react-component-meta props table.",
+        "why_easy": "Clear reproduction and well-defined expected behavior, but requires understanding TypeScript type resolution and locating the type stringification logic in react-component-meta to implement the fix."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35674,
+      "title": "[Bug]: Angular-Vite compodoc skip-check ignores -d, so a custom output dir regenerates on every build (and a stray root documentation.json silently suppresses regeneration)",
+      "url": "https://github.com/storybookjs/storybook/issues/35674",
+      "created_at": "2026-07-30T17:24:57Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Angular-vite preset should check Compodoc documentation cache at the configured output path (from -d flag) instead of hardcoded workspace root",
+        "why_easy": "Requires parsing the -d flag from compodocArgs array and resolving the correct path with proper defaults\u2014not complex but needs careful path handling and testing in an Angular+Vite setup"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35673,
+      "title": "Skills M4: addon-mcp and @storybook/mcp run on the shared core toolsets",
+      "url": "https://github.com/storybookjs/storybook/issues/35673",
+      "created_at": "2026-07-30T16:46:33Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Consolidate duplicate MCP tool implementations across addon-mcp and @storybook/mcp into shared core toolsets while maintaining byte-identical public API.",
+        "why_easy": "Hard to pick up: requires understanding duplication across multiple packages, managing cross-package coordination, satisfying strict backward-compatibility constraints, handling dependency on prior PR #35516, and domain expertise in Storybook's addon/MCP architecture and the broader Skills workstream."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35668,
+      "title": "[Bug]: Tanstack CLI install hangs in pnpm 11",
+      "url": "https://github.com/storybookjs/storybook/issues/35668",
+      "created_at": "2026-07-30T12:37:23Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix pnpm 11 interactive prompts being buried in output during Storybook init, causing the installer to appear to hang",
+        "why_easy": "Requires reproducing with pnpm 11 and understanding how subprocess output interacts with interactive prompts; the fix likely involves output redirection or buffering but needs investigation to determine whether the issue is in Storybook or Tanstack CLI"
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 20368,
+      "title": "Scanned candidate emitted with corrupted bytes (`child` \u2192 `U+FFFD \\x06 U+FFFD \\x01`) by a long-lived `next dev` (Turbopack) process \u2014 evidence against the scanner's `from_utf8_unchecked` safety assumption",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/20368",
+      "created_at": "2026-07-30T20:26:05Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Candidate strings become corrupted with invalid UTF-8 bytes during long-running dev server processes, breaking CSS generation.",
+        "why_easy": "No reproduction recipe exists, requires deep expertise in the Tailwind scanner's memory safety and Turbopack integration to debug a race condition or use-after-free."
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 20365,
+      "title": "`canonicalizeCandidates` has media query gaps",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/20365",
+      "created_at": "2026-07-30T11:55:35Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "canonicalizeCandidates fails to canonicalize max-* media queries, container queries, and pixel-based breakpoints to their theme equivalents",
+        "why_easy": "Well-documented with minimal reproduction cases showing exactly what's broken, but requires deep understanding of Tailwind's internal design system canonicalization logic and fixing multiple pattern gaps"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69158,
+      "title": "Digital Pet Game - Step for says form shouldn't be \"Visible\" but test looks at existence",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69158",
+      "created_at": "2026-07-31T18:29:20Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update Digital Pet Game test 4 to check for CSS display: none instead of element existence to match test instructions",
+        "why_easy": "The issue clearly identifies the exact problem (test checks for element existence rather than visibility) and the straightforward fix (check for display: none instead)"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69153,
+      "title": "Relative clause attaches to the wrong noun in Step 34 of the Cafe Menu workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69153",
+      "created_at": "2026-07-31T15:52:01Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix ambiguous grammar in Step 34 of Cafe Menu workshop where the relative clause incorrectly attaches to the selectors instead of the width property.",
+        "why_easy": "The issue provides the exact replacement text and requires only finding and editing one sentence in a curriculum markdown file."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69152,
+      "title": "Singular noun for four coffees in Step 27 of the Cafe Menu workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69152",
+      "created_at": "2026-07-31T15:50:47Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Change singular 'coffee' to plural 'coffees' in Step 27 Cafe Menu workshop description to match the four coffees listed",
+        "why_easy": "This is a one-word grammar fix with a clear solution; the issue explicitly shows what text to change and what it should become, requiring no additional investigation or testing"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69151,
+      "title": "Step 25 of the Cafe Menu workshop says one `article` element holds every coffee",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69151",
+      "created_at": "2026-07-31T15:50:34Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix misleading Step 25 description to clarify that one `article` element holds one coffee, not all coffees",
+        "why_easy": "Single sentence rewrite in curriculum content with no code changes or testing required; suggested text is provided in the issue"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69150,
+      "title": "Invalid CSS placeholder and class name described as a selector in Step 22 of the Cafe Menu workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69150",
+      "created_at": "2026-07-31T15:50:22Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix invalid CSS placeholder syntax and correct class name/selector terminology in Cafe Menu Step 22 instructions",
+        "why_easy": "The issue specifies two straightforward text corrections with clear examples of expected output, requiring no code changes or testing."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69149,
+      "title": "Content problems in the \"What Is CSS Flexbox, and When Should You Use It?\" lecture",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69149",
+      "created_at": "2026-07-31T15:46:19Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix four content problems in the CSS Flexbox lecture: correct one-dimensional description, fix apostrophe character, lowercase \"flexbox\" in quiz, and move interactive editor note to first occurrence",
+        "why_easy": "All four fixes are straightforward text replacements in Markdown with clear expected behavior specified; no code logic or complex refactoring required."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69148,
+      "title": "Writing and formatting problems in the \"What Are Some Common Flex Properties, and How Do They Work?\" lecture",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69148",
+      "created_at": "2026-07-31T15:45:14Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix six writing and formatting issues in the CSS flexbox lecture content.",
+        "why_easy": "All six issues are clearly identified with specific locations and expected corrections provided, requiring only straightforward text edits to a single curriculum file."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69141,
+      "title": "\"Build a motorcycle shop\" lab audit",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69141",
+      "created_at": "2026-07-31T07:27:54Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Clarify test instruction text by replacing 'render' with more explicit language about DOM manipulation for learners unfamiliar with React terminology",
+        "why_easy": "Requires finding and changing a single text string in a test file with no logic changes, making it ideal for first-time contributors to practice the PR workflow"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69139,
+      "title": "Event bubbling and deglatation lesson missing interactive editor while mentioning \"clicking on the span\"",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69139",
+      "created_at": "2026-07-31T06:36:55Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "docs",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add an interactive editor to the event bubbling and delegation lesson to replace text-based blocks with hands-on practice",
+        "why_easy": "The scope and required changes are clearly defined, but implementation requires knowledge of freeCodeCamp's lesson template structure and curriculum tooling"
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17402,
+      "title": "feat(grpc): add middleware support for gRPC transport (Request Context / AsyncLocalStorage)",
+      "url": "https://github.com/nestjs/nest/issues/17402",
+      "created_at": "2026-07-31T13:27:08Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add middleware support for gRPC transport to enable context initialization before guards and interceptors execute",
+        "why_easy": "Requires deep understanding of NestJS's HTTP middleware pipeline, gRPC transport architecture, async context propagation, and extensive testing across streaming scenarios\u2014not suitable for first-time contributors."
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17398,
+      "title": "ValidationPipe-specific options are included in validatorOptions and trigger classToPlain",
+      "url": "https://github.com/nestjs/nest/issues/17398",
+      "created_at": "2026-07-30T01:14:25Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "ValidationPipe incorrectly includes pipe-specific options (exceptionFactory, validatorPackage, transformerPackage) in validatorOptions, causing classToPlain to execute unexpectedly",
+        "why_easy": "The issue has a clear reproduction repo and the fix likely involves filtering out three specific option keys from being mixed into validatorOptions in the ValidationPipe implementation"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29846,
+      "title": "Best way to handle a  direct applied migration to DB",
+      "url": "https://github.com/prisma/prisma/issues/29846",
+      "created_at": "2026-07-30T03:49:32Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "docs",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Seeking best practice for handling schema updates when manual SQL changes are applied outside Prisma Migrate",
+        "why_easy": "Requires investigation into migration behavior and schema drift handling across multiple scenarios; needs understanding of Prisma's architecture to provide authoritative guidance"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29838,
+      "title": "Prisma 7.9.1 migrate deploy fails on MariaDB with empty Schema engine error",
+      "url": "https://github.com/prisma/prisma/issues/29838",
+      "created_at": "2026-07-29T08:21:45Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix prisma migrate deploy against MariaDB 11.x which fails with an empty 'Schema engine error:' message (regression from v6.19.0)",
+        "why_easy": "Clear reproduction case and regression context narrow scope, but the empty error message indicates error handling failure deep in the schema engine or adapter stack, requiring investigation across multiple layers"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29835,
+      "title": "Support for Snowflake DB",
+      "url": "https://github.com/prisma/prisma/issues/29835",
+      "created_at": "2026-07-28T20:50:21Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add support for Snowflake as a database backend in Prisma",
+        "why_easy": "Adding database support requires extensive integration across schema parsing, query generation, migrations, and testing\u2014a major architectural change typically requiring core team involvement."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29802,
+      "title": "Invalid `Date` passed to `$queryRaw`/`$executeRaw` is silently serialized as the string `\"null\"` instead of throwing",
+      "url": "https://github.com/prisma/prisma/issues/29802",
+      "created_at": "2026-07-27T19:02:57Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Validate Date objects in $queryRaw/$executeRaw to prevent silent null serialization",
+        "why_easy": "Root cause is clearly identified, the validation logic already exists in serializeJsonQuery.ts, and the fix is a straightforward guard before serialization."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48544,
+      "title": "MCP login for Claude Code not working",
+      "url": "https://github.com/supabase/supabase/issues/48544",
+      "created_at": "2026-07-31T14:56:39Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "MCP login for Claude Code fails because plugin version changes embed in config hash, creating separate OAuth keychain entries that orphan valid tokens.",
+        "why_easy": "Root cause is thoroughly diagnosed (version header creates different keychain key on plugin updates), but fixing requires understanding OAuth token storage architecture and potentially implementing token migration or lookup logic."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51171,
+      "title": "Upgrade to Spring gRPC 1.1.1",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51171",
+      "created_at": "2026-07-31T15:52:05Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade the Spring gRPC dependency to version 1.1.1.",
+        "why_easy": "The mechanical change is simple (version bump), but the status:team-only label indicates it's reserved for maintainers, and dependency upgrades in large projects require comprehensive testing to catch compatibility issues."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51168,
+      "title": "Upgrade to Micrometer 1.18.0-M1",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51168",
+      "created_at": "2026-07-31T10:26:28Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade Spring Boot's Micrometer dependency to version 1.18.0-M1",
+        "why_easy": "M1 pre-releases can introduce breaking changes and require thorough integration testing across Spring Boot's metrics infrastructure; requires deep familiarity with both projects and dependency management workflows"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51167,
+      "title": "Upgrade to Reactor 2026.0.0-M1",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51167",
+      "created_at": "2026-07-31T10:25:54Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade Spring Boot's Reactor dependency to version 2026.0.0-M1",
+        "why_easy": "Straightforward dependency version bump, but requires investigating breaking changes in the linked milestone and fixing any compatibility issues across the codebase"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51166,
+      "title": "Spring Boot 4.1.0 fails to build docker images using the \"paketobuildpacks/ubuntu-resolute-run-tiny\" image",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51166",
+      "created_at": "2026-07-30T21:48:02Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Allow Spring Boot's Docker image builder to work with Paketo's new tiny run images by relaxing stack ID validation",
+        "why_easy": "The code fix is straightforward (relax string matching in assertStackIdsMatch), but requires specialized knowledge of buildpacks, stack IDs, and Spring Boot's build infrastructure that will require learning curve for newcomers"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51154,
+      "title": "Structured logging: a failed JSON encode corrupts the next log event written on the same thread",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51154",
+      "created_at": "2026-07-29T15:55:53Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": true,
+        "one_line_summary": "Thread-local buffer in WritableJson retains partial output when encoding fails, corrupting the next log event on the same thread",
+        "why_easy": "Root cause is identified with code examples and fix location pinpointed; solution is a straightforward try-finally pattern to reset the buffer on exception, though contributors need to understand thread-local caching semantics and write thread-safe tests."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51151,
+      "title": "Jackson CsvMapper configuration",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51151",
+      "created_at": "2026-07-29T12:48:36Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add Spring Boot autoconfiguration for Jackson CsvMapper, aligned with existing JSON/CBOR/XML mapper support",
+        "why_easy": "An existing pattern is established in the codebase (three working mapper implementations), but implementation requires deep familiarity with Spring Boot's autoconfiguration system, Jackson internals, and coordination with maintainers on API visibility changes."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51146,
+      "title": "Allow to configure TrustManagerFactory/KeyManagerFactory via SslBundles for embedded Tomcat",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51146",
+      "created_at": "2026-07-29T07:09:33Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Enable configuration of custom TrustManagerFactory and KeyManagerFactory for embedded Tomcat through SslBundles",
+        "why_easy": "Requires deep knowledge of Spring Boot's SSL bundle architecture, Tomcat's SSLHostConfig integration, and certificate management, with changes touching core configuration components that need careful testing across scenarios"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51134,
+      "title": "Support custom HTTP response headers on @Endpoint/@WebEndpoint operations",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51134",
+      "created_at": "2026-07-27T18:50:49Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add support for custom HTTP response headers in WebEndpointResponse for @Endpoint/@WebEndpoint operations.",
+        "why_easy": "Well-scoped addition following an existing pattern (status/contentType), but requires understanding and coordinating changes across both WebMvc and WebFlux handler implementations."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66564,
+      "title": "DOC: 1.4 and earlier not available: 404 error",
+      "url": "https://github.com/pandas-dev/pandas/issues/66564",
+      "created_at": "2026-07-31T17:06:52Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "docs",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Documentation version selector links for pandas 1.4 and earlier return 404 errors instead of serving archived versions.",
+        "why_easy": "Issue is well-scoped with clear reproduction steps, but fixing requires understanding the doc versioning/deployment infrastructure and likely investigating a recent regression in the build or URL-routing configuration."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66552,
+      "title": "BUG: datetimelike arithmetic landing on the NaT sentinel silently returns NaT",
+      "url": "https://github.com/pandas-dev/pandas/issues/66552",
+      "created_at": "2026-07-30T16:54:25Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Datetimelike arithmetic landing exactly on NaT sentinel value silently returns NaT instead of raising OutOfBoundsDatetime",
+        "why_easy": "Hard: bug spans multiple code paths across timestamps/timedeltas/periods in Cython code, requires deep understanding of overflow semantics and NaT representation, with high regression risk from widespread interconnected fixes needed"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66551,
+      "title": "BUG: datetimelike arithmetic landing on the NaT sentinel returns NaT, plus float64 precision loss in timedelta64 arithmetic/reductions",
+      "url": "https://github.com/pandas-dev/pandas/issues/66551",
+      "created_at": "2026-07-30T16:22:17Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix datetimelike arithmetic silently returning NaT when results land on the NaT sentinel, plus float64 precision loss in timedelta operations across scalar and array paths",
+        "why_easy": "Requires deep Cython/C expertise in NumPy datetime internals, must maintain consistency across scalar/vectorized code paths for multiple types (Timedelta, Timestamp, Period), involves sentinel value handling at the boundaries of int64."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66550,
+      "title": "BUG: tz_localize misreports wall times whose UTC value is unrepresentable (NaT sentinel, int64 wrap, OOB read)",
+      "url": "https://github.com/pandas-dev/pandas/issues/66550",
+      "created_at": "2026-07-30T16:21:13Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "tz_localize incorrectly reports wall times whose UTC value is the NaT sentinel (INT64_MIN) as nonexistent, and has out-of-bounds vulnerabilities in fixed-offset and reverse-conversion paths.",
+        "why_easy": "Hard to pick up because it requires deep understanding of pandas' int64/NaT sentinel representation, multiple interrelated code paths (scalar, vectorized, fixed-offset, zoneinfo fastpath), DST transition handling, and careful boundary fixes across the entire timezone-conversion stack."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66549,
+      "title": "BUG: remaining NaT-sentinel and out-of-bounds gaps in datetimelike arithmetic (GH-66510 follow-ups)",
+      "url": "https://github.com/pandas-dev/pandas/issues/66549",
+      "created_at": "2026-07-30T16:16:20Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix four related bugs in datetimelike arithmetic: silent NaT production, inconsistent scalar/array overflow errors, 32-bit parameter truncation, and year truncation in low-level calendar code",
+        "why_easy": "This is hard\u2014it spans four distinct bugs across scalar and array paths involving vendored C code, sentinel value handling, and requires coordinated fixes across multiple subsystems that are deeply interdependent"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32161,
+      "title": "PERF: np.isin is very slow for StringDType",
+      "url": "https://github.com/numpy/numpy/issues/32161",
+      "created_at": "2026-07-31T20:06:48Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Optimize np.isin performance for StringDType by using the sorting path instead of the slow object array fallback",
+        "why_easy": "Problem is well-diagnosed with clear proposed solutions and code locations identified, but requires deep understanding of numpy's StringDType implementation and isin internals to implement safely."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32159,
+      "title": "PERF: `-ftrapping-math` slows down `np.less` `float32` loops on Apple AArch64",
+      "url": "https://github.com/numpy/numpy/issues/32159",
+      "created_at": "2026-07-31T15:38:01Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "The `-ftrapping-math` compiler flag causes unnecessary scalarization of float32 comparisons on Apple AArch64, reducing performance by ~3x.",
+        "why_easy": "Hard: Requires deep knowledge of NumPy's build system, LLVM vectorization behavior, and floating-point semantics; the fix isn't a simple global flag removal (divide operations still need trapping-math), and changes are risky and hard to test without Apple hardware."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32153,
+      "title": "BUG: segfault in stringdtype fancy-index array assignemnt",
+      "url": "https://github.com/numpy/numpy/issues/32153",
+      "created_at": "2026-07-30T18:47:12Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Segfault when using fancy indexing to assign values to a string dtype array",
+        "why_easy": "Debugging requires C-level investigation into numpy's stringdtype and fancy indexing assignment internals, including memory management in NpyString_dup and free_and_copy \u2014 demands experience with C memory issues and numpy's core array machinery."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32148,
+      "title": "BUG: Compiling fortran programme using f2py and flang leads to runtime `undefined symbol: _FortranAioBeginClose`",
+      "url": "https://github.com/numpy/numpy/issues/32148",
+      "created_at": "2026-07-30T14:13:12Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "f2py-compiled Fortran code fails at runtime with flang-22 due to missing symbol _FortranAioBeginClose",
+        "why_easy": "Debugging requires deep knowledge of both f2py wrapper generation and flang runtime library linking, with an incomplete minimal reproducible example that references external Fortran source files"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32136,
+      "title": "PERF: np.sin(a, where=) is slower than computing the whole array",
+      "url": "https://github.com/numpy/numpy/issues/32136",
+      "created_at": "2026-07-28T23:02:01Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Optimize np.sin(a, where=) to use a faster algorithm when the mask has scattered True values instead of the current run-based approach that kills performance",
+        "why_easy": "Hard: requires deep NumPy ufunc internals, performance profiling across architectures, and SIMD knowledge; but mitigated by well-documented analysis and clear proposed solutions (bsl/compress strategies) from the issue author"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32126,
+      "title": "ENH: support `where=` in MaskedArray reductions",
+      "url": "https://github.com/numpy/numpy/issues/32126",
+      "created_at": "2026-07-28T03:25:08Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add where= keyword argument support to MaskedArray reduction methods (sum, prod, mean, var, std, min, max, any, all)",
+        "why_easy": "The semantic is well-defined\u2014combine where with existing mask via AND logic\u2014but implementation spans 9 methods, requires understanding MaskedArray's reduction internals and _wrapreduction machinery, and demands careful testing of mask/where interactions."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34618,
+      "title": "Perf: `PCA(n_components=\"mle\")` uses O(d^3) version of Minka's algorithm when O(d^2) exists",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34618",
+      "created_at": "2026-07-31T18:16:16Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Optimize PCA with n_components='mle' from O(d^3) to O(d^2) by porting Minka's algorithm",
+        "why_easy": "Hard to pick up: requires understanding Minka's algorithm, porting MATLAB to Python with numpy vectorization expertise, and extensive testing to ensure correctness while only performance changes."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34616,
+      "title": "Speed up SelectKBest with partition-based selection",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34616",
+      "created_at": "2026-07-31T13:53:09Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Optimize SelectKBest to use partition-based selection for feature sets with 300+ features, achieving O(n) average time instead of O(n log n).",
+        "why_easy": "The algorithm is well-defined and numpy.partition is a standard library function, but the issue is explicitly marked not-ready-for-PR, requires careful handling of tied scores to match current behavior, and demands performance benchmarking against the existing implementation."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34615,
+      "title": "DOC: Proposal for FinTech payment fraud example evaluating imbalanced PR curves",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34615",
+      "created_at": "2026-07-31T13:32:12Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "docs",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Create a new gallery example demonstrating Precision-Recall curve evaluation and threshold selection strategies for imbalanced financial fraud datasets",
+        "why_easy": "The task structure is clearly outlined and uses only existing sklearn functions, but the issue is explicitly not ready for a PR (needs triage discussion first), requires fraud detection domain knowledge, and demands familiarity with sklearn's gallery example formatting conventions."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34604,
+      "title": "RFC Always store fitted attributes as Numpy",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34604",
+      "created_at": "2026-07-30T13:41:09Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "RFC proposing that fitted attributes be always stored as NumPy arrays regardless of input array namespace or device",
+        "why_easy": "RFC is explicitly not ready for a PR, requires architectural decisions and performance analysis across many estimators, and needs deep knowledge of scikit-learn's Array API integration."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34596,
+      "title": "Explicit documentation / contract for free-threading",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34596",
+      "created_at": "2026-07-29T12:52:14Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "docs",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Document scikit-learn's thread-safety contract for free-threaded Python, specifying which methods are safe to call from multiple threads on the same object",
+        "why_easy": "Hard to pick up because it requires investigation into threading implications across hundreds of estimators, likely needs maintainer collaboration to define the official contract, and is explicitly marked as not ready for a PR"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34595,
+      "title": "Allow TunedThresholdClassifierCV to assess threshold variability and examine all possible thresholds",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34595",
+      "created_at": "2026-07-29T09:53:40Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Allow TunedThresholdClassifierCV to expose threshold variability (std across folds) and automatically select thresholds from unique probability values",
+        "why_easy": "The std calculation is straightforward given existing infrastructure, but auto-threshold selection requires API design decisions, understanding established patterns (ROC curves), and the issue itself needs investigation."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45370,
+      "title": "Broken Markdown in translated versions of \"Searching issues and pull requests\" article.",
+      "url": "https://github.com/github/docs/issues/45370",
+      "created_at": "2026-07-31T19:26:36Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "docs",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix broken Markdown rendering in French and Spanish translated versions of the 'Searching issues and pull requests' article.",
+        "why_easy": "Identifying and correcting Markdown syntax errors is straightforward, but the translation contribution guidelines explicitly prevent direct community contributions, and the issue lacks specific details about which Markdown elements are broken."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45369,
+      "title": "Clear detail and on https://github.com/user-attachments/files/28489580/ED1239F0-D087-4660-AA36-C6D0C24F42EF.pdf",
+      "url": "https://github.com/github/docs/issues/45369",
+      "created_at": "2026-07-31T18:29:31Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "docs",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Vague issue referencing a PDF attachment without explanation of what needs to be documented or fixed",
+        "why_easy": "Issue lacks any meaningful description\u2014title and body are identical, reference an unexplained PDF, and appear cross-posted from a different repo; impossible to determine what work is actually needed without additional context"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45354,
+      "title": "Missing Copilot Documentation on `allowed-tools` Field in Skill Frontmatter",
+      "url": "https://github.com/github/docs/issues/45354",
+      "created_at": "2026-07-30T07:56:17Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "docs",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Document the `allowed-tools` field in Copilot skill frontmatter, including valid formats, supported tools, MCP server integration, and command restrictions.",
+        "why_easy": "The feature already exists in the Agent Skills Specification and Copilot\u2014this is a documentation task of gathering and presenting existing knowledge\u2014but requires deep familiarity with Copilot's implementation and MCP architecture to write accurate, comprehensive examples."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45349,
+      "title": "Dismantle for sometime",
+      "url": "https://github.com/github/docs/issues/45349",
+      "created_at": "2026-07-30T00:12:24Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "docs",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Contribution submission for GitHub technology partner documentation, but the actual product/content to document is unspecified.",
+        "why_easy": "The title 'Dismantle for sometime' is cryptic and the body is just a filled-out checklist template; there's no actual problem statement, product name, or content specification, leaving contributors unable to determine what needs to be written without asking for clarification."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45334,
+      "title": "`restrict-creations` should warn about compatibility with merge queues",
+      "url": "https://github.com/github/docs/issues/45334",
+      "created_at": "2026-07-28T22:40:33Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add a warning to the restrict-creations ruleset documentation explaining that applying the rule to all branches requires bypassing the GitHub Merge Queue app",
+        "why_easy": "The issue clearly identifies the documentation section, explains the problem, and references existing docs about the merge queue branch pattern (gh-readonly-queue/{base_branch}), requiring only a targeted note about the bypass requirement."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45322,
+      "title": "[Bug]: Category landing pages smooth-scroll to footer on load in WebKit/Safari",
+      "url": "https://github.com/github/docs/issues/45322",
+      "created_at": "2026-07-27T20:39:13Z",
+      "digest_date": "2026-07-31",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix WebKit/Safari smooth-scrolling to footer on category landing page load by scoping scroll-behavior to html:focus-within",
+        "why_easy": "The root cause and fix location (src/frame/stylesheets/index.scss) are already identified; it's a straightforward CSS selector change, though verification requires Safari testing access."
       }
     }
   ]
