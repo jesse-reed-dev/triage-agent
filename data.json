@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31",
+  "updated": "2026-08-01",
   "issues": [
     {
       "repo": "react/react-native",
@@ -10469,6 +10469,426 @@
         "good_first_issue": true,
         "one_line_summary": "Fix WebKit/Safari smooth-scrolling to footer on category landing page load by scoping scroll-behavior to html:focus-within",
         "why_easy": "The root cause and fix location (src/frame/stylesheets/index.scss) are already identified; it's a straightforward CSS selector change, though verification requires Safari testing access."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57786,
+      "title": "Networking docs appear outdated: credentials: 'omit' works on RN 0.86",
+      "url": "https://github.com/react/react-native/issues/57786",
+      "created_at": "2026-08-01T06:21:38Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update React Native networking docs to remove outdated claim that credentials: 'omit' doesn't work with fetch",
+        "why_easy": "Contributor has provided comprehensive test evidence across both platforms and scenarios; fix is a straightforward docs update to the known issues section."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57785,
+      "title": "[Android] Startup crash: NoSuchMethodError: WindowMetrics.getDensity() from NativeDeviceInfo.getConstants() on 0.86.0 (SDK_INT \u2265 34 runtimes without the method)",
+      "url": "https://github.com/react/react-native/issues/57785",
+      "created_at": "2026-08-01T05:13:40Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Prevent NoSuchMethodError crash when WindowMetrics.getDensity() is missing on Android runtimes reporting SDK_INT \u2265 34",
+        "why_easy": "The root cause and fix strategy are clear (defensive try-catch handling), but reproducibility is difficult without access to a runtime that lies about SDK_INT, and the fix requires Android/Kotlin expertise and high-stakes testing in React Native core"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48390,
+      "title": "Expo go SDK 57 crashes after bundling",
+      "url": "https://github.com/expo/expo/issues/48390",
+      "created_at": "2026-08-01T03:08:39Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Expo Go SDK 57 crashes with a segmentation fault (SIGSEGV) on Android after bundling with no console error output",
+        "why_easy": "This is a hard issue requiring native-level debugging expertise; it's a segmentation fault with no console error, suggesting memory safety or ARM pointer authentication issues that would be difficult for new contributors to diagnose and fix"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48389,
+      "title": "[expo-ui] community/bottom-sheet: iOS onDismiss fires before the sheet has dismissed, wedging UIKit presentation (Android awaits hide())",
+      "url": "https://github.com/expo/expo/issues/48389",
+      "created_at": "2026-08-01T00:21:16Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "iOS BottomSheet fires onDismiss callbacks before the native dismissal animation completes, causing UIKit presentation collisions when showing modals in onDismiss.",
+        "why_easy": "The fix is tightly scoped with exact file locations and a working Android pattern already in the codebase, but requires native iOS bridge experience and local development build testing."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328555,
+      "title": "Webview panels (Release Notes, extension panels) render with unreadable dark-on-dark contrast on cold start until theme is manually re-toggled",
+      "url": "https://github.com/microsoft/vscode/issues/328555",
+      "created_at": "2026-08-01T11:53:00Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Webview panels render with unreadable dark-on-dark contrast on cold start until theme is manually re-toggled",
+        "why_easy": "Timing races between webview rendering and theme variable injection are inherently complex to diagnose and fix; requires deep understanding of VS Code's theme service initialization and webview lifecycle across a large codebase, plus non-trivial testing strategy."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328552,
+      "title": "Agent's questions timed out? in Chat window",
+      "url": "https://github.com/microsoft/vscode/issues/328552",
+      "created_at": "2026-08-01T10:42:30Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Agent's clarifying questions timeout and fail to display in Chat, falling back to default autonomous message",
+        "why_easy": "Hard to pick up \u2014 requires tracing agent query handling, timeout mechanisms, and API integration; insufficient reproduction steps and likely system-level debugging across VS Code chat and Claude API layers"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328551,
+      "title": "Show download and installation progress when installing extension",
+      "url": "https://github.com/microsoft/vscode/issues/328551",
+      "created_at": "2026-08-01T10:40:52Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Show detailed download and installation progress (bytes, speed, stage) for extensions instead of indeterminate 'Installing' state",
+        "why_easy": "The issue is well-scoped with clear technical requirements (add progress events through extension management \u2192 remote IPC \u2192 UI), but implementation requires understanding multiple subsystems and coordinating changes across layers, making it unsuitable for first-time contributors despite clear documentation."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328548,
+      "title": "Extension Development Host Debug Console shows DEP0040/DEP0169 from extensionHostProcess.js",
+      "url": "https://github.com/microsoft/vscode/issues/328548",
+      "created_at": "2026-08-01T08:00:11Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Suppress or fix Node.js deprecation warnings (punycode, url.parse) shown in the Extension Development Host debug console",
+        "why_easy": "The problems are already identified with locations given (extensionHostProcess.js), and migration paths are clear (userland punycode, WHATWG URL API), but requires understanding the extension host architecture and thorough testing to ensure nothing breaks"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328547,
+      "title": "VS Code crash code 5",
+      "url": "https://github.com/microsoft/vscode/issues/328547",
+      "created_at": "2026-08-01T07:57:48Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code crashes while receiving Copilot Chat responses, but user is still charged credits",
+        "why_easy": "Reproduction steps are vague; root cause unclear (could be memory exhaustion with only 0.13GB free, SSH remote failure, or Copilot service issue) and testing requires subscription"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328546,
+      "title": "Snippet setion quickly closes",
+      "url": "https://github.com/microsoft/vscode/issues/328546",
+      "created_at": "2026-08-01T07:48:00Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Snippet editor closes unexpectedly during editing, blocking creation of new snippets",
+        "why_easy": "Marked as a regression in a recent release, suggesting a localized change; however, lacks clear reproduction steps, requiring investigation before work can begin"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328545,
+      "title": "Allow the integrated browser to be selected in workbench.editor.associations",
+      "url": "https://github.com/microsoft/vscode/issues/328545",
+      "created_at": "2026-08-01T04:47:54Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Allow HTML files to be opened in the integrated browser by default when configured via workbench.editor.associations",
+        "why_easy": "Requires understanding two existing systems (editor associations and integrated browser) and integrating them\u2014doable but not self-contained, better for contributors already familiar with VSCode internals"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328541,
+      "title": "Chat continuous listening stops accepting speech after first segment when text is edited (macOS)",
+      "url": "https://github.com/microsoft/vscode/issues/328541",
+      "created_at": "2026-08-01T03:18:33Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Chat continuous listening stops accepting speech after text editing on macOS",
+        "why_easy": "Clear reproduction steps make it tractable, but requires macOS access and expertise in speech recognition APIs."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328536,
+      "title": "C: `restrict` coloured wrong twice",
+      "url": "https://github.com/microsoft/vscode/issues/328536",
+      "created_at": "2026-08-01T00:40:43Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix inconsistent syntax highlighting of the C `restrict` keyword in different declaration contexts",
+        "why_easy": "Well-defined bug in TextMate grammar rules with clear reproduction steps; likely requires adding the keyword to a rule or adjusting a regex pattern in a single grammar file"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328533,
+      "title": "Missing confirmation for subagent tool after steering",
+      "url": "https://github.com/microsoft/vscode/issues/328533",
+      "created_at": "2026-08-01T00:09:58Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Tool confirmations from subagents triggered by steering messages should be exposed at the top level of VS Code",
+        "why_easy": "The issue lacks reproduction steps and assumes deep knowledge of VS Code's agent/subagent architecture; it's unclear what 'not exposed' means or where the fix belongs without understanding how steering, subagents, and tool confirmation systems interact."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69171,
+      "title": "2026_08_01 Coding Challenge 356: Magic Square Solver - the link to the task is in the table for August 2025",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69171",
+      "created_at": "2026-08-01T08:28:03Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Daily coding challenge #356 (Magic Square Solver) from August 1, 2026 appears in the August 2025 archive table instead of August 2026.",
+        "why_easy": "Once the challenge data source is located, moving the entry to the correct month's table is a straightforward content fix with no complex logic involved."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69170,
+      "title": "Date object constructor does not always require a string",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69170",
+      "created_at": "2026-08-01T07:52:07Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update lesson to clarify that Date constructor accepts strings, numeric timestamps, and multiple numeric arguments\u2014not just strings",
+        "why_easy": "The issue precisely identifies a single inaccurate sentence and provides a concrete replacement suggestion, requiring only a documentation update with no code changes."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69169,
+      "title": "Count formatted as code in Step 51 of the Cafe Menu workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69169",
+      "created_at": "2026-08-01T07:28:08Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Remove code formatting from the count `4` in Step 51 of the Cafe Menu workshop and use the word 'four' consistently",
+        "why_easy": "Single-sentence text edit in curriculum content with clear expected behavior; labeled for first-time contributors and requires no technical knowledge"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69168,
+      "title": "Hint in Step 48 of the Cafe Menu workshop does not say which section it checks",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69168",
+      "created_at": "2026-08-01T07:26:42Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Step 48 hint should specify 'second section' when checking for eight paragraph elements to match earlier hint wording and clarify which section element learners should modify.",
+        "why_easy": "This is a single-line text change to curriculum content with the exact wording specified in the issue, requiring no code logic changes or testing."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69167,
+      "title": "Missing semicolon in the .price declaration carried through the Cafe Menu workshop seeds",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69167",
+      "created_at": "2026-08-01T07:26:20Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add missing semicolon to `.price` declaration in Cafe Menu workshop seeds across Steps 42-87",
+        "why_easy": "The issue clearly identifies the problem and solution\u2014simply add a semicolon to `width: 25%` across 46 consistently-named seed files, a straightforward find-and-replace with no complex logic required."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69166,
+      "title": "Inconsistent code formatting of a class name in Step 41 of the Cafe Menu workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69166",
+      "created_at": "2026-08-01T07:26:00Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add missing backticks around the class name 'price' in Step 41 instruction to match 'flavor' formatting",
+        "why_easy": "Single-character fix: add backticks around one word in the instruction text to match existing formatting, no logic or testing required"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48559,
+      "title": "Studio: TanStack runtime never honors MAINTENANCE_MODE, __root.tsx omits maintenanceMode from matchRedirect",
+      "url": "https://github.com/supabase/supabase/issues/48559",
+      "created_at": "2026-08-01T01:12:47Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "TanStack Start runtime doesn't pass MAINTENANCE_MODE flag to matchRedirect, preventing maintenance mode redirects from working",
+        "why_easy": "Bug is clearly diagnosed with root cause isolated, but implementation is blocked on a design decision\u2014contributors cannot proceed independently until maintainers choose between adding a public env var or server-side plumbing, which is architectural scope beyond a first issue"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48558,
+      "title": "Studio: High Availability badge 'Read more' link 404s, /guides/deployment/high-availability does not exist",
+      "url": "https://github.com/supabase/supabase/issues/48558",
+      "created_at": "2026-08-01T01:12:38Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix or remove the broken 'Read more' link in the High Availability badge that 404s to a non-existent docs page.",
+        "why_easy": "The issue is isolated to a single line in one file, the contributor has already verified the problem and identified the exact URL, and solutions are trivial string changes (update URL or remove link)."
+      }
+    },
+    {
+      "repo": "pallets/flask",
+      "number": 6114,
+      "title": "jsonify emits NaN and Infinity, which are not valid JSON",
+      "url": "https://github.com/pallets/flask/issues/6114",
+      "created_at": "2026-08-01T05:42:39Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Flask's jsonify emits invalid JSON for NaN and Infinity values; expose allow_nan configuration option",
+        "why_easy": "Follows the established pattern of sort_keys/ensure_ascii attributes and the mechanism already works, but requires understanding Flask's provider architecture and writing comprehensive tests"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66574,
+      "title": "DOC: rename_categories dict example is a no-op in categorical.rst",
+      "url": "https://github.com/pandas-dev/pandas/issues/66574",
+      "created_at": "2026-07-31T23:59:06Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Documentation example for dict-based category renaming is a no-op because the dict keys don't match the current category values.",
+        "why_easy": "The issue clearly identifies the exact problem and provides the precise one-line fix required\u2014just change the dict keys in categorical.rst to match the categories at that point in the example and verify the output."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66571,
+      "title": "BUG: partial-string slicing on a PeriodIndex with an anchored freq resolves bounds one period early",
+      "url": "https://github.com/pandas-dev/pandas/issues/66571",
+      "created_at": "2026-07-31T22:49:25Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Partial-string slicing on PeriodIndex with anchored frequencies (e.g., Q-FEB) incorrectly resolves bounds using calendar frequency, causing slices to include an extra period.",
+        "why_easy": "The root cause is clearly diagnosed and localized to one function in period.py, but requires understanding Period anchoring logic and comprehensive tests across multiple anchor types to prevent regressions."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34626,
+      "title": "`UnionFind.fast_find`'s path compression never touches the queried node \u2014 quadratic linkage labelling",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34626",
+      "created_at": "2026-08-01T10:04:27Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "UnionFind.fast_find's path compression doesn't touch the queried node, causing O(n\u00b2) performance degradation in single-linkage clustering on chain-like inputs.",
+        "why_easy": "Root cause is clearly identified and the fix pattern for path compression is standard, but requires Cython expertise, source-level compilation, and benchmark validation to ensure correctness."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34622,
+      "title": "explained_variance_score returns a perfect 1.0 for a single sample (silently breaks LeaveOneOut CV)",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34622",
+      "created_at": "2026-08-01T04:15:36Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": true,
+        "one_line_summary": "explained_variance_score silently returns a perfect 1.0 for single-sample predictions instead of returning nan with a warning",
+        "why_easy": "The fix is explicitly described and has a reference implementation in r2_score, but requires understanding scikit-learn's codebase and test patterns"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34621,
+      "title": "\u26a0\ufe0f CI failed on Unit tests Linux x86-64 pylatest_pip_scipy_dev (last failure: Aug 01, 2026) \u26a0\ufe0f",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34621",
+      "created_at": "2026-08-01T03:55:35Z",
+      "digest_date": "2026-08-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "CI pipeline failing with 70+ tests across multiple modules on the latest scipy dev version",
+        "why_easy": "The widespread failures spanning sparse matrices, metrics, and transformers suggest a systematic scipy compatibility issue that requires deep dependency debugging and understanding API changes across scipy, not a good entry point for new contributors."
       }
     }
   ]
