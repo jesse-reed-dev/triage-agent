@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01",
+  "updated": "2026-08-02",
   "issues": [
     {
       "repo": "react/react-native",
@@ -10889,6 +10889,591 @@
         "good_first_issue": false,
         "one_line_summary": "CI pipeline failing with 70+ tests across multiple modules on the latest scipy dev version",
         "why_easy": "The widespread failures spanning sparse matrices, metrics, and transformers suggest a systematic scipy compatibility issue that requires deep dependency debugging and understanding API changes across scipy, not a good entry point for new contributors."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57787,
+      "title": "\u3010Android\u3011\u30100.86.2\u3011Image.getSize() fails for data: URIs on Android since v0.86",
+      "url": "https://github.com/react/react-native/issues/57787",
+      "created_at": "2026-08-02T00:39:41Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Image.getSize() fails with IllegalArgumentException for data: URIs on Android v0.86+ due to encoded image pipeline lacking data: URI support",
+        "why_easy": "Root cause clearly documented with a precedent fix (PR #56944) for res:// URIs that can serve as a template, but requires Android/Kotlin and Fresco architecture expertise"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48414,
+      "title": "Expo Go crashes immediately on iOS Simulator with Expo SDK 57",
+      "url": "https://github.com/expo/expo/issues/48414",
+      "created_at": "2026-08-02T11:51:50Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Expo Go crashes immediately on iOS Simulator in SDK 57 when using Keyframe from react-native-reanimated or components from expo/ui",
+        "why_easy": "Hard to pick up because it requires debugging native iOS crash behavior across multiple library interactions (reanimated, expo/ui, Expo Go), determining which layer the bug originates from, and potentially fixing iOS bridge or integration code."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48411,
+      "title": "[expo-widgets] Gauge currentValueLabel (and all slot-based labels) silently render nothing inside a widget",
+      "url": "https://github.com/expo/expo/issues/48411",
+      "created_at": "2026-08-02T06:37:29Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Gauge and other slot-based label props silently fail to render inside widgets due to missing SlotView handling and updateChildren configuration in DynamicView",
+        "why_easy": "The issue provides precise root-cause analysis with specific files and mechanical fixes (add case, pass updateChildren), but requires Swift/iOS expertise and coordinated changes across the widget rendering pipeline"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48402,
+      "title": "iPadOS 26+ windowed mode traffic light buttons overlap Expo Router elements",
+      "url": "https://github.com/expo/expo/issues/48402",
+      "created_at": "2026-08-01T20:11:01Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Traffic light window controls overlap Expo Router navigation drawer elements in iPadOS 26+ windowed mode",
+        "why_easy": "There's a reference implementation from React Navigation, but reproducing the bug requires iPadOS 26+ hardware, and the fix requires understanding Expo Router's layout system and safe area handling."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48401,
+      "title": "[expo-widgets] Live Activity start URL is factory-global and never cleared; unreadable on the 55.x line",
+      "url": "https://github.com/expo/expo/issues/48401",
+      "created_at": "2026-08-01T18:48:15Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Live Activity start URL persists globally across activity instances and is never cleared; on 55.x it cannot be read back due to a write/read type mismatch",
+        "why_easy": "Root cause is clearly identified with a concrete fix (add else clause to clear the key), but requires Swift expertise, iOS development environment, and testing across multiple SDK versions with potential 55.x backport work"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48400,
+      "title": "[expo-widgets] Live Activity start URL never reaches the Lock Screen banner (only the Dynamic Island)",
+      "url": "https://github.com/expo/expo/issues/48400",
+      "created_at": "2026-08-01T18:47:54Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Apply `.widgetURL()` modifier to Live Activity Lock Screen banner in addition to Dynamic Island to enable deep-linking.",
+        "why_easy": "The root cause is clearly diagnosed, the fix is suggested (add a single modifier to one closure), a minimal reproducible example is provided, and a working workaround confirms the solution would be effective."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48396,
+      "title": "[expo-widgets] LiveActivityFactory.getInstances() returns live activities belonging to other factories, relabelled with the caller's name",
+      "url": "https://github.com/expo/expo/issues/48396",
+      "created_at": "2026-08-01T15:52:40Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "LiveActivityFactory.getInstances() returns all app activities instead of filtering by factory name and active state",
+        "why_easy": "The bug is localized to a single 6-line method, the fix is provided in the issue (two filter predicates), and a detailed reproducible example is included\u2014though it requires Swift knowledge and iOS testing environment"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328606,
+      "title": "/code-review max --fix",
+      "url": "https://github.com/microsoft/vscode/issues/328606",
+      "created_at": "2026-08-02T11:25:41Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The `/code-review max --fix` command exhausts all available tokens and fails to return data when resumed in a new session",
+        "why_easy": "Issue is clearly reproducible with specific command flags and has a clear failure mode, but requires deep understanding of token management, API communication, and session state handling in the Claude Code extension"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328605,
+      "title": "[Bug] Custom AI models configured in Copilot Chat Agent interface are not selectable or persist incorrectly",
+      "url": "https://github.com/microsoft/vscode/issues/328605",
+      "created_at": "2026-08-02T09:24:53Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Custom AI models configured in Copilot Chat Agent settings don't persist or appear in the model selector across chat sessions",
+        "why_easy": "Clear repro steps suggest a focused settings persistence or state initialization bug, but debugging requires understanding Remote WSL context and Copilot Chat Agent architecture"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328604,
+      "title": "Please enable the full-screen preview feature for Markdown.",
+      "url": "https://github.com/microsoft/vscode/issues/328604",
+      "created_at": "2026-08-02T09:09:44Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Enable full-screen preview mode for Markdown files in VSCode",
+        "why_easy": "The specification is vague and lacks implementation details; unclear whether this requires exposing existing markdown preview functionality or building new features from scratch."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328601,
+      "title": "Local language models added to chatlanguagemodels.json are not displayed in Chat model selection",
+      "url": "https://github.com/microsoft/vscode/issues/328601",
+      "created_at": "2026-08-02T08:09:19Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Locally configured language models in chatlanguagemodels.json fail to appear in Chat model selection UI after restart",
+        "why_easy": "Clear reproduction steps with example config provided, but fixing requires understanding VS Code Chat's model registry initialization, file watching, and UI synchronization\u2014likely spans multiple system layers"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328600,
+      "title": "1.131.0 / 0.59.0: devcontainer chat agent type picker fails to list \"Copilot CLI\"",
+      "url": "https://github.com/microsoft/vscode/issues/328600",
+      "created_at": "2026-08-02T07:44:09Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Copilot CLI agent type fails to appear in the agent picker when using devcontainers, despite the feature being installed.",
+        "why_easy": "The warning log pinpoints that the provider registration isn't happening in devcontainers ('no provider registered'), but fixing it requires understanding agent provider registration, devcontainer feature detection, and VS Code extension initialization logic."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328599,
+      "title": "Regression 224254 mouse gone in light theme",
+      "url": "https://github.com/microsoft/vscode/issues/328599",
+      "created_at": "2026-08-02T07:04:16Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Mouse cursor disappears when switching to light theme in the editor",
+        "why_easy": "Clear reproduction steps and likely a styling issue, but locating cursor rendering code in VS Code's large codebase requires familiarity"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328598,
+      "title": "[Bug] Specific UI color tokens (sideBar.background, statusBar.background, etc.) are ignored when editor.background is set",
+      "url": "https://github.com/microsoft/vscode/issues/328598",
+      "created_at": "2026-08-02T06:11:30Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Color customization tokens like sideBar.background are ignored when editor.background is set in workbench.colorCustomizations",
+        "why_easy": "Reproducible with clear steps, but requires understanding VS Code's color resolution and theming pipeline to identify where the priority logic is breaking and why other tokens are being overridden or ignored."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328597,
+      "title": "Can't move the file",
+      "url": "https://github.com/microsoft/vscode/issues/328597",
+      "created_at": "2026-08-02T05:38:53Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Help > About dialog flashes and closes immediately instead of displaying",
+        "why_easy": "Issue lacks reproduction steps, title doesn't match body description, tagged 'info-needed', and unclear whether the problem is with the About dialog or VS Code itself \u2014 requires significant clarification before investigation can begin."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328596,
+      "title": "Improve experience when shell output exceeds runtime streaming limits in agent host sessions",
+      "url": "https://github.com/microsoft/vscode/issues/328596",
+      "created_at": "2026-08-02T05:10:07Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Preserve streamed output and add clear truncation indicators when shell command output exceeds runtime streaming limits, replacing the current model-facing stub with user-friendly UI",
+        "why_easy": "Requires deep understanding of VS Code's terminal streaming architecture, involves restoring the shell_exit API to external sessions, and needs coordinated changes across completion handling and terminal UI layers"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328593,
+      "title": "Fix theming for nested CSS properties.",
+      "url": "https://github.com/microsoft/vscode/issues/328593",
+      "created_at": "2026-08-02T03:16:24Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix syntax highlighting and theming for nested CSS selectors in VS Code",
+        "why_easy": "The massive VS Code codebase makes it hard to locate the root cause (could be in CSS grammar, theme engine, or rendering logic), and the user explicitly requires a fix across all themes, not just new ones, with unclear reproduction evidence in the issue."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328591,
+      "title": "cross-repo-unauth-test-Vp8sKnR4",
+      "url": "https://github.com/microsoft/vscode/issues/328591",
+      "created_at": "2026-08-02T01:21:33Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "test",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Authorization test canary Vp8sKnR4 for verifying cross-repository unauthorized test handling",
+        "why_easy": "The issue provides no actionable task description, context, or acceptance criteria\u2014it reads as an automated monitoring canary rather than a real development task for contributors."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328590,
+      "title": "Agent Host can delete durable sessions after transient resume failures",
+      "url": "https://github.com/microsoft/vscode/issues/328590",
+      "created_at": "2026-08-02T01:13:22Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Prevent Agent Host from permanently deleting durable sessions when the SDK reports transient errors.",
+        "why_easy": "Requires deep understanding of session lifecycle management, SDK error handling, and garbage collection; involves multiple interconnected systems with data loss risk."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328589,
+      "title": "Claude session refresh repeatedly opens historical repositories and overloads file watching",
+      "url": "https://github.com/microsoft/vscode/issues/328589",
+      "created_at": "2026-08-02T00:42:57Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Claude session provider repeatedly opens historical repositories and retries unavailable paths, causing excessive file watcher activity through a feedback loop triggered by repository changes",
+        "why_easy": "The issue provides excellent diagnosis with specific file references and identified feedback loops, but fixing requires understanding VS Code extension architecture, evaluating multiple proposed solutions, and careful testing to avoid performance regressions"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 328585,
+      "title": "Wrong link color in plan widget",
+      "url": "https://github.com/microsoft/vscode/issues/328585",
+      "created_at": "2026-08-01T23:25:15Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix incorrect link color styling in the plan widget",
+        "why_easy": "Issue contains only an image with no textual description, making it difficult for contributors to understand the problem scope, locate the relevant code in VSCode's large codebase, or determine what the expected behavior should be without further investigation."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 96496,
+      "title": "Server Action POSTs to an arbitrary URL supplied by a non-Next history.pushState/replaceState call",
+      "url": "https://github.com/vercel/next.js/issues/96496",
+      "created_at": "2026-08-02T10:25:41Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Server Actions POST to arbitrary URLs from non-Next history.pushState/replaceState calls, causing silent data loss or corrupted action execution",
+        "why_easy": "The mechanism and root cause are clearly identified with exact code locations and an automated test demonstrating the problem, but the fix requires careful URL validation logic to avoid breaking dynamic routes or legitimate external history manipulation"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 96470,
+      "title": "Route that's on disk and compiles fine sometimes goes 404 in next dev",
+      "url": "https://github.com/vercel/next.js/issues/96470",
+      "created_at": "2026-08-01T18:01:59Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Routes on disk sometimes incorrectly return 404 in next dev due to a Turbopack cache timing race condition, only fixing when the file is touched or server restarted.",
+        "why_easy": "This is a hard issue because it's a timing-dependent race condition that's difficult to reproduce on demand and requires deep familiarity with Turbopack's cache batching and manifest generation logic."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23131,
+      "title": "SSR module runner is permanently poisoned when a fetchModule invoke exceeds the 60s transport timeout",
+      "url": "https://github.com/vitejs/vite/issues/23131",
+      "created_at": "2026-08-02T08:09:18Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "SSR module runner permanently caches timeout errors on slow first compiles, making the server unrecoverable without restart",
+        "why_easy": "The issue is exceptionally well-documented with a deterministic reproduction script and clear problem diagnosis, but fixing it requires deep understanding of Vite's module runner RPC transport and cache poisoning mechanics across multiple code paths."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23125,
+      "title": "`experimental.bundledDev`: plugin `hotUpdate` is called without `server`, `timestamp` or `read`",
+      "url": "https://github.com/vitejs/vite/issues/23125",
+      "created_at": "2026-08-01T15:12:31Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Vite's experimental.bundledDev doesn't pass required `server`, `timestamp`, and `read` fields to plugin hotUpdate hooks, breaking plugins that rely on them",
+        "why_easy": "The bug is well-isolated to bundledDev with a minimal reproduction showing exactly which fields are missing, but requires understanding Vite's bundledDev and rolldown integration to identify where hotUpdate is invoked and fix the missing fields"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23124,
+      "title": "`experimental.bundledDev`: virtual modules fail with `UNRESOLVED_ENTRY` when their lazy entry is compiled",
+      "url": "https://github.com/vitejs/vite/issues/23124",
+      "created_at": "2026-08-01T14:58:33Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Virtual modules fail to resolve when used as lazy entries under experimental.bundledDev because resolveId hooks don't filter rolldown-internal stub queries like transform hooks do.",
+        "why_easy": "The problem is well-scoped with a clear reproduction and the fix location is likely straightforward (extend existing stub-id filtering to resolveId), but it requires deep familiarity with Vite's bundledDev experimental feature and rolldown integration."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69197,
+      "title": "British spelling in Step 64 of the Cafe Menu workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69197",
+      "created_at": "2026-08-02T07:24:46Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Change 'grey' to 'gray' in Step 64 of the Cafe Menu workshop description to maintain American English consistency",
+        "why_easy": "Single-word spelling correction in one location with clear expected behavior; explicitly labeled first-timers-only by the maintainers"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69195,
+      "title": "Missing preposition in Step 58 of the Cafe Menu workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69195",
+      "created_at": "2026-08-02T06:36:13Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix missing preposition and article in Step 58 of the Cafe Menu workshop description to read \"in users' browsers\" instead of \"of users' browsers\".",
+        "why_easy": "This is a straightforward text replacement in a curriculum file with the exact correction provided; no code logic or testing required."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69194,
+      "title": "Incomplete sentence and missing code formatting in Step 55 of the Cafe Menu workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69194",
+      "created_at": "2026-08-02T06:35:59Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix incomplete sentence and missing code formatting in Step 55 of the Cafe Menu workshop curriculum",
+        "why_easy": "The exact corrections are provided in the issue description, requiring only straightforward text edits to curriculum content with no code changes or testing required."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69193,
+      "title": "Subject-verb disagreement and wrong selector term in Step 54 of the Cafe Menu workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69193",
+      "created_at": "2026-08-02T06:35:44Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix subject-verb disagreement and use consistent terminology ('selector list' instead of 'single selector') in Step 54 of the Cafe Menu workshop",
+        "why_easy": "The issue clearly specifies the exact wording change needed\u2014only one sentence in the curriculum requires updating"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69192,
+      "title": "Missing code formatting and singular nouns in Step 52 of the Cafe Menu workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69192",
+      "created_at": "2026-08-02T06:35:33Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix code formatting of a CSS value and correct singular to plural nouns in Step 52 of the Cafe Menu workshop",
+        "why_easy": "The issue explicitly targets first-timers and requires only two straightforward text replacements with clear before/after examples provided in the issue description."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69186,
+      "title": "Clarify logging instructions in \u201cBuild a Sentence Maker\u201d lab challenge (tests 16 & 26)",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69186",
+      "created_at": "2026-08-01T15:04:50Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Clarify logging instructions in the 'Build a Sentence Maker' lab to explicitly require string concatenation instead of comma-separated console.log, since both produce identical output but only concatenation passes the tests",
+        "why_easy": "The affected tests are clearly identified, the fix is straightforward instruction clarification with suggested wording already provided, and no code changes are required."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48611,
+      "title": "Add AgentScan to fight AI agent spam in your repository",
+      "url": "https://github.com/supabase/supabase/issues/48611",
+      "created_at": "2026-08-02T09:39:26Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "feature",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Install AgentScan via GitHub app or action to automatically detect and filter out spam PRs from AI agents",
+        "why_easy": "Installation is straightforward (GitHub app with one click or a simple GitHub action YAML addition), with no code changes required, and the issue author even offers to handle the PR implementation"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66593,
+      "title": "BUG: memory_usage(deep=True) under-reports by ~4x for arrow-backed string Index once the engine is built",
+      "url": "https://github.com/pandas-dev/pandas/issues/66593",
+      "created_at": "2026-08-01T18:41:35Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix memory_usage(deep=True) to account for engine-owned object arrays and PyUnicode objects in string indices",
+        "why_easy": "Root causes and fix locations are clearly identified, but requires careful coordination across engine/hashtable systems to avoid double-counting in object dtype"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66588,
+      "title": "BUG: DataFrame.stack raises a bare AssertionError when level contains duplicate entries",
+      "url": "https://github.com/pandas-dev/pandas/issues/66588",
+      "created_at": "2026-08-01T17:33:53Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "DataFrame.stack raises bare AssertionError instead of informative error when level parameter contains duplicates",
+        "why_easy": "Root cause is clearly identified with two simple fix options (raise ValueError or deduplicate); main effort is choosing which approach, then minimal code changes to implement it"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66579,
+      "title": "BUG: read_excel(engine=\"odf\") ignores office:value on <table:covered-table-cell>",
+      "url": "https://github.com/pandas-dev/pandas/issues/66579",
+      "created_at": "2026-08-01T14:24:42Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix read_excel(engine=\"odf\") to read office:value from covered table cells in array formulas instead of treating them as always empty.",
+        "why_easy": "The root cause is clearly identified in _odfreader.py's get_sheet_data method with a reproducible example; the fix likely requires only changing the conditional logic to call _get_cell_value() for covered cells, plus adding a test case."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32168,
+      "title": "BUG: concurrent iterative lstsq calls are non-deterministic with OpenBLAS",
+      "url": "https://github.com/numpy/numpy/issues/32168",
+      "created_at": "2026-08-02T05:10:34Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Concurrent calls to np.linalg.lstsq produce non-deterministic results when using OpenBLAS with free-threaded Python",
+        "why_easy": "Requires deep expertise in LAPACK, OpenBLAS threading, and NumPy's BLAS bindings; root cause is unclear and may involve cross-project coordination with OpenBLAS"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34628,
+      "title": "Support custom per-class decision thresholds and a rejection option in `sklearn.metrics.confusion_matrix` and `sklearn.metrics.ConfusionMatrixDisplay`.",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34628",
+      "created_at": "2026-08-01T18:23:17Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add support for custom per-class decision thresholds and a rejection option (unassigned class) to confusion_matrix and ConfusionMatrixDisplay",
+        "why_easy": "Multiple interdependent changes needed across core functions, requires resolving design questions about rejection handling in multi-class scenarios, and needs comprehensive testing\u2014best tackled after design review, not suitable for newcomers"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45386,
+      "title": "LT563250034598934008 revoluta bank",
+      "url": "https://github.com/github/docs/issues/45386",
+      "created_at": "2026-08-02T04:10:40Z",
+      "digest_date": "2026-08-02",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Claims to contribute documentation for Revolut bank integration, but is spam or a malformed issue containing only a checklist of requirements with no actual content",
+        "why_easy": "Trivially easy to close as spam or invalid\u2014contains only the contribution guidelines checklist, no actual documentation proposal or problem description"
       }
     }
   ]
