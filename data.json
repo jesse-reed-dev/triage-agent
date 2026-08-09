@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06",
+  "updated": "2026-08-08",
   "issues": [
     {
       "repo": "react/react-native",
@@ -13799,6 +13799,801 @@
         "good_first_issue": false,
         "one_line_summary": "Modernize the Pull Requests reference documentation with current UI descriptions, auto-merge examples, gh CLI snippets, and troubleshooting guidance.",
         "why_easy": "Contributor offers a patch, but the scope spans multiple doc sections and requires verifying current GitHub behavior."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57867,
+      "title": "[Android] android:navigationBarColor is not respected in RN version 0.86.0",
+      "url": "https://github.com/react/react-native/issues/57867",
+      "created_at": "2026-08-08T14:36:56Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "android:navigationBarColor attribute in styles.xml is ignored after upgrading to React Native 0.86.0",
+        "why_easy": "Lacks a mandatory reproducer and maintainers have requested author feedback before work can proceed; fixing Android theme regressions requires deep knowledge of React Native's native layer."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57863,
+      "title": "Appearance.setColorScheme() crashes any CarPlay app: RCTAppearance sends `windows` to every connected scene",
+      "url": "https://github.com/react/react-native/issues/57863",
+      "created_at": "2026-08-08T00:14:25Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix crash in Appearance.setColorScheme() when a CarPlay scene is connected by filtering scene types before accessing windows property",
+        "why_easy": "The root cause is precisely identified, a tested production fix is provided in the issue, and the scope is limited to one method with straightforward reproduction steps"
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57862,
+      "title": "[Android][Fabric] Fatal \"Cannot remove child at index\" \u2014 focus re-request inside ViewGroup.removeViewInternal throws \"descendant of this view\" during Fabric removal (0.86.0)",
+      "url": "https://github.com/react/react-native/issues/57862",
+      "created_at": "2026-08-07T16:12:50Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Removing a focused view with accessibility service enabled crashes with IllegalStateException due to an accessibility event accessing a partially-detached child",
+        "why_easy": "Requires deep Android/Fabric internals knowledge, careful pattern-matching to an existing fix (#56182), and testing with accessibility services enabled\u2014beyond typical first-issue scope"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48677,
+      "title": "Expo go AppleAuthentication (apple-authentication) broken in sdk 57.0.0",
+      "url": "https://github.com/expo/expo/issues/48677",
+      "created_at": "2026-08-08T22:45:50Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "AppleAuthentication component fails with 'unimplemented component' error in SDK 57.0.0",
+        "why_easy": "Specific error suggests a module registration issue that could be quick to fix, but requires native iOS expertise and understanding of Expo's internals, plus the reporter provided minimal debugging info."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48670,
+      "title": "image-size reaches the production closure via @expo/cli and has two high advisories with no published fix",
+      "url": "https://github.com/expo/expo/issues/48670",
+      "created_at": "2026-08-08T14:37:14Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Remove high-severity unpatched `image-size` vulnerabilities from production dependency closure by relocating build-time-only dependencies",
+        "why_easy": "Requires deep knowledge of Expo's multi-package architecture and dependency resolution; moving build-time tooling out of production involves significant cross-package refactoring across @expo/cli, @expo/metro, and @expo/metro-runtime"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48667,
+      "title": "expo-doctor reports optional peer dependency as required",
+      "url": "https://github.com/expo/expo/issues/48667",
+      "created_at": "2026-08-08T00:06:38Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "expo-doctor should respect optional peer dependencies declared in peerDependenciesMeta instead of reporting them as required",
+        "why_easy": "The fix is localized to peer dependency validation logic and only requires adding a check for the optional flag in peerDependenciesMeta; the npm standard is well-established and the reproduction steps are clear."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48666,
+      "title": "React-Native Modal causes universal components to vanish/shift out of view",
+      "url": "https://github.com/expo/expo/issues/48666",
+      "created_at": "2026-08-07T22:45:56Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Modal component nested inside a custom component causes sibling form components to disappear or shift out of view",
+        "why_easy": "Has a clear MRE and reproduction steps, but requires understanding React Native Modal's layout effects and how component composition interacts with modal positioning"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48664,
+      "title": "[iOS][expo-ui] Build fails with use_frameworks dynamic: 'React/RCTSurfaceTouchHandler.h' file not found",
+      "url": "https://github.com/expo/expo/issues/48664",
+      "created_at": "2026-08-07T20:15:50Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "ExpoUI fails to compile with iOS dynamic frameworks because it's missing the header search path for React-RCTFabric",
+        "why_easy": "Well-diagnosed with reference code available in ExpoModulesCore.podspec, but requires iOS/CocoaPods expertise and investigation\u2014the reporter's fix attempt didn't work as expected"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48658,
+      "title": "[expo-image-picker][iOS] Video fast path can't fall back as documented, and handleLivePhoto still passes options: nil",
+      "url": "https://github.com/expo/expo/issues/48658",
+      "created_at": "2026-08-07T17:14:28Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix video export error handling fallback and extend network download support to Live Photos.",
+        "why_easy": "The issue identifies exact locations and includes a concrete code fix, but requires Swift/iOS-specific knowledge of async/await error handling and PHAssetResourceManager APIs that most contributors won't have."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48653,
+      "title": "Overlapping reloads leave multiple Hermes runtimes alive; expo-modules-core crashes with SIGSEGV in ModuleHolder.init",
+      "url": "https://github.com/expo/expo/issues/48653",
+      "created_at": "2026-08-07T16:04:51Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Race condition where overlapping reloads create multiple concurrent Hermes runtimes, causing SIGSEGV when expo-modules-core initializes modules against a destroyed runtime.",
+        "why_easy": "Requires deep expertise in React Native's reload threading model, native iOS development, Hermes runtime lifecycle, and synchronization across multiple codebases; the race is timing-dependent and difficult to reproduce reliably without the repro setup."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329790,
+      "title": "\"command\": \"revealFileInOS\" - doesn't work within devcontainer",
+      "url": "https://github.com/microsoft/vscode/issues/329790",
+      "created_at": "2026-08-09T02:26:51Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The revealFileInOS command and its context menu entry don't work inside dev containers, though they function outside them.",
+        "why_easy": "Requires understanding VS Code's dev container/remote file path translation layer and likely involves cross-boundary filesystem handling between host and container, beyond simple command logic."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329789,
+      "title": "'<' and '>' are not colored correctly in left shift assignment and right shift assignment",
+      "url": "https://github.com/microsoft/vscode/issues/329789",
+      "created_at": "2026-08-09T01:26:55Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Syntax highlighting incorrectly treats < and > in shift assignment operators (<<= and >>=) as JSX brackets in TypeScript JSX files",
+        "why_easy": "Requires understanding VS Code's TextMate grammar system and finding where operator tokenization rules need adjustment \u2014 not something a first-time contributor would typically have context for, but doable with research into grammar files."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329787,
+      "title": "Agents: Allow All can still show Open Browser Page confirmation",
+      "url": "https://github.com/microsoft/vscode/issues/329787",
+      "created_at": "2026-08-08T22:56:32Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Allow All permission setting doesn't suppress the Open Browser Page confirmation modal in headless execution contexts",
+        "why_easy": "Root cause is documented but requires understanding VSCode's agent architecture and ensuring pre-approval flags propagate through the headless invocation path."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329785,
+      "title": "How To Turn off Suggestions",
+      "url": "https://github.com/microsoft/vscode/issues/329785",
+      "created_at": "2026-08-08T22:32:00Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "User wants to disable suggestions in VS Code",
+        "why_easy": "Issue is vague with info-needed label; unclear which suggestions to disable makes scope ambiguous"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329781,
+      "title": "Agents window: Support editor tab display modes in the single-pane layout",
+      "url": "https://github.com/microsoft/vscode/issues/329781",
+      "created_at": "2026-08-08T21:25:52Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Make the Agents window's single-pane layout respect the workbench.editor.showTabs setting for controlling tab display modes",
+        "why_easy": "Requires deep integration of Agents window layout with core VS Code tab architecture, handling six verification scenarios with complex edge cases around visibility, header rendering, and breadcrumb display that demand understanding of both systems."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329779,
+      "title": "Changes view mode action is missing for single-file diff editors",
+      "url": "https://github.com/microsoft/vscode/issues/329779",
+      "created_at": "2026-08-08T21:23:56Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Single-file diff editors in the Agents window are missing the View mode toggle action available in multi-file Changes editors",
+        "why_easy": "The action already exists elsewhere and likely just needs to be registered in an additional context, but requires navigating VS Code's large codebase and understanding the action registration system"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329777,
+      "title": "Debug: \"Add to Chat\" on a stack frame with column 0 (per-spec \"unknown\") corrupts Range and permanently poisons the chat session",
+      "url": "https://github.com/microsoft/vscode/issues/329777",
+      "created_at": "2026-08-08T20:34:12Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Fix Range construction in debug stack frames when column value is 0 (per-spec 'unknown'), which corrupts chat session",
+        "why_easy": "Root cause is precisely identified in Thread.getCallStackImpl(); fix likely requires simple validation to handle column: 0 per DAP spec rather than passing raw values to Range constructor"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329776,
+      "title": "Support awaited cleanup before agent-created worktrees are removed",
+      "url": "https://github.com/microsoft/vscode/issues/329776",
+      "created_at": "2026-08-08T20:28:09Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add awaited cleanup task lifecycle (worktreeRemoving) or extension API to manage resource cleanup before agent-created worktrees are removed",
+        "why_easy": "Requires deep knowledge of VS Code's worktree/agent lifecycle, task system, and extension APIs; would need coordinated changes across multiple subsystems and careful handling of timeouts and edge cases."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329773,
+      "title": "Test: Copilot CLI Extension Host -> Copilot SDK Agent Host migration",
+      "url": "https://github.com/microsoft/vscode/issues/329773",
+      "created_at": "2026-08-08T19:31:21Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "test",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Execute a comprehensive E2E test plan for migrating legacy Copilot CLI sessions from extension host to Agent Host.",
+        "why_easy": "Hard: requires deep VS Code architecture knowledge, multi-platform testing setup, and Copilot CLI infrastructure familiarity that external contributors likely lack."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329772,
+      "title": "`git.d.ts`: Module '\"vscode\"' has no exported member 'SourceControlHistoryItem'",
+      "url": "https://github.com/microsoft/vscode/issues/329772",
+      "created_at": "2026-08-08T19:30:43Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Remove an unused import of 'SourceControlHistoryItem' that doesn't exist in vscode types",
+        "why_easy": "The import is unused and the type is non-existent\u2014deletion is a one-line fix with trivial validation via compilation."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 96982,
+      "title": "Turbopack: `watchOptions.pollIntervalMs` permanently drops file edits on Windows",
+      "url": "https://github.com/vercel/next.js/issues/96982",
+      "created_at": "2026-08-08T23:30:22Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Turbopack's polling watcher on Windows silently drops file edits, especially those following rapid successive changes.",
+        "why_easy": "Hard to pick up: requires deep Turbopack file-watching knowledge, Windows access for testing, and understanding of subtle timing behavior; the reporter notes instrumentation inside Turbopack is needed to debug the root cause."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 96966,
+      "title": "Next.js dynamic `/sitemap` route conflicts with `sitemap.ts`",
+      "url": "https://github.com/vercel/next.js/issues/96966",
+      "created_at": "2026-08-08T08:53:30Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Dynamic /sitemap route conflicts with Next.js's built-in sitemap.ts metadata handler, causing 500 error instead of rendering the dynamic route.",
+        "why_easy": "Requires deep knowledge of Next.js route resolution, metadata routing, and Turbopack integration to safely fix without introducing regressions."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 96965,
+      "title": "Segment cache: sibling PPR route prefetches are permanently dropped after a same-tick batch (starved task resolves against fallback entry)",
+      "url": "https://github.com/vercel/next.js/issues/96965",
+      "created_at": "2026-08-08T07:24:31Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix PPR segment cache scheduler so that bandwidth-starved prefetch tasks fetch their per-URL data instead of resolving against fallback entries",
+        "why_easy": "Requires deep knowledge of PPR segment cache scheduler, task bandwidth management, and cache state resolution logic; excellent reproduction case helps but the subsystem is complex with high regression risk"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 96961,
+      "title": "`@next/playwright instant()` clears testing cookies for other origins",
+      "url": "https://github.com/vercel/next.js/issues/96961",
+      "created_at": "2026-08-08T05:26:05Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "@next/playwright's instant() method incorrectly clears testing cookies for all origins instead of just the one being tested",
+        "why_easy": "Clear reproduction with isolated scope, but requires understanding Playwright's cookie API and how cookies are scoped by origin/domain to fix the filtering logic"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 96960,
+      "title": "build(next-swc) fails on Linux with glibc < 2.29 (e.g. RHEL 8)",
+      "url": "https://github.com/vercel/next.js/issues/96960",
+      "created_at": "2026-08-08T05:11:19Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Next.js build fails on Linux with glibc < 2.29 (RHEL 8, Debian 10) because native SWC bindings require newer glibc and WASM fallback doesn't support Turbopack.",
+        "why_easy": "Hard because fixing requires expertise in native module compilation, glibc compatibility, and SWC infrastructure\u2014solutions involve either recompiling SWC for older glibc or implementing fallback logic, neither of which is straightforward for a new contributor."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23197,
+      "title": "Regression in 8.2: Vitest `setupFiles` fails with \"Cannot find module\" across Windows drive symlinks",
+      "url": "https://github.com/vitejs/vite/issues/23197",
+      "created_at": "2026-08-07T19:43:06Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Vitest setupFiles configuration fails to resolve modules when project is accessed via cross-drive Windows symlinks in Vite 8.2+",
+        "why_easy": "Requires Windows-specific symlink reproduction environment unavailable to most contributors, and involves subtle path resolution logic affected by PR #22832."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23195,
+      "title": "Dev CSS sourcemaps: `sources` are written against the wrong base",
+      "url": "https://github.com/vitejs/vite/issues/23195",
+      "created_at": "2026-08-07T11:47:32Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "CSS dev sourcemaps emit `sources` with inconsistent base conventions depending on the code path and context, breaking source resolution in some scenarios.",
+        "why_easy": "Hard: requires deep understanding of sourcemap spec, coordination across multiple CSS transformer code paths (postcss/lightningcss), multiple injection contexts (style tags, URL-served CSS), and careful testing across different page bases to avoid regressions."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35810,
+      "title": "[Bug]: HMR performance regression on large repos when upgrading from 10.4.6 to 10.5.5",
+      "url": "https://github.com/storybookjs/storybook/issues/35810",
+      "created_at": "2026-08-08T00:17:08Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "HMR performance regression in v10.5.5 caused by ModuleGraphEngine always rebuilding the complete reverse index instead of only for changed story files",
+        "why_easy": "The issue author has thoroughly diagnosed root causes, pinpointed exact code paths with links, and provided a reproduction repo with instrumentation and a draft PR, but implementing a correct fix requires deep knowledge of module graph internals and careful coordination across multiple interconnected systems."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35792,
+      "title": "[Bug]: experimentalDocgenServer crashes with TypeScript 7.x \u2014 ts.sys is undefined in docgen worker",
+      "url": "https://github.com/storybookjs/storybook/issues/35792",
+      "created_at": "2026-08-07T09:30:47Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix TypeScript 7.x compatibility in docgen worker where dynamic import returns only version info instead of full compiler API",
+        "why_easy": "Root cause is well-identified and fix location pinpointed, but requires handling multiple TypeScript versions correctly and testing across both old and new export maps"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69446,
+      "title": "Clarify lack of bug support on archived course pages",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69446",
+      "created_at": "2026-08-09T03:01:14Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": true,
+        "one_line_summary": "Hide or modify the 'Ask for help' button on archived course challenge pages and clarify in course notices that no support is provided for archived content",
+        "why_easy": "The changes are straightforward UI/messaging modifications with clear requirements, but require navigating freeCodeCamp's codebase to locate and update multiple components (archived course landing page and challenge page templates)"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69421,
+      "title": "Trivia Bot lab hints hard-code console.log call indices, breaking valid solutions with extra logging",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69421",
+      "created_at": "2026-08-08T03:58:27Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Replace hard-coded console.log index checks in Trivia Bot lab hints with flexible existence checks to allow extra logging during development",
+        "why_easy": "The fix is mechanical and well-scoped: swap ~7 hard-coded index assertions to assert.include() calls in a single file, with concrete examples and clear acceptance criteria provided."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29933,
+      "title": "adapter-better-sqlite3: a single SQLITE_BUSY at COMMIT permanently breaks all subsequent transactions and silently loses acknowledged writes",
+      "url": "https://github.com/prisma/prisma/issues/29933",
+      "created_at": "2026-08-08T22:45:39Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "A single SQLITE_BUSY error during transaction COMMIT permanently breaks all subsequent transactions and silently loses acknowledged writes due to missing SQL statements and uncleanedmutexes.",
+        "why_easy": "The problem is clearly diagnosed with a minimal reproduction, but fixing it requires deep understanding of SQLite transaction semantics and careful async error handling with mutexes\u2014with data loss at stake, making it unsuitable for new contributors and risky to get wrong."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29932,
+      "title": "bug(query): db.sql orderBy() accepts a nulls option that never reaches the SQL",
+      "url": "https://github.com/prisma/prisma/issues/29932",
+      "created_at": "2026-08-08T14:51:57Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "orderBy() accepts a nulls option in its type signature but silently ignores it at runtime instead of generating NULLS FIRST/NULLS LAST SQL clauses",
+        "why_easy": "Hard because the fix spans multiple architectural layers (type definitions, AST structure, query builder, SQL generation) and requires understanding how Prisma threads options through its codegen pipeline, though the scope itself is well-defined and has two clear solution paths"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29929,
+      "title": "@prisma/client peer-depends on prisma, forcing Studio/CLI (~200MB) into production node_modules",
+      "url": "https://github.com/prisma/prisma/issues/29929",
+      "created_at": "2026-08-07T22:12:01Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Make the prisma CLI peer dependency optional to prevent ~200MB of unused Studio and CLI tooling from bloating production node_modules",
+        "why_easy": "Hard: requires deep understanding of Prisma's client/CLI architecture, peer dependency mechanics, production build testing, and likely needs maintainer coordination on the fix approach"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 29923,
+      "title": "CLI introspect() should pass schema option through to family/adapter layer",
+      "url": "https://github.com/prisma/prisma/issues/29923",
+      "created_at": "2026-08-07T14:59:22Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Thread the schema option from CLI client through family and adapter layers to enable introspecting non-default PostgreSQL schemas",
+        "why_easy": "The adapter already supports schema; this is purely parameter threading through known, identified code paths with no new business logic"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48877,
+      "title": "Auth email templates: Extra brace sneaks past without any warnings making magic links only use default url",
+      "url": "https://github.com/supabase/supabase/issues/48877",
+      "created_at": "2026-08-08T20:59:30Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add validation for email templates at save time to catch syntax errors instead of failing silently at send time.",
+        "why_easy": "The validation logic is straightforward, but the fix requires understanding how the dashboard communicates with GoTrue and may need a new backend endpoint."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48876,
+      "title": "www: any edit to data/products/functions/page.tsx panics the typechecker",
+      "url": "https://github.com/supabase/supabase/issues/48876",
+      "created_at": "2026-08-08T15:51:01Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "TypeScript type checker panics when editing apps/www/data/products/functions/page.tsx due to a non-portable inferred export type",
+        "why_easy": "Reproduction is clear and well-isolated, but identifying the problematic export requires TypeScript compiler knowledge and possibly upstream coordination"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48873,
+      "title": "My project is currently stuck in a locked/restricted state on the free tier.",
+      "url": "https://github.com/supabase/supabase/issues/48873",
+      "created_at": "2026-08-08T14:21:25Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Project remains locked on free tier even after monthly usage reset, preventing resumption of services",
+        "why_easy": "This is a backend state management issue requiring deep knowledge of Supabase's free tier pause/resume logic and database access that external contributors lack, making it nearly impossible to diagnose independently."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48872,
+      "title": "My project is currently stuck in a locked/restricted state on the free tier.",
+      "url": "https://github.com/supabase/supabase/issues/48872",
+      "created_at": "2026-08-08T14:20:48Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Project remains locked after free tier usage resets despite metrics showing zero, blocking resume action",
+        "why_easy": "This requires deep knowledge of Supabase's free tier lock state management and database synchronization; the issue lacks reproduction steps and technical details needed for external contributors to debug independently."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48870,
+      "title": "Database Webhooks fail \u2014 \"schema supabase_functions does not exist\"",
+      "url": "https://github.com/supabase/supabase/issues/48870",
+      "created_at": "2026-08-08T11:53:15Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Database Webhooks fail when the `supabase_functions` schema is missing from the database",
+        "why_easy": "The error is clear and the fix likely involves ensuring the schema is created during project initialization, but it requires understanding Supabase's internal database setup flow and determining why some projects lack the schema despite having pg_net enabled"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48867,
+      "title": "Auth redirect_to allow-list not honored for path/wildcard entries",
+      "url": "https://github.com/supabase/supabase/issues/48867",
+      "created_at": "2026-08-08T03:19:04Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Auth generateLink() ignores configured redirect URLs for paths and wildcards, silently reverting to bare Site URL instead",
+        "why_easy": "Excellent reproduction case with step-by-step evidence, but requires understanding Supabase's auth config loading and redirect URL matching logic across multiple subsystems"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48862,
+      "title": "SQL Editor doesn't report affected row count for UPDATE/DELETE",
+      "url": "https://github.com/supabase/supabase/issues/48862",
+      "created_at": "2026-08-07T22:22:47Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "SQL Editor should display the number of rows affected by UPDATE/DELETE statements instead of showing 'No rows returned'",
+        "why_easy": "Well-scoped with an identified frontend component, but the issue itself notes the backend API may need changes to surface the affected-row count that PostgreSQL provides, adding implementation uncertainty"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48859,
+      "title": "Error: Connection terminated unexpectedly",
+      "url": "https://github.com/supabase/supabase/issues/48859",
+      "created_at": "2026-08-07T17:07:23Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Cloudflare Workers connection to Supabase pooler fails with 'Connection terminated unexpectedly' error when using third-party query builder",
+        "why_easy": "Hard \u2014 no reproduction steps or error stack trace, missing system details, unclear if this is a pooler bug vs. QB library incompatibility vs. configuration issue, would require extensive back-and-forth debugging"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48854,
+      "title": "Ten images referenced from apps/www are not committed and 404 in production",
+      "url": "https://github.com/supabase/supabase/issues/48854",
+      "created_at": "2026-08-07T15:42:25Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add missing image assets to marketing pages or remove their references to fix 404 errors",
+        "why_easy": "The detective work identifying all missing images is complete, but fixing requires either sourcing artwork or design decisions that should involve maintainers\u2014not independent contributor work"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48853,
+      "title": "Our read replica is running a newer OS image than the primary",
+      "url": "https://github.com/supabase/supabase/issues/48853",
+      "created_at": "2026-08-07T15:16:38Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Read replicas are provisioned on newer OS images than the primary, causing collation version mismatches that corrupt index scans.",
+        "why_easy": "This is hard: requires expert knowledge of PostgreSQL replication, collation internals, and Supabase's managed infrastructure provisioning; involves multiple systems (OS image selection, replica bootstrap, upgrade sequencing) and touches data correctness."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51310,
+      "title": "Provide a built-in Actuator drain endpoint for Kubernetes preStop hook polling",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51310",
+      "created_at": "2026-08-07T10:30:48Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add a built-in Actuator endpoint for Kubernetes preStop hooks to poll when async application work is complete",
+        "why_easy": "Requires deep understanding of Spring Boot's SmartLifecycle, Actuator infrastructure, and shutdown ordering; involves significant architectural decisions (new SPI, default implementations, integration points) that would need maintainer review and iteration"
+      }
+    },
+    {
+      "repo": "pallets/flask",
+      "number": 6123,
+      "title": "`stream_with_context`: abandoned generator leaves the app context current on the worker thread; later requests skip `teardown_appcontext`",
+      "url": "https://github.com/pallets/flask/issues/6123",
+      "created_at": "2026-08-08T15:15:19Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix app context cleanup in `stream_with_context` when generators are abandoned and garbage-collected on different threads, preventing context leakage and broken teardown hooks.",
+        "why_easy": "Requires deep understanding of Flask's ContextVar system, cross-thread cleanup semantics, and garbage collection finalizers \u2014 prior similar fixes (#5774, #5804) indicate this pattern is complex to resolve correctly."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66657,
+      "title": "BUG: read_csv (c engine) heap buffer overflow on short rows before a wide field",
+      "url": "https://github.com/pandas-dev/pandas/issues/66657",
+      "created_at": "2026-08-08T12:17:23Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix heap buffer overflow in read_csv C engine when short rows with synthetic NUL terminators precede a wide field",
+        "why_easy": "Hard: requires deep knowledge of the C parser's stream buffering strategy in performance-critical code; memory safety bugs are error-prone; despite the clear root-cause analysis, fixing it risks regressions without thorough understanding of tokenizer.cpp's reservation logic."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66656,
+      "title": "BUG: Passing a tuple at creation for 1-d  index in df is fine but rename_axis with tuple fails",
+      "url": "https://github.com/pandas-dev/pandas/issues/66656",
+      "created_at": "2026-08-08T01:35:13Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Creating an Index with a tuple name works, but rename_axis() fails with the same tuple, creating an inconsistency.",
+        "why_easy": "The bug is clearly reproducible with a simple example, but fixing it requires finding and understanding where index name validation differs between index creation and rename_axis in the codebase."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32219,
+      "title": "BUG: Integer overflow in stride \u00d7 step/index multiplication causes segfault during array indexing",
+      "url": "https://github.com/numpy/numpy/issues/32219",
+      "created_at": "2026-08-07T12:51:05Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Guard stride \u00d7 index/step multiplications against integer overflow in array indexing to prevent segfaults with large-stride arrays",
+        "why_easy": "Hard to pick up: requires expert C knowledge and NumPy internals expertise; memory-safe stride arithmetic with comprehensive testing across multiple indexing paths despite clear reproduction cases and suggested fix pattern."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34675,
+      "title": "Can't `transform_input` for `fit_params` in `fit`",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34675",
+      "created_at": "2026-08-07T13:21:22Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Custom estimators accepting fit_params via **kwargs can't use Pipeline's transform_input metadata routing because set_fit_request and routing don't handle dynamic fit parameters.",
+        "why_easy": "The reproduction is minimal and well-documented with three attempted approaches, but the fix requires understanding scikit-learn's metadata routing system and how Pipeline routes fit parameters\u2014the issue itself is marked 'not yet ready for a PR' and needs triage to clarify the intended solution."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34673,
+      "title": "Zero `sample_weight` raises ValueError in IsolationForest and Bagging estimators when bootstrap=False",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34673",
+      "created_at": "2026-08-07T09:03:06Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "IsolationForest and Bagging with bootstrap=False raise ValueError when sample_weight contains zeros, despite zero-weighting being the documented way to exclude samples",
+        "why_easy": "Clear minimal reproduction, well-explained root cause in _generate_bagging_indices, concrete 4-line fix provided in the issue, and existing test suite to verify the fix"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34672,
+      "title": "PCA does not discard singular values equal to zero",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34672",
+      "created_at": "2026-08-07T08:34:06Z",
+      "digest_date": "2026-08-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "PCA should discard components corresponding to zero or near-zero singular values instead of including them as numerical noise.",
+        "why_easy": "The problem is well-defined with a clear reproducible example, but it requires careful decisions about numerical thresholds, backward compatibility implications, and testing across edge cases in a core algorithm."
       }
     }
   ]
