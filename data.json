@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08",
+  "updated": "2026-08-09",
   "issues": [
     {
       "repo": "react/react-native",
@@ -14594,6 +14594,321 @@
         "good_first_issue": false,
         "one_line_summary": "PCA should discard components corresponding to zero or near-zero singular values instead of including them as numerical noise.",
         "why_easy": "The problem is well-defined with a clear reproducible example, but it requires careful decisions about numerical thresholds, backward compatibility implications, and testing across edge cases in a core algorithm."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329816,
+      "title": "Source control undo error",
+      "url": "https://github.com/microsoft/vscode/issues/329816",
+      "created_at": "2026-08-09T09:38:23Z",
+      "digest_date": "2026-08-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Modal dialog for discarding changes in source control panel appears then automatically disappears without awaiting user input",
+        "why_easy": "Lacks reproduction steps and minimal detail; debugging a modal that dismisses itself requires understanding VS Code's state management and timing, making it difficult for a new contributor to even trigger the bug reliably"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329815,
+      "title": "Custom Endpoint model is missing from Chats agent session model picker",
+      "url": "https://github.com/microsoft/vscode/issues/329815",
+      "created_at": "2026-08-09T09:34:55Z",
+      "digest_date": "2026-08-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Custom Endpoint models configured in Manage Models don't appear in the Chats Agent session model picker despite having tool calling and vision capabilities enabled.",
+        "why_easy": "The issue is well-reproduced with clear steps and diagnostic logs showing the model isn't included in available models, but fixing it requires understanding the Agent session-specific model filtering/capability-checking logic in the VS Code Copilot Chat extension."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329814,
+      "title": "No IntelliSense suggestions for rel attribute values in <link> element",
+      "url": "https://github.com/microsoft/vscode/issues/329814",
+      "created_at": "2026-08-09T09:32:07Z",
+      "digest_date": "2026-08-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "IntelliSense should provide suggestions for standard rel attribute values in <link> HTML elements.",
+        "why_easy": "VS Code already provides IntelliSense for other HTML attributes, so this is likely a missing data entry (e.g., in an HTML schema or completions file) rather than a missing feature\u2014well-scoped and suitable for learning the codebase."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329812,
+      "title": "apply_patch rejects multiple update blocks for the same file, which openai models try to do a lot",
+      "url": "https://github.com/microsoft/vscode/issues/329812",
+      "created_at": "2026-08-09T08:51:57Z",
+      "digest_date": "2026-08-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "apply_patch should allow multiple non-overlapping edits to the same file instead of rejecting them as duplicate paths",
+        "why_easy": "The problem is clearly defined and well-documented, but implementing overlap detection between patch regions and handling patch ordering logic requires understanding VS Code's patch semantics and involves non-trivial validation that could affect core edit functionality."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329811,
+      "title": "Integrated browser and media: product libffmpeg.so is missing AAC (and breaks MP4/audio playback)",
+      "url": "https://github.com/microsoft/vscode/issues/329811",
+      "created_at": "2026-08-09T07:27:11Z",
+      "digest_date": "2026-08-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code's shipped FFmpeg library lacks AAC decoder support, breaking audio playback in the integrated browser",
+        "why_easy": "Root cause is proven (incomplete FFmpeg missing decoders), but implementing the fix requires understanding VS Code's build pipeline and testing full product rebuilds across platforms."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329807,
+      "title": "make vscode copilot  Compatible with `.agents Protocol`",
+      "url": "https://github.com/microsoft/vscode/issues/329807",
+      "created_at": "2026-08-09T06:10:42Z",
+      "digest_date": "2026-08-09",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add support for `.agents` and `rules` from the `.agents` protocol to VSCode Copilot",
+        "why_easy": "The issue lacks technical specification, concrete examples, and clear acceptance criteria; implementing protocol support in a massive enterprise codebase would require deep knowledge of both the `.agents` spec and VSCode Copilot's architecture, making it unclear where to start and what done looks like."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329806,
+      "title": "Copilot completion feedback",
+      "url": "https://github.com/microsoft/vscode/issues/329806",
+      "created_at": "2026-08-09T05:54:44Z",
+      "digest_date": "2026-08-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "User reports issue with Copilot completion feedback but provides no description of the actual problem",
+        "why_easy": "Issue is incomplete and lacks any problem description, steps to reproduce, or expected behavior \u2014 a contributor cannot act on it without requesting more information from the reporter"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329805,
+      "title": "Markdown preview: code block copy button scrolls with content on horizontal overflow",
+      "url": "https://github.com/microsoft/vscode/issues/329805",
+      "created_at": "2026-08-09T05:45:27Z",
+      "digest_date": "2026-08-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Markdown preview code block copy button scrolls horizontally with content instead of staying pinned to the top-right corner",
+        "why_easy": "The issue precisely identifies the problematic CSS file and root cause (position: absolute in a scrollable container), the fix is a straightforward CSS positioning change, and reproduction is trivial with any markdown file containing a wide code block."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329803,
+      "title": "VS Code Source Control cannot detect Git repository, but Git works in terminal",
+      "url": "https://github.com/microsoft/vscode/issues/329803",
+      "created_at": "2026-08-09T05:40:26Z",
+      "digest_date": "2026-08-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code Source Control fails to detect valid Git repositories on Windows despite Git working in terminal",
+        "why_easy": "Root cause is unclear\u2014could involve path handling, Git executable discovery, or Windows-specific environment issues; requires debugging the Git extension's repository detection logic."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329801,
+      "title": "Extension causes high cpu load",
+      "url": "https://github.com/microsoft/vscode/issues/329801",
+      "created_at": "2026-08-09T05:15:25Z",
+      "digest_date": "2026-08-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "copilot-chat extension v0.60.0 causes high CPU load on Windows, needs performance investigation via provided CPU profile.",
+        "why_easy": "This is marked info-needed and lacks reproduction steps, description, or accessible profile details\u2014it requires performance debugging expertise and back-and-forth with the reporter to diagnose the root cause."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329800,
+      "title": "Regression: Focus on <View> View commands are not searchable by English view name in localized UI",
+      "url": "https://github.com/microsoft/vscode/issues/329800",
+      "created_at": "2026-08-09T05:01:28Z",
+      "digest_date": "2026-08-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Fix localized command titles to preserve original English view names for searchability by English text in the command palette",
+        "why_easy": "The regression is clearly identified with the exact PR that broke it, and the working solution from the previous fix is shown\u2014just requires reverting to preserve viewDescriptor.name.original in the localization call."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 329796,
+      "title": "Agent Host session briefly appears twice while committing",
+      "url": "https://github.com/microsoft/vscode/issues/329796",
+      "created_at": "2026-08-09T03:49:42Z",
+      "digest_date": "2026-08-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Prevent duplicate session entries from briefly appearing in the Sessions list when a new Agent Host session is created",
+        "why_easy": "A draft PR (#329794) shows the fix approach, but requires understanding VSCode's session lifecycle and async race conditions to implement and verify correctly"
+      }
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 48941,
+      "title": "Accessibility conformance results for MUI, ahead of publication (five findings, three from one cause)",
+      "url": "https://github.com/mui/material-ui/issues/48941",
+      "created_at": "2026-08-09T11:17:31Z",
+      "digest_date": "2026-08-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix accessibility conformance violations in Menu and Accordion components per W3C ARIA standards, including Down Arrow keyboard handling and missing ARIA attributes",
+        "why_easy": "Well-researched with clear W3C references and offered contributor support, but requires accessibility domain expertise and keyboard event handling implementation that benefits from existing codebase familiarity."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69394,
+      "title": "Inaccurate threading statements and formatting problems in the Node advantages and disadvantages lesson",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69394",
+      "created_at": "2026-08-07T09:29:43Z",
+      "digest_date": "2026-08-09",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix five text corrections in a Node.js curriculum lesson: title case, threading accuracy, async terminology, and straight vs curly quotes",
+        "why_easy": "Issue provides exact current text and expected replacements for each fix, all are localized find-and-replace operations with no logic or research needed"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69393,
+      "title": "Content and formatting problems in the What is Node lesson of the Introduction to Node.js module",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69393",
+      "created_at": "2026-08-07T09:29:32Z",
+      "digest_date": "2026-08-09",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix formatting, grammar, code formatting, and factual accuracy issues in the Node.js introduction lesson",
+        "why_easy": "All required changes are explicitly specified with exact before/after text; pure content edits requiring no code changes"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69392,
+      "title": "Missing test, incomplete hint, and stray assertion arguments in the Build a Mood Board lab",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69392",
+      "created_at": "2026-08-07T08:35:40Z",
+      "digest_date": "2026-08-09",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Remove stray assertion arguments, add a missing test for user story 9's mood-board wrapper, and update the user story 10 hint to specify that MoodBoardItem components must be within the .mood-board element.",
+        "why_easy": "The issue provides specific code examples of what to fix, clearly explains the expected behavior, and the three fixes are straightforward\u2014removing two arguments, adding a test following an existing pattern, and updating hint text."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69390,
+      "title": "Remove stray article before a code statement in Toggle Text App workshop Step 11",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69390",
+      "created_at": "2026-08-07T08:34:02Z",
+      "digest_date": "2026-08-09",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Remove the grammatically incorrect article 'the' before a code statement in Toggle Text App workshop Step 11",
+        "why_easy": "Single-word deletion in curriculum text with no code logic involved; the location and exact fix are clearly specified in the issue."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 48880,
+      "title": "Self-hosted Storage S3 presigned URLs break with \"InvalidSignature: Unsupported authorization type\" when a non-empty Authorization header is present",
+      "url": "https://github.com/supabase/supabase/issues/48880",
+      "created_at": "2026-08-09T11:03:34Z",
+      "digest_date": "2026-08-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Kong's storage-v1 route fails to strip non-empty, non-SigV4 Authorization headers on presigned URL requests, causing 'Unsupported authorization type' errors",
+        "why_easy": "The root cause is clearly identified (Kong's Lua condition only strips empty headers), but fixing it requires understanding Kong, S3 presigned URLs, and Supabase Storage's signature handling to test and implement safely"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32229,
+      "title": "BUG: Building NumPy with MSVC 19.51 breaks silently at `/O2`, ICE at `/Od`",
+      "url": "https://github.com/numpy/numpy/issues/32229",
+      "created_at": "2026-08-09T07:14:37Z",
+      "digest_date": "2026-08-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add a compiler version check to disable broken MSVC 19.51 builtins (__builtin_isnan, __builtin_isinf, __builtin_isfinite) in npymath",
+        "why_easy": "The issue is well-diagnosed with clear symptoms and reproduction steps, but fixing it requires understanding NumPy's meson build system, adding compiler-version-specific conditional logic, and testing on Windows with the specific MSVC 19.51 toolchain\u2014a configuration most contributors won't have available."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45452,
+      "title": "llms.txt: API entries link bare endpoints that return 400 as linked",
+      "url": "https://github.com/github/docs/issues/45452",
+      "created_at": "2026-08-09T10:20:46Z",
+      "digest_date": "2026-08-09",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update three bare API endpoint links in llms.txt to include required query parameters so they return 200 instead of 400",
+        "why_easy": "The issue identifies exactly which three links are broken and provides the correct parameterized URLs that work; the fix is simply updating the link hrefs in a text file."
+      }
+    },
+    {
+      "repo": "EbookFoundation/free-programming-books",
+      "number": 13398,
+      "title": "Add resource: Learn Computer Academy Docs (Bengali) - free-programming-books-bn.md",
+      "url": "https://github.com/EbookFoundation/free-programming-books/issues/13398",
+      "created_at": "2026-08-09T05:25:39Z",
+      "digest_date": "2026-08-09",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add Learn Computer Academy Docs (Bengali) resource entry to the Web Development section of free-programming-books-bn.md",
+        "why_easy": "Contributor provided the exact formatted entry and placement, requiring only insertion into the correct alphabetical position with no validation, testing, or code changes needed"
       }
     }
   ]
