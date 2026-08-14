@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13",
+  "updated": "2026-08-14",
   "issues": [
     {
       "repo": "react/react-native",
@@ -15929,6 +15929,666 @@
         "good_first_issue": false,
         "one_line_summary": "Update outdated Swift CI tutorial examples to current versions and refresh setup-swift action pin",
         "why_easy": "Technical work is straightforward\u2014version numbers and SHA updates are find-and-replace\u2014but Inactive status and unresolved scoping question create coordination risk"
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57956,
+      "title": "Codegen flow and typescript parsers infinite loop caused by circular aliases",
+      "url": "https://github.com/react/react-native/issues/57956",
+      "created_at": "2026-08-13T20:35:48Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix infinite loop in type alias resolution when a type alias name matches its right-hand side value",
+        "why_easy": "Root cause is clearly identified and a working fix has been validated via monkey-patch, but implementation requires understanding recursive type resolution logic in both Flow and TS parsers and careful testing to avoid breaking legitimate type chains"
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57951,
+      "title": "Android Fabric crash: null pointer dereference in FabricUIManager::findNextFocusableElement when focusing TextInput inside ScrollView",
+      "url": "https://github.com/react/react-native/issues/57951",
+      "created_at": "2026-08-13T16:41:59Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix null pointer dereference in FabricUIManager::findNextFocusableElement when focusing TextInput inside ScrollView on Android Fabric",
+        "why_easy": "Hard because it's a native C++/JNI crash in React Native's Fabric architecture that lacks consistent reproduction, requiring deep knowledge of focus handling, ShadowTree internals, and Android NDK tooling."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57950,
+      "title": "Android Fabric text measurement uses Typeface.DEFAULT instead of the system default used for rendering, clipping last glyphs with bold system fonts",
+      "url": "https://github.com/react/react-native/issues/57950",
+      "created_at": "2026-08-13T16:22:58Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Android text measurement uses incorrect typeface when system default is bold, causing glyphs to be clipped",
+        "why_easy": "While the fix is identified and verified on real devices, implementation requires deep Android rendering knowledge and testing on devices with non-standard system fonts"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48929,
+      "title": "[docs] There is a command missing from the \"Set up your environment\" tutorial.",
+      "url": "https://github.com/expo/expo/issues/48929",
+      "created_at": "2026-08-14T11:28:21Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add missing npm install step to the Set up your environment tutorial for Android development builds",
+        "why_easy": "The fix is a straightforward addition of a single missing command to the tutorial documentation; the problem is clearly identified and the solution is obvious."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48910,
+      "title": "[expo-router] Navigation direction cannot be set without I18nManager \u2014 ExpoRoot never forwards `direction` to NavigationContainer",
+      "url": "https://github.com/expo/expo/issues/48910",
+      "created_at": "2026-08-13T22:15:38Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Forward `direction` prop from ExpoRoot to NavigationContainer to enable runtime RTL navigation without I18nManager",
+        "why_easy": "The code fix is straightforward (add and forward a prop), but requires iOS dev setup, understanding React Navigation's context system, and testing on simulator/device"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 330837,
+      "title": "Agent Sessions: GitHub MCP tools lost permanently after a credential failure \u2014 no retry, no reset path, no error surfaced",
+      "url": "https://github.com/microsoft/vscode/issues/330837",
+      "created_at": "2026-08-14T11:59:47Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Agent sessions permanently lose GitHub MCP tools after credential failure with no retry, reset path, or error surfacing",
+        "why_easy": "Hard: the root cause is well-isolated (credential handoff to --no-auto-login CLI fails and never retries), but the fix requires changes across multiple interconnected systems (IDE credential push, Copilot CLI retry logic, MCP lifecycle, and Agent Host architecture) plus deep understanding of agent session auth flow"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 330836,
+      "title": "Flashing dialog box",
+      "url": "https://github.com/microsoft/vscode/issues/330836",
+      "created_at": "2026-08-14T11:40:38Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Dialog boxes flash and disappear immediately on user's VS Code",
+        "why_easy": "Difficult-to-reproduce machine-specific rendering bug with multiple potential causes (GPU, drivers, extensions) and no clear debugging path"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 330835,
+      "title": "After VSCode update: Extension Claude Code reports: \"An error occurred while loading view: claudeVSCodeSessionsList\"",
+      "url": "https://github.com/microsoft/vscode/issues/330835",
+      "created_at": "2026-08-14T11:37:30Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Claude Code extension's sessions list view fails to load after VSCode update with error about 'claudeVSCodeSessionsList'",
+        "why_easy": "Error message pinpoints the failing view and reproduction is clear, but diagnosing VSCode extension compatibility issues requires understanding the extension's architecture and checking VSCode API changes between versions\u2014not beginner-friendly."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 330831,
+      "title": "Modern UI: Some panel parts use Sidebar colors instead of Panel colors",
+      "url": "https://github.com/microsoft/vscode/issues/330831",
+      "created_at": "2026-08-14T11:11:42Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": true,
+        "one_line_summary": "Fix panel components that incorrectly use sidebar color tokens instead of panel color tokens in modern UI mode",
+        "why_easy": "Clear reproduction steps with obvious visual symptoms; fix is straightforward token replacement, but requires searching the codebase to find all instances of incorrect tokens in panel UI code"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 330830,
+      "title": "Generate Commit Message button not working",
+      "url": "https://github.com/microsoft/vscode/issues/330830",
+      "created_at": "2026-08-14T11:09:28Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Generate Commit Message button shows loading animation but exits without generating a message.",
+        "why_easy": "Hard to pick up: missing error logs makes root cause unclear, likely integrates with external AI service (multiple failure points), and requires navigating VS Code's large codebase to debug a non-obvious failure without environmental setup details."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 330828,
+      "title": "MacOS Tahoe: broken local network access",
+      "url": "https://github.com/microsoft/vscode/issues/330828",
+      "created_at": "2026-08-14T10:48:54Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code cannot access local network on macOS Tahoe despite permissions being granted and firewall disabled",
+        "why_easy": "No reproduction steps provided, requires a macOS Tahoe environment to debug, and the permission workaround suggests a complex OS sandbox boundary issue requiring deep OS integration knowledge"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 330826,
+      "title": "Poor key up and key down support in Copilot Chat window : not Ergonomic",
+      "url": "https://github.com/microsoft/vscode/issues/330826",
+      "created_at": "2026-08-14T10:37:34Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add keyboard arrow navigation support to Copilot Chat to allow scrolling through conversation history without mouse use",
+        "why_easy": "Problem is clearly defined with good ergonomic motivation, but fixing it requires understanding VS Code's internal component architecture and careful keyboard focus management"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 330823,
+      "title": "Spaces is not the same",
+      "url": "https://github.com/microsoft/vscode/issues/330823",
+      "created_at": "2026-08-14T10:20:04Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Spacing appears inconsistent across different areas of the VS Code UI",
+        "why_easy": "Issue is too vague\u2014no specific UI element identified and reproduction steps are unclear; requires significant triage to clarify which component has the spacing problem before any work can begin."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 330821,
+      "title": "Copilot Chat Cannot See Pasted Image from Clipboard (Ctrl+V)  since update to Visual Studio Code 1.133",
+      "url": "https://github.com/microsoft/vscode/issues/330821",
+      "created_at": "2026-08-14T10:14:54Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Copilot Chat cannot detect images pasted from clipboard after VS Code 1.133 update",
+        "why_easy": "Clear regression with deterministic reproduction steps, but requires understanding what changed in VS Code 1.133's clipboard/attachment APIs and debugging the extension's image attachment pipeline"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 330819,
+      "title": "Clone should offer \"Clone again\" when a single existing clone is found",
+      "url": "https://github.com/microsoft/vscode/issues/330819",
+      "created_at": "2026-08-14T10:13:32Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "feature",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Show 'Clone again' option when exactly one existing clone is found, matching the behavior for multiple clones.",
+        "why_easy": "The issue identifies the exact code functions involved, and the fix is straightforward: show the existing picker UI for single clones instead of auto-opening."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 330817,
+      "title": "Explorer View does not refresh U \"Untracked\" files after adding them using git add -f",
+      "url": "https://github.com/microsoft/vscode/issues/330817",
+      "created_at": "2026-08-14T09:42:19Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Explorer View doesn't refresh untracked file status after using git add until VS Code restarts.",
+        "why_easy": "The issue is clearly reproducible and likely requires adding a refresh trigger for git index changes, but requires navigating VS Code's git watcher and file status cache architecture to find the right integration point."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 330815,
+      "title": "runSubagent still allows empty agentName and bypasses custom agent allow-list (related to #306266)",
+      "url": "https://github.com/microsoft/vscode/issues/330815",
+      "created_at": "2026-08-14T09:22:29Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "runSubagent allows self-invocation when agentName is empty, bypassing the configured subagent allow-list",
+        "why_easy": "The fix is conceptually straightforward (validate resolved agent against allow-list), but requires understanding the agent system architecture and why previous fix attempts (#306266, #306568) were incomplete or regressed."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 330814,
+      "title": "Clipboard writes are not visible to other applications since 1.133.0 (Windows)",
+      "url": "https://github.com/microsoft/vscode/issues/330814",
+      "created_at": "2026-08-14T09:18:42Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Clipboard writes from VS Code are not accessible to other applications on Windows since version 1.133.0",
+        "why_easy": "Regression with clear reproduction and narrow version window, but requires Windows clipboard API expertise and debugging lower-level Electron/native code to identify what format changed in 1.133.0."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 330813,
+      "title": "Wrong suggestions",
+      "url": "https://github.com/microsoft/vscode/issues/330813",
+      "created_at": "2026-08-14T09:13:17Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code is suggesting incorrect code when writing React.",
+        "why_easy": "The issue lacks specific examples and reproduction steps, and the root cause is unclear\u2014could be Copilot, IntelliSense, language servers, or project configuration\u2014making it impossible to investigate without extensive follow-up questions."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 330811,
+      "title": "Chat: add a per-chat auto-scroll mode with limited streaming preview",
+      "url": "https://github.com/microsoft/vscode/issues/330811",
+      "created_at": "2026-08-14T08:25:18Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add a per-chat auto-scroll control with reading mode that limits streaming preview to configurable lines and allows manual scroll control",
+        "why_easy": "Hard to pick up \u2014 requires understanding and modifying core chat streaming/scroll behavior, implementing per-session state management, integrating smooth scroll animation with accessibility preferences, and testing complex interactions without regressions"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 97358,
+      "title": "output: 'standalone' with pnpm omits an @swc/helpers ESM helper in Docker (16.3.1)",
+      "url": "https://github.com/vercel/next.js/issues/97358",
+      "created_at": "2026-08-14T10:17:38Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Standalone output with pnpm omits @swc/helpers ESM helper in Docker (16.3.1 regression)",
+        "why_easy": "Has a clear minimal reproduction and identified regression point (16.3.0 \u2192 16.3.1), but fixing requires deep knowledge of module resolution, @swc/helpers ESM/CJS selection, pnpm-specific bundling, and the standalone output generation logic."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 97351,
+      "title": "Prerender abort reason carries V8 stack frames, so a retained AbortSignal pins the whole render graph (1.7 MB vs 1 KB)",
+      "url": "https://github.com/vercel/next.js/issues/97351",
+      "created_at": "2026-08-14T08:28:29Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "AbortSignal reason retains entire rendered page via V8 stack frames; should only retain ~1 KB instead of 1.7 MB",
+        "why_easy": "Requires deep V8 garbage collection expertise and profiling; fix involves rethinking error representation in prerender abort flow to avoid retaining stack frames"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 97337,
+      "title": "Navigation crashes with React #412 on partial RSC payloads",
+      "url": "https://github.com/vercel/next.js/issues/97337",
+      "created_at": "2026-08-13T22:30:36Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add error recovery for partial RSC payloads during navigation to fall back to full page load instead of crashing",
+        "why_easy": "The issue clearly identifies the root cause and an existing pattern to follow in the segment cache reader, but fixing it requires understanding RSC streaming architecture and careful handling of Promise rejections that occur during React render outside the current try/catch boundary"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 97329,
+      "title": "Infinite prefetch loop when a <Link> href matches a redirects() source",
+      "url": "https://github.com/vercel/next.js/issues/97329",
+      "created_at": "2026-08-13T20:50:28Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Infinite prefetch loop occurs when a Link href matches a redirects() source, causing thousands of duplicate requests per second",
+        "why_easy": "While the reproduction is clear and well-documented with a sample repo, fixing this requires deep understanding of Next.js's prefetch cache invalidation logic and how it interacts with redirect handling and route prediction in the router layer."
+      }
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 48960,
+      "title": "[docs] The collapsible table example reports wrong number of rows to the screen reader",
+      "url": "https://github.com/mui/material-ui/issues/48960",
+      "created_at": "2026-08-13T12:12:23Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "The collapsible table example in the docs reports 11 rows to screen readers instead of 6 when collapsed.",
+        "why_easy": "The issue is well-scoped to a single documentation example with clear reproducible steps and expected behavior, making it straightforward for a contributor to locate, verify with a screen reader, and fix the ARIA attributes."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35892,
+      "title": "Storybook works locally but not when deployed",
+      "url": "https://github.com/storybookjs/storybook/issues/35892",
+      "created_at": "2026-08-14T05:12:32Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix 'memo is not defined' error that occurs when Storybook v10 + Next.js v16 is deployed but works locally",
+        "why_easy": "No reproduction case provided, production-only manifestation, and multiple possible root causes (bundling configuration, tree-shaking, environment variables) make this difficult to debug without extensive back-and-forth and setup work"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35891,
+      "title": "Build: Retry-logic in publishing script is not resilient anymore",
+      "url": "https://github.com/storybookjs/storybook/issues/35891",
+      "created_at": "2026-08-13T19:35:22Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Modify npm publishing retry logic to handle 409 Conflict errors from npm's new package staging period",
+        "why_easy": "Problem is well-diagnosed with concrete examples and solutions proposed, but requires understanding production release infrastructure and is difficult to test safely without risking actual package publishes"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35889,
+      "title": "[Bug]: Source code transform is applied twice on docs pages",
+      "url": "https://github.com/storybookjs/storybook/issues/35889",
+      "created_at": "2026-08-13T15:54:46Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Source code transform is applied twice on docs pages instead of once",
+        "why_easy": "Well-reproduced with clear steps and a Stackblitz demo showing the duplicate output, but requires tracing through Storybook's docs addon internals to find where the transform is being called twice"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69534,
+      "title": "Use of `const` vs `let` vs `var` in the Binary Search Workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69534",
+      "created_at": "2026-08-13T23:44:20Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Replace `let` with `const` for immutable variables in the Binary Search Algorithm workshop and update tests to enforce proper const/let usage",
+        "why_easy": "The issue clearly identifies which variables should use const vs let, provides example code and test patterns, and the changes are mechanical transformations without complex logic"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69524,
+      "title": "Content issues in the Working with Code Editors and IDEs lecture",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69524",
+      "created_at": "2026-08-13T16:04:00Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix three content issues in code editor/IDE curriculum: repetitive sentence structures, broken Windows Command Prompt instructions, and inconsistent key name capitalization.",
+        "why_easy": "All three issues are clearly identified with specific examples and expected outcomes; the fixes require only careful text editing without requiring code compilation or technical debugging."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69523,
+      "title": "Fix style issues in the code editor keyboard shortcuts lecture",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69523",
+      "created_at": "2026-08-13T14:44:45Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix grammar, capitalization, punctuation, and platform label inconsistencies in the VS Code keyboard shortcuts lesson.",
+        "why_easy": "All six issues are explicitly detailed with before/after examples provided, making this a straightforward text-editing task that requires no code knowledge or system understanding."
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 13223,
+      "title": "KafkaJs seems not maintained anymore",
+      "url": "https://github.com/nestjs/nest/issues/13223",
+      "created_at": "2024-02-17T21:48:17Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Migrate NestJS's Kafka microservices transport from unmaintained KafkaJS to actively-maintained node-rdkafka",
+        "why_easy": "Hard\u2014requires mastering NestJS internals, both Kafka libraries' APIs, and designing a safe migration without breaking existing production users."
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 13158,
+      "title": "`UploadFile()` should accept `Readable` instead of `Buffer`",
+      "url": "https://github.com/nestjs/nest/issues/13158",
+      "created_at": "2024-02-02T08:06:24Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Change `@UploadFile()` to return `Readable` streams instead of `Buffer` to reduce memory usage for large concurrent uploads",
+        "why_easy": "Backward compatibility is a blocker\u2014existing code depends on `Buffer`, and switching to streams would break it; requires solving this tension plus understanding NestJS's file-upload architecture and multer integration."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30021,
+      "title": "Prisma CLI commands (migrate status, db push, migrate dev) fail with P1017 \"Server has closed the connection\" but pg library and @prisma/adapter-pg work normally",
+      "url": "https://github.com/prisma/prisma/issues/30021",
+      "created_at": "2026-08-14T04:08:38Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Prisma CLI commands fail with P1017 connection error against PostgreSQL 18.4 while the same connection string works with pg library and @prisma/adapter-pg",
+        "why_easy": "Hard: requires deep understanding of Prisma's built-in connection pool implementation and debugging why it fails where the pg library succeeds; root cause is unclear (timeout, protocol, TLS, or configuration) and likely needs PostgreSQL 18.4 environment setup"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49097,
+      "title": "PostgREST remains unhealthy after project restart (500 internal server error)",
+      "url": "https://github.com/supabase/supabase/issues/49097",
+      "created_at": "2026-08-14T09:19:39Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "PostgREST service returns 500 errors and remains unhealthy after a Supabase project is restarted",
+        "why_easy": "The issue is severely underspecified\u2014no reproduction steps, system info, error logs, or project configuration provided; a contributor would need to request all missing details before any investigation could begin."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49080,
+      "title": "Auth logins return 500 unexpected_failure: GoTrue expects auth.factors, schema has only auth.mfa_factors",
+      "url": "https://github.com/supabase/supabase/issues/49080",
+      "created_at": "2026-08-13T23:34:19Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Auth logins fail with HTTP 500 due to schema mismatch: GoTrue expects auth.factors table but only auth.mfa_factors exists",
+        "why_easy": "This is infrastructure/deployment work requiring elevated database privileges, deep knowledge of GoTrue versioning and Supabase's schema migration pipeline, and coordination between binary versions and schema\u2014not suitable for external contributors"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51379,
+      "title": "Virtual threads hang during MediaTypeFactory class initialization due to NestedJarFile lock contention",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51379",
+      "created_at": "2026-08-14T03:20:06Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Virtual threads hang during MediaTypeFactory class initialization due to lock contention on NestedJarFile",
+        "why_easy": "Concurrency bugs involving virtual threads and class initialization locks are complex to debug and reproduce; requires deep knowledge of JVM threading, Spring Boot internals, and race condition testing"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66750,
+      "title": "BUG: test_spss_metadata fails with pyreadstat 1.3.6 due to new original_variable_informats metadata key",
+      "url": "https://github.com/pandas-dev/pandas/issues/66750",
+      "created_at": "2026-08-13T17:45:59Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update test_spss_metadata to handle new original_variable_informats metadata key exposed in pyreadstat 1.3.6",
+        "why_easy": "The issue is clearly diagnosed with reproduction steps and the fix is straightforward: update test expectations to include or conditionally check for the new metadata field without modifying core functionality."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32288,
+      "title": "BUG: StringDType UTF-8 decoder may read out of bounds",
+      "url": "https://github.com/numpy/numpy/issues/32288",
+      "created_at": "2026-08-14T07:00:22Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "StringDType UTF-8 decoder reads out of bounds when converting byte strings ending with truncated UTF-8 sequences to Unicode strings.",
+        "why_easy": "Difficult for new contributors due to requiring deep C programming knowledge of UTF-8 encoding, NumPy's string arena internals, and careful security-critical code modification."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32287,
+      "title": "BUG: Hang in StringDType UTF-8 decoder on malformed input.",
+      "url": "https://github.com/numpy/numpy/issues/32287",
+      "created_at": "2026-08-14T06:55:19Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "StringDType UTF-8 decoder hangs on malformed UTF-8 input in slice operations",
+        "why_easy": "Hard due to C++ debugging, UTF-8 decoding complexity, and required knowledge of numpy's ufunc and StringDType internals."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34745,
+      "title": "BUG sample-weight ignored by `min_sample_leaf` in HGBDT",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34745",
+      "created_at": "2026-08-13T12:51:09Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "HistGradientBoostingClassifier applies min_samples_leaf constraint to raw sample counts instead of weighted sample sums, causing mismatched predictions when using sample_weight.",
+        "why_easy": "The root cause is clearly identified in splitting.pyx and the fix is conceptually localized, but it requires Cython expertise and careful modification of a performance-critical algorithm component."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 44864,
+      "title": "Add missing env variables and fix BYOK docs",
+      "url": "https://github.com/github/docs/issues/44864",
+      "created_at": "2026-06-22T14:19:19Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "docs",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add missing environment variables to Copilot CLI BYOK documentation and fix Azure provider URL format",
+        "why_easy": "The 'needs SME' label indicates domain expertise in Copilot CLI configuration is required to accurately describe the environment variables and their purposes, despite the mechanical simplicity of editing documentation"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 44808,
+      "title": "Cannot run Jekyll locally for GitHub Pages with latest Ruby",
+      "url": "https://github.com/github/docs/issues/44808",
+      "created_at": "2026-06-18T12:10:04Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "docs",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Update Jekyll documentation to warn about Ruby 3.2+ compatibility issues with the github-pages gem",
+        "why_easy": "The fix is scoped and clear (add a Ruby version compatibility note), but the 'needs SME' label indicates verification of gem/version constraints requires Ruby/Jekyll expertise"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 44770,
+      "title": "inputs type are undocumented / contradicting",
+      "url": "https://github.com/github/docs/issues/44770",
+      "created_at": "2026-06-17T00:08:43Z",
+      "digest_date": "2026-08-14",
+      "triage": {
+        "category": "docs",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Document and clarify GitHub Actions workflow dispatch input types, particularly the undocumented 'environment' type, across multiple inconsistent documentation pages",
+        "why_easy": "Documentation-only task with identified pages, but requires SME knowledge of GitHub Actions input types and verification of undocumented features to ensure accuracy"
       }
     }
   ]
