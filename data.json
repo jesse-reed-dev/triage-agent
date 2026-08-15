@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14",
+  "updated": "2026-08-15",
   "issues": [
     {
       "repo": "react/react-native",
@@ -16589,6 +16589,426 @@
         "good_first_issue": false,
         "one_line_summary": "Document and clarify GitHub Actions workflow dispatch input types, particularly the undocumented 'environment' type, across multiple inconsistent documentation pages",
         "why_easy": "Documentation-only task with identified pages, but requires SME knowledge of GitHub Actions input types and verification of undocumented features to ensure accuracy"
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57963,
+      "title": "SIGABRT in EventQueue::flushEvents / RawEvent destructor on Android (New Architecture, RN 0.86.2) during heavy JS-thread work",
+      "url": "https://github.com/react/react-native/issues/57963",
+      "created_at": "2026-08-14T13:10:04Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Investigate and reproduce SIGABRT crash in EventQueue::flushEvents during SQLite import after app resume on Android (RN 0.86.2)",
+        "why_easy": "Requires Android native debugging expertise, device setup, and investigation of runtime internals; crash is non-deterministic and root cause is unclear from stack trace alone."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48961,
+      "title": "Build fails on iOS with Xcode 26.3 / Swift 6: Ambiguous abs() in expo-modules-jsi and Data Race in EventEmitter.swift",
+      "url": "https://github.com/expo/expo/issues/48961",
+      "created_at": "2026-08-15T09:53:52Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix iOS build failures on Xcode 26.3 with Swift 6 by resolving ambiguous abs() and data race warnings in expo-modules-jsi and EventEmitter",
+        "why_easy": "Issue provides complete, tested solutions with exact code examples and line numbers, but requires understanding Swift 6 strict concurrency semantics and @unchecked Sendable patterns to implement with confidence"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 48950,
+      "title": "Installing a native module while the dev server is running red-screens with a misleading \"Cannot find native module 'ExpoAsset'\"",
+      "url": "https://github.com/expo/expo/issues/48950",
+      "created_at": "2026-08-15T00:03:56Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Installing native modules while the Metro dev server runs leaves it with a stale module map, causing a misleading 'Cannot find native module ExpoAsset' error on reload that vanishes after restart.",
+        "why_easy": "Has clear reproduction steps and identifiable root cause (stale module map), but requires deep knowledge of Metro's module resolution and file-watching systems to fix; labeled internal-only suggesting it needs maintainer-level expertise."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331016,
+      "title": "Two diff style for command center in agents window and normal window",
+      "url": "https://github.com/microsoft/vscode/issues/331016",
+      "created_at": "2026-08-15T11:38:04Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Make the command center styling consistent between agents window and normal window, and reduce visual clutter from the Agent quick input option",
+        "why_easy": "Requires understanding VS Code's agents window implementation and locating command center styling across different code paths, which demands codebase familiarity; no guidance provided on where these styles live"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331015,
+      "title": "Built-in SQL language mode is displayed as \"MS SQL\", even though it's generic and dialect-agnostic",
+      "url": "https://github.com/microsoft/vscode/issues/331015",
+      "created_at": "2026-08-15T11:31:21Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Rename the built-in SQL language display name from 'MS SQL' to 'SQL' to reflect its dialect-agnostic nature",
+        "why_easy": "Single-string rename with clear motivation and reproduction steps; main work is locating the language registration in the codebase"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331013,
+      "title": "New UI: Uneven padding around panel title tabs",
+      "url": "https://github.com/microsoft/vscode/issues/331013",
+      "created_at": "2026-08-15T11:24:05Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix uneven padding and inconsistent hover boundaries in panel tabs to match editor tabs",
+        "why_easy": "Straightforward CSS padding adjustment with clear visual goals, though requires locating panel tab styles within VS Code's codebase"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331011,
+      "title": "Flexible Context Window & Custom Thinking Effort for BYOK",
+      "url": "https://github.com/microsoft/vscode/issues/331011",
+      "created_at": "2026-08-15T11:20:13Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add flexible context window options and custom thinking effort levels to VS Code's custom endpoint configuration with automatic persistence",
+        "why_easy": "Requirements are clearly specified with JSON schema examples, but implementing this requires understanding VS Code's settings system, custom endpoint architecture, UI rendering, and persistence logic across multiple modules."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331007,
+      "title": "Chat window is not working ",
+      "url": "https://github.com/microsoft/vscode/issues/331007",
+      "created_at": "2026-08-15T06:25:04Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Chat window appears frozen or unresponsive, showing a working state but not functioning.",
+        "why_easy": "Issue is marked info-needed and lacks reproduction steps, specific error messages, or clear description of the failure mode\u2014a contributor would need extensive back-and-forth with the reporter to even begin debugging."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331006,
+      "title": "Opening editor Chat destroys standalone Agent session and creates phantom copilotcli session",
+      "url": "https://github.com/microsoft/vscode/issues/331006",
+      "created_at": "2026-08-15T06:09:33Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Opening editor Chat panel destroys active standalone Agent Copilot CLI sessions and leaves the Agent UI hanging indefinitely",
+        "why_easy": "Hard to pick up because it requires understanding session lifecycle management across multiple VS Code windows/panels and the backend Copilot CLI, diagnosing cross-component state destruction, and likely fixing async session lifecycle logic that's currently destroying unrelated sessions."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331003,
+      "title": "Copilot agent request can hang when WebSocket emits `error` without `close`",
+      "url": "https://github.com/microsoft/vscode/issues/331003",
+      "created_at": "2026-08-15T04:52:46Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix Copilot agent requests hanging when WebSocket emits error without close by settling the request in the error handler",
+        "why_easy": "The root cause is isolated to a single error handler, the fix is concrete and proposed with clear steps, and a regression test is provided to validate the change"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331002,
+      "title": "Custom agent `agents:` frontmatter allowlist is parsed but never enforced by RunSubagentTool \u2014 coordinator can invoke any enabled agent, not just the ones listed",
+      "url": "https://github.com/microsoft/vscode/issues/331002",
+      "created_at": "2026-08-15T04:50:06Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The `agents:` allowlist in custom agent frontmatter is parsed but never enforced, allowing coordinators to invoke any enabled subagent regardless of the restriction",
+        "why_easy": "The fix is straightforward (add a validation check in runSubagentTool.ts), but requires navigating vscode's large monorepo, understanding the agent dispatch system, and knowing where the validation should live in the call chain."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331000,
+      "title": "Unable to return multiple window titles for windows across multiple screens / desktops",
+      "url": "https://github.com/microsoft/vscode/issues/331000",
+      "created_at": "2026-08-15T04:21:13Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code only reports the most recently active window title in PowerShell process queries, not all open windows across virtual desktops",
+        "why_easy": "Hard: requires deep Windows API and virtual desktop knowledge; unclear if the limitation is in VS Code, Electron, or Windows itself; would need investigation into window handle management and process title exposure across multiple monitors/desktops."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 330999,
+      "title": "Copilot read_file truncation can split UTF-16 surrogate pairs and poison a chat session",
+      "url": "https://github.com/microsoft/vscode/issues/330999",
+      "created_at": "2026-08-15T04:18:23Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "File truncation without checking UTF-16 surrogate boundaries creates malformed JSON that poisons chat sessions",
+        "why_easy": "Problem is precisely identified with reproduction steps and code location, but the fix requires understanding UTF-16 surrogate pair encoding to avoid splitting them at truncation points"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 330998,
+      "title": "Modern UI: Hovered inactive unfocused editor tabs have a strange background",
+      "url": "https://github.com/microsoft/vscode/issues/330998",
+      "created_at": "2026-08-15T03:44:25Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix background color mismatch when hovering inactive unfocused editor tabs in Modern UI theme",
+        "why_easy": "The root cause is clearly identified (CSS specificity conflict between theme colors and Modern UI styles), but the fix requires understanding VS Code's theming architecture and testing across multiple theme variants to ensure no regressions."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 97399,
+      "title": "Turbopack: next build deadlocks at 0% CPU \u2014 content-hashed chunk paths + mutually-referencing async chunks form an await cycle",
+      "url": "https://github.com/vercel/next.js/issues/97399",
+      "created_at": "2026-08-15T02:23:37Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Build deadlocks at 0% CPU when content-hashed chunk paths and mutually-referencing async chunks create an undetected await cycle in turbo-tasks",
+        "why_easy": "Requires deep Turbopack/turbo-tasks knowledge to break the circular dependency between chunk paths and content; only reproduces at scale (~24k modules) making verification difficult, and any fix risks chunking behavior regressions"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 97392,
+      "title": "Rust React Compiler produces inaccurate source maps for expressions hoisted from component callbacks",
+      "url": "https://github.com/vercel/next.js/issues/97392",
+      "created_at": "2026-08-14T22:31:36Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Rust React Compiler produces inaccurate source maps for expressions hoisted from component callbacks, causing runtime errors to resolve to wrong lines.",
+        "why_easy": "Requires deep knowledge of the Rust compiler's source map generation and expression hoisting logic; the root cause is unclear and isolated to a subtle edge case, necessitating Rust expertise to debug and fix."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 97386,
+      "title": "Runtime prefetch runs for every dynamic render, and a prefetch export cannot opt a route out",
+      "url": "https://github.com/vercel/next.js/issues/97386",
+      "created_at": "2026-08-14T20:20:12Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "The segment-level prefetch export doesn't override the app-level partialPrefetching flag, causing unnecessary duplicate prerendering on every dynamic render",
+        "why_easy": "It requires deep knowledge of Next.js Partial Prerendering internals and touches critical rendering paths (Flight/HTML) where mistakes could cause production regressions."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23266,
+      "title": "Less 5 removes `FileManager` make it incompatible",
+      "url": "https://github.com/vitejs/vite/issues/23266",
+      "created_at": "2026-08-15T06:10:03Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Vite's Less CSS plugin breaks with Less 5 because the FileManager API was removed",
+        "why_easy": "Clear reproduction and isolated location (css.ts:2910), but requires investigating Less 5's API changes to find the FileManager replacement or alternative approach"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23261,
+      "title": "Handle node's subpath imports (`#...`) in CSS `url('...')`s",
+      "url": "https://github.com/vitejs/vite/issues/23261",
+      "created_at": "2026-08-14T12:32:02Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Support Node's subpath imports syntax (#...) in CSS url() statements, similar to how aliases are currently resolved",
+        "why_easy": "CSS URL resolution machinery exists for aliases, but contributor must understand Vite's CSS processing, current alias resolution logic, and Node's subpath imports spec including wildcard patterns"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49113,
+      "title": "auth-js: stolen-lock AbortError leaks unconverted when acquireTimeout is 0 (_autoRefreshTokenTick)",
+      "url": "https://github.com/supabase/supabase/issues/49113",
+      "created_at": "2026-08-14T17:03:39Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Remove `acquireTimeout > 0` guard in navigatorLock to ensure stolen lock AbortErrors convert to typed errors even when timeout is 0.",
+        "why_easy": "The fix is a single guard condition removal with clear explanation of why it's safe; the reporter has analyzed the problem, identified the exact guard, and verified that branching on `signal.aborted` alone is safe when no timer is armed."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49107,
+      "title": "Bug",
+      "url": "https://github.com/supabase/supabase/issues/49107",
+      "created_at": "2026-08-14T14:31:09Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Default project domain fails to resolve DNS despite project being active and restarted",
+        "why_easy": "This is hard because it requires production DNS infrastructure access and investigation of the project provisioning pipeline\u2014infrastructure work that external contributors can't perform without elevated permissions."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49106,
+      "title": "RLS INSERT policy rejects writes with provably-matching auth.uid(), unaffected by WITH CHECK (true) or a schema-cache reload \u2014 only resolved by disabling RLS",
+      "url": "https://github.com/supabase/supabase/issues/49106",
+      "created_at": "2026-08-14T14:15:45Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "RLS INSERT policy rejects writes where user_id matches auth.uid() exactly, only resolvable by disabling RLS entirely",
+        "why_easy": "Extremely hard: requires deep knowledge of PostgreSQL RLS, Supabase's auth layer, and PostgREST; the bug is subtle since even direct SQL impersonation with explicit role/JWT claims fails, suggesting a database-level policy evaluation issue that the external reporter has already spent significant effort isolating."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66774,
+      "title": "BUG: test_duplicated_hashtable_impl generates identical codes for every MultiIndex level",
+      "url": "https://github.com/pandas-dev/pandas/issues/66774",
+      "created_at": "2026-08-15T07:02:34Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix test_duplicated_hashtable_impl to use one advancing RNG instead of creating a new generator with the same seed on each iteration.",
+        "why_easy": "The fix is a straightforward refactor (move RNG instantiation outside the comprehension), the problem is well-explained with reproducible examples, and it's a low-risk change isolated to a test file."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66764,
+      "title": "DOC:  visibility issues in dark mode for some of the content",
+      "url": "https://github.com/pandas-dev/pandas/issues/66764",
+      "created_at": "2026-08-14T17:05:28Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix dark mode text contrast visibility on the 06_calculate_statistics tutorial page",
+        "why_easy": "Localized CSS fix for dark mode contrast; straightforward styling change with no logic involved, though requires building docs locally to identify and test the exact element"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66761,
+      "title": "TST: assert_frame_equal now raises for mismatching freq in MultiIndex level",
+      "url": "https://github.com/pandas-dev/pandas/issues/66761",
+      "created_at": "2026-08-14T14:58:52Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "test",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix assert_frame_equal to handle freq mismatches in MultiIndex levels consistently with assert_index_equal (warn instead of error)",
+        "why_easy": "Well-scoped bug with reproducible example, but requires understanding pandas' testing framework and deprecation warning logic, making it moderately challenging for new contributors unfamiliar with these internals."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32299,
+      "title": "BUG: Output of `RandomState.multinomial()` changed in v2.5.0",
+      "url": "https://github.com/numpy/numpy/issues/32299",
+      "created_at": "2026-08-15T02:32:41Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix regression in RandomState.multinomial() output that changed between v2.4.6 and v2.5.0 despite intention to preserve behavior",
+        "why_easy": "Clear reproduction case and reference to PR #31238 provide good starting points, but requires understanding NumPy's random module internals and tracing how the regression slipped through the attempted fix"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32298,
+      "title": "BUG: unpickled arrays anti-scale on free-threaded builds \u2014 `dtype.__reduce__` discards the immortal singleton",
+      "url": "https://github.com/numpy/numpy/issues/32298",
+      "created_at": "2026-08-14T22:36:19Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix 3x performance regression in pickled arrays on free-threaded builds by preserving dtype singleton identity in __reduce__ and related methods.",
+        "why_easy": "Hard: requires deep expertise in NumPy's dtype caching system, pickle protocol, refcount mechanics, and free-threaded semantics; the root cause is well-identified but implementation touches core performance-critical infrastructure with backward-compatibility implications."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45508,
+      "title": "Update stale link checker documentation",
+      "url": "https://github.com/github/docs/issues/45508",
+      "created_at": "2026-08-15T03:49:22Z",
+      "digest_date": "2026-08-15",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update `src/links/README.md` to reflect the rebuilt link-checking system instead of documenting removed scripts and obsolete options",
+        "why_easy": "The issue clearly identifies all stale references and lists the current commands, making it straightforward to update documentation by reading the current scripts and testing the commands"
       }
     }
   ]
