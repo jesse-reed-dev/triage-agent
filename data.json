@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15",
+  "updated": "2026-08-18",
   "issues": [
     {
       "repo": "react/react-native",
@@ -17010,6 +17010,456 @@
         "one_line_summary": "Update `src/links/README.md` to reflect the rebuilt link-checking system instead of documenting removed scripts and obsolete options",
         "why_easy": "The issue clearly identifies all stale references and lists the current commands, making it straightforward to update documentation by reading the current scripts and testing the commands"
       }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57995,
+      "title": "[Android] Last emoji in a Text is cut off when the text contains the \ud83e\udee8 emoji (U+1FAE8)",
+      "url": "https://github.com/react/react-native/issues/57995",
+      "created_at": "2026-08-18T11:23:58Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 57988,
+      "title": "iOS Fabric: prepareForRecycle does not reset contentInset, leaking the keyboard-derived inset into the next recycled ScrollView",
+      "url": "https://github.com/react/react-native/issues/57988",
+      "created_at": "2026-08-18T00:59:03Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49075,
+      "title": "[expo-ui] SwiftUI `Slider` ignores `value` prop updates after the first drag",
+      "url": "https://github.com/expo/expo/issues/49075",
+      "created_at": "2026-08-18T14:00:12Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49058,
+      "title": "Expo Router resolves identical dynamic routes from different protected route groups inconsistently",
+      "url": "https://github.com/expo/expo/issues/49058",
+      "created_at": "2026-08-18T07:09:15Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331597,
+      "title": "Claude Agent has no available models in Remote-SSH Chat view, but works in Agents Window on the same SSH host",
+      "url": "https://github.com/microsoft/vscode/issues/331597",
+      "created_at": "2026-08-19T03:08:53Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331595,
+      "title": "Agent host: a replayed client tool from a subagent is handled on the parent chat after a restart",
+      "url": "https://github.com/microsoft/vscode/issues/331595",
+      "created_at": "2026-08-19T02:42:02Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331593,
+      "title": "Pet keeps moving back to middle",
+      "url": "https://github.com/microsoft/vscode/issues/331593",
+      "created_at": "2026-08-19T02:06:50Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331592,
+      "title": "Agent Host chat input reverts while typing after draft sync rejection",
+      "url": "https://github.com/microsoft/vscode/issues/331592",
+      "created_at": "2026-08-19T02:01:24Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331590,
+      "title": "Misunderstanding nuxtui/tailwind css",
+      "url": "https://github.com/microsoft/vscode/issues/331590",
+      "created_at": "2026-08-19T01:06:53Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331584,
+      "title": "Not synching correctly",
+      "url": "https://github.com/microsoft/vscode/issues/331584",
+      "created_at": "2026-08-19T00:21:23Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331582,
+      "title": "Cmd + Shift + \u2190 should move cursor to the end of the previous line when positioned before an indented token",
+      "url": "https://github.com/microsoft/vscode/issues/331582",
+      "created_at": "2026-08-19T00:00:30Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331581,
+      "title": "Agent Debug Logs Call with wrong text content \"github.copilot.chat.agentDebugLog.fileLogging.enabled\": true,",
+      "url": "https://github.com/microsoft/vscode/issues/331581",
+      "created_at": "2026-08-18T23:57:13Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331580,
+      "title": "`cancelSelection` interferes with extension API `registerCommand(\"type\")`",
+      "url": "https://github.com/microsoft/vscode/issues/331580",
+      "created_at": "2026-08-18T23:46:30Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331579,
+      "title": "NES 402 handler resets the Copilot token in an unbounded loop (quota latch never engages)",
+      "url": "https://github.com/microsoft/vscode/issues/331579",
+      "created_at": "2026-08-18T23:45:05Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331578,
+      "title": "Support configuring the utility model with the Agent Host Copilot Harness",
+      "url": "https://github.com/microsoft/vscode/issues/331578",
+      "created_at": "2026-08-18T23:33:59Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331572,
+      "title": "chat sessions are gone",
+      "url": "https://github.com/microsoft/vscode/issues/331572",
+      "created_at": "2026-08-18T22:54:30Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331570,
+      "title": "THE MODELES IS NOT SHOWING AND THE CHAT NOT REPOND",
+      "url": "https://github.com/microsoft/vscode/issues/331570",
+      "created_at": "2026-08-18T22:34:14Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 97523,
+      "title": "Route export validation rejects string literal union params in layouts and pages (still present in 16.3.1)",
+      "url": "https://github.com/vercel/next.js/issues/97523",
+      "created_at": "2026-08-18T21:26:47Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 97517,
+      "title": "minifier inlines a comma-assigned helper arrow which causes (SyntaxError: Identifier 'b' has already been declared) in npm run build",
+      "url": "https://github.com/vercel/next.js/issues/97517",
+      "created_at": "2026-08-18T15:06:39Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 97506,
+      "title": "Docs: Update developing.md to recommend running pnpm build before pnpm dev on a fresh clone",
+      "url": "https://github.com/vercel/next.js/issues/97506",
+      "created_at": "2026-08-18T12:26:25Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 48992,
+      "title": "[ButtonGroup] Sticky hover leaves a darkened divider border after tapping on touch devices",
+      "url": "https://github.com/mui/material-ui/issues/48992",
+      "created_at": "2026-08-18T10:38:50Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 48990,
+      "title": "[docs] aria-hidden element contains focusable content on templates page",
+      "url": "https://github.com/mui/material-ui/issues/48990",
+      "created_at": "2026-08-18T08:01:17Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23298,
+      "title": "Built output includes `{} = null` causing Uncaught TypeError when targeting safari11 (Vite 8)",
+      "url": "https://github.com/vitejs/vite/issues/23298",
+      "created_at": "2026-08-19T02:19:56Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23296,
+      "title": "[plugin-legacy] legacy chunks run in sloppy mode \u2014 white screen on browsers that execute them (oxc minify name collision + Annex B hoisting)",
+      "url": "https://github.com/vitejs/vite/issues/23296",
+      "created_at": "2026-08-19T01:12:55Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23294,
+      "title": "CSS minify: build.target \"esnext\" passes targets: {} to Lightning CSS, which reads it as \"nothing is supported\"",
+      "url": "https://github.com/vitejs/vite/issues/23294",
+      "created_at": "2026-08-18T18:08:26Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23287,
+      "title": "Optimized dependencies may have large source map inlined, causing large response size, with no way to opt out",
+      "url": "https://github.com/vitejs/vite/issues/23287",
+      "created_at": "2026-08-17T11:37:00Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23267,
+      "title": "\u201cnative config loader incompatibilities\u201d warning is shown even when setting a bundler explicitly",
+      "url": "https://github.com/vitejs/vite/issues/23267",
+      "created_at": "2026-08-15T13:12:38Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35928,
+      "title": "[Bug]: Loading a portable story breaks @testing-library/user-event",
+      "url": "https://github.com/storybookjs/storybook/issues/35928",
+      "created_at": "2026-08-17T18:33:21Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35919,
+      "title": "Remove `argTypes` from user-facing story annotations",
+      "url": "https://github.com/storybookjs/storybook/issues/35919",
+      "created_at": "2026-08-17T08:39:54Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69606,
+      "title": "Use of ID versus `id` when referring to the id attribute",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69606",
+      "created_at": "2026-08-18T22:27:08Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69604,
+      "title": "Certification Project: Build a Digital Pet Game - Test #6 not allowing \"onChange\" handler for pet name",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69604",
+      "created_at": "2026-08-18T20:28:00Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69602,
+      "title": "Typo in Library Manager Workshop Step 16",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69602",
+      "created_at": "2026-08-18T18:04:39Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 4944,
+      "title": "Dependency Dashboard",
+      "url": "https://github.com/nestjs/nest/issues/4944",
+      "created_at": "2020-06-22T19:10:23Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 1438,
+      "title": "Add dynamic routing",
+      "url": "https://github.com/nestjs/nest/issues/1438",
+      "created_at": "2019-01-12T20:10:24Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 1006,
+      "title": "[Discussion] Who is using Nest in production?",
+      "url": "https://github.com/nestjs/nest/issues/1006",
+      "created_at": "2018-08-26T12:13:39Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 882,
+      "title": "Support adding guards on gateway\u2019s handleConnection method.",
+      "url": "https://github.com/nestjs/nest/issues/882",
+      "created_at": "2018-07-17T02:40:20Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30062,
+      "title": "CLI help still says \"Prisma Next\" (orm init, lsp) after the Prisma 8 rename",
+      "url": "https://github.com/prisma/prisma/issues/30062",
+      "created_at": "2026-08-18T12:24:11Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30052,
+      "title": "Bump `deepmerge-ts` to >= 8.0.0 in `@prisma/config` (CVE-2026-40345)",
+      "url": "https://github.com/prisma/prisma/issues/30052",
+      "created_at": "2026-08-17T16:36:06Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30029,
+      "title": "error report id: 19871",
+      "url": "https://github.com/prisma/prisma/issues/30029",
+      "created_at": "2026-08-17T02:01:19Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30028,
+      "title": "adapter-libsql (local file): one transient SQLITE_BUSY permanently poisons the client \u2014 abandoned transaction holds the write lock until process exit",
+      "url": "https://github.com/prisma/prisma/issues/30028",
+      "created_at": "2026-08-16T03:49:31Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51394,
+      "title": "[Enhancement]Print out configuration class import tree/order during application startup",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51394",
+      "created_at": "2026-08-19T02:27:07Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66834,
+      "title": "BUG: coerce empty-string IEEE NaN to null for pyarrow floats",
+      "url": "https://github.com/pandas-dev/pandas/issues/66834",
+      "created_at": "2026-08-18T14:37:50Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66807,
+      "title": "ENH: Disclose offending values in `IntervalArray._validate`",
+      "url": "https://github.com/pandas-dev/pandas/issues/66807",
+      "created_at": "2026-08-16T18:38:37Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32309,
+      "title": "ENH: polyroots special cases for degree 2 and 3",
+      "url": "https://github.com/numpy/numpy/issues/32309",
+      "created_at": "2026-08-16T15:25:56Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32307,
+      "title": "ENH: use existing non-contiguous SIMD path for integer np.minimum/np.maximum (currently float-only)",
+      "url": "https://github.com/numpy/numpy/issues/32307",
+      "created_at": "2026-08-16T03:46:54Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34768,
+      "title": "DictionaryLearning with split_sign=True breaks Pipeline.predict, get_feature_names_out and float32 dtype preservation",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34768",
+      "created_at": "2026-08-18T12:18:39Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34764,
+      "title": "Impact of active wait policy of OMP implementations in scikit-learn",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34764",
+      "created_at": "2026-08-17T17:18:27Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "github/docs",
+      "number": 45537,
+      "title": "Personal-account repositories support read/write/admin collaborator roles, contradicting the docs",
+      "url": "https://github.com/github/docs/issues/45537",
+      "created_at": "2026-08-18T08:34:17Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "github/docs",
+      "number": 45520,
+      "title": "workflow_run \"Use the data\" example omits the permissions the example itself needs",
+      "url": "https://github.com/github/docs/issues/45520",
+      "created_at": "2026-08-17T12:28:29Z",
+      "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "EbookFoundation/free-programming-books",
+      "number": 13410,
+      "title": "Solicitud de inclusi\u00f3n de libro interactivo de Python en espa\u00f1ol (JJ_PYTHON_BOOK)",
+      "url": "https://github.com/EbookFoundation/free-programming-books/issues/13410",
+      "created_at": "2026-08-16T17:57:11Z",
+      "digest_date": "2026-08-18",
+      "triage": null
     }
   ]
 }
