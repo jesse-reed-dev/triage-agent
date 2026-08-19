@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18",
+  "updated": "2026-08-19",
   "issues": [
     {
       "repo": "react/react-native",
@@ -17459,6 +17459,240 @@
       "url": "https://github.com/EbookFoundation/free-programming-books/issues/13410",
       "created_at": "2026-08-16T17:57:11Z",
       "digest_date": "2026-08-18",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58005,
+      "title": "[ANDROID] NDK Version Mismatch",
+      "url": "https://github.com/react/react-native/issues/58005",
+      "created_at": "2026-08-19T05:53:12Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49126,
+      "title": "[secure-store][iOS] deleteItemAsync discards SecItemDelete OSStatus, so failed deletes resolve successfully",
+      "url": "https://github.com/expo/expo/issues/49126",
+      "created_at": "2026-08-19T18:17:25Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49111,
+      "title": "[Android][Windows] Large Metro multipart bundle fails in BundleDownloader with invalid HTTP chunk size",
+      "url": "https://github.com/expo/expo/issues/49111",
+      "created_at": "2026-08-19T15:55:30Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49107,
+      "title": "[ui] `MenuView` trigger moving when used in `ScrollView`",
+      "url": "https://github.com/expo/expo/issues/49107",
+      "created_at": "2026-08-19T14:33:45Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49106,
+      "title": "[expo-ui] universal BottomSheet can't set the Android sheet's background color",
+      "url": "https://github.com/expo/expo/issues/49106",
+      "created_at": "2026-08-19T13:15:50Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331705,
+      "title": "Constant dumb suggestions",
+      "url": "https://github.com/microsoft/vscode/issues/331705",
+      "created_at": "2026-08-19T20:25:16Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331704,
+      "title": "Allow disabling GitHub Copilot as an Agent Host provider without disabling Chat",
+      "url": "https://github.com/microsoft/vscode/issues/331704",
+      "created_at": "2026-08-19T20:20:16Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331699,
+      "title": "Insiders: update request results in \"Hash mismatch\"",
+      "url": "https://github.com/microsoft/vscode/issues/331699",
+      "created_at": "2026-08-19T19:33:13Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331695,
+      "title": "Cannot navigate to folders after opening WSL root directory",
+      "url": "https://github.com/microsoft/vscode/issues/331695",
+      "created_at": "2026-08-19T19:11:25Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331693,
+      "title": "Glitch",
+      "url": "https://github.com/microsoft/vscode/issues/331693",
+      "created_at": "2026-08-19T19:08:19Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331690,
+      "title": "VScode update redownloading patch",
+      "url": "https://github.com/microsoft/vscode/issues/331690",
+      "created_at": "2026-08-19T18:56:33Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331688,
+      "title": "slash commands not rendering in editor and agents window while editing inline",
+      "url": "https://github.com/microsoft/vscode/issues/331688",
+      "created_at": "2026-08-19T18:43:10Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331687,
+      "title": "revealFileInOS may ignore the passed URI depending on UI state",
+      "url": "https://github.com/microsoft/vscode/issues/331687",
+      "created_at": "2026-08-19T18:38:23Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331686,
+      "title": "Explorer context menu fails to load on Server 2025",
+      "url": "https://github.com/microsoft/vscode/issues/331686",
+      "created_at": "2026-08-19T18:35:45Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331678,
+      "title": "Add local timestamps to Copilot Chat diagnostics files for improved traceability",
+      "url": "https://github.com/microsoft/vscode/issues/331678",
+      "created_at": "2026-08-19T18:03:50Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 97567,
+      "title": "[Turbopack] Third-party import statements are not resolved in the order specified in the resolve extensions config",
+      "url": "https://github.com/vercel/next.js/issues/97567",
+      "created_at": "2026-08-19T16:54:23Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 97564,
+      "title": "building route handler adds an extra unneccesary rsc file",
+      "url": "https://github.com/vercel/next.js/issues/97564",
+      "created_at": "2026-08-19T16:09:49Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 97550,
+      "title": "Turbopack: outputFileTracingIncludes glob walk hits ELOOP on pnpm workspaces with nested packages depending on their ancestor",
+      "url": "https://github.com/vercel/next.js/issues/97550",
+      "created_at": "2026-08-19T10:26:31Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35962,
+      "title": "agent-eval: plugin-channel assertions predate the M7 skills/tools delegation",
+      "url": "https://github.com/storybookjs/storybook/issues/35962",
+      "created_at": "2026-08-19T14:50:47Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35961,
+      "title": "agent-eval: capture the Storybook startup log when the MCP readiness check fails",
+      "url": "https://github.com/storybookjs/storybook/issues/35961",
+      "created_at": "2026-08-19T14:40:02Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35960,
+      "title": "CLI: `create storybook@next` outro still says \"Run `npx storybook ai setup`\"",
+      "url": "https://github.com/storybookjs/storybook/issues/35960",
+      "created_at": "2026-08-19T14:22:44Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35956,
+      "title": "Sandbox: `@storybook/addon-mcp` ends up twice in the generated main.ts addons array",
+      "url": "https://github.com/storybookjs/storybook/issues/35956",
+      "created_at": "2026-08-19T11:01:50Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35955,
+      "title": "Tools CLI: `--json` output is unparseable when logger warnings fire (warnings print to stdout)",
+      "url": "https://github.com/storybookjs/storybook/issues/35955",
+      "created_at": "2026-08-19T11:01:38Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69616,
+      "title": "Downloadable PDF of lectures",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69616",
+      "created_at": "2026-08-19T15:27:17Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66850,
+      "title": "ENH: add `DatetimeIndexResampler`, `PeriodIndexResampler` and `TimedeltaIndexResampler` to `pandas.api.typing`",
+      "url": "https://github.com/pandas-dev/pandas/issues/66850",
+      "created_at": "2026-08-19T14:27:40Z",
+      "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34781,
+      "title": "Adding Intel as Financial partner",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34781",
+      "created_at": "2026-08-19T13:43:40Z",
+      "digest_date": "2026-08-19",
       "triage": null
     }
   ]
