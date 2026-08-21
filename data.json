@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19",
+  "updated": "2026-08-20",
   "issues": [
     {
       "repo": "react/react-native",
@@ -17693,6 +17693,321 @@
       "url": "https://github.com/scikit-learn/scikit-learn/issues/34781",
       "created_at": "2026-08-19T13:43:40Z",
       "digest_date": "2026-08-19",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49181,
+      "title": "expo-eas-client: deterministicUniformValue returns [0.5, 0.75), so any Observe sampleRate <= 0.5 samples zero installs",
+      "url": "https://github.com/expo/expo/issues/49181",
+      "created_at": "2026-08-20T18:34:07Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49173,
+      "title": "[dom-components] Android cold start uncaught injectJavaScript reject (cloneable MRE)",
+      "url": "https://github.com/expo/expo/issues/49173",
+      "created_at": "2026-08-20T16:50:30Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49168,
+      "title": "React Native DevTools console is empty and shows HermesRuntime[RNBridgeless] CDP error in Expo SDK 57",
+      "url": "https://github.com/expo/expo/issues/49168",
+      "created_at": "2026-08-20T16:03:44Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331892,
+      "title": "Add a customer-facing toggle to enable Fast mode models",
+      "url": "https://github.com/microsoft/vscode/issues/331892",
+      "created_at": "2026-08-21T00:39:08Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331889,
+      "title": "AgentHostPty is not disposed after terminal shutdown",
+      "url": "https://github.com/microsoft/vscode/issues/331889",
+      "created_at": "2026-08-21T00:05:17Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331884,
+      "title": "Agents: Show All Terminals does not reveal hosted terminals when the panel is hidden",
+      "url": "https://github.com/microsoft/vscode/issues/331884",
+      "created_at": "2026-08-20T23:14:06Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331882,
+      "title": "Extension webviews deadlock on cold startup until built-in GitHub Copilot Chat extension is toggled",
+      "url": "https://github.com/microsoft/vscode/issues/331882",
+      "created_at": "2026-08-20T22:51:42Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331879,
+      "title": "Reveal (comments) when connected to a remote agent host fails",
+      "url": "https://github.com/microsoft/vscode/issues/331879",
+      "created_at": "2026-08-20T22:09:19Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331876,
+      "title": "chat.tools.terminal.autoApprove",
+      "url": "https://github.com/microsoft/vscode/issues/331876",
+      "created_at": "2026-08-20T21:57:15Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331875,
+      "title": "otomatik kodlama",
+      "url": "https://github.com/microsoft/vscode/issues/331875",
+      "created_at": "2026-08-20T21:56:01Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331873,
+      "title": "Claude hangs after invoking extension-provided language model tools",
+      "url": "https://github.com/microsoft/vscode/issues/331873",
+      "created_at": "2026-08-20T21:43:40Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 331868,
+      "title": "Archiving a chat session silently reverts workspace files to that session's stored snapshots",
+      "url": "https://github.com/microsoft/vscode/issues/331868",
+      "created_at": "2026-08-20T20:39:03Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 97632,
+      "title": "Docs: Pages Router self-hosting guide does not document the version skew behavior added in 16.2",
+      "url": "https://github.com/vercel/next.js/issues/97632",
+      "created_at": "2026-08-20T14:34:37Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 48999,
+      "title": "[material-ui][ButtonBase] Every interaction on a `disableRipple` button permanently leaks its event object (LazyRipple `mounted` promise never settles)",
+      "url": "https://github.com/mui/material-ui/issues/48999",
+      "created_at": "2026-08-20T07:00:56Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23314,
+      "title": "`experimental.bundledDev`: `hotUpdate` runs without environment injection (`this.environment` undefined), leaving stale output until restart",
+      "url": "https://github.com/vitejs/vite/issues/23314",
+      "created_at": "2026-08-20T11:23:15Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23313,
+      "title": "Proxy: add `router` (target based on request) from `vue-cli`",
+      "url": "https://github.com/vitejs/vite/issues/23313",
+      "created_at": "2026-08-20T11:11:27Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23312,
+      "title": "Windows: server.host 'localhost' binds IPv6 only; proxy to localhost:port fails with ECONNREFUSED/ETIMEDOUT",
+      "url": "https://github.com/vitejs/vite/issues/23312",
+      "created_at": "2026-08-20T07:34:58Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35973,
+      "title": "[Bug]: HTMLElement.prototype.focus patch in test addon breaks programmatic focus inside shadow DOM",
+      "url": "https://github.com/storybookjs/storybook/issues/35973",
+      "created_at": "2026-08-20T11:41:10Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 20426,
+      "title": "`@tailwindcss/vite` discards `resolve.conditions` when resolving CSS `@import`, but honours them for JS",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/20426",
+      "created_at": "2026-08-20T22:49:14Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69638,
+      "title": "Use semantic keyboard markup for Python shell shortcuts",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69638",
+      "created_at": "2026-08-20T10:58:25Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69636,
+      "title": "Add an accessible command-line shortcut summary",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69636",
+      "created_at": "2026-08-20T10:53:04Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69635,
+      "title": "Use semantic keyboard markup for the VS Code Command Palette shortcut",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69635",
+      "created_at": "2026-08-20T10:53:03Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69631,
+      "title": "Add an accessible file-management keyboard shortcut summary",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69631",
+      "created_at": "2026-08-20T10:49:41Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69630,
+      "title": "Add an accessible Nano keyboard shortcut summary",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69630",
+      "created_at": "2026-08-20T10:49:25Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69627,
+      "title": "Add an accessible VS Code keyboard shortcut summary",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69627",
+      "created_at": "2026-08-20T10:37:31Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69622,
+      "title": "fs lesson incorrectly states that every method has a synchronous version",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69622",
+      "created_at": "2026-08-20T04:49:52Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69619,
+      "title": "Use a table and kbd elements for keyboard shortcuts",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69619",
+      "created_at": "2026-08-19T23:09:40Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49338,
+      "title": "Docs: \"Securing your API\" - the `revoke execute on functions from public` statement has no effect",
+      "url": "https://github.com/supabase/supabase/issues/49338",
+      "created_at": "2026-08-20T23:27:59Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49330,
+      "title": "typo fix: placehoder > placeholder",
+      "url": "https://github.com/supabase/supabase/issues/49330",
+      "created_at": "2026-08-20T21:18:02Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51396,
+      "title": "Spring 4.2.0-M1 wiki lists wrong dependencies for AMQP",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51396",
+      "created_at": "2026-08-20T22:06:42Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66893,
+      "title": "BUG: `groupby(...).indices` / `get_group()` return the wrong group with `sort=False` + Categorical key + multiple keys",
+      "url": "https://github.com/pandas-dev/pandas/issues/66893",
+      "created_at": "2026-08-21T01:27:54Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66877,
+      "title": "BUG: rollforward/rollback accept date but their type hints reject it",
+      "url": "https://github.com/pandas-dev/pandas/issues/66877",
+      "created_at": "2026-08-20T15:56:49Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32373,
+      "title": "BUG: File descriptor leak in `npy_PyFile_Dup2` when `fdopen` fails",
+      "url": "https://github.com/numpy/numpy/issues/32373",
+      "created_at": "2026-08-21T00:15:59Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32372,
+      "title": "BUG: `numpy.linalg.norm` overflows for intermediate values due to naive sum-of-squares implementation",
+      "url": "https://github.com/numpy/numpy/issues/32372",
+      "created_at": "2026-08-20T23:11:56Z",
+      "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32360,
+      "title": "BUG: f2py: MODULE statement is not detected as a group opener, but detected as a group closer, leading to mismatches in group counters.",
+      "url": "https://github.com/numpy/numpy/issues/32360",
+      "created_at": "2026-08-20T13:14:16Z",
+      "digest_date": "2026-08-20",
       "triage": null
     }
   ]
