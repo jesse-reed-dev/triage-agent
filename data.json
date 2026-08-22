@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20",
+  "updated": "2026-08-22",
   "issues": [
     {
       "repo": "react/react-native",
@@ -18008,6 +18008,447 @@
       "url": "https://github.com/numpy/numpy/issues/32360",
       "created_at": "2026-08-20T13:14:16Z",
       "digest_date": "2026-08-20",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58064,
+      "title": "Android: leading glyph ink clipped at RTL (Arabic) line starts - API 35 fix exists (setShiftDrawingOffsetForStartOverhang) but TextLayoutManager never sets it; existing reflection handle has zero call sites",
+      "url": "https://github.com/react/react-native/issues/58064",
+      "created_at": "2026-08-21T16:40:30Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58061,
+      "title": "\u5173\u4e8e\u8fd9\u4e2a\u9879\u76ee\u7684\u4e00\u70b9\u60f3\u6cd5",
+      "url": "https://github.com/react/react-native/issues/58061",
+      "created_at": "2026-08-21T14:11:34Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58054,
+      "title": "border stroke of `StyleSheet.hairlineWidth`not always rendered",
+      "url": "https://github.com/react/react-native/issues/58054",
+      "created_at": "2026-08-21T12:39:46Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49240,
+      "title": "[expo-blur] No option to render a blur without a tint",
+      "url": "https://github.com/expo/expo/issues/49240",
+      "created_at": "2026-08-22T17:39:21Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49232,
+      "title": "babel-preset-expo miscompiles destructuring-omit with a computed property-access key (drops the key assignment)",
+      "url": "https://github.com/expo/expo/issues/49232",
+      "created_at": "2026-08-22T04:14:40Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49221,
+      "title": "[expo-router] Android: outgoing screen goes blank white before the closing animation runs",
+      "url": "https://github.com/expo/expo/issues/49221",
+      "created_at": "2026-08-21T15:52:31Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49214,
+      "title": "[expo-modules-jsi][iOS] RuntimeScheduler constructors misuse SWIFT_RETURNS_RETAINED, fails archive build under Xcode 26.2 Swift 6",
+      "url": "https://github.com/expo/expo/issues/49214",
+      "created_at": "2026-08-21T13:04:29Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332136,
+      "title": "Code, on Linux, is bleeding internal env vars into delve sessions.",
+      "url": "https://github.com/microsoft/vscode/issues/332136",
+      "created_at": "2026-08-22T18:38:09Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332135,
+      "title": "minimize menu not being clickable",
+      "url": "https://github.com/microsoft/vscode/issues/332135",
+      "created_at": "2026-08-22T18:21:19Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332132,
+      "title": "container setup fails on copying .gnupg/pubring.gpg",
+      "url": "https://github.com/microsoft/vscode/issues/332132",
+      "created_at": "2026-08-22T17:36:41Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332131,
+      "title": "Custom title bar overlaps left-side window controls with Electron 43",
+      "url": "https://github.com/microsoft/vscode/issues/332131",
+      "created_at": "2026-08-22T17:15:40Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332129,
+      "title": "New chats remain stuck in Agent Host after switching back to Local Chat due to persisted chat.userSelectedSessionType",
+      "url": "https://github.com/microsoft/vscode/issues/332129",
+      "created_at": "2026-08-22T16:38:09Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332128,
+      "title": "VSCode keeps freezing my Mac",
+      "url": "https://github.com/microsoft/vscode/issues/332128",
+      "created_at": "2026-08-22T15:43:11Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332127,
+      "title": "Markdown task list checkboxes render incorrectly in preview",
+      "url": "https://github.com/microsoft/vscode/issues/332127",
+      "created_at": "2026-08-22T15:42:18Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332126,
+      "title": "MSAL: stale session records in SecretStorage cause Settings Sync sign-out every ~1h",
+      "url": "https://github.com/microsoft/vscode/issues/332126",
+      "created_at": "2026-08-22T15:06:51Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332124,
+      "title": "Cannot drag the pet anymore from the pill area",
+      "url": "https://github.com/microsoft/vscode/issues/332124",
+      "created_at": "2026-08-22T14:42:04Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332121,
+      "title": "Turn changes summary shows very large number of changes for an Automation",
+      "url": "https://github.com/microsoft/vscode/issues/332121",
+      "created_at": "2026-08-22T14:28:19Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332120,
+      "title": "Diff editor: no horizontal scrollbar after turning word wrap off, so the hidden text cannot be reached",
+      "url": "https://github.com/microsoft/vscode/issues/332120",
+      "created_at": "2026-08-22T14:24:37Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332119,
+      "title": "Rendered Markdown diff in Source Control turns tables into raw pipes and dashes",
+      "url": "https://github.com/microsoft/vscode/issues/332119",
+      "created_at": "2026-08-22T14:21:18Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332118,
+      "title": "Link to a session does not look as if it were a link to a session",
+      "url": "https://github.com/microsoft/vscode/issues/332118",
+      "created_at": "2026-08-22T14:16:49Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332117,
+      "title": "Markdown editor lets you edit a staged file, and then shows text that is not actually staged",
+      "url": "https://github.com/microsoft/vscode/issues/332117",
+      "created_at": "2026-08-22T14:14:32Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332116,
+      "title": "Create session from PR shows \"Session not found on backend: copilotcli:/<UUID>\"",
+      "url": "https://github.com/microsoft/vscode/issues/332116",
+      "created_at": "2026-08-22T14:12:11Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36012,
+      "title": "[Bug]: `angular-vite` inherits none of the Angular builder's sass setup",
+      "url": "https://github.com/storybookjs/storybook/issues/36012",
+      "created_at": "2026-08-22T19:27:07Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36010,
+      "title": "[Bug]: a `getAbsolutePath`-wrapped addon resolves by directory, which bypasses its exports map",
+      "url": "https://github.com/storybookjs/storybook/issues/36010",
+      "created_at": "2026-08-22T14:28:54Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36009,
+      "title": "[Bug]: `angular-vite` validates the `browserTarget` options and then discards all but `tsConfig`",
+      "url": "https://github.com/storybookjs/storybook/issues/36009",
+      "created_at": "2026-08-22T12:20:17Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36006,
+      "title": "[Bug]: an unreadable `standalone` is recorded as `true`, so the snippet imports a component that cannot be imported",
+      "url": "https://github.com/storybookjs/storybook/issues/36006",
+      "created_at": "2026-08-21T14:01:17Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 35996,
+      "title": "Set `docs.codePanel` to true per default in Storybook 11",
+      "url": "https://github.com/storybookjs/storybook/issues/35996",
+      "created_at": "2026-08-21T07:23:15Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69675,
+      "title": "Use semantic keyboard markup in The Box Model Lesson A",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69675",
+      "created_at": "2026-08-22T15:23:00Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69674,
+      "title": "Use semantic keyboard markup in How to Set Up the Chinese Keyboard on Your Computer",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69674",
+      "created_at": "2026-08-22T15:22:58Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69673,
+      "title": "Use semantic keyboard markup in Back End Development and APIs Review",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69673",
+      "created_at": "2026-08-22T15:22:55Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69672,
+      "title": "Use semantic keyboard markup in Error Handling in Express Review",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69672",
+      "created_at": "2026-08-22T15:22:52Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69671,
+      "title": "Use semantic keyboard markup in Bash Commands Quiz",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69671",
+      "created_at": "2026-08-22T15:22:28Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69665,
+      "title": "Sign in button on daily challenge archive page is too wide",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69665",
+      "created_at": "2026-08-21T16:59:37Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69663,
+      "title": "Inserting Emoji's",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69663",
+      "created_at": "2026-08-21T14:33:35Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69661,
+      "title": "Run Tests fails in \"Learn Node.js REPL\" lab even when terminal command is correct (Backend JS v9, Codespaces)",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69661",
+      "created_at": "2026-08-21T07:05:05Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30106,
+      "title": "[Urgent] Unexpected Server Error during Vercel SSO OAuth integration for Prisma Postgres",
+      "url": "https://github.com/prisma/prisma/issues/30106",
+      "created_at": "2026-08-22T17:31:24Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30105,
+      "title": "Official AST Parser",
+      "url": "https://github.com/prisma/prisma/issues/30105",
+      "created_at": "2026-08-22T16:17:09Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30104,
+      "title": "[v8] .include() joins only the first column of a composite foreign key, silently returning wrong rows",
+      "url": "https://github.com/prisma/prisma/issues/30104",
+      "created_at": "2026-08-22T15:46:29Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49427,
+      "title": "page is missing",
+      "url": "https://github.com/supabase/supabase/issues/49427",
+      "created_at": "2026-08-22T18:40:19Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49426,
+      "title": "Preview branches do not preserve object privileges in public, and do not create auth.users triggers",
+      "url": "https://github.com/supabase/supabase/issues/49426",
+      "created_at": "2026-08-22T13:55:35Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49416,
+      "title": "2FA issue, I don't remember setting this",
+      "url": "https://github.com/supabase/supabase/issues/49416",
+      "created_at": "2026-08-21T21:30:41Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49406,
+      "title": "Docs: Google nonce example declares hashedNonce inside the .then() callback, so it is unreachable",
+      "url": "https://github.com/supabase/supabase/issues/49406",
+      "created_at": "2026-08-21T18:20:13Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32376,
+      "title": "BUG: Failing `test_unary_spurious_fpexception` and `test_floor_division_errors` tests on RISC-V",
+      "url": "https://github.com/numpy/numpy/issues/32376",
+      "created_at": "2026-08-21T07:24:45Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34792,
+      "title": "Race when pickling RecordingCallback during process-based parallelism on Python 3.14",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34792",
+      "created_at": "2026-08-21T18:21:43Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "github/docs",
+      "number": 44585,
+      "title": "docs: stale doc states dependency graph/review is on by default and can't be disabled",
+      "url": "https://github.com/github/docs/issues/44585",
+      "created_at": "2026-06-04T07:43:29Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "github/docs",
+      "number": 44493,
+      "title": "Clarify limitations of `copilot-setup-steps` concerning call of reusable workflows",
+      "url": "https://github.com/github/docs/issues/44493",
+      "created_at": "2026-05-29T13:24:05Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "EbookFoundation/free-programming-books",
+      "number": 13420,
+      "title": "2353",
+      "url": "https://github.com/EbookFoundation/free-programming-books/issues/13420",
+      "created_at": "2026-08-22T04:34:56Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "EbookFoundation/free-programming-books",
+      "number": 13419,
+      "title": "AhmedElTabarani:add-arabic-courses",
+      "url": "https://github.com/EbookFoundation/free-programming-books/issues/13419",
+      "created_at": "2026-08-22T04:32:56Z",
+      "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "EbookFoundation/free-programming-books",
+      "number": 13418,
+      "title": "AhmedElTabarani:add-arabic-courses",
+      "url": "https://github.com/EbookFoundation/free-programming-books/issues/13418",
+      "created_at": "2026-08-22T04:32:37Z",
+      "digest_date": "2026-08-22",
       "triage": null
     }
   ]
