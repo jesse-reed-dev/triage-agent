@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22",
+  "updated": "2026-08-24",
   "issues": [
     {
       "repo": "react/react-native",
@@ -18449,6 +18449,366 @@
       "url": "https://github.com/EbookFoundation/free-programming-books/issues/13418",
       "created_at": "2026-08-22T04:32:37Z",
       "digest_date": "2026-08-22",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58085,
+      "title": "[Android][Fabric] `enablePropsUpdateReconciliationAndroid` conflates `transparent` color with undefined value",
+      "url": "https://github.com/react/react-native/issues/58085",
+      "created_at": "2026-08-24T09:40:03Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58081,
+      "title": "[iOS][Fabric] Modal content vanishes from the accessibility tree on repeated present/dismiss cycles (renders on screen, invisible to XCUITest/VoiceOver; dev builds)",
+      "url": "https://github.com/react/react-native/issues/58081",
+      "created_at": "2026-08-24T00:30:01Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49307,
+      "title": "[expo-dev-launcher][iOS] Bonjour discovery keeps running during an explicit-URL app launch",
+      "url": "https://github.com/expo/expo/issues/49307",
+      "created_at": "2026-08-24T17:13:12Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49303,
+      "title": "[docs] Clarify remotely acknowledged actions in the local-first guide",
+      "url": "https://github.com/expo/expo/issues/49303",
+      "created_at": "2026-08-24T15:29:06Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332386,
+      "title": "esc does not close Achievements modal",
+      "url": "https://github.com/microsoft/vscode/issues/332386",
+      "created_at": "2026-08-24T17:57:04Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332385,
+      "title": "Voice/dictation (Cmd+I) never activates the speech provider extension \u2014 startup race condition breaks onSpeech activation",
+      "url": "https://github.com/microsoft/vscode/issues/332385",
+      "created_at": "2026-08-24T17:52:30Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332384,
+      "title": "Agents window: Model changed when creating session on PR",
+      "url": "https://github.com/microsoft/vscode/issues/332384",
+      "created_at": "2026-08-24T17:48:28Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332383,
+      "title": "Claude invokes an unrelated skill when the requested skill is unavailable",
+      "url": "https://github.com/microsoft/vscode/issues/332383",
+      "created_at": "2026-08-24T17:46:53Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332380,
+      "title": "Agents window: Can't create multiple sessions on same PR",
+      "url": "https://github.com/microsoft/vscode/issues/332380",
+      "created_at": "2026-08-24T17:45:50Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332379,
+      "title": "Copilot Chat reports an invalid GitHub token while VS Code still shows the account as signed in",
+      "url": "https://github.com/microsoft/vscode/issues/332379",
+      "created_at": "2026-08-24T17:45:01Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332378,
+      "title": "Skills from one workspace applied to another workspace",
+      "url": "https://github.com/microsoft/vscode/issues/332378",
+      "created_at": "2026-08-24T17:34:15Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332377,
+      "title": "Incorrect doc link provided",
+      "url": "https://github.com/microsoft/vscode/issues/332377",
+      "created_at": "2026-08-24T17:26:23Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332376,
+      "title": "Not able to see agents from a project folder",
+      "url": "https://github.com/microsoft/vscode/issues/332376",
+      "created_at": "2026-08-24T17:24:41Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332373,
+      "title": "Agents window: Can't use up arrow to retrieve previous chat message from history",
+      "url": "https://github.com/microsoft/vscode/issues/332373",
+      "created_at": "2026-08-24T16:57:41Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332371,
+      "title": "unclear if how the session is reconciled when used between the two apps",
+      "url": "https://github.com/microsoft/vscode/issues/332371",
+      "created_at": "2026-08-24T16:53:32Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332370,
+      "title": "Agents window: Session still in-progress for a few minutes, even though it's complete",
+      "url": "https://github.com/microsoft/vscode/issues/332370",
+      "created_at": "2026-08-24T16:52:57Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332369,
+      "title": "Copilot is maddening in it's incoherence",
+      "url": "https://github.com/microsoft/vscode/issues/332369",
+      "created_at": "2026-08-24T16:51:19Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332367,
+      "title": "mismatch update info between agents and editor windows",
+      "url": "https://github.com/microsoft/vscode/issues/332367",
+      "created_at": "2026-08-24T16:41:53Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332366,
+      "title": "Able to enable/disable MCP server provided by the plugin in the customizations view",
+      "url": "https://github.com/microsoft/vscode/issues/332366",
+      "created_at": "2026-08-24T16:39:23Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332363,
+      "title": "setting external chat filter to `none` does not remove external chats",
+      "url": "https://github.com/microsoft/vscode/issues/332363",
+      "created_at": "2026-08-24T16:31:18Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 332362,
+      "title": "Sandbox toggle overflows the border in agents window",
+      "url": "https://github.com/microsoft/vscode/issues/332362",
+      "created_at": "2026-08-24T16:19:28Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 97807,
+      "title": "Segment cache silently drops navigations when the RSC payload fetch stalls or fails (can also commit a stale canonical URL)",
+      "url": "https://github.com/vercel/next.js/issues/97807",
+      "created_at": "2026-08-24T15:21:15Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 97802,
+      "title": "Turbopack build saturates 4 GB and stalls or OOMs",
+      "url": "https://github.com/vercel/next.js/issues/97802",
+      "created_at": "2026-08-24T15:01:33Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23350,
+      "title": "build.chunkImportMap drops module preload dependency lists when base is not /",
+      "url": "https://github.com/vitejs/vite/issues/23350",
+      "created_at": "2026-08-24T13:46:51Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23348,
+      "title": "Vite 8.2.x leaves CSS asset URLs stale after PostCSS transforms",
+      "url": "https://github.com/vitejs/vite/issues/23348",
+      "created_at": "2026-08-24T12:48:34Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36028,
+      "title": "Test toolset: render agent-facing test-run results for agent-driven CLI runs via a real ctx.agent signal",
+      "url": "https://github.com/storybookjs/storybook/issues/36028",
+      "created_at": "2026-08-24T11:55:52Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69724,
+      "title": "Use semantic keyboard markup in Responsive Web Design V9",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69724",
+      "created_at": "2026-08-24T16:11:59Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69723,
+      "title": "Use semantic keyboard markup in Relational Databases V9",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69723",
+      "created_at": "2026-08-24T16:11:56Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69722,
+      "title": "Use semantic keyboard markup in Python V9",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69722",
+      "created_at": "2026-08-24T16:11:53Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69721,
+      "title": "Use semantic keyboard markup in JavaScript V9",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69721",
+      "created_at": "2026-08-24T16:11:50Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69720,
+      "title": "Use semantic keyboard markup in Front End Libraries V9",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69720",
+      "created_at": "2026-08-24T16:11:47Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69719,
+      "title": "Use semantic keyboard markup in B1 English conditionals task",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69719",
+      "created_at": "2026-08-24T16:11:33Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69715,
+      "title": "Correct inaccurate explanations and examples in the Node fs lesson",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69715",
+      "created_at": "2026-08-24T14:52:25Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49455,
+      "title": "DNS NXDOMAIN for project ref qvovxdrhnponqdgazgew while production Auth blocked",
+      "url": "https://github.com/supabase/supabase/issues/49455",
+      "created_at": "2026-08-24T04:33:49Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51424,
+      "title": "Document support for Java 27",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51424",
+      "created_at": "2026-08-24T11:36:09Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66966,
+      "title": "ENH: Allow assign() lambdas to optionally receive the target column as a second argument",
+      "url": "https://github.com/pandas-dev/pandas/issues/66966",
+      "created_at": "2026-08-23T19:03:58Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32401,
+      "title": "BUG: MaskedArray.__array_wrap__ propagates a stale, dtype-invalid fill_value across dtype-changing ufuncs",
+      "url": "https://github.com/numpy/numpy/issues/32401",
+      "created_at": "2026-08-24T12:53:18Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32400,
+      "title": "DOC: numpy.ma.allequal",
+      "url": "https://github.com/numpy/numpy/issues/32400",
+      "created_at": "2026-08-24T12:13:11Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32394,
+      "title": "BUG: `np.trim_zeros` raises `TypeError` for multi-dimensional sequences",
+      "url": "https://github.com/numpy/numpy/issues/32394",
+      "created_at": "2026-08-23T20:39:30Z",
+      "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34807,
+      "title": "Dual problem formulation approach is not mentioned in Ridge solvers",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34807",
+      "created_at": "2026-08-24T06:50:45Z",
+      "digest_date": "2026-08-24",
       "triage": null
     }
   ]
