@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-24",
+  "updated": "2026-08-29",
   "issues": [
     {
       "repo": "react/react-native",
@@ -18809,6 +18809,753 @@
       "url": "https://github.com/scikit-learn/scikit-learn/issues/34807",
       "created_at": "2026-08-24T06:50:45Z",
       "digest_date": "2026-08-24",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58191,
+      "title": "Device need connect to run App in debug mode(Android)",
+      "url": "https://github.com/react/react-native/issues/58191",
+      "created_at": "2026-08-29T04:29:29Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58186,
+      "title": "[Android] One-frame jump on prepend with maintainVisibleContentPosition",
+      "url": "https://github.com/react/react-native/issues/58186",
+      "created_at": "2026-08-28T13:57:53Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58176,
+      "title": "iOS Fabric: fontFamily (PostScript name) + explicit fontWeight resolves to the heaviest face \u2014 elvis-operator typo in RCTFontUtils.mm",
+      "url": "https://github.com/react/react-native/issues/58176",
+      "created_at": "2026-08-27T20:06:26Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58175,
+      "title": "Fabric: schedulerDidFinishTransaction picks oldest (not newest) pending transaction as merge target, corrupting mount order",
+      "url": "https://github.com/react/react-native/issues/58175",
+      "created_at": "2026-08-27T19:52:02Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49502,
+      "title": "[metro-config] Tree shaking emits an unwrapped module for `.css` files a transformer turned into JS",
+      "url": "https://github.com/expo/expo/issues/49502",
+      "created_at": "2026-08-28T13:58:35Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333327,
+      "title": "\u66f4\u65b0\u8f6f\u4ef6\u540e\u804a\u5929\u9762\u677f\u65e0\u6cd5\u52a0\u8f7d",
+      "url": "https://github.com/microsoft/vscode/issues/333327",
+      "created_at": "2026-08-29T10:03:18Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333325,
+      "title": "Export changes of a session in the Chat panel",
+      "url": "https://github.com/microsoft/vscode/issues/333325",
+      "created_at": "2026-08-29T09:29:33Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333324,
+      "title": "VS Code Reload Window Can Discard Active Agent State",
+      "url": "https://github.com/microsoft/vscode/issues/333324",
+      "created_at": "2026-08-29T08:39:48Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333323,
+      "title": "Moving Chat editor to a new window fails with \"Not allowed to create elements in child window JavaScript context\"",
+      "url": "https://github.com/microsoft/vscode/issues/333323",
+      "created_at": "2026-08-29T08:36:19Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333322,
+      "title": "Add an interactive \"human-assist\" mode for GUI/emulator actions in Copilot Agent Mode (VS Code)",
+      "url": "https://github.com/microsoft/vscode/issues/333322",
+      "created_at": "2026-08-29T07:53:01Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333321,
+      "title": "Tabs intermittently enter multi-select mode, causing accidental bulk tab closure  ",
+      "url": "https://github.com/microsoft/vscode/issues/333321",
+      "created_at": "2026-08-29T07:27:18Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333320,
+      "title": "Copilot inline suggestion doesn't work when parent folder has space",
+      "url": "https://github.com/microsoft/vscode/issues/333320",
+      "created_at": "2026-08-29T07:23:00Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333317,
+      "title": "Markdown editor not working",
+      "url": "https://github.com/microsoft/vscode/issues/333317",
+      "created_at": "2026-08-29T06:03:26Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333316,
+      "title": "[Research/Bug] Environment block crossing the OS \u21c4 JS-object boundary lacks a validation contract \u2014 one class of \"invalid env\" failures (invalid keys, case semantics, NUL/=/undefined) reaching the utility-process boundary",
+      "url": "https://github.com/microsoft/vscode/issues/333316",
+      "created_at": "2026-08-29T05:45:57Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333313,
+      "title": "Support Codex Agent Plugin Marketplace Fotmat",
+      "url": "https://github.com/microsoft/vscode/issues/333313",
+      "created_at": "2026-08-29T05:29:27Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333311,
+      "title": "Allow saving integrated browser pages as MHTML",
+      "url": "https://github.com/microsoft/vscode/issues/333311",
+      "created_at": "2026-08-29T05:18:37Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333309,
+      "title": "[Feature] Improved Recent Files menu list",
+      "url": "https://github.com/microsoft/vscode/issues/333309",
+      "created_at": "2026-08-29T04:54:25Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333306,
+      "title": "terminal.integrated.hideOnStartup: \"always\" shows, hides, then re-shows the terminal panel when a workspace with a folderOpen task is reopened while VS Code is frontmost",
+      "url": "https://github.com/microsoft/vscode/issues/333306",
+      "created_at": "2026-08-29T04:13:12Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333305,
+      "title": "Allow opening MHTML files in the integrated browser",
+      "url": "https://github.com/microsoft/vscode/issues/333305",
+      "created_at": "2026-08-29T04:11:01Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98045,
+      "title": "Progressively enhanced Server Function submission stays pending when bound in a Client Component",
+      "url": "https://github.com/vercel/next.js/issues/98045",
+      "created_at": "2026-08-28T18:24:21Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98037,
+      "title": "Segment cache: prefetched sibling routes render the wrong page when `htmlLimitedBots` disables PPR serving (16.3.3; no longer reproduces on 16.4.0-canary.0)",
+      "url": "https://github.com/vercel/next.js/issues/98037",
+      "created_at": "2026-08-28T14:23:07Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 49052,
+      "title": "Valid CSS color strings can throw during render when Link has underline=\"always\", crashes the app",
+      "url": "https://github.com/mui/material-ui/issues/49052",
+      "created_at": "2026-08-28T16:13:07Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 49051,
+      "title": "[Checkbox] Indeterminate Checkbox Axe scan failure",
+      "url": "https://github.com/mui/material-ui/issues/49051",
+      "created_at": "2026-08-28T15:52:58Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 49050,
+      "title": "[Skeleton] Height of text variant does not match given font-size",
+      "url": "https://github.com/mui/material-ui/issues/49050",
+      "created_at": "2026-08-28T15:16:30Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 49038,
+      "title": "[Tabs] ignores scroll-padding on its scroller when it scrolls the selected tab into view",
+      "url": "https://github.com/mui/material-ui/issues/49038",
+      "created_at": "2026-08-25T18:57:18Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23393,
+      "title": "Provide a way to run `transformIndexHtml` hooks of a per-environment plugin in dev",
+      "url": "https://github.com/vitejs/vite/issues/23393",
+      "created_at": "2026-08-28T08:38:16Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23392,
+      "title": "vite.config change during an in-flight config restart is silently dropped, leaving the server running a config that no longer matches disk",
+      "url": "https://github.com/vitejs/vite/issues/23392",
+      "created_at": "2026-08-28T08:05:25Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23388,
+      "title": "Vite doesn't seem to fallback to the WASM Rolldown on unsupported platforms",
+      "url": "https://github.com/vitejs/vite/issues/23388",
+      "created_at": "2026-08-27T20:12:19Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23383,
+      "title": "Dependency scan fails with incorrect file path when input contains @ in directory name on Windows",
+      "url": "https://github.com/vitejs/vite/issues/23383",
+      "created_at": "2026-08-27T06:38:20Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23377,
+      "title": "Imported worker missing from Vite build manifest",
+      "url": "https://github.com/vitejs/vite/issues/23377",
+      "created_at": "2026-08-26T12:42:22Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23374,
+      "title": "A single failed sass-embedded compiler spawn permanently breaks all scss compilation until server restart",
+      "url": "https://github.com/vitejs/vite/issues/23374",
+      "created_at": "2026-08-26T08:26:09Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36082,
+      "title": "Addon Vitest: Adapt `vitest@5` breaking changes for `projects[].extends`",
+      "url": "https://github.com/storybookjs/storybook/issues/36082",
+      "created_at": "2026-08-28T12:24:38Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36059,
+      "title": "Addon Vitest: Migrate `istanbul-lib-report` to `@vitest/istanbul-lib-report`",
+      "url": "https://github.com/storybookjs/storybook/issues/36059",
+      "created_at": "2026-08-27T06:18:39Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36058,
+      "title": "[Bug]: Clicking the copy button next to headings on a docs page no longer scrolls to the heading anchor",
+      "url": "https://github.com/storybookjs/storybook/issues/36058",
+      "created_at": "2026-08-27T02:06:03Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36055,
+      "title": "[Bug]: Missing whitespace in search breadcrumb with `experimentalSearchHeadings: true`",
+      "url": "https://github.com/storybookjs/storybook/issues/36055",
+      "created_at": "2026-08-26T18:52:17Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36053,
+      "title": "[Bug]: experimentalSearchDocsHeadings: identical headings from other pages outrank the page you named",
+      "url": "https://github.com/storybookjs/storybook/issues/36053",
+      "created_at": "2026-08-26T18:39:59Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36045,
+      "title": "addon-vitest: no tests are registered when the project path contains non-ASCII characters",
+      "url": "https://github.com/storybookjs/storybook/issues/36045",
+      "created_at": "2026-08-26T03:33:17Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 20435,
+      "title": "Upgrade codemod rewrites `variant=\"outline\"` to `\"outline-solid\"` inside conditional expressions",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/20435",
+      "created_at": "2026-08-27T22:13:09Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 20433,
+      "title": "Optimizer warns on Angular's `::ng-deep` \u2014 the `:deep`/`:slotted`/`:global` filter doesn't cover it",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/20433",
+      "created_at": "2026-08-26T15:37:42Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69794,
+      "title": "Unclear instruction for daily challenge no.18 (Second Best)",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69794",
+      "created_at": "2026-08-28T17:32:30Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17613,
+      "title": "12.0.1: WebSocket gateway stops delivering server\u2192client data after upgrade (connect/ack never received)",
+      "url": "https://github.com/nestjs/nest/issues/17613",
+      "created_at": "2026-08-29T11:35:32Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17607,
+      "title": "Fix isUndefined \u2192 isNil in injector.ts resolveSingleParam for better null dependency diagnostics",
+      "url": "https://github.com/nestjs/nest/issues/17607",
+      "created_at": "2026-08-28T14:13:16Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30169,
+      "title": "fix(mongo-orm): .select() combined with .include() drops joined relation fields via $project stage",
+      "url": "https://github.com/prisma/orm/issues/30169",
+      "created_at": "2026-08-29T04:08:11Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30166,
+      "title": "Nullable array column decodes to null though the contract declares a non-nullable list (ORM 7 returned [])",
+      "url": "https://github.com/prisma/orm/issues/30166",
+      "created_at": "2026-08-28T20:02:30Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30165,
+      "title": "renderTypedParam always casts array params (|| many), making array-of-enum writes unassignable (42804)",
+      "url": "https://github.com/prisma/orm/issues/30165",
+      "created_at": "2026-08-28T20:02:28Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30164,
+      "title": "Enum-array columns cannot be decoded: codec lookup returns undefined (reading 'codecId')",
+      "url": "https://github.com/prisma/orm/issues/30164",
+      "created_at": "2026-08-28T20:02:20Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30163,
+      "title": "ORDER BY on a pg.enum column emits array_position() with an uncast column argument (Postgres 42883)",
+      "url": "https://github.com/prisma/orm/issues/30163",
+      "created_at": "2026-08-28T19:33:23Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30157,
+      "title": "Support multi-file Prisma Schema/Contract in Prisma 8",
+      "url": "https://github.com/prisma/orm/issues/30157",
+      "created_at": "2026-08-28T14:46:55Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30151,
+      "title": "adapter-pg: timestamps with extended (>4-digit) years silently deserialize to Invalid Date",
+      "url": "https://github.com/prisma/orm/issues/30151",
+      "created_at": "2026-08-27T20:46:16Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30143,
+      "title": "Memory leak in the metrics of previewFeatures",
+      "url": "https://github.com/prisma/orm/issues/30143",
+      "created_at": "2026-08-26T12:13:09Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30135,
+      "title": "Custom domain add fails with false \"DNS not configured\" error (reproducible across CLI v3 and v8, and Console UI)",
+      "url": "https://github.com/prisma/orm/issues/30135",
+      "created_at": "2026-08-26T00:28:03Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30134,
+      "title": "Don't include studio in prisma/client deps",
+      "url": "https://github.com/prisma/orm/issues/30134",
+      "created_at": "2026-08-25T21:38:35Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49716,
+      "title": "Registration is throwing 403 forbidden error",
+      "url": "https://github.com/supabase/supabase/issues/49716",
+      "created_at": "2026-08-29T08:58:39Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49712,
+      "title": "Feature request: Support pg_orca (Cascades-style query optimizer) as an alternative PostgreSQL optimizer",
+      "url": "https://github.com/supabase/supabase/issues/49712",
+      "created_at": "2026-08-29T03:09:12Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49710,
+      "title": "Project DNS not resolving - NXDOMAIN",
+      "url": "https://github.com/supabase/supabase/issues/49710",
+      "created_at": "2026-08-28T23:19:21Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49705,
+      "title": "logs.all Management API queries against auth_logs inconsistent \u2014 real rows once, then empty; several query variants return \"Backend error\"",
+      "url": "https://github.com/supabase/supabase/issues/49705",
+      "created_at": "2026-08-28T21:11:15Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49701,
+      "title": "Bug in DNS",
+      "url": "https://github.com/supabase/supabase/issues/49701",
+      "created_at": "2026-08-28T19:32:58Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51502,
+      "title": "`@ServiceConnection` on a `PostgreSQLContainer` produces `JdbcConnectionDetails` but not `R2dbcConnectionDetails`",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51502",
+      "created_at": "2026-08-29T11:47:32Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51498,
+      "title": "Encore module javadoc URLs in DSL",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51498",
+      "created_at": "2026-08-29T05:23:45Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51483,
+      "title": "Add Cache-Control: no-store to all Actuator responses sent over HTTP",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51483",
+      "created_at": "2026-08-27T16:02:04Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51472,
+      "title": "Unlike other SSL properties, HttpClientSettingsProperties.Ssl has no enabled property",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51472",
+      "created_at": "2026-08-27T07:40:40Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51463,
+      "title": "Threads are blocked with virtual threads active while waiting for a lock to load classes with JarUrlClassLoader",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51463",
+      "created_at": "2026-08-26T10:02:11Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51459,
+      "title": "Gradle ProtobufPluginAction breaks configuration cache",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51459",
+      "created_at": "2026-08-26T06:58:18Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51456,
+      "title": "Use offline javadoc links",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51456",
+      "created_at": "2026-08-25T23:43:12Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67074,
+      "title": "pandas `read_pickle` RCE via Ungated `pickle.load` on the Documented Persistence Format",
+      "url": "https://github.com/pandas-dev/pandas/issues/67074",
+      "created_at": "2026-08-29T06:16:18Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67066,
+      "title": "BUG: zoneinfo transition times causes incorrect localization of some Timestamps on 32 bit platforms",
+      "url": "https://github.com/pandas-dev/pandas/issues/67066",
+      "created_at": "2026-08-28T21:49:38Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67065,
+      "title": "BUG: HDFStore.select with where=\"cat == None\" returns empty DataFrame for Categorical columns instead of matching missing/NaN rows",
+      "url": "https://github.com/pandas-dev/pandas/issues/67065",
+      "created_at": "2026-08-28T21:25:14Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67064,
+      "title": "DOC: cookbook SQL section lacks PostgreSQL (psycopg 3) recipes",
+      "url": "https://github.com/pandas-dev/pandas/issues/67064",
+      "created_at": "2026-08-28T21:04:59Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67055,
+      "title": "BUG: Pandas 3: RangeIndex values can be modified from the outside",
+      "url": "https://github.com/pandas-dev/pandas/issues/67055",
+      "created_at": "2026-08-28T09:21:47Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67040,
+      "title": "BUG: Issues with stacked/grouped bars in subplot charts",
+      "url": "https://github.com/pandas-dev/pandas/issues/67040",
+      "created_at": "2026-08-28T06:54:07Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32457,
+      "title": "BUG: Building with AVX2 support causes illegal instruction error on import",
+      "url": "https://github.com/numpy/numpy/issues/32457",
+      "created_at": "2026-08-28T15:16:28Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32453,
+      "title": "PERF: F->C order conversion thrashes the L3 cache",
+      "url": "https://github.com/numpy/numpy/issues/32453",
+      "created_at": "2026-08-27T18:55:02Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32451,
+      "title": "Tracking Issue: Support for CPython subinterpreters in NumPy",
+      "url": "https://github.com/numpy/numpy/issues/32451",
+      "created_at": "2026-08-27T18:15:48Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32446,
+      "title": "BUG: np.corrcoef returns finite \u00b11/near-\u00b11 for exactly constant vectors",
+      "url": "https://github.com/numpy/numpy/issues/32446",
+      "created_at": "2026-08-27T10:27:58Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32439,
+      "title": "ENH: nanminmax follow-up design - new function vs nan_policy kwarg on np.minmax",
+      "url": "https://github.com/numpy/numpy/issues/32439",
+      "created_at": "2026-08-26T02:25:43Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32431,
+      "title": "BUG: StringDType loses trailing NULs from `str` scalars in Python wrappers",
+      "url": "https://github.com/numpy/numpy/issues/32431",
+      "created_at": "2026-08-25T17:03:39Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32426,
+      "title": "argsort no stable default behavior is problematic",
+      "url": "https://github.com/numpy/numpy/issues/32426",
+      "created_at": "2026-08-25T15:00:17Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34828,
+      "title": "StratifiedGroupKFold returns an empty fold when n_groups == n_splits: least-populated-fold tiebreak is defeated by 1-ULP noise",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34828",
+      "created_at": "2026-08-27T16:51:14Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34825,
+      "title": "Usage of sample weights in `min_impurity_decrease`",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34825",
+      "created_at": "2026-08-27T12:55:15Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34822,
+      "title": "OneHotEncoder unknown-category warning is incorrect for columns without an infrequent category",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34822",
+      "created_at": "2026-08-26T20:42:40Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34820,
+      "title": "Methodology details for KMeans not described and no reference given",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34820",
+      "created_at": "2026-08-26T15:32:05Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "github/docs",
+      "number": 45658,
+      "title": "Typo in \"Setting up Copilot for learning to code\"",
+      "url": "https://github.com/github/docs/issues/45658",
+      "created_at": "2026-08-29T09:32:47Z",
+      "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "github/docs",
+      "number": 45656,
+      "title": "Incorrect sidebar section name in branch protection rule documentation",
+      "url": "https://github.com/github/docs/issues/45656",
+      "created_at": "2026-08-29T09:28:32Z",
+      "digest_date": "2026-08-29",
       "triage": null
     }
   ]
