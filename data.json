@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-29",
+  "updated": "2026-08-30",
   "issues": [
     {
       "repo": "react/react-native",
@@ -19556,6 +19556,339 @@
       "url": "https://github.com/github/docs/issues/45656",
       "created_at": "2026-08-29T09:28:32Z",
       "digest_date": "2026-08-29",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58244,
+      "title": "IntersectionObserver sorts small thresholds lexicographically",
+      "url": "https://github.com/react/react-native/issues/58244",
+      "created_at": "2026-08-30T09:38:59Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58242,
+      "title": "NodeList.forEach drops an explicit null callback context",
+      "url": "https://github.com/react/react-native/issues/58242",
+      "created_at": "2026-08-30T09:36:57Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58240,
+      "title": "DOMRect normalizes NaN and negative zero to zero",
+      "url": "https://github.com/react/react-native/issues/58240",
+      "created_at": "2026-08-30T09:35:14Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58238,
+      "title": "PerformanceObserver accepts invalid callbacks until delivery",
+      "url": "https://github.com/react/react-native/issues/58238",
+      "created_at": "2026-08-30T09:33:24Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58236,
+      "title": "Stale MutationObserver records abort callbacks for active observers",
+      "url": "https://github.com/react/react-native/issues/58236",
+      "created_at": "2026-08-30T09:31:59Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58234,
+      "title": "Stale IntersectionObserver entries abort callbacks for active observers",
+      "url": "https://github.com/react/react-native/issues/58234",
+      "created_at": "2026-08-30T09:27:00Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58232,
+      "title": "XMLHttpRequest corrupts headers named after Object prototype properties",
+      "url": "https://github.com/react/react-native/issues/58232",
+      "created_at": "2026-08-30T09:23:28Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58230,
+      "title": "Keyboard.addListener ignores its context argument",
+      "url": "https://github.com/react/react-native/issues/58230",
+      "created_at": "2026-08-30T09:16:39Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58228,
+      "title": "EventEmitter rejects event names inherited from Object.prototype",
+      "url": "https://github.com/react/react-native/issues/58228",
+      "created_at": "2026-08-30T09:12:03Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58226,
+      "title": "structuredClone coerces boxed primitives and flips false Boolean",
+      "url": "https://github.com/react/react-native/issues/58226",
+      "created_at": "2026-08-30T09:05:25Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333387,
+      "title": "scrollbar",
+      "url": "https://github.com/microsoft/vscode/issues/333387",
+      "created_at": "2026-08-30T09:46:53Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333386,
+      "title": "C/C++",
+      "url": "https://github.com/microsoft/vscode/issues/333386",
+      "created_at": "2026-08-30T09:03:41Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333384,
+      "title": "Codex hits limits immidiately",
+      "url": "https://github.com/microsoft/vscode/issues/333384",
+      "created_at": "2026-08-30T08:52:24Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333380,
+      "title": "Feature Request: Open Folder in New or Current Window directly from Explorer",
+      "url": "https://github.com/microsoft/vscode/issues/333380",
+      "created_at": "2026-08-30T07:41:23Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333379,
+      "title": "Stale path references in nested AGENTS.md files (agentHost sessions tree moved; copilotcli missing ../; protocol.md does not resolve)",
+      "url": "https://github.com/microsoft/vscode/issues/333379",
+      "created_at": "2026-08-30T07:30:45Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333375,
+      "title": "Agent Host CLI output is garbled and shows the wrong management command on Windows",
+      "url": "https://github.com/microsoft/vscode/issues/333375",
+      "created_at": "2026-08-30T05:45:24Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333370,
+      "title": "Test: Copilot CLI Extension Host -> Copilot SDK Agent Host migration",
+      "url": "https://github.com/microsoft/vscode/issues/333370",
+      "created_at": "2026-08-30T04:30:49Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333369,
+      "title": "`runSubagent` bypasses `disable-model-invocation` when `agentName` is omitted",
+      "url": "https://github.com/microsoft/vscode/issues/333369",
+      "created_at": "2026-08-30T02:41:42Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333367,
+      "title": "Test: Creating and running automations",
+      "url": "https://github.com/microsoft/vscode/issues/333367",
+      "created_at": "2026-08-30T01:46:05Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333366,
+      "title": "macOS system Pinyin English candidate moves the caret and corrupts adjacent text",
+      "url": "https://github.com/microsoft/vscode/issues/333366",
+      "created_at": "2026-08-30T01:13:18Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333364,
+      "title": "VS code github copilot UI is broken for subagents",
+      "url": "https://github.com/microsoft/vscode/issues/333364",
+      "created_at": "2026-08-30T00:42:29Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98079,
+      "title": "experimental.inlineCss: stylesheet duplicated twice in the flight payload \u2014 _full.segment.rsc carries the CSS text 2x (3x total per prerendered page)",
+      "url": "https://github.com/vercel/next.js/issues/98079",
+      "created_at": "2026-08-30T11:56:11Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98078,
+      "title": "runtimeServerDeploymentId: prerendered flight payloads pin the build-time deployment id \u2014 serving a build under a different deployment id causes an infinite MPA reload loop",
+      "url": "https://github.com/vercel/next.js/issues/98078",
+      "created_at": "2026-08-30T11:46:04Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98067,
+      "title": "Request APIs after an await throw E1378 on client disconnect \u2014 but only if `after()` was called earlier in the request",
+      "url": "https://github.com/vercel/next.js/issues/98067",
+      "created_at": "2026-08-29T19:00:29Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98066,
+      "title": "Segment cache: a stalled RSC request permanently kills soft navigation to a route (zero-request dropped clicks with staleTimes.dynamic > 0)",
+      "url": "https://github.com/vercel/next.js/issues/98066",
+      "created_at": "2026-08-29T16:16:02Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 49069,
+      "title": "[docs] buildLlmsDocs drops sibling-layout pages: css-theme-variables and tailwindcss-v4 missing from llms.txt, skills/ reference dead .md URLs (26 refs)",
+      "url": "https://github.com/mui/material-ui/issues/49069",
+      "created_at": "2026-08-30T08:45:02Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23367,
+      "title": "`prepare`-style subcommand that frameworks can extend",
+      "url": "https://github.com/vitejs/vite/issues/23367",
+      "created_at": "2026-08-26T03:34:06Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36084,
+      "title": "[Bug]: Angular Vite - Turbosnap unable to build Storybook with Chromatic",
+      "url": "https://github.com/storybookjs/storybook/issues/36084",
+      "created_at": "2026-08-29T17:33:49Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69805,
+      "title": "Envelope Budget App Steps 41 and 42 use an invalid selector",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69805",
+      "created_at": "2026-08-30T11:32:51Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17624,
+      "title": "WsAdapter silently discards messages when a custom messageParser throws",
+      "url": "https://github.com/nestjs/nest/issues/17624",
+      "created_at": "2026-08-30T05:32:42Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17623,
+      "title": "enableShutdownHooks() leaves a process signal listener behind when called more than once",
+      "url": "https://github.com/nestjs/nest/issues/17623",
+      "created_at": "2026-08-30T05:32:34Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49727,
+      "title": "GoTrue Auth intermittent freeze: POST /auth/v1/token times out while /health responds OK (Next.js + Vercel, South America)",
+      "url": "https://github.com/supabase/supabase/issues/49727",
+      "created_at": "2026-08-29T23:07:16Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67375,
+      "title": "BUG: read_csv with usecols raises IndexError in low-memory mixed-dtype warning path",
+      "url": "https://github.com/pandas-dev/pandas/issues/67375",
+      "created_at": "2026-08-30T04:40:23Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32461,
+      "title": "TST: test_unary_spurious_fpexception fails comprehensively on riscv",
+      "url": "https://github.com/numpy/numpy/issues/32461",
+      "created_at": "2026-08-30T11:51:55Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34844,
+      "title": "\u26a0\ufe0f CI failed on Wheel builder (last failure: Aug 30, 2026) \u26a0\ufe0f",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34844",
+      "created_at": "2026-08-30T04:36:38Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34842,
+      "title": "GaussianMixture is not a universal fix for anisotropy \u2014 plot_kmeans_assumptions.py doesn't show the case where whitening is needed too",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34842",
+      "created_at": "2026-08-29T21:25:29Z",
+      "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "github/docs",
+      "number": 45668,
+      "title": "Incorrect placement of \"Require conversation resolution before merging\"",
+      "url": "https://github.com/github/docs/issues/45668",
+      "created_at": "2026-08-30T03:44:51Z",
+      "digest_date": "2026-08-30",
       "triage": null
     }
   ]
