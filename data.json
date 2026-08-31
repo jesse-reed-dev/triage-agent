@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-30",
+  "updated": "2026-08-31",
   "issues": [
     {
       "repo": "react/react-native",
@@ -19889,6 +19889,456 @@
       "url": "https://github.com/github/docs/issues/45668",
       "created_at": "2026-08-30T03:44:51Z",
       "digest_date": "2026-08-30",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49564,
+      "title": "[cli] app.config.ts default imports break with typescript@7 \u2014 require-utils CJS fallback emits no default-import interop",
+      "url": "https://github.com/expo/expo/issues/49564",
+      "created_at": "2026-08-31T17:09:22Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49550,
+      "title": "[SDK 57][Android] expo-gradle-plugin compiles with Kotlin 2.1.20, blocking Gradle 9.5+ and therefore AGP 9",
+      "url": "https://github.com/expo/expo/issues/49550",
+      "created_at": "2026-08-31T12:34:46Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49549,
+      "title": "[expo-notifications][iOS] Data race on NotificationCenterManager's unsynchronized delegates array \u2192 SIGSEGV in addDelegate (with self-contained repro)",
+      "url": "https://github.com/expo/expo/issues/49549",
+      "created_at": "2026-08-31T12:12:42Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333605,
+      "title": "Agents: Cloud session type pill appears interactive when no alternative is available",
+      "url": "https://github.com/microsoft/vscode/issues/333605",
+      "created_at": "2026-08-31T17:52:50Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333601,
+      "title": "`chat.pasteAsAttachmentThreshold` is confusing with requiring some arbitrary number of lines",
+      "url": "https://github.com/microsoft/vscode/issues/333601",
+      "created_at": "2026-08-31T17:37:00Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333600,
+      "title": "unable to hover over parent session",
+      "url": "https://github.com/microsoft/vscode/issues/333600",
+      "created_at": "2026-08-31T17:34:43Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333599,
+      "title": "session link listed twice in agent response",
+      "url": "https://github.com/microsoft/vscode/issues/333599",
+      "created_at": "2026-08-31T17:32:25Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333598,
+      "title": "delegated session status icon off-center",
+      "url": "https://github.com/microsoft/vscode/issues/333598",
+      "created_at": "2026-08-31T17:31:37Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333594,
+      "title": "VS Code Pet overlays tip dismissal",
+      "url": "https://github.com/microsoft/vscode/issues/333594",
+      "created_at": "2026-08-31T16:41:04Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333593,
+      "title": "GH token is immediately invalid after signing in",
+      "url": "https://github.com/microsoft/vscode/issues/333593",
+      "created_at": "2026-08-31T16:40:11Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333592,
+      "title": "Focus border corners are cut",
+      "url": "https://github.com/microsoft/vscode/issues/333592",
+      "created_at": "2026-08-31T16:39:08Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333591,
+      "title": "cancelling sign in causes \"failure\" pop-up",
+      "url": "https://github.com/microsoft/vscode/issues/333591",
+      "created_at": "2026-08-31T16:34:58Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333588,
+      "title": "Disposed multi-diff text model corrupts virtualized layout",
+      "url": "https://github.com/microsoft/vscode/issues/333588",
+      "created_at": "2026-08-31T16:21:26Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333587,
+      "title": "Multi-diff deleted file temporarily collapses to one line",
+      "url": "https://github.com/microsoft/vscode/issues/333587",
+      "created_at": "2026-08-31T16:21:26Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333586,
+      "title": "Multi-diff editor anchors upward scrolling at viewport top",
+      "url": "https://github.com/microsoft/vscode/issues/333586",
+      "created_at": "2026-08-31T16:21:25Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333583,
+      "title": "not signed in to agents window",
+      "url": "https://github.com/microsoft/vscode/issues/333583",
+      "created_at": "2026-08-31T16:12:46Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98111,
+      "title": "Turbopack panics when a Git worktree symlinks node_modules to the primary checkout",
+      "url": "https://github.com/vercel/next.js/issues/98111",
+      "created_at": "2026-08-31T15:04:49Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98110,
+      "title": "experimental.inlineCss embeds the full stylesheet 3x per page \u2014 getGlobalErrorStyles re-inlines it with an empty injectedCSS set",
+      "url": "https://github.com/vercel/next.js/issues/98110",
+      "created_at": "2026-08-31T14:59:42Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98099,
+      "title": "Turbopack browser runtime: first-wins module registration installs the wrong factory when a module id is emitted with different bodies in different chunks",
+      "url": "https://github.com/vercel/next.js/issues/98099",
+      "created_at": "2026-08-31T11:21:19Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23407,
+      "title": "Dev-server request stays pending for as long as the client renderer is frozen \u2014 large modules (inline dev sourcemap) hold the response in socket backpressure while vite's own timings stay fast",
+      "url": "https://github.com/vitejs/vite/issues/23407",
+      "created_at": "2026-08-31T10:17:06Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36105,
+      "title": "Docgen server: full all-components extraction can wedge the dev server for later channel clients on small machines",
+      "url": "https://github.com/storybookjs/storybook/issues/36105",
+      "created_at": "2026-08-31T13:30:15Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36102,
+      "title": "Tools: Accept a story ID in `docs show-story` as an alternative to componentId + storyName",
+      "url": "https://github.com/storybookjs/storybook/issues/36102",
+      "created_at": "2026-08-31T12:02:31Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36099,
+      "title": "Tools CLI: attached `docs list` deterministically fails on large projects \u2014 remote-command ack is flushed behind the handler's fan-out",
+      "url": "https://github.com/storybookjs/storybook/issues/36099",
+      "created_at": "2026-08-31T10:49:03Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36097,
+      "title": "[Bug]: `pauseAnimations` cleanup is skipped when `applyAfterEach` throws, leaking a document-wide animation freeze into later stories",
+      "url": "https://github.com/storybookjs/storybook/issues/36097",
+      "created_at": "2026-08-31T10:27:30Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69816,
+      "title": "Unclear terminology in CSS Grid lecture (untaught multi-column layouts)",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69816",
+      "created_at": "2026-08-31T08:20:40Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69813,
+      "title": "Mobile iOS deletes select all code when using copy",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69813",
+      "created_at": "2026-08-31T01:35:23Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69808,
+      "title": "Mark the F2 key in the Learn How to Use Conditionals task",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69808",
+      "created_at": "2026-08-30T17:42:17Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17638,
+      "title": "ParseEnumPipe fails validation for numeric enum values when passed as strings (e.g., from @Query or @Param)",
+      "url": "https://github.com/nestjs/nest/issues/17638",
+      "created_at": "2026-08-31T14:53:34Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17636,
+      "title": "Refactor extract duplicated isDebugMode() helper in packages/core/injector",
+      "url": "https://github.com/nestjs/nest/issues/17636",
+      "created_at": "2026-08-31T14:33:34Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30182,
+      "title": "Binary engine fails to restart after a crash once its datamodel temp file is gone \u2014 subsequent queries hang forever (classic client 6.x)",
+      "url": "https://github.com/prisma/orm/issues/30182",
+      "created_at": "2026-08-31T15:28:07Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30178,
+      "title": "upsert arbitrates ON CONFLICT on a partial unique index instead of the where-selected unique, failing with 42P10 (partialIndexes)",
+      "url": "https://github.com/prisma/orm/issues/30178",
+      "created_at": "2026-08-31T14:05:29Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30177,
+      "title": "Official support for composing TypeScript contract",
+      "url": "https://github.com/prisma/orm/issues/30177",
+      "created_at": "2026-08-31T12:45:38Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30174,
+      "title": "int8 literal @default renders as DEFAULT '0'::int8, so db migrate fails its own schema verification",
+      "url": "https://github.com/prisma/orm/issues/30174",
+      "created_at": "2026-08-31T07:24:03Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30171,
+      "title": "@@unlogged",
+      "url": "https://github.com/prisma/orm/issues/30171",
+      "created_at": "2026-08-30T19:06:34Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49793,
+      "title": "Access to Org Invite",
+      "url": "https://github.com/supabase/supabase/issues/49793",
+      "created_at": "2026-08-31T17:56:00Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49788,
+      "title": "Query builder generates invalid SQL for empty in filters",
+      "url": "https://github.com/supabase/supabase/issues/49788",
+      "created_at": "2026-08-31T16:34:29Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49782,
+      "title": "Preview branch provisioning fails: no migration is ever applied.",
+      "url": "https://github.com/supabase/supabase/issues/49782",
+      "created_at": "2026-08-31T15:49:11Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49776,
+      "title": "Table Editor shows the wrong row count when filtering by zero",
+      "url": "https://github.com/supabase/supabase/issues/49776",
+      "created_at": "2026-08-31T15:15:41Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51515,
+      "title": "Buggy NestedByteChannel.read(ByteBuffer) prevents reading nested jar's",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51515",
+      "created_at": "2026-08-31T12:59:17Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67470,
+      "title": "ENH: include cell location in ExcelWriter warning for values exceeding the 32,767 character limit",
+      "url": "https://github.com/pandas-dev/pandas/issues/67470",
+      "created_at": "2026-08-30T16:25:19Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32465,
+      "title": "PERF: avoid temporary boolean array in np.array_equal for contiguous integer arrays",
+      "url": "https://github.com/numpy/numpy/issues/32465",
+      "created_at": "2026-08-31T16:08:26Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32464,
+      "title": "BUG: matmul on Apple Silicon (Accelerate) writes out of bounds \u2014 silent data corruption, not just spurious FPE warnings",
+      "url": "https://github.com/numpy/numpy/issues/32464",
+      "created_at": "2026-08-31T11:55:02Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34860,
+      "title": "One Hot Encoding distinguishing column dtype within a Pipeline.",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34860",
+      "created_at": "2026-08-31T16:47:39Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34857,
+      "title": "BUG: `QuantileTransformer()` sub-sampling impact is too high for sparse matrices",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34857",
+      "created_at": "2026-08-31T14:23:33Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34845,
+      "title": "BIC-based model selection in plot_gmm_selection.py silently picks the wrong model under anisotropy severe enough to break its own initialization",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34845",
+      "created_at": "2026-08-30T17:20:15Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "github/docs",
+      "number": 45681,
+      "title": "Dependabot - Private \"Registries\"/\"Dependencies\"/\"Repositories\" is misleading",
+      "url": "https://github.com/github/docs/issues/45681",
+      "created_at": "2026-08-31T17:41:33Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "github/docs",
+      "number": 45675,
+      "title": "Update branch protection rule instructions",
+      "url": "https://github.com/github/docs/issues/45675",
+      "created_at": "2026-08-31T10:41:04Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "github/docs",
+      "number": 45674,
+      "title": "Describe undocumented way to access repository with repository_id",
+      "url": "https://github.com/github/docs/issues/45674",
+      "created_at": "2026-08-31T10:35:18Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "github/docs",
+      "number": 45671,
+      "title": "The final code on the 'Authenticating to the REST API with an OAuth app' article is misrepresentative of production environments",
+      "url": "https://github.com/github/docs/issues/45671",
+      "created_at": "2026-08-30T14:54:39Z",
+      "digest_date": "2026-08-31",
+      "triage": null
+    },
+    {
+      "repo": "EbookFoundation/free-programming-books",
+      "number": 13435,
+      "title": "Add IBM AI Engineering Professional Certificate resources",
+      "url": "https://github.com/EbookFoundation/free-programming-books/issues/13435",
+      "created_at": "2026-08-31T13:52:26Z",
+      "digest_date": "2026-08-31",
       "triage": null
     }
   ]
