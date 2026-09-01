@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-31",
+  "updated": "2026-09-01",
   "issues": [
     {
       "repo": "react/react-native",
@@ -20340,6 +20340,471 @@
       "created_at": "2026-08-31T13:52:26Z",
       "digest_date": "2026-08-31",
       "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58265,
+      "title": "[Android][Fabric] Create mutation missing from an unflatten reparenting batch under remount churn \u2014 production evidence for the #47960 class (surface-killing)",
+      "url": "https://github.com/react/react-native/issues/58265",
+      "created_at": "2026-08-31T18:31:14Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Create mutation missing from unflatten reparenting batch under remount churn, causing surface crash on Android",
+        "why_easy": "Requires deep expertise in Fabric's mount system, transaction merging, and race condition debugging; the issue body is truncated, limiting full context visibility."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49595,
+      "title": "Wrong behaviour of some native components in expo while using React Activity",
+      "url": "https://github.com/expo/expo/issues/49595",
+      "created_at": "2026-09-01T10:55:16Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Native components lose their state when switching away from and back to a React Activity in Expo",
+        "why_easy": "Hard: requires native platform debugging (iOS/Android), understanding React Activity lifecycle, reproducing against external repo, and identifying root cause from limited details; marked 'needs review' indicating not yet scoped for external pickup"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49574,
+      "title": "expo-sharing: correctly configured Share Extension never appears in iOS share sheet for video content",
+      "url": "https://github.com/expo/expo/issues/49574",
+      "created_at": "2026-08-31T21:47:01Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "expo-sharing Share Extension configured correctly for video content but never appears in iOS share sheet",
+        "why_easy": "Hard to pick up because the root cause is unclear despite thorough investigation, requires deep iOS Share Extension expertise, and likely needs physical device testing with specific apps like TikTok to reproduce and debug."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333755,
+      "title": "For multi workspace folder setup it would be good to see which workspace folder contributed the customization",
+      "url": "https://github.com/microsoft/vscode/issues/333755",
+      "created_at": "2026-09-01T11:58:48Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "In a multi-workspace folder setup, show which workspace folder contributed each customization.",
+        "why_easy": "Requires understanding VSCode's customization and multi-workspace architecture; unclear if workspace folder attribution already exists or needs to be added throughout the settings/customization pipeline."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333750,
+      "title": "Too strong a push for VS Code to do the work of IDE",
+      "url": "https://github.com/microsoft/vscode/issues/333750",
+      "created_at": "2026-09-01T11:15:35Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code should reduce aggressive extension recommendations when opening files of certain types instead of advertising in the UI",
+        "why_easy": "Hard: requires deep understanding of VS Code's extension discovery and recommendation system, unclear what the desired behavior should be (what replaces the recommendations?), and likely involves contentious design discussions before any implementation."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333747,
+      "title": "Diff Algorithm bug",
+      "url": "https://github.com/microsoft/vscode/issues/333747",
+      "created_at": "2026-09-01T10:53:55Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Diff computation fails when using the wasm diff computer in certain scenarios",
+        "why_easy": "The issue is severely under-specified\u2014just a code snippet and 'fails in computeDiff'\u2014and requires downloading an external repro file, deep expertise in VSCode's diff algorithm implementation, and significant debugging in a complex codebase."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333742,
+      "title": "Allow to set default permissions in here",
+      "url": "https://github.com/microsoft/vscode/issues/333742",
+      "created_at": "2026-09-01T09:43:05Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Allow users to set default permissions for a VSCode feature",
+        "why_easy": "The issue provides only an image with no textual description, making the exact requirement unclear and forcing a contributor to spend time investigating what needs to be implemented"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333740,
+      "title": "Agents window: follow-up prompt in completed Copilot CLI session is not dispatched and disappears after reopening",
+      "url": "https://github.com/microsoft/vscode/issues/333740",
+      "created_at": "2026-09-01T09:24:35Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Follow-up prompts submitted in completed Copilot CLI sessions are not persisted and disappear after reopening the session",
+        "why_easy": "Very difficult: requires multi-hour test sessions to reproduce, involves complex state management across VS Code/Copilot/agent-host components, and produces no error logs or stack traces to guide debugging."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333738,
+      "title": "Agent window: Claude account with a keychain `claude login` reads as \"not set up\" (1.135, macOS)",
+      "url": "https://github.com/microsoft/vscode/issues/333738",
+      "created_at": "2026-09-01T09:22:27Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Agent window doesn't recognize Claude accounts signed in via `claude login` on macOS because keychain credentials aren't detected by `accountInfo()`.",
+        "why_easy": "Diagnosis identifies the likely root cause (`tokenSource` undefined vs. `'none'` state distinction in `isClaudeAccountSetUp`), but determining whether the fix belongs in the SDK or VS Code requires cross-system investigation, and reproduction requires a macOS environment."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333731,
+      "title": "[Weird design, Very Werid!!] This button is unclear, which leads to misunderstanding of whether I am archive or del. And they can absolutely be the independent buttons.",
+      "url": "https://github.com/microsoft/vscode/issues/333731",
+      "created_at": "2026-09-01T09:00:12Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Separate the confusing archive/delete button into two independent buttons for clarity",
+        "why_easy": "Issue description is too vague and minimal\u2014relies entirely on an image with no text explaining which UI component is affected, where it appears, or what behavior should change; contributor would need to hunt through the codebase to understand the context"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333730,
+      "title": "Automations showing unread badge for unread archived sessions",
+      "url": "https://github.com/microsoft/vscode/issues/333730",
+      "created_at": "2026-09-01T08:29:40Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Unread badges are incorrectly displayed for archived automation sessions",
+        "why_easy": "The issue relies entirely on a Slack link with no description or reproduction steps, forcing contributors to hunt down context; the actual fix is probably straightforward conditional logic once located."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333729,
+      "title": "Opening chat in a diferent own window fails",
+      "url": "https://github.com/microsoft/vscode/issues/333729",
+      "created_at": "2026-09-01T08:16:58Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Chat window fails to open in a separate VS Code window due to DOM element creation in the wrong JavaScript context",
+        "why_easy": "Error message is clear and stack trace pinpoints the code, but fixing requires deep knowledge of VS Code's multi-window architecture and how chat initializes\u2014likely needs refactoring the chat feature's DOM setup for cross-window contexts."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333726,
+      "title": "VSCode supports the peek function definition capability in secondary windows.",
+      "url": "https://github.com/microsoft/vscode/issues/333726",
+      "created_at": "2026-09-01T07:41:55Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add a toggleable secondary editor window that auto-navigates to function definitions when hovering over symbols in the main window",
+        "why_easy": "Requires significant VSCode architecture changes for window management, symbol resolution integration, hover-based navigation, and coordination between two editors\u2014well beyond a first-time contributor's scope."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333725,
+      "title": "Support opening an Agents Window chat for a folder from the CLI",
+      "url": "https://github.com/microsoft/vscode/issues/333725",
+      "created_at": "2026-09-01T07:36:26Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add a CLI flag (--agents) to open the Agents Window and start a new chat scoped to a specified folder",
+        "why_easy": "Well-defined scope and clear requirements, but requires understanding multiple VS Code subsystems (CLI argument parsing, Agents Window implementation, and chat context-scoping) and would likely touch several code paths"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98134,
+      "title": "App Router page incorrectly reuses stale request-specific data when rendering, causing timestamp to remain static",
+      "url": "https://github.com/vercel/next.js/issues/98134",
+      "created_at": "2026-09-01T11:53:05Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "App Router incorrectly reuses stale request-specific data (cookies, headers, timestamps) across requests instead of rendering fresh values for each request",
+        "why_easy": "The reproduction is minimal and clearly documented, but fixing this requires deep knowledge of Next.js's request context lifecycle and dynamic/static route detection logic, making it a complex core framework issue"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98128,
+      "title": "turbopackModuleFragments: split_module mixes group and module indices, panics at module_fragments/graph.rs:746 on a bare app",
+      "url": "https://github.com/vercel/next.js/issues/98128",
+      "created_at": "2026-09-01T03:59:21Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "split_module mixes group index and modules position index spaces, causing panics when building with turbopackModuleFragments enabled",
+        "why_easy": "Clear root cause diagnosis with specific line numbers and a detailed explanation makes the problem tractable, but fixing requires Rust expertise and deep understanding of Turbopack's module fragment system"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98126,
+      "title": "Dynamic `sitemap.ts` under a dynamic segment with `generateStaticParams` is collapsed to `/-/sitemap.xml` \u2014 per-param sitemaps no longer emitted (regression 16.2.3 \u2192 16.3)",
+      "url": "https://github.com/vercel/next.js/issues/98126",
+      "created_at": "2026-09-01T03:43:23Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Dynamic sitemap routes under dynamic segments are incorrectly collapsed to a single placeholder pathname instead of generating per-parameter versions",
+        "why_easy": "The fix is a one-line guard condition validated locally against a reproduction repo, but requires understanding Next.js's metadata build system and when to apply static file optimizations"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36118,
+      "title": "[Bug]: Onboarding checklist in sidebar hammers GPU",
+      "url": "https://github.com/storybookjs/storybook/issues/36118",
+      "created_at": "2026-09-01T10:37:25Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Onboarding checklist in sidebar causes excessive GPU repaints and needs performance optimization",
+        "why_easy": "Well-documented and reproducible with clear culprit, but diagnosing and fixing performance issues requires browser profiling skills and understanding of React rendering patterns"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36116,
+      "title": "[Bug]: test-runner suites all fail with \"module.register() is not supported in Jest\" on jest >= 30.5.0 (serverRequire registers loader hooks unconditionally)",
+      "url": "https://github.com/storybookjs/storybook/issues/36116",
+      "created_at": "2026-09-01T10:17:12Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Guard Storybook's TypeScript loader registration with error handling to prevent Jest 30.5.0 from throwing when module.register() is called in test sandbox",
+        "why_easy": "The fix is a straightforward try/catch wrapper around the register() call in a single known file (src/shared/utils/module.ts), with exact reproduction steps and a working solution already proposed; testing requires only running test-runner against Jest 30.5.0+"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36112,
+      "title": "Tools: record the dev server's storybook installation and fail fast on attach mismatch",
+      "url": "https://github.com/storybookjs/storybook/issues/36112",
+      "created_at": "2026-09-01T09:40:58Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Record the actual storybook installation path in dev server instances and fail fast when tools CLI attaches to a mismatched installation.",
+        "why_easy": "Well-specified solution with clear requirements, but requires understanding multiple interconnected systems (instance records, tools attach mechanism, module path resolution) and implementing path derivation in two places."
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17642,
+      "title": "@nestjs/observe: instanceDecorator proxy resets Function.prototype.length to 0, breaking arity-based dispatch",
+      "url": "https://github.com/nestjs/nest/issues/17642",
+      "created_at": "2026-08-31T23:40:57Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "instanceDecorator proxy fails to restore Function.prototype.length, breaking arity-based dispatch in third-party libraries like passport-oauth2",
+        "why_easy": "The fix is a 4-line Object.defineProperty call that directly mirrors the existing .name restoration pattern, with a clear minimal reproduction and suggested implementation provided"
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17640,
+      "title": "ServerMqtt runs the listen() callback again on every broker reconnect",
+      "url": "https://github.com/nestjs/nest/issues/17640",
+      "created_at": "2026-08-31T19:14:56Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "MQTT transport runs the listen() callback multiple times on broker reconnects instead of once",
+        "why_easy": "One-line fix changing `.on()` to `.once()` in server-mqtt.ts:83; all other transports already use this pattern, and a minimal reproduction case is provided to verify the fix"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49840,
+      "title": "Clicking Pricing in the nav from the homepage crashes with an uncaught ChunkLoadError",
+      "url": "https://github.com/supabase/supabase/issues/49840",
+      "created_at": "2026-09-01T10:02:15Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Clicking Pricing from homepage crashes with ChunkLoadError due to prefetching mixing webpack chunks from two separate Next.js deployments on the same origin.",
+        "why_easy": "The root cause is thoroughly diagnosed with clear reproduction steps and suggested fixes, but requires understanding the multi-deployment architecture and Next.js prefetching behavior to implement correctly."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51517,
+      "title": "Provide a configuration property for configuring embedded LDAP's listening address",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51517",
+      "created_at": "2026-09-01T09:05:29Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add a configuration property to customize the listening address for embedded LDAP servers",
+        "why_easy": "Straightforward feature but the missing description leaves scope unclear; requires familiarity with Spring Boot's configuration property system and embedded LDAP component"
+      }
+    },
+    {
+      "repo": "pallets/flask",
+      "number": 6146,
+      "title": "Add Cloudflare to Flask Hosting Platforms docs?",
+      "url": "https://github.com/pallets/flask/issues/6146",
+      "created_at": "2026-08-31T19:17:12Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add a link to Cloudflare's Flask hosting guide in the Hosting Platforms section of the Flask documentation",
+        "why_easy": "This requires only adding a link to an existing documentation section\u2014no code changes or complex understanding of the framework needed."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67728,
+      "title": "ENH: Add DataFrame.headtail() to show first and last N rows together",
+      "url": "https://github.com/pandas-dev/pandas/issues/67728",
+      "created_at": "2026-09-01T07:33:06Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": true,
+        "one_line_summary": "Add a DataFrame.headtail() method to display first and last N rows together with a visual separator",
+        "why_easy": "The core logic is straightforward (concatenate head and tail), but implementation requires understanding pandas' display/formatting system and proper API integration with comprehensive testing."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67727,
+      "title": "BUG: barcharts grouped in subplots behave incorrectly with stacked=False",
+      "url": "https://github.com/pandas-dev/pandas/issues/67727",
+      "created_at": "2026-09-01T07:04:43Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Bar charts grouped in subplots with stacked=False overlay instead of grouping bars side-by-side",
+        "why_easy": "Reproducible with clear example and expected behavior, but requires understanding pandas plotting internals and bar positioning logic across subplot boundaries"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67726,
+      "title": "BUG: IndexError with certain subplot order in stacked barchart",
+      "url": "https://github.com/pandas-dev/pandas/issues/67726",
+      "created_at": "2026-09-01T06:54:10Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Stacked bar charts with certain subplot orderings throw IndexError due to offset indexing mismatch",
+        "why_easy": "The bug is isolated with a clear error point and minimal reproducible example, but fixing it requires understanding how pandas' internal stacked subplot offset tracking computes indices for different subplot configurations"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45701,
+      "title": "CI: tests flaking on ubuntu-latest",
+      "url": "https://github.com/github/docs/issues/45701",
+      "created_at": "2026-09-01T11:52:07Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "test",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Investigate and fix intermittent test failures (~30% failure rate) in concurrent request tests on ubuntu-latest CI runner",
+        "why_easy": "Hard because flaky tests that pass locally but fail intermittently in CI are notoriously difficult to debug; reproducing the issue requires understanding concurrent test behavior, environment-specific timing, and race conditions that may resist local reproduction."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45700,
+      "title": "TypeError: Cannot read properties of undefined (reading 'map')",
+      "url": "https://github.com/github/docs/issues/45700",
+      "created_at": "2026-09-01T11:51:55Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix TypeError when calling .map() on undefined in src/index.js at line 42",
+        "why_easy": "The error location is pinpointed, but reproduction steps are too vague ('run the default config' lacks specifics), making it hard for new contributors to reliably reproduce and verify a fix."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45699,
+      "title": "Unclear use of copilot-instructions.md in GitHub Copilot App",
+      "url": "https://github.com/github/docs/issues/45699",
+      "created_at": "2026-09-01T09:52:25Z",
+      "digest_date": "2026-09-01",
+      "triage": {
+        "category": "docs",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Update GitHub Copilot App documentation to clarify support for .github/copilot-instructions.md or explain why it's not supported",
+        "why_easy": "Requires clarification of whether the GitHub Copilot App actually uses .github/copilot-instructions.md before documentation can be properly scoped; needs product team coordination to resolve the ambiguity"
+      }
     }
   ]
 }
