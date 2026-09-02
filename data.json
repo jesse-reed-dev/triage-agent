@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-01",
+  "updated": "2026-09-02",
   "issues": [
     {
       "repo": "react/react-native",
@@ -20804,6 +20804,636 @@
         "good_first_issue": false,
         "one_line_summary": "Update GitHub Copilot App documentation to clarify support for .github/copilot-instructions.md or explain why it's not supported",
         "why_easy": "Requires clarification of whether the GitHub Copilot App actually uses .github/copilot-instructions.md before documentation can be properly scoped; needs product team coordination to resolve the ambiguity"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49648,
+      "title": "[expo-navigation-bar][Android] Unmounting `<NavigationBar hidden />` leaves the navigation bar hidden app-wide",
+      "url": "https://github.com/expo/expo/issues/49648",
+      "created_at": "2026-09-02T11:50:08Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": true,
+        "one_line_summary": "Unmounting <NavigationBar hidden /> leaves the navigation bar hidden indefinitely because defaultProps gets mutated by the same setter that reads it on restore",
+        "why_easy": "The issue is expertly diagnosed with root cause, solution pattern (separate paths like React Native's StatusBar), minimal reproducible example, and a working workaround; the actual fix is localized to one file and straightforward once the issue is understood, though writing tests and verifying on Android are required"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49641,
+      "title": "expo-location: startLocationUpdatesAsync requires FOREGROUND_SERVICE_LOCATION even when foregroundService option is not used",
+      "url": "https://github.com/expo/expo/issues/49641",
+      "created_at": "2026-09-02T10:47:24Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Remove unconditional foreground service permission check in startLocationUpdatesAsync when not using foreground service mode",
+        "why_easy": "Root cause is pinpointed to exact line numbers with clear reproduction steps and a one-line fix provided; requires moving a permission check inside a conditional statement"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49638,
+      "title": "addNotificationResponseReceivedListener does not fire (and navigation does not occur) when a push notification is tapped while the app is in the foreground on Android.",
+      "url": "https://github.com/expo/expo/issues/49638",
+      "created_at": "2026-09-02T09:24:31Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "addNotificationResponseReceivedListener does not fire when tapping a notification while the app is in the foreground on Android",
+        "why_easy": "Platform-specific Android issue requiring native notification handling expertise; the foreground/background state discrepancy suggests complex FCM and Android notification lifecycle interactions"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49636,
+      "title": "expo-router Stack header title/tint doesn't adapt to content (Liquid Glass)",
+      "url": "https://github.com/expo/expo/issues/49636",
+      "created_at": "2026-09-02T08:27:41Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix header title/tint color to adapt to content behind it (Liquid Glass effect) on iOS",
+        "why_easy": "A known fix exists in upstream react-navigation with a specific commit reference, but requires understanding expo's vendored dependency structure and iOS device/simulator testing"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49630,
+      "title": "Android release bundle task reuses stale EXPO_PUBLIC values when environment changes",
+      "url": "https://github.com/expo/expo/issues/49630",
+      "created_at": "2026-09-01T21:37:47Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Gradle bundle cache ignores EXPO_PUBLIC environment variable changes, allowing stale bundles with wrong environment values to ship to production",
+        "why_easy": "Root cause and workaround are well-documented with a clear proof-of-concept, but implementing the fix requires expert-level Gradle knowledge and may require changes to React Native's build plugin"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49626,
+      "title": "expo export corrupts Hermes bytecode: DOM component html rename binary-patches overlap-packed strings",
+      "url": "https://github.com/expo/expo/issues/49626",
+      "created_at": "2026-09-01T19:31:41Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "expo export corrupts string literals in Hermes bytecode when DOM components are present due to in-place binary renaming overlapping with string table packing",
+        "why_easy": "Requires deep expertise in Hermes bytecode internals, string table overlap-packing, and expo's export pipeline; a complex fix (#49627) already exists and needs careful validation on RSC/server-hosted paths that maintainers should verify"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49622,
+      "title": "[expo-router] Typed routes: getWatchHandler admits files outside the app root on Windows, poisoning router.d.ts",
+      "url": "https://github.com/expo/expo/issues/49622",
+      "created_at": "2026-09-01T16:49:45Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "On Windows, getWatchHandler incorrectly accepts files outside the app root due to path separator mismatch, poisoning router.d.ts with invalid route unions",
+        "why_easy": "Well-isolated 1-line fix with clear problem statement, standalone reproducible example, and testable without Windows; minimal context needed"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333975,
+      "title": "Microsoft Authentication loses Settings Sync session after macOS sleep/network interruption; restarting extension host restores valid session",
+      "url": "https://github.com/microsoft/vscode/issues/333975",
+      "created_at": "2026-09-02T11:54:24Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Microsoft authentication provider incorrectly clears in-memory session state after network errors during macOS sleep, even though the persisted session remains valid",
+        "why_easy": "Hard \u2014 requires deep knowledge of MSAL internals and VS Code's authentication architecture; involves debugging race conditions during sleep/wake and network recovery that are difficult to reproduce reliably"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333974,
+      "title": "Profile : Agents loading the default Profile | Unable to configure default profile Trust Settings | Unable to delete default Profile",
+      "url": "https://github.com/microsoft/vscode/issues/333974",
+      "created_at": "2026-09-02T11:53:21Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Default profile fails to load correctly with agents and profile management operations (delete, trust settings) behave unexpectedly",
+        "why_easy": "The issue is poorly described with incomplete reproduction steps, multiple bundled problems, unclear expected behavior, and would require significant investigation and clarification from the reporter before work could begin"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333967,
+      "title": "Cannot drag and drop a session from a custom group back to its workspace group",
+      "url": "https://github.com/microsoft/vscode/issues/333967",
+      "created_at": "2026-09-02T10:38:27Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Drag-and-drop sessions from custom groups back to workspace groups does not work, despite the reverse operation succeeding.",
+        "why_easy": "Clear repro steps and bounded scope to session drag-and-drop logic, but requires navigating VS Code's large codebase to locate the handler and understand why the reverse direction is blocked."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333966,
+      "title": "Side chat cannot be created from selected text in a subagent chat",
+      "url": "https://github.com/microsoft/vscode/issues/333966",
+      "created_at": "2026-09-02T10:26:15Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Creating a side chat from selected text in a subagent chat fails because the source URL is not recognized as belonging to the session.",
+        "why_easy": "The error is traceable to the _resolveSideChatOrigin validation logic, but fixing it requires understanding VS Code's subagent architecture and source-session URL matching semantics."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333958,
+      "title": "Current-turn changes list keeps \"focused\" border despite moving focus away from list entry",
+      "url": "https://github.com/microsoft/vscode/issues/333958",
+      "created_at": "2026-09-02T09:14:40Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Focus indicator (blue border) persists on changes list item after focus moves elsewhere",
+        "why_easy": "Clearly reproducible 3-step bug isolated to a single UI component, likely a simple focus-state or CSS fix"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333954,
+      "title": "not able to push changes and compare",
+      "url": "https://github.com/microsoft/vscode/issues/333954",
+      "created_at": "2026-09-02T09:03:24Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Git compare/stage interface fails to open after checking out a branch",
+        "why_easy": "Marked info-needed with vague reproduction steps; contributor would need extensive investigation to understand the issue before being able to debug or fix it"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333951,
+      "title": "Chat: allow an inline file reference to display a readable label instead of the raw basename",
+      "url": "https://github.com/microsoft/vscode/issues/333951",
+      "created_at": "2026-09-02T08:02:48Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Allow inline file references to display a custom readable label instead of the raw basename while preserving the actual file URI in the variable data",
+        "why_easy": "Requires understanding VS Code's chat variable rendering system, multiple label sources (Markdown frontmatter/H1/settings), and integrating with the existing variable data structure; well-scoped but non-trivial domain knowledge needed"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333950,
+      "title": "Source Control Hides Some Submodules Arbitrarily",
+      "url": "https://github.com/microsoft/vscode/issues/333950",
+      "created_at": "2026-09-02T08:02:33Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Source Control pane hides some submodules arbitrarily when multiple worktrees are open",
+        "why_easy": "Lacks clear reproduction steps and requires deep understanding of VS Code's multi-folder/submodule architecture to diagnose the root cause."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 333948,
+      "title": "Terminal from another window's workspace appears in a newly opened window (regression of #133542)",
+      "url": "https://github.com/microsoft/vscode/issues/333948",
+      "created_at": "2026-09-02T07:55:40Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Terminal sessions from one window incorrectly attach to another window instead of staying isolated by workspace, causing shared PTY state and unwanted lifecycle coupling",
+        "why_easy": "Hard\u2014terminal/PTY infrastructure is complex low-level code; it's a regression (previously fixed via #186947), suggesting a subtle root cause"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36130,
+      "title": "`agent-scan` false positive: #36085 graded `automated` despite disclosed AI assistance and full proof of work",
+      "url": "https://github.com/storybookjs/storybook/issues/36130",
+      "created_at": "2026-09-02T11:37:06Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix `agent-scan` workflow false positive that labeled PR #36085 as `automated` instead of `mixed` despite disclosed AI assistance and full proof of work",
+        "why_easy": "The mislabeled PR is well-documented with specific evidence, but fixing it requires investigating whether the root cause is in Storybook's workflow config or upstream `agentscan-action` behavior, and possibly coordinating an upstream fix."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36125,
+      "title": "[Bug]: Adding args via .type in CSFNext breaks meta args type inference for required literal string props",
+      "url": "https://github.com/storybookjs/storybook/issues/36125",
+      "created_at": "2026-09-02T07:30:01Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Type inference breaks for required literal string props in CSFNext stories when `.type().meta()` provides default args",
+        "why_easy": "Complex TypeScript type inference issue requiring deep knowledge of conditional types and Storybook's generic type system; reproduction repo helps but the fix likely involves subtle changes to generic constraints in .d.ts files that could easily break other patterns."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36124,
+      "title": "[Bug]: addon-a11y causes heap OOM during vitest runs due to large axe-core passes array in reports",
+      "url": "https://github.com/storybookjs/storybook/issues/36124",
+      "created_at": "2026-09-02T02:27:57Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Exclude axe-core's passes array from vitest reports by default to prevent heap OOM during large project test runs",
+        "why_easy": "Root cause is clearly identified with a pinpointed file location and working workaround, but requires understanding the vitest integration layer and ensuring the change doesn't break existing report consumers"
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 20452,
+      "title": "PostCSS warning: plugin does not pass from option to postcss.parse with Vite + Tailwind CSS 4",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/20452",
+      "created_at": "2026-09-02T01:01:11Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The @tailwindcss/postcss plugin does not pass the `from` option to postcss.parse, causing PostCSS warnings in Vite development builds",
+        "why_easy": "The fix is straightforward (add `from` option to postcss.parse calls) but requires understanding PostCSS plugin patterns, locating the issue in the codebase, and testing with a Vite setup"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69837,
+      "title": "Example project in Build an Event RSVP lab allows changes to confirmation message",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69837",
+      "created_at": "2026-09-01T23:01:46Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix the Event RSVP lab example to prevent form inputs from updating the confirmation message after submission",
+        "why_easy": "The fix requires adding a submission state flag to either disable inputs or prevent confirmation message updates after form submission\u2014a straightforward React state management change with clear, testable behavior in the lab environment."
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17647,
+      "title": "Global prefix without a leading slash bypasses Nest 404 handling in Express",
+      "url": "https://github.com/nestjs/nest/issues/17647",
+      "created_at": "2026-09-02T10:59:55Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Global prefix without leading slash bypasses Express 404 handling in NestJS 12.0.1, causing HTML instead of JSON 404 responses",
+        "why_easy": "Well-defined regression with minimal reproduction, specific commit identified, and clear expected behavior; requires understanding NestJS adapter pattern and Express middleware routing but fix is likely just prefix normalization"
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17645,
+      "title": "Feature: Add microservices gateway",
+      "url": "https://github.com/nestjs/nest/issues/17645",
+      "created_at": "2026-09-01T22:01:19Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add a microservices gateway to NestJS to improve performance for real-time applications",
+        "why_easy": "The specification is too vague\u2014no requirements, design, or acceptance criteria provided, requiring significant clarification before implementation can begin."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30198,
+      "title": "prisma migrate deploy exits 0 without applying migrations when schema.prisma contains invalid UTF-8",
+      "url": "https://github.com/prisma/orm/issues/30198",
+      "created_at": "2026-09-02T10:19:46Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "prisma migrate deploy exits with code 0 and silently fails to apply migrations when schema.prisma contains invalid UTF-8",
+        "why_easy": "The error is already detected by the schema-engine and well-reproducible, but the fix requires understanding Prisma's RPC error-handling layer between the CLI and binary across multiple commands."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30197,
+      "title": "migration check rejects invariantId-carrying additive self-edges (NOOP_SELF_EDGE) its own invariants doc sanctions",
+      "url": "https://github.com/prisma/orm/issues/30197",
+      "created_at": "2026-09-02T03:18:13Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Migration checker incorrectly rejects additive-only self-edge migrations with invariantId by requiring a data-class operation when the documentation says they should be orthogonal.",
+        "why_easy": "The issue is well-scoped with clear documentation/code mismatch and concrete repro, but requires deep understanding of Prisma's migration invariant system and careful validation that relaxing the check doesn't create safety regressions."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30190,
+      "title": "Prisma silently loses nested query type safety on TypeScript \u2265 6.0",
+      "url": "https://github.com/prisma/orm/issues/30190",
+      "created_at": "2026-09-01T13:13:25Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add TypeScript version constraints and warnings to prevent silent type safety loss with TypeScript \u2265 6.0",
+        "why_easy": "The suggested fixes are straightforward (add peerDependencies, detect TS version in CLI, update docs), but require coordinating across multiple Prisma systems and understanding the TypeScript regression implications."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49890,
+      "title": "GoTrue returning 500 \"Database error finding user\" on all auth token requests",
+      "url": "https://github.com/supabase/supabase/issues/49890",
+      "created_at": "2026-09-02T09:56:36Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "GoTrue returning 500 'Database error finding user' on all auth token requests, blocking project authentication",
+        "why_easy": "This is hard to pick up for a contributor because it's specific to one user's project and not easily reproducible locally; diagnosing the root cause likely requires platform infrastructure access, database-level debugging, or detailed service logs rather than code changes."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49885,
+      "title": "Not possible to download invoice, opening an empty screen on browser",
+      "url": "https://github.com/supabase/supabase/issues/49885",
+      "created_at": "2026-09-02T08:02:27Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Downloading an invoice from the Supabase dashboard opens an empty screen instead of the invoice PDF",
+        "why_easy": "Hard to pick up: the issue is incomplete with no reproduction steps, system info, error messages, or clarification of which invoice feature is affected; labeled 'awaiting-details' appropriately, would require significant back-and-forth with reporter before work can begin"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49876,
+      "title": "Unable to log in to Supabase Dashboard \u2014 invalid_credentials error",
+      "url": "https://github.com/supabase/supabase/issues/49876",
+      "created_at": "2026-09-02T04:45:27Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "User unable to log into Supabase Dashboard with invalid_credentials error and not receiving password reset emails after Sep 1 incident",
+        "why_easy": "Requires production system access (user accounts, email delivery logs, auth service internals) and incident post-mortem analysis that external contributors can't perform"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49873,
+      "title": "Any Auth Hooks change in the dashboard silently wipes custom SMTP config and resets rate_limit_email_sent",
+      "url": "https://github.com/supabase/supabase/issues/49873",
+      "created_at": "2026-09-02T02:44:21Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Auth Hooks changes silently wipe custom SMTP configuration and reset rate limits",
+        "why_easy": "Well-reproduced with clear steps and limited scope, but requires understanding how Auth Hooks and SMTP configuration interact in the backend to identify and prevent the unintended data wipe"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49872,
+      "title": "Management API accepts an auth config value that permanently bricks GoTrue's config reloader (200 on write, then all later config writes silently ignored)",
+      "url": "https://github.com/supabase/supabase/issues/49872",
+      "created_at": "2026-09-02T02:44:13Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Management API should validate duration fields before accepting values that GoTrue's config reloader cannot parse, preventing silent service corruption.",
+        "why_easy": "Root cause is clear (seconds rendered as hours exceeds Go's duration max), but the fix requires navigating where the API validates config and ensuring all duration fields are checked, not just this one."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67756,
+      "title": "API: `.value_counts(normalize=False)` should return unsigned integers",
+      "url": "https://github.com/pandas-dev/pandas/issues/67756",
+      "created_at": "2026-09-01T17:11:17Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Return unsigned integers from `.value_counts(normalize=False)` since counts are always non-negative",
+        "why_easy": "The code location is straightforward to find, but this is an API design decision requiring maintainer discussion and careful backwards compatibility consideration\u2014not suitable for a new contributor without design context."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67755,
+      "title": "BUG: DataFrame.plot.bar raises \"Must supply freq for datetime value\" with datetime x column",
+      "url": "https://github.com/pandas-dev/pandas/issues/67755",
+      "created_at": "2026-09-01T16:53:27Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "DataFrame.plot.bar raises ValueError when datetime x-column lacks explicit freq, despite having inferable frequency",
+        "why_easy": "The fix is likely a one-liner (use inferred_freq when freq is None), but requires understanding pandas datetime/frequency handling and the plotting converter internals, plus reproducing and validating against version-specific regressions"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67754,
+      "title": "BUG: IntervalDtype.__from_arrow__ ignores the struct-level validity bitmap",
+      "url": "https://github.com/pandas-dev/pandas/issues/67754",
+      "created_at": "2026-09-01T16:10:28Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix IntervalDtype.__from_arrow__ to respect struct-level validity bitmap when converting PyArrow StructArrays",
+        "why_easy": "The fix is clearly outlined (apply arr.is_valid() or use arr.flatten()), but requires understanding PyArrow's StructArray validity bitmap semantics and IntervalArray internals, plus the bug only surfaces with externally-produced arrow data."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67753,
+      "title": "BUG: IntervalArray.__arrow_array__ rejects ExtensionDtype subtypes, and ArrowIntervalType metadata cannot round-trip them",
+      "url": "https://github.com/pandas-dev/pandas/issues/67753",
+      "created_at": "2026-09-01T16:10:26Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix IntervalArray to support writing timezone-aware interval subtypes to Arrow/Parquet with proper round-trip serialization.",
+        "why_easy": "Hard because it requires changes to the Arrow extension type metadata format for cross-implementation compatibility, and the issue explicitly notes this needs design discussion before implementation\u2014it's not a simple subtype-lookup fix but a deeper format redesign."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67751,
+      "title": "DOC: Opening a Pull Request Instructions Incorrect",
+      "url": "https://github.com/pandas-dev/pandas/issues/67751",
+      "created_at": "2026-09-01T13:33:50Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix incorrect documentation claiming submitters can reopen PRs closed by the bot when not assigned to an issue",
+        "why_easy": "Straightforward text fix in a .rst file with exact location provided and factual error clearly identified; no code changes required."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32473,
+      "title": "CI: intermittent hard crash of `cython` while building the limited API test extensions on Windows",
+      "url": "https://github.com/numpy/numpy/issues/32473",
+      "created_at": "2026-09-01T22:16:42Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Windows CI intermittently fails with an OS-level Cython process crash when building limited API test extensions",
+        "why_easy": "Intermittent failures that only reproduce on GitHub runners, not locally, combined with an unclear root cause (OS-level crash) and no clear debugging path make this extremely difficult without access to detailed runner logs and deep expertise in CI systems and Windows environments."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32472,
+      "title": "BUG: np.power returns 0 instead of a very small result for complex numbers",
+      "url": "https://github.com/numpy/numpy/issues/32472",
+      "created_at": "2026-09-01T20:24:56Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "np.power returns 0 instead of a very small value for certain complex number inputs due to numerical underflow",
+        "why_easy": "Hard because it requires understanding numpy's C-level complex power implementation and fixing floating-point precision/underflow issues."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34869,
+      "title": "Investigation: conda-forge scikit-learn slower than PyPI (ExtraTrees case)",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34869",
+      "created_at": "2026-09-02T11:48:16Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Replace isnan() macro calls with self-inequality comparisons (value != value) to fix 25% ExtraTrees.fit slowdown in conda-forge builds with old glibc",
+        "why_easy": "The fix is a mechanical pattern replacement across a few identified files; no complex logic changes, and existing tests verify correctness. The main work is finding all occurrences and confirming the change compiles."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34865,
+      "title": "Investigation: Meson silently downgrades -O3 to -O2 under conda-forge CFLAGS",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34865",
+      "created_at": "2026-09-01T15:53:38Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Meson silently downgrades -O3 to -O2 optimization under conda-forge due to CFLAGS environment variable appending after build flags",
+        "why_easy": "Hard: explicitly marked 'not ready for PR', requires maintainer decision and comprehensive benchmarking before work can begin, demands Meson/conda-forge build system expertise with unclear benefit (no perf difference observed yet)"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45718,
+      "title": "Immutable releases: \"you can only edit the title and release notes\" is inaccurate",
+      "url": "https://github.com/github/docs/issues/45718",
+      "created_at": "2026-09-02T11:53:04Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update immutable releases documentation to correctly reflect that prerelease and make_latest fields are editable, while assets and tags are protected",
+        "why_easy": "The issue identifies the exact documentation pages and incorrect statements, provides test evidence with API responses, and includes suggested replacement wording\u2014no code changes or investigation needed"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45716,
+      "title": "Incorrect restriction on file names created via the web interface",
+      "url": "https://github.com/github/docs/issues/45716",
+      "created_at": "2026-09-02T07:06:59Z",
+      "digest_date": "2026-09-02",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update documentation about file name restrictions in web interface that incorrectly limits names to alphanumeric characters and hyphens",
+        "why_easy": "The issue is clearly documented with proof that the restriction is wrong; fixing it only requires updating the docs text, no code changes needed."
       }
     }
   ]
