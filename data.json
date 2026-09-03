@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-02",
+  "updated": "2026-09-03",
   "issues": [
     {
       "repo": "react/react-native",
@@ -21434,6 +21434,525 @@
         "good_first_issue": true,
         "one_line_summary": "Update documentation about file name restrictions in web interface that incorrectly limits names to alphanumeric characters and hyphens",
         "why_easy": "The issue is clearly documented with proof that the restriction is wrong; fixing it only requires updating the docs text, no code changes needed."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58299,
+      "title": "[iOS][Fabric] SIGSEGV in createComponentViewWithComponentHandle: \u2014 unsynchronized map writes in _registerComponentIfPossible: race with main-thread mounting",
+      "url": "https://github.com/react/react-native/issues/58299",
+      "created_at": "2026-09-03T07:44:25Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix race condition causing SIGSEGV in RCTComponentViewFactory when unsynchronized map writes from JS thread conflict with main-thread component lookups",
+        "why_easy": "Extremely hard: requires expert-level iOS/C++ threading (shared_mutex, race conditions), deep Fabric architecture knowledge, and ability to reproduce and verify fixes for probabilistic concurrency bugs"
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58294,
+      "title": "Text with flex: 1 keeps its landscape height after rotating back to portrait (stale Yoga computedFlexBasis)",
+      "url": "https://github.com/react/react-native/issues/58294",
+      "created_at": "2026-09-02T20:21:47Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "A flex: 1 Text component keeps its landscape height after device rotation back to portrait due to a stale computed flex basis cache in Yoga",
+        "why_easy": "Excellent root-cause analysis with specific line numbers and C++ reproducer provided, but fixing requires deep understanding of Yoga's layout algorithm and careful cache invalidation strategy to prevent regressions"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49695,
+      "title": "[expo-go][iOS] Home screen shows \"No projects yet\" for organization accounts (non-optional ownerUserActor fails decoding)",
+      "url": "https://github.com/expo/expo/issues/49695",
+      "created_at": "2026-09-03T10:42:50Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix organization accounts showing 'No projects yet' on iOS by making ownerUserActor optional in the home screen data model",
+        "why_easy": "The root cause is identified and the fix is explicit\u2014make ownerUserActor optional and handle nil in rendering; the change is localized to one model and its usage sites"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49690,
+      "title": "expo-image (iOS): CALayerInvalidGeometry \u2014 a 0x0 decoded image makes idealSize() produce NaN",
+      "url": "https://github.com/expo/expo/issues/49690",
+      "created_at": "2026-09-03T07:01:36Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Fix CALayerInvalidGeometry crash when rendering 0x0 decoded images by adding zero-size guards to idealSize() calculations",
+        "why_easy": "Root cause is clearly pinpointed to the idealSize() function with specific code locations provided, and the fix is a straightforward zero-size check; a full reproducible example makes validation straightforward"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49681,
+      "title": "[expo-router] Forked BottomTabView reverts the upstream fix for blank tab screens (SDK 56 & 57)",
+      "url": "https://github.com/expo/expo/issues/49681",
+      "created_at": "2026-09-02T22:42:25Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Port upstream React Navigation fix to remove EPSILON-based animation state derivation and use plain JS lastUpdate state instead.",
+        "why_easy": "The upstream fix is well-documented with an identified commit and clear explanation of the change, but requires understanding React Navigation's animation state management and native driver behavior to port safely without regressions."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49668,
+      "title": "[SDK 57][expo-build-properties] android.kotlinVersion does not override the Kotlin Gradle plugin compiler classpath",
+      "url": "https://github.com/expo/expo/issues/49668",
+      "created_at": "2026-09-02T17:50:48Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The android.kotlinVersion property in expo-build-properties doesn't override the Kotlin Gradle plugin compiler classpath, causing compilation failures with incompatible Kotlin metadata.",
+        "why_easy": "Root cause is identified (classpath declared without version) with a one-line fix verified to work, but requires navigating the Expo build system to find where the root build.gradle is generated and handling SDK 56/57 differences."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334241,
+      "title": "Agents Windows Model Selection only shows Auto",
+      "url": "https://github.com/microsoft/vscode/issues/334241",
+      "created_at": "2026-09-03T11:55:46Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The model selection dropdown in VS Code's Agents panel only displays 'Auto' instead of showing available model options.",
+        "why_easy": "While the issue is clearly reproducible with defined steps, the VS Code codebase is large and the root cause could be a data-fetching failure, filter logic error, or rendering issue requiring familiarity with the Copilot integration architecture."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334239,
+      "title": "Facing connection issue with VS-Code , chat is not working.",
+      "url": "https://github.com/microsoft/vscode/issues/334239",
+      "created_at": "2026-09-03T11:48:52Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Copilot Chat fails to connect to GitHub API with network fetch errors after proxy configuration",
+        "why_easy": "Network connectivity issues are notoriously difficult to debug without detailed traces; requires deep knowledge of VS Code's auth/networking stack, proxy handling, and Copilot integration\u2014unclear whether the root cause is environmental, client-side, or server-side."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334236,
+      "title": "Persist hidden chat state when reopening a session in an editor window",
+      "url": "https://github.com/microsoft/vscode/issues/334236",
+      "created_at": "2026-09-03T11:42:01Z",
+      "digest_date": "2026-09-03",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334234,
+      "title": "SQL Language Mode  - auto inserting \"EXECUTE \" on (copy and) paste",
+      "url": "https://github.com/microsoft/vscode/issues/334234",
+      "created_at": "2026-09-03T11:19:19Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "SQL language mode incorrectly auto-inserts 'EXECUTE ' prefix when pasting text",
+        "why_easy": "Highly reproducible (new file \u2192 SQL mode \u2192 paste) but requires navigating VS Code's large codebase to locate the SQL language handler or snippet config causing the unwanted auto-insertion"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334232,
+      "title": "Preserve editor match rules when configuring defaults",
+      "url": "https://github.com/microsoft/vscode/issues/334232",
+      "created_at": "2026-09-03T11:08:34Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Preserve the specific selector that originally matched an editor instead of broadening to just the file extension when configuring defaults",
+        "why_easy": "Hard because it requires deep knowledge of VS Code's editor registration, selector specificity rules, and state tracking through the editor picker \u2014 likely involves multi-file changes in a complex system with high regression risk."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334229,
+      "title": "Better support for private exports from packages for monorepos",
+      "url": "https://github.com/microsoft/vscode/issues/334229",
+      "created_at": "2026-09-03T10:56:32Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Support restricting symbol visibility in monorepos to explicitly exported APIs like Python's `__all__`",
+        "why_easy": "Requires modifying core symbol discovery and IntelliSense logic, deep knowledge of Pylance's architecture, handling edge cases (re-exports, star imports), and complex monorepo testing scenarios"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334228,
+      "title": "Make chat sessions available across workspaces (global chat history)",
+      "url": "https://github.com/microsoft/vscode/issues/334228",
+      "created_at": "2026-09-03T10:45:03Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Make chat sessions globally accessible across workspaces instead of workspace-scoped, with workspace metadata and cross-workspace access options.",
+        "why_easy": "Hard\u2014requires rearchitecting chat session storage from workspace-scoped folders to a global per-profile model, including database schema changes, cross-workspace access logic, and UI filtering."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334227,
+      "title": "Agents window: multi diff editor: bar over the filename panel",
+      "url": "https://github.com/microsoft/vscode/issues/334227",
+      "created_at": "2026-09-03T10:43:26Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Visual artifact (horizontal line) appears over the filename panel in the agents window multi diff editor",
+        "why_easy": "The issue has a clear reproduction case with screenshot evidence, but VS Code's large codebase and lack of specific file or component pointers makes locating the rendering bug require exploration."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334225,
+      "title": "Sometimes reasoning just stops midway (and a settings issue)",
+      "url": "https://github.com/microsoft/vscode/issues/334225",
+      "created_at": "2026-09-03T10:32:49Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Copilot reasoning stops midway when using custom endpoints, sometimes sending requests with zero input tokens",
+        "why_easy": "Requires reproducing with a custom API endpoint, root cause is unclear (could be token counting, request building, or settings interaction), and the issue conflates two separate problems without isolation"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98212,
+      "title": "Dev HMR client reconnects forever after prerender activation (visibilitychange while socket is CONNECTING)",
+      "url": "https://github.com/vercel/next.js/issues/98212",
+      "created_at": "2026-09-03T11:55:06Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Fix HMR client infinite reconnection loop when prerendered pages are activated with WebSocket still in CONNECTING state",
+        "why_easy": "Root cause and working fix are clearly identified with minimal changes (clear handlers before closing socket, check readyState === CLOSED instead of !== OPEN) to a single file, though it requires understanding WebSocket lifecycle and Next.js HMR internals for verification"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98205,
+      "title": "Turbopack panics in ModuleGraphImportTracer: 'entered unreachable code: there must be a path to a root' (module_graph/mod.rs:750)",
+      "url": "https://github.com/vercel/next.js/issues/98205",
+      "created_at": "2026-09-03T00:56:26Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Turbopack panics on cyclic CSS module dependencies instead of handling gracefully; add fallback path",
+        "why_easy": "Fix is a minimal 3-line change (return current module when astar finds no root), complete Rust solution already provided in PR #98204, and reproduction repo is available for testing"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98200,
+      "title": "resolveMetadata loses AsyncLocalStorage context across async boundary during cold static prerendering (InvariantError E1068)",
+      "url": "https://github.com/vercel/next.js/issues/98200",
+      "created_at": "2026-09-03T00:17:52Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Fix AsyncLocalStorage context loss in resolveMetadata by moving workStore initialization before async call during static prerendering",
+        "why_easy": "The fix is a single-line move\u2014AsyncLocalStorage context must be captured synchronously before the async boundary, and the PR with the exact solution is already provided."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36154,
+      "title": "Addon A11y: Vision simulator uses discredited colorblindness matrices",
+      "url": "https://github.com/storybookjs/storybook/issues/36154",
+      "created_at": "2026-09-03T11:11:14Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Replace discredited colorjack.com colorblindness simulation matrices with accurate Machado et al. (2009) matrices in the Vision Simulator addon.",
+        "why_easy": "The change is localized to constant matrices in one file with clear references from Chrome and Firefox, but requires domain knowledge of color spaces and color vision deficiency simulation to implement and visually verify correctly."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36143,
+      "title": "[Bug]: CLI rejects every Node.js prerelease build",
+      "url": "https://github.com/storybookjs/storybook/issues/36143",
+      "created_at": "2026-09-02T17:28:23Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix the Node.js version check in the CLI to correctly parse prerelease builds like v26.1.0-rc.0 instead of rejecting them",
+        "why_easy": "The bug is precisely identified with concrete test cases showing the failure, the file location is known, and the fix is straightforward: extract major.minor.patch before the prerelease identifier (e.g., via regex) instead of blindly splitting on dots and converting to numbers"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36139,
+      "title": "[Tracking]: Storybook 11 Breaking Changes",
+      "url": "https://github.com/storybookjs/storybook/issues/36139",
+      "created_at": "2026-09-02T14:14:11Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Track all planned breaking changes for Storybook 11 release across foundations, automigrations, and removals",
+        "why_easy": "This is a meta/tracking issue that documents status and links to other PRs\u2014contributors should pick individual items from the list, not the tracker itself"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69847,
+      "title": "'Continue Learning' Button Bug",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69847",
+      "created_at": "2026-09-02T20:46:05Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "The 'Continue Learning' button redirects to the last completed lesson instead of the next uncompleted lesson after finishing a chapter.",
+        "why_easy": "The bug is well-documented with clear reproduction steps and video evidence, making it straightforward to locate and fix the redirect logic in the course navigation handler."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69845,
+      "title": "Build a Bookmark Manager App - Test 17 hidden requirement needs to toggle hidden for sections",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69845",
+      "created_at": "2026-09-02T19:28:29Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Test 17 for the Bookmark Manager App doesn't explicitly require toggling hidden classes on sections, leaving the implementation requirement implicit and unclear.",
+        "why_easy": "The issue clearly identifies the missing requirement, provides the exact code needed, and suggests a straightforward fix (create a separate test case for section toggling similar to test 7), making the scope small and well-defined."
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17661,
+      "title": "`nest new` generated project fails `pnpm test:cov` with TS5011 under TypeScript 6",
+      "url": "https://github.com/nestjs/nest/issues/17661",
+      "created_at": "2026-09-03T08:30:22Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Generated NestJS projects fail `pnpm test:cov` with TypeScript 6 when using pnpm and CJS module configuration",
+        "why_easy": "Clear reproduction case and likely a configuration issue in the scaffolding templates, but the actual error output is missing from the issue, requiring investigation of the external reproduction repo and understanding of TypeScript/Jest configuration to determine root cause."
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17650,
+      "title": "Cannot find module '@app/my-lib' or its corresponding type declarations for libs in a monorepo",
+      "url": "https://github.com/nestjs/nest/issues/17650",
+      "created_at": "2026-09-02T15:28:43Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Library imports fail with module resolution errors after generating and building a library in a NestJS monorepo despite following official documentation",
+        "why_easy": "Reproduction is clear with minimal steps and a linked repo, but the fix requires understanding NestJS monorepo setup, TypeScript path mapping, and the build/CLI system"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30200,
+      "title": "Prisma 7.10.0 SQL Server P1011 TLS failure on Windows",
+      "url": "https://github.com/prisma/orm/issues/30200",
+      "created_at": "2026-09-03T03:14:44Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix P1011 TLS connection failure when running `prisma migrate status` on SQL Server 2022 on Windows in Prisma 7.10.0.",
+        "why_easy": "Hard to pick up: requires Windows + SQL Server 2022 environment setup, involves complex TLS/security debugging in Prisma's Rust schema-engine, and the root cause is unclear since the same connection works with the Node.js mssql driver."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49943,
+      "title": "Supabase login doesn't work",
+      "url": "https://github.com/supabase/supabase/issues/49943",
+      "created_at": "2026-09-03T08:31:02Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Supabase login doesn't work (details needed)",
+        "why_easy": "Issue template is completely empty \u2014 no reproduction steps, error messages, system info, or expected behavior provided, making diagnosis impossible without substantial clarification"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49936,
+      "title": "Supabase login",
+      "url": "https://github.com/supabase/supabase/issues/49936",
+      "created_at": "2026-09-03T03:41:18Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "User unable to login to Supabase dashboard for 3 days; issue status page claims fix but user says it isn't resolved",
+        "why_easy": "Extremely hard\u2014critical information is missing (no repro steps, OS, browser, version, error messages, or logs), problem is too vague (login could fail in dozens of ways), and the issue needs substantial triage questions answered before anyone can investigate or verify a fix."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49935,
+      "title": "Supabase login",
+      "url": "https://github.com/supabase/supabase/issues/49935",
+      "created_at": "2026-09-03T03:18:42Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "User unable to log into Supabase dashboard",
+        "why_easy": "Issue lacks reproduction steps, system information, error messages, and browser details\u2014requires extensive triage before a contributor can even begin debugging"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49934,
+      "title": "PostgREST resolves tables on GET but returns PGRST205 on POST; existing RPC also returns PGRST202",
+      "url": "https://github.com/supabase/supabase/issues/49934",
+      "created_at": "2026-09-03T02:38:40Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "PostgREST successfully resolves tables for GET requests but fails to find them in the schema cache for POST requests and RPC calls",
+        "why_easy": "This requires deep understanding of PostgREST's schema caching internals; the selective failure pattern (some POST works, some doesn't) and method-specific behavior (GET vs POST) suggest a subtle logic bug that will be time-consuming to root-cause."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49931,
+      "title": "URGENT: Pro Account Locked by 2FA Loop Bug (Never Enabled) - Support Ticket 1. SU-459764 and 2. Ticket: SU-458550",
+      "url": "https://github.com/supabase/supabase/issues/49931",
+      "created_at": "2026-09-02T23:51:36Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Pro account locked in 2FA loop despite never enabling 2FA",
+        "why_easy": "The issue body is entirely unfilled template boilerplate with no reproduction steps, system info, error logs, or details beyond the title\u2014would require extensive clarification before any investigation could begin, and references support tickets suggesting private customer context."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51550,
+      "title": "Antora is not failing on warnings",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51550",
+      "created_at": "2026-09-03T02:52:59Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Configure Antora to fail the build when it encounters warnings instead of only logging them",
+        "why_easy": "This is a build configuration task\u2014likely a one-line flag or setting change to Antora\u2014that doesn't require modifying Spring Boot's core logic, just finding where Antora is invoked and consulting its documentation for the fail-on-warnings option."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67949,
+      "title": "BUG: pd.to_numeric with errors=\"coerce\" fails to produce actual NA values when applied to dtype string[pyarrow] values",
+      "url": "https://github.com/pandas-dev/pandas/issues/67949",
+      "created_at": "2026-09-03T08:16:31Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "pd.to_numeric with errors='coerce' on pyarrow string columns produces unrecognizable NaN values instead of proper NA values",
+        "why_easy": "Issue is well-reproduced with clear expected behavior (match numpy backend behavior), but requires understanding how to_numeric() handles different string backends and the pyarrow coercion path where NA values aren't being properly recognized."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67928,
+      "title": "API: Add reduction methods to ExtensionArray",
+      "url": "https://github.com/pandas-dev/pandas/issues/67928",
+      "created_at": "2026-09-02T20:55:02Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add public reduction methods (sum, min, mean, etc.) to ExtensionArray API with a deprecation path for the internal _reduce method",
+        "why_easy": "Core implementation is straightforward (adding base methods), but requires careful architectural planning to handle the _reduce deprecation path and resolve recursion issues in existing internal EA implementations like BaseMaskedArray"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32482,
+      "title": "BUG: npy_math.h complex accessors call UCRT creal/cimag, but npy_cdouble is C99 _Complex for icx on Windows",
+      "url": "https://github.com/numpy/numpy/issues/32482",
+      "created_at": "2026-09-02T19:31:11Z",
+      "digest_date": "2026-09-03",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix complex number accessor functions in npy_math.h to use correct types when compiling with Intel LLVM compiler on Windows",
+        "why_easy": "Root cause is clearly identified and the C++ path already shows the working solution (z._Val[0]), but requires Windows with icx compiler for proper testing and validation across multiple compiler configurations"
       }
     }
   ]
