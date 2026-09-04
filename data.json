@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03",
+  "updated": "2026-09-04",
   "issues": [
     {
       "repo": "react/react-native",
@@ -21953,6 +21953,846 @@
         "good_first_issue": false,
         "one_line_summary": "Fix complex number accessor functions in npy_math.h to use correct types when compiling with Intel LLVM compiler on Windows",
         "why_easy": "Root cause is clearly identified and the C++ path already shows the working solution (z._Val[0]), but requires Windows with icx compiler for proper testing and validation across multiple compiler configurations"
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58326,
+      "title": "[iOS][Fabric] Modal leaves an empty sheet when dismissed while presenting another view controller",
+      "url": "https://github.com/react/react-native/issues/58326",
+      "created_at": "2026-09-04T11:38:30Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Modal dismissed while presenting another view controller leaves an empty page sheet stuck on screen instead of dismissing the entire hierarchy",
+        "why_easy": "Requires expert-level iOS/UIKit knowledge and React Native Fabric architecture familiarity; despite the root cause being clearly identified in RCTModalHostViewComponentView, fixing it requires deep understanding of view controller dismissal hierarchies."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58316,
+      "title": "iOS: ellipsizeMode=\"clip\" renders RTL (Arabic) text as a mangled fragment at the line start",
+      "url": "https://github.com/react/react-native/issues/58316",
+      "created_at": "2026-09-03T16:06:31Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "iOS renders RTL (Arabic) text as a mangled fragment when using numberOfLines={1} and ellipsizeMode='clip' instead of clipping normally",
+        "why_easy": "Requires deep knowledge of iOS native text layout APIs, bidirectional text rendering algorithms, and React Native's Objective-C/Swift code; needs physical device testing to verify fixes and understand the intersection of RTL, clipping, and numberOfLines behavior."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58315,
+      "title": "iOS: nested Text with mixed fonts + lineHeight paints glyphs shifted/clipped under tail truncation \u2014 while onTextLayout/onLayout report correct positions",
+      "url": "https://github.com/react/react-native/issues/58315",
+      "created_at": "2026-09-03T15:59:38Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "iOS nested Text with mixed fonts and explicit lineHeight renders glyphs vertically shifted and bottom-clipped under tail truncation, despite onLayout/onTextLayout APIs reporting correct positions",
+        "why_easy": "Hard: requires deep iOS text rendering expertise (Core Text/UIKit baseline handling), involves subtle multi-factor interaction (nested spans + font mixing + lineHeight + truncation), complex Expo-based reproduction, and the root cause sits at the layout-to-render boundary"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49725,
+      "title": "Expo Push Notification Support Request",
+      "url": "https://github.com/expo/expo/issues/49725",
+      "created_at": "2026-09-04T06:38:27Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Push notifications consistently fail to reach iOS devices despite Expo Push API returning success status",
+        "why_easy": "This requires deep knowledge of Expo's push infrastructure and Apple's APNs system; the user has already exhausted standard troubleshooting (permissions, app code, credentials, device state), suggesting the root cause is subtle and likely needs internal Expo access to diagnose."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49720,
+      "title": "[expo/fetch] \"The stream is not in a state that permits close\" \u2014 didComplete closes the body stream unguarded (incomplete fix for #34804)",
+      "url": "https://github.com/expo/expo/issues/49720",
+      "created_at": "2026-09-03T19:46:43Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add a guard condition around the controller.close() call in the didComplete listener to prevent errors when the stream is already closed.",
+        "why_easy": "The fix is a single conditional guard around one method call, the problem is clearly isolated with code context provided, and a related PR already contains reproduction steps."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49707,
+      "title": "[ios][fetch] cancelStreaming logs error-level \"Invalid state - currentState[6] validStates[4]\" when cancelling a fully-consumed body (spec-legal reader.cancel after done)",
+      "url": "https://github.com/expo/expo/issues/49707",
+      "created_at": "2026-09-03T15:18:54Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix iOS fetch to silently ignore cancellation of fully-consumed streams instead of logging an error",
+        "why_easy": "The issue identifies the exact function and root cause, provides a minimal reproducible example, and suggests a straightforward fix: add a guard clause to return early for terminal states instead of routing through error-logging validation."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334469,
+      "title": "Make Ctrl-P dirname/ focus dirname in Explorer",
+      "url": "https://github.com/microsoft/vscode/issues/334469",
+      "created_at": "2026-09-04T11:45:01Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "When entering dirname/ in Ctrl-P, open Explorer and focus/scroll to that directory",
+        "why_easy": "Well-defined feature scope, but requires integration between Ctrl-P's quick open system and Explorer's focus/scroll logic \u2014 needs navigation of VSCode's internal architecture and multiple subsystems"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334468,
+      "title": "New experimental UI Menu",
+      "url": "https://github.com/microsoft/vscode/issues/334468",
+      "created_at": "2026-09-04T11:32:37Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Hamburger menu button doesn't respond to clicks and appears off-screen when opened via keyboard shortcut in experimental modern UI.",
+        "why_easy": "Clear reproduction steps with visual evidence of both symptoms, but requires debugging UI layout logic in experimental/unstable code within a large codebase unfamiliar to most first-time contributors."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334467,
+      "title": "Agent merge sessions have weird XML tags when viewed as restored sessions in the editor window",
+      "url": "https://github.com/microsoft/vscode/issues/334467",
+      "created_at": "2026-09-04T11:31:37Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "XML tags are unexpectedly displayed when viewing agent merge sessions as restored sessions in the editor",
+        "why_easy": "Issue provides only a screenshot with no explanation, reproduction steps, or code pointers, requiring extensive detective work to understand the problem and navigate VSCode's large codebase."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334466,
+      "title": "Agent merge should not restrict `gh` cli access as it greatly limits its ability",
+      "url": "https://github.com/microsoft/vscode/issues/334466",
+      "created_at": "2026-09-04T11:30:56Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Expand gh CLI access for the agent merge feature to enable retry and comment resolution capabilities",
+        "why_easy": "Requires understanding VS Code's agent capability model, safety implications of expanding CLI access, and determining which gh commands are safe to enable; likely needs architectural understanding and design discussion before implementation"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334464,
+      "title": "[Remote-SSH][Agent Host] Changed-file diff treats remote Linux file: URI as a local Windows path",
+      "url": "https://github.com/microsoft/vscode/issues/334464",
+      "created_at": "2026-09-04T11:14:48Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Remote-SSH file URIs from Agent Host are incorrectly treated as local Windows paths instead of remote resources",
+        "why_easy": "The root cause is pinpointed to a specific function and conditional in agentHostUri.ts, but the fix requires understanding VS Code's Remote-SSH architecture and testing against a complex Windows-to-Linux setup."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334463,
+      "title": "Test: Migrate custom locations for customizations",
+      "url": "https://github.com/microsoft/vscode/issues/334463",
+      "created_at": "2026-09-04T11:13:37Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "test",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Execute a comprehensive test plan verifying that agent customizations can migrate from unsupported custom locations to harness-provided folders, with proper settings cleanup and error handling.",
+        "why_easy": "Detailed step-by-step test plan with explicit verification points, but broad scope covering agents/instructions/skills/modes, requires deep understanding of VS Code's agent system, and involves testing complex UI flows with many edge cases (partial migration, settings cleanup, failure scenarios)."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334462,
+      "title": "Not Working",
+      "url": "https://github.com/microsoft/vscode/issues/334462",
+      "created_at": "2026-09-04T11:10:35Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Copilot extension not working after reinstall, disable/enable cycles, with persistent rate limit issue.",
+        "why_easy": "Hard: the report is too vague ('not working at all'), lacks error messages, logs, or reproduction steps, and would require extensive clarification before work could begin."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334461,
+      "title": "CoPilot giving error",
+      "url": "https://github.com/microsoft/vscode/issues/334461",
+      "created_at": "2026-09-04T10:59:17Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "User encountered a 408 timeout error from Copilot with no reproduction steps provided.",
+        "why_easy": "The issue lacks reproduction steps, specific context, and sufficient detail to debug; a contributor would need extensive back-and-forth to clarify what caused the timeout."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334460,
+      "title": "CPP File is not running in vscode it only shows chained commands",
+      "url": "https://github.com/microsoft/vscode/issues/334460",
+      "created_at": "2026-09-04T10:55:03Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "C++ files fail to run in VS Code while C, Python, and HTML files work correctly",
+        "why_easy": "Hard - no error messages, logs, or reproduction steps provided; 'chained commands' is too vague to diagnose; unclear whether the issue is in VS Code core, the C++ extension, Code Runner, or user configuration"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334457,
+      "title": "Test: Convert a workspace-less Quick Chat into a workspace session",
+      "url": "https://github.com/microsoft/vscode/issues/334457",
+      "created_at": "2026-09-04T10:30:32Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "test",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Execute comprehensive test plan verifying conversion of workspace-less Quick Chat sessions into workspace-backed sessions while preserving conversation state and ensuring proper isolation",
+        "why_easy": "Marked Complexity 5 with many edge cases, exploratory testing sections, and requirements for deep understanding of workspace/session isolation semantics and UI behavior\u2014not a straightforward checklist for new contributors."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334456,
+      "title": "Agent session resume fails when an event is missing agentDisplayName",
+      "url": "https://github.com/microsoft/vscode/issues/334456",
+      "created_at": "2026-09-04T10:22:51Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Agent session resume should handle missing agentDisplayName field in event logs gracefully",
+        "why_easy": "The fix is straightforward (make the field optional), but requires understanding VS Code's agent session architecture and locating the event deserialization logic"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334455,
+      "title": "Improve visual styling of session pill and linked text",
+      "url": "https://github.com/microsoft/vscode/issues/334455",
+      "created_at": "2026-09-04T10:22:12Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Improve visual styling and cohesion of session pills and linked text in the Agents window",
+        "why_easy": "The actual styling changes are likely straightforward, but requires navigating VS Code's large codebase to locate the relevant components without specific implementation guidance or file pointers."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334454,
+      "title": "Custom skills from `chat.agentSkillsLocations` are not inherited by Git submodules (and potentially subfolders)",
+      "url": "https://github.com/microsoft/vscode/issues/334454",
+      "created_at": "2026-09-04T09:59:33Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Custom skills from `chat.agentSkillsLocations` are not inherited by Git submodules when parent repository customizations are enabled",
+        "why_easy": "The issue is clearly scoped and reproducible with a working parallel feature as reference, but requires navigating VS Code's extension architecture and understanding how skill discovery differs from other customizations in submodule contexts."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334453,
+      "title": "Copilot Git remote fallback fails for linked worktrees",
+      "url": "https://github.com/microsoft/vscode/issues/334453",
+      "created_at": "2026-09-04T09:56:00Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix Copilot Git remote fallback to handle linked Git worktrees by resolving gitdir and commondir metadata instead of directly reading .git/config",
+        "why_easy": "The root cause and solution approach are clearly explained, but implementation requires understanding Git's worktree structure and careful handling of both regular and linked repository paths."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334448,
+      "title": "Static analysis report",
+      "url": "https://github.com/microsoft/vscode/issues/334448",
+      "created_at": "2026-09-04T08:58:10Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Review and fix TypeScript warnings identified by PVS-Studio static analyzer",
+        "why_easy": "The issue lacks concrete details\u2014it references an external article instead of enumerating specific findings or affected files, leaving a contributor without clear direction on what to fix or where to start"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334445,
+      "title": "Agent Host: Support custom Codex permissions from config.toml",
+      "url": "https://github.com/microsoft/vscode/issues/334445",
+      "created_at": "2026-09-04T08:36:58Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Agent Host should support custom Codex permissions from config.toml instead of limiting users to preset permission options.",
+        "why_easy": "Requires integrating with Codex's configuration system, supporting multiple legacy/named permission formats, and ensuring permissions persist correctly across new threads, resumed sessions, and forks\u2014a multi-system coordination problem, not a self-contained feature."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334444,
+      "title": "CSP blocks loading extension font files when VSCODE_EXTENSIONS points to a network drive",
+      "url": "https://github.com/microsoft/vscode/issues/334444",
+      "created_at": "2026-09-04T08:33:30Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "CSP policy blocks loading extension font files when VSCODE_EXTENSIONS points to a network UNC path",
+        "why_easy": "Hard because reproducing requires Windows network drive setup, the fix involves modifying security policies which needs careful review to avoid vulnerabilities, and it requires understanding how VS Code configures and enforces CSP for different origin types"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334442,
+      "title": "PR link open feels slow",
+      "url": "https://github.com/microsoft/vscode/issues/334442",
+      "created_at": "2026-09-04T08:01:29Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Opening PR links in VS Code is slow; either optimize performance or improve perceived speed with UX treatment",
+        "why_easy": "Performance issues require profiling to locate bottlenecks\u2014unclear whether the slowness is network latency, data fetching, or rendering, and VS Code's codebase is large, making it a challenging entry point for new contributors"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334441,
+      "title": "Agents Window logs noisy customization errors during disposal",
+      "url": "https://github.com/microsoft/vscode/issues/334441",
+      "created_at": "2026-09-04T07:53:40Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Suppress error logging during normal Agents Window disposal and task cancellation to reduce log noise",
+        "why_easy": "The fix is straightforward (suppress or demote expected cancellation/disposal errors) but requires finding and handling multiple error paths consistently across VS Code's customization and networking layers"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98261,
+      "title": "Turbopack build fails to parse valid CSS: named scroll-state container query",
+      "url": "https://github.com/vercel/next.js/issues/98261",
+      "created_at": "2026-09-04T11:19:06Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Turbopack fails to parse valid named scroll-state container queries that LightningCSS supports",
+        "why_easy": "Well-documented repro with evidence suggesting a LightningCSS configuration issue, but requires understanding Turbopack's CSS pipeline and bundler internals to locate and apply the fix"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98251,
+      "title": "Every next/cache export is offered twice in autocomplete after next build",
+      "url": "https://github.com/vercel/next.js/issues/98251",
+      "created_at": "2026-09-04T00:56:36Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix duplicate next/cache exports appearing in TypeScript autocomplete after next build",
+        "why_easy": "Root cause is identified (ambient module merging in .next/types/cache-life.d.ts), but requires navigating Next.js's type generation pipeline to add proper module syntax to generated .d.ts files."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98237,
+      "title": "Next Image component fails when a relative src redirects to an external image",
+      "url": "https://github.com/vercel/next.js/issues/98237",
+      "created_at": "2026-09-03T20:56:24Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Next.js Image component fails to follow HTTP redirects when optimizing relative URLs that point to external images",
+        "why_easy": "Issue is reproducible with clear steps and specific error message, but requires understanding Next.js's image optimization pipeline and ensuring secure redirect handling with edge case management"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23430,
+      "title": "optimizeDeps.include accepts a project source file and pre-bundles it, but nothing ever resolves to it",
+      "url": "https://github.com/vitejs/vite/issues/23430",
+      "created_at": "2026-09-03T17:49:22Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Pre-bundled project source files listed in optimizeDeps.include are never resolved to, leaving dead pre-bundles without warning",
+        "why_easy": "Reproduction and root cause are clearly identified, but the fix requires modifying core resolver logic to handle relative imports to source files with careful edge-case handling"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36176,
+      "title": "[Bug]: Fresh @storybook/nextjs Webpack project fails to compile because ajv-keywords resolves ajv 6",
+      "url": "https://github.com/storybookjs/storybook/issues/36176",
+      "created_at": "2026-09-03T20:05:28Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix Webpack-based Storybook failing to compile in fresh Next.js projects due to ajv version hoisting conflict with ESLint's ajv@6",
+        "why_easy": "The issue is well-diagnosed with clear reproduction steps and identified root cause, but fixing it requires understanding npm dependency hoisting and coordinating changes across Storybook's dependency chain, making it a solid medium-difficulty issue for someone with npm/bundling experience."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36175,
+      "title": "[Bug]: storybook tools docs list omits stories when CSF files share a component ID",
+      "url": "https://github.com/storybookjs/storybook/issues/36175",
+      "created_at": "2026-09-03T20:05:27Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The storybook tools docs list command omits stories from CSF files that share a component ID, even though the UI shows all of them.",
+        "why_easy": "The issue is well-scoped with clear reproduction steps and a related PR (PR #35931) for context, but requires understanding how the docs tool aggregates stories from multiple CSF files with the same component ID."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36174,
+      "title": "[Bug]: storybook upgrade bypasses pnpm catalogs and leaves mixed Storybook versions",
+      "url": "https://github.com/storybookjs/storybook/issues/36174",
+      "created_at": "2026-09-03T20:05:25Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The storybook upgrade command doesn't respect pnpm catalogs in monorepos, pinning versions directly instead of updating the shared catalog",
+        "why_easy": "Clear reproduction and prior catalog-support code exist, but the fix requires modifying the upgrade command's core logic to detect and update pnpm catalogs"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36173,
+      "title": "[Bug]: storybook doctor cannot determine the installed version in a nested pnpm catalog workspace",
+      "url": "https://github.com/storybookjs/storybook/issues/36173",
+      "created_at": "2026-09-03T20:05:24Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "storybook doctor fails to detect Storybook version when run via pnpm dlx in nested monorepo packages using pnpm catalogs",
+        "why_easy": "Clear reproduction steps and linked repository make debugging straightforward, but requires understanding pnpm workspace/catalog mechanics and how version detection resolves package.json in complex dependency setups."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36172,
+      "title": "[Bug]: Telemetry and project.json report catalog addon versions instead of resolved versions",
+      "url": "https://github.com/storybookjs/storybook/issues/36172",
+      "created_at": "2026-09-03T20:05:23Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix Storybook to report resolved addon versions instead of catalog versions in telemetry and project.json when using pnpm workspaces.",
+        "why_easy": "Well-defined problem with clear reproduction steps, but requires understanding pnpm catalog mechanics and Storybook's version collection internals to locate and fix the source of the mismatch."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69874,
+      "title": "Fix JavaScript seed indentation in the Linked List Workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69874",
+      "created_at": "2026-09-04T10:45:48Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix JavaScript seed code indentation in Linked List Workshop from 4 spaces to 2 spaces per level",
+        "why_easy": "Straightforward formatting fix with clearly defined problem and solution; no logic changes, just indentation correction across specified steps"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69871,
+      "title": "HTML Module should be structured better",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69871",
+      "created_at": "2026-09-04T07:29:43Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Restructure the HTML module to come after Computer Basics and simplify introductory content for tech-novice learners.",
+        "why_easy": "Requires significant curriculum reordering, coordination across modules, pedagogical decisions, potentially new content (illustrations), and broad stakeholder buy-in with no clear implementation spec."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69870,
+      "title": "Incorrect pinyin in Chinese A1 numbers quiz",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69870",
+      "created_at": "2026-09-04T02:56:50Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix incorrect pinyin answer in Chinese A1 numbers quiz from 'sh\u00ed li' to 'li\u00f9 sh\u00ed'",
+        "why_easy": "The fix is a simple string replacement in a quiz question file, explicitly labeled for first-time contributors, requiring no complex code changes or repo knowledge."
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17669,
+      "title": "Incorrect NATS response deserialization",
+      "url": "https://github.com/nestjs/nest/issues/17669",
+      "created_at": "2026-09-04T11:58:03Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "NATS response deserialization incorrectly returns only the 'response' field value instead of the entire JSON payload",
+        "why_easy": "The problematic code location is identified, a minimal reproduction with clear steps is provided, and the fix is localized to a single deserializer function."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49991,
+      "title": "Both Supavisor poolers intermittently take 12\u201393 s to accept a connection while PostgREST against the same database stays at 0.35 s median \u2014 so Postgres is healthy and the pooler layer is not",
+      "url": "https://github.com/supabase/supabase/issues/49991",
+      "created_at": "2026-09-04T06:47:48Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Supavisor connection poolers intermittently take 12\u201393 seconds to accept connections while PostgREST stays at 0.35s, correlating with pool shutdown cycles.",
+        "why_easy": "Intermittent production behavior unreproducible locally; requires access to private customer logs and configuration; demands deep pooling internals expertise to diagnose root cause."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 49977,
+      "title": "fix(studio): escape SQL identifiers in row export",
+      "url": "https://github.com/supabase/supabase/issues/49977",
+      "created_at": "2026-09-04T01:43:27Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix SQL identifier escaping in row export to handle double quotes in schema/table/column names",
+        "why_easy": "The bug is well-defined with a clear example; the fix is narrow (escape double quotes in identifiers) and tests are straightforward (add names with embedded quotes)."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51569,
+      "title": "runtimeClasspath and testRuntimeClasspath exclusions are not applied to processAotClasspath and processTestAotClasspath - #51383",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51569",
+      "created_at": "2026-09-04T06:42:51Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Classpath exclusions from runtimeClasspath and testRuntimeClasspath are not being applied to AOT processing classpaths",
+        "why_easy": "Marked team-only status explicitly excludes external contributors, and the minimal issue body with sparse context requires reading the referenced issue elsewhere and deep understanding of Spring Boot's AOT build configuration mechanics"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51561,
+      "title": "Add spring.kafka.listener.await-async-results-on-stop property",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51561",
+      "created_at": "2026-09-03T19:05:06Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add spring.kafka.listener.await-async-results-on-stop property to expose upstream spring-kafka async results awaiting during shutdown",
+        "why_easy": "Implementation mirrors the existing immediate-stop property pattern, but requires understanding Spring Boot's property binding, auto-configuration infrastructure, and codebase navigation; additionally blocked on an upstream release"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51503,
+      "title": "Avoid parsing nested jar URLs for cached resource lookups",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51503",
+      "created_at": "2026-08-29T17:08:25Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Optimize cached nested JAR resource lookups by creating JarFileUrlKey directly from parsed data instead of reconstructing URL objects on cache hits",
+        "why_easy": "Solution is clearly documented with strong benchmarking evidence and passing tests (551 tests, -48% latency, -54% allocation), but requires deep understanding of Spring Boot's JAR loading internals and caching semantics to implement safely."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 68009,
+      "title": "BUG: addition of non-UTC DatetimeArray with large Timedelta returns None",
+      "url": "https://github.com/pandas-dev/pandas/issues/68009",
+      "created_at": "2026-09-04T09:06:16Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Adding a large Timedelta to a non-UTC DatetimeArray returns None instead of the expected result",
+        "why_easy": "Clear reproduction with a regression hint (works in 2.3, broken in 3.0.5) lets you git bisect the culprit, but the fix requires understanding pandas' timezone-aware datetime arithmetic, which is complex domain knowledge."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67995,
+      "title": "BUILD: window/meson.build never passes --shared=pandas._libs._cyutility to its extensions",
+      "url": "https://github.com/pandas-dev/pandas/issues/67995",
+      "created_at": "2026-09-04T02:16:23Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix window/meson.build not passing --shared=pandas._libs._cyutility flag to extensions, increasing wheel size unnecessarily",
+        "why_easy": "The issue precisely documents the problem and solution\u2014a simple variable reference change in one file with no functional testing needed; meson knowledge is the only prerequisite."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67994,
+      "title": "BUILD: pyproject.toml banned-api comment is wrong \u2014 TID251 does resolve np.random through the alias",
+      "url": "https://github.com/pandas-dev/pandas/issues/67994",
+      "created_at": "2026-09-04T02:16:22Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix misleading comment in pyproject.toml claiming ruff TID251 doesn't flag np.random aliases",
+        "why_easy": "One-line fix to uncomment a config entry or delete an inaccurate comment; the reporter has already verified the correct behavior"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67993,
+      "title": "TST: pandas/tests/api/test_api.py::TestApi::test_api fails when that directory is run on its own",
+      "url": "https://github.com/pandas-dev/pandas/issues/67993",
+      "created_at": "2026-09-04T02:16:21Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Test fails when run in isolation because pandas.api.internals submodule doesn't appear in dir(pandas.api) without an explicit import",
+        "why_easy": "The issue is clearly diagnosed with three concrete solutions proposed; the challenge is deciding which aligns with pandas API design philosophy rather than the code implementation itself"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67992,
+      "title": "BUG: find_stack_level treats third-party `pandas*` packages as pandas-internal",
+      "url": "https://github.com/pandas-dev/pandas/issues/67992",
+      "created_at": "2026-09-04T02:16:15Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix find_stack_level to correctly exclude third-party packages whose names start with 'pandas'",
+        "why_easy": "The code fix is one line (add os.sep to cached directories), but updating test expectations across the codebase as stacklevels shift represents the bulk of the work"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67991,
+      "title": "TST: test_duplicated_hashtable_impl monkeypatches _SIZE_CUTOFF on a path that never reads it",
+      "url": "https://github.com/pandas-dev/pandas/issues/67991",
+      "created_at": "2026-09-04T02:16:14Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Remove inert monkeypatch of _SIZE_CUTOFF from test_duplicated_hashtable_impl, which never reads that value",
+        "why_easy": "The issue fully diagnoses the problem with code examples and proposes a clear fix (remove monkeypatch block, rename test); changes are purely deletion from a single test function with no downstream impact."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67989,
+      "title": "BENCH: ChainIndexing benchmark no longer measures chained assignment",
+      "url": "https://github.com/pandas-dev/pandas/issues/67989",
+      "created_at": "2026-09-04T02:05:49Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Delete the ChainIndexing benchmark class which no longer measures its intended behavior after SettingWithCopyWarning removal.",
+        "why_easy": "The fix is a straightforward deletion of an unused benchmark class with comprehensive justification already provided; minimal implementation complexity with no edge cases."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67986,
+      "title": "CI: sanitizers environment has no pyarrow, so the read_csv pyarrow string path is never sanitized",
+      "url": "https://github.com/pandas-dev/pandas/issues/67986",
+      "created_at": "2026-09-04T01:56:48Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "test",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add pyarrow to the sanitizers CI environment so the pyarrow string path is tested with ASAN",
+        "why_easy": "The fix is straightforward (add 'pyarrow' to feature lists and relock), but requires CI infrastructure knowledge and potential debugging of ASAN failures that may surface in native code"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 67985,
+      "title": "BUG: validate_test_dependencies.py is blind to pixi [target.*.dependencies]",
+      "url": "https://github.com/pandas-dev/pandas/issues/67985",
+      "created_at": "2026-09-04T01:42:37Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Validation script misses [target.*.dependencies] in pixi.toml, causing false alarms for platform-specific dependencies; fix to parse these tables and report which platforms they run on.",
+        "why_easy": "Localized to one script with clear parsing requirement: read [target.*.dependencies] tables, track platform coverage per dependency, and reword validation errors to distinguish 'runs nowhere' from 'runs only on win/mac/linux'."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32491,
+      "title": "ENH: make \"no\" and \"equiv\" casting consistent for Python scalars in ufuncs and copyto",
+      "url": "https://github.com/numpy/numpy/issues/32491",
+      "created_at": "2026-09-03T14:28:32Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Make the 'no' and 'equiv' casting rules consistent when handling Python scalars in ufuncs and copyto",
+        "why_easy": "The root cause is pinpointed to a single function with two clear proposed solutions, but the fix requires C coding, deep casting-rule knowledge, and coordination on which backward-compatibility approach to take."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32488,
+      "title": "BUG: SIGSEGV when creating an array from a deeply nested structured dtype",
+      "url": "https://github.com/numpy/numpy/issues/32488",
+      "created_at": "2026-09-03T12:07:41Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Array creation with deeply nested structured dtypes causes SIGSEGV instead of raising a catchable exception",
+        "why_easy": "Requires navigating NumPy's C internals (PyArray_NewFromDescr_int, PyArray_Zeros_int) to add recursion depth validation, identifying all code paths that process nested dtypes, and careful testing around the depth threshold without introducing performance regressions."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34880,
+      "title": "SelectFromModel's `prefit` fails unless fit is called when set_output(transform=\"pandas\")",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34880",
+      "created_at": "2026-09-03T16:31:58Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Add documentation clarifying that SelectFromModel with prefit=True still requires calling fit() before using set_output(transform='pandas').",
+        "why_easy": "Clear minimal reproduction, identified root cause (check in get_feature_names_out), and straightforward proposed docstring fix; however, explicitly marked 'not yet ready for a PR' and needs triage."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 44228,
+      "title": "`on.<push|pull_request|pull_request_target>.<paths|paths-ignore>` should indicate how to match on git submodules",
+      "url": "https://github.com/github/docs/issues/44228",
+      "created_at": "2026-05-11T15:13:39Z",
+      "digest_date": "2026-09-04",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add documentation clarifying how to use path filters for changes in git submodules in GitHub Actions workflows",
+        "why_easy": "The issue clearly specifies what needs documenting (submodule path matching), requires no code changes, and involves a localized documentation update with a provided real-world example."
       }
     }
   ]
