@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04",
+  "updated": "2026-09-06",
   "issues": [
     {
       "repo": "react/react-native",
@@ -22793,6 +22793,936 @@
         "good_first_issue": true,
         "one_line_summary": "Add documentation clarifying how to use path filters for changes in git submodules in GitHub Actions workflows",
         "why_easy": "The issue clearly specifies what needs documenting (submodule path matching), requires no code changes, and involves a localized documentation update with a provided real-world example."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58367,
+      "title": "[Android] Idle apps keep the Choreographer running at ~60 doFrames/s (zero work, zero frames rendered) \u2014 four frame callbacks re-arm unconditionally",
+      "url": "https://github.com/react/react-native/issues/58367",
+      "created_at": "2026-09-06T23:36:36Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Stop unconditionally re-arming four frame callbacks at 60fps when idle, eliminating CPU/battery waste when the app is foregrounded with zero work.",
+        "why_easy": "Root cause is clearly diagnosed with specific line numbers and validated fix approach already tested, but requires Android framework expertise and careful demand-gating logic to distinguish 'work exists' for each of four callback types."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58361,
+      "title": "[iOS][Fabric] Modal content rendered but absent from the accessibility tree \u2014 a recycled RCTViewComponentView keeps a stale accessibilityViewIsModal=YES",
+      "url": "https://github.com/react/react-native/issues/58361",
+      "created_at": "2026-09-06T19:07:32Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Modal content renders visually but disappears from the accessibility tree on first presentation after recycling due to stale UIViewController delegate state",
+        "why_easy": "The root cause is clearly diagnosed (recycled view controller retaining stale accessibilityViewIsModal), and the fix is likely straightforward\u2014reset state in prepareForRecycle or disable recycling\u2014but requires deep expertise in Fabric's view recycling internals, iOS UIKit lifecycle, and accessibility semantics to implement and validate safely without performance regressions"
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58360,
+      "title": "[Android] Non-default system Display size stops native ScrollView/Switch/TextInput from receiving touches (Fabric, Galaxy S23 Ultra)",
+      "url": "https://github.com/react/react-native/issues/58360",
+      "created_at": "2026-09-06T18:02:38Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Native Android views (ScrollView, Switch, TextInput) don't receive touches on Samsung Galaxy S23 Ultra with non-default Display size setting in New Architecture (Fabric).",
+        "why_easy": "Hard to pick up: requires specific rare hardware (Galaxy S23 Ultra) to reproduce and verify; suspected root cause in PixelUtil's coordinate conversion is unconfirmed and complex; not reproducible on emulator, making it difficult for contributors without the device to validate fixes."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58359,
+      "title": "SPM setup generates `set -euo pipefail` scripts but runs them with /bin/sh",
+      "url": "https://github.com/react/react-native/issues/58359",
+      "created_at": "2026-09-06T14:57:51Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "SPM setup generates bash-specific scripts but runs them under /bin/sh, failing on systems where /bin/sh is not bash",
+        "why_easy": "Specific line numbers (322, 462, 644) provided for both locations, exact reproduction steps included, and working workaround validates the approach \u2014 fixes are a shellPath change and script re-exec prepend"
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58358,
+      "title": "android websocket implementation is incorrect looking app cookies",
+      "url": "https://github.com/react/react-native/issues/58358",
+      "created_at": "2026-09-06T09:45:19Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix Android WebSocket cookie handling to respect RFC 6265 path attributes instead of stripping them",
+        "why_easy": "Problem is well-localized with a provided reproducer, but requires understanding RFC 6265 cookie semantics and modifying native Android/Kotlin code, plus native platform testing setup."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58356,
+      "title": "[Android][0.87.1] numberOfLines crashes when a decorated nested Text range is outside the truncated layout",
+      "url": "https://github.com/react/react-native/issues/58356",
+      "created_at": "2026-09-06T05:34:58Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Text decoration drawing crashes when decorated range exceeds truncated layout bounds on Android",
+        "why_easy": "Well-scoped with a clear reproducer and identified root cause (offsets outside Layout bounds), but requires Android/Kotlin expertise and deep understanding of text truncation behavior to implement a safe clipping fix"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49799,
+      "title": "[expo-modules-core][Android] Async `Coroutine` call on a `SharedObject` rejects with \"Cannot use shared object that was already released\" when the receiver is garbage-collected before the coroutine converts its arguments",
+      "url": "https://github.com/expo/expo/issues/49799",
+      "created_at": "2026-09-06T23:07:19Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "SharedObject instances garbage-collected before async coroutine argument conversion rejects with 'Cannot use shared object that was already released'",
+        "why_easy": "Requires deep expertise in JVM/JNI memory management, Kotlin coroutines, garbage collection timing, and race condition debugging in foundational Android library code\u2014the fix likely needs careful reference lifecycle management across async boundaries."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49794,
+      "title": "[docs] [expo-router] Question about `dismissTo`",
+      "url": "https://github.com/expo/expo/issues/49794",
+      "created_at": "2026-09-06T20:54:29Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update dismissTo documentation on the advanced stack page to reflect actual behavior of replacing the current screen instead of pushing to stack",
+        "why_easy": "Clearly scoped documentation-only fix with correct behavior already documented in other pages; no code investigation or changes required"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49789,
+      "title": "[expo-router] Adding non-index routes to route groups changes initial route resolution",
+      "url": "https://github.com/expo/expo/issues/49789",
+      "created_at": "2026-09-06T16:58:40Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Initial route resolution becomes non-deterministic when route groups lack index routes but contain non-index screens",
+        "why_easy": "The MRE is clear and reproducible with a concrete pattern, but the fix requires understanding expo-router's route resolution algorithm and likely involves fixing ordering/determinism logic in how groups without index files are prioritized."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49787,
+      "title": "expo-sqlite: step/getAll/reset skip the per-statement lock run takes; concurrent reads of a shared prepared statement corrupt each other",
+      "url": "https://github.com/expo/expo/issues/49787",
+      "created_at": "2026-09-06T15:54:46Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix race condition in expo-sqlite where concurrent reads over a shared prepared statement corrupt each other's result sets due to missing locks on step/getAll/reset operations",
+        "why_easy": "Root cause and fix are clearly identified\u2014add the same per-statement lock to step/getAll/reset that run already has\u2014but requires coordinated changes on both Android and iOS, careful lock scoping across the async boundary, and thorough testing to avoid deadlocks."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49782,
+      "title": "Android: one interrupted activity-result launch permanently bricks the app at startup (DataPersistor reads the persisted Bundle with no ClassLoader)",
+      "url": "https://github.com/expo/expo/issues/49782",
+      "created_at": "2026-09-06T13:32:07Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Android activity-result state deserialization fails without proper ClassLoader, permanently bricking apps after interrupted file pickers.",
+        "why_easy": "Root cause and exact code location are clearly identified with a minimal reproducible example, but the fix requires understanding Android's ClassLoader system and determining which context to pass to readBundle()."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49781,
+      "title": "[expo-calendar][Android] createEventAsync always fails in minified release builds: R8 obfuscates EventInputBase so DTSTART is never set",
+      "url": "https://github.com/expo/expo/issues/49781",
+      "created_at": "2026-09-06T12:20:49Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Fix ProGuard rules in expo-modules-core to keep abstract base classes like EventInputBase so createEventAsync works in minified Android release builds",
+        "why_easy": "Root cause and fix are clearly documented with minimal reproducible example; fix is straightforward (add keep rules for abstract base classes that don't directly implement Record), though testing requires Android release build setup"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49776,
+      "title": "[expo-sqlite] iOS EXC_BAD_ACCESS in SQLiteModule.getAll \u2192 exsqlite3_step \u2192 pthread_mutex_lock (KERN_INVALID_ADDRESS at 0x1)",
+      "url": "https://github.com/expo/expo/issues/49776",
+      "created_at": "2026-09-06T04:54:15Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Intermittent EXC_BAD_ACCESS crash in SQLiteModule.finalize during statement cleanup in getAllAsync/runAsync on iOS due to pointer corruption.",
+        "why_easy": "No minimal repro, truncated stack trace, intermittent native crash requiring iOS dev environment and SQLite/pointer lifetime expertise to reproduce and debug."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334837,
+      "title": "Main process leaks every terminal's pty output: `ProxyChannel.fromService(PtyHostService)` buffers `onProcessData` via `Event.buffer` for a `localPty` listener that never attaches",
+      "url": "https://github.com/microsoft/vscode/issues/334837",
+      "created_at": "2026-09-07T00:03:05Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Main process memory leak: PTY service events are buffered indefinitely in the localPty channel even though no renderer listens on it, causing unbounded memory growth.",
+        "why_easy": "Root cause and code location clearly identified with heap snapshots, but safely implementing requires understanding event buffering semantics and thorough testing across terminal scenarios to avoid regressions."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334832,
+      "title": "Local history folders are keyed by a 32-bit path hash with no collision handling: Timeline shows another file's entries and Restore overwrites with them",
+      "url": "https://github.com/microsoft/vscode/issues/334832",
+      "created_at": "2026-09-06T21:49:21Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Replace weak 32-bit path hash for local history folder names and add resource validation to prevent files with colliding hashes from sharing history entries and overwriting each other on restore",
+        "why_easy": "Root cause and fix locations are explicitly identified (two hash functions), but requires understanding VS Code's workingCopy/backup architecture and handling backwards compatibility migration for existing users with colliding folders"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334822,
+      "title": "Chat agent: prepareToolInvocation crashes with \"Cannot read properties of undefined (reading 'replace')\" when the model emits nested/malformed tool arguments",
+      "url": "https://github.com/microsoft/vscode/issues/334822",
+      "created_at": "2026-09-06T19:55:53Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add validation in prepareToolInvocation to gracefully handle malformed nested tool arguments instead of crashing with TypeError",
+        "why_easy": "The problem is well-defined with a clear stack trace pointing to prepareToolInvocation, but locating the actual source code from VS Code's bundled output and setting up BYOK provider testing for verification requires significant codebase familiarity."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334821,
+      "title": "crash",
+      "url": "https://github.com/microsoft/vscode/issues/334821",
+      "created_at": "2026-09-06T19:04:15Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Incomplete crash report with no reproduction steps, version info, or diagnostic details",
+        "why_easy": "Impossible to pick up \u2014 the reporter submitted an unfilled template with no description of the crash, VS Code version, OS, or steps to reproduce, leaving no actionable information for a contributor."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334820,
+      "title": "i dont want in extra pls remove it",
+      "url": "https://github.com/microsoft/vscode/issues/334820",
+      "created_at": "2026-09-06T18:24:08Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Unclear request to remove an unspecified feature or element from VS Code",
+        "why_easy": "The issue lacks any concrete description of what should be removed\u2014only a vague title and a filled bug report template without actual problem details. It requires clarification from the reporter before work can begin."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334819,
+      "title": "Issue handling problem: bug still in main, fix PR ignored, no one assigned",
+      "url": "https://github.com/microsoft/vscode/issues/334819",
+      "created_at": "2026-09-06T18:23:05Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "docs",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Request maintainers to review abandoned bug report and PR, and clarify issue handling process",
+        "why_easy": "This is a meta-issue requiring maintainer authority and internal decisions; external contributors cannot resolve it"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334816,
+      "title": "please off the hint tetx",
+      "url": "https://github.com/microsoft/vscode/issues/334816",
+      "created_at": "2026-09-06T17:07:30Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "User requests disabling hint text, but the specific UI element and desired behavior are unclear",
+        "why_easy": "Issue is severely under-specified with no reproduction steps, screenshots, or context about which hint text component is affected; already labeled info-needed and requires significant clarification before any work can start"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334815,
+      "title": "Claude harness: files edited externally during a session are attributed to the session's edited-files list",
+      "url": "https://github.com/microsoft/vscode/issues/334815",
+      "created_at": "2026-09-06T17:01:23Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Files modified externally during a Claude agent session are incorrectly attributed to the session's edited-files list",
+        "why_easy": "The root cause is identified (time-window-based file diffing vs. tool-instrumented tracking), but the fix requires understanding the Copilot Chat Extension's edit tracking architecture and modifying session state across multiple components"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98308,
+      "title": "ESLint migration codemod uses npx in a pnpm project",
+      "url": "https://github.com/vercel/next.js/issues/98308",
+      "created_at": "2026-09-06T18:07:13Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": true,
+        "one_line_summary": "ESLint migration codemod should detect and use the project's package manager (pnpm/yarn) instead of always using npx",
+        "why_easy": "Clear reproduction steps and well-defined expected behavior, but requires implementing package manager detection logic and testing across multiple package managers"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98306,
+      "title": "Runtime-rendered fully static pages on PPR routes are stored without .rsc and are never read back from the file-system cache (MISS forever)",
+      "url": "https://github.com/vercel/next.js/issues/98306",
+      "created_at": "2026-09-06T16:55:52Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Runtime-rendered fully static pages on PPR routes are cached without .rsc files and cannot be read back from the file-system cache (MISS forever)",
+        "why_easy": "The fix is one line that aligns the runtime write path with the already-correct read and export paths; a reproduction script with clear before/after testing is provided, though understanding PPR caching architecture requires some Next.js context"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98305,
+      "title": "App Router 15.5.25: a <Link> clicked at hydration can park a transition lane that is never pinged (38/160; 0/160 on 16.3.4)",
+      "url": "https://github.com/vercel/next.js/issues/98305",
+      "created_at": "2026-09-06T13:32:11Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "A <Link> click during hydration can suspend a transition lane indefinitely, preventing navigation from completing despite successful RSC response.",
+        "why_easy": "While the issue is exceptionally well-reported with automated reproduction and identified root cause (unpinged lane in startTransition during hydration), fixing stochastic race conditions in React's lane scheduling requires deep expertise in React internals, and verification depends on reproducing a rare timing-dependent bug."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98303,
+      "title": "Server Action update never commits: a transition lane stays suspended and is never pinged",
+      "url": "https://github.com/vercel/next.js/issues/98303",
+      "created_at": "2026-09-06T09:32:48Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Server Action updates sometimes never commit, leaving a transition lane suspended and unpinged after async boundaries resolve.",
+        "why_easy": "This is hard: it requires deep knowledge of React's lane reconciliation system, Next.js Server Actions, and concurrent update semantics; the bug is stochastic, only reproduces in production under specific load, and involves multiple interacting systems (async layouts, loading boundaries, revalidatePath, suspense)."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98287,
+      "title": "Turbopack build omits __NEXT_DATA__.dynamicIds for next/dynamic({ ssr: true }) declared in pages/_app \u2014 server HTML discarded on hydration",
+      "url": "https://github.com/vercel/next.js/issues/98287",
+      "created_at": "2026-09-05T06:52:02Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Turbopack omits __NEXT_DATA__.dynamicIds for next/dynamic({ ssr: true }) components declared in pages/_app, causing hydration mismatches",
+        "why_easy": "Well-reproduced with clear expected behavior, but requires deep Turbopack bundler knowledge to trace why _app-level dynamics are skipped unlike page-level ones"
+      }
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 49093,
+      "title": "Update README with Agent-Friendly Score badge",
+      "url": "https://github.com/mui/material-ui/issues/49093",
+      "created_at": "2026-09-05T04:51:19Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add an Agent-Friendly Score badge to the material-ui README",
+        "why_easy": "Requires only copying a provided markdown snippet into the README file; no code changes or project knowledge needed, though issue is blocked pending maintainer approval of the badge itself"
+      }
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 49092,
+      "title": "[material-ui][TextField] Root aria-label lands on the FormControl div, not the input (InputBase fixed this in 9.0.1 via #48283)",
+      "url": "https://github.com/mui/material-ui/issues/49092",
+      "created_at": "2026-09-05T00:31:42Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "TextField should forward aria-label to the input element instead of the root div, matching InputBase's v9.0.1 fix",
+        "why_easy": "Issue provides exact code diffs and references the already-implemented pattern in InputBase, making this straightforward to adapt"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36195,
+      "title": "Canary PR body update fails when the pull request description has no CANARY_RELEASE markers",
+      "url": "https://github.com/storybookjs/storybook/issues/36195",
+      "created_at": "2026-09-05T05:20:45Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Canary PR body update workflow fails silently and swallows failure notifications when the PR description lacks CANARY_RELEASE marker pairs.",
+        "why_easy": "The problem is well-documented with specific file locations and a clear proposed solution, but requires familiarity with GitHub Actions workflows and Storybook's CI architecture to execute safely."
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 20464,
+      "title": "Memory leak in `@tailwindcss/oxide` \u2014 RSS grows 0 \u2192 15 GB in 12 seconds, reproduces with both `next build` and `@tailwindcss/cli` standalone (Tailwind v4.3.3)",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/20464",
+      "created_at": "2026-09-06T20:22:42Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix unbounded memory growth (0\u219215 GB in 12 seconds) in @tailwindcss/oxide when processing @import directives.",
+        "why_easy": "Minimal reproduction is provided and the bug is well-isolated to Oxide, but fixing requires Rust profiling expertise and deep knowledge of the CSS parsing pipeline in a complex binary."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69917,
+      "title": "Regex in \"Build a medical data validator\" (Python curriculum) should use raw string notation",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69917",
+      "created_at": "2026-09-06T21:16:35Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add raw string notation to regex patterns in the medical data validator workshop to eliminate SyntaxWarnings",
+        "why_easy": "Only two straightforward string prefix changes needed (adding r to regex patterns), clearly identified in the issue with examples, and easily verified by running the code"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69902,
+      "title": "CSRF plugin tests contain false-positives and routing bug on /signout",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69902",
+      "created_at": "2026-09-05T15:41:04Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix CSRF plugin test assertions and query-string handling in /signout route exemption",
+        "why_easy": "The issue provides detailed reproduction steps and explicit fixes: adjust test payloads and assertions, and use req.routeOptions.url instead of req.url for stable route matching."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69897,
+      "title": "Movie Ticket Booking Calculator tests reject valid print calls and an equivalent condition",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69897",
+      "created_at": "2026-09-05T08:42:02Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix curriculum tests that incorrectly reject valid f-string print statements and equivalent comparison operators in the Movie Ticket Booking Calculator exercise",
+        "why_easy": "The issue clearly identifies which tests fail with concrete code examples and exactly what they should accept; the fixes are straightforward assertion modifications once the test files are located, though it requires exploring the freeCodeCamp repo structure."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69877,
+      "title": "External curriculum tests misclassify overlapping superblock slugs",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69877",
+      "created_at": "2026-09-04T15:27:05Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix external curriculum test classification to use exact superblock slug matching instead of substring matching",
+        "why_easy": "The problem and solution are clearly identified with concrete examples; the fix is a straightforward logic change from substring to exact matching, validated by existing test failures."
+      }
+    },
+    {
+      "repo": "fastapi/fastapi",
+      "number": 16301,
+      "title": "Direct mutation of APIRouter.routes bypasses the routes-version cache, causing stale/ghost routes",
+      "url": "https://github.com/fastapi/fastapi/issues/16301",
+      "created_at": "2026-09-05T01:51:49Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Direct mutations to APIRouter.routes bypass the version cache, causing parent routers to serve stale or ghost routes",
+        "why_easy": "The root cause is clearly identified (version counter not bumped on direct list mutation) with an excellent minimal repro, but the fix requires intercepting all list mutation methods or restructuring the routes API, which demands deep caching-system knowledge"
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17674,
+      "title": "ServerMqtt has no maxConnectionAttempts: no way to fail fast when the broker is unavailable at startup",
+      "url": "https://github.com/nestjs/nest/issues/17674",
+      "created_at": "2026-09-05T17:49:16Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add maxConnectionAttempts option to ServerMqtt to fail fast on unreachable broker at startup, matching ServerRMQ behavior",
+        "why_easy": "Reference implementation exists in ServerRMQ with exact line numbers provided, but requires careful handling of MQTT's async connection lifecycle to distinguish initial failures from reconnects without breaking existing behavior"
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17673,
+      "title": "ServerRMQ runs the listen() callback again on every broker reconnect (setup: is re-run)",
+      "url": "https://github.com/nestjs/nest/issues/17673",
+      "created_at": "2026-09-05T17:49:14Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "ServerRMQ re-runs the listen() callback on every broker reconnect due to amqp-connection-manager re-running setup functions",
+        "why_easy": "The issue pinpoints the exact root cause, provides file/line references, and explicitly states the fix (guard callback behind a flag to run only on first setup), requiring a localized, straightforward change."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30214,
+      "title": "Inverse relation metadata uses the primary identity instead of the referenced alternate unique key",
+      "url": "https://github.com/prisma/orm/issues/30214",
+      "created_at": "2026-09-06T15:44:55Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Inverse relation metadata incorrectly uses parent's primary key instead of the referenced alternate unique key when joining",
+        "why_easy": "Has a clear standalone reproduction case and pinpointed root cause in lowerHasOwnershipRelation, but fixing requires deep understanding of Prisma's relation metadata generation and inversion architecture"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30213,
+      "title": "PostgreSQL schema/table qualification does not escape embedded quotes",
+      "url": "https://github.com/prisma/orm/issues/30213",
+      "created_at": "2026-09-06T15:43:44Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix PostgreSQL table/schema qualification to properly escape embedded quotes in identifiers",
+        "why_easy": "Straightforward string escaping fix, but in critical path code that demands comprehensive edge-case testing."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30212,
+      "title": "deleteAll with include can return rows that the final DELETE did not affect",
+      "url": "https://github.com/prisma/orm/issues/30212",
+      "created_at": "2026-09-06T15:42:33Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "deleteAll() with include returns rows that the final DELETE statement did not actually affect",
+        "why_easy": "Hard to pick up: requires deep understanding of Prisma's mutation pipeline, AST refinement, and public/private runtime boundaries; the reproduction helps, but the fix likely requires coordinating snapshot collection with final DELETE execution across mutation-executor and collection-mutation-dispatch internals."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30211,
+      "title": "PostgreSQL UPDATE lowering drops the public AST target alias",
+      "url": "https://github.com/prisma/orm/issues/30211",
+      "created_at": "2026-09-06T15:41:22Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "PostgreSQL UPDATE and DELETE statements lose their table alias during SQL lowering, causing invalid SQL when predicates reference the alias",
+        "why_easy": "Requires understanding Prisma's multi-layer SQL compilation pipeline (public AST through lowering to PostgreSQL rendering) and alias propagation across WHERE/SET/RETURNING clauses."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30210,
+      "title": "createAndCount reports input length instead of executor affected rows",
+      "url": "https://github.com/prisma/orm/issues/30210",
+      "created_at": "2026-09-06T15:40:11Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "createAndCount() reports input length instead of actual affected rows from executor",
+        "why_easy": "Reproduction case provided, source files identified, and regression test cases already suggested\u2014fix is localized to mutation executor"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30209,
+      "title": "First transaction times out with a fresh one-connection pool",
+      "url": "https://github.com/prisma/orm/issues/30209",
+      "created_at": "2026-09-06T15:39:00Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "First transaction times out with a fresh one-connection pool because marker verification attempts to acquire a connection already held by the transaction.",
+        "why_easy": "The reproduction case and root cause are well-documented with specific source files identified, but fixing requires careful redesign of connection lifecycle coordination between transaction management and marker verification across multiple edge cases."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30208,
+      "title": "Derived text-backed enum sources lose declaration ordering",
+      "url": "https://github.com/prisma/orm/issues/30208",
+      "created_at": "2026-09-06T15:37:49Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Derived text-backed enum sources lose their declaration ordering when wrapped in DerivedTableSource, falling back to lexical order",
+        "why_easy": "Well-documented with reproduction cases and AST dumps, but requires deep knowledge of Prisma's PostgreSQL SQL renderer and enum ordering preservation mechanics to diagnose and fix."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30207,
+      "title": "Nested default includes lose scalar result inference in rc.8",
+      "url": "https://github.com/prisma/orm/issues/30207",
+      "created_at": "2026-09-06T15:36:38Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Nested default includes lose scalar field type inference in rc.8, becoming unknown instead of their schema-defined types",
+        "why_easy": "Requires expert TypeScript generic inference knowledge and ORM architecture understanding to trace the type divergence between implicit and explicit selections, though a clear reproduction and identified source files help narrow the search"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30206,
+      "title": "Batch $transaction() intermittently never settles on driver adapters \u2014 query lost inside client engine before adapter's startTransaction; interactive tx with same payload always succeeds",
+      "url": "https://github.com/prisma/orm/issues/30206",
+      "created_at": "2026-09-05T17:30:55Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Batch $transaction() with driver adapters intermittently hangs indefinitely under production load while interactive transactions with identical payloads consistently succeed",
+        "why_easy": "Hard: intermittent race condition in batch transaction handling requires deep knowledge of Prisma's client engine and driver adapter internals, complex production-load reproduction setup with stacked query extensions, and the reporter has already exhausted basic diagnostics"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30205,
+      "title": "Nested transactions, prisma 8",
+      "url": "https://github.com/prisma/orm/issues/30205",
+      "created_at": "2026-09-05T15:47:11Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "docs",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Clarify or document nested transaction support in Prisma 8",
+        "why_easy": "Unclear what work is needed \u2014 author asks whether nested transactions are missing or just undocumented; no error reproduction, version numbers, or test case; requires triage and Prisma codebase knowledge before a contributor can begin"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50064,
+      "title": "Project ID: wmrqsvzkjzeoreetzbln",
+      "url": "https://github.com/supabase/supabase/issues/50064",
+      "created_at": "2026-09-06T18:35:49Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Multiple custom RPC functions returning 404/500 errors with broken authentication after migrations",
+        "why_easy": "No reproduction steps, incomplete report template, and customer-specific project ID make this impossible to debug without extensive follow-up from the issue reporter"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50043,
+      "title": "Realtime partition maintenance triggers a PostgREST schema-cache reload ~85\u00d7/day \u2192 503 PGRST002 bursts",
+      "url": "https://github.com/supabase/supabase/issues/50043",
+      "created_at": "2026-09-05T16:54:38Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Realtime's unconditional ALTER TABLE commands trigger unnecessary PostgREST schema-cache reloads that cause 503 errors ~90 times daily.",
+        "why_easy": "The issue is thoroughly diagnosed with clear measurements (371s downtime/28h, 90 ALTERs \u2192 100 reloads) and root cause identified, but requires PostgreSQL event trigger expertise and testing across Realtime and PostgREST systems to implement a cross-repo fix."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50042,
+      "title": "Can't login to Supabase Sat Sep 5 12:51PM Eastern",
+      "url": "https://github.com/supabase/supabase/issues/50042",
+      "created_at": "2026-09-05T16:52:04Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "User unable to login to Supabase on September 5th at 12:51PM Eastern",
+        "why_easy": "Issue lacks reproduction steps, error messages, environment details, and any actionable information\u2014would require extensive triage and back-and-forth with reporter before development can begin."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51596,
+      "title": "Minimum required visibility for custom auto-configuration classes when exclusion is not required",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51596",
+      "created_at": "2026-09-06T09:37:20Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Request documentation clarifying that package-private @AutoConfiguration classes can be used for internal auto-configurations.",
+        "why_easy": "The feature appears to work already; the issue primarily requires documentation updates rather than implementation changes."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51594,
+      "title": "Remove configureDependencyFixes when Spring Framework and Spring GraphQL have published updated modues",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51594",
+      "created_at": "2026-09-06T00:00:58Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Revert two PRs that added temporary dependency fixes once upstream Spring Framework and Spring GraphQL release updated modules",
+        "why_easy": "Reverting specific PRs is straightforward mechanics, but the issue is blocked on external releases and marked team-only, making it neither available nor immediately actionable for contributors"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 68264,
+      "title": "BUG: `RangeIndex.symmetric_difference` skips required sort when one side is empty",
+      "url": "https://github.com/pandas-dev/pandas/issues/68264",
+      "created_at": "2026-09-06T20:48:09Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "RangeIndex.symmetric_difference skips required sorting when one operand is empty, returning elements in incorrect order",
+        "why_easy": "The bug is isolated to a single method with a clear MRE and expected behavior, but fixing it requires understanding RangeIndex internals and pandas's index operation semantics"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 68199,
+      "title": "BUG: Series/DataFrame.replace with a callable value silently stores the function instead of applying or rejecting it",
+      "url": "https://github.com/pandas-dev/pandas/issues/68199",
+      "created_at": "2026-09-06T04:24:27Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Series/DataFrame.replace() silently stores callable values as function objects instead of applying them or raising an error like it does for invalid to_replace arguments",
+        "why_easy": "Reproduction case and location are clear with precedent from GH#18634, but requires deciding between implementing callable support or raising validation, plus writing comprehensive pandas-style tests"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32522,
+      "title": "BUG: incorrect floored division of negative timedeltas",
+      "url": "https://github.com/numpy/numpy/issues/32522",
+      "created_at": "2026-09-06T20:16:50Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Floor division of negative timedeltas truncates toward zero instead of toward negative infinity, violating Python and int behavior",
+        "why_easy": "The issue is well-isolated with a clear reproduction case, but fixing it requires navigating numpy's ufunc system and understanding timedelta64 arithmetic implementation details"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32518,
+      "title": "BUG: `np.strings.replace` truncates its arguments to a fixed string length",
+      "url": "https://github.com/numpy/numpy/issues/32518",
+      "created_at": "2026-09-06T12:50:57Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix `np.strings.replace` to not truncate output strings when replacement strings are longer than the input array's dtype",
+        "why_easy": "The issue is clearly reproducible with exact steps, but fixing it requires understanding numpy.strings' type inference and output buffer sizing, which likely involves C code for string operations."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34892,
+      "title": "\u26a0\ufe0f CI failed on Unit tests Linux x86-64 pylatest_pip_scipy_dev (last failure: Sep 06, 2026) \u26a0\ufe0f",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34892",
+      "created_at": "2026-09-06T02:52:41Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "test",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Multiple OpenML fetch tests are failing in CI with the latest scipy dev version, requiring root cause analysis and investigation.",
+        "why_easy": "No error details provided\u2014requires investigating CI logs to determine if this is a real bug or scipy compatibility issue, and the issue explicitly states it's not ready for PRs yet."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34889,
+      "title": "balanced_accuracy_score(adjusted=True) returns -inf when a single class survives the NaN filter",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34889",
+      "created_at": "2026-09-05T03:41:44Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Fix balanced_accuracy_score(adjusted=True) returning -inf when only one class survives NaN filtering",
+        "why_easy": "Root cause is clearly identified with specific line numbers\u2014an unguarded division by zero\u2014but determining the correct return value requires understanding adjusted balanced accuracy semantics."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34883,
+      "title": "[BUG] `compute_class_weight` coerces class labels to int in 1.9, breaking dict lookup for string labels",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34883",
+      "created_at": "2026-09-04T12:14:02Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "In scikit-learn 1.9, compute_class_weight incorrectly coerces numeric string class labels (\"1\", \"2\") to integers during dictionary lookup, breaking class weight assignment for forest ensembles with class_weight=\"balanced\".",
+        "why_easy": "The fix is likely simple (avoid type coercion when dict keys match the original type), but requires understanding how forest ensemble class weight validation round-trips through compute_class_weight and why the original normalization was added."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45774,
+      "title": "get rid of hatters and hackers and users",
+      "url": "https://github.com/github/docs/issues/45774",
+      "created_at": "2026-09-06T21:46:54Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "docs",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Unclear request to modify documentation, with nonsensical description and unspecified PDF attachment as the only context",
+        "why_easy": "Issue lacks actionable requirements \u2014 the title, article reference, and description are incoherent, and the only detail is a suspicious PDF attachment a contributor cannot safely inspect"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45773,
+      "title": "Wrong translation in French version of the \"Manually running a workflow\" article",
+      "url": "https://github.com/github/docs/issues/45773",
+      "created_at": "2026-09-06T20:47:42Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix incorrect French translation in the 'Manually running a workflow' article by reordering `workflow_dispatch` backticks",
+        "why_easy": "The issue clearly specifies the exact text to find and replace, requiring only a single-line edit to the French markdown file with no code or system knowledge needed."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45764,
+      "title": "### \ud83e\udd8b Changeset detected",
+      "url": "https://github.com/github/docs/issues/45764",
+      "created_at": "2026-09-06T11:53:46Z",
+      "digest_date": "2026-09-06",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Automated notification that a changeset was detected in a PR",
+        "why_easy": "Not actionable work for contributors\u2014this is a bot notification about versioning metadata with no tasks to complete"
       }
     }
   ]
