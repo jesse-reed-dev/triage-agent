@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-06",
+  "updated": "2026-09-07",
   "issues": [
     {
       "repo": "react/react-native",
@@ -23723,6 +23723,396 @@
         "good_first_issue": false,
         "one_line_summary": "Automated notification that a changeset was detected in a PR",
         "why_easy": "Not actionable work for contributors\u2014this is a bot notification about versioning metadata with no tasks to complete"
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58380,
+      "title": "`keyboardType=\"url\"` on Android produces an `inputType` with no class, so the IME is never told what the field accepts",
+      "url": "https://github.com/react/react-native/issues/58380",
+      "created_at": "2026-09-07T10:25:52Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Android's `keyboardType=\"url\"` omits the input class from the IME bitmask, breaking URL autocomplete and silently disabling autoCapitalize",
+        "why_easy": "The fix is one line (add `TYPE_CLASS_TEXT or` to the `url` branch to match the `email-address` pattern), but requires Android emulator setup to test and assumes familiarity with InputType bitmasks"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49840,
+      "title": "[expo-video][iOS] Native controls not displayed until tap (Expo Go)",
+      "url": "https://github.com/expo/expo/issues/49840",
+      "created_at": "2026-09-07T13:54:45Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Native video controls on iOS don't display until the user taps the video; they should appear immediately on load like standard AVPlayerViewController.",
+        "why_easy": "Hard to pick up without Swift/iOS expertise and knowledge of AVPlayerViewController lifecycle; medium because the issue is well-scoped, reproducible, and the expected behavior is clear (match standard AVKit)."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49834,
+      "title": "Remote WebView debugging is enabled",
+      "url": "https://github.com/expo/expo/issues/49834",
+      "created_at": "2026-09-07T12:47:43Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Disable WebView debugging in production by making it conditional on debug build and log-box configuration.",
+        "why_easy": "The exact file path and one-line fix are provided; this is a straightforward boolean change to prevent WebView debugging from being enabled unconditionally in production."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49828,
+      "title": "[expo-widgets] addUserInteractionListener does not receive widget interactions in sdk 57",
+      "url": "https://github.com/expo/expo/issues/49828",
+      "created_at": "2026-09-07T12:07:03Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "addUserInteractionListener is not being called when users interact with iOS widgets in SDK 57",
+        "why_easy": "A complete minimal reproducible example is provided and the issue appears SDK-specific, making it easier to isolate; however, it involves native iOS widget integration and requires knowledge of the native-to-JavaScript event bridge, which limits accessibility to contributors unfamiliar with Objective-C/Swift."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334933,
+      "title": "Modern UI (Compact Density): Extra gaps between status bar item hover areas",
+      "url": "https://github.com/microsoft/vscode/issues/334933",
+      "created_at": "2026-09-07T15:08:56Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Status bar items in Compact Density mode show extra gaps between hover areas and misaligned backgrounds due to incorrect CSS margins.",
+        "why_easy": "The exact CSS file and problematic classes are identified with a clear root cause, making this a straightforward margin/padding fix."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334930,
+      "title": "Webview Find Widget does not work when panel is datached",
+      "url": "https://github.com/microsoft/vscode/issues/334930",
+      "created_at": "2026-09-07T14:38:22Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Webview Find Widget fails to locate text when the editor panel is detached to a separate window",
+        "why_easy": "Clear repro steps and narrow scope, but requires understanding VS Code's webview lifecycle and how event handlers or DOM queries differ when a panel moves to a separate window context"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334925,
+      "title": "Codex: can read files outside of workspace without any prompt",
+      "url": "https://github.com/microsoft/vscode/issues/334925",
+      "created_at": "2026-09-07T14:20:25Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Codex can read files outside the workspace when 'Default permissions' is enabled, bypassing the permission restriction by using terminal commands",
+        "why_easy": "The issue is well-reproduced with clear steps and the root cause is identified (terminal commands aren't gated by permissions), but fixing it requires understanding the permission system's architecture and may span VS Code and copilot-sdk codebases; also a security issue that may need careful review"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334923,
+      "title": "Modern UI: terminal cwd label overlaps panel tabs after changing directory",
+      "url": "https://github.com/microsoft/vscode/issues/334923",
+      "created_at": "2026-09-07T14:14:43Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Terminal cwd label overlaps panel tabs when Modern UI is enabled and directory path becomes longer",
+        "why_easy": "Well-reproduced with video, but requires understanding VS Code's panel layout system and Modern UI-specific CSS changes."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334922,
+      "title": "Claude: `/reload-skill` offered but doesn't seem to be working",
+      "url": "https://github.com/microsoft/vscode/issues/334922",
+      "created_at": "2026-09-07T14:06:37Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The `/reload-skills` command in VS Code's Claude extension appears but doesn't actually reload custom skills added to the workspace",
+        "why_easy": "Well-defined reproduction steps and a specific feature scope, but requires understanding VS Code extension architecture and how this extension loads and sends skills to Claude's API"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334920,
+      "title": "Skills in workspace not found",
+      "url": "https://github.com/microsoft/vscode/issues/334920",
+      "created_at": "2026-09-07T13:55:27Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Workspace skills defined in .codex/skills/ are not discovered or displayed in Codex chat",
+        "why_easy": "Clear reproduction steps and specific file location, but fixing requires understanding the skill discovery pipeline which likely spans file scanning, parsing, registration, and UI display components"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334918,
+      "title": "VS Code 1.136.1: Extension icons fail to display in the sidebar after connecting to SSH.",
+      "url": "https://github.com/microsoft/vscode/issues/334918",
+      "created_at": "2026-09-07T13:45:57Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Extension icons fail to display in the sidebar when connected via Remote-SSH, despite functionality remaining intact",
+        "why_easy": "Marked as duplicate, suggesting the issue is already under investigation; involves Remote-SSH's resource loading architecture and appears to be a subtle regression where icons aren't loading in the remote context, making it complex to debug and reproduce locally"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334917,
+      "title": "Add a setting that enables serving memory from GitHub Copilot Memory.",
+      "url": "https://github.com/microsoft/vscode/issues/334917",
+      "created_at": "2026-09-07T13:37:01Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add a setting to store GitHub Copilot memories in cloud storage or a custom location instead of locally",
+        "why_easy": "Hard: requires integrating with external cloud storage APIs (OneDrive, Google Drive), implementing sync logic with conflict resolution, authentication, and likely changes across multiple components of the Copilot extension which may be owned/controlled by Microsoft"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334916,
+      "title": "Claude: skills not found when added after the session starts",
+      "url": "https://github.com/microsoft/vscode/issues/334916",
+      "created_at": "2026-09-07T13:32:08Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Skills added to the workspace after a chat session starts aren't discoverable until the session is restarted",
+        "why_easy": "The issue is well-scoped with clear reproduction steps, but fixing it requires understanding VSCode extension file-watching mechanisms and skill-loading caching, which is domain-specific knowledge."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334915,
+      "title": "[Terminal] Double-click word selection overruns into a following CJK fullwidth separator character",
+      "url": "https://github.com/microsoft/vscode/issues/334915",
+      "created_at": "2026-09-07T13:30:30Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Terminal double-click word selection incorrectly includes following CJK fullwidth separator characters",
+        "why_easy": "Well-scoped with clear reproduction and narrowed cause (word-end boundary calculation around double-width chars), but requires specialized terminal emulation knowledge (cell vs. glyph semantics, xterm.js internals) to fix properly"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 334914,
+      "title": "Add confirmation dialog when expanding folders with an excessive number of image files",
+      "url": "https://github.com/microsoft/vscode/issues/334914",
+      "created_at": "2026-09-07T13:18:31Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add a confirmation dialog when expanding folders with excessive numbers of files to prevent UI freezing",
+        "why_easy": "The feature concept is straightforward (count files, show dialog), but requires understanding VS Code's file explorer architecture and ensuring the count operation itself doesn't block the UI."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23451,
+      "title": "build.rolldownOptions.preserveEntrySignatures shows incorrect default",
+      "url": "https://github.com/vitejs/vite/issues/23451",
+      "created_at": "2026-09-07T14:15:23Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Document that Vite overrides Rolldown's default for preserveEntrySignatures based on build mode",
+        "why_easy": "The issue clearly identifies the problem with code references and suggests specific documentation changes needed"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23450,
+      "title": "server.proxy fetch() drops multiple Set-Cookie response headers",
+      "url": "https://github.com/vitejs/vite/issues/23450",
+      "created_at": "2026-09-07T11:32:50Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Multiple Set-Cookie headers in server.proxy.fetch() responses are dropped, with only one reaching the client",
+        "why_easy": "Has clear reproduction and isolated scope (proxy middleware handling), but requires understanding Vite's HTTP response layer and why multi-value Set-Cookie headers are being lost during conversion"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36208,
+      "title": "Telemetry: one tools-command record per invocation with CLI toolset and tool names, plus docs show-story reporting",
+      "url": "https://github.com/storybookjs/storybook/issues/36208",
+      "created_at": "2026-09-07T11:14:51Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Consolidate CLI telemetry to one record per invocation with standardized toolset and tool fields, and add missing show-story reporting.",
+        "why_easy": "Hard; restructures telemetry across multiple systems (CLI, SDK, MCP addon) requiring deep architectural knowledge, though the specification is clear with detailed before/after examples."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69918,
+      "title": "Tree Traversal: Building a Binary Search Tree - Step 30",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69918",
+      "created_at": "2026-09-07T12:39:42Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Tests for the Binary Search Tree `__str__` method implementation incorrectly reject valid code",
+        "why_easy": "The issue is vague and lacks the actual code being tested; a contributor would need to investigate the freeCodeCamp repo structure, locate the lesson files and test, and determine whether the test assertion or the lesson instructions are at fault"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30221,
+      "title": "After upgrading to the latest Prisma 8 release, autocomplete and formatting are no longer working for `.prisma` files in VS Code.",
+      "url": "https://github.com/prisma/orm/issues/30221",
+      "created_at": "2026-09-07T12:35:34Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code extension loses IntelliSense and formatting support for `.prisma` files in Prisma 8 unless the schema starts with datasource/generator blocks.",
+        "why_easy": "Well-documented reproduction and clear regression with a valuable clue (works when datasource blocks are present), but requires deep knowledge of the language server implementation and parser initialization logic to debug."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51605,
+      "title": "Force specific hash when building a single docs branch",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51605",
+      "created_at": "2026-09-07T09:18:53Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix docs build to correctly target a specific git hash without Antora warnings from newer property references",
+        "why_easy": "Hard: marked team-only; requires understanding GitHub Actions workflows, Antora build system, Spring Boot's docs structure, and diagnosing why git reset isn't preventing access to newer references"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32532,
+      "title": "DOC: In `ufunc` class documentation the `identity` attribute points to the `identity()` function",
+      "url": "https://github.com/numpy/numpy/issues/32532",
+      "created_at": "2026-09-07T13:50:54Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix the ufunc.identity attribute documentation link which incorrectly points to the identity() function instead of the ufunc.identity attribute",
+        "why_easy": "Straightforward documentation link fix requiring only locating the RST source and correcting a cross-reference; no code logic or NumPy internals knowledge needed"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34901,
+      "title": "RFC Defining the auto-routing strategy for scikit-learn estimators / sample_weight handling",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34901",
+      "created_at": "2026-09-07T12:41:09Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Design and define which metadata (sample_weight, X_val, etc.) should be auto-requested by scikit-learn estimators across the codebase",
+        "why_easy": "This is an RFC/discussion issue explicitly marked not ready for PRs, requiring deep architectural understanding of metadata routing, statistical expertise, and design consensus before any implementation work can begin"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34900,
+      "title": "Documentation: Incorrect description of statistic computed by MaxAbsScaler.partial_fit",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34900",
+      "created_at": "2026-09-07T11:50:24Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "The MaxAbsScaler.partial_fit() docstring incorrectly describes the computed statistic as 'per-feature minimum and maximum' instead of 'per-feature maximum absolute value'.",
+        "why_easy": "The issue clearly identifies the exact docstring to update and provides the suggested replacement text, making this a straightforward documentation-only fix with no code changes required."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34898,
+      "title": "Release scikit-learn 1.9.1 from `scikit-learn-release` repo",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34898",
+      "created_at": "2026-09-07T07:10:33Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Configure release infrastructure (GitHub environment reviewers, trusted publishing, and release instructions) for scikit-learn 1.9.1.",
+        "why_easy": "Hard to pick up as a first issue because it's explicitly not-yet-ready-for-PR, requires coordinated infrastructure changes with maintainer approval, and needs OIDC/trusted publishing knowledge unfamiliar to new contributors."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45780,
+      "title": "Update branch creation instructions to match current GitHub UI",
+      "url": "https://github.com/github/docs/issues/45780",
+      "created_at": "2026-09-07T02:09:41Z",
+      "digest_date": "2026-09-07",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update branch creation instructions to match current GitHub UI labels (\"New branch name\", \"Source\", \"Create new branch\")",
+        "why_easy": "The fix is straightforward text updates to match the provided current UI screenshot; no code changes or complex logic required."
       }
     }
   ]
