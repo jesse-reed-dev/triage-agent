@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-07",
+  "updated": "2026-09-08",
   "issues": [
     {
       "repo": "react/react-native",
@@ -24113,6 +24113,441 @@
         "good_first_issue": true,
         "one_line_summary": "Update branch creation instructions to match current GitHub UI labels (\"New branch name\", \"Source\", \"Create new branch\")",
         "why_easy": "The fix is straightforward text updates to match the provided current UI screenshot; no code changes or complex logic required."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49843,
+      "title": "[Bug] Expo Router server export fails with Bun when Axios is imported",
+      "url": "https://github.com/expo/expo/issues/49843",
+      "created_at": "2026-09-07T15:42:09Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Expo Router server export fails with Bun when Axios is imported, though it succeeds with Node using identical code and lockfile",
+        "why_easy": "This is hard: it's a cross-runtime compatibility issue requiring debugging Metro bundler internals and understanding how Axios behaves differently under Bun; the generic error message doesn't clearly indicate root cause and reproducing/fixing it requires specialized Bun knowledge."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335043,
+      "title": "Setting for rolling out agents window extension capability doesn't show in agents window",
+      "url": "https://github.com/microsoft/vscode/issues/335043",
+      "created_at": "2026-09-08T11:21:34Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "A setting for agents window extension capability is defined in the wrong configuration file and must be moved to the agents window configuration",
+        "why_easy": "The issue description is vague and lacks file paths or specifics about current vs. target location, requiring investigation before the fix can be attempted"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335041,
+      "title": "Misleading active tab background color",
+      "url": "https://github.com/microsoft/vscode/issues/335041",
+      "created_at": "2026-09-08T11:06:31Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Active tab styling in modernized UI is insufficiently distinct from inactive tabs and editor background",
+        "why_easy": "Problem is well-documented with screenshots and likely involves CSS changes to tab styling, but requires navigating VS Code's large codebase, understanding its theme system, and testing across color schemes."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335037,
+      "title": "Agent Host file tools do not support extension-registered filesystems",
+      "url": "https://github.com/microsoft/vscode/issues/335037",
+      "created_at": "2026-09-08T10:39:36Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Enable Agent Host file tools to support extension-registered filesystems through VS Code's filesystem abstractions",
+        "why_easy": "Requires deep knowledge of VS Code's internal Agent Host and filesystem provider systems, spanning multiple interconnected components without clear entry points for new contributors."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335036,
+      "title": "Markdown Editor Search Pastes Twice",
+      "url": "https://github.com/microsoft/vscode/issues/335036",
+      "created_at": "2026-09-08T10:34:38Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Pasting text in the markdown editor search field duplicates the pasted content",
+        "why_easy": "Concrete bug with visual evidence, but lacks reproduction steps, debugging context, and guidance on where the duplicate paste logic lives for a first-time contributor"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335035,
+      "title": "Sessions started in GH Copilot App show in Agents window in `Unknown` group as cloud session",
+      "url": "https://github.com/microsoft/vscode/issues/335035",
+      "created_at": "2026-09-08T10:30:34Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Sessions started in GitHub Copilot App should not appear in VS Code's Agents window as cloud sessions in Unknown group",
+        "why_easy": "The problem is well-defined and the fix is likely localized to session detection/filtering logic, but requires understanding VS Code's session registration architecture and navigating a large codebase to find the right code."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335034,
+      "title": "Codex Agent Host fails in workspaces using only an extension-registered filesystem",
+      "url": "https://github.com/microsoft/vscode/issues/335034",
+      "created_at": "2026-09-08T10:21:46Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Codex Agent Host fails to initialize when a workspace contains only resources from extension-registered filesystems due to missing base path in AbsolutePathBuf deserialization",
+        "why_easy": "Requires understanding Codex Agent Host's architecture, VS Code filesystem provider integration, path serialization, and why it diverges from the regular Codex extension\u2014involves debugging across multiple layers with unclear entry points for a first-time contributor."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335033,
+      "title": "Group header and session list item overlaps buggily",
+      "url": "https://github.com/microsoft/vscode/issues/335033",
+      "created_at": "2026-09-08T10:19:25Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Session list item chevrons and group headers in the Agents Window have z-index and opacity layering bugs when hovering, causing visual overlaps.",
+        "why_easy": "The issue has clear reproduction steps and screenshots showing exactly what's wrong\u2014likely a CSS z-index/opacity fix\u2014but locating the relevant component files in VS Code's large codebase requires exploration without provided file links."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335032,
+      "title": "Stale directories displayed in new session page pill does not immediately result in error",
+      "url": "https://github.com/microsoft/vscode/issues/335032",
+      "created_at": "2026-09-08T10:02:55Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Show an error and remove stale directories immediately when selected in the new session page, matching the editor window behavior",
+        "why_easy": "The expected behavior is well-defined with a reference implementation already in the editor window, but navigating the large VS Code codebase and setting up the build environment creates significant friction for unfamiliar contributors"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335031,
+      "title": "Slow switching speed between Files and Changes",
+      "url": "https://github.com/microsoft/vscode/issues/335031",
+      "created_at": "2026-09-08T10:00:09Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Improve responsiveness when switching between Files and Changes views by eliminating the visual lag where the file tree persists while waiting for the diff to load",
+        "why_easy": "Requires navigating VS Code's large codebase, profiling the view transition and async loading pipeline, and understanding how multiple sidebar systems interact\u2014the root cause isn't clearly identified and could involve rendering, state management, or data loading performance"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335027,
+      "title": "Extension causes high cpu load",
+      "url": "https://github.com/microsoft/vscode/issues/335027",
+      "created_at": "2026-09-08T09:47:27Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Copilot Chat extension causes excessive CPU usage on Windows, needs performance investigation and optimization",
+        "why_easy": "Requires CPU profiling interpretation, Windows-specific reproduction, extension architecture expertise, and no clear reproduction steps beyond the provided profile file."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335026,
+      "title": "Multi-file diff editor: Open File opens with cursor at the start of the file instead of where it was in the diff",
+      "url": "https://github.com/microsoft/vscode/issues/335026",
+      "created_at": "2026-09-08T09:45:01Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Preserve cursor position when opening a file from the multi-file diff editor instead of resetting to start",
+        "why_easy": "Well-scoped feature requiring changes only to the diff editor's Open File action and cursor-position passing logic, but requires familiarity with VS Code's editor and diff infrastructure"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335025,
+      "title": "Setting to make the \"Open in Browser\" button and actions always use the external browser",
+      "url": "https://github.com/microsoft/vscode/issues/335025",
+      "created_at": "2026-09-08T09:41:53Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add a setting to make 'Open in Browser' actions always target the external browser instead of the integrated browser",
+        "why_easy": "The feature is clearly scoped and identifies specific code paths (title bar button, editor actions, link handlers), but requires coordinating changes across multiple browser integration systems rather than being an isolated change, and assumes familiarity with VS Code's internal architecture."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335024,
+      "title": "Forked session doesn't appear in Sessions in editor window",
+      "url": "https://github.com/microsoft/vscode/issues/335024",
+      "created_at": "2026-09-08T09:40:31Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Forked chat sessions do not appear in the Sessions list in the editor window after being created.",
+        "why_easy": "Clear reproduction steps and focused feature area, but requires investigation into session persistence logic and is incomplete (missing OS version, specific Insiders build number, error context)."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335023,
+      "title": "Agent feedback sent to parent session instead of fork",
+      "url": "https://github.com/microsoft/vscode/issues/335023",
+      "created_at": "2026-09-08T09:38:09Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "When submitting feedback on changes in a forked agent session, the feedback command is incorrectly routed to the parent session instead of the forked session.",
+        "why_easy": "The issue has clear reproduction steps and well-defined behavior, but requires understanding VS Code's session forking and feedback routing architecture to locate and fix the routing logic correctly."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335021,
+      "title": "Thinking effort is not showing like before",
+      "url": "https://github.com/microsoft/vscode/issues/335021",
+      "created_at": "2026-09-08T09:28:14Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The thinking effort selector UI in GitHub Copilot is not visible in VS Code 1.136.1, though it appeared in earlier versions",
+        "why_easy": "Clear reproduction steps and bounded scope (specific UI element in a regression), but requires setting up VS Code's complex dev environment and understanding the Copilot extension's conditional rendering logic"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335019,
+      "title": "Explore using a tree icon for toggling the file tree",
+      "url": "https://github.com/microsoft/vscode/issues/335019",
+      "created_at": "2026-09-08T09:19:30Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "feature",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Replace the file tree toggle icon with a tree icon for more intuitive visual representation",
+        "why_easy": "Localized icon replacement with clear scope and immediate visual feedback, though contributors need to find where the icon is defined in the codebase"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98345,
+      "title": "router.prefetch redirect loop",
+      "url": "https://github.com/vercel/next.js/issues/98345",
+      "created_at": "2026-09-08T07:50:30Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "router.prefetch with { kind: 'full' } causes infinite loop of RSC requests when prefetching a redirected URL",
+        "why_easy": "Although the behavior is reproducible with clear steps, the fix requires deep knowledge of Next.js's RSC prefetching internals, optimistic route matching, component lifecycle cancellation, and how these systems interact with redirects\u2014not suitable for unfamiliar contributors"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98344,
+      "title": "generateStaticParams with output=export is flaky in dev env with encoded params",
+      "url": "https://github.com/vercel/next.js/issues/98344",
+      "created_at": "2026-09-08T03:42:24Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "generateStaticParams with output=export throws spurious parameter validation errors in dev mode when params contain URL-encoded characters, with flaky behavior dependent on navigation order.",
+        "why_easy": "The issue has clear reproduction steps, a linked repo, and is isolated to dynamic routes with output=export in dev mode; but the navigation-order-dependent flakiness suggests a subtle state or caching issue in how the dev server validates encoded params, requiring familiarity with Next.js dev server internals."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98337,
+      "title": "`useId()` in Server Components returns duplicate ids after a client-side navigation",
+      "url": "https://github.com/vercel/next.js/issues/98337",
+      "created_at": "2026-09-08T00:47:09Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Server Components' useId() returns duplicate IDs across RSC responses on client-side navigation because React Flight doesn't receive a unique identifierPrefix from Next.js",
+        "why_easy": "Hard: requires deep understanding of React Flight internals and Next.js's RSC rendering architecture to implement the fix correctly and test across dynamic/static routes and navigation patterns."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36228,
+      "title": "Builder Vite: `storybook/internal/preview/runtime` served with 1Mb inline source map when used with Vite 8",
+      "url": "https://github.com/storybookjs/storybook/issues/36228",
+      "created_at": "2026-09-08T10:47:38Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Vite 8 is inlining 1MB source maps for storybook/internal/preview/runtime, tripling bundle size compared to Vite 7",
+        "why_easy": "The issue is well-reproduced with clear before/after comparison, but fixing it requires digging into Storybook's Vite builder configuration and Vite 8's changes to find which build setting needs adjustment"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36215,
+      "title": "Addon Vitest: Use `enableCoverage` API instead of re-creating Vitest instance",
+      "url": "https://github.com/storybookjs/storybook/issues/36215",
+      "created_at": "2026-09-07T15:47:26Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Refactor Vitest addon to use Vitest 4's `enableCoverage` API instead of re-creating the Vitest instance",
+        "why_easy": "The goal is clear with a documented replacement API, but requires understanding the Storybook addon architecture and Vitest lifecycle to avoid breaking coverage toggling in practice."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69927,
+      "title": "Replace regex-based test cases in Email Masker Lab",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69927",
+      "created_at": "2026-09-08T07:53:18Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Replace regex-based test cases in the Email Masker Lab with an alternative validation approach",
+        "why_easy": "The issue lacks sufficient detail and requires reading umbrella ticket #68417 to understand scope, making it difficult for new contributors to pick up without additional context."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30226,
+      "title": "Migration planner drops a column before the RLS policy that references it (2BP01 at apply time)",
+      "url": "https://github.com/prisma/orm/issues/30226",
+      "created_at": "2026-09-07T20:52:23Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Migration planner orders column drops before dependent RLS policy drops, causing Postgres 2BP01 errors at apply time.",
+        "why_easy": "Well-documented bug with clear minimal reproduction and isolated problem, but requires understanding Prisma's migration planner internals and dependency resolution logic."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50124,
+      "title": "Auth user signs",
+      "url": "https://github.com/supabase/supabase/issues/50124",
+      "created_at": "2026-09-08T09:35:29Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "PostgREST API calls fail with PGRST303 (JWT issued at future) immediately after a newly confirmed Auth user signs in",
+        "why_easy": "This is a production incident requiring infrastructure access, server-side debugging, and deep knowledge of Supabase auth/PostgREST JWT validation; not a reproducible bug suitable for external contributors."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50108,
+      "title": "Blog category filter is lost when loading more posts",
+      "url": "https://github.com/supabase/supabase/issues/50108",
+      "created_at": "2026-09-08T03:45:24Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Blog category filter parameter is lost when pagination loads additional posts",
+        "why_easy": "Root cause clearly identified and fix is localized \u2014 just add the stored category parameter to fetchMorePosts() requests alongside the existing search parameter."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50096,
+      "title": "Organization not showing!",
+      "url": "https://github.com/supabase/supabase/issues/50096",
+      "created_at": "2026-09-07T17:48:36Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "User's Supabase project and organization disappeared from dashboard despite backend still functioning",
+        "why_easy": "This is a support/account recovery issue requiring internal database access and user verification, not a code bug that contributors can fix\u2014it needs Supabase staff intervention"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50088,
+      "title": "supabase cli 2.116.0 bind mounts algorithm breakage",
+      "url": "https://github.com/supabase/supabase/issues/50088",
+      "created_at": "2026-09-07T15:24:54Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Remove redundant child bind mounts in buildDockerBinds when they're already covered by parent directory mounts.",
+        "why_easy": "The fix is algorithmically straightforward\u2014filter out child binds whose host paths are nested under parent binds\u2014but the problem is hard to pick up because reproducing it requires a complex multi-package monorepo setup, understanding Docker mount semantics, and the issue body is truncated."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32535,
+      "title": "BUG: np.median (and quantile/percentile) with a tuple axis raises ValueError when a kept dimension has size 0",
+      "url": "https://github.com/numpy/numpy/issues/32535",
+      "created_at": "2026-09-07T17:59:05Z",
+      "digest_date": "2026-09-08",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix `np.median`, `np.quantile`, and `np.percentile` to handle multi-axis reduction when kept dimensions have size 0, instead of raising ValueError during reshape",
+        "why_easy": "Root cause is clearly identified (reshape fails with -1 on zero-sized array) and a working pattern exists in `np.nanmedian` (early size==0 check), but the fix affects three functions sharing `_ureduce` and requires testing the behavior is consistent with other reductions"
       }
     }
   ]
