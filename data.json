@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-08",
+  "updated": "2026-09-09",
   "issues": [
     {
       "repo": "react/react-native",
@@ -24548,6 +24548,576 @@
         "good_first_issue": false,
         "one_line_summary": "Fix `np.median`, `np.quantile`, and `np.percentile` to handle multi-axis reduction when kept dimensions have size 0, instead of raising ValueError during reshape",
         "why_easy": "Root cause is clearly identified (reshape fails with -1 on zero-sized array) and a working pattern exists in `np.nanmedian` (early size==0 check), but the fix affects three functions sharing `_ureduce` and requires testing the behavior is consistent with other reductions"
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58407,
+      "title": "[Android] BackHandler receives no events on API 35 with predictive Back enabled",
+      "url": "https://github.com/react/react-native/issues/58407",
+      "created_at": "2026-09-08T14:58:00Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "BackHandler does not receive hardwareBackPress events on Android API 35 when predictive Back is enabled",
+        "why_easy": "Clear reproduction steps and a test repo are provided, but fixing requires deep knowledge of Android's OnBackInvokedCallback API and React Native's native bridge implementation"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49906,
+      "title": "[expo-audio][Android] Background playback stops mid-track after ~10-15 min: ActivityManager reaps AudioControlsService with \"app idle\"",
+      "url": "https://github.com/expo/expo/issues/49906",
+      "created_at": "2026-09-09T10:41:06Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Background audio playback stops after 10\u201315 minutes on Android when screen is locked due to AudioControlsService being reaped by ActivityManager",
+        "why_easy": "The reporter pinpoints a specific code location and proposes a targeted fix (startService\u2192startForegroundService), but verifying the theory requires Android expertise, testing on real devices with media3/MediaSessionService lifecycle, and ensuring no regressions in foreground service state management."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49897,
+      "title": "[expo-router] NativeTabs ignores unstable_settings.initialRouteName on SDK 57",
+      "url": "https://github.com/expo/expo/issues/49897",
+      "created_at": "2026-09-09T06:09:30Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "NativeTabs on SDK 57 ignores unstable_settings.initialRouteName, always defaulting to the first tab instead",
+        "why_easy": "The issue pinpoints the exact file and function needing the fix, spells out the solution (pass initialRouteName from useRouteNode into useNavigationBuilder), and provides a working reference implementation in headless tabs plus test examples on main."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49890,
+      "title": "[expo-widgets][android] `glance 1.2.0-rc01` pulls `work-runtime-ktx 2.7.1`, which duplicates classes against any library on WorkManager 2.8+",
+      "url": "https://github.com/expo/expo/issues/49890",
+      "created_at": "2026-09-08T19:17:01Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix WorkManager duplicate class conflict in expo-widgets caused by Glance 1.2.0-rc01 depending on incompatible work-runtime-ktx 2.7.1",
+        "why_easy": "The root cause is well-diagnosed with a minimal reproducible example, and the fix is a straightforward dependency version update or constraint declaration in a single build.gradle file."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49888,
+      "title": "[expo-updates] OTA reloadAsync() shows a bare white view + native spinner instead of the branded splash after startup has already completed",
+      "url": "https://github.com/expo/expo/issues/49888",
+      "created_at": "2026-09-08T18:55:30Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Updates.reloadAsync() shows a bare white view instead of the branded splash screen when called after the app has finished its initial launch",
+        "why_easy": "The bug is well-localized to one code path and the root cause is identified (missing splash screen styling in the 'already started' branch), but the fix requires React Native iOS lifecycle expertise, design judgment on which approach to use, and physical device testing to avoid edge cases in brownfield/multi-view scenarios."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 49884,
+      "title": "[expo-modules-core] EventEmitter::installClass clones this via jsi::Value \u2192 Hermes cloneObject SIGBUS/PAC on physical iOS 26/27",
+      "url": "https://github.com/expo/expo/issues/49884",
+      "created_at": "2026-09-08T17:18:15Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "EventEmitter::installClass crashes on physical iOS 26+ devices when cloning this via JSI, triggering a Hermes cloneObject PAC memory protection violation",
+        "why_easy": "Requires deep expertise in JSI/Hermes internals, ARM64e Pointer Authentication Code, and access to physical iOS 26+ hardware for reproduction; modifying critical EventEmitter native code carries high regression risk"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335244,
+      "title": "GitHub Copilot: camelCase subagentStart hook is silently ignored",
+      "url": "https://github.com/microsoft/vscode/issues/335244",
+      "created_at": "2026-09-09T11:15:51Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add missing camelCase hook name mappings for `subagentStart` and `preCompact` events that are documented but silently ignored in VS Code's Copilot Chat",
+        "why_easy": "The issue identifies exact files and the fix is adding camelCase \u2192 PascalCase mappings to two existing dictionaries; the reporter has already traced the root cause."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335237,
+      "title": "editor.suggest.insertMode: \"insert\" not respected for completions using LSP InsertReplaceEdit (clangd 23.1.0+)",
+      "url": "https://github.com/microsoft/vscode/issues/335237",
+      "created_at": "2026-09-09T10:05:24Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code ignores editor.suggest.insertMode when LSP servers send InsertReplaceEdit completions, applying the replace range instead of the insert range.",
+        "why_easy": "The regression is extremely well-isolated (clangd 22.1.18 \u2192 23.1.0), the raw LSP data is correct, and expected behavior is clear; but it requires understanding LSP's InsertReplaceEdit mechanism and navigating VS Code's completion pipeline, plus setting up clangd to reproduce."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335232,
+      "title": "vscode.dev/agents: opening a large Agent Host conversation repeatedly disconnects tunnel after >1 MB chat snapshot",
+      "url": "https://github.com/microsoft/vscode/issues/335232",
+      "created_at": "2026-09-09T09:45:28Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code tunnel disconnects when opening large Agent Host conversations with chat snapshots exceeding ~1 MB transport frame limit.",
+        "why_easy": "The root cause is well-identified (1 MB frame limit in relayed transports with supporting RFC referenced), but fixing it requires implementing message chunking across the Agent Host Protocol layer, which demands deep protocol architecture knowledge."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335229,
+      "title": "MCP task with status \"failed\" never calls tasks/result, discarding the tool result payload (structuredContent)",
+      "url": "https://github.com/microsoft/vscode/issues/335229",
+      "created_at": "2026-09-09T09:37:12Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "MCP tool tasks with 'failed' status should call tasks/result to retrieve the structured error payload instead of immediately rejecting with only the status message",
+        "why_easy": "The root cause is precisely identified with the exact file and code location, and the fix follows an established pattern already implemented in the 'completed' branch a few lines away."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335228,
+      "title": "Support configurable word wrap in Agents editors",
+      "url": "https://github.com/microsoft/vscode/issues/335228",
+      "created_at": "2026-09-09T09:22:31Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add independent word-wrap settings for Agents Window editors with off/on/inherit options.",
+        "why_easy": "Requirements are clear and well-scoped, but implementation requires familiarity with VSCode's settings system, Agents Window architecture, and multiple editor types (code vs. diff editors)."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335227,
+      "title": "When using custom endpoints, virtual tools cause the model to fail to accurately discover the tools",
+      "url": "https://github.com/microsoft/vscode/issues/335227",
+      "created_at": "2026-09-09T09:19:29Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Tools from large MCPs are incorrectly grouped and named into virtual tools when using custom endpoints, making tool discovery unreliable.",
+        "why_easy": "Root cause requires understanding tool virtualization architecture, custom endpoint integration, and MCP tool categorization logic; reproduction involves complex setup (100+ tool MCPs with custom endpoints) and the fix likely touches multiple interconnected systems."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335226,
+      "title": "Agent harness always receives current file context",
+      "url": "https://github.com/microsoft/vscode/issues/335226",
+      "created_at": "2026-09-09T09:10:27Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Codex agent harness always includes current file context even when user does not explicitly add it",
+        "why_easy": "Clear reproduction steps and well-scoped issue, but requires understanding VS Code's agent harness infrastructure to locate where context attachment logic is unconditionally applied"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335224,
+      "title": "Chat does not respond even though I pay",
+      "url": "https://github.com/microsoft/vscode/issues/335224",
+      "created_at": "2026-09-09T08:56:53Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Chat extension fails to respond to user queries despite active Copilot subscription",
+        "why_easy": "The issue lacks reproduction steps, error messages, logs, or specifics about what 'no response' means (timeout, auth failure, crash, etc.), making it impossible to diagnose without significant back-and-forth investigation\u2014needs triage before anyone can work on it."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335223,
+      "title": "Test Issue Created from Workspace",
+      "url": "https://github.com/microsoft/vscode/issues/335223",
+      "created_at": "2026-09-09T08:55:32Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Test placeholder issue created by workspace assistant",
+        "why_easy": "This is placeholder test content with no actual task, requirements, or context for a contributor to work on"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335221,
+      "title": "Copilot local chat session disappears from Sessions after Windows restart despite intact JSONL and indexes",
+      "url": "https://github.com/microsoft/vscode/issues/335221",
+      "created_at": "2026-09-09T08:33:28Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Copilot Chat sessions fail to display in Sessions UI after Windows restart despite intact persisted data and indexes",
+        "why_easy": "Requires understanding the session startup/recovery flow; data is intact but silently fails to load after restart; difficult to reproduce without a Windows restart scenario"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335219,
+      "title": "Custom chat-completions model fails intermittently with HTTP/2 GOAWAY (Undici) and truncated request body (Node https fetcher)",
+      "url": "https://github.com/microsoft/vscode/issues/335219",
+      "created_at": "2026-09-09T08:27:21Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Custom chat-completions endpoints fail intermittently with HTTP/2 GOAWAY frames (Undici) or truncated request bodies (Node https fetcher)",
+        "why_easy": "Hard: requires deep HTTP/2 protocol knowledge, spans multiple fetcher implementations (Undici, Node https, Electron), and flaky reproduction complicates testing\u2014not suitable for newcomers."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335218,
+      "title": "Composite view containers should not silently inherit the first view's title and icon",
+      "url": "https://github.com/microsoft/vscode/issues/335218",
+      "created_at": "2026-09-09T08:22:42Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Composite view containers should display a generic title and icon instead of inheriting the first view's identity, with optional custom naming",
+        "why_easy": "Clear problem statement and scoped minimum fix, but requires understanding VS Code's view container architecture and UI modification"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335217,
+      "title": "Explorer must stay standalone when no folder is opened: \"No Folder Opened\" view is missing `canMoveView`",
+      "url": "https://github.com/microsoft/vscode/issues/335217",
+      "created_at": "2026-09-09T07:53:51Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add `canMoveView: true` to the 'No Folder Opened' view descriptor so it can be dragged to other containers like the Folders view.",
+        "why_easy": "The root cause is explicitly identified and the fix is minimal: add one missing flag to `createEmptyViewDescriptor()` to match `createExplorerViewDescriptor()`."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98417,
+      "title": "@next/codemod upgrade pins ESLint to 10 unprompted, failing install for projects using eslint-plugin-import",
+      "url": "https://github.com/vercel/next.js/issues/98417",
+      "created_at": "2026-09-09T11:58:54Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "@next/codemod upgrade pins ESLint to an exact version without checking plugin compatibility, breaking installations for projects using eslint-plugin-import",
+        "why_easy": "The issue is well-reproduced with clear stack traces (handle-package.js, upgrade.js), but fixing it requires redesigning the codemod's dependency-selection logic to avoid upgrading transitive dependencies not required by the target Next.js release"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98405,
+      "title": "next/form does not normalize newlines in GET submissions after hydration",
+      "url": "https://github.com/vercel/next.js/issues/98405",
+      "created_at": "2026-09-09T08:44:39Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Next.js Form component fails to normalize newlines to CRLF in GET submissions after hydration, diverging from native HTML form behavior",
+        "why_easy": "Issue is well-isolated to form-shared.tsx with clear reproduction and identified root cause; fix likely requires inserting newline normalization before URLSearchParams encoding, though contributor must understand HTML form spec requirements and hydration flow"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98402,
+      "title": "next/image: a client that disconnects mid-request permanently hangs that /_next/image cache key for every later client (self-hosted)",
+      "url": "https://github.com/vercel/next.js/issues/98402",
+      "created_at": "2026-09-09T07:56:04Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix a bug where client disconnections during image optimization permanently hang the cache key for subsequent requests",
+        "why_easy": "The root cause is well-diagnosed and the fix is localized (use socket: null in MockedResponse), but the fix requires understanding the request/response mocking and caching systems and comprehensive testing to verify no regressions."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98394,
+      "title": "Pages Router: ssr:false dynamic imports mismatch when hydration retries after the import resolves",
+      "url": "https://github.com/vercel/next.js/issues/98394",
+      "created_at": "2026-09-09T03:49:35Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Pages Router dynamic imports with `ssr: false` cause hydration mismatches when imports resolve during suspended hydration retries",
+        "why_easy": "Root cause is clearly identified (wrong snapshot passed to useSyncExternalStore), but fixing it requires deep expertise in Next.js loader internals, React's hydration protocol, and careful state management in a critical path\u2014not a good first issue despite the clear diagnosis"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98393,
+      "title": "Dynamic client import causes instant validation error in development",
+      "url": "https://github.com/vercel/next.js/issues/98393",
+      "created_at": "2026-09-09T03:45:08Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Dynamic client imports trigger instant validation errors in development when cacheComponents is enabled",
+        "why_easy": "Clear reproduction case and narrowly scoped behavior, but requires deep understanding of Next.js's dev validation worker and how dynamic imports interact with Turbopack's module caching"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23459,
+      "title": "[v8] tsconfig auto-discovery eagerly loads the whole project-references graph and hard-fails when any referenced project extends an uninstalled config package",
+      "url": "https://github.com/vitejs/vite/issues/23459",
+      "created_at": "2026-09-09T05:32:47Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Vite fails to build when a referenced project's tsconfig extends an uninstalled config package, even if that project isn't used in the current build",
+        "why_easy": "The reproduction is clear and self-contained, but the fix requires understanding tsconfig resolution semantics across Vite, oxc_resolver, and rolldown\u2014plus careful handling of partial installs and workspace references without breaking legitimate path resolution."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36233,
+      "title": "[Documentation]: Explain `QueryClient` isolation with parallel story tests with `Vitest`",
+      "url": "https://github.com/storybookjs/storybook/issues/36233",
+      "created_at": "2026-09-08T15:33:20Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "docs",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add documentation explaining how to use QueryClient with TanStack Router in Storybook while maintaining Vitest file parallelism, or document the parallelism limitation",
+        "why_easy": "Requires deep expertise in Storybook, TanStack Query, TanStack Router, and Vitest; the solution is not straightforward and demands either experimentation to design a working pattern or detailed explanation of framework constraints"
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 20470,
+      "title": "Oxide 4.3.3: Windows access violation after scanning in a Node worker and unloading the addon",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/20470",
+      "created_at": "2026-09-08T12:14:27Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix Windows access violation crash in Oxide when scanner exits in a Node worker thread",
+        "why_easy": "Hard \u2014 requires expertise in native code, Windows DLL lifecycle, Rust FFI, and Rayon thread pool mechanics; the issue is intermittent and involves debugging low-level memory access violations from unloaded code."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69943,
+      "title": "Add missing backticks to existing lecture section headings",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69943",
+      "created_at": "2026-09-09T11:11:42Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add inline code formatting (backticks) to 13 section headings across 7 lectures for consistency with existing code formatting conventions",
+        "why_easy": "The issue explicitly lists all 13 affected headings and their exact locations, making this a straightforward find-and-replace task that requires no coding logic or decision-making"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69942,
+      "title": "Vowel Repeater: fix grammar in both language descriptions",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69942",
+      "created_at": "2026-09-09T09:02:41Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix grammatical error in Vowel Repeater challenge descriptions where 'should keeps' should be 'should keep' in both JavaScript and Python versions.",
+        "why_easy": "This is a straightforward text correction in curriculum content with the exact error and fix clearly specified; no code changes required."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30233,
+      "title": "fix schema verification, raw SQL execution, and invalid pagination argument failures",
+      "url": "https://github.com/prisma/orm/issues/30233",
+      "created_at": "2026-09-08T19:07:02Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix three Postgres runtime issues: schema verification rejecting valid DDL, raw SQL execution crashes, and invalid pagination arguments causing internal errors",
+        "why_easy": "Each fix is localized with clear root causes (regex pattern, missing null check, missing validation), but the issue spans three separate systems (migrations, runtime execution, query building), requiring navigation of multiple code paths unsuitable for a first-time contributor."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50170,
+      "title": "Intermittent 502 Bad Gateway from Supabase Auth /auth/v1/token",
+      "url": "https://github.com/supabase/supabase/issues/50170",
+      "created_at": "2026-09-09T10:53:48Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Intermittent 502 Bad Gateway responses from Supabase Auth /token endpoint during reported API Gateway degradation",
+        "why_easy": "Intermittent bugs are notoriously hard to debug without consistent reproduction; this appears infrastructure-related (Cloudflare, API Gateway) requiring production logs, metrics, and ops knowledge rather than code-level fixes."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50156,
+      "title": "Extended ASCII database password issue",
+      "url": "https://github.com/supabase/supabase/issues/50156",
+      "created_at": "2026-09-08T23:27:32Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Database passwords with extended ASCII characters are accepted during configuration but fail to authenticate when connecting to PostgreSQL",
+        "why_easy": "Clear reproduction steps and well-scoped problem, but fixing requires investigating character encoding handling across password validation, storage, and connection string layers; unclear whether the solution is to support extended ASCII or validate and reject them upfront"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50155,
+      "title": "API reference: 11 of 12 branching endpoints document only 500, and /diff is the only GET in v1 requiring a :write OAuth scope",
+      "url": "https://github.com/supabase/supabase/issues/50155",
+      "created_at": "2026-09-08T21:58:14Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "docs",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add missing `401`/`403`/`429` error responses to 11 branching API endpoints and document why `GET /v1/branches/{id}/diff` requires `environment:write` scope",
+        "why_easy": "The changes are mechanically straightforward \u2014 copy 4 error codes to 11 endpoint definitions \u2014 but require locating and understanding the OpenAPI spec structure, editing 11+ locations, and potentially discussing the rationale for the write-scope requirement with maintainers."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50142,
+      "title": "Realtime settings infinite loading on self-hosted",
+      "url": "https://github.com/supabase/supabase/issues/50142",
+      "created_at": "2026-09-08T17:51:49Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Realtime settings page shows infinite loading on self-hosted deployments instead of displaying an unavailability notice",
+        "why_easy": "There's an existing reference implementation (StorageSettings) showing the correct pattern of displaying an admonition for self-hosted unavailability, making the fix straightforward to apply to RealtimeSettings."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 68343,
+      "title": "BUG: IntervalIndex set ops and astype/constructor raise TypeError when passed a RangeIndex",
+      "url": "https://github.com/pandas-dev/pandas/issues/68343",
+      "created_at": "2026-09-09T08:08:16Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "IntervalIndex set operations and constructor raise TypeError when passed a RangeIndex due to missing type conversion in _maybe_convert_platform_interval",
+        "why_easy": "The fix location and approach are clearly identified by the reporter, but requires understanding pandas' type system internals and verifying the fix works across direct construction, set operations, and astype paths."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 68310,
+      "title": "BUG: .to_latex() throws an exception in some cases",
+      "url": "https://github.com/pandas-dev/pandas/issues/68310",
+      "created_at": "2026-09-08T14:58:45Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": ".to_latex() fails with a ValueError when rendering certain dataframes due to a row-count mismatch in the LaTeX translation logic",
+        "why_easy": "The error is pinpointed to a specific line (style_render.py:917 with strict=True zip), but diagnosing why the row counts diverge requires understanding pandas' complex Styler rendering pipeline, reproducing requires external OpenML downloads, and the full error message is truncated\u2014making this suitable for someone familiar with the codebase rather than a first-time contributor."
+      }
+    },
+    {
+      "repo": "EbookFoundation/free-programming-books",
+      "number": 13451,
+      "title": "repair dead links in Ruby section due to typo.",
+      "url": "https://github.com/EbookFoundation/free-programming-books/issues/13451",
+      "created_at": "2026-09-09T02:57:41Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix a dead link in the Ruby section by adding a trailing slash to the URL",
+        "why_easy": "The fix is a single character addition with a clear before/after example provided; requires only locating and editing the link in a markdown file with no code changes or investigation needed."
+      }
+    },
+    {
+      "repo": "EbookFoundation/free-programming-books",
+      "number": 13447,
+      "title": "Cuv\u00e2ntul care schimb\u0103",
+      "url": "https://github.com/EbookFoundation/free-programming-books/issues/13447",
+      "created_at": "2026-09-08T12:41:04Z",
+      "digest_date": "2026-09-09",
+      "triage": {
+        "category": "docs",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Issue with no description; title is Romanian text ('The word that changes')",
+        "why_easy": "The issue body is completely empty, providing no context about what needs to be done\u2014a contributor cannot start work without asking for clarification first"
       }
     }
   ]
