@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-09",
+  "updated": "2026-09-11",
   "issues": [
     {
       "repo": "react/react-native",
@@ -25118,6 +25118,1326 @@
         "good_first_issue": false,
         "one_line_summary": "Issue with no description; title is Romanian text ('The word that changes')",
         "why_easy": "The issue body is completely empty, providing no context about what needs to be done\u2014a contributor cannot start work without asking for clarification first"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50063,
+      "title": "[expo-image][Android] OutOfMemoryError: media-store video content:// uris are buffered whole onto the Java heap before frame extraction",
+      "url": "https://github.com/expo/expo/issues/50063",
+      "created_at": "2026-09-11T19:43:54Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Prevent expo-image from buffering entire video files into Java heap when extracting poster frames from media-store content:// URIs on Android",
+        "why_easy": "Hard because it requires deep Android native expertise (MediaMetadataRetriever, Glide decoder architecture) and platform-specific refactoring to route video URIs through fd-based decoding; aided by clear root cause analysis and reproducible example repo"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50050,
+      "title": "@expo/ui hard-pins androidx.compose.material3:1.5.0-alpha17 on Android, conflicting with other Compose-based native modules (NoSuchMethodError: ExposedDropdownMenuBox)",
+      "url": "https://github.com/expo/expo/issues/50050",
+      "created_at": "2026-09-11T15:45:21Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "@expo/ui hard-pins androidx.compose.material3:1.5.0-alpha17, conflicting with other Compose-based modules and causing runtime NoSuchMethodError; needs looser versioning or excludability",
+        "why_easy": "Root cause and reproducible example are well-documented with specific suggested fixes, but the fix requires Android Gradle expertise to determine safe version constraints and testing across material3 versions"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50049,
+      "title": "[expo-router] Apple zoom transition: the source view stops following its ScrollView during the dismissal",
+      "url": "https://github.com/expo/expo/issues/50049",
+      "created_at": "2026-09-11T15:40:04Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Apple zoom transition dismissal doesn't follow parent ScrollView when list scrolls during animation",
+        "why_easy": "Issue is thoroughly diagnosed with a reproducible example and clear root cause identified, but fix requires deep UIKit animation and Fabric view management expertise plus device testing on iOS 18+"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50028,
+      "title": "[iOS] <Text> draws a .notdef box for the Khmer two-part vowels \u17c4/\u17c5 with a custom font; fixed by laying Khmer text out through TextKit 2 in RCTTextLayoutManager (needs buildReactNativeFromSource)",
+      "url": "https://github.com/expo/expo/issues/50028",
+      "created_at": "2026-09-11T10:30:57Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "iOS Text component renders .notdef boxes for Khmer vowels \u17c4/\u17c5 with custom fonts; fix requires migrating RCTTextLayoutManager from TextKit 1 to TextKit 2",
+        "why_easy": "Hard: requires deep native iOS expertise (TextKit framework, Objective-C), Unicode/Khmer script knowledge, and implementing complex text layout subsystems (measuring, drawing, hit-testing, line enumeration) in core React Native infrastructure, despite a verified patch existing."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50022,
+      "title": "[router] baseUrl is stripped as a string prefix, not a path segment: with baseUrl \"/m\", navigating to \"/menu\" lands on \"/m/enu\"",
+      "url": "https://github.com/expo/expo/issues/50022",
+      "created_at": "2026-09-11T08:57:05Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "baseUrl is stripped as a string prefix instead of a path segment, causing incorrect route resolution",
+        "why_easy": "Well-documented with a clear reproduction case and identified bug location (stripBaseUrl), but fixing path segment logic correctly and testing all edge cases (trailing slashes, multi-segment baseUrls, etc.) requires careful attention to routing semantics"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335873,
+      "title": "Private market place access: Didn't login to GitHub account",
+      "url": "https://github.com/microsoft/vscode/issues/335873",
+      "created_at": "2026-09-11T19:38:18Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Private marketplace extension authentication fails when using custom gallery URL with GitHub enterprise account",
+        "why_easy": "Clear reproduction steps and specific configuration shown, but requires understanding VSCode's marketplace authentication flow, GitHub enterprise auth integration, and whether the issue is misconfiguration, missing validation, or a runtime bug"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335871,
+      "title": "can't select the migrated file paths",
+      "url": "https://github.com/microsoft/vscode/issues/335871",
+      "created_at": "2026-09-11T19:20:37Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "File paths displayed in a migration dialog cannot be selected, preventing users from copying them",
+        "why_easy": "Likely a CSS user-select property or similar styling preventing text selection on the paths; fix is probably a one-line property change once the component is located"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335870,
+      "title": "Not loading",
+      "url": "https://github.com/microsoft/vscode/issues/335870",
+      "created_at": "2026-09-11T19:15:55Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Vague issue report with empty body (template placeholder) and unclear what \"Not loading\" refers to.",
+        "why_easy": "Hard to pick up: no description, reproduction steps, error messages, or expected behavior\u2014just an empty template and a vague title. A contributor would need to ask for clarification before work could start."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335869,
+      "title": "Spotlight feels like overkill",
+      "url": "https://github.com/microsoft/vscode/issues/335869",
+      "created_at": "2026-09-11T19:15:30Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Evaluate whether the Spotlight feature is redundant when users have already engaged with detailed info cards.",
+        "why_easy": "The issue is vague and references #335486 without explanation; a contributor would need to understand the context, research the original feature, and clarify the desired behavior before implementing changes."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335868,
+      "title": "Info spotlight not screen reader accessible",
+      "url": "https://github.com/microsoft/vscode/issues/335868",
+      "created_at": "2026-09-11T19:13:56Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add keyboard focus and screen reader accessibility to the info spotlight component",
+        "why_easy": "The fix is straightforward (add tabindex or aria labels), but requires finding the component in VS Code's large codebase and testing with actual screen readers, not just visual verification"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335867,
+      "title": "Current prompt's margins look off in chat hover preview",
+      "url": "https://github.com/microsoft/vscode/issues/335867",
+      "created_at": "2026-09-11T19:13:36Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Chat hover preview has incorrect margins causing prompt text to bleed into reasoning section",
+        "why_easy": "Visual/CSS styling issue with clear reproduction steps; fix likely involves adjusting margin or padding values in the chat hover component styling."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335866,
+      "title": "[typescript] Coloring is broken for type assertion functions with multi-line generic return types",
+      "url": "https://github.com/microsoft/vscode/issues/335866",
+      "created_at": "2026-09-11T19:04:43Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Syntax highlighting breaks for code following a type assertion function with a multi-line generic return type",
+        "why_easy": "Reproduction is clear with specific trigger conditions, but fixing requires understanding VS Code's TypeScript grammar tokenization and modifying complex parser rules\u2014not ideal for newcomers to the codebase"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335865,
+      "title": "Bug",
+      "url": "https://github.com/microsoft/vscode/issues/335865",
+      "created_at": "2026-09-11T19:02:03Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Incomplete bug report with no information provided\u2014template fields unfilled",
+        "why_easy": "Cannot be worked on until the reporter provides reproduction steps, environment details, and logs; would require back-and-forth clarification before investigation can begin"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335863,
+      "title": "New automation folder picker has two focus points",
+      "url": "https://github.com/microsoft/vscode/issues/335863",
+      "created_at": "2026-09-11T18:57:03Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Remove duplicate tabstop from the folder picker in the new automation feature",
+        "why_easy": "The issue precisely identifies the problem (two focus points) and specifies the fix (remove the tabstop with unrounded borders), requiring minimal investigation and likely a single attribute removal."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335862,
+      "title": "Let me click on the newly created skill and see the contents.",
+      "url": "https://github.com/microsoft/vscode/issues/335862",
+      "created_at": "2026-09-11T18:55:17Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Allow clicking on newly created skills to view their contents",
+        "why_easy": "Straightforward UI feature but vague scope and dependency on issue #335590 add friction for first-timers"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335861,
+      "title": "I want a smooth transition between \"Migrate\" and \"Migrated\"",
+      "url": "https://github.com/microsoft/vscode/issues/335861",
+      "created_at": "2026-09-11T18:54:13Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add a smooth transition and success confirmation when settings migration completes.",
+        "why_easy": "The scope is bounded to the migration UI, but implementing smooth animations and ensuring proper notification visibility in VS Code's codebase requires familiarity with its architecture, making this medium-difficulty for first contributors."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335859,
+      "title": "I chose a different customization directory but get no indication that that happened",
+      "url": "https://github.com/microsoft/vscode/issues/335859",
+      "created_at": "2026-09-11T18:45:26Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Profile customization directory selection lacks UI feedback and isn't persisted across reopens",
+        "why_easy": "Well-defined problem with clear repro steps, but requires understanding VSCode's profile/settings persistence architecture to locate and fix"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335858,
+      "title": "Validate shell integration CWD updates before changing terminal state",
+      "url": "https://github.com/microsoft/vscode/issues/335858",
+      "created_at": "2026-09-11T18:44:18Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Validate OSC 633 CWD property reports against shell integration nonce before updating terminal state to prevent spoofed CWD changes",
+        "why_easy": "Draft PR exists as reference, but the fix requires understanding shell integration protocol, nonce validation logic, and consistent implementation across Bash/Zsh/Fish/PowerShell plus pseudoterminal edge cases."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335857,
+      "title": "Customizations lists show rounded borders between virtualized rows",
+      "url": "https://github.com/microsoft/vscode/issues/335857",
+      "created_at": "2026-09-11T18:43:40Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Remove rounded corners from virtualized list rows in the Customizations editor so inner dividers appear continuous",
+        "why_easy": "The root cause is clearly identified (item class applied to inner Monaco list rows), making it a straightforward CSS fix to remove or condition the border-radius property on inner rows."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335856,
+      "title": "Plugins detail page scrollbar does not use VS Code theme colors",
+      "url": "https://github.com/microsoft/vscode/issues/335856",
+      "created_at": "2026-09-11T18:40:43Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The scrollbar on the plugins detail page should use VS Code theme colors instead of default browser colors.",
+        "why_easy": "Localized styling issue with clear expectations, but requires navigating VS Code's theme system and identifying which component controls the scrollbar styling."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335855,
+      "title": "The blue link on yellow background feels weird",
+      "url": "https://github.com/microsoft/vscode/issues/335855",
+      "created_at": "2026-09-11T18:40:40Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Blue links on yellow backgrounds have poor contrast and are hard to read",
+        "why_easy": "Finding the root cause requires navigating VS Code's theme system; once located, the fix is likely a color value adjustment, but the vague issue description and reference to another issue (#335590) makes initial reproduction unclear for a new contributor"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 335854,
+      "title": "Allow line numbers to be rendered on the right side of the editor",
+      "url": "https://github.com/microsoft/vscode/issues/335854",
+      "created_at": "2026-09-11T18:40:31Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Allow line numbers to be rendered on the right side of the editor instead of only the left gutter",
+        "why_easy": "Hard: requires modifying VS Code's core line number rendering pipeline and integrating with minimap/scrollbar layout calculations; no isolated code path for a newcomer to follow without deep codebase knowledge"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98569,
+      "title": "next/image: /_next/image returns 500 (raw \"fetch failed\") when the remote host fails DNS or refuses the connection",
+      "url": "https://github.com/vercel/next.js/issues/98569",
+      "created_at": "2026-09-11T14:03:26Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix next/image to return 502 instead of 500 when remote image fetch fails due to DNS/connection/TLS errors",
+        "why_easy": "The issue pinpoints the exact location in fetchExternalImage, provides a reproduction repo, shows the failing code path, and suggests the fix (throw ImageError(502) instead of rethrowing raw fetch errors); similar error-to-status patterns already exist in the same function."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98561,
+      "title": "after(): a task that never settles retains the request's async context for the life of the server",
+      "url": "https://github.com/vercel/next.js/issues/98561",
+      "created_at": "2026-09-11T13:22:47Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Memory leak: after() with a never-settling task retains the request's async context indefinitely on self-hosted servers",
+        "why_easy": "The root cause is clearly identified with a minimal reproduction and the problematic code is pinpointed, but fixing it requires expert knowledge of Node.js async context capture semantics and risks subtle breakage of legitimate after() behavior without careful async-context-aware refactoring."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98555,
+      "title": "Client navigation breaks (React #412 / RSC 404) after ISR regenerates a route that was prerendered as a fully static redirect() \u2014 build-time prefetchDataRoute forces static RSC serving of a now-postponed entry",
+      "url": "https://github.com/vercel/next.js/issues/98555",
+      "created_at": "2026-09-11T11:02:48Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Client-side RSC navigation breaks after ISR regenerates a static redirect route into a partially prerendered page",
+        "why_easy": "Hard: requires understanding complex interactions between build-time prefetchDataRoute decisions, ISR cache invalidation, PPR postponed state, and RSC serving logic across multiple backends and versions."
+      }
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 49121,
+      "title": "[New Component] Diagram / Flow",
+      "url": "https://github.com/mui/material-ui/issues/49121",
+      "created_at": "2026-09-09T20:58:12Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add a native Diagram/Flow component for node-based interfaces like workflows and process diagrams",
+        "why_easy": "This requires architecting an entire graph visualization/interaction system from scratch or wrapping an existing library, with unresolved questions about package scope, implementation strategy, and MUI integration patterns that need core team direction first."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23470,
+      "title": "Dev server crashes the whole process when the file watcher emits an error (uncaught 'error' event, e.g. EBUSY on Windows)",
+      "url": "https://github.com/vitejs/vite/issues/23470",
+      "created_at": "2026-09-11T10:37:02Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Dev server crashes when file watcher encounters unwatchable files due to missing error event listener on chokidar watcher",
+        "why_easy": "The fix location and root cause are clearly identified with minimal reproduction, but the implementation requires deciding appropriate error handling strategy and accounting for platform-specific edge cases."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36285,
+      "title": "[Bug]: nextjs-vite builds a next-image virtual module from an unresolved alias, failing with \"unexpected NUL byte\" on Vite >= 8.1",
+      "url": "https://github.com/storybookjs/storybook/issues/36285",
+      "created_at": "2026-09-11T17:05:20Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix vite-plugin-storybook-nextjs to properly handle unresolved image imports from tsconfig-excluded files on Vite 8.1+",
+        "why_easy": "Root cause is clearly identified with exact file locations and code pointers, but requires understanding Vite plugin hooks, tsconfig path resolution behavior, and determining the correct error-handling strategy for unresolved imports."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36283,
+      "title": "[Tracking]: Storybook 11 addon migrations",
+      "url": "https://github.com/storybookjs/storybook/issues/36283",
+      "created_at": "2026-09-11T15:43:14Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Track Storybook 11 addon migrations, cataloging 844 addons that need to be updated to support the new version",
+        "why_easy": "This is a meta-tracking issue with no direct actionable work\u2014contributors would need to select an individual addon from the list, learn Storybook 11's breaking changes, and migrate that external repository independently, with no clear success criteria defined for a single contribution."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36281,
+      "title": "[Bug]: Actions: SecurityError serializing a React event when the manager contains a cross-origin iframe",
+      "url": "https://github.com/storybookjs/storybook/issues/36281",
+      "created_at": "2026-09-11T15:08:44Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix SecurityError when serializing React synthetic events over PostMessage with a cross-origin iframe in the manager",
+        "why_easy": "Excellent reproduction with isolated conditions clarifies the root cause, but the fix requires understanding Storybook's PostMessageTransport serialization pipeline and how to handle React event objects across origin boundaries"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36280,
+      "title": "Storybook 11 Support",
+      "url": "https://github.com/storybookjs/storybook/issues/36280",
+      "created_at": "2026-09-11T15:04:19Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Migrate addon to support Storybook 11 by following the migration guide and testing against the prerelease version",
+        "why_easy": "The migration guide provides direction but requires understanding the addon's existing code and applying changes that vary by implementation; not a self-contained task"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36269,
+      "title": "[Bug]: `importModule()` calling `register()`/`registerHooks()` crashes under Jest 30.5+ (e.g. via `@storybook/test-runner`) \u2014 #35337's fix doesn't cover this",
+      "url": "https://github.com/storybookjs/storybook/issues/36269",
+      "created_at": "2026-09-11T02:18:52Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix `importModule()` to skip module hook registration when running under Jest 30.5+, where such APIs are blocked",
+        "why_easy": "The issue is well-scoped and documented, but requires expertise in Node's module hooks and Jest's internals to find an alternative TypeScript loading mechanism."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36266,
+      "title": "[Bug]: Vue docgen server is missing slot support",
+      "url": "https://github.com/storybookjs/storybook/issues/36266",
+      "created_at": "2026-09-10T16:39:13Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add Vue slot documentation support to the docgen server for JSX/TSX components",
+        "why_easy": "The issue lacks reproduction steps and a clear problem statement, requiring investigation into an external repo before understanding what needs to be fixed, but the scope appears localized to the Vue docgen system once understood."
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 20483,
+      "title": "@custom-variant firefox (:-moz-any(&)); breaks in 4.3.3",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/20483",
+      "created_at": "2026-09-11T13:34:48Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Custom variant CSS output regressed in 4.3.3, breaking nested pseudo-selector syntax",
+        "why_easy": "Well-documented with clear reproduction and suspected cause (PR #20124), but requires understanding Tailwind's CSS variant generation internals to fix without rebreaking the related changes"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69993,
+      "title": "issue with step 23 of workshop-greeting-card",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69993",
+      "created_at": "2026-09-11T11:59:02Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update test assertion for CSS outline property to allow both valid outline format orderings using assert.oneOf",
+        "why_easy": "Straightforward test fix to accept both valid CSS outline formats by replacing assert.strictEqual with assert.oneOf, with the exact values and solution already specified in the issue."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69988,
+      "title": "issues in Step 38 of Build a Shape Manager",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69988",
+      "created_at": "2026-09-11T08:40:20Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix inconsistent test validation in Step 38 that accepts `val === null` in one test but not another, and fails with template literals",
+        "why_easy": "The issue clearly identifies the specific problems with examples, provides the file location, and the fix likely just requires adjusting test regex or assertion patterns"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69987,
+      "title": "Add Section Headers to Lecture: What Are Some Common Techniques to Loop Over a Dictionary?",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69987",
+      "created_at": "2026-09-11T07:06:47Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add section headers to a dictionary-looping lecture to improve readability and scannability",
+        "why_easy": "It's a straightforward markdown task with clear conventions (reference example provided) and no code changes or complex decision-making required"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69986,
+      "title": "Add Section Headers to Lecture: What Does a Typical Code Review Process Look Like for Projects?",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69986",
+      "created_at": "2026-09-11T07:06:42Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add section headers to an existing lecture on code review processes to improve readability and scannability.",
+        "why_easy": "This is purely a content organization task with clear acceptance criteria and an explicit reference example; no coding required, just identifying natural topic breaks in ~809 words and adding Title Case headers."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69985,
+      "title": "Add Section Headers to Lecture: How Do Dynamic Arrays Differ From Static Arrays?",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69985",
+      "created_at": "2026-09-11T07:06:38Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add `##` section headers to break up a ~824-word lecture on dynamic vs static arrays into logically organized sections.",
+        "why_easy": "No coding required \u2014 just reading the existing lecture text and adding `##` markdown headers before each logical section, following a provided example convention."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69984,
+      "title": "Add Section Headers to Lecture: What Is the Value of Using a CSS Preprocessor, and What Are Some Disadvantages?",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69984",
+      "created_at": "2026-09-11T07:06:33Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add section headers to a CSS preprocessor lecture to improve readability and scannability of the ~867 word content",
+        "why_easy": "Straightforward formatting task with a clear reference example to follow; requires only identifying natural content breaks and adding `##` headers in Title Case, with no prose rewriting or code logic needed"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69983,
+      "title": "Add Section Headers to Lecture: What Are Some Common Relational Databases, and How Do You Install and Use Postgres?",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69983",
+      "created_at": "2026-09-11T07:06:28Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add section headers to break up a 937-word lecture on relational databases into scannable sections",
+        "why_easy": "Clear acceptance criteria with a reference example provided; only requires reading content and adding markdown headers with no code logic or risk of breaking existing functionality."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69982,
+      "title": "Add Section Headers to Lecture: How Can You Create, Move, and Delete Files and Folders Using Explorer/Finder?",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69982",
+      "created_at": "2026-09-11T07:06:24Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add section headers to break up a 938-word lecture on file system operations into logical, scannable subsections.",
+        "why_easy": "Clear acceptance criteria, a reference example provided, and the task requires only adding markdown headers to logically group existing content without rewriting or code changes."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69981,
+      "title": "Add Section Headers to Lecture: How Do Priority Queues and Heaps Work?",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69981",
+      "created_at": "2026-09-11T07:06:20Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add markdown section headers to break up a ~954-word lecture on priority queues and heaps for better readability",
+        "why_easy": "Straightforward content organization task with clear acceptance criteria, reference example, and no code changes required\u2014just reading the lecture and adding descriptive `##` headers in Title Case"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69980,
+      "title": "Add Section Headers to Lecture: What Is a Repository, and How Do You Create One?",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69980",
+      "created_at": "2026-09-11T07:06:15Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add section headers to break up a 984-word Git lecture into logical subsections for improved readability",
+        "why_easy": "The task is purely mechanical: read the existing content, identify natural topic boundaries, and add `##` headers following the provided convention\u2014no prose rewriting, coding, or system understanding required."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69979,
+      "title": "Add Section Headers to Lecture: What Are Merge Conflicts, and How Can You Resolve Them?",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69979",
+      "created_at": "2026-09-11T07:06:11Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add section headers to a ~1000-word lecture on merge conflicts to improve scannability and readability.",
+        "why_easy": "Clear scope (one file), explicit acceptance criteria, reference example provided, and only requires reading the content and adding markdown headers\u2014no code logic or infrastructure setup needed."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 69978,
+      "title": "Add Section Headers to Lecture: How Do Priority Queues and Heaps Work?",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/69978",
+      "created_at": "2026-09-11T07:06:06Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add section headers to a ~1000-word lecture on priority queues to improve readability and navigation",
+        "why_easy": "Clear scope with an existing convention to follow, no rewriting required\u2014just identifying logical break points and adding section headers to existing prose"
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17701,
+      "title": "ParseArrayPipe throws on an empty string when the pipe is required",
+      "url": "https://github.com/nestjs/nest/issues/17701",
+      "created_at": "2026-09-11T06:23:35Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "ParseArrayPipe incorrectly throws when required with an empty string instead of treating it as a valid value to split",
+        "why_easy": "The root cause is pinpointed (using `!value` instead of `isNil`), the fix is a one-line change in one file, and other pipes in the codebase already demonstrate the correct pattern."
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17698,
+      "title": "Fastify: middleware exceptions hang with Reply is not a constructor after upgrading to Nest 12",
+      "url": "https://github.com/nestjs/nest/issues/17698",
+      "created_at": "2026-09-10T13:33:50Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fastify middleware exceptions fail with 'Reply is not a constructor' in Nest 12 due to incorrect ESM import binding",
+        "why_easy": "The root cause is already diagnosed (ESM import namespace vs constructor), the fix is a one-line import statement change, and a minimal reproduction with clear before/after comparison is provided"
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17695,
+      "title": "Still not resolved: ElasticSearch's ResponseError (and others) gets misinterpreted as custom HTTP exception",
+      "url": "https://github.com/nestjs/nest/issues/17695",
+      "created_at": "2026-09-09T13:30:05Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "NestJS incorrectly treats third-party library errors with statusCode and message fields (e.g., Elastic SDK) as HTTP exceptions intended for users",
+        "why_easy": "The issue is well-documented with specific commits and code lines, but requires understanding why the broad statusCode check was added and finding a safe way to distinguish genuine HTTP exceptions from third-party errors without reintroducing other regressions"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30263,
+      "title": "Error [ERR_REQUIRE_ESM]: require() of ES Module zeptomatch \u2014 reproduces on Node 20/22/24 and Bun, not fixed by generator config",
+      "url": "https://github.com/prisma/orm/issues/30263",
+      "created_at": "2026-09-11T17:43:23Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "@prisma/dev's state.cjs fails to load zeptomatch (ESM-only module) via require(), crashing prisma generate on Node 20/22/24 and Bun.",
+        "why_easy": "Clear root cause and error message pointing to dynamic import solution, but fixing requires understanding Prisma's internal module bootstrap architecture and managing ESM/CJS interop at the CLI level."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30257,
+      "title": "Prisma ORM RC.13: npm Dependency-Resolution Problem",
+      "url": "https://github.com/prisma/orm/issues/30257",
+      "created_at": "2026-09-11T13:37:03Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix npm peer dependency resolution loop in Prisma ORM 8.0.0-rc.13 caused by inconsistent version constraints across packages",
+        "why_easy": "The root cause is clearly identified (version mismatches in package.json files), but fixing requires understanding the monorepo structure, npm's peer dependency resolution algorithm, and coordinating updates across multiple packages with registry validation."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30256,
+      "title": "`postgres delete` returns HTTP 500 for every database, from the CLI and the REST API",
+      "url": "https://github.com/prisma/orm/issues/30256",
+      "created_at": "2026-09-11T13:33:46Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "The `prisma postgres delete` command and `DELETE /v1/databases` API endpoint return HTTP 500 for all databases",
+        "why_easy": "This requires access to Prisma's internal backend infrastructure and logs to investigate the root cause of the server error; external contributors cannot debug or verify fixes without backend tooling."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30255,
+      "title": "Module-level Prisma 8 client hangs on the second request in Cloudflare Workers",
+      "url": "https://github.com/prisma/orm/issues/30255",
+      "created_at": "2026-09-11T13:33:44Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Scaffolded module-level Prisma client hangs on the second Cloudflare Workers request due to connection pool reuse across I/O contexts.",
+        "why_easy": "Requires understanding both Prisma's connection pooling internals and Cloudflare Workers' I/O context restrictions, plus architectural decisions on whether to auto-detect the runtime, refactor APIs, or focus on documentation."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30254,
+      "title": "`orm init` fails under pnpm 11 and 12: `CLI.INIT_INSTALL_FAILED` on ignored build scripts, then a dangling `@prisma/cli-engine` link",
+      "url": "https://github.com/prisma/orm/issues/30254",
+      "created_at": "2026-09-11T13:33:43Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "orm init fails in pnpm 11/12 workspaces due to unapproved build scripts and dangling @prisma/cli-engine links",
+        "why_easy": "Requires understanding pnpm-specific behavior, dependency linking mechanics, and the interaction between multiple systems; solutions are architectural rather than isolated"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30253,
+      "title": "`orm init` installs `prisma@next` (8.0.0-rc.10) while `latest` is rc.13, and rc.10 `migration plan` silently plans a full recreate without a `db` ref",
+      "url": "https://github.com/prisma/orm/issues/30253",
+      "created_at": "2026-09-11T13:33:41Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "`orm init` installs outdated package versions from `@next` dist-tag instead of matching the invoker's version, causing silent migration failures.",
+        "why_easy": "The fix is likely just updating version strings in the scaffolding template, with a clear reproduction and well-scoped change across a few package dependencies."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30252,
+      "title": "`contract infer` emits `Timestamptz`, which fails at runtime on Node 24 with `RUNTIME.TEMPORAL_UNAVAILABLE`",
+      "url": "https://github.com/prisma/orm/issues/30252",
+      "created_at": "2026-09-11T13:33:40Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Make `contract infer` emit `TimestamptzString` for PostgreSQL `timestamptz` columns to match the scaffold and avoid Node 24 Temporal runtime errors",
+        "why_easy": "The fix likely requires changing one type inference rule, but demands deep knowledge of Prisma's contract system, testing across Node versions, and resolving the `storageHash` consistency issue between type representations of the same column."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30245,
+      "title": "HTTP 403 for fixed Prisma 6.19.3 Linux engine checksum (CF-Ray included)",
+      "url": "https://github.com/prisma/orm/issues/30245",
+      "created_at": "2026-09-10T05:20:05Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "HTTP 403 errors when downloading Prisma schema engine checksum files from binaries.prisma.sh",
+        "why_easy": "Requires infrastructure and Cloudflare log access to correlate CF-Ray IDs and diagnose whether the 403 originates from edge rules or the origin server; external contributors cannot investigate without internal ops system access."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30243,
+      "title": "updatedAt emit error",
+      "url": "https://github.com/prisma/orm/issues/30243",
+      "created_at": "2026-09-10T03:07:41Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The @updatedAt directive causes the `contract emit` command to fail with a PSL-to-SQL interpretation error",
+        "why_easy": "Clear reproduction with minimal schema, but requires understanding Prisma's contract system internals and PSL parsing logic in a newer v8 feature area"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30242,
+      "title": "Prisma 8 CLI deps cause ~11s first userEvent.click on Base UI Select in Jest/jsdom",
+      "url": "https://github.com/prisma/orm/issues/30242",
+      "created_at": "2026-09-10T01:31:54Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Prisma 8 RC introduces vitest as a hard transitive CLI dependency, causing ~11-second slowdowns on first userEvent.click() in Jest tests.",
+        "why_easy": "Requires deep understanding of Prisma CLI's dependency graph, how vitest/vite leak into consumer Jest resolution, and bundling/packaging decisions to isolate or remove the transitive chain \u2014 not tractable for a newcomer."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30238,
+      "title": "setDefault is silently skipped when the column already has a default, so db migrate fails its own schema verification",
+      "url": "https://github.com/prisma/orm/issues/30238",
+      "created_at": "2026-09-09T15:22:51Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "setDefault operations are silently skipped when modifying an existing column default, causing migration verification to fail",
+        "why_easy": "The root cause is well-identified (postcheck only verifies default presence, not value) with clear reproduction, but the fix requires navigating Prisma's migration runner to modify postcheck SQL generation and handle edge cases across different default types and database behaviors."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51705,
+      "title": "Upgrade to Tomcat 11.0.25",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51705",
+      "created_at": "2026-09-11T15:50:09Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Update Spring Boot to use Tomcat 11.0.25",
+        "why_easy": "Marked 'team-only' and lacks details on breaking changes or required code modifications beyond the version bump, indicating it's reserved for maintainers with existing context."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51704,
+      "title": "Upgrade to SQLite JDBC 3.53.4.0",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51704",
+      "created_at": "2026-09-11T15:50:05Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade the SQLite JDBC dependency to version 3.53.4.0",
+        "why_easy": "The mechanical change is trivial (update a version string in a build file), but the team-only label indicates the Spring Boot core team needs to handle this due to potential integration or compatibility concerns that require framework-level knowledge."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51703,
+      "title": "Upgrade to SnakeYAML 2.7",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51703",
+      "created_at": "2026-09-11T15:50:01Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade the SnakeYAML dependency to version 2.7",
+        "why_easy": "Straightforward version bump validated by existing test suite, but marked team-only and lacking breaking-change details makes it unavailable to external contributors."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51702,
+      "title": "Upgrade to SLF4J 2.0.19",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51702",
+      "created_at": "2026-09-11T15:49:57Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Update the SLF4J dependency to version 2.0.19",
+        "why_easy": "Dependency version bumps are purely mechanical\u2014update version strings in configuration files and verify tests pass\u2014but the team-only label signals maintainers want to handle this themselves"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51701,
+      "title": "Upgrade to Selenium HtmlUnit 4.48.0",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51701",
+      "created_at": "2026-09-11T15:49:53Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade the Selenium HtmlUnit dependency to version 4.48.0",
+        "why_easy": "Marked team-only, indicating this requires coordination or has known constraints; while the mechanics are straightforward, version bumps on test infrastructure can surface compatibility issues requiring deep project knowledge and comprehensive test suite runs"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51700,
+      "title": "Upgrade to Selenium 4.49.0",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51700",
+      "created_at": "2026-09-11T15:49:49Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade Spring Boot's Selenium dependency to version 4.49.0",
+        "why_easy": "Dependency upgrades are usually version-bump tasks, but the team-only label signals known complications\u2014likely breaking changes or integration issues requiring deep Spring Boot test infrastructure knowledge."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51699,
+      "title": "Upgrade to RabbitMQ Stream Client 1.11.0",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51699",
+      "created_at": "2026-09-11T15:49:45Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade the RabbitMQ Stream Client dependency to version 1.11.0",
+        "why_easy": "Mechanically it's a version bump in the build config plus running the test suite, but the team-only label indicates maintainers want to handle this themselves for proper integration validation in a large framework."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51698,
+      "title": "Upgrade to RabbitMQ AMQP Client 1.5.0",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51698",
+      "created_at": "2026-09-11T15:49:40Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade the RabbitMQ AMQP Java client library from its current version to 1.5.0.",
+        "why_easy": "The team-only label explicitly restricts this to maintainers, and the issue lacks documentation of breaking changes or integration concerns, signaling hidden complexity."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51697,
+      "title": "Upgrade to RabbitMQ Client 5.35.0",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51697",
+      "created_at": "2026-09-11T15:49:36Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade the RabbitMQ Java client dependency to version 5.35.0",
+        "why_easy": "This is a straightforward version bump \u2014 update build files and verify tests pass \u2014 but the team-only label restricts it to maintainers, making it unavailable to external contributors"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51696,
+      "title": "Upgrade to R2DBC MSSQL 1.0.6.RELEASE",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51696",
+      "created_at": "2026-09-11T15:49:32Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade R2DBC MSSQL dependency to version 1.0.6.RELEASE",
+        "why_easy": "Point release requiring only a version number update in build config, with straightforward testing; however, the team-only label indicates the team reserves this for internal coordination rather than external contributions."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51695,
+      "title": "Upgrade to R2DBC MariaDB 1.4.2",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51695",
+      "created_at": "2026-09-11T15:49:28Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade R2DBC MariaDB dependency to version 1.4.2",
+        "why_easy": "Dependency upgrades are straightforward version bumps in dependency files, but the team-only label explicitly marks this as internal-only work, unsuitable for external contributors"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51694,
+      "title": "Upgrade to Qpid ProtonJ2 1.3.0",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51694",
+      "created_at": "2026-09-11T15:49:24Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade Qpid ProtonJ2 dependency to version 1.3.0",
+        "why_easy": "Dependency updates are mechanically simple (update version, run tests), but the team-only status signals maintainers prefer internal control, and Spring Boot's large test suite requires significant resources to validate thoroughly"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51693,
+      "title": "Upgrade to Pooled JMS 3.2.5",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51693",
+      "created_at": "2026-09-11T15:49:20Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade the Pooled JMS dependency to version 3.2.5",
+        "why_easy": "Marked `team-only` because dependency upgrades in Spring Boot require testing across a complex ecosystem and deep framework expertise to resolve any incompatibilities."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51692,
+      "title": "Upgrade to Netty 4.2.18.Final",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51692",
+      "created_at": "2026-09-11T15:49:16Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade the Netty dependency to version 4.2.18.Final",
+        "why_easy": "Routine dependency version bump (likely just version updates + test run), but marked team-only so external contributors should not pick this up"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51691,
+      "title": "Upgrade to Native Build Tools Plugin 1.1.12",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51691",
+      "created_at": "2026-09-11T15:49:12Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Update the Native Build Tools Plugin dependency to version 1.1.12",
+        "why_easy": "Dependency upgrades are typically straightforward version bumps, but the team-only label indicates the maintainers want to handle this internally, likely due to platform-specific native build testing or CI/CD access requirements that external contributors lack."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51690,
+      "title": "Upgrade to MSSQL JDBC 13.6.0.jre11",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51690",
+      "created_at": "2026-09-11T15:49:08Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade the MSSQL JDBC driver dependency to version 13.6.0.jre11",
+        "why_easy": "Mechanical version bump in dependency configuration, but team-only status indicates this requires domain-specific verification and is not intended for external contributors"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51689,
+      "title": "Upgrade to Maven Surefire Plugin 3.6.0",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51689",
+      "created_at": "2026-09-11T15:49:03Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade the Maven Surefire Plugin dependency to version 3.6.0",
+        "why_easy": "Straightforward dependency version bump in pom.xml with test validation, but marked team-only so reserved for core maintainers"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51688,
+      "title": "Upgrade to Maven Failsafe Plugin 3.6.0",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51688",
+      "created_at": "2026-09-11T15:48:59Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade Maven Failsafe Plugin dependency to version 3.6.0",
+        "why_easy": "Dependency upgrades are typically straightforward version bumps, but the 'team-only' label indicates the team prefers to handle this internally, likely due to compatibility verification or batching preferences specific to Spring Boot's integration test infrastructure."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51687,
+      "title": "Upgrade to Maven Compiler Plugin 3.16.0",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51687",
+      "created_at": "2026-09-11T15:48:55Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade Maven Compiler Plugin dependency to version 3.16.0",
+        "why_easy": "Maven dependency version bumps are straightforward changes to version numbers in pom.xml files, easy to verify with a build test"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51686,
+      "title": "Upgrade to Lombok 1.18.48",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51686",
+      "created_at": "2026-09-11T15:48:51Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade the Lombok dependency to version 1.18.48",
+        "why_easy": "The technical work is straightforward\u2014updating a version number and running tests\u2014but the 'team-only' label indicates maintainers prefer to handle this internally, making it unsuitable for external contributors despite low technical complexity."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 68459,
+      "title": "ERR: assert_numpy_array_equal gives confusing assertion message for NaT with different unit",
+      "url": "https://github.com/pandas-dev/pandas/issues/68459",
+      "created_at": "2026-09-11T16:47:25Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Improve error message in assert_numpy_array_equal to explicitly report mismatching timedelta/datetime units instead of confusing value comparisons",
+        "why_easy": "The issue is well-scoped to a single assertion function with a reproducible example, and the fix involves detecting dtype unit mismatches and reporting them explicitly\u2014straightforward error-reporting logic with no complex interactions."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32591,
+      "title": "BUG: np.linalg.svd hangs forever on a square >=3x3 matrix containing 'inf'",
+      "url": "https://github.com/numpy/numpy/issues/32591",
+      "created_at": "2026-09-11T11:26:05Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix np.linalg.svd hanging indefinitely when given a square matrix containing both infinity and finite values on macOS with Accelerate BLAS.",
+        "why_easy": "Hard: requires platform-specific debugging (macOS + Accelerate BLAS), deep LAPACK/numerical computing knowledge, and involves diagnosing an infinite loop in compiled dgesdd code that doesn't occur with OpenBLAS."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32590,
+      "title": "Transition `PyArray_PythonPyIntFromInt` to modern behavior",
+      "url": "https://github.com/numpy/numpy/issues/32590",
+      "created_at": "2026-09-11T10:48:06Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Modernize `PyArray_PythonPyIntFromInt` to use Python's `__index__` protocol with backward-compatible deprecation warnings",
+        "why_easy": "Requires C API expertise and understanding of NumPy's integer conversion internals; core implementation is bounded but auditing scope and design decisions (which helper to use) are open-ended"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32570,
+      "title": "BUG: python.exe hard-crashes on numpy.linalg calls with NumPy 2.5.3 + default MKL threading on Windows (no traceback)",
+      "url": "https://github.com/numpy/numpy/issues/32570",
+      "created_at": "2026-09-10T11:58:55Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "NumPy crashes without traceback on Windows when calling linalg routines with MKL threading layers other than TBB/SEQUENTIAL",
+        "why_easy": "Native-level crash with no Python traceback is extremely difficult to debug; requires deep knowledge of MKL threading layers, NumPy's LAPACK wrappers, and low-level Windows debugging tools"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34926,
+      "title": "\u26a0\ufe0f CI failed on Unit tests Linux x86-64 pylatest_pip_scipy_dev (last failure: Sep 11, 2026) \u26a0\ufe0f",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34926",
+      "created_at": "2026-09-11T02:55:03Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix widespread test_output_shape test failures across multiple estimators on latest scipy development version",
+        "why_easy": "The systematic failures across many estimators suggest a single root cause (likely scipy compatibility or recent regression), but diagnosis requires investigating CI logs and understanding the test infrastructure before attempting a fix."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34923,
+      "title": "PolynomialCountSketch.bitHash_ docstring says dtype=float32 but is actually int64",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34923",
+      "created_at": "2026-09-10T10:57:49Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update PolynomialCountSketch.bitHash_ docstring to reflect that it's int64, not float32",
+        "why_easy": "The discrepancy is clearly identified with reproduction steps; the fix is a straightforward docstring update that doesn't require code logic changes"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34920,
+      "title": "PolynomialCountSketch.transform is much slower on sparse input than on the equivalent dense array",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34920",
+      "created_at": "2026-09-10T09:58:33Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "PolynomialCountSketch.transform is ~10x slower on sparse matrices because it loops over features and degrees, densifying individual columns instead of operating on the sparse data efficiently",
+        "why_easy": "The bug is precisely identified in isolated code with clear reproduction steps; the fix is a straightforward refactoring from per-column densification to batch sparse matrix multiplication, not a complex algorithmic change."
+      }
+    },
+    {
+      "repo": "EbookFoundation/free-programming-books",
+      "number": 13454,
+      "title": "Probability and statistics ebooks not found",
+      "url": "https://github.com/EbookFoundation/free-programming-books/issues/13454",
+      "created_at": "2026-09-09T12:38:35Z",
+      "digest_date": "2026-09-11",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix a broken link to probability and statistics ebooks in free-programming-books-subjects.md",
+        "why_easy": "The issue clearly identifies the broken link location with file and line number; the fix simply requires finding a valid replacement resource or removing the invalid link, requiring no code changes or complex logic."
       }
     }
   ]
