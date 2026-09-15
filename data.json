@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-11",
+  "updated": "2026-09-15",
   "issues": [
     {
       "repo": "react/react-native",
@@ -26438,6 +26438,1086 @@
         "good_first_issue": true,
         "one_line_summary": "Fix a broken link to probability and statistics ebooks in free-programming-books-subjects.md",
         "why_easy": "The issue clearly identifies the broken link location with file and line number; the fix simply requires finding a valid replacement resource or removing the invalid link, requiring no code changes or complex logic."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58545,
+      "title": "Nightmare. SceneDelegate / LifeCycle missing, app crashes, Apple already approved and released to Store",
+      "url": "https://github.com/react/react-native/issues/58545",
+      "created_at": "2026-09-15T18:06:36Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "React Native 0.87.1 app crashes immediately on iOS 27 due to missing SceneDelegate support",
+        "why_easy": "No reproduction steps, error logs, or stacktrace provided; requires deep expertise in iOS lifecycle management and React Native's iOS bridging layer; issue needs proper diagnosis before any fix attempt"
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58534,
+      "title": "[iOS][Fabric] RTL horizontal ScrollView: contentOffset prop is not RTL-converted while scrollTo/metrics are, and scrollTo conversion uses stale contentSize",
+      "url": "https://github.com/react/react-native/issues/58534",
+      "created_at": "2026-09-15T09:14:19Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix inconsistent RTL coordinate conversions and stale contentSize timing bug in horizontal ScrollView on iOS Fabric.",
+        "why_easy": "Requires native iOS/Objective-C++ expertise, RTL coordinate system knowledge, and careful testing across multiple interdependent code paths."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58526,
+      "title": "[Android][Fabric] addViewAt hard-crashes on a placeholder ViewState synthesised by updateEventEmitter",
+      "url": "https://github.com/react/react-native/issues/58526",
+      "created_at": "2026-09-14T21:29:19Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix IllegalStateException crash in SurfaceMountingManager.addViewAt when a placeholder ViewState with null view is processed",
+        "why_easy": "The diagnosis is complete with clear reproduction steps and exact problem location, but fixing it requires understanding Fabric's rendering lifecycle and state machine to implement soft degradation without masking real issues"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50202,
+      "title": "[fingerprint] 0.20.13 gives a different fingerprint on Windows for apps in a monorepo \u2014 please backport the toPosixPath fix from 0.21.0",
+      "url": "https://github.com/expo/expo/issues/50202",
+      "created_at": "2026-09-15T18:08:55Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Backport the toPosixPath fix from v0.21.0 to v0.20.13 to fix Windows fingerprint mismatches in monorepo projects",
+        "why_easy": "The fix is a single-line application of an existing solution already in v0.21.0, with a clear reproduction case, but depends on unclear backport approval policy and working with release branches"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50194,
+      "title": "[expo-location][iOS] Geofencing requires UIBackgroundModes: location, which it doesn't need \u2014 causes App Store rejection under guideline 2.5.4",
+      "url": "https://github.com/expo/expo/issues/50194",
+      "created_at": "2026-09-15T14:40:40Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Remove the unnecessary UIBackgroundModes: location requirement from startGeofencingAsync, which iOS's Core Location doesn't actually need for geofencing.",
+        "why_easy": "The root cause is pinpointed (LocationModule.swift:267), the fix is likely removing or conditionalizing one check, and a minimal reproducible example repo is provided\u2014though it requires Swift/iOS knowledge."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50192,
+      "title": "[expo-modules-autolinking][iOS] Precompiled ExpoModulesCore makes the Podfile.lock checksum depend on the project's absolute path, so pod install --deployment can never pass",
+      "url": "https://github.com/expo/expo/issues/50192",
+      "created_at": "2026-09-15T14:35:07Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Precompiled ExpoModulesCore includes absolute paths in its podspec source, making Podfile.lock checksums path-dependent and breaking pod install --deployment in CI",
+        "why_easy": "Hard to pick up: requires understanding CocoaPods podspec generation and checksumming to find a path-independent reference mechanism, though the root cause is clearly diagnosed with a reproducible example"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50189,
+      "title": "[cli][iOS] Preconfigured automatic signing omits provisioning-update flags in run:ios",
+      "url": "https://github.com/expo/expo/issues/50189",
+      "created_at": "2026-09-15T14:01:33Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The CLI omits -allowProvisioningUpdates and -allowProvisioningDeviceRegistration flags when using preconfigured automatic signing for iOS device builds",
+        "why_easy": "The root cause is clearly identified (provisioning flags only added inside if(developmentTeamId) when they should apply to auto-signing path too) and a reproduction repo is provided, but the fix requires iOS/Xcode domain knowledge, careful testing across manual/auto/newly-selected team paths, and likely cannot be fully validated without iOS hardware"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336320,
+      "title": "Modern UI - Connected tabs feedback",
+      "url": "https://github.com/microsoft/vscode/issues/336320",
+      "created_at": "2026-09-15T19:25:49Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Improve Modern UI tab styling by increasing border radius, adding tab outlines, adjusting spacing, and correcting background colors to match the workbench.",
+        "why_easy": "Requires understanding VS Code's theming architecture to locate and modify tab styling code; subjective design feedback without precise specifications makes this better suited for experienced contributors familiar with the codebase."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336319,
+      "title": "Chat-history sort order: most recent message/activity",
+      "url": "https://github.com/microsoft/vscode/issues/336319",
+      "created_at": "2026-09-15T19:25:06Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add option to sort chat history by most recent message or activity",
+        "why_easy": "Straightforward sorting feature, but the issue lacks context on current behavior, and locating the chat history component in VS Code's large codebase requires exploration."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336318,
+      "title": "Allow reordering queued chat requests",
+      "url": "https://github.com/microsoft/vscode/issues/336318",
+      "created_at": "2026-09-15T19:23:48Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Allow users to reorder queued chat requests in the VS Code chat interface",
+        "why_easy": "Requires implementing UI and queue state management for reordering, making it moderately complex but self-contained to the chat feature"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336316,
+      "title": "Copilot chat feedback",
+      "url": "https://github.com/microsoft/vscode/issues/336316",
+      "created_at": "2026-09-15T19:17:10Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add a 'record browsing session' button to Copilot chat that captures URLs, screenshots, and network requests to provide context for chat prompts",
+        "why_easy": "Requires browser automation integration, network request interception, screenshot capture, and deep knowledge of VS Code/Copilot internals\u2014substantial architectural work unsuitable for newcomers."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336314,
+      "title": "Agents window: Sync Changes shows up for a branch tracking a local branch, and fails when clicked",
+      "url": "https://github.com/microsoft/vscode/issues/336314",
+      "created_at": "2026-09-15T18:56:07Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Sync Changes button incorrectly appears and fails for branches tracking a local branch instead of a remote branch",
+        "why_easy": "Well-defined reproduction steps and localized fix, but requires knowledge of VS Code's Git integration and Agents window architecture to find and modify the button visibility logic"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336312,
+      "title": "Hide spam issues from regular users",
+      "url": "https://github.com/microsoft/vscode/issues/336312",
+      "created_at": "2026-09-15T18:45:01Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add filtering to hide spam-marked issues from users in VSCode's GitHub integration",
+        "why_easy": "The request is vague about which GitHub spam feature is being referenced and lacks implementation details; a contributor would need to clarify requirements and understand GitHub's spam detection system before building a solution"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336310,
+      "title": "Window sizing is inconsistent when using context menu",
+      "url": "https://github.com/microsoft/vscode/issues/336310",
+      "created_at": "2026-09-15T18:18:15Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code windows opened via recent folders in the dock context menu on macOS open full-screen instead of at the previously-used size.",
+        "why_easy": "Well-defined and reproducible bug with clear steps, but requires understanding VS Code's window management system and macOS-specific code paths; the fix is likely localized once the root cause is found."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336307,
+      "title": "Copilot Cloud or Local labels on chat sessions",
+      "url": "https://github.com/microsoft/vscode/issues/336307",
+      "created_at": "2026-09-15T17:46:32Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add visible Local/Cloud badges or labels to chat sessions in the VS Code chat list",
+        "why_easy": "Straightforward UI feature but requires navigating a large codebase to locate the chat session renderer and understand how sessions track their local/cloud status"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336305,
+      "title": "Agent Host steering starts a new turn instead of steering the active turn",
+      "url": "https://github.com/microsoft/vscode/issues/336305",
+      "created_at": "2026-09-15T17:43:43Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Steering instructions submitted during active agent turns incorrectly start new turns instead of steering the ongoing response",
+        "why_easy": "Clear reproduction steps and debug logs show the steering action is marked correctly but delivery state is incorrectly set to idle; fixing requires understanding Agent Host SDK's turn and message delivery state coordination"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336303,
+      "title": "Rename-provider WorkspaceEdit loses destination casing through asCanonicalUri on Windows",
+      "url": "https://github.com/microsoft/vscode/issues/336303",
+      "created_at": "2026-09-15T17:36:03Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "File-rename destinations lose their requested case on Windows when asCanonicalUri replaces lowercase URIs with previously cached uppercase versions",
+        "why_easy": "Root cause is clearly identified (asCanonicalUri replacing rename destinations with cached case), but fixing it requires understanding VS Code's workspace-edit revival pipeline and ensuring the fix doesn't break other rename scenarios or URI canonicalization logic"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336301,
+      "title": "Agent executes thousands of tool calls from one model response without a per-response limit",
+      "url": "https://github.com/microsoft/vscode/issues/336301",
+      "created_at": "2026-09-15T17:18:46Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add per-response limits and safeguards to prevent Agent mode from executing thousands of tool calls in a single model response without bounds checking.",
+        "why_easy": "The problem and solutions (hard limits, deduplication, early-stop) are clearly defined and use standard defensive patterns, but the issue is intermittent (hard to reproduce and test), requires understanding VS Code's Agent and tool-call dispatch architecture, and could span multiple code areas\u2014making it non-trivial for a first-time contributor to the large codebase."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336299,
+      "title": "agentFilesLocations, skillFilesLocations disappears",
+      "url": "https://github.com/microsoft/vscode/issues/336299",
+      "created_at": "2026-09-15T17:15:57Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Restore configurable agent and skill file locations instead of enforcing .github/ subdirectories",
+        "why_easy": "Requires understanding the deprecation rationale and reversing a planned design decision, not a straightforward implementation task"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98684,
+      "title": "App Router: a <Link> clicked while its prefetch is in flight commits with no <title> (and can commit an empty segment) \u2014 Pending segment-cache entry is handed to React as a plain promise",
+      "url": "https://github.com/vercel/next.js/issues/98684",
+      "created_at": "2026-09-15T13:42:14Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "App Router navigations can lose title metadata and render empty segments when a Link is clicked while its prefetch is in flight, because pending segment-cache entries are handled as plain promises instead of deferred rendering.",
+        "why_easy": "This is a subtle race condition in Next.js's PPR system requiring deep knowledge of prefetching, segment caching, deferred rendering, and React's Suspense handling; even with a deterministic reproduction and identified root cause, fixing it safely across multiple interaction patterns demands expertise in multiple internal systems."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23493,
+      "title": "Dev server restarts retain retired environments through options.previousEnvironments",
+      "url": "https://github.com/vitejs/vite/issues/23493",
+      "created_at": "2026-09-15T15:36:06Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Dev server restarts retain retired environments through options.previousEnvironments, causing memory leaks and heap exhaustion on repeated restarts",
+        "why_easy": "The fix is one line at a specified location (packages/vite/src/node/server/index.ts after awaited environment initialization), and a complete reproduction test case is provided to validate the solution works"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23492,
+      "title": "feat: support `.test` domains for local dev",
+      "url": "https://github.com/vitejs/vite/issues/23492",
+      "created_at": "2026-09-15T14:28:41Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add configuration option to expose Vite dev server on `.test` domains instead of only `localhost`",
+        "why_easy": "Core implementation (listening on an additional hostname in dev server config) is straightforward, but requires understanding Vite's server setup, handling platform-specific DNS/certificate concerns for `.test` domains, and testing across different OS environments"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23487,
+      "title": "Pass filenames including queries to `renderBuiltUrl` like <8.3.0",
+      "url": "https://github.com/vitejs/vite/issues/23487",
+      "created_at": "2026-09-15T02:48:00Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Restore query/hash parameters to `renderBuiltUrl`'s filename argument or provide them as a separate parameter to fix URL generation for downstream tools.",
+        "why_easy": "The problem is clearly scoped and reproducible, but requires resolving architectural decisions (which layer should handle queries, backward compatibility strategy) before implementation can begin."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23485,
+      "title": "vite 8 regression for inlined awaited import as it triggers syntax error after transform",
+      "url": "https://github.com/vitejs/vite/issues/23485",
+      "created_at": "2026-09-14T22:47:20Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Vite 8 incorrectly transforms `import(await ...)` syntax in production builds, causing a syntax error",
+        "why_easy": "Minimal reproduction and reference fix from vitest are provided, but requires understanding Vite's internal transformation pipeline and how __vitePreload affects dynamic imports"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23472,
+      "title": "fix: image-set() URL rewrite truncates on nested parentheses",
+      "url": "https://github.com/vitejs/vite/issues/23472",
+      "created_at": "2026-09-12T00:20:35Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix regex pattern for image-set() URL rewriting to correctly handle nested CSS functions with parentheses",
+        "why_easy": "The problem and reproduction are well-defined, but the fix is non-trivial because regex cannot reliably handle arbitrary nested parentheses, requiring either complex regex recursion patterns or a shift to a more robust parsing approach"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23471,
+      "title": "fix: dep-scan misses imports whose local name starts with \"type\"",
+      "url": "https://github.com/vitejs/vite/issues/23471",
+      "created_at": "2026-09-12T00:20:34Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix dep-scan regex to skip only TypeScript 'import type' statements, not value imports starting with 'type'",
+        "why_easy": "The fix is adding a word boundary `\\b` after `type` in the regex; commented-out test cases already exist showing the expected behavior"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36330,
+      "title": "[Bug]: `@storybook/tanstack-react` crashes with `TanStack Router` `1.170.36` (`path.endsWith is not a function`)",
+      "url": "https://github.com/storybookjs/storybook/issues/36330",
+      "created_at": "2026-09-15T11:10:48Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix @storybook/tanstack-react compatibility with TanStack Router 1.171.30's new interpolatePath function signature",
+        "why_easy": "The root cause is clearly identified with specific file location and before/after API signatures documented; the fix requires adapting a function call from object-based to positional arguments with a simple compatibility layer."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36315,
+      "title": "[Bug]: CSF-factories do not extract description comment above meta definition",
+      "url": "https://github.com/storybookjs/storybook/issues/36315",
+      "created_at": "2026-09-15T08:13:37Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "CSF factory format doesn't extract description comments above meta definitions like CSF3 did",
+        "why_easy": "Clear reproduction case and regression from CSF3, but requires understanding both CSF formats and comment extraction/parsing logic"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36312,
+      "title": "[Documentation]: Explain `MSW` `StoryContext` type augmentation",
+      "url": "https://github.com/storybookjs/storybook/issues/36312",
+      "created_at": "2026-09-14T17:24:50Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Document the required TypeScript type augmentation for MSW's StoryContext in Storybook's mocking guide",
+        "why_easy": "The fix is a single-line addition to existing documentation showing how to import the types; no code changes required and the solution is already specified in the issue."
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 20491,
+      "title": "Relax `engines.node` from `>= 20` to `>= 10` (N-API 3 runtime compatibility)",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/20491",
+      "created_at": "2026-09-14T09:31:11Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Relax `engines.node` in @tailwindcss/oxide from >= 20 to >= 10 to match actual N-API 3 runtime compatibility",
+        "why_easy": "Single-line package.json change with thorough justification already provided in the issue; the contributor only needs to verify prebuilt binaries work on older Node versions, which can be validated via CI or local testing."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70048,
+      "title": "Correct descriptions and formatting in the Python string methods lesson",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70048",
+      "created_at": "2026-09-14T13:25:46Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix factual inaccuracies and formatting issues in Python string method descriptions in the freeCodeCamp curriculum.",
+        "why_easy": "The issue provides exact examples of current vs expected text for all five corrections, making it straightforward to locate and fix the descriptions with minimal investigation."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70045,
+      "title": "Clarify multiline strings and immutability in the Python strings lesson",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70045",
+      "created_at": "2026-09-14T13:25:29Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix misleading explanations of multiline string syntax and clarify that immutability doesn't control variable reassignment in the Python strings lesson.",
+        "why_easy": "The issue explicitly provides the corrected wording for both problems, requiring only straightforward text edits to the lesson material."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70037,
+      "title": "Report Card Printer: Correct Python data-type terminology in the catalog introduction",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70037",
+      "created_at": "2026-09-14T09:36:58Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Change 'primitive data types' to 'built-in data types' in the Report Card Printer workshop introduction to use correct Python terminology",
+        "why_easy": "The issue provides the exact text replacement needed and is a simple documentation change with no code modifications or testing required."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70036,
+      "title": "Report Card Printer: Fix punctuation in Step 7",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70036",
+      "created_at": "2026-09-14T09:36:52Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix punctuation in Step 7 of the Report Card Printer curriculum by removing an unnecessary comma in the instructional text",
+        "why_easy": "Single sentence text replacement with exact before/after provided; labeled first timers only; no code changes or testing required"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70033,
+      "title": "Private IP addresses with a port or path are not detected by isPrivate in the solution form",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70033",
+      "created_at": "2026-09-13T21:36:30Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Private IP addresses with ports or paths are not detected as private by the isPrivate validator",
+        "why_easy": "The root cause is well-defined (regexes anchored at the end), the solution is straightforward (extract URL hostname before matching), and a working reference implementation with passing tests already exists in PR #70032"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70025,
+      "title": "Screen reader focus issue when editing HTML closing tags in the editor",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70025",
+      "created_at": "2026-09-13T02:14:19Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix screen reader focus loss when editing paired HTML tags in the editor",
+        "why_easy": "Well-reproduced with clear steps, but requires testing with JAWS or similar assistive technology and deep understanding of how the editor integrates with accessibility APIs."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70006,
+      "title": "Build a Flashcard Quiz App - test 9",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70006",
+      "created_at": "2026-09-11T21:41:32Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Test for adding a flashcard has an implicit requirement about which card should be displayed after creation that isn't documented in the instructions.",
+        "why_easy": "The code fix is a single line of assignment, but the real issue is test/curriculum specification clarity\u2014unclear what action a contributor should take beyond reporting the ambiguity."
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17771,
+      "title": "FastifyAdapter.reply turns a null body into the string \"null\", ExpressAdapter sends an empty body",
+      "url": "https://github.com/nestjs/nest/issues/17771",
+      "created_at": "2026-09-15T15:46:55Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "FastifyAdapter.reply() should treat null body as empty, matching ExpressAdapter behavior",
+        "why_easy": "The fix is a one-line guard (`if (isNil(body)) return response.send()`) mirroring code already in ExpressAdapter, with exact line numbers and debugger screenshots provided in the issue."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30310,
+      "title": "[Prisma 8 - MongoDB] - Polymorphic Collections give runtime error when extending with no fields",
+      "url": "https://github.com/prisma/orm/issues/30310",
+      "created_at": "2026-09-15T15:00:55Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Polymorphic collection models extending a base with no extra fields cause a runtime contract validation error despite correct schema generation",
+        "why_easy": "The issue is well-reproduced with a minimal schema, but fixing it requires understanding Prisma's discriminator validation logic for the edge case of models with zero additional fields in a relatively new feature"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30299,
+      "title": "Prisma 5.22.0 engine checksum download blocked by Cloudflare 1010",
+      "url": "https://github.com/prisma/orm/issues/30299",
+      "created_at": "2026-09-15T07:05:11Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Checksum download from binaries.prisma.sh returns Cloudflare 1010 error when accessed via Python urllib, blocking dependency builds.",
+        "why_easy": "Requires server-side Cloudflare log access and CDN infrastructure knowledge to diagnose and fix the blocking rule \u2014 not accessible to outside contributors."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30295,
+      "title": "Prisma 7.10.0 pins deepmerge-ts 7.1.5 and mysql2 3.15.3, which carry high-severity npm audit advisories",
+      "url": "https://github.com/prisma/orm/issues/30295",
+      "created_at": "2026-09-15T05:58:31Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update deepmerge-ts to 8.0.0+ and mysql2 to 3.23.1+ to resolve high-severity npm audit advisories",
+        "why_easy": "The fix is straightforward dependency version updates with clear target versions; the main effort is running Prisma's test suite to verify compatibility."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30294,
+      "title": "PostgreSQL CHECK verification rejects equivalent `NOT IN` and `<> ALL` expressions",
+      "url": "https://github.com/prisma/orm/issues/30294",
+      "created_at": "2026-09-15T05:53:24Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Prisma schema verification incorrectly flags PostgreSQL CHECK constraints using `NOT IN` as different from semantically equivalent `<> ALL` expressions.",
+        "why_easy": "Clear reproduction with well-localized problem in CHECK constraint verification, but requires understanding PostgreSQL expression normalization and implementing proper canonicalization logic to handle equivalent forms."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50425,
+      "title": "Subject: Dedicated IPv4 routes to database but returns incorrect CONNECT denial",
+      "url": "https://github.com/supabase/supabase/issues/50425",
+      "created_at": "2026-09-15T19:01:33Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Dedicated IPv4 routing to database returns incorrect PostgreSQL permission denial (42501) despite role having proper CONNECT privileges",
+        "why_easy": "Hard to pick up\u2014requires deep infrastructure and network debugging expertise, likely internal Supabase system access to diagnose routing/provisioning state, and the ability to test multi-region IPv4/IPv6 connectivity scenarios."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51762,
+      "title": "Make the active Observation LongTaskTimer on the auto-configured DefaultMeterObservationHandler opt-in",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51762",
+      "created_at": "2026-09-15T09:59:33Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Make the LongTaskTimer in DefaultMeterObservationHandler opt-in rather than enabled by default, aligning with Micrometer's design change.",
+        "why_easy": "Hard because it requires design decisions on configuration properties (author admits uncertainty), deep understanding of Spring Boot's auto-configuration system, and careful handling of a breaking change\u2014currently blocked pending design work upstream."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51752,
+      "title": "Upgrade to Spring Data Bom 2026.1.0-M2",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51752",
+      "created_at": "2026-09-15T06:59:45Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade Spring Data BOM dependency to version 2026.1.0-M2",
+        "why_easy": "Marked as team-only \u2014 not available for external contributors despite dependency upgrades typically being straightforward version updates."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51751,
+      "title": "Add support for initializing the schema that Spring Security supports",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51751",
+      "created_at": "2026-09-15T06:57:00Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add standardized initialize-schema auto-configuration properties for Spring Security's SQL-backed components (JdbcUserDetailsManager, OAuth2 services, etc.)",
+        "why_easy": "Marked as blocked and requires cross-project coordination between Spring Security and Spring Boot, deep expertise in both frameworks' auto-configuration and security architecture, and understanding of multiple SPI implementations\u2014not suitable for newcomers."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51726,
+      "title": "Broken link in gRPC documentation",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51726",
+      "created_at": "2026-09-14T06:29:36Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix the broken link to Spring gRPC documentation in the security configuration chapter.",
+        "why_easy": "The issue clearly identifies the exact location of the broken link, making it straightforward to find the correct URL and update the documentation source."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51716,
+      "title": "Upgrade to Spring WS 5.1.0-M1",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51716",
+      "created_at": "2026-09-12T10:01:40Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade Spring Boot's Spring WS dependency from the current version to 5.1.0-M1",
+        "why_easy": "The task is straightforward (version bump in build config + run tests) but the 'team-only' label explicitly restricts this to maintainers, and milestone releases often have breaking changes requiring deeper Spring Boot knowledge to resolve compatibility issues"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51715,
+      "title": "Upgrade to Spring Kafka 4.2.0-M2",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51715",
+      "created_at": "2026-09-12T10:01:36Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade Spring Kafka dependency to version 4.2.0-M2",
+        "why_easy": "Marked team-only, indicating maintainers want to handle this internally; issue provides no details on breaking changes or integration work needed, making it risky for external contributors to attempt without team guidance."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51714,
+      "title": "Upgrade to Spring Integration 7.2.0-M2",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51714",
+      "created_at": "2026-09-12T10:01:32Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade Spring Integration dependency to version 7.2.0-M2",
+        "why_easy": "Explicitly marked team-only; upgrading a major dependency (especially a milestone release) requires framework expertise to handle potential breaking changes and compatibility issues."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51713,
+      "title": "Upgrade to Spring GraphQL 2.1.0-M1",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51713",
+      "created_at": "2026-09-12T10:01:28Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Update Spring Boot's Spring GraphQL dependency to version 2.1.0-M1 (milestone release)",
+        "why_easy": "The 'team-only' label explicitly marks this for internal maintainers; M1 releases may introduce breaking changes requiring careful integration testing across Spring Boot's modules."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51712,
+      "title": "Upgrade to Spring Framework 7.1.0-M2",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51712",
+      "created_at": "2026-09-12T10:01:23Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade Spring Boot's Spring Framework dependency to version 7.1.0-M2",
+        "why_easy": "The team-only label and milestone version indicate this requires careful integration testing and handling of potential API-breaking changes that demand deep framework knowledge."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51711,
+      "title": "Upgrade to Spring AMQP 4.2.0-M2",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51711",
+      "created_at": "2026-09-12T10:01:19Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade Spring Boot's Spring AMQP dependency to version 4.2.0-M2",
+        "why_easy": "Marked team-only, indicating Spring maintainers need to handle it; milestone releases risk breaking API changes and transitive conflicts requiring deep integration knowledge"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51710,
+      "title": "Upgrade to Reactor Bom 2026.0.0-M2",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51710",
+      "created_at": "2026-09-12T10:01:15Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Update the project's Reactor Bill of Materials dependency to version 2026.0.0-M2",
+        "why_easy": "Dependency upgrades are technically straightforward (update version number, run tests), but the 'team-only' label explicitly restricts this to maintainers and signals the team may want to handle coordination or manage breaking changes themselves."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51706,
+      "title": "Add HealthIndicator support for Apache Pulsar",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51706",
+      "created_at": "2026-09-11T23:24:25Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Implement a PulsarHealthIndicator to expose cluster health via the Actuator endpoint, following established Spring Boot patterns for other messaging clients.",
+        "why_easy": "A working prototype with tests exists and the implementation follows well-established Spring Boot health-indicator patterns; however, the team-only label indicates this is reserved for maintainers rather than general OSS contributors."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51665,
+      "title": "Env endpoint is brittle when called with malformed input",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51665",
+      "created_at": "2026-09-11T08:28:34Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix the Env actuator endpoint to gracefully handle malformed input instead of failing or behaving unexpectedly.",
+        "why_easy": "The team-only status indicates this is reserved for core maintainers, the empty issue body provides no reproduction steps or context, and the vague title leaves unclear what inputs cause brittleness or what the fix should be."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 68706,
+      "title": "BUG/DEPR: low_memory keyword in read_csv",
+      "url": "https://github.com/pandas-dev/pandas/issues/68706",
+      "created_at": "2026-09-14T22:17:10Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix incorrect dtype inference in read_csv when low_memory=True by automatically re-parsing columns with incompatible dtypes instead of requiring users to set low_memory=False",
+        "why_easy": "Hard: requires deep knowledge of pandas' chunked CSV parsing, dtype inference, and concatenation internals; the approach is still under discussion and involves careful performance trade-off analysis and regression risk in core I/O code"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 68705,
+      "title": "DEPR: cache_dates in read_csv",
+      "url": "https://github.com/pandas-dev/pandas/issues/68705",
+      "created_at": "2026-09-14T22:00:40Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Deprecate the cache_dates keyword argument in read_csv due to low usage and diminishing performance benefits",
+        "why_easy": "Straightforward deprecation task with a clear motivation, but requires familiarity with pandas' deprecation patterns and comprehensive updates across the CSV parser, tests, and documentation"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 68703,
+      "title": "API: select_dtypes",
+      "url": "https://github.com/pandas-dev/pandas/issues/68703",
+      "created_at": "2026-09-14T16:36:30Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Revert partial specification support in select_dtypes for IntervalDtype and CategoricalDtype to reduce API complexity",
+        "why_easy": "Reverting recent changes is mechanically straightforward, but requires deep pandas dtype knowledge and careful regression testing as the change affects core dtype behavior"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 68597,
+      "title": "Regression: pandas 3.1.0 in cygwin throws error in subprocess",
+      "url": "https://github.com/pandas-dev/pandas/issues/68597",
+      "created_at": "2026-09-13T14:33:41Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Regression: pandas 3.1.0 throws BlockingIOError when spawning subprocesses on Cygwin due to native DLL memory address conflicts.",
+        "why_easy": "Hard to pick up: Cygwin-specific issue that most contributors can't reproduce, involves memory management and fork/DLL behavior, and requires investigation into extension loading changes between 3.0.5 and 3.1.0."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32605,
+      "title": "ENH: fft: switch from `pocketfft` to `ducc0.fft`",
+      "url": "https://github.com/numpy/numpy/issues/32605",
+      "created_at": "2026-09-14T03:53:45Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Replace NumPy's FFT backend from pocketfft with ducc0.fft to leverage SciPy's prior work and improve maintainability.",
+        "why_easy": "This requires deep C++ knowledge, careful decisions on vendoring strategy, library API compatibility work, and extensive testing of a core numerical component \u2014 requires maintainer coordination and architectural understanding."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32603,
+      "title": "ENH: sinpi, cospi, asinpi, acospi, etc.: trigonometric functions in units of half turns",
+      "url": "https://github.com/numpy/numpy/issues/32603",
+      "created_at": "2026-09-13T16:11:42Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add trigonometric functions in units of half turns (sinpi, cospi, asinpi, acospi) as numpy ufuncs, aligned with C23 and Python 3.16",
+        "why_easy": "Hard: requires implementing new ufuncs and deep understanding of NumPy's mathematical function infrastructure; the issue is still at design stage (proposer unsure where it belongs), so significant discussion and upfront work needed before implementation can begin."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32599,
+      "title": "ENH: histogram_bin_edges: add an equal-frequency (quantile) binning strategy",
+      "url": "https://github.com/numpy/numpy/issues/32599",
+      "created_at": "2026-09-12T15:31:35Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add equal-frequency (quantile-based) binning strategy to np.histogram_bin_edges()",
+        "why_easy": "The core computation is a few lines (np.quantile + np.unique), but the API design, edge-case handling, and numpy's rigorous testing/documentation standards create meaningful complexity for a first contribution."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34964,
+      "title": "I cannot get the scikit-learn development Codespace into the intended development environment.",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34964",
+      "created_at": "2026-09-15T06:44:47Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "GitHub Codespace for scikit-learn fails to initialize development environment with shell error during micromamba activation",
+        "why_easy": "The issue is scoped to `.devcontainer/` setup scripts and the error is clearly documented, but testing requires setting up and waiting for Codespaces, and the fix requires understanding devcontainer, micromamba, and shell initialization together."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34956,
+      "title": "Support infinite values in DecisionTree/RandomForest/ExtraTrees (now that NaN is supported)",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34956",
+      "created_at": "2026-09-14T06:07:39Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Support infinite values (\u00b1inf) in DecisionTree, RandomForest, and ExtraTrees by relaxing validation guards that currently reject them.",
+        "why_easy": "The proposer verified that removing two validation guards in `sklearn/tree/_classes.py` allows the estimators to handle inf correctly without splitter changes, but comprehensive test coverage is needed and the issue explicitly states it's not yet ready for a PR."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34946,
+      "title": "Multiple issues for the numpy new-style DType / isdtype",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34946",
+      "created_at": "2026-09-12T16:15:47Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix crashes from numpy new-style DType classes by creating a safe wrapper around xp.isdtype() that catches TypeError",
+        "why_easy": "The fix is straightforward\u2014create one helper function\u2014but requires careful updates across 14 crash sites and comprehensive test coverage."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34945,
+      "title": "Add Population Stability Index (PSI) as a model/data drift metric",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34945",
+      "created_at": "2026-09-12T15:20:55Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add a Population Stability Index metric to detect distribution drift between two datasets.",
+        "why_easy": "The PSI formula is mathematically straightforward, but the issue requires upfront design discussion before coding and demands deep sklearn conventions expertise, comprehensive testing for edge cases (zero probabilities in log), and extensive documentation."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34943,
+      "title": "Add Information Value (IV) / Weight-of-Evidence binning as metric and feature-selection",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34943",
+      "created_at": "2026-09-12T15:14:56Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add Information Value (IV) metric and feature selection for binary classification",
+        "why_easy": "The IV formula is simple, but requires sklearn framework integration knowledge, credit-scoring domain expertise, and maintainer alignment on whether to implement as metric, feature selector, or both."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34942,
+      "title": "[BUG] RidgeClassifierCV(scoring=\"accuracy\", cv=None) returns incorrect best_score_ for binary classification",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34942",
+      "created_at": "2026-09-12T13:25:58Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "RidgeClassifierCV(scoring='accuracy', cv=None) incorrectly returns best_score_=1.0 for binary classification because argmax(axis=1) on a single-column binarized target always yields 0",
+        "why_easy": "Root cause is well-identified in the issue, but requires understanding LabelBinarizer shapes, sklearn's GCV scoring path, and careful testing to avoid regressions across CV strategies"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45899,
+      "title": "Content drift: Mention security-and-quality as a default CodeQL query suite",
+      "url": "https://github.com/github/docs/issues/45899",
+      "created_at": "2026-09-15T07:06:09Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add security-and-quality as a mentioned built-in CodeQL query suite to align with another docs page",
+        "why_easy": "Clear scope limited to adding documentation content about a query suite; no code changes, dependencies, or testing required."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45858,
+      "title": "[ja] Broken table rendering on \"GitHub language support\"",
+      "url": "https://github.com/github/docs/issues/45858",
+      "created_at": "2026-09-12T23:09:17Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix broken table rendering on Japanese GitHub language support documentation page",
+        "why_easy": "The English version renders correctly as a reference; the fix likely involves correcting Markdown table syntax in the Japanese translation, a straightforward content comparison and fix."
+      }
+    },
+    {
+      "repo": "EbookFoundation/free-programming-books",
+      "number": 13465,
+      "title": "The Django 101 - Introdu\u00e7\u00e3o ao Django doesn't work",
+      "url": "https://github.com/EbookFoundation/free-programming-books/issues/13465",
+      "created_at": "2026-09-14T18:12:51Z",
+      "digest_date": "2026-09-15",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix broken Django 101 tutorial link in the Portuguese Brazil section of the resource list",
+        "why_easy": "Verifying a broken link and updating or removing it in a markdown file is straightforward; the contributor may optionally check for other broken links in the same section, but the core task requires minimal investigation and code changes."
       }
     }
   ]
