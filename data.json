@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-15",
+  "updated": "2026-09-16",
   "issues": [
     {
       "repo": "react/react-native",
@@ -27518,6 +27518,636 @@
         "good_first_issue": true,
         "one_line_summary": "Fix broken Django 101 tutorial link in the Portuguese Brazil section of the resource list",
         "why_easy": "Verifying a broken link and updating or removing it in a markdown file is straightforward; the contributor may optionally check for other broken links in the same section, but the core task requires minimal investigation and code changes."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58557,
+      "title": "BUNDLE and MAP process for index.js is taking a long time",
+      "url": "https://github.com/react/react-native/issues/58557",
+      "created_at": "2026-09-16T15:45:33Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Bundle and map process for index.js is excessively slow after upgrading to React Native 0.86.0",
+        "why_easy": "Hard: performance regressions require deep profiling knowledge and React Native internals understanding, the issue lacks a minimal reproduction case, and root cause could be anywhere from core to configuration"
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58555,
+      "title": "iOS: updateOSDeploymentTarget skips resource-bundle targets, so Xcode 27 fails the build with \"deployment target ... supported range is 15.0\"",
+      "url": "https://github.com/react/react-native/issues/58555",
+      "created_at": "2026-09-16T10:02:18Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "updateOSDeploymentTarget must also update CocoaPods resource-bundle targets to fix Xcode 27 build failures when dependency podspecs declare iOS versions below 15.0",
+        "why_easy": "The fix is provided with exact Ruby code that mirrors an existing pattern in the same file, but requires iOS/CocoaPods domain knowledge and Xcode 27 access to properly test and verify the solution"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50217,
+      "title": "[expo-image-manipulator][Android] Releasing a context while `renderAsync()` is pending cancels the render \u2014 `useImageManipulator` does exactly that on unmount",
+      "url": "https://github.com/expo/expo/issues/50217",
+      "created_at": "2026-09-16T04:58:43Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix a race condition on Android where releasing an ImageManipulatorContext cancels pending renderAsync() calls, causing them to reject instead of completing.",
+        "why_easy": "The root cause is clearly identified (sharedObjectDidRelease unconditionally cancels the task) and a fix is suggested with implementation sketch, but it requires Android Kotlin coroutine expertise and careful synchronization logic to implement correctly."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50213,
+      "title": "[fetch] SDK 57 still ships the iOS `text()`/`arrayBuffer()` hang fixed by #48230 (not backported to `sdk-57`); Android resolves truncated bodies as complete",
+      "url": "https://github.com/expo/expo/issues/50213",
+      "created_at": "2026-09-15T22:25:20Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Backport iOS fetch fix for hanging text()/arrayBuffer() calls to SDK 57, and fix Android truncated body resolution bug where IOException is silently overwritten",
+        "why_easy": "Hard because it requires native iOS (Swift) and Android (Kotlin) development experience; the iOS backport is a proven 10-line fix but demands understanding the promise state machine, while the Android fix requires debugging concurrent coroutine patterns and OkHttp integration in a production module used by millions."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50212,
+      "title": "expo/fetch rejects network failures with a plain Error (not TypeError) and drops the abort reason on mid-flight cancels",
+      "url": "https://github.com/expo/expo/issues/50212",
+      "created_at": "2026-09-15T22:25:19Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Make expo/fetch reject network failures with TypeError (not Error) and preserve abort reasons on mid-flight cancellations",
+        "why_easy": "Well-documented with line numbers and clear spec references, but requires coordinated changes across TypeScript and two native platforms (Swift/Kotlin) with device testing."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336466,
+      "title": "Agent Host can send a queued steering message after removal or while it is being edited",
+      "url": "https://github.com/microsoft/vscode/issues/336466",
+      "created_at": "2026-09-16T18:44:22Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix race conditions where queued steering messages can be delivered after removal or while being edited.",
+        "why_easy": "Fixing race conditions in async queue processing requires understanding state synchronization between queue, delivery, and edit tracking\u2014well-scoped but needs knowledge of VS Code's agent queue architecture."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336461,
+      "title": "Agent response remains in Working after the final answer while background tasks run",
+      "url": "https://github.com/microsoft/vscode/issues/336461",
+      "created_at": "2026-09-16T18:26:21Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Agent response UI should show complete when the agent finishes, even if background tasks continue running.",
+        "why_easy": "Clear root cause diagnosis helps, but the fix requires deep understanding of Agent Host/SDK session lifecycle and careful handling to avoid regressions."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336460,
+      "title": "ChatGPT models not showing on version 1.138.0",
+      "url": "https://github.com/microsoft/vscode/issues/336460",
+      "created_at": "2026-09-16T18:10:09Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "ChatGPT models fail to display in VS Code 1.138.0's Agents window, Chat sidebar, and model management after account connection, despite successful login and usage tracking",
+        "why_easy": "Hard: regression in new release affecting multiple UI surfaces requires understanding 1.138.0's agent architecture and model-fetching logic; root cause unclear (could be API integration, permissions, or data flow), making diagnosis difficult for unfamiliar contributors"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336459,
+      "title": "Add 'partial' option to `TreeItemCheckboxState` for a tri-state checkbox in `TreeItem`",
+      "url": "https://github.com/microsoft/vscode/issues/336459",
+      "created_at": "2026-09-16T17:50:23Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add a 'partial' tri-state checkbox option to TreeItemCheckboxState to show when a parent has some selected children",
+        "why_easy": "Hard: VS Code's codebase is large and the issue lacks concrete implementation guidance beyond a PR reference; requires understanding TreeView rendering pipeline and potentially touching multiple systems (type defs, rendering, state handling)"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336458,
+      "title": "Chat panel rendering is very slow when resizing",
+      "url": "https://github.com/microsoft/vscode/issues/336458",
+      "created_at": "2026-09-16T17:40:55Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Chat panel renders slowly when resizing the window or panel",
+        "why_easy": "Performance debugging requires profiling skills and deep rendering knowledge, with no reproduction steps provided to guide investigation"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336456,
+      "title": "Cinnamon desktop environment recognised as GNOME environment",
+      "url": "https://github.com/microsoft/vscode/issues/336456",
+      "created_at": "2026-09-16T17:17:44Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "VS Code incorrectly identifies Cinnamon desktop environment as GNOME, triggering wrong keyring notifications",
+        "why_easy": "The fix likely involves adding a check for Cinnamon-specific environment variables before the GNOME detection in one localized code path, requiring no complex logic or architectural changes."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336452,
+      "title": "Diff Editor hides semantically significant YAML indentation changes",
+      "url": "https://github.com/microsoft/vscode/issues/336452",
+      "created_at": "2026-09-16T16:50:28Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Diff Editor hides indentation-only changes in YAML files, even though indentation is semantically significant",
+        "why_easy": "The issue is well-scoped with clear reproduction steps and an identified setting (diffEditor.ignoreTrimWhitespace), but requires understanding VS Code's diff rendering pipeline and implementing language-specific whitespace handling."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336449,
+      "title": "Migrate workspace prompts to skills",
+      "url": "https://github.com/microsoft/vscode/issues/336449",
+      "created_at": "2026-09-16T16:24:59Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Migrate 16 legacy workspace prompts to the new Skills format using VS Code's Customizations migration tool",
+        "why_easy": "Clear step-by-step UI instructions provided; migration tool handles technical complexity; pure mechanical work of following prompts for each item"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98756,
+      "title": "[App Router] Critical layout CSS lacks preload link hints in document head",
+      "url": "https://github.com/vercel/next.js/issues/98756",
+      "created_at": "2026-09-16T17:30:27Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add `<link rel=\"preload\">` hints in document head for critical layout stylesheets to enable concurrent downloads and reduce First Contentful Paint.",
+        "why_easy": "A reference branch with working code is provided and specific test files are identified, but implementing this requires understanding Next.js's server-side rendering pipeline, CSS resource handling, and App Router architecture."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98755,
+      "title": "[Build] polyfill-module bundle is included even when browserslist targets modern ES natively",
+      "url": "https://github.com/vercel/next.js/issues/98755",
+      "created_at": "2026-09-16T17:30:23Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Skip including the polyfill-module bundle when all browserslist targets natively support modern ES features.",
+        "why_easy": "A working branch with test cases is already provided, but the fix requires understanding Next.js's build system and may need changes across multiple bundler configurations (webpack/turbopack)."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98754,
+      "title": "[next/image] Priority hero images lack automatic fetchPriority high on preload and img elements",
+      "url": "https://github.com/vercel/next.js/issues/98754",
+      "created_at": "2026-09-16T17:25:11Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Automatically add fetchPriority=\"high\" to preload links and img elements when priority={true} is set on Image components to accelerate LCP.",
+        "why_easy": "Reference implementation exists in a provided branch and test files are identified, but requires understanding Next.js Image component HTML generation and ensuring both preload and img elements are updated consistently."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98752,
+      "title": "[RSC] Duplicate client reference chunk paths in flight manifest inflate payload and serialization time",
+      "url": "https://github.com/vercel/next.js/issues/98752",
+      "created_at": "2026-09-16T17:25:01Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Deduplicate repeated chunk paths in Flight manifest serialization to reduce payload size and per-request serialization time",
+        "why_easy": "A reference implementation branch and test suite are provided, but the fix requires understanding React Server Components serialization, Flight protocol, and Next.js's chunking internals"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98750,
+      "title": "[PPR] Search crawlers bypass static shell cache and trigger dynamic re-renders",
+      "url": "https://github.com/vercel/next.js/issues/98750",
+      "created_at": "2026-09-16T17:24:47Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Search crawler requests bypass the static shell cache and trigger unnecessary dynamic SSR in PPR mode",
+        "why_easy": "Requires deep understanding of PPR caching mechanics and bot detection, but a reference branch and test cases are provided as implementation guidance"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98748,
+      "title": "[App Router] AI search crawlers and TelegramBot miss streaming metadata in Edge SSR",
+      "url": "https://github.com/vercel/next.js/issues/98748",
+      "created_at": "2026-09-16T17:22:55Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Recognize AI crawler user agents and emit metadata synchronously to ensure they receive complete metadata before the connection closes",
+        "why_easy": "Reference implementation exists in the fix branch with complete tests, but integrating it requires understanding Next.js's streaming architecture, metadata pipeline, and Edge runtime differences"
+      }
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 49147,
+      "title": "[Autocomplete]\u00a0component crash when groupBy function is set after opening popup",
+      "url": "https://github.com/mui/material-ui/issues/49147",
+      "created_at": "2026-09-16T09:19:04Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Autocomplete crashes with 'Cannot read properties of undefined' when groupBy function is set dynamically after opening the popup.",
+        "why_easy": "Clear reproduction with live Stackblitz example and regression from v6.x suggests a targeted fix, but requires deep understanding of Autocomplete's state management and grouping logic to identify where the undefined value enters the rendering chain."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70102,
+      "title": "Correct A1 Professional Spanish intro ordering and remove unused module intros",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70102",
+      "created_at": "2026-09-16T16:39:04Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Reorder blocks entries in the A1 Professional Spanish intro JSON to match the curriculum structure and remove unused module-intro entries.",
+        "why_easy": "The issue provides an explicit ordered list of all 54 entries to reorder, making this a straightforward JSON reorganization task with no complex logic or architectural decisions required."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70101,
+      "title": "Correct A1 Professional Chinese intro ordering and remove unused module intros",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70101",
+      "created_at": "2026-09-16T16:39:01Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Reorder A1 Professional Chinese intro block entries to match the curriculum structure file and remove unused module intros.",
+        "why_easy": "The issue provides an explicit ordered list of 30 entries with clear before/after diffs, making this a straightforward mechanical JSON reordering task with no complex logic or repo knowledge required."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70100,
+      "title": "Add the Artifact Provenance Auditor workshop to Introduction to Objects in JavaScript",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70100",
+      "created_at": "2026-09-16T16:37:42Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "feature",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add the missing Artifact Provenance Auditor workshop block to the Introduction to Objects in JavaScript curriculum superblock",
+        "why_easy": "The exact content and file locations are provided in the issue; this requires only copying provided JSON entries into two files at clearly specified positions"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70099,
+      "title": "Add Section Headers to Lecture: What Are Truthy and Falsy Values, and How Do Boolean Operators and Short-Circuiting Work?",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70099",
+      "created_at": "2026-09-16T16:18:03Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add `##` section headers to a lecture file on truthy/falsy values to improve readability and scannability.",
+        "why_easy": "The task is purely structural editing of prose\u2014identify natural topic breaks in ~758 words and add descriptive headers following an existing example, with no code changes or complex logic required."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70098,
+      "title": "Add Section Headers to Lecture: What Are Character Classes, and What Are Some Common Examples?",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70098",
+      "created_at": "2026-09-16T16:17:58Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add section headers to a regular expressions lecture to improve readability and scannability",
+        "why_easy": "The task is straightforward markdown formatting with clear conventions already established; the contributor just needs to identify natural topic breaks and add consistent `##` headers in the provided style."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70097,
+      "title": "Add Section Headers to Lecture: How Do Dynamic Arrays Differ From Static Arrays?",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70097",
+      "created_at": "2026-09-16T16:17:52Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add `##` section headers to a lecture about dynamic vs. static arrays to improve readability.",
+        "why_easy": "Pure content formatting: identify logical sections in a ~777-word lecture and add Title Case headers following a clear reference example, with no code changes or system knowledge required."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70096,
+      "title": "Add Section Headers to Lecture: When Is the alt Attribute Needed, and What Are Some Examples of Good Alt Text?",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70096",
+      "created_at": "2026-09-16T16:17:47Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add section headers to a lecture file about HTML alt attributes to improve readability and scannability",
+        "why_easy": "Straightforward markdown editing task with a clear reference example and specific acceptance criteria\u2014no code changes or technical complexity required."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70095,
+      "title": "Add Section Headers to Lecture: What Are Dictionaries, and How Do They Work?",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70095",
+      "created_at": "2026-09-16T16:17:41Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add section headers to the dictionaries lecture to improve readability and scannability",
+        "why_easy": "The task requires only markdown formatting with clear examples and acceptance criteria; no code changes, complex logic, or system knowledge needed."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70093,
+      "title": "Pin Extractor - Step 2: error in Socrates feedback",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70093",
+      "created_at": "2026-09-16T12:31:28Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Remove JavaScript-specific syntax advice ('let or const') from Socrates feedback in a Python challenge",
+        "why_easy": "Straightforward text removal from a feedback configuration once located; clear reproduction steps and exact text to remove provided; no logic changes or complex testing required."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70087,
+      "title": "Employee Profile Generator Step 18: fix hint grammar and solution order",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70087",
+      "created_at": "2026-09-16T09:31:10Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix grammar error in hint ('assign them your' \u2192 'assign them to your') and restore correct statement order in the solution code.",
+        "why_easy": "Two straightforward fixes to curriculum content with exact changes specified: correct a preposition in text and reorder two lines of code, requiring no logic changes or deep system knowledge."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70086,
+      "title": "Employee Profile Generator Step 16: remove inconsistent seed blank line",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70086",
+      "created_at": "2026-09-16T09:31:05Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Remove an extra blank line after print(employee_card) in Employee Profile Generator Step 16 seed code",
+        "why_easy": "The issue clearly identifies a single blank line to delete with before/after formatting shown; it's a simple content edit to the curriculum seed, not code logic"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70085,
+      "title": "Employee Profile Generator Step 13: clarify f-string assignment hint",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70085",
+      "created_at": "2026-09-16T09:31:00Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Clarify the wording of a hint for Step 13 of the Employee Profile Generator lesson to better describe f-string assignment",
+        "why_easy": "The issue provides the exact replacement text needed, making this a simple find-and-replace of curriculum content with no code changes."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70084,
+      "title": "Employee Profile Generator Step 10: add missing introductory comma",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70084",
+      "created_at": "2026-09-16T09:30:55Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add a missing comma after 'As you can see' in the Employee Profile Generator Step 10 lesson text",
+        "why_easy": "The fix is a single character addition at a clearly specified location, requiring no code changes or domain knowledge\u2014explicitly marked 'first timers only.'"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70083,
+      "title": "Employee Profile Generator Step 5: fix comma splice",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70083",
+      "created_at": "2026-09-16T09:30:49Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix a comma splice in Python v9 curriculum by replacing 'therefore' with 'so' in a specific sentence",
+        "why_easy": "The issue explicitly specifies the exact text change needed, the current wording, the corrected version, and the precise location, making this a straightforward find-and-replace in curriculum content."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30322,
+      "title": "prisma's npm latest dist-tag points to a prerelease (8.0.0-rc.x), with incorrect repository metadata",
+      "url": "https://github.com/prisma/orm/issues/30322",
+      "created_at": "2026-09-16T15:31:06Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Update npm dist-tag and repository metadata to point latest tag to stable release and fix stale prisma-cli.git reference",
+        "why_easy": "The issue is well-documented with clear expectations, but requires understanding Prisma's release pipeline and where NPM metadata is configured"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50486,
+      "title": "Self-Hosted: JWT config applied to wrong database when using custom POSTGRES_DB",
+      "url": "https://github.com/supabase/supabase/issues/50486",
+      "created_at": "2026-09-16T19:01:51Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix JWT configuration to apply to custom POSTGRES_DB instead of hardcoded 'postgres' database in self-hosted deployments",
+        "why_easy": "The bug is clearly identified in one SQL file; the fix is a straightforward replacement of a hardcoded database name with the POSTGRES_DB environment variable"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51789,
+      "title": "Upgrade to Spring HATEOAS 3.2.0-M2",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51789",
+      "created_at": "2026-09-16T14:13:39Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade Spring HATEOAS dependency to version 3.2.0-M2",
+        "why_easy": "The task is a straightforward version bump, but the 'team-only' label and M2 milestone status indicate this requires deep framework knowledge to validate breaking changes and compatibility \u2014 not suitable for external contributors."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51781,
+      "title": "Use cached PathPattern in AbstractWebMvcEndpointHandlerMapping",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51781",
+      "created_at": "2026-09-16T10:05:15Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Use the cached PathPattern from request attributes instead of re-parsing it in AbstractWebMvcEndpointHandlerMapping",
+        "why_easy": "The issue is blocked on a spring-framework dependency, but once unblocked, the change appears to be a straightforward substitution of using an existing cached value rather than re-parsing."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51778,
+      "title": "Upgrade to Spring Batch 6.1.0-M2",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51778",
+      "created_at": "2026-09-16T05:42:39Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade Spring Batch dependency to version 6.1.0-M2",
+        "why_easy": "Dependency upgrades are typically straightforward version-number changes in build files with test verification, but the 'team-only' label signals the Spring Boot team handles these internally and does not accept external contributions for this type of work."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51777,
+      "title": "Upgrade to Micrometer Tracing 1.8.0-M2",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51777",
+      "created_at": "2026-09-16T05:42:35Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade the Micrometer Tracing dependency to version 1.8.0-M2",
+        "why_easy": "The 'team-only' label indicates this requires team expertise; dependency upgrades for critical tracing libraries often involve compatibility checks and potential breaking changes that need investigation."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51776,
+      "title": "Upgrade to Micrometer 1.18.0-M2",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51776",
+      "created_at": "2026-09-16T05:42:31Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade the Micrometer dependency to version 1.18.0-M2",
+        "why_easy": "The 'team-only' label and milestone version designation suggest internal knowledge of compatibility and testing procedures; dependency upgrades to pre-release versions often have breaking changes requiring expert judgment."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32662,
+      "title": "numpy._core.strings import fails with \"cannot import name '_center' from numpy._core.umath\" \u2014 reproducible on fresh Kaggle/Colab kernels, no packages installed",
+      "url": "https://github.com/numpy/numpy/issues/32662",
+      "created_at": "2026-09-16T18:56:42Z",
+      "digest_date": "2026-09-16",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "The _center function is missing from numpy._core.umath on fresh Kaggle/Colab kernels despite numpy 2.0.2 being installed",
+        "why_easy": "Hard to pick up: environment-specific to Kaggle/Colab (difficult to reproduce locally), involves compiled C extensions, and the root cause is unclear\u2014could be a packaging, build configuration, or version mismatch issue requiring deep numpy infrastructure knowledge."
       }
     }
   ]
