@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-16",
+  "updated": "2026-09-17",
   "issues": [
     {
       "repo": "react/react-native",
@@ -28148,6 +28148,801 @@
         "good_first_issue": false,
         "one_line_summary": "The _center function is missing from numpy._core.umath on fresh Kaggle/Colab kernels despite numpy 2.0.2 being installed",
         "why_easy": "Hard to pick up: environment-specific to Kaggle/Colab (difficult to reproduce locally), involves compiled C extensions, and the root cause is unclear\u2014could be a packaging, build configuration, or version mismatch issue requiring deep numpy infrastructure knowledge."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58578,
+      "title": "ScrollView maintainVisibleContentPosition applies the anchor delta to the already-clamped offset when content shrinks (iOS + Android, Fabric)",
+      "url": "https://github.com/react/react-native/issues/58578",
+      "created_at": "2026-09-17T17:04:38Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "maintainVisibleContentPosition clamps scroll offset before applying the anchor delta when content shrinks, causing incorrect anchor positioning",
+        "why_easy": "Root cause is clearly identified with specific code locations and a contrasting control case that works correctly, but requires understanding platform-specific scroll handling and coordinating changes across both iOS and Android implementations"
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58565,
+      "title": "`requestIdleCallback` is not defined in TS types",
+      "url": "https://github.com/react/react-native/issues/58565",
+      "created_at": "2026-09-16T23:02:31Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "TypeScript type definitions for `requestIdleCallback` are missing, preventing use of the documented `InteractionManager` replacement",
+        "why_easy": "The fix requires adding type declarations for a standard Web API with a well-defined signature to React Native's `.d.ts` files; no runtime logic or complex architectural changes needed, and a minimal reproducer is provided"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50294,
+      "title": "[expo-media-library][iOS] `getAssetInfoAsync` on a Live Photo settles its promise twice and traps with \"Cannot settle a promise more than once\"",
+      "url": "https://github.com/expo/expo/issues/50294",
+      "created_at": "2026-09-17T13:46:04Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix promise-settling in iOS `getAssetInfoAsync()` for Live Photos by handling the `.opportunistic` delivery mode's multiple callbacks.",
+        "why_easy": "The issue is exceptionally well-documented with exact location and root cause, but requires Swift/iOS expertise and understanding of Apple's PHImageManager callback semantics."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50293,
+      "title": "[expo-modules-core][Android] expo-modules-v2-compiler-plugin 0.1.5 fails on Kotlin 2.3 (missing CompilerPluginRegistrar.pluginId)",
+      "url": "https://github.com/expo/expo/issues/50293",
+      "created_at": "2026-09-17T13:23:27Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "expo-modules-v2-compiler-plugin 0.1.5 is incompatible with Kotlin 2.3 because it lacks the required pluginId abstract method",
+        "why_easy": "The fix is technically trivial (add one abstract method), but the plugin source code is private and inaccessible to external contributors, making this unsuitable for community contribution."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50292,
+      "title": "React-native dev tools never shows my sources",
+      "url": "https://github.com/expo/expo/issues/50292",
+      "created_at": "2026-09-17T13:09:09Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Sources don't appear in React Native dev tools when running a development build",
+        "why_easy": "Vague reproduction steps with no minimal reproducible example; requires deep expertise in dev tools, source mapping, and development builds to debug"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50282,
+      "title": "[Router] Android: \"state update on a component that hasn't mounted yet\" from useLinking getInitialURL().then \u2192 setLastUnhandledLink",
+      "url": "https://github.com/expo/expo/issues/50282",
+      "created_at": "2026-09-17T11:56:12Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix a race condition where setLastUnhandledLink is called before NavigationContainer mounts on Android, causing a React state-update warning",
+        "why_easy": "The root cause is clearly identified with specific file locations and multiple proposed solutions provided, but requires Android testing setup and React lifecycle knowledge to fix and verify correctly"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50281,
+      "title": "Plugin expo-splash-screen does not constrain image to parent edges. Duplicate of locked #38642",
+      "url": "https://github.com/expo/expo/issues/50281",
+      "created_at": "2026-09-17T11:39:56Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Splash screen images overflow beyond parent edges on iOS instead of respecting safe area constraints",
+        "why_easy": "Clear MRE and reproduction steps provided, but requires iOS storyboard/constraints knowledge and understanding of expo-splash-screen's code generation; duplicate of previously locked issue suggests prior complexity"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336594,
+      "title": "Make Auto Tiers enabled by default",
+      "url": "https://github.com/microsoft/vscode/issues/336594",
+      "created_at": "2026-09-17T16:55:20Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Remove the Auto Tiers feature flag and setting, enabling Auto Tiers by default for all users",
+        "why_easy": "This is primarily cleanup work to remove a setting and feature flag, but requires familiarity with VS Code's settings architecture, feature flag system, and where Auto Tiers code is implemented across the codebase to avoid regressions."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336592,
+      "title": "Visual Studio Code keep downloading Nemotron 3.5 ASR locally on every time I start VS Code.",
+      "url": "https://github.com/microsoft/vscode/issues/336592",
+      "created_at": "2026-09-17T16:32:54Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Nemotron 3.5 ASR model is re-downloaded on each VS Code startup instead of being persisted locally",
+        "why_easy": "Hard to pick up\u2014unclear which component handles speech recognition caching, no error logs provided, vague reproduction steps, and the fix could range from a simple cache-path issue to complex persistence logic"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336590,
+      "title": "[NES] Next Edit Suggestion data privacy and allow to change model provider",
+      "url": "https://github.com/microsoft/vscode/issues/336590",
+      "created_at": "2026-09-17T16:28:08Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Allow users to configure the NES AI model provider and improve data privacy transparency regarding where text is sent",
+        "why_easy": "Requires deep understanding of VSCode's NES architecture, settings system, and multi-provider integration; the hardcoded provider dependency would need substantial refactoring throughout the feature"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336588,
+      "title": "Session-in-progress quit dialog should identify and link to the active session",
+      "url": "https://github.com/microsoft/vscode/issues/336588",
+      "created_at": "2026-09-17T16:03:23Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The session-in-progress confirmation dialog should identify which session is running and provide navigation to it.",
+        "why_easy": "The dialog exists; the work is mainly enhancing its content and adding a navigation action\u2014but requires understanding VS Code's session tracking system, quit flow, and coordinating across multiple windows."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336587,
+      "title": "Agent Host loses conversation context when config refresh resume falls back to createSession",
+      "url": "https://github.com/microsoft/vscode/issues/336587",
+      "created_at": "2026-09-17T16:01:46Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Agent Host loses conversation context when config refresh fails to resume the session and falls back to createSession with an empty context",
+        "why_easy": "Requires understanding a race condition between session teardown and resume across Agent Host and SDK boundaries; root cause spans config refresh, event reconstruction, and fallback logic"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336582,
+      "title": "Chat folder picker flickering, layout issues",
+      "url": "https://github.com/microsoft/vscode/issues/336582",
+      "created_at": "2026-09-17T14:57:16Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Chat folder picker menu flickers and remote submenu disappears, preventing folder selection",
+        "why_easy": "Lacks reproduction steps, file pointers, and component guidance; requires navigating VS Code's large codebase to locate and debug UI flickering issues in the chat folder picker system"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336580,
+      "title": "Transition GitHub and Microsoft authentication to host-owned auth",
+      "url": "https://github.com/microsoft/vscode/issues/336580",
+      "created_at": "2026-09-17T14:23:10Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Migrate GitHub and Microsoft authentication from VS Code-owned to host-owned model per the agent host protocol specification.",
+        "why_easy": "Requires deep architectural understanding of VS Code's authentication providers, the agent host protocol, security-sensitive token handling, and coordination across multiple components with no clear isolated starting point for newcomers."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336579,
+      "title": "Extension that runs inline code with instant feedback, displaying runtime values in your editor as you type.",
+      "url": "https://github.com/microsoft/vscode/issues/336579",
+      "created_at": "2026-09-17T14:21:20Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Create a native VS Code extension that displays inline runtime values and outputs as code is typed, supporting multiple programming languages",
+        "why_easy": "This is a complex architectural problem requiring deep knowledge of VS Code extension APIs, language runtime integration, real-time code evaluation, sandboxing, and cross-language support\u2014essentially building a simplified Quokka.js with no clear scope or implementation path."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336578,
+      "title": "Portable .mcp.json is not read into configuration",
+      "url": "https://github.com/microsoft/vscode/issues/336578",
+      "created_at": "2026-09-17T14:20:20Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "VS Code Copilot Chat Extension does not read workspace-level .mcp.json files despite documentation indicating it should be a valid configuration location",
+        "why_easy": "Clear reproduction steps and a working workaround suggest a simple path-resolution issue, but requires VS Code extension development experience and familiarity with the Copilot Chat codebase to locate and test the fix"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336577,
+      "title": "Delay Sign in to ChatGPT entry until GitHub authentication state is resolved",
+      "url": "https://github.com/microsoft/vscode/issues/336577",
+      "created_at": "2026-09-17T14:18:11Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Delay showing the ChatGPT sign-in option in the Accounts menu until GitHub authentication state is resolved during startup.",
+        "why_easy": "The issue is well-defined and focused, but requires understanding VS Code's authentication provider initialization timing and the differences between ChatGPT (agent host) and GitHub (extension host) availability\u2014non-trivial in a large codebase without prior auth system familiarity."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336576,
+      "title": "Sign in to GitHub entry is missing after signing out of Copilot",
+      "url": "https://github.com/microsoft/vscode/issues/336576",
+      "created_at": "2026-09-17T14:16:34Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Signing out of Copilot removes the 'Sign in to GitHub' entry from the Accounts menu, preventing re-authentication.",
+        "why_easy": "Requires understanding VS Code's authentication state management and accounts menu logic, but the fix is likely a single-location change once the bug is found."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336575,
+      "title": "Open Markdown preview in a browser or save as HTML",
+      "url": "https://github.com/microsoft/vscode/issues/336575",
+      "created_at": "2026-09-17T14:09:46Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add ability to export Markdown preview as HTML or open it in an external browser",
+        "why_easy": "Requires learning VS Code's command and API architecture despite the HTML already being available from the existing webview renderer"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98820,
+      "title": "React Compiler + Turbopack: lazy useState initializer throws TDZ when helper function declarations appear later in the same hook",
+      "url": "https://github.com/vercel/next.js/issues/98820",
+      "created_at": "2026-09-17T14:31:30Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "React Compiler transforms helper functions to const, causing lazy useState initializers to hit temporal dead zone when referencing those helpers.",
+        "why_easy": "Hard to pick up because it requires deep knowledge of React Compiler's internal transformations and likely changes to Turbopack's Rust React Compiler implementation, despite the clear reproduction case and well-documented problem."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98804,
+      "title": "Turbopack: nested next/dynamic gets no SSR stylesheet link, causing FOUC and layout shift (App Router)",
+      "url": "https://github.com/vercel/next.js/issues/98804",
+      "created_at": "2026-09-17T08:40:51Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Turbopack fails to include SSR stylesheet links for nested next/dynamic imports, causing FOUC and layout shift",
+        "why_easy": "Hard: requires deep understanding of Turbopack's CSS extraction and SSR rendering pipeline, module resolution logic, and the regression between 16.0.x and 16.1.0+ \u2014 sophisticated build system debugging needed"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23512,
+      "title": "Avoid browser-external warnings for imports explicitly disabled by browser mappings",
+      "url": "https://github.com/vitejs/vite/issues/23512",
+      "created_at": "2026-09-17T16:17:18Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Suppress browser-externalized warnings for modules explicitly disabled via the package `browser` field, while keeping warnings for unmapped Node imports",
+        "why_easy": "Well-defined problem with a minimal reproduction, but requires understanding Vite's module resolution pipeline and integrating browser-field metadata into the warning logic"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23508,
+      "title": "lightningcss: relative @imports in imported preprocessor files resolve from the entry file directory",
+      "url": "https://github.com/vitejs/vite/issues/23508",
+      "created_at": "2026-09-17T10:08:18Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Relative @imports in preprocessor files imported from CSS entries resolve from the wrong directory when using lightningcss transformer",
+        "why_easy": "Root cause is clearly identified, the fix is straightforward (pass filePath instead of id to preprocessor functions), and a reproduction case is provided"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23506,
+      "title": "mergeConfig crashes with TypeError when server.ws is false and server.hmr is merged",
+      "url": "https://github.com/vitejs/vite/issues/23506",
+      "created_at": "2026-09-17T10:02:25Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "mergeConfig crashes when merging server.hmr with server.ws set to false due to missing property descriptors",
+        "why_easy": "Excellent documentation with clear root cause analysis and reproduction case, but requires understanding property descriptors and Vite's config merging system; author already has a fix prepared"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23504,
+      "title": "The version-check input on the Releases page doesn't fit the version string",
+      "url": "https://github.com/vitejs/vite/issues/23504",
+      "created_at": "2026-09-17T08:50:39Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Replace fixed width with dynamic content-sizing for the version input field on the Releases page",
+        "why_easy": "The issue provides both problem and solution; it's a single CSS property change in one Vue component with no logic modifications needed"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36351,
+      "title": "[Bug]: Missing minimumReleaseAge prompt when initializing Storybook with pnpm 12",
+      "url": "https://github.com/storybookjs/storybook/issues/36351",
+      "created_at": "2026-09-17T12:14:32Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "When Storybook CLI is cached from a previous pnpm run, the minimumReleaseAge prompt is skipped, causing installation to fail.",
+        "why_easy": "The issue has clear reproduction steps and a specific trigger (pnpm caching + minimumReleaseAge configuration), but requires debugging pnpm's environment handling and the CLI's prompt logic to diagnose why cached invocations skip the prompt flow."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70139,
+      "title": "/settings urls with fragments do not scroll correctly",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70139",
+      "created_at": "2026-09-17T14:13:20Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Settings page with URL fragments scrolls to incorrect section on page refresh",
+        "why_easy": "Requires debugging scroll-to-anchor behavior in a SPA context, understanding element IDs and layout, and potentially diagnosing timing or calculation issues\u2014not ideal for first contributors unfamiliar with the codebase."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70127,
+      "title": "[Naomi's Sprint] Add Section Headers to Long Lessons",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70127",
+      "created_at": "2026-09-17T09:55:07Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add section headers to 83 long curriculum lectures to break up content and improve scannability.",
+        "why_easy": "Each lecture requires only reading and inserting ##-style headers at logical breaks with clear acceptance criteria and examples provided; no coding or complex tooling needed."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70121,
+      "title": "Correct the closing phrase in the CSS intro",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70121",
+      "created_at": "2026-09-17T09:15:45Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Change 'and many more.' to 'and much more.' in two CSS intro text entries in the i18n localization file",
+        "why_easy": "Simple string replacement in a single JSON file with no logic changes, testing, or complex understanding required\u2014a perfect first contribution."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70120,
+      "title": "Clarify the semantic HTML lecture intros",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70120",
+      "created_at": "2026-09-17T09:15:39Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update intro text for semantic HTML lectures to clarify element usage and fix awkward phrasing",
+        "why_easy": "The issue provides exact file locations and replacement text, requiring only straightforward JSON text edits with no logic or code changes."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70119,
+      "title": "Correct punctuation in the HTML lecture intros",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70119",
+      "created_at": "2026-09-17T09:15:32Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix punctuation in HTML lecture introductions in the English i18n JSON file.",
+        "why_easy": "Exact corrections are specified for straightforward text replacements in a single JSON file with no code logic or system understanding required."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70118,
+      "title": "Correct the HTML project intro text",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70118",
+      "created_at": "2026-09-17T09:15:26Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix two typos in curriculum intro text: change 'anchor' to 'a' element reference and add missing period to SVG workshop sentence",
+        "why_easy": "Straightforward text corrections in a single JSON file with exact locations and expected values clearly specified in the issue"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70117,
+      "title": "Add images to the effective web search lesson",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70117",
+      "created_at": "2026-09-17T08:53:57Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Add six images to the effective web search lesson with descriptive alt text based on provided URLs and placement guidance.",
+        "why_easy": "Clear image URLs and placement guidance are provided; task only requires adding markdown image syntax and writing alt text with no complex logic. However, the issue is explicitly blocked by a pending CDN PR, preventing immediate work."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70116,
+      "title": "Add the README image to the common file types lesson",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70116",
+      "created_at": "2026-09-17T08:53:53Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add the missing README image to the common file types lesson with descriptive alt text",
+        "why_easy": "The task is a straightforward markdown edit\u2014insert an image reference after a specific paragraph and write alt text\u2014once the blocking CDN PR merges; no code changes or complex context needed."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70115,
+      "title": "Add images to the file search lesson",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70115",
+      "created_at": "2026-09-17T08:53:49Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add 8 educational images to a lesson about file search with descriptive alt text",
+        "why_easy": "The contributor has clear image URLs, exact placement guidance after specific text passages, and only needs to write alt text\u2014no code changes or complex logic required."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70114,
+      "title": "Add images to the Explorer/Finder file management lesson",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70114",
+      "created_at": "2026-09-17T08:53:44Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add 24 images to the file management lesson with descriptive alt text based on provided CDN URLs and original transcript placements.",
+        "why_easy": "The task is mechanical with clear placement guidance already provided; it only requires embedding images and writing alt text, with no code logic or complex system knowledge required. The only blocker is external (waiting for the CDN PR to merge)."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70113,
+      "title": "Add images to the DOM Inspector and DevTools lesson",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70113",
+      "created_at": "2026-09-17T08:39:07Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add two screenshots to the DOM Inspector and DevTools lesson with descriptive alt text.",
+        "why_easy": "The task is straightforward markdown editing with provided CDN URLs and clear placement guidance; the main blocker is an external CDN PR merge, not implementation complexity."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70107,
+      "title": "Suggestion: add a diagram to the \"What Is the CSS Box Model\" lesson",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70107",
+      "created_at": "2026-09-16T22:13:01Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Add an SVG diagram to the CSS Box Model lesson to visualize the four nested areas (margin, border, padding, content)",
+        "why_easy": "The technical implementation is straightforward\u2014adding an SVG file and referencing it in lesson markdown\u2014but the issue is blocked pending maintainer approval of the curriculum content."
+      }
+    },
+    {
+      "repo": "nestjs/nest",
+      "number": 17800,
+      "title": "ValidationPipe returns 500 instead of 400 for a deeply nested JSON body",
+      "url": "https://github.com/nestjs/nest/issues/17800",
+      "created_at": "2026-09-17T14:35:40Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "ValidationPipe returns 500 instead of 400 when request body is too deeply nested and exhausts the call stack",
+        "why_easy": "Excellent reproduction with debugger screenshots and clear root cause; NestJS has precedent for mapping similar library errors (#17421, #17769). The challenge is deciding whether to catch the error in ValidationPipe or the exception filter, and ensuring the fix doesn't mask legitimate stack overflows."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50532,
+      "title": "Docs: conflicting descriptions of the private flag for realtime.send / realtime.send_binary",
+      "url": "https://github.com/supabase/supabase/issues/50532",
+      "created_at": "2026-09-17T15:39:05Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix inconsistent and contradictory descriptions of the private flag parameter in realtime.send documentation examples",
+        "why_easy": "The issue clearly identifies all three problem locations in a single .mdx file and provides the exact fix needed; the contributor just needs to update SQL comments and one note with consistent parameter descriptions"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50531,
+      "title": "Dashboard: Authentication user details drawer close button does not close the panel",
+      "url": "https://github.com/supabase/supabase/issues/50531",
+      "created_at": "2026-09-17T15:38:14Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Close button in Authentication user details drawer doesn't close the panel",
+        "why_easy": "The issue is well-isolated to a single UI component with clear reproduction steps and likely requires only fixing a missing or broken event handler."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50530,
+      "title": "CLI docs reference inbucket instead of local_smtp and mailpit",
+      "url": "https://github.com/supabase/supabase/issues/50530",
+      "created_at": "2026-09-17T15:35:30Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update CLI configuration documentation to reference local_smtp and MailPit instead of the deprecated inbucket setting",
+        "why_easy": "The required changes are straightforward documentation updates in a single file with clear guidance on what needs to change, and the code change has already been implemented in the codebase."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50527,
+      "title": "Docs suggest using npx plugins, but I don't think that's maintained anymore",
+      "url": "https://github.com/supabase/supabase/issues/50527",
+      "created_at": "2026-09-17T14:52:56Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update documentation to recommend using the `skills` CLI instead of the deprecated `plugins` package for Supabase AI tools",
+        "why_easy": "Documentation updates are low-risk and clearly scoped; the problem is identified and the solution (switching to `skills` CLI) is known; command syntax can be verified by testing or confirmed via maintainer feedback"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51806,
+      "title": "Upgrade to Spring Session 4.2.0-M1",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51806",
+      "created_at": "2026-09-17T05:48:29Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade Spring Session dependency to version 4.2.0-M1",
+        "why_easy": "Simple version bump in principle, but milestone releases risk breaking changes and require deep compatibility testing; the team-only label also signals this is reserved for core maintainers."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51805,
+      "title": "Upgrade to Spring Security 7.2.0-M2",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51805",
+      "created_at": "2026-09-17T05:48:25Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade Spring Security dependency to version 7.2.0-M2",
+        "why_easy": "Technically straightforward\u2014update a version number in the build config\u2014but marked team-only, indicating the Spring Boot maintainers want to handle this internally, likely due to coordination needs or integration complexity that isn't obvious from the issue text."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51804,
+      "title": "Upgrade to Spring LDAP 4.2.0-M1",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51804",
+      "created_at": "2026-09-17T05:48:21Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade the Spring LDAP dependency from its current version to 4.2.0-M1.",
+        "why_easy": "Dependency upgrades are mechanically straightforward (update version string, run tests), but the \"team-only\" label and pre-release (M1) status indicate this is reserved for the Spring Boot team's coordination and testing, making it unsuitable for external contributors."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51794,
+      "title": "Layer XSD files are missing from https://www.springframework.org/schema/boot/layers",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51794",
+      "created_at": "2026-09-16T22:49:26Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Deploy or locate missing XSD schema files for Spring Boot layers that should be served from https://www.springframework.org/schema/boot/layers",
+        "why_easy": "The problem is clearly scoped as an operational or build-system task rather than complex development work, but the team-only label indicates this requires internal deployment access and is not suitable for external contributors."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 68962,
+      "title": "ENH: Total (that is: sum or \"margins\") for value_counts()",
+      "url": "https://github.com/pandas-dev/pandas/issues/68962",
+      "created_at": "2026-09-17T07:23:17Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add a 'margins' parameter to value_counts() to display total counts alongside value counts, similar to crosstab().",
+        "why_easy": "Clear precedent exists in crosstab(), but requires navigating pandas internals and handling multiple edge cases (NaN handling, dtype preservation, output format)."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 68935,
+      "title": "DOC: Broken links in stable \"Debugging C extensions\" documentation",
+      "url": "https://github.com/pandas-dev/pandas/issues/68935",
+      "created_at": "2026-09-16T21:56:01Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix three broken external links in the stable 'Debugging C extensions' documentation by updating URLs to include .html extensions",
+        "why_easy": "The exact problem is clearly identified with specific broken URLs and their corrected replacements; this is a straightforward find-and-replace task in the documentation source"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32671,
+      "title": "BUG: np.einsum returns wrong results or a segfault, no error when a new style dtypes.",
+      "url": "https://github.com/numpy/numpy/issues/32671",
+      "created_at": "2026-09-17T02:49:53Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "einsum produces incorrect results or segfaults with new-style dtypes (type number -1) due to improper kernel lookup bounds checking in einsum_sumprod.c.src",
+        "why_easy": "The root cause is clearly identified (tables indexed at -1), but fixing it requires deep knowledge of NumPy's C internals, dtype system, and einsum kernel lookup logic; the author notes the proper fix is a significant effort"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34979,
+      "title": "Clarify the random_state description in train_test_split documentation",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34979",
+      "created_at": "2026-09-17T11:04:10Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add clarification to train_test_split documentation explaining that fixed random_state values produce reproducible splits",
+        "why_easy": "Straightforward docstring update that requires adding one or two sentences to the random_state parameter description with no code changes"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34977,
+      "title": "\u26a0\ufe0f CI failed on Wheel builder (last failure: Sep 17, 2026) \u26a0\ufe0f",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34977",
+      "created_at": "2026-09-17T04:53:44Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "CI wheel builder workflow failed on Sep 17, 2026 but no root cause details are provided",
+        "why_easy": "Hard\u2014this is a CI infrastructure issue with minimal context; diagnosing it requires diving into build logs, understanding scikit-learn's wheel-building setup, and likely infrastructure expertise that new contributors lack. The issue explicitly states it's not ready for a PR and needs triage first."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34975,
+      "title": "BUG confusion_matrix_at_thresholds / roc_auc_score lose precision on plain numpy when y_score is float32 (regression from #34817)",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34975",
+      "created_at": "2026-09-17T00:57:18Z",
+      "digest_date": "2026-09-17",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "confusion_matrix_at_thresholds and related functions lose integer precision when y_score is float32 due to regression in PR #34817",
+        "why_easy": "The bug location and cause are clearly identified with a minimal reproduction case, but fixing it requires understanding the context of PR #34817 to ensure the fix doesn't regress the original precision-loss fix while handling float32 inputs correctly"
       }
     }
   ]
