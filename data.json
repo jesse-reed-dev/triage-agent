@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-17",
+  "updated": "2026-09-18",
   "issues": [
     {
       "repo": "react/react-native",
@@ -28943,6 +28943,516 @@
         "good_first_issue": false,
         "one_line_summary": "confusion_matrix_at_thresholds and related functions lose integer precision when y_score is float32 due to regression in PR #34817",
         "why_easy": "The bug location and cause are clearly identified with a minimal reproduction case, but fixing it requires understanding the context of PR #34817 to ensure the fix doesn't regress the original precision-loss fix while handling float32 inputs correctly"
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58590,
+      "title": "RN 0.87 | Blank dev tools is coming",
+      "url": "https://github.com/react/react-native/issues/58590",
+      "created_at": "2026-09-18T11:56:18Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Dev tools displays blank screen when opened via 'j' command in metro on Android in RN 0.87",
+        "why_easy": "Hard to pick up\u2014the issue is not well-characterized (needs repro and author feedback labels), the root cause is unclear (could be metro, dev tools UI, Android WebView, or browser), and fixing it requires deep debugging of complex dev tools infrastructure across multiple systems."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58588,
+      "title": "[Android] Set AccessibilityNodeInfo.stateDescription so TalkBack stops reading \"checked. on.\" on switches",
+      "url": "https://github.com/react/react-native/issues/58588",
+      "created_at": "2026-09-18T10:30:03Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Android TalkBack redundantly reads \"checked. on.\" for switches instead of just the state once by using AccessibilityNodeInfo.stateDescription.",
+        "why_easy": "The fix is well-scoped to a single file (ReactAccessibilityDelegate.kt) with a clear API to call (setStateDescription), but requires native Kotlin development, Android accessibility API knowledge, and a TalkBack testing environment to verify."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50320,
+      "title": "expo-router: iOS Release build crashes on startup when no scheme is configured",
+      "url": "https://github.com/expo/expo/issues/50320",
+      "created_at": "2026-09-18T09:26:29Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "iOS Release builds of expo-router crash on startup when no scheme is configured.",
+        "why_easy": "A minimal reproducible example with clear steps is provided, but debugging iOS Release builds requires native development expertise, Mac/Xcode setup, and likely deep knowledge of expo-router's native code bridging."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50317,
+      "title": "[expo-router][web] Browser Back after a replace() remounts the whole tree: the forked createMemoryHistory never syncs its index on popstate",
+      "url": "https://github.com/expo/expo/issues/50317",
+      "created_at": "2026-09-18T08:45:09Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Add missing index resync in createMemoryHistory's popstate handler to prevent tree remount on browser back after replace()",
+        "why_easy": "The fix is a single identified line of code in a known location; the issue provides a reproduction case and exact before/after proof of the solution."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50310,
+      "title": "[android][audio] AudioStream emits unwritten PCM bytes after a short read",
+      "url": "https://github.com/expo/expo/issues/50310",
+      "created_at": "2026-09-18T01:23:54Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "AudioStream emits uninitialized bytes beyond actual PCM data when AudioRecord returns fewer bytes than buffer capacity",
+        "why_easy": "Issue is exceptionally well-researched with root cause pinpointed and fix proposed, but requires understanding Java/Kotlin ByteBuffer semantics, JNI/JSI bridge code, and Android audio APIs to implement and verify safely"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336756,
+      "title": "Wrap all lines in diffs after Copilot edits",
+      "url": "https://github.com/microsoft/vscode/issues/336756",
+      "created_at": "2026-09-18T11:03:35Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Wrapped lines in diffs should remain wrapped when displaying Copilot edits",
+        "why_easy": "The problem is well-defined (inconsistent line wrapping between changed and unchanged lines), but requires finding and modifying the diff rendering logic in VS Code's Copilot integration, which demands familiarity with the codebase."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336755,
+      "title": "GitHub Copilot",
+      "url": "https://github.com/microsoft/vscode/issues/336755",
+      "created_at": "2026-09-18T11:02:10Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "User unable to integrate GitHub Copilot extension with VS Code but provides no error messages or reproduction steps",
+        "why_easy": "Vague problem statement with no error messages, logs, or reproduction steps makes it impossible to debug without further user clarification"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336748,
+      "title": "Chat - A session opened in a window cannot be reopened",
+      "url": "https://github.com/microsoft/vscode/issues/336748",
+      "created_at": "2026-09-18T10:21:38Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Chat sessions moved to a new window don't persist to the Sessions list and fail to reopen after restart",
+        "why_easy": "Clear reproduction steps and isolated to Chat feature, but requires understanding VS Code's multi-window session state management and persistence layer in a large codebase"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336745,
+      "title": "Cannot select a new target folder in \"Move & redirect\"",
+      "url": "https://github.com/microsoft/vscode/issues/336745",
+      "created_at": "2026-09-18T09:58:24Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "The 'Move & redirect' feature doesn't show newly created folders in the selection list and lacks a 'create new folder' option",
+        "why_easy": "The issue doesn't specify which VSCode component implements this feature, making it difficult to locate in a large codebase; the feature itself is not well-documented from the issue description, requiring significant investigation before even starting a fix"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336743,
+      "title": "Debugger auto attach no longer works with Node.js",
+      "url": "https://github.com/microsoft/vscode/issues/336743",
+      "created_at": "2026-09-18T09:47:54Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Node.js debugger auto-attach feature stopped working in VS Code 1.138.0, even with --inspect flag and always filter setting enabled",
+        "why_easy": "Clear reproduction steps and recent regression point (1.138.0 from Sept 15) help narrow the search, but requires deep knowledge of VS Code's debugging architecture and Node.js extension to identify what broke in the release"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336742,
+      "title": "UX Issue: Unable to reopen AI chat in Editor Mode after closing, forced into Agents Mode (Antigravity UI)",
+      "url": "https://github.com/microsoft/vscode/issues/336742",
+      "created_at": "2026-09-18T09:45:44Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "User cannot reopen Copilot Chat in Editor Mode after closing it, and reports code editing and keybinding failures in Agents Mode.",
+        "why_easy": "Vague reproduction steps, unclear/unofficial terminology (Antigravity/Agents Mode), and multiple interrelated problems (UI state restoration, code editing failures, keybinding blocking) make it difficult to isolate root cause without significant clarification."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336741,
+      "title": "Markdown editor: Make the comment box repositionable, with a pointer line to its anchored range",
+      "url": "https://github.com/microsoft/vscode/issues/336741",
+      "created_at": "2026-09-18T09:44:18Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Make comment boxes draggable within the editor while drawing visual pointer lines connecting them to their anchored ranges",
+        "why_easy": "Hard \u2014 requires coordinating multiple UI systems (drag handling, scroll synchronization, pointer line rendering with complex position math), managing state across interacting components, and careful event handling for edge cases like overlapping boxes or viewport resizing"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336739,
+      "title": "Electron Script Fails with ERR_UNKNOWN_FILE_EXTENSION on Node.js",
+      "url": "https://github.com/microsoft/vscode/issues/336739",
+      "created_at": "2026-09-18T09:34:59Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "npm run electron fails on Node.js v22 with ERR_UNKNOWN_FILE_EXTENSION when invoking .ts file without --experimental-strip-types flag",
+        "why_easy": "The root cause and reproduction steps are explicit; the fix is to add --experimental-strip-types to the node command or ensure TypeScript is pre-compiled to JavaScript, but it requires understanding VS Code's build system and access to Node.js v22 for testing."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336738,
+      "title": "Agents window: let us center the bottom panel instead of it always spanning full width",
+      "url": "https://github.com/microsoft/vscode/issues/336738",
+      "created_at": "2026-09-18T09:24:32Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Allow center alignment of the bottom panel in the Agents window instead of forcing full-width layout",
+        "why_easy": "The exact code location and problem are identified, but layout changes require careful testing to avoid breaking sidebar behavior and may need related changes elsewhere in the layout system."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336736,
+      "title": "Custom endpoints can send unsupported sampling parameters",
+      "url": "https://github.com/microsoft/vscode/issues/336736",
+      "created_at": "2026-09-18T09:13:19Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Model-specific sampling constraints should override generic agent sampling defaults in custom endpoint requests",
+        "why_easy": "Clear root cause and suggested implementation direction, but requires understanding the request-building pipeline and ensuring model-specific constraints apply across multiple request formats"
+      }
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 49159,
+      "title": "FocusTrap cleanup calls nodeToRestore.current.focus() unconditionally since #48368, can throw when relatedTarget lacks a .focus method (e.g. under jsdom)",
+      "url": "https://github.com/mui/material-ui/issues/49159",
+      "created_at": "2026-09-17T18:32:30Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "FocusTrap cleanup throws TypeError when relatedTarget lacks .focus() method in jsdom test environments after jsdom v30.1.0 update",
+        "why_easy": "The code fix is trivial (restore a defensive check before calling .focus()), but reproducing it reliably and writing a proper test case requires understanding MUI's test setup and jsdom event dispatch quirks."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23518,
+      "title": "False \"points to a source file outside its package\" warning for sourcemaps with a URL sourceRoot",
+      "url": "https://github.com/vitejs/vite/issues/23518",
+      "created_at": "2026-09-18T11:30:01Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Fix false 'outside package' sourcemap warnings for URL sourceRoots like https://...",
+        "why_easy": "The problem is isolated to one function with a clear root cause\u2014URL sourceRoots shouldn't be resolved with realpath; a conditional check to detect and skip URL processing should fix it."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36356,
+      "title": "[Bug]: empty string arguments get omitted when parse to query string (e.g. open new window)",
+      "url": "https://github.com/storybookjs/storybook/issues/36356",
+      "created_at": "2026-09-18T08:14:30Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Empty string arguments are dropped from query strings when opening stories in new tabs",
+        "why_easy": "The problematic code location is identified directly, and the fix likely involves adjusting the falsy-value filter to preserve empty strings\u2014a small conditional change"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70155,
+      "title": "Device Loan Ledger: Placed before Loops in the Curriculum",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70155",
+      "created_at": "2026-09-18T10:28:18Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Move Device Loan Ledger challenge from Objects to Loops module and add documentation about JSON.parse(JSON.stringify()) for object cloning",
+        "why_easy": "The task is straightforward curriculum reorganization\u2014relocating a challenge module and adding content discussion\u2014which doesn't require deep codebase knowledge or debugging"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30341,
+      "title": "TypeScript defineContract loses scalar, relation, aggregate, and prepared-parameter types in v8 rc.11",
+      "url": "https://github.com/prisma/orm/issues/30341",
+      "created_at": "2026-09-18T04:24:14Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "TypeScript contract types are lost when using defineContract with postgres() in v8 rc.11",
+        "why_easy": "Requires deep knowledge of Prisma's contract-builder type system and TypeScript generics; multiple independent declaration file issues need fixing, and the truncated body suggests additional context is missing."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30340,
+      "title": "[v8] Array default discrepancy between PSL compiler and schema verifier (dbgenerated rejected, but @default([]) fails verification)",
+      "url": "https://github.com/prisma/orm/issues/30340",
+      "created_at": "2026-09-18T04:03:35Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Schema verifier incorrectly rejects empty array defaults in PostgreSQL as mismatches with @default([])",
+        "why_easy": "Well-scoped problem with clear reproduction steps, but requires understanding Prisma's schema verification layer and PostgreSQL's array default normalization across multiple column types."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30339,
+      "title": "[v8] RUNTIME.DECODE_FAILED on PostgreSQL custom enum arrays (\"expected an array from the driver for many-typed column, got string\")",
+      "url": "https://github.com/prisma/orm/issues/30339",
+      "created_at": "2026-09-18T04:03:30Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Prisma 8 fails to decode PostgreSQL custom enum array columns because the driver returns unparsed array strings instead of arrays",
+        "why_easy": "The root cause is well-understood (node-postgres doesn't register parsers for custom enum OIDs) and there's a clear reproduction case, but the fix requires modifying Prisma's codec/decoding infrastructure and understanding PostgreSQL type handling, making it unsuitable for newcomers"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30338,
+      "title": "[v8] `contract infer` omits @@map for PascalCase PostgreSQL tables, breaking db verify and db sign",
+      "url": "https://github.com/prisma/orm/issues/30338",
+      "created_at": "2026-09-18T04:03:25Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "contract infer omits @@map for PascalCase PostgreSQL tables, causing db verify and db sign to fail",
+        "why_easy": "The problem is clearly scoped and reproducible with known workaround, but fixing it requires navigating Prisma's contract inference logic, understanding PostgreSQL quoted identifier handling, and familiarity with the v8 contract system"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50552,
+      "title": "Example: AffixIO gate for agent-triggered DB/admin actions",
+      "url": "https://github.com/supabase/supabase/issues/50552",
+      "created_at": "2026-09-17T23:03:53Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "docs",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Create an example showing how to gate agent-triggered Supabase admin operations using AffixIO for host-side action verification before privileged calls",
+        "why_easy": "Clear scope and well-documented pattern (examples/ai location, sketch provided), but requires familiarity with Supabase admin APIs, AffixIO integration, and agent tool patterns"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50550,
+      "title": "Legacy service_role key cannot be revealed or copied in Studio ConnectSheet",
+      "url": "https://github.com/supabase/supabase/issues/50550",
+      "created_at": "2026-09-17T21:17:33Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Legacy service_role keys cannot be revealed or copied in ConnectSheet due to an incorrect API call on managed Supabase projects",
+        "why_easy": "Recent PR #50516 makes the code location obvious and repro steps are clear, but the fix requires understanding Supabase's legacy vs. new key authentication flow and why managed projects fail differently than self-hosted"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51834,
+      "title": "Upgrade to Native Build Tools Plugin 1.1.14",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51834",
+      "created_at": "2026-09-18T11:47:39Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade the Native Build Tools Plugin dependency to version 1.1.14.",
+        "why_easy": "Dependency upgrades are typically mechanical version bumps, but the explicit team-only label reserves this for maintainers and suggests internal-only work."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51832,
+      "title": "Upgrade to Hibernate 7.4.9.Final",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51832",
+      "created_at": "2026-09-18T09:40:11Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade Hibernate dependency to version 7.4.9.Final",
+        "why_easy": "The mechanical change is straightforward (update version in build config), but the 'team-only' label explicitly marks this for Spring maintainers only, likely due to coordination, testing, or release-cycle requirements; the superseded issue also suggests prior context not available to external contributors."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51831,
+      "title": "Upgrade to Elasticsearch Client 9.5.4",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51831",
+      "created_at": "2026-09-18T09:40:05Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade the Elasticsearch Client library to version 9.5.4",
+        "why_easy": "Dependency upgrades may involve breaking API changes requiring code updates; the 'team-only' label signals this needs internal coordination and domain expertise."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 69011,
+      "title": "BUG: Value-dependent formatting when casting from datetime to string",
+      "url": "https://github.com/pandas-dev/pandas/issues/69011",
+      "created_at": "2026-09-18T10:13:47Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Datetime-to-string conversion formatting depends on values instead of dtype unit, causing inconsistent output",
+        "why_easy": "Clear issue with reproducible example, but requires familiarity with pandas' datetime casting internals and likely involves Cython code; straightforward once the formatting logic is located"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 69006,
+      "title": "DOC: Incorrect missing-value representation in Python StringDtype documentation",
+      "url": "https://github.com/pandas-dev/pandas/issues/69006",
+      "created_at": "2026-09-18T08:41:05Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix documentation to correctly state that Python StringDtype stores missing values as pd.NA instead of np.nan",
+        "why_easy": "Simple text replacement in one documentation file with the exact change already suggested; no code changes or investigation required, making it ideal for a first contribution."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34987,
+      "title": "BUG fetch_file(url, folder=...) crashes with confusing FileNotFoundError instead of creating the directory",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34987",
+      "created_at": "2026-09-18T06:28:09Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "fetch_file(url, folder=...) should create the target directory when explicitly passed, matching the default-folder behavior",
+        "why_easy": "Root cause clearly identified (makedirs call nested in wrong conditional), fix is relocating one line of code, and complete reproduction steps with test case provided"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45949,
+      "title": "Simplified Chinese GitHub Mobile article displays an untranslated English body",
+      "url": "https://github.com/github/docs/issues/45949",
+      "created_at": "2026-09-18T11:52:16Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Translate the body and section headings of the GitHub Mobile article from English to Simplified Chinese",
+        "why_easy": "This is straightforward translation work for a Simplified Chinese speaker\u2014no code changes required, just translating existing English content following the docs repo's established translation workflow"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45948,
+      "title": "Docs say a PR from a linked branch is \"automatically linked\" to the issue, but it is not when the PR targets a non-default branch",
+      "url": "https://github.com/github/docs/issues/45948",
+      "created_at": "2026-09-18T10:12:33Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Document that automatic PR-to-issue linking only occurs when the PR targets the repository's default branch",
+        "why_easy": "The fix is straightforward documentation: add a caveat to the relevant article matching the pattern already established in other GitHub docs pages, with the issue reporter providing clear guidance on what to change and which existing docs to reference as a template."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45946,
+      "title": "Connecting to a private network docs reference archived repository",
+      "url": "https://github.com/github/docs/issues/45946",
+      "created_at": "2026-09-17T23:52:42Z",
+      "digest_date": "2026-09-18",
+      "triage": {
+        "category": "docs",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Update or replace a reference to an archived Codespaces OpenVPN repository in the connecting-to-a-private-network documentation article",
+        "why_easy": "The problem is clearly located and well-identified, but the fix requires investigating what the archived repo provided and finding or determining an appropriate maintained alternative or updated guidance"
       }
     }
   ]
