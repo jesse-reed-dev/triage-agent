@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-18",
+  "updated": "2026-09-19",
   "issues": [
     {
       "repo": "react/react-native",
@@ -29453,6 +29453,516 @@
         "good_first_issue": false,
         "one_line_summary": "Update or replace a reference to an archived Codespaces OpenVPN repository in the connecting-to-a-private-network documentation article",
         "why_easy": "The problem is clearly located and well-identified, but the fix requires investigating what the archived repo provided and finding or determining an appropriate maintained alternative or updated guidance"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50363,
+      "title": "[core][ios] currentViewController() uses UIApplication.shared.keyWindow, unreliable with ios.enableSceneSupport on SDK 57",
+      "url": "https://github.com/expo/expo/issues/50363",
+      "created_at": "2026-09-19T07:56:24Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Backport scene-aware window resolution fix from SDK 58 to SDK 57 to fix UI presentation failures when ios.enableSceneSupport is enabled",
+        "why_easy": "The exact fix is documented in two public commits and verified by the reporter, but requires iOS/UIKit knowledge and careful backporting to a release branch."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50362,
+      "title": "[expo-localization][android] useCalendars() does not re-render when the 12/24-hour clock setting changes",
+      "url": "https://github.com/expo/expo/issues/50362",
+      "created_at": "2026-09-19T07:05:07Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "useCalendars() hook doesn't re-render when Android's 12/24-hour clock setting changes",
+        "why_easy": "Root cause and solution are clearly identified with a code precedent (PR #36382) to follow, but requires Android development expertise and testing environment setup."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50349,
+      "title": "[expo-updates][Android] Downloaded update marked pending but never launches, even after a full cold start",
+      "url": "https://github.com/expo/expo/issues/50349",
+      "created_at": "2026-09-18T17:57:12Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Backport the update launch fixes from expo-updates 58.0.0 (PRs #49130 and #49470) to the 57.x line to fix silent failures where downloaded updates never launch on Android",
+        "why_easy": "The behavioral fixes already exist in 58.0.0 with clear PR descriptions identifying the exact code locations (DatabaseLauncher.getLaunchableUpdate, Loader.processUpdate) needing changes; a contributor would primarily apply known changes to the 57.x branch"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336881,
+      "title": "develop vscode-pet feature",
+      "url": "https://github.com/microsoft/vscode/issues/336881",
+      "created_at": "2026-09-19T10:18:09Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add additional features to the vscode-pet extension",
+        "why_easy": "The issue is extremely vague with no specifics about what features are desired, what success looks like, or acceptance criteria\u2014a contributor would need to propose ideas speculatively and iterate with maintainers before building anything."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336880,
+      "title": "Extension signature verification fails with \"Untrusted\" / Internal Code 36",
+      "url": "https://github.com/microsoft/vscode/issues/336880",
+      "created_at": "2026-09-19T09:34:45Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Extension signature verification fails with exit code 36 when vsce-sign reports valid certificate chains as 'NotValidForUsage'",
+        "why_easy": "The issue is well-investigated with clear reproduction steps and identified root cause, but fixing it requires deep expertise in Windows certificate chain validation, cryptographic verification internals, and understanding of both VS Code's extension loading and vsce-sign tool behavior."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336878,
+      "title": "File list grows too eagerly when widening the main pane",
+      "url": "https://github.com/microsoft/vscode/issues/336878",
+      "created_at": "2026-09-19T09:15:27Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "File list sidebar expands too eagerly when resizing to widen the main editor pane, when it should remain narrow",
+        "why_easy": "Requires understanding VS Code's layout resize logic and flex/grid distribution system, which is not obvious without prior codebase familiarity"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336877,
+      "title": "Newly-published extension could not be searched in VS Code",
+      "url": "https://github.com/microsoft/vscode/issues/336877",
+      "created_at": "2026-09-19T08:53:02Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Newly-published extensions cannot be searched in VS Code despite being available on the marketplace.",
+        "why_easy": "Requires understanding the extension marketplace's indexing/synchronization system between the backend and VS Code client, likely spanning multiple codebases and restricted systems."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336875,
+      "title": "Cursor Get Moved Immediately Somewhere After Typing While Opening The Git Diffs Inline Viewer",
+      "url": "https://github.com/microsoft/vscode/issues/336875",
+      "created_at": "2026-09-19T05:42:51Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Cursor unexpectedly moves when typing while the git diff inline viewer is open.",
+        "why_easy": "Reproducible with clear steps and video, but requires understanding VS Code's editor, diff viewer, and event handling systems to debug the timing or focus conflict causing the unwanted cursor movement."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336874,
+      "title": "confusing things",
+      "url": "https://github.com/microsoft/vscode/issues/336874",
+      "created_at": "2026-09-19T04:44:28Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "IntelliSense autocomplete provides incorrect or irrelevant suggestions while coding",
+        "why_easy": "The issue lacks reproduction steps, specific examples, programming language context, and a clear description of what text was expected versus received\u2014a contributor would need extensive clarification before investigation could begin"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336872,
+      "title": "Test: Late enterprise OTel policy recovery in Copilot Local",
+      "url": "https://github.com/microsoft/vscode/issues/336872",
+      "created_at": "2026-09-19T03:29:23Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "test",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Test that VS Code's Copilot Local Agent automatically restarts and recovers OpenTelemetry service when enterprise policy is updated on disk.",
+        "why_easy": "The test is well-documented with a provided helper script and clear verification steps, but requires prior familiarity with VS Code's extension host architecture and Copilot Local Agent internals to confidently run and interpret results."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336869,
+      "title": "Open in Editor opens the wrong workspace folder for WSL agent sessions",
+      "url": "https://github.com/microsoft/vscode/issues/336869",
+      "created_at": "2026-09-19T00:10:55Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Copilot agent 'Open in Editor' opens the wrong workspace folder when launched from a WSL remote session.",
+        "why_easy": "Clear reproduction steps and well-scoped to a specific feature, but requires WSL setup, deep understanding of VS Code's remote workspace URI handling, Copilot agent integration, and cross-platform debugging across multiple subsystems."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336866,
+      "title": "Allow configuring the default Changes view changeset",
+      "url": "https://github.com/microsoft/vscode/issues/336866",
+      "created_at": "2026-09-18T23:57:18Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add a user setting to configure which changeset displays by default in the Agents Changes view",
+        "why_easy": "The feature is clearly scoped with specific values and use case, but requires locating the Changes view initialization code in VS Code's large codebase and understanding how provider defaults and session switches interact"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336864,
+      "title": "Copilot CLI plugin discovery watches unrelated runtime database writes and republishes unchanged plugins",
+      "url": "https://github.com/microsoft/vscode/issues/336864",
+      "created_at": "2026-09-18T23:36:17Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Plugin discovery watches parent directory and republishes unchanged plugins when unrelated database files change, causing CPU waste and excessive logging",
+        "why_easy": "Root cause is precisely diagnosed with exact code locations and a reference implementation in the same codebase; fix is localized to adding event filtering to a single watcher callback"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336860,
+      "title": "Settings Sync: consider recovery from transient authentication session lookup failures",
+      "url": "https://github.com/microsoft/vscode/issues/336860",
+      "created_at": "2026-09-18T23:05:28Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix Settings Sync to automatically recover from transient authentication session lookup failures instead of requiring user sign-in",
+        "why_easy": "Requires understanding VS Code's authentication session management and Settings Sync state transitions, but the suggested bounded-retry mitigation provides a clear approach once the state model is understood."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336858,
+      "title": "Align repository enabledPlugins behavior with Copilot CLI",
+      "url": "https://github.com/microsoft/vscode/issues/336858",
+      "created_at": "2026-09-18T22:57:37Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Make VS Code treat enabledPlugins in .github/copilot/settings.json as repository-scoped activation (matching Copilot CLI) rather than just a recommendation.",
+        "why_easy": "Requires deep understanding of VS Code's plugin system, workspace trust mechanism, and settings architecture; involves coordinating repository-scoped vs global state, and references prior related work suggesting substantial context is needed."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336853,
+      "title": "Copilot: update nested ts-http-runtime dependency to avoid navigator migration diagnostics",
+      "url": "https://github.com/microsoft/vscode/issues/336853",
+      "created_at": "2026-09-18T22:11:37Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Update nested @typespec/ts-http-runtime dependency to a version that doesn't access navigator in Node.js extension host.",
+        "why_easy": "The fix is a straightforward dependency version bump with a provided reproduction test, but verification requires testing in VS Code's extension environment and confirming Copilot functionality still works, which adds setup complexity and domain-specific knowledge."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 336852,
+      "title": "test: remote agent host connection diagnostics",
+      "url": "https://github.com/microsoft/vscode/issues/336852",
+      "created_at": "2026-09-18T21:49:07Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "test",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Verify that remote Agent Host connection diagnostics are actionable and accurate in VS Code's web Agents Window across web and mobile layouts",
+        "why_easy": "Clear step-by-step testing instructions provided, but requires setting up remote agent infrastructure, testing across web and mobile platforms, and understanding VS Code's remote development architecture and diagnostics"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70197,
+      "title": "Typo: Replace \"Map\" with \"WeakMap\"",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70197",
+      "created_at": "2026-09-19T11:44:28Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix typo in the Map lecture by replacing 'Map' with 'WeakMap' on line 90 of the lecture markdown file",
+        "why_easy": "Single-word typo fix with a precise line number provided; requires only editing a markdown file and no code logic or testing involved."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70182,
+      "title": "Missing unauthenticated-access test coverage for 3 protected settings routes",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70182",
+      "created_at": "2026-09-18T19:53:00Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add three missing protected settings routes to the unauthenticated access test coverage list",
+        "why_easy": "Only requires adding three entries to an existing parametrized test array with the correct paths already identified in the issue."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70176,
+      "title": "Movie Ticket Booking Calculator Step 20: hint grammar and example indentation",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70176",
+      "created_at": "2026-09-18T16:16:42Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix grammar in hint text and correct code example indentation in Movie Ticket Booking Calculator Step 20",
+        "why_easy": "Two straightforward, localized fixes: add the article \"the\" to a hint and adjust comment indentation from 3 to 4 spaces, with clear expected behavior and minimal scope."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70174,
+      "title": "Movie Ticket Booking Calculator Step 18: hint grammar",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70174",
+      "created_at": "2026-09-18T16:16:31Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add missing article 'the' to a hint in the Movie Ticket Booking Calculator curriculum",
+        "why_easy": "The fix is a single-word addition to instructional text with clear before/after examples; locating and editing the content file requires no code logic or testing"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70173,
+      "title": "Movie Ticket Booking Calculator Step 17: age range and operator precedence explanation",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70173",
+      "created_at": "2026-09-18T16:16:25Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Clarify the age range endpoints and correct the operator precedence explanation in Movie Ticket Booking Calculator Step 17",
+        "why_easy": "The issue specifies exactly what text needs fixing and provides the correct replacements; only straightforward documentation edits needed"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70172,
+      "title": "Movie Ticket Booking Calculator Step 16: hint typo and age range",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70172",
+      "created_at": "2026-09-18T16:16:19Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix a typo in a hint and clarify the age range description in the Movie Ticket Booking Calculator Step 16 lesson",
+        "why_easy": "The changes are straightforward text corrections in curriculum documentation with clearly specified fixes"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70171,
+      "title": "Movie Ticket Booking Calculator Step 12: missing articles",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70171",
+      "created_at": "2026-09-18T16:16:14Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add missing articles ('the') to two sentences in the Movie Ticket Booking Calculator Step 12 curriculum lesson.",
+        "why_easy": "The issue explicitly shows the current text and the expected corrections side-by-side, making it a straightforward grammar fix with no code changes or complex logic involved."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70170,
+      "title": "Movie Ticket Booking Calculator Step 8: hint grammar and example indentation",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70170",
+      "created_at": "2026-09-18T16:16:08Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix grammar and indentation in a Python curriculum lesson hint and code example",
+        "why_easy": "The issue provides exact text to fix (add 'the' article to hint, adjust code indentation from 3 to 4 spaces) with clear before/after examples, requiring only straightforward text editing"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70168,
+      "title": "Movie Ticket Booking Calculator tests reject equivalent print expressions",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70168",
+      "created_at": "2026-09-18T16:14:52Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Test validation for print output is too strict and rejects equivalent print expressions that produce correct output.",
+        "why_easy": "The fix is straightforward: add string concatenation variants to the `print_calls` allowlist in four test locations, which is a mechanical change with no complex logic involved."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70167,
+      "title": "Python truthy and falsy values lesson examples and wording",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70167",
+      "created_at": "2026-09-18T15:59:43Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix logic error, smart apostrophes, punctuation, and unclear wording in the Python truthy/falsy values lesson",
+        "why_easy": "The issue provides exact before/after examples for each of the five fixes, all localized to one lesson file with no complex system logic involved."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70161,
+      "title": "Correct explanations and examples in the Python augmented assignments lesson",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70161",
+      "created_at": "2026-09-18T13:38:36Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix seven inaccurate explanations and examples in the Python augmented assignments curriculum lesson",
+        "why_easy": "The issue provides detailed before/after specifications for each correction; all fixes are text edits to curriculum content requiring no architectural knowledge, just finding and modifying the lesson file"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70160,
+      "title": "Correct definitions and terminology in the Python integers and floats lesson",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70160",
+      "created_at": "2026-09-18T13:38:21Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix incorrect terminology (methods vs functions) and update number definitions to include zero in the Python integers and floats lesson",
+        "why_easy": "All five corrections are straightforward text replacements with exact before/after examples provided in the issue description."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 69014,
+      "title": "BUG: test assert methods failing on object dtype column with lists of different nesting",
+      "url": "https://github.com/pandas-dev/pandas/issues/69014",
+      "created_at": "2026-09-18T12:24:57Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Comparing object dtype Series with lists of different nesting levels raises TypeError instead of proper AssertionError in testing assertion methods.",
+        "why_easy": "The issue is well-isolated with clear reproduction steps and a specific traceback in testing.pyx, but requires working with Cython code and understanding pandas' comparison logic for unhashable types."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32697,
+      "title": "BUG: `from_dlpack` runs the capsule destructor with a pending exception \u2192 spurious `SystemError` and skipped producer deleter",
+      "url": "https://github.com/numpy/numpy/issues/32697",
+      "created_at": "2026-09-19T07:11:45Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix `from_dlpack()` to raise the correct BufferError instead of SystemError for unsupported dtypes and ensure the producer's deleter is called to prevent memory leaks.",
+        "why_easy": "The problem is well-documented with clear root cause (DECREF during exception) and a detailed reproduction case, but fixing requires deep CPython C-API expertise in exception handling and capsule destructors, making it unsuitable for contributors unfamiliar with numpy's C internals."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34993,
+      "title": "GaussianRandomProjection and SparseRandomProjection with n_components=\"auto\" break get_feature_names_out and pandas output",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34993",
+      "created_at": "2026-09-18T23:59:07Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Store inferred n_components_ value instead of string 'auto' in _n_features_out to fix get_feature_names_out and pandas output for random projection estimators",
+        "why_easy": "The root cause is a single-line assignment bug (use n_components_ instead of n_components) with a clear reproduction case, but the reporter already has a fix and tests ready for PR, so it may not be available for new contributors."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34992,
+      "title": "Incorrect random_state description in RANSACRegressor documentation",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34992",
+      "created_at": "2026-09-18T18:41:40Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix incorrect random_state parameter description in RANSACRegressor docstring that wrongly references clustering algorithm behavior",
+        "why_easy": "Straightforward docstring update with a tested fix provided; no code logic changes needed, just documentation text replacement that the contributor has already validated."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 34989,
+      "title": "Clarify parameter/hyperparameter terminology in the cross-validation workflow diagram",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/34989",
+      "created_at": "2026-09-18T14:07:25Z",
+      "digest_date": "2026-09-19",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add a clarifying note to the cross-validation workflow diagram explaining how scikit-learn's 'parameters' terminology relates to machine-learning 'hyperparameters'",
+        "why_easy": "The scope is purely documentation with a specific, suggested fix already provided; no code changes, testing, or technical complexity required."
       }
     }
   ]
