@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-19",
+  "updated": "2026-09-21",
   "issues": [
     {
       "repo": "react/react-native",
@@ -29963,6 +29963,600 @@
         "good_first_issue": true,
         "one_line_summary": "Add a clarifying note to the cross-validation workflow diagram explaining how scikit-learn's 'parameters' terminology relates to machine-learning 'hyperparameters'",
         "why_easy": "The scope is purely documentation with a specific, suggested fix already provided; no code changes, testing, or technical complexity required."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58623,
+      "title": "website is not accessible",
+      "url": "https://github.com/react/react-native/issues/58623",
+      "created_at": "2026-09-21T14:23:19Z",
+      "digest_date": "2026-09-21",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58621,
+      "title": "Codegen: app codegenConfig with no spec files emits \"${PODS_ROOT}/..\" as Generate Specs input and causes an Xcode dependency cycle",
+      "url": "https://github.com/react/react-native/issues/58621",
+      "created_at": "2026-09-21T13:44:09Z",
+      "digest_date": "2026-09-21",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58610,
+      "title": "Add TypeScript declaration for the performance global",
+      "url": "https://github.com/react/react-native/issues/58610",
+      "created_at": "2026-09-21T01:32:41Z",
+      "digest_date": "2026-09-21",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58606,
+      "title": "React Native 0.88.x-rc crash on iPhone Duo",
+      "url": "https://github.com/react/react-native/issues/58606",
+      "created_at": "2026-09-19T17:37:39Z",
+      "digest_date": "2026-09-21",
+      "triage": null
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58601,
+      "title": "enableSchedulerDelegateInvalidation defaults to false, leaving Scheduler's deferred delegate callbacks exposed to use-after-free (EXC_BAD_ACCESS on the JS thread during teardown)",
+      "url": "https://github.com/react/react-native/issues/58601",
+      "created_at": "2026-09-19T14:03:01Z",
+      "digest_date": "2026-09-21",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50451,
+      "title": "[SDK 58][iOS][expo-modules-core] `ExpoViewShadowNode::layout` segfaults when a `matchContents` host's subtree also touches shadow nodes (nested host, or reanimated)",
+      "url": "https://github.com/expo/expo/issues/50451",
+      "created_at": "2026-09-21T15:49:23Z",
+      "digest_date": "2026-09-21",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50448,
+      "title": "[jest-expo] web and node presets drop the base moduleNameMapper (tsconfig paths unresolvable on web)",
+      "url": "https://github.com/expo/expo/issues/50448",
+      "created_at": "2026-09-21T14:54:39Z",
+      "digest_date": "2026-09-21",
+      "triage": null
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50429,
+      "title": "expo-image (Android): allowDownscaling={false} skips SafeDownsampleStrategy \u2014 fatal \"Canvas: trying to draw too large bitmap\" for images over the hardware canvas limit",
+      "url": "https://github.com/expo/expo/issues/50429",
+      "created_at": "2026-09-21T11:07:18Z",
+      "digest_date": "2026-09-21",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337129,
+      "title": "Workspace picker: Reduce max number of recent workspaces shown so Remote list is visible",
+      "url": "https://github.com/microsoft/vscode/issues/337129",
+      "created_at": "2026-09-21T19:40:04Z",
+      "digest_date": "2026-09-21",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337127,
+      "title": "Onboarding dialog does not show step2 after canceling trust dialog",
+      "url": "https://github.com/microsoft/vscode/issues/337127",
+      "created_at": "2026-09-21T19:30:54Z",
+      "digest_date": "2026-09-21",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337122,
+      "title": "chat.agent.sandbox.allowNetwork seems to have no effect",
+      "url": "https://github.com/microsoft/vscode/issues/337122",
+      "created_at": "2026-09-21T19:03:38Z",
+      "digest_date": "2026-09-21",
+      "triage": null
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337121,
+      "title": "Show type of suggested member",
+      "url": "https://github.com/microsoft/vscode/issues/337121",
+      "created_at": "2026-09-21T18:59:09Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Display type information alongside member names in C# autocomplete suggestions",
+        "why_easy": "Requires understanding VSCode's language server integration and LSP completion item protocol; not a localized change but involves coordinating language server data with the UI layer."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337120,
+      "title": "Setting editor.autoClosingBrackets to never has no effect",
+      "url": "https://github.com/microsoft/vscode/issues/337120",
+      "created_at": "2026-09-21T18:55:22Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The editor.autoClosingBrackets setting set to 'never' is ignored when typing braces in C# files",
+        "why_easy": "The issue is well-scoped to a single setting and reproducible, but finding the fix requires understanding how auto-closing bracket logic integrates with language-specific handlers and determining whether the root cause is in the core editor or the C# extension."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337113,
+      "title": "chat.agent.sandbox.fileSystem.linux appears to have no effect",
+      "url": "https://github.com/microsoft/vscode/issues/337113",
+      "created_at": "2026-09-21T18:28:09Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The chat.agent.sandbox.fileSystem.linux configuration setting does not apply on Fedora with snap installation.",
+        "why_easy": "The issue body is truncated and doesn't explain expected vs actual behavior; reproducing requires a specific Fedora/snap setup and understanding sandbox/agent architecture."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 98999,
+      "title": "Build Instant Validation misses staged fallback params",
+      "url": "https://github.com/vercel/next.js/issues/98999",
+      "created_at": "2026-09-21T18:46:32Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Build-time Instant Validation needs to populate staged fallback params from the selected prerender shell to catch invalid param access outside Suspense boundaries.",
+        "why_easy": "While a test case and prior work (#95151, #98512) provide context and the core fix likely involves populating a single field, the issue requires deep understanding of Next.js's Instant Validation, Cache Components, dynamic routes, and staged-params semantics \u2014 a steep entry point for new contributors."
+      }
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 49181,
+      "title": "[FocusTrap] restoreLastFocus crashes when relatedTarget is not a focusable node (TypeError: nodeToRestore.current.focus is not a function)",
+      "url": "https://github.com/mui/material-ui/issues/49181",
+      "created_at": "2026-09-21T18:37:20Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "FocusTrap crashes with TypeError when restoreLastFocus tries to call .focus() on a non-focusable EventTarget like Document",
+        "why_easy": "The root cause is clearly identified with a proposed one-line fix (type guard check); implementation requires only adding a method existence check before the .focus() call and verifying existing tests pass"
+      }
+    },
+    {
+      "repo": "mui/material-ui",
+      "number": 49177,
+      "title": "[RFC] theme.state \u2014 user-defined interaction state groups",
+      "url": "https://github.com/mui/material-ui/issues/49177",
+      "created_at": "2026-09-21T10:45:49Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add a centralized, user-customizable theme.state system to replace hard-coded Material Design 2 interaction state rules across all components.",
+        "why_easy": "Hard: This is an architectural RFC requiring redesign of how all components handle interaction states; requires deep Material UI knowledge, CSS variables expertise, and careful coordination to avoid breaking changes."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23545,
+      "title": "server.forwardConsole: forwarded objects are serialized without a depth/size limit (one console.warn can emit ~1 MB)",
+      "url": "https://github.com/vitejs/vite/issues/23545",
+      "created_at": "2026-09-21T18:00:19Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Implement depth and size limits on serialized objects in forwardConsole to prevent megabytes of terminal output from large object trees",
+        "why_easy": "Clear problem with reproduction and well-scoped solution (add serialization limits like util.inspect), but requires navigating Vite's codebase to find the serialization point and careful testing to avoid regressions on various data types"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23535,
+      "title": "[Feature Request] Try `jsconfig.json` if no `tsconfig.json` is found when `resolve.tsconfigPaths` is set to true",
+      "url": "https://github.com/vitejs/vite/issues/23535",
+      "created_at": "2026-09-20T16:00:07Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "feature",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Vite should fall back to jsconfig.json when resolve.tsconfigPaths is enabled but tsconfig.json is not found",
+        "why_easy": "The feature is a straightforward fallback pattern requiring a localized change to the config resolution logic without architectural modifications"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23527,
+      "title": "Dev server keeps stale import URL for importers after a file rename (\"Does the file exist?\")",
+      "url": "https://github.com/vitejs/vite/issues/23527",
+      "created_at": "2026-09-19T18:06:20Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Dev server doesn't invalidate importers when a dependency file is renamed, causing requests to stale cached URLs to fail.",
+        "why_easy": "Hard because it requires deep understanding of Vite's module graph invalidation and resolution system\u2014the server detects the file deletion but fails to cascade invalidation to dependent modules, requiring architectural knowledge to fix correctly without introducing regressions."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23526,
+      "title": "create-vite: suggestions on how to replace CJS dependencies",
+      "url": "https://github.com/vitejs/vite/issues/23526",
+      "created_at": "2026-09-19T16:09:01Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Replace CommonJS dependencies in create-vite with ESM equivalents to reduce bundle size and improve tree-shaking.",
+        "why_easy": "The issue provides detailed migration instructions and the code changes are straightforward, but requires rigorous cross-platform testing of spawn functionality and careful vetting of the new cross-spawn-esm dependency."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23523,
+      "title": "Dev-server watcher silently dies when the project lives under a hardcoded-ignored path segment (e.g. **/test-results/**); defaults cannot be removed or overridden",
+      "url": "https://github.com/vitejs/vite/issues/23523",
+      "created_at": "2026-09-19T13:16:20Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Dev-server watcher silently stops working when project lives under hardcoded-ignored path patterns like **/test-results/**, with no warning or override option",
+        "why_easy": "Well-reproduced with clear root cause, but requires deep knowledge of chokidar/anymatch semantics and careful design of a backwards-compatible fix for ignore-pattern overrides"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36364,
+      "title": "[Bug]: @storybook/addon-mcp hangs on GET /mcp awaiting infinite stream",
+      "url": "https://github.com/storybookjs/storybook/issues/36364",
+      "created_at": "2026-09-20T18:44:46Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix @storybook/addon-mcp hanging on GET /mcp requests due to infinite SSE stream buffering",
+        "why_easy": "Root cause is clearly identified with exact code location, two specific fixes are provided with code snippets, and reproduction steps are concrete; requires only understanding of stream handling and HTTP response piping."
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 20501,
+      "title": "@tailwindcss/vite: cached Root.compiler pins the build's plugin context, keeping the finished bundle alive (multi-GB RSS in Astro SSG)",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/20501",
+      "created_at": "2026-09-20T06:11:09Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Clear the @tailwindcss/vite Root cache after builds complete to prevent retained Rolldown contexts from keeping native bundler memory alive in SSG frameworks",
+        "why_easy": "The issue is exceptionally well-diagnosed with explicit code locations and measurements, but fixing it requires careful Vite plugin lifecycle management to avoid breaking watch/rebuild modes without leaking memory"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70260,
+      "title": "Remove broken Scrimba video links from Responsive Web Design Principles",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70260",
+      "created_at": "2026-09-21T18:03:55Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Remove broken Scrimba video links from frontmatter in three Responsive Web Design curriculum files",
+        "why_easy": "The issue precisely identifies the three files to modify and the exact fix needed (remove the videoUrl field), requiring only straightforward frontmatter editing with no code logic involved."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70249,
+      "title": "Reusable Mega Navbar workshop has test, instruction, accessibility, and code consistency problems",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70249",
+      "created_at": "2026-09-21T07:50:50Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "test",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix test assertions, code formatting, and instruction clarity in the Reusable Mega Navbar workshop to properly validate expected structure.",
+        "why_easy": "Issue is exceptionally well-documented with specific examples of failures, but requires understanding freeCodeCamp's test framework and coordinating consistent changes across 11+ challenge seed files."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70248,
+      "title": "Understanding Code Clarity lectures contain inaccurate explanations and wording problems",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70248",
+      "created_at": "2026-09-21T07:48:51Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix inaccuracies and repetitive wording in the Understanding Code Clarity JavaScript curriculum lectures",
+        "why_easy": "Issues are clearly identified with exact quotes and specific locations, requiring only straightforward text edits to correct technical explanations, repetition, and grammar without code changes."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70246,
+      "title": "Vowel Balance reference solutions mishandle emoji and single vowels",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70246",
+      "created_at": "2026-09-21T07:42:55Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix reference solutions for Vowel Balance challenge that incorrectly handle emoji and single-character strings, and add test coverage for these edge cases",
+        "why_easy": "The issue clearly documents the bugs with concrete failing examples, but fixing requires understanding UTF-16 surrogate pair handling in JavaScript, correcting Python slicing logic, and ensuring both implementations match across languages"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70215,
+      "title": "Tests for \"Build a Customer Complaint Form\" Should Dispatch Events When Setting `checked` Property",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70215",
+      "created_at": "2026-09-19T18:54:22Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "test",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add event dispatching to tests that programmatically change checkbox/radio button `checked` properties to match user interaction behavior",
+        "why_easy": "The problem and solution are clearly identified with specific failing tests listed, but multiple test locations require similar changes and the contributor must understand the freeCodeCamp test format and JavaScript event patterns."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70200,
+      "title": "\"Build a Bookmark Manager App\" Example Project Not Working: `iframe` `sandbox` Missing `allow-same-origin` Flag",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70200",
+      "created_at": "2026-09-19T14:00:17Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add `allow-same-origin` flag to iframe sandbox attribute in the Bookmark Manager lab to fix localStorage access errors.",
+        "why_easy": "The error message explicitly identifies the missing security flag; the fix is a single attribute addition to an iframe element."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30367,
+      "title": "Nested $transaction mutates the caller's options object (writes newTxId), so a reused options object makes later top-level transactions fail with P2028 or silently join another open transaction",
+      "url": "https://github.com/prisma/orm/issues/30367",
+      "created_at": "2026-09-21T15:49:57Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "$transaction mutates the caller's options object with newTxId, causing later top-level transactions to be treated as nested and fail with P2028 or silently join another transaction.",
+        "why_easy": "The root cause is clearly identified with exact line references and the fix is conceptually straightforward: avoid mutating the options object and derive newTxId from client state, not user input. However, it's hard because it touches core transaction infrastructure with subtle concurrency implications, requires understanding Prisma's internal context management, and carries significant regression risk if not thoroughly tested."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30366,
+      "title": "Prisma 7.x removes `url` from schema but `prisma init` still generates schema with `url` field",
+      "url": "https://github.com/prisma/orm/issues/30366",
+      "created_at": "2026-09-21T15:44:51Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "`prisma init` generates schema.prisma with unsupported `url` field that causes immediate P1012 error in Prisma 7",
+        "why_easy": "The fix is localized to the init scaffolding template with clear reproduction steps, though requires understanding Prisma 7's configuration migration strategy."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30359,
+      "title": "NestJS integration for Prisma 8: document the DI pattern (value provider + `db.close()` on shutdown) and consider shipping `@prisma/orm-nestjs`",
+      "url": "https://github.com/prisma/orm/issues/30359",
+      "created_at": "2026-09-21T07:46:40Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Document NestJS 12 + Prisma 8 integration pattern with value-provider DI and optional official package wrapper",
+        "why_easy": "The working code is provided verbatim and tested; the minimum task is transcribing a ~20-line wrapper into docs with prose explaining the DI pattern and shutdown lifecycle, requiring no novel implementation."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30358,
+      "title": "`prisma orm init` silently rewrites an existing tsconfig.json (`nodenext` \u2192 `preserve`/`bundler`); generated `db.ts` imports `./contract.d`, which does not resolve under `nodenext`",
+      "url": "https://github.com/prisma/orm/issues/30358",
+      "created_at": "2026-09-21T07:46:37Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "prisma orm init silently overwrites tsconfig.json breaking nodenext projects; fix generated imports to use .js extension",
+        "why_easy": "The fix is a simple template change: replace `'./contract.d'` with `'./contract.js'` in generated db.ts, which the issue demonstrates already resolves under both nodenext and bundler configurations."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30353,
+      "title": "MongoDB multi-host connection strings are rejected as invalid URLs",
+      "url": "https://github.com/prisma/orm/issues/30353",
+      "created_at": "2026-09-20T06:28:53Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Prisma 8 MongoDB runtime incorrectly rejects valid multi-host connection strings as invalid URLs",
+        "why_easy": "The error is specific and actionable, minimal reproduction is provided, and the fix likely involves updating URL validation logic to support comma-separated hosts in the host section\u2014a localized change to a validation function."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50652,
+      "title": "Dashboard blank \u2014 frontend-assets.supabase.com JS chunk stalls after ~1 MB (Cloudflare SIN)",
+      "url": "https://github.com/supabase/supabase/issues/50652",
+      "created_at": "2026-09-21T12:54:49Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Dashboard blank because a critical JS chunk from frontend-assets.supabase.com stalls after ~1 MB at Cloudflare SIN POP",
+        "why_easy": "Requires infrastructure/CDN access (Cloudflare logs, origin server diagnostics) and unclear root cause\u2014external contributors lack visibility into config, caching rules, and production metrics needed to diagnose the delivery pipeline failure."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50651,
+      "title": "PGRST303 \"JWT issued at future\" with sb_secret_ keys \u2014 skew sometimes exceeds a 2s retry budget (adds details to #49655)",
+      "url": "https://github.com/supabase/supabase/issues/50651",
+      "created_at": "2026-09-21T12:14:17Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Intermittent HTTP 401 PGRST303 errors with sb_secret_ keys indicate clock skew between gateway and PostgREST components exceeding a 2-second retry budget",
+        "why_easy": "Hard to pick up: clock skew bugs are notoriously difficult to diagnose in distributed systems, the issue is intermittent and irreproducible locally, and the root cause requires access to Supabase infrastructure logs and knowledge of the gateway-to-PostgREST JWT exchange flow."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50647,
+      "title": "Supabase dashboard form submit not working on mobile",
+      "url": "https://github.com/supabase/supabase/issues/50647",
+      "created_at": "2026-09-21T10:28:25Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Dashboard filter form submission fails on mobile with no visible submit button or keyboard submission working",
+        "why_easy": "Cannot-reproduce label indicates maintainers couldn't isolate the root cause; mobile form handling issues often require device-specific debugging and may involve subtle CSS/event interaction problems that are hard to diagnose without proper mobile testing environment"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 69255,
+      "title": "DOC: Incorrect read_hdf example",
+      "url": "https://github.com/pandas-dev/pandas/issues/69255",
+      "created_at": "2026-09-21T03:20:59Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix incorrect positional argument usage in read_hdf documentation example",
+        "why_easy": "The problem is clearly identified with an explicit fix provided\u2014just needs updating one line of documentation syntax."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 69153,
+      "title": "API: should the _supports_2d contract require repeat(axis=...)?",
+      "url": "https://github.com/pandas-dev/pandas/issues/69153",
+      "created_at": "2026-09-20T20:27:52Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Determine whether the `_supports_2d` contract for ExtensionArray should require `repeat(axis=...)` support to bridge a gap between documented requirements and actual usage.",
+        "why_easy": "Hard to pick up without deep knowledge of pandas' ExtensionArray architecture, memory layout considerations, and the design patterns for 2D-capable arrays; marked 'Needs Discussion' indicating architectural consensus is still needed."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32742,
+      "title": "BUG: Indexing a void array scalar with `(...,)` does not return an `ndarray`",
+      "url": "https://github.com/numpy/numpy/issues/32742",
+      "created_at": "2026-09-21T19:30:43Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Void array scalars should return ndarray when indexed with (...,) to match the behavior of other scalar types like float64",
+        "why_easy": "Well-defined bug with clear reproduction case, but fixing it requires understanding NumPy's internal scalar indexing mechanism and potentially C-level implementation details, making it unsuitable for first-time contributors"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32714,
+      "title": "DEV: thousands of linting vailures from `spin lint` after having built docs",
+      "url": "https://github.com/numpy/numpy/issues/32714",
+      "created_at": "2026-09-20T19:22:19Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "After building docs with spin docs, spin lint reports thousands of failures from generated files, blocking real linting feedback",
+        "why_easy": "Fix is likely a configuration change (excluding generated directories from ruff linting), but diagnosing the root cause requires understanding numpy's build tooling and generated file layout, making it unsuitable for first-time contributors"
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 45957,
+      "title": "Clarify that `DO_NOT_TRACK` only disables telemetry if `1` or `true`",
+      "url": "https://github.com/github/docs/issues/45957",
+      "created_at": "2026-09-19T20:26:31Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Clarify in the telemetry docs that `DO_NOT_TRACK` only disables telemetry when set to `1` or `true`",
+        "why_easy": "Documentation-only change with the exact section and clarification already identified by the issue reporter; no code review or testing required."
+      }
+    },
+    {
+      "repo": "EbookFoundation/free-programming-books",
+      "number": 13467,
+      "title": "Adding a book about Markdown",
+      "url": "https://github.com/EbookFoundation/free-programming-books/issues/13467",
+      "created_at": "2026-09-19T21:45:40Z",
+      "digest_date": "2026-09-21",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Add a free Russian-language Markdown documentation book to the repository's Russian books list",
+        "why_easy": "The contributor has provided all required information (title, author, license, link); adding a list entry requires only verifying it meets guidelines and formatting it consistently with existing entries, though the original author should ideally implement this themselves."
       }
     }
   ]
