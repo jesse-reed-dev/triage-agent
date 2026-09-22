@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-21",
+  "updated": "2026-09-22",
   "issues": [
     {
       "repo": "react/react-native",
@@ -30557,6 +30557,411 @@
         "good_first_issue": false,
         "one_line_summary": "Add a free Russian-language Markdown documentation book to the repository's Russian books list",
         "why_easy": "The contributor has provided all required information (title, author, license, link); adding a list entry requires only verifying it meets guidelines and formatting it consistently with existing entries, though the original author should ideally implement this themselves."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58630,
+      "title": "[iOS][New Architecture] onAccessibilityAction with \"activate\" does not reliably fire VoiceOver double-tap without onAccessibilityTap",
+      "url": "https://github.com/react/react-native/issues/58630",
+      "created_at": "2026-09-21T20:23:19Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "VoiceOver double-tap fails to reliably trigger onAccessibilityAction with 'activate' action in React Native New Architecture on iOS",
+        "why_easy": "Hard because it requires deep understanding of both Old and New Architecture accessibility implementations, iOS VoiceOver APIs, native-JavaScript boundary interactions, and debugging across Fabric's rendering layer with minimal error context provided."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50487,
+      "title": "[expo-video][iOS 27] Native controls never appear when VideoView mounts during a native-stack push",
+      "url": "https://github.com/expo/expo/issues/50487",
+      "created_at": "2026-09-22T09:18:34Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Native video controls fail to appear when VideoView mounts during navigation push on iOS 27 due to incomplete appearance transition",
+        "why_easy": "The fix is identified and verified (one-line addition to balance beginAppearanceTransition with endAppearanceTransition), with a working PR and reproducible test case provided by the reporter."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50482,
+      "title": "[expo-modules-jsi][iOS] build-xcframework.sh fails archive on Xcode 27: false \"exit code 0 but produced no further output\" error (still on 58.0.3 / Xcode 27.1)",
+      "url": "https://github.com/expo/expo/issues/50482",
+      "created_at": "2026-09-22T08:51:22Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix build-xcframework.sh to filter out Xcode 27's false error message that incorrectly fails iOS archives despite successful XCFramework generation.",
+        "why_easy": "The root cause is clearly identified with reproduction steps, a one-line workaround is provided (sed filter or removing -quiet flag), and the fix requires only modifying a shell script's xcodebuild invocation."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50481,
+      "title": "[expo-video][Android] Cached HLS fails offline when ABR picks an uncached rendition (no track fallback on UnknownHostException)",
+      "url": "https://github.com/expo/expo/issues/50481",
+      "created_at": "2026-09-22T08:31:11Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Implement track fallback on UnknownHostException in ExoPlayer's LoadErrorHandlingPolicy so cached HLS renditions play offline even when ABR picks an uncached variant.",
+        "why_easy": "There's a clear proposed fix in PR #50480 and a reproducible test case, but the fix requires deep knowledge of ExoPlayer/Media3 internals, HLS caching mechanics, and Android-specific error handling \u2014 not a good entry point for unfamiliar contributors."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50475,
+      "title": "[SDK 58][iOS][expo-ui] `<Host matchContents>` jumps by half its height change for a frame when its content resizes",
+      "url": "https://github.com/expo/expo/issues/50475",
+      "created_at": "2026-09-22T07:25:29Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix visual jumping in <Host matchContents> when content resizes by pinning the matched axis with explicit frame constraints",
+        "why_easy": "The root cause and fix are clearly identified and verified as working, but implementing requires understanding the SwiftUI/UIKit/RN/Yoga layout pipeline, iOS native development setup, and navigating the expo-ui codebase."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337262,
+      "title": "Sandbox toggle not shown when using remote agent host",
+      "url": "https://github.com/microsoft/vscode/issues/337262",
+      "created_at": "2026-09-22T11:50:44Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Sandbox toggle UI is not displayed when connecting to VS Code via a remote agent host.",
+        "why_easy": "Well-defined reproduction case with clear expected behavior (toggle should be visible), but requires understanding VS Code's remote agent architecture and conditional UI rendering logic to locate where the toggle visibility is gated."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337260,
+      "title": "Search doesn't work: Cannot find package '@vscode/ripgrep-universal' imported from ...",
+      "url": "https://github.com/microsoft/vscode/issues/337260",
+      "created_at": "2026-09-22T11:26:29Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Search functionality fails with missing '@vscode/ripgrep-universal' package dependency error on Linux",
+        "why_easy": "Not easy \u2014 requires investigation into VS Code's packaging and build system to determine why ripgrep-universal isn't present in the distribution; likely reproducible only in specific environments (SteamOS/Flatpak), making it harder to debug for unfamiliar contributors."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337259,
+      "title": "VS Code on GNOME/Wayland with 3 monitors: window jumps to another display when focus changes",
+      "url": "https://github.com/microsoft/vscode/issues/337259",
+      "created_at": "2026-09-22T11:21:35Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Window jumps to different monitor on focus change when using VS Code on GNOME/Wayland with 3 monitors",
+        "why_easy": "Requires specific 3-monitor Wayland setup to reproduce, deep knowledge of Electron's Wayland bindings and window management, likely needs coordination with upstream Electron project"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337257,
+      "title": "Clicking on a chat scrolls the Session List",
+      "url": "https://github.com/microsoft/vscode/issues/337257",
+      "created_at": "2026-09-22T10:45:01Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Clicking on a chat item causes the Session List to scroll unexpectedly instead of maintaining scroll position.",
+        "why_easy": "The fix is likely a simple event handler adjustment (stopPropagation or similar), but requires navigating the VS Code codebase to locate the chat session list scroll handling code."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337256,
+      "title": "Perf: Agent Host per-request diff observable re-parses every historical turn on every streamed token in a long chat",
+      "url": "https://github.com/microsoft/vscode/issues/337256",
+      "created_at": "2026-09-22T10:44:40Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Cache turn diff parsing results using object identity to prevent re-parsing historical turns on every streamed token in long chat sessions",
+        "why_easy": "Root cause is thoroughly diagnosed with exact file paths and functions identified; fix is conceptually straightforward (add identity-keyed cache on reference-stable turn objects), but requires deep familiarity with VS Code's observable/derived patterns and chat state architecture to implement safely"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337255,
+      "title": "Cannot rearrange chats that appear in the session list",
+      "url": "https://github.com/microsoft/vscode/issues/337255",
+      "created_at": "2026-09-22T10:41:57Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add the ability to reorder chats in the session list via drag & drop",
+        "why_easy": "Requires navigating VS Code's chat extension architecture and implementing drag-and-drop UI logic with state persistence \u2014 not a good entry point for new contributors unfamiliar with the codebase"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337253,
+      "title": "Three-finger swipe down no longer shows recent files after updating to macOS 27",
+      "url": "https://github.com/microsoft/vscode/issues/337253",
+      "created_at": "2026-09-22T10:28:42Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Three-finger swipe-down gesture no longer displays recent files in VS Code on macOS 27",
+        "why_easy": "Hard to pick up: requires macOS 27 hardware to reproduce, involves native macOS gesture API integration that likely changed with the OS update, and would require deep knowledge of VS Code's native code layer to debug."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337245,
+      "title": "mic in copilot chat is not working",
+      "url": "https://github.com/microsoft/vscode/issues/337245",
+      "created_at": "2026-09-22T09:48:25Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Microphone input in Copilot Chat doesn't convert speech to text despite UI animations indicating it's listening",
+        "why_easy": "Hard to pick up because debugging requires understanding VS Code's speech-to-text pipeline where the UI layer works correctly but transcription fails, necessitating knowledge of audio APIs and extension architecture."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337244,
+      "title": "Perf: prompt timeline gutter/ruler re-renders every row and recomputes diff stats twice when opening a long session",
+      "url": "https://github.com/microsoft/vscode/issues/337244",
+      "created_at": "2026-09-22T09:47:58Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Optimize prompt timeline to skip re-rendering rows with unchanged tick data and diff stats during session history restore",
+        "why_easy": "The issue is exceptionally well-analyzed with specific root causes and code paths identified, but requires deep VS Code observable/reactive architecture knowledge and careful regression testing to preserve streaming-update and accessibility behavior."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 99032,
+      "title": "Uncaught `TypeError: Failed to execute 'measure' on 'Performance': '<Component>' cannot have a negative time stamp`",
+      "url": "https://github.com/vercel/next.js/issues/99032",
+      "created_at": "2026-09-22T07:46:41Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Soft navigation to a server component that redirects mid-stream causes uncaught TypeError from negative performance.measure timestamps.",
+        "why_easy": "Hard to pick up: no minimal reproduction available, requires deep understanding of Next.js streaming and chunk architecture, and the race condition nature makes local verification difficult."
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 99031,
+      "title": "Turbopack build fails on valid width-only SVG with viewBox imported via next/image",
+      "url": "https://github.com/vercel/next.js/issues/99031",
+      "created_at": "2026-09-22T07:38:15Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Turbopack rejects valid SVG files with width+viewBox but no height attribute, while webpack accepts them",
+        "why_easy": "The issue is well-isolated to one Rust file and a reference JS implementation already exists showing how to derive missing dimensions from viewBox, but the fix requires Rust knowledge and SVG math logic"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 99028,
+      "title": "router.refresh() silently no-ops on streamed pages \u2014 query string in URL triggers it on 16.2.12; all streamed pages on 16.3.5+ (production builds)",
+      "url": "https://github.com/vercel/next.js/issues/99028",
+      "created_at": "2026-09-22T07:19:15Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "router.refresh() silently fails to invalidate the client cache on streamed pages with query strings, causing mutations to show stale data until hard reload",
+        "why_easy": "Perfect public reproduction repo with clear version matrix, but fixing this requires deep Next.js internals knowledge of streaming/Flight protocol and segment cache invalidation\u2014a production-only timing issue"
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23549,
+      "title": "Edge DevTools becomes completely unresponsive/frozen when connected to the Vite dev server starting from v8.1.0. Version 8.0.5 and below work perfectly",
+      "url": "https://github.com/vitejs/vite/issues/23549",
+      "created_at": "2026-09-22T03:49:42Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Edge DevTools becomes unresponsive when connected to Vite dev server starting from v8.1.0",
+        "why_easy": "Has clear reproduction steps and version bisect, but requires investigating HMR/WebSocket changes between 8.0.5-8.1.0 and understanding Edge DevTools interaction without error logs or network inspection data."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23547,
+      "title": "Every dynamic import fails under `experimental.bundledDev` with vite 8.3.0 + rolldown 1.2.9: `__rolldown_runtime__.requestLazy is not a function`",
+      "url": "https://github.com/vitejs/vite/issues/23547",
+      "created_at": "2026-09-22T02:45:57Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Add missing `requestLazy` method to bundled dev runtime for rolldown 1.2.9 compatibility",
+        "why_easy": "The issue is thoroughly diagnosed with clear reproduction steps; the fix is simply copying the missing `requestLazy` method from rolldown 1.2.9 into Vite's bundledDevClient.mjs and testing against the provided reproduction case."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36386,
+      "title": "[Bug]: addon-vitest imports every story file, including ones its own tag filter has already excluded",
+      "url": "https://github.com/storybookjs/storybook/issues/36386",
+      "created_at": "2026-09-22T11:39:25Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Remove original imports from story files when all their stories are filtered out by tag filters to avoid unnecessary module evaluation.",
+        "why_easy": "Well-diagnosed with reproduction case and identified code locations, but requires understanding CSF transformation and vitest's transform hooks; fixing the transform to strip imports when no valid tests remain is straightforward once you're familiar with the AST manipulation."
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 20506,
+      "title": "Vulnerability in source-map-js: CVE-2026-93749",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/20506",
+      "created_at": "2026-09-22T11:26:44Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Tailwind's dependency on source-map-js contains a high-severity CVE with no available fix, blocking deployments for security-conscious teams.",
+        "why_easy": "This is hard because it depends on an upstream fix from source-map-js maintainers and may require evaluating alternative solutions or temporary workarounds."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70262,
+      "title": "Design a Movie Review Page - Socrates fails to diagnose the issue",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70262",
+      "created_at": "2026-09-21T20:42:13Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix Socrates' hint system to correctly count stars and validate that rating format is (X/10) instead of just (X)",
+        "why_easy": "The issue is well-documented with clear examples of the incorrect hints, but requires understanding how the Socrates feedback system analyzes student code to locate and fix both the star-counting and format-validation logic."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30374,
+      "title": "Driver adapter (pg): after a database error inside an interactive transaction, subsequent queries on the same client receive other queries' responses",
+      "url": "https://github.com/prisma/orm/issues/30374",
+      "created_at": "2026-09-22T11:07:18Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "After a PostgreSQL error inside an interactive transaction, subsequent queries on the same client receive responses from other queries",
+        "why_easy": "Hard: requires deep knowledge of driver adapter response queueing/async handling, PostgreSQL protocol, and error recovery; the subtle reproduction conditions and response corruption indicate a complex bug in low-level connection state management"
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30370,
+      "title": "db migrate: advance the db ref by default when the connection comes from prisma.config.ts",
+      "url": "https://github.com/prisma/orm/issues/30370",
+      "created_at": "2026-09-22T06:37:46Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Auto-advance the db ref in db migrate when the connection comes from prisma.config.ts and CI is not set",
+        "why_easy": "The requirements are precisely defined with a clear decision table and explicit reference to existing ref advancement patterns in db init and db update, but implementing it requires understanding Prisma's migration system architecture and locating/applying existing logic to a new command."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32747,
+      "title": "SubTracker: Convert static types (PyTypeObject) to heap types via `PyType_FromModuleAndSpec`",
+      "url": "https://github.com/numpy/numpy/issues/32747",
+      "created_at": "2026-09-22T08:19:37Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Convert NumPy's static type definitions to heap types via PyType_FromModuleAndSpec for interpreter isolation and Limited API support",
+        "why_easy": "Hard: requires expert-level CPython C API knowledge, affects multiple type definitions across NumPy (ndarray, dtype, ufunc, etc.), depends on multi-phase init work, and demands careful coordination\u2014this is a tracking issue for a series of PRs, not a standalone task suitable for contributors new to the codebase."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 35016,
+      "title": "Ridge solver is set to Cholesky even if SVD is used",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/35016",
+      "created_at": "2026-09-22T07:50:56Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "The Ridge regressor's solver_ attribute incorrectly reports 'cholesky' when SVD fallback is actually used during fitting.",
+        "why_easy": "Clear reproduction case showing a state-tracking mismatch; the fix likely requires updating a single attribute assignment in the Cholesky fallback handler when SVD is used instead."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 35014,
+      "title": "Sharing links from scikit-learn.org gives the wrong link",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/35014",
+      "created_at": "2026-09-21T23:30:35Z",
+      "digest_date": "2026-09-22",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix OpenGraph meta tag in documentation to include missing .org domain in URL",
+        "why_easy": "The root cause is clearly identified and the fix is trivial (adding .org to a meta tag), though locating the code that generates these tags requires understanding the Sphinx documentation build process."
       }
     }
   ]
