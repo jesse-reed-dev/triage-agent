@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-22",
+  "updated": "2026-09-23",
   "issues": [
     {
       "repo": "react/react-native",
@@ -30962,6 +30962,576 @@
         "good_first_issue": true,
         "one_line_summary": "Fix OpenGraph meta tag in documentation to include missing .org domain in URL",
         "why_easy": "The root cause is clearly identified and the fix is trivial (adding .org to a meta tag), though locating the code that generates these tags requires understanding the Sphinx documentation build process."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58652,
+      "title": "Android: textAlign: \"justify\" is silently ignored on ColorOS 15 (Realme/OPPO) \u2014 RN sets JUSTIFICATION_MODE_INTER_WORD but the OEM discards it",
+      "url": "https://github.com/react/react-native/issues/58652",
+      "created_at": "2026-09-23T13:40:29Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add detection or documentation for textAlign: 'justify' silently failing on ColorOS 15 to enable app-level fallbacks",
+        "why_easy": "Hard: the root cause lives in the OEM's text engine, so solutions require either intricate text layout measurement to detect silent failures or careful design of detection APIs\u2014neither straightforward to implement or verify across device variants; offset by excellent issue detail and reproducer."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58647,
+      "title": "[Fabric][iOS] Differ creates a mounted view again when a child with negative zIndex moves in a nested flatten/unflatten",
+      "url": "https://github.com/react/react-native/issues/58647",
+      "created_at": "2026-09-23T10:33:03Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Fix Fabric differ incorrectly creating already-mounted views during flatten/unflatten with negative zIndex children",
+        "why_easy": "This requires deep knowledge of the Fabric differ algorithm, shadow view tree logic, C++ pointer semantics, and complex flatten/unflatten state transitions \u2014 not suitable for contributors unfamiliar with React Native internals."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50558,
+      "title": "[cli] React Native public AssetRegistry uses a different registry than bundled assets",
+      "url": "https://github.com/expo/expo/issues/50558",
+      "created_at": "2026-09-23T16:05:33Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "React Native's public AssetRegistry export routes to a different registry singleton than internal imports, breaking asset lookups for libraries like react-native-vector-icons",
+        "why_easy": "The root cause is clearly identified, the fix is a localized change to an existing origin-path check, and the submitter has already verified it works with passing tests and a minimal reproducible example"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50557,
+      "title": "[expo-font][iOS] OTA reload removes the active registration after a duplicate font name",
+      "url": "https://github.com/expo/expo/issues/50557",
+      "created_at": "2026-09-23T15:56:48Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "OTA updates on iOS crash when a font with the same name exists in both embedded and downloaded bundles, because registration logic moves the alias before cleanup removes the old URL, leaving no valid registration.",
+        "why_easy": "Hard to pick up\u2014requires native iOS development expertise, deep familiarity with Expo's font registration and updates systems, and a non-trivial reproduction environment (local update server, simulator builds, instrumented native code)."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50555,
+      "title": "[@expo/ui] Add presentationCornerRadius, and Android back-press control on community/bottom-sheet",
+      "url": "https://github.com/expo/expo/issues/50555",
+      "created_at": "2026-09-23T14:55:11Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "feature",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Add `presentationCornerRadius` SwiftUI modifier and Android back-press control to community/bottom-sheet for API parity.",
+        "why_easy": "Working code provided for both features with explicit patterns to follow; part 1 is templated off five existing modifiers, part 2 follows established convention from parallel component."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50554,
+      "title": "[expo-modules-core] [Android] @expo/ui components cannot use react-native PlatformColor",
+      "url": "https://github.com/expo/expo/issues/50554",
+      "created_at": "2026-09-23T14:32:03Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "@expo/ui components on Android cannot accept React Native PlatformColor values due to missing Map type serialization",
+        "why_easy": "Requires native Kotlin/Android expertise and understanding of Expo's type serialization bridge; the well-reproduced example helps but fixing likely requires native code changes"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50545,
+      "title": "[expo-image][Android] \"You can't start or clear loads in RequestListener or Target callbacks\" still crashes via onLoadFailed",
+      "url": "https://github.com/expo/expo/issues/50545",
+      "created_at": "2026-09-23T12:13:26Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix IllegalStateException crash when images fail to load by posting onError to main queue instead of emitting synchronously from Glide callback.",
+        "why_easy": "Well-diagnosed with a clear precedent pattern from PR #40212 to follow, but requires Android native development experience and Reanimated testing setup."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337532,
+      "title": "Branch Changes status pill assumes the base remote is origin",
+      "url": "https://github.com/microsoft/vscode/issues/337532",
+      "created_at": "2026-09-23T19:36:16Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The Branch Changes status pill should compare against the actual base remote instead of always assuming origin",
+        "why_easy": "The issue clearly identifies the hardcoded origin assumption in the git service, but the fix requires understanding VS Code's remote detection logic and ensuring it works across multiple related features without breaking existing workflows."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337528,
+      "title": "apply_patch cannot create files when exclusions are configured",
+      "url": "https://github.com/microsoft/vscode/issues/337528",
+      "created_at": "2026-09-23T19:11:43Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The apply_patch tool incorrectly rejects new file creation when repository exclusions are configured, even for paths that should be allowed for editing.",
+        "why_easy": "Clear reproduction steps and isolated to apply_patch logic, but requires understanding the exclusion system's architecture and how it distinguishes between file creation and editing."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337527,
+      "title": "Agents chat copy includes hidden Monaco CSS when pasted as Markdown",
+      "url": "https://github.com/microsoft/vscode/issues/337527",
+      "created_at": "2026-09-23T19:07:30Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Copying Agents chat responses with file-change summaries includes hidden Monaco CSS and UI text when pasted as Markdown",
+        "why_easy": "The root cause is thoroughly documented with specific code lines and clipboard debugging traces, but the fix requires understanding multiple systems (chat widget, clipboard sanitization, HTML-to-Markdown conversion) and choosing where to apply filtering"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337525,
+      "title": "Integrated Browser: 'Open in External Browser' fails for local HTML files",
+      "url": "https://github.com/microsoft/vscode/issues/337525",
+      "created_at": "2026-09-23T18:55:42Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "The 'Open in External Browser' command fails when trying to open local HTML files from VS Code's Integrated Browser.",
+        "why_easy": "The problem is scoped to one feature and likely involves straightforward file-path-to-URL handling, but the missing error messages, version info, and OS details make debugging harder for an unfamiliar contributor, and cross-platform file handling adds complexity."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337524,
+      "title": "File list order differs from multi-diff editor",
+      "url": "https://github.com/microsoft/vscode/issues/337524",
+      "created_at": "2026-09-23T18:51:22Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Align the file ordering between the multi-diff editor and file list to show files in consistent positions across both views.",
+        "why_easy": "Conceptually straightforward\u2014make two components use the same sort order\u2014but requires navigating VS Code's large codebase to locate both sorting implementations and understanding why they differ."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337522,
+      "title": "Latest copilot keeps annoyingly opening Notepad!",
+      "url": "https://github.com/microsoft/vscode/issues/337522",
+      "created_at": "2026-09-23T18:42:53Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Copilot skill invocation tracking script unexpectedly opens Notepad window in foreground during chat operations",
+        "why_easy": "Clear regression with identified problem script (track-skill-invocation.ps), but root cause requires deep understanding of VS Code extension architecture, PostToolUse hooks, and C# Dev Kit integration to trace why a telemetry script is spawning UI windows."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337521,
+      "title": "Terminal title and inline actions dont show if hidden terminals are detected",
+      "url": "https://github.com/microsoft/vscode/issues/337521",
+      "created_at": "2026-09-23T18:42:02Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Terminal title and inline actions disappear from the UI when any hidden terminals exist, even for visible terminals",
+        "why_easy": "Reproduction is clear and specific (concrete settings + steps), but the fix requires understanding VS Code's terminal tab rendering logic and the interaction between hideCondition and showActiveTerminal conditions"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337517,
+      "title": "Copilot Chat does not dismiss previous question carousel when prompts are edited",
+      "url": "https://github.com/microsoft/vscode/issues/337517",
+      "created_at": "2026-09-23T18:29:54Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Copilot Chat carousel from the previous question persists after editing the prompt instead of being dismissed.",
+        "why_easy": "The issue is clearly reproduced with explicit steps and screenshots; the fix likely involves clearing the carousel UI state when prompts are edited\u2014a straightforward state management change\u2014though locating the relevant component in VS Code's large codebase may require some navigation."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337514,
+      "title": "automations screen has lots of error text that's unclear what it means",
+      "url": "https://github.com/microsoft/vscode/issues/337514",
+      "created_at": "2026-09-23T18:18:55Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Error messages displayed on the automations screen are unclear and need better explanations.",
+        "why_easy": "While fixing error text is usually straightforward, this issue provides only an image with no textual description, making it hard for contributors to understand what the errors say or what clarity improvements are needed without additional context or reproduction steps."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337513,
+      "title": "Text overlapping/disappearing in sessions list",
+      "url": "https://github.com/microsoft/vscode/issues/337513",
+      "created_at": "2026-09-23T18:17:44Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Text overlaps or disappears in the sessions list view",
+        "why_easy": "VS Code text rendering issues typically require deep knowledge of the UI rendering pipeline and component layout system; the root cause could span CSS overflow, text measurement, or clipping logic across multiple layers."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337512,
+      "title": "Your reccomendations don work",
+      "url": "https://github.com/microsoft/vscode/issues/337512",
+      "created_at": "2026-09-23T18:05:48Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Reporter complains that VS Code recommendations produce incorrect or hallucinated suggestions without providing reproducible details",
+        "why_easy": "Too vague to investigate \u2014 no reproduction steps, specific feature identified, or error logs; marked info-needed, indicating maintainers need clarification before work can begin"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337511,
+      "title": "\u6807\u7b7e\u9875\u989c\u8272\u4e0d\u80fd\u4fee\u6539",
+      "url": "https://github.com/microsoft/vscode/issues/337511",
+      "created_at": "2026-09-23T18:02:01Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Tab colors configured in settings.json no longer apply after a recent VS Code update",
+        "why_easy": "Very minimal reproduction steps; 41 installed extensions could cause interference; reporter doesn't specify which settings they tried or confirm it worked in a prior version; would require triage and follow-up questions before investigation can begin"
+      }
+    },
+    {
+      "repo": "vercel/next.js",
+      "number": 99114,
+      "title": "next/font/google: build fails when Google Fonts returns extensionless /l/font?kit= URLs",
+      "url": "https://github.com/vercel/next.js/issues/99114",
+      "created_at": "2026-09-23T18:25:32Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Next.js build fails when Google Fonts returns extensionless /l/font?kit= URLs instead of typical .woff2 URLs.",
+        "why_easy": "Root causes are clearly identified with exact line numbers and a concrete fix approach, but implementing requires changes across Webpack loader (TypeScript) and Turbopack (Rust) with CSS format hint parsing."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23558,
+      "title": "experimental.bundledDev: dynamic import of a CommonJS dependency loses its `default` export",
+      "url": "https://github.com/vitejs/vite/issues/23558",
+      "created_at": "2026-09-23T04:59:15Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Dynamic imports of CommonJS dependencies lose their default export under experimental.bundledDev with lazy compilation enabled",
+        "why_easy": "The reproduction is minimal and well-documented, and the problem is narrowed to Rolldown's lazy dynamic-import code generation; however, fixing it requires deep knowledge of CommonJS interop, module wrapping, and Rolldown's code generation for different compilation modes."
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 20509,
+      "title": "Source detection ignores `core.excludesFile`, so globally-ignored directories are scanned (reproduction for #19801)",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/20509",
+      "created_at": "2026-09-23T02:19:24Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Source file scanner ignores Git's core.excludesFile configuration, causing globally-excluded directories to be incorrectly scanned",
+        "why_easy": "The exact problematic code is identified (git_global(false) in scanner/mod.rs), reproduction is provided with a test case, and the fix likely requires enabling an existing setting"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70335,
+      "title": "Data Structures Quiz Asks About Amortized Time Complexity, Which Was Not Taught in Preceding Section",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70335",
+      "created_at": "2026-09-23T18:21:57Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Data Structures quiz asks about amortized time complexity, which was never taught in the preceding curriculum section",
+        "why_easy": "The fix is straightforward\u2014either remove the quiz question or add a brief explanation of amortized complexity to the curriculum\u2014requiring only locating the quiz and curriculum files in the freeCodeCamp repo structure"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70332,
+      "title": "Implement a Queue - Unmentioned/Circular Dependencies Between Tests",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70332",
+      "created_at": "2026-09-23T17:54:32Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "test",
+        "difficulty": "medium",
+        "good_first_issue": true,
+        "one_line_summary": "Refactor the 'Implement a Queue' lab tests to remove circular dependencies between test functions or document them in instructions",
+        "why_easy": "The issue is clearly scoped with specific test examples and links, but requires understanding testing patterns and Queue implementation to safely refactor dependencies without breaking the learning experience."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70310,
+      "title": "Use keyboard key markup in the Node.js REPL workshop",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70310",
+      "created_at": "2026-09-23T10:37:45Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Replace inline code and plain text references to keyboard keys with proper <kbd> HTML markup in the Node.js REPL workshop",
+        "why_easy": "The issue provides exact before/after examples and requires only straightforward text replacements in a single location with no logic or dependencies"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70308,
+      "title": "Clarify the rm -f flag in the Bash commands lecture",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70308",
+      "created_at": "2026-09-23T10:24:40Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Clarify that the rm -f flag suppresses confirmation prompts rather than overriding file permissions",
+        "why_easy": "Straightforward documentation correction with a clear suggested fix; just requires updating lesson text with no code changes or testing involved"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70306,
+      "title": "Clarify int() input description in Python functions lecture",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70306",
+      "created_at": "2026-09-23T10:01:55Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Clarify the description of Python's int() function to use 'or' instead of 'and' and specify 'string representing an integer' instead of 'numeric string'",
+        "why_easy": "The exact wording change is specified in the issue and requires only a straightforward text replacement in a curriculum file with no code changes needed."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70304,
+      "title": "Fix inaccurate wording in the Working with Tables lecture",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70304",
+      "created_at": "2026-09-23T09:49:54Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix two instances of inaccurate wording in the HTML tables lecture: clarify that table rows can contain headers, data, or both, and correct 'layout' (noun) to 'lay out' (verb).",
+        "why_easy": "The issue provides both the exact incorrect text and the correct replacement text for both fixes, making this a straightforward content edit with no technical complexity or code changes required."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70303,
+      "title": "Travel Weather Planner has incomplete and inaccurate tests and hints",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70303",
+      "created_at": "2026-09-23T09:49:10Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix incomplete and inaccurate tests for the Travel Weather Planner lab that don't properly validate rain-dependent behavior, boolean operators, and distance types.",
+        "why_easy": "The issue provides specific test cases to add and exact code snippets to implement; fixes are localized to test files and don't require design decisions or deep architectural knowledge."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30385,
+      "title": "feat(query): allow ordering by boolean columns (pg/bool@1 has no order trait)",
+      "url": "https://github.com/prisma/orm/issues/30385",
+      "created_at": "2026-09-23T15:16:33Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add the `order` trait to boolean codecs to enable sorting boolean columns in ORM queries",
+        "why_easy": "The fix is straightforward\u2014adding \"order\" to codec trait definitions\u2014but requires understanding Prisma's codec system and may need discussion about related traits like range comparison"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50808,
+      "title": "caddy and nginx reverse proxies drop /pg and /api/mcp routes to studio",
+      "url": "https://github.com/supabase/supabase/issues/50808",
+      "created_at": "2026-09-23T19:07:15Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add missing `/pg/*` and `/api/mcp` routes to Caddy and Nginx reverse proxy allowlists so they route to the API gateway instead of Studio.",
+        "why_easy": "The fix is localized to configuration files with clear reproduction steps, but requires understanding Caddy and Nginx proxy syntax and setting up Docker Compose to test both implementations."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50788,
+      "title": "Dashboard login loop with GitHub and ChatGPT in Codex in-app browser blocks project work and support tickets",
+      "url": "https://github.com/supabase/supabase/issues/50788",
+      "created_at": "2026-09-23T10:38:20Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Dashboard authentication gets stuck in login loop when using GitHub or ChatGPT signin in Codex in-app browser on Windows",
+        "why_easy": "Hard to debug without Codex access; requires expertise in OAuth flows, session/cookie handling, and embedded-browser compatibility; root cause is unknown"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51848,
+      "title": "\"OUT/INOUT parameter not available\" after updating Spring Boot 4.1.0 to 4.1.1",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51848",
+      "created_at": "2026-09-23T19:26:18Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Database OUT/INOUT parameter handling regression introduced in Spring Boot 4.1.1 breaks existing tests",
+        "why_easy": "Reproduction case provided, but requires understanding Spring's data access layer internals and identifying what changed between versions to fix."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 69432,
+      "title": "ENH: ArrowExtensionArray should be supported by HDFStore",
+      "url": "https://github.com/pandas-dev/pandas/issues/69432",
+      "created_at": "2026-09-23T16:36:44Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add support for writing ArrowExtensionArray columns to HDF5 via HDFStore",
+        "why_easy": "Issue provides exact code location and suggested implementation following existing NumPy pattern, but requires understanding PyTables/Arrow internals and comprehensive round-trip testing"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32765,
+      "title": "ENH: Detect mixed bytes/text inputs during array conversion",
+      "url": "https://github.com/numpy/numpy/issues/32765",
+      "created_at": "2026-09-23T17:42:58Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add opt-in detection of mixed bytes/text inputs during array conversion to prevent silent Unicode coercion",
+        "why_easy": "Hard because it requires deep knowledge of NumPy's dtype discovery and conversion pipeline, modifications to both Python and C code, coordination across multiple functions (asarray, concatenate), and careful deprecation handling."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 35018,
+      "title": "DOC/ENH: StandardScaler silently sets scale to 1.0 for zero-variance features with no warning",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/35018",
+      "created_at": "2026-09-22T15:47:52Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Document StandardScaler's behavior of silently setting scale to 1.0 for zero-variance features.",
+        "why_easy": "The behavior is already implemented and well-understood, the contributor has identified the code path and provided a minimal reproduction, making the documentation update straightforward."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 35017,
+      "title": "CPU oversaturation/oversubscription due to third-party libraries when running containers on Linux",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/35017",
+      "created_at": "2026-09-22T14:44:26Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "CPU oversaturation in containers: third-party BLAS/OpenMP libraries don't respect cgroup CPU limits and spawn thread counts based on physical CPU count instead of quota",
+        "why_easy": "Issue explicitly states it is not ready for PRs and requires architectural decision between four proposed approaches with significant trade-offs, incomplete discussion (body truncated), and deep knowledge of cgroups, threadpool management, joblib, and multiple C libraries."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 46032,
+      "title": "Update OIDC authentication section for clarity",
+      "url": "https://github.com/github/docs/issues/46032",
+      "created_at": "2026-09-23T18:23:37Z",
+      "digest_date": "2026-09-23",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Remove or update the stale OIDC authentication note that contradicts code scanning default setup's documented OIDC support for org-level private registries.",
+        "why_easy": "The outdated note is clearly identified, localized to one callout block, and contradicted by the same document's procedure steps and a published April 2026 changelog; the fix requires only documentation editing with no code changes."
       }
     }
   ]
