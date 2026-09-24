@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-23",
+  "updated": "2026-09-24",
   "issues": [
     {
       "repo": "react/react-native",
@@ -31532,6 +31532,426 @@
         "good_first_issue": true,
         "one_line_summary": "Remove or update the stale OIDC authentication note that contradicts code scanning default setup's documented OIDC support for org-level private registries.",
         "why_easy": "The outdated note is clearly identified, localized to one callout block, and contradicted by the same document's procedure steps and a published April 2026 changelog; the fix requires only documentation editing with no code changes."
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58667,
+      "title": "[iOS][Fabric] Image shows another Image's picture after its native view is recycled",
+      "url": "https://github.com/react/react-native/issues/58667",
+      "created_at": "2026-09-24T11:21:13Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Image components display the wrong image due to a race condition between view recycling and async image load callbacks on iOS Fabric",
+        "why_easy": "Requires deep iOS/Objective-C++ expertise, understanding of React Native's Fabric view recycling system, and ability to debug intermittent threading race conditions in production-like scenarios"
+      }
+    },
+    {
+      "repo": "react/react-native",
+      "number": 58659,
+      "title": "[Android] Image drops `source.headers` for a single-object source since 0.86 (only array sources forward headers)",
+      "url": "https://github.com/react/react-native/issues/58659",
+      "created_at": "2026-09-24T01:34:10Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Image component drops headers in single-object source on Android since 0.86",
+        "why_easy": "Root cause and exact code location identified; fix is a simple one-line extraction of headers from source_ in the else branch, matching the existing array-source logic."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337837,
+      "title": "Closing a folder changes profile",
+      "url": "https://github.com/microsoft/vscode/issues/337837",
+      "created_at": "2026-09-24T22:41:59Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Profile setting reverts to default or randomizes when closing a folder",
+        "why_easy": "Clear reproduction steps but requires debugging VS Code's profile and workspace state management; intermittent behavior suggests race conditions in state handling"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337824,
+      "title": "Model picker jumps around when the selection changes",
+      "url": "https://github.com/microsoft/vscode/issues/337824",
+      "created_at": "2026-09-24T21:44:36Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Model picker UI shifts and jumps around when the user changes the selection",
+        "why_easy": "The issue is visually reproducible, narrowly scoped to one component, and likely a styling or layout problem (item reordering/reflow) rather than complex logic\u2014straightforward to debug and fix once the picker code is located."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337822,
+      "title": "Authentication Loop with GitHub Copilot Enterprise (GHE)",
+      "url": "https://github.com/microsoft/vscode/issues/337822",
+      "created_at": "2026-09-24T21:42:16Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Users authenticating VS Code with GitHub Enterprise are stuck in an infinite sign-in loop after successful browser authorization.",
+        "why_easy": "Clear regression introduced in 1.139 with reproducible steps, but fixing it requires understanding VS Code's OAuth callback flow and GHE authentication specifics, which are non-trivial for first-time contributors."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23575,
+      "title": "mergeConfig mutates server.hmr defaults and leaks values across merges",
+      "url": "https://github.com/vitejs/vite/issues/23575",
+      "created_at": "2026-09-24T16:34:06Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Fix mergeConfig() mutating the server.hmr object and leaking state across independent merges due to setupHmrWsOptionCompat() defining accessors on the original object",
+        "why_easy": "The issue has a clear reproduction case and identified root cause, but the fix requires understanding Vite's HMR compatibility layer and careful handling of object copies to avoid breaking existing behavior"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36423,
+      "title": "[Bug]: Angular (angular-vite): switching a toolbar global on a docs page logs NG05104 once per story",
+      "url": "https://github.com/storybookjs/storybook/issues/36423",
+      "created_at": "2026-09-24T14:23:39Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Switching toolbar globals on Angular docs pages causes NG05104 errors due to queued bootstrap operations targeting removed DOM elements",
+        "why_easy": "Clear root cause analysis and working patch provided, but requires understanding async bootstrap queuing, Angular lifecycle, and deciding between a quick fix (skip disconnected hosts) versus addressing the root cause (prevent double re-renders)"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36415,
+      "title": "[Bug]: Tanstack Router: Typesafety Gaps, query params is not typed, path params is not required",
+      "url": "https://github.com/storybookjs/storybook/issues/36415",
+      "created_at": "2026-09-24T10:26:40Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Storybook's Tanstack Router integration doesn't type-check required path parameters or search query parameters in story metadata",
+        "why_easy": "Type definitions exist but don't work; requires understanding both Tanstack Router and Storybook's type systems to debug why path/search param types aren't enforced, but likely a fix to existing logic rather than from scratch"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36410,
+      "title": "[Bug]: Tanstack Router: route's beforeLoad executed before story beforeEach",
+      "url": "https://github.com/storybookjs/storybook/issues/36410",
+      "created_at": "2026-09-24T08:39:05Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Tanstack Router's beforeLoad hook executes before story beforeEach, making it impossible to set up mocks in stories.",
+        "why_easy": "The issue has a clear reproduction case and a known regression commit (PR #35784), but fixing it requires understanding Storybook's hook orchestration between preview and story levels and the Tanstack Router integration."
+      }
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "number": 20510,
+      "title": "sr-only does not hide a <table>'s <caption> in Firefox",
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/20510",
+      "created_at": "2026-09-24T14:48:20Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "sr-only utility class fails to hide table captions in Firefox due to browser-specific table box model rendering",
+        "why_easy": "Root cause is thoroughly documented with exact reproduction steps, proposed fix is a single CSS child selector rule (2 lines), and similar patterns already exist in the codebase for reference"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70359,
+      "title": "Preposing a change in guideline of python workshop-email-simulator/step-28",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70359",
+      "created_at": "2026-09-24T19:32:55Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix unclear instruction text in Python workshop step-28 from 'Within the method, before...' to clearer wording",
+        "why_easy": "It's a localized text fix in a single lesson; the main challenge is understanding freeCodeCamp's content structure and what the correct replacement text should be (the issue is vague and the screenshot is missing)"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70358,
+      "title": "A valid answer is not accepted",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70358",
+      "created_at": "2026-09-24T18:56:26Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Accept `if self.emails == []` as a valid alternative to `if not self.emails` in the email simulator lesson step-30",
+        "why_easy": "The issue is clearly scoped to a single lesson, the fix likely involves updating the validator to accept both equivalent patterns, and reproduction is straightforward with clear steps."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70350,
+      "title": "Business Card portfolio text test should use textContent",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70350",
+      "created_at": "2026-09-24T15:15:29Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "test",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Replace innerText with textContent in the Business Card portfolio link test to prevent CSS text transformations from breaking the test",
+        "why_easy": "Single-property change in a clearly identified test assertion with explicit before/after, minimal codebase navigation needed"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70346,
+      "title": "Clarification needed regarding Express 404 behavior in the lesson \"How Can You Serve Static Files in Express?\"",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70346",
+      "created_at": "2026-09-24T10:04:41Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Remove or clarify misleading statement about Express.static() automatically returning 404 for missing files in a backend lesson.",
+        "why_easy": "Straightforward text edit to a lesson with the exact problem and solution already identified by the contributor; no code changes required."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70345,
+      "title": "Omission of \"run\" while describing npm run lint command in \"What Are npm Scripts?\" lesson",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70345",
+      "created_at": "2026-09-24T09:41:45Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix inconsistency in npm scripts lesson by changing `npm lint` to `npm run lint` to match the explanation that lint requires the run keyword",
+        "why_easy": "Straightforward text correction in curriculum content with clear before/after, no code changes or testing required, and explicitly labeled first-timers-only"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70344,
+      "title": "Inaccurate statement about Buffer module requiring explicit import in Buffer module lesson",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70344",
+      "created_at": "2026-09-24T08:12:31Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix inaccurate statement about Buffer module requiring explicit imports in curriculum lesson.",
+        "why_easy": "The issue clearly identifies the inaccuracy, provides the correct information, and is explicitly marked for first-timers; it requires only updating lesson text and examples to reflect that Buffer is globally available in Node.js."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30404,
+      "title": "bug(query): ORM mutation inputs use the codec's output type instead of its input type",
+      "url": "https://github.com/prisma/orm/issues/30404",
+      "created_at": "2026-09-24T21:00:01Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "ORM mutations incorrectly type scalar fields using codec output types instead of input types, causing compile errors for codecs with different input/output types.",
+        "why_easy": "The problem is precisely identified (DefaultModelRow should use FieldInputTypes instead of FieldOutputTypes), the fix is mechanical and type-only, but requires deep understanding of Prisma's codec system and comprehensive testing to avoid breaking related uses of FieldOutputTypes."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30401,
+      "title": "Prisma Download",
+      "url": "https://github.com/prisma/orm/issues/30401",
+      "created_at": "2026-09-24T19:46:44Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "User reports that `npm i prisma` installation takes over 5 minutes and requests performance optimization.",
+        "why_easy": "The issue lacks clear reproduction steps, profiling data, and baseline expectations; the root cause could be environmental (network, disk, system resources) or Prisma-specific (postinstall scripts, binary downloads), requiring significant investigation to diagnose."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30400,
+      "title": "prisma",
+      "url": "https://github.com/prisma/orm/issues/30400",
+      "created_at": "2026-09-24T18:47:29Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "prisma db pull crashes with an incomplete error message from the Schema engine",
+        "why_easy": "The error message is truncated with no actual failure reason, no reproduction steps, and no database context provided\u2014would require extensive back-and-forth investigation to even understand what failed."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50862,
+      "title": "Shared pooler certificate chain fails strict TLS verification: intermediate CA missing Key Usage",
+      "url": "https://github.com/supabase/supabase/issues/50862",
+      "created_at": "2026-09-24T14:10:02Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Intermediate CA certificate lacks Key Usage extension, causing strict TLS verification to fail",
+        "why_easy": "Requires regenerating and redeploying Supabase's internal certificate infrastructure with proper X.509 compliance, which external contributors cannot access or modify"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51856,
+      "title": "JpaRepository with @Id @OneToOne association reports \"does not define an IdClass\"",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51856",
+      "created_at": "2026-09-24T20:56:08Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Spring Data JPA rejects JpaRepository with @OneToOne association as entity ID despite valid JPA mapping that Hibernate accepts",
+        "why_easy": "Clear reproduction case and isolated to Spring Data's identifier resolution logic, but requires deep knowledge of JPA derived-identity semantics and Spring Data's entity metadata introspection to diagnose and fix correctly"
+      }
+    },
+    {
+      "repo": "pallets/flask",
+      "number": 6165,
+      "title": "Clarify MAX_CONTENT_LENGTH should be avoided in the docs",
+      "url": "https://github.com/pallets/flask/issues/6165",
+      "created_at": "2026-09-24T22:41:33Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "docs",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Update Flask documentation to clarify that MAX_CONTENT_LENGTH should be set at the server level instead of relying on Flask's config alone",
+        "why_easy": "Clear problem with a concrete example and a reference implementation (Werkzeug docs) to follow, but requires understanding Flask/WSGI server interactions and knowing where to update Flask's documentation."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 69443,
+      "title": "BUG: loc assignment of a length-1 NumPy array into a PyArrow column raises TypeError",
+      "url": "https://github.com/pandas-dev/pandas/issues/69443",
+      "created_at": "2026-09-24T08:19:00Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Fix TypeError when assigning length-1 NumPy arrays to PyArrow columns via loc indexing",
+        "why_easy": "Issue provides root cause analysis with specific fix locations (_box_pa_scalar or setitem_inplace); narrow, localized changes needed with a clear reproducible test case, though requires some familiarity with pandas internals."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 69436,
+      "title": "BUG: Series arithmetic ops with PyArrow dtypes and scalars can upcast",
+      "url": "https://github.com/pandas-dev/pandas/issues/69436",
+      "created_at": "2026-09-23T20:29:55Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Series arithmetic operations with PyArrow dtypes unexpectedly upcast to larger dtypes when operating with scalars.",
+        "why_easy": "Clear reproducer and focused problem area, but requires intermediate knowledge of pandas' dtype promotion logic, PyArrow integration, and thorough testing to avoid regressions in core arithmetic operations."
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32786,
+      "title": "BUG: ndarray.__reduce__ converts shape errors to SystemError",
+      "url": "https://github.com/numpy/numpy/issues/32786",
+      "created_at": "2026-09-24T21:31:58Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Fix ndarray.__reduce__() to properly propagate exceptions from overridden shape properties instead of raising SystemError",
+        "why_easy": "The fix requires only adding a NULL check and early return after the shape attribute lookup, as the reporter has already confirmed this resolves the issue; however, it requires C extension expertise and NumPy's build environment setup"
+      }
+    },
+    {
+      "repo": "numpy/numpy",
+      "number": 32770,
+      "title": "TYP: axis argument handling for np.gradient",
+      "url": "https://github.com/numpy/numpy/issues/32770",
+      "created_at": "2026-09-23T20:24:07Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add type stubs for np.gradient() to correctly handle the axis argument case, where return type should be an ndarray instead of tuple",
+        "why_easy": "Scope is bounded to adding type stub overloads; clear reproduction case provided; no runtime changes needed, only .pyi file modifications"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 35027,
+      "title": "permutation_importance computes non-zero importance for features the model never uses when max_samples < 1",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/35027",
+      "created_at": "2026-09-24T22:38:04Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "permutation_importance incorrectly assigns non-zero importance to unused features when max_samples < 1 because baseline and shuffled scores are computed on different sample sizes",
+        "why_easy": "The root cause is clearly identified and fix location is obvious, but implementing it requires understanding the permutation importance algorithm and careful testing of a core function to avoid regressions."
+      }
+    },
+    {
+      "repo": "github/docs",
+      "number": 46060,
+      "title": "Fix stale Edit mode anchor in Copilot Chat in an IDE",
+      "url": "https://github.com/github/docs/issues/46060",
+      "created_at": "2026-09-24T19:16:57Z",
+      "digest_date": "2026-09-24",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix a stale anchor link in the Copilot Chat IDE documentation that points to #edit-mode-1 instead of the correct #edit-mode",
+        "why_easy": "The problem is clearly identified and requires a one-line fix in a markdown file with no code changes or dependencies"
       }
     }
   ]
