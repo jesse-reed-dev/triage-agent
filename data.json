@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24",
+  "updated": "2026-09-25",
   "issues": [
     {
       "repo": "react/react-native",
@@ -31952,6 +31952,651 @@
         "good_first_issue": true,
         "one_line_summary": "Fix a stale anchor link in the Copilot Chat IDE documentation that points to #edit-mode-1 instead of the correct #edit-mode",
         "why_easy": "The problem is clearly identified and requires a one-line fix in a markdown file with no code changes or dependencies"
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50655,
+      "title": "[expo-ui][Android] MenuView popup content becomes invisible after keyboard dismissal",
+      "url": "https://github.com/expo/expo/issues/50655",
+      "created_at": "2026-09-25T14:56:35Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "MenuView popup content becomes invisible after keyboard dismissal on Android",
+        "why_easy": "This requires debugging a complex Android/keyboard lifecycle issue involving React Native's IME handling and Expo UI's popup layout system, likely needing native code investigation and device-specific testing."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50641,
+      "title": "[Expo 58] [Router] Anchor Issue - Anchor no longer runs as expected.",
+      "url": "https://github.com/expo/expo/issues/50641",
+      "created_at": "2026-09-25T10:42:15Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Router anchor feature fails to reset navigation to the anchored route after page refresh, leaving users stuck on nested routes with no back button.",
+        "why_easy": "Contributor provided a minimal reproducible example, but the fix requires deep knowledge of Expo Router's state management and how page refresh interacts with anchor initialization\u2014likely a complex architectural issue in the router's internals."
+      }
+    },
+    {
+      "repo": "expo/expo",
+      "number": 50640,
+      "title": "[expo-modules-autolinking] Pods depending on React miss static conversion with precompiled modules and dynamic frameworks",
+      "url": "https://github.com/expo/expo/issues/50640",
+      "created_at": "2026-09-25T10:28:46Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "expo-modules-autolinking's static library conversion misses pods depending on the React aggregate pod (not React-Core), failing pod install with dynamic frameworks.",
+        "why_easy": "The fix is probably a simple conditional addition to detect React dependencies, but requires specialized CocoaPods knowledge and a complex iOS environment to reproduce and validate."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337996,
+      "title": "\"Sign in to use GitHub Copilot\" shown on every restart with GHE.com; agent host gets 401 on Copilot user info",
+      "url": "https://github.com/microsoft/vscode/issues/337996",
+      "created_at": "2026-09-25T16:34:26Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "GitHub Copilot sign-in dialog appears on every VS Code restart when using GitHub Enterprise Server, despite successful initial authentication and working Copilot Chat.",
+        "why_easy": "Reproduction is clear with detailed logs showing the exact failure point (agent host gets 401 on user info fetch), but fixing requires understanding token flow between VS Code's GitHub auth system and Copilot's agent host, plus GHE-specific authentication handling."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337993,
+      "title": "Agents: Add opt-in rotating welcome phrases",
+      "url": "https://github.com/microsoft/vscode/issues/337993",
+      "created_at": "2026-09-25T16:21:11Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "feature",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Add rotating welcome phrases to the Agents window composer that personalize with GitHub profile names and are customizable via settings.",
+        "why_easy": "Requires deep VS Code architecture knowledge (settings system, command palette, UI framework), integration with the agents window component, GitHub profile fetching, and multi-system coordination; the reference to implementation PR #337988 signals non-trivial complexity."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337991,
+      "title": "Schema compare warning: webview is not set",
+      "url": "https://github.com/microsoft/vscode/issues/337991",
+      "created_at": "2026-09-25T16:16:53Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Schema compare operations attempt to write results to a webview that hasn't been initialized",
+        "why_easy": "The error message precisely identifies the problem (webview not set), suggesting a localized null check or initialization-order fix, but requires familiarity with VS Code webview patterns and the mssql extension architecture"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337989,
+      "title": "Renderer freezes during bulk text model cleanup",
+      "url": "https://github.com/microsoft/vscode/issues/337989",
+      "created_at": "2026-09-25T16:01:00Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Optimize text model bulk cleanup to avoid O(n\u00b2) rescanning that freezes the renderer for several seconds",
+        "why_easy": "Requires deep knowledge of VS Code's text model lifecycle and coordination between edit tracking, extension state, and worker processes to eliminate repeated full-model scans without introducing regressions"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337987,
+      "title": "Put emojis into a .md file",
+      "url": "https://github.com/microsoft/vscode/issues/337987",
+      "created_at": "2026-09-25T15:54:58Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Windows emoji picker shortcut (Win+.) doesn't insert emojis into markdown files, though copy-paste works.",
+        "why_easy": "Clear symptom (Win+. fails but paste succeeds) suggests input event handling issue, but requires debugging platform-specific Windows emoji picker integration and VS Code's keybinding/input architecture."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337984,
+      "title": "Agents window: Stop and Mark as Done don't work while a new session is still being created",
+      "url": "https://github.com/microsoft/vscode/issues/337984",
+      "created_at": "2026-09-25T15:35:16Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Stop and Mark as Done actions fail when clicked during initial session creation before the agent host reports back with the real session",
+        "why_easy": "Issue has a clear root cause (draft vs real session lifecycle mismatch) and well-defined expected behavior, but fixing requires understanding VS Code's agent session state management architecture and async communication with the host"
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337981,
+      "title": "Agents window: picker changes made right after sending the first message are lost",
+      "url": "https://github.com/microsoft/vscode/issues/337981",
+      "created_at": "2026-09-25T15:30:49Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Picker changes made during session startup are lost when the session finishes initializing",
+        "why_easy": "The root cause is clearly explained\u2014the app restores pre-message state instead of using the latest draft\u2014but the fix requires careful async state management across multiple picker types."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337980,
+      "title": "Minimal required fields for new automation creation",
+      "url": "https://github.com/microsoft/vscode/issues/337980",
+      "created_at": "2026-09-25T15:27:36Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Reduce the number of required fields when creating automations to improve user experience",
+        "why_easy": "Lacks specifics on which automation feature and what constitutes minimum required fields, requiring clarification before implementation can begin."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337979,
+      "title": "UI design",
+      "url": "https://github.com/microsoft/vscode/issues/337979",
+      "created_at": "2026-09-25T15:13:54Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Recent UI changes to primary sidebar hover styles and active tab styling are causing visual regression",
+        "why_easy": "While CSS fixes are typically straightforward, the issue lacks screenshots and specific reproduction steps, requiring investigation of recent styling changes to validate and fix the problems."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337978,
+      "title": "[Agents Window] MCP/tool management, authentication, and language-model response are inconsistent with Chat",
+      "url": "https://github.com/microsoft/vscode/issues/337978",
+      "created_at": "2026-09-25T15:12:46Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "MCP tool management, authentication, and language-model responses behave inconsistently between Chat and Agents windows despite identical configuration",
+        "why_easy": "Spans multiple interconnected systems (tool management, MCP auth, LM requests) across Chat and Agents code paths, requiring cross-component investigation and debugging."
+      }
+    },
+    {
+      "repo": "microsoft/vscode",
+      "number": 337976,
+      "title": "Build/Package fails at prepareBuiltInCopilotRipgrepShim due to .moduleignore stripping @github/copilot/sdk",
+      "url": "https://github.com/microsoft/vscode/issues/337976",
+      "created_at": "2026-09-25T14:41:45Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix build packaging failure where .moduleignore incorrectly strips @github/copilot files needed by prepareBuiltInCopilotRipgrepShim",
+        "why_easy": "The root cause is clearly identified with detailed analysis and a working workaround provided; the fix is a simple two-line update to .moduleignore, and verification requires only running the existing build command."
+      }
+    },
+    {
+      "repo": "vitejs/vite",
+      "number": 23585,
+      "title": "Build fails when the HTML entry is a symlink to a file outside root (Bazel sandbox)",
+      "url": "https://github.com/vitejs/vite/issues/23585",
+      "created_at": "2026-09-25T08:14:43Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Build fails when HTML entry is a symlink pointing outside root, producing invalid relative path in output",
+        "why_easy": "Well-diagnosed with minimal reproduction and exact code location identified, but requires deep knowledge of Vite's resolver/plugin boundaries and symlink resolution behavior across TypeScript/Rolldown layers to implement either proposed fix"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36456,
+      "title": "[Feature Request] Integrate with `ember-storybook`",
+      "url": "https://github.com/storybookjs/storybook/issues/36456",
+      "created_at": "2026-09-25T15:50:56Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "feature",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Integrate the community-maintained ember-storybook package into Storybook's framework detection and init process, replacing the broken @storybook/ember",
+        "why_easy": "The replacement package is complete and working with documentation, but requires understanding Storybook's framework initialization system and involves cleanup of legacy code paths"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36453,
+      "title": "[Bug]: @storybook/angular-vite accepts @analogjs/vite-plugin-angular versions that break build-storybook on Angular 22.2",
+      "url": "https://github.com/storybookjs/storybook/issues/36453",
+      "created_at": "2026-09-25T14:48:25Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Update @analogjs/vite-plugin-angular peer dependency from >=2.0.0 to >=2.7.3 to fix build-storybook failure on Angular 22.2",
+        "why_easy": "The fix requires updating only two version strings in two specified files with exact values provided in the issue, though verification requires testing against the provided reproduction case."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36452,
+      "title": "[Bug]: Typescript error when skipLibChecks: false",
+      "url": "https://github.com/storybookjs/storybook/issues/36452",
+      "created_at": "2026-09-25T13:12:23Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Type definition compilation issue where @ts-expect-error directives are misplaced or don't match actual errors, causing TS2578 and TS2344 when skipLibChecks is false",
+        "why_easy": "Hard because it requires deep TypeScript generic type knowledge, analysis of compiled .d.ts output, and understanding of Storybook's type definition generation pipeline to determine whether the suppressions are in the wrong place or the underlying types need fixing."
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36441,
+      "title": "[Bug]: Angular-Vite: Description omits JSDoc @example content",
+      "url": "https://github.com/storybookjs/storybook/issues/36441",
+      "created_at": "2026-09-25T08:33:49Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "JSDoc @example blocks are omitted from component descriptions in Angular-Vite framework but appear correctly in Angular Webpack",
+        "why_easy": "Hard because it requires debugging docgen parsing differences between two framework implementations to identify why example blocks are being stripped in the Vite version, with unclear fix location upfront"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36438,
+      "title": "Controls: radio, radioWithLabels and inlineRadio render as \"-\" in the core template stories",
+      "url": "https://github.com/storybookjs/storybook/issues/36438",
+      "created_at": "2026-09-25T05:57:24Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Move `options` and `labels` from inside `control` to argType level for radio controls to fix rendering as \"-\" in template stories",
+        "why_easy": "Issue is well-diagnosed with exact file locations and code links; fix is straightforward property reorganization following the working `select` pattern already in the same file; no logic changes needed"
+      }
+    },
+    {
+      "repo": "storybookjs/storybook",
+      "number": 36437,
+      "title": "[Bug]: addon-vitest reports wrong source lines for story files in 10.6.0 (CSF plugin maps to the original file, then Vite maps again)",
+      "url": "https://github.com/storybookjs/storybook/issues/36437",
+      "created_at": "2026-09-25T02:01:50Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "CSF plugin double-applies source maps by composing them before passing to Babel, then Vite composes again, causing incorrect line numbers in vitest error reports.",
+        "why_easy": "Root cause is clearly identified with a minimal reproduction, but fixing requires deep understanding of source map composition in Vite/Rollup plugin chains and careful testing to avoid breaking the AnalogJS integration that triggered the recent transform ordering change."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70390,
+      "title": "Ambiguous phrasing in Node `fs` module second quiz question",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70390",
+      "created_at": "2026-09-25T10:16:04Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Clarify quiz question wording to distinguish writeFile() from appendFile() by specifying overwrite behavior",
+        "why_easy": "Straightforward text edit to lesson content with the fix already suggested; no code changes or complex testing required"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70389,
+      "title": "Node.js REPL lesson 8 rejects valid console.log calls",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70389",
+      "created_at": "2026-09-25T09:46:17Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix Node.js REPL lesson 8 test regex to accept console.log calls with whitespace before the parenthesis",
+        "why_easy": "The fix is a single regex modification: change /console\\.log\\(/ to /console\\.log\\s*\\(/ to allow optional whitespace before the opening parenthesis"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70388,
+      "title": "Caesar Cipher Step 6 uses an incorrect preposition",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70388",
+      "created_at": "2026-09-25T09:44:32Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix incorrect preposition in Caesar Cipher Step 6: change 'maps...with' to 'maps...to' in the str.maketrans() description",
+        "why_easy": "Single-word grammar correction in curriculum content with a clear before/after \u2014 no code changes, no testing, just find and update the text file"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70387,
+      "title": "Caesar Cipher Step 3 has an ambiguous cipher definition",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70387",
+      "created_at": "2026-09-25T09:44:18Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix ambiguous grammar in Caesar Cipher Step 3 instructions by clarifying the cipher definition and correcting 'plain text' to 'plaintext'",
+        "why_easy": "The fix is a straightforward text replacement in curriculum documentation with a clear, provided solution; requires no programming and minimal file navigation."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70386,
+      "title": "Caesar Cipher Step 2 hint has awkward wording",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70386",
+      "created_at": "2026-09-25T09:44:06Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix awkward English phrasing in Caesar Cipher Step 2 hint by replacing 'Pay attention to place' with 'Be sure to place'",
+        "why_easy": "The exact wording change is already specified in the issue, requiring only a straightforward find-and-replace in a single hint file with no functional impact."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70385,
+      "title": "Caesar Cipher Step 1 has capitalization and wording issues",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70385",
+      "created_at": "2026-09-25T09:43:47Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix capitalization and wording issues in the Caesar Cipher Step 1 curriculum introduction and hints",
+        "why_easy": "The fix involves straightforward text replacements with exact before-and-after examples provided, requiring no code changes or complex understanding of the curriculum platform"
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70381,
+      "title": "Remove broken Scrimba video links from CSS Grid",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70381",
+      "created_at": "2026-09-25T08:33:15Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Remove broken Scrimba video links from frontmatter in 20 CSS Grid lesson files.",
+        "why_easy": "The issue provides direct links to all 20 affected files and the fix is simply deleting the broken `videoUrl` line from each lesson's frontmatter\u2014a straightforward, repetitive task with no complex logic or dependencies."
+      }
+    },
+    {
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "number": 70379,
+      "title": "Fix the Discount Calculator lab objective and punctuation",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues/70379",
+      "created_at": "2026-09-25T08:03:53Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Add missing commas to three introductory clauses and update the lab objective to mention passing all tests in the Discount Calculator curriculum page.",
+        "why_easy": "The issue provides exact before/after text for all four changes; contributor needs only to locate the curriculum file and apply straightforward punctuation/text edits with no code or testing involved."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30417,
+      "title": "Prisma 8 \u2014 Numeric column @default(0) fails with PSL_DEFAULT_TYPE_INCOMPATIBLE in rc.12 \u2014 no valid literal form exists, and error recovery path contradicts the parser",
+      "url": "https://github.com/prisma/orm/issues/30417",
+      "created_at": "2026-09-25T09:32:46Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Numeric column @default(0) fails with contradictory error messages in rc.12 with no valid workaround",
+        "why_easy": "Requires understanding Prisma's schema validation across multiple layers and debugging a regression with contradictory error messages between versions."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30416,
+      "title": "Document Prisma Postgres edge runtime support in the Prisma 8 skill",
+      "url": "https://github.com/prisma/orm/issues/30416",
+      "created_at": "2026-09-25T09:00:04Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "docs",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Add documentation to the Prisma 8 runtime reference explaining supported edge runtimes and Prisma Postgres connection options with verified examples.",
+        "why_easy": "Clear scope and well-defined acceptance criteria, but requires investigation and verification of Prisma 8's actual edge runtime support boundaries before writing accurate documentation."
+      }
+    },
+    {
+      "repo": "prisma/prisma",
+      "number": 30414,
+      "title": "fullTextHeadline accepts minWords above PostgreSQL default MaxWords",
+      "url": "https://github.com/prisma/orm/issues/30414",
+      "created_at": "2026-09-25T08:13:27Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Prisma should validate that minWords doesn't exceed PostgreSQL's default MaxWords (35) when maxWords is omitted",
+        "why_easy": "The fix is localized to a validation function with a clear reproduction case and straightforward boundary check; the issue identifies exactly what needs to change"
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50907,
+      "title": "Restarting Loop in My Account",
+      "url": "https://github.com/supabase/supabase/issues/50907",
+      "created_at": "2026-09-25T12:02:20Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Project enters infinite restart loop after account suspension due to egress usage limits, remains stuck despite active PRO plan.",
+        "why_easy": "Not actionable for external contributors\u2014requires internal Supabase access to investigate account suspension logic and service state; cannot be reproduced or tested without triggering actual account suspension and access to backend systems."
+      }
+    },
+    {
+      "repo": "supabase/supabase",
+      "number": 50900,
+      "title": "Postgres crashes on permission-denied for RPC functions (v17.6.1.111)",
+      "url": "https://github.com/supabase/supabase/issues/50900",
+      "created_at": "2026-09-25T09:06:27Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "Postgres crashes instead of returning permission denied when calling RPC functions without EXECUTE grants",
+        "why_easy": "Reproduces consistently with clear steps, but requires deep knowledge of Postgres internals and Supabase's RPC/permission layers to debug a crash-level issue affecting production stability"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51860,
+      "title": "Upgrade to Gradle 9.8.0",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51860",
+      "created_at": "2026-09-25T10:03:05Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Upgrade Gradle wrapper to version 9.8.0 for the 4.2.x branch, following the pattern from issue #51859",
+        "why_easy": "Forward ports are mechanical\u2014the original issue #51859 provides a clear template for what changes are needed, and success is verified by running the existing test suite"
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51859,
+      "title": "Upgrade to Gradle 9.8.0",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51859",
+      "created_at": "2026-09-25T10:02:46Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "easy",
+        "good_first_issue": false,
+        "one_line_summary": "Update Spring Boot 4.1.x to use Gradle 9.8.0, forward-porting the same upgrade already completed on main.",
+        "why_easy": "Forward-ports of build tool upgrades are mechanical work since the main branch upgrade has already validated compatibility; however, branch-specific plugin configurations or test failures could surface issues."
+      }
+    },
+    {
+      "repo": "spring-projects/spring-boot",
+      "number": 51858,
+      "title": "Upgrade to Gradle 9.8.0",
+      "url": "https://github.com/spring-projects/spring-boot/issues/51858",
+      "created_at": "2026-09-25T09:17:30Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "refactor",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Upgrade Spring Boot's build system from its current Gradle version to 9.8.0",
+        "why_easy": "Technically straightforward (update gradle-wrapper.properties and verify tests pass), but requires confidence running Spring Boot's comprehensive test suite; the missing description raises uncertainty about breaking changes or migration steps needed."
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 69462,
+      "title": "BUG: .str and .dt accessors raise on dictionary-encoded ArrowDtype",
+      "url": "https://github.com/pandas-dev/pandas/issues/69462",
+      "created_at": "2026-09-25T15:08:42Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Make .str and .dt accessors work with dictionary-encoded ArrowDtype Series",
+        "why_easy": "Root causes are clearly identified and reproduced, but fix requires modifying multiple accessor methods and understanding PyArrow dictionary encoding internals"
+      }
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 69461,
+      "title": "BUG: to_json(date_format=\"iso\") segfaults on a failed allocation \u2014 NpyDateTimeToIsoCallback returns NULL without setting errorMsg",
+      "url": "https://github.com/pandas-dev/pandas/issues/69461",
+      "created_at": "2026-09-25T12:03:53Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Set error message in ISO datetime/timedelta callbacks when underlying conversion fails to prevent segfault",
+        "why_easy": "The fix is mechanical (add error-setting code matching sibling functions), but requires C knowledge and familiarity with pandas' ujson extension code"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 35033,
+      "title": "DOC: RFECV per-split ranking and support shapes omit the feature axis",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/35033",
+      "created_at": "2026-09-25T13:45:09Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "docs",
+        "difficulty": "easy",
+        "good_first_issue": true,
+        "one_line_summary": "Fix RFECV docstring to correctly document that per-split ranking and support arrays have shape (n_subsets_of_features, n_features) instead of (n_subsets_of_features,)",
+        "why_easy": "The fix is purely documentation with a clear proposed diff, localized to one file's docstring, requires no code changes, and is validated by a straightforward reproducer."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 35032,
+      "title": "BUG: Explicit validation data does not enable HistGradientBoosting automatic early stopping",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/35032",
+      "created_at": "2026-09-25T13:36:57Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "When explicit validation data is provided to HistGradientBoosting estimators with early_stopping='auto', early stopping should be enabled but currently isn't.",
+        "why_easy": "The issue has a clear reproduction case and documented expected behavior, but the 'not yet ready for a PR' warning suggests design or implementation complexity remains unresolved."
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 35031,
+      "title": "BUG: Pipeline.fit_predict skips transform_input for final-step metadata",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/35031",
+      "created_at": "2026-09-25T13:03:03Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "medium",
+        "good_first_issue": false,
+        "one_line_summary": "Pipeline.fit_predict doesn't apply transform_input to metadata for the final estimator, while Pipeline.fit does",
+        "why_easy": "The bug location is clearly identified and a similar fix pattern exists in PR #34201, but understanding the metadata routing system and writing comprehensive tests requires scikit-learn familiarity; the issue also explicitly notes it's 'not yet ready for a PR'"
+      }
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "number": 35029,
+      "title": "BUG: LogisticRegression (and other GLMs) can silently return badly wrong coefficients on off-centered data",
+      "url": "https://github.com/scikit-learn/scikit-learn/issues/35029",
+      "created_at": "2026-09-25T06:38:15Z",
+      "digest_date": "2026-09-25",
+      "triage": {
+        "category": "bug",
+        "difficulty": "hard",
+        "good_first_issue": false,
+        "one_line_summary": "LogisticRegression and other GLM solvers can silently return incorrect coefficients on off-centered data due to missing data preprocessing.",
+        "why_easy": "This is hard: it requires deep understanding of multiple solver algorithms (lbfgs, newton-cholesky), modifying core numerical routines, testing across several estimator classes, and addressing both catastrophic cancellation and premature convergence issues."
       }
     }
   ]
